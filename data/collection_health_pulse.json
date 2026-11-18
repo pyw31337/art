@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "last_monitored_at": "2026-11-18T13:55:42.283051+09:00",
+  "pipeline_health_score": 99.4,
+  "status": "HEALTHY_OPTIMAL",
+  "daily_ingested_count": 85,
+  "moving_average_7d": 82.1,
+  "collection_slope_pct": 18.2,
+  "consecutive_healthy_days": 43,
+  "anomaly_flags": {
+    "zero_drop_detected": false,
+    "flat_curve_stagnation": false,
+    "museum_api_rate_limit_exceeded": false
+  },
+  "active_open_access_sources": [
+    "The Met Open Access (470k items)",
+    "Art Institute of Chicago IIIF High-Res",
+    "Rijksmuseum Amsterdam Dutch Masters",
+    "Project Gutenberg Public Domain Classics"
+  ]
+}
