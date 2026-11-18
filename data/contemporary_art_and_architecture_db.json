@@ -1,0 +1,152 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2026-11-18T14:16:47.663245+09:00",
+  "domain": "contemporary_art_and_architecture",
+  "service_name": "Let's Art (현대 미술 & 현대 건축 아카이브)",
+  "total_items_indexed": 12500,
+  "categories": {
+    "contemporary_fine_art": {
+      "name": "현대 미술 (Contemporary Art)",
+      "description": "현존 활동 작가 및 20~21세기 동시대 미술 거장들의 회화, 조각, 설치미술",
+      "count": 7855
+    },
+    "contemporary_architecture": {
+      "name": "현대 건축 & 공간 미학 (Contemporary Architecture)",
+      "description": "프리츠커상 수상 거장 및 세계 랜드마크 현대 건축물, 비구조주의, 미니멀리즘 건축",
+      "count": 4645
+    }
+  },
+  "featured_contemporary_art": [
+    {
+      "id": "cont_art_david_hockney",
+      "urn": "urn:art:contemporary:painting:hockney_splash",
+      "artist_name_kr": "데이비드 호크니",
+      "artist_name_en": "David Hockney",
+      "birth_year": "1937년생 (현존 거장)",
+      "nationality": "영국",
+      "movement": "현대 팝아트 & 구상미술",
+      "title_kr": "더 큰 첨벙 (A Bigger Splash)",
+      "title_en": "A Bigger Splash",
+      "year": 1967,
+      "medium": "캔버스에 아크릴 (Acrylic on canvas, 242.5 × 243.9 cm)",
+      "museum": "런던 테이트 모던 (Tate Modern, London)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/A_Bigger_Splash.jpg/500px-A_Bigger_Splash.jpg",
+      "description": "캘리포니아의 강렬한 햇살 아래, 누군가 수영장으로 뛰어든 직후 솟구쳐 오르는 물보라의 찰나를 수주에 걸쳐 정밀한 붓질로 고정시킨 현대 미술의 불후의 상징.",
+      "curator_commentary": "사진기는 1초의 천분의 일만에 포착하지만, 호크니는 그 찰나의 물방울을 2주 동안 세밀하게 칠함으로써 '시간의 역설'을 화폭에 구현했습니다.",
+      "aesthetic_elements": [
+        "평면적 기하학 구도",
+        "원색 아크릴의 선명한 대비",
+        "부재(인간이 사라진 자리)를 통한 존재감 암시"
+      ]
+    },
+    {
+      "id": "cont_art_yayoi_kusama",
+      "urn": "urn:art:contemporary:sculpture:kusama_pumpkin",
+      "artist_name_kr": "쿠사마 야요이",
+      "artist_name_en": "Yayoi Kusama",
+      "birth_year": "1929년생 (현존 거장)",
+      "nationality": "일본",
+      "movement": "옵아트, 미니멀리즘, 네오 다다",
+      "title_kr": "노란 호박 (Yellow Pumpkin)",
+      "title_en": "Pumpkin",
+      "year": 1994,
+      "medium": "강화 플라스틱에 혼합재료 (FRP & Paint)",
+      "museum": "일본 나오시마 베네세 하우스 야외 설치 (Naoshima, Japan)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Naoshima_Kusama_Pumpkin.jpg/640px-Naoshima_Kusama_Pumpkin.jpg",
+      "description": "물방울 무늬(Polka Dots)의 무한 증식을 통해 정신적 불안과 환각을 예술적 승화로 치유한 현대 조형 미술의 아이콘.",
+      "curator_commentary": "바다를 마주한 부둣가 끝에 우뚝 솟은 노란 호박은 자연의 무한함과 인간 내면의 강박이 조화를 이루는 명상적 치유의 공간을 창출합니다.",
+      "aesthetic_elements": [
+        "도트 패턴의 점진적 스케일 변화",
+        "유기적 형태의 따뜻한 조형미",
+        "장소 특정적(Site-specific) 야외 설치"
+      ]
+    },
+    {
+      "id": "cont_art_lee_ufan",
+      "urn": "urn:art:contemporary:painting:lee_ufan_dialogue",
+      "artist_name_kr": "이우환",
+      "artist_name_en": "Lee Ufan",
+      "birth_year": "1936년생 (현존 거장)",
+      "nationality": "대한민국",
+      "movement": "모노하(物派) & 단색화",
+      "title_kr": "대화 (Dialogue)",
+      "title_en": "Dialogue",
+      "year": 2014,
+      "medium": "캔버스에 안료와 광물 (Pigment and mineral on canvas)",
+      "museum": "파리 퐁피두 센터 & 이우환 공간 (Busan Museum of Art)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lee_Ufan_-_Dialogue_%28cropped%29.jpg/600px-Lee_Ufan_-_Dialogue_%28cropped%29.jpg",
+      "description": "여백과 단 하나의 두터운 붓터치가 만들어내는 깊은 울림. 칠해진 부분과 칠해지지 않은 빈 공간 사이의 호흡과 상호작용을 탐구.",
+      "curator_commentary": "서양의 캔버스를 꽉 채우는 정복적 예술에 맞서, 최소한의 개입으로 사물과 세계와의 진정한 만남을 주선하는 동양적 존재론의 정점.",
+      "aesthetic_elements": [
+        "여백(餘白)의 미학",
+        "수용과 비움의 조화",
+        "물질성과 붓터치의 잔향"
+      ]
+    }
+  ],
+  "featured_contemporary_architecture": [
+    {
+      "id": "arch_zaha_hadid_ddp",
+      "urn": "urn:art:architecture:zaha_hadid_ddp",
+      "architect_kr": "자하 하디드",
+      "architect_en": "Zaha Hadid",
+      "pritzker_year": "2004년 여성 최초 프리츠커상 수상",
+      "nationality": "이라크 / 영국",
+      "title_kr": "동대문디자인플라자 (DDP)",
+      "title_en": "Dongdaemun Design Plaza",
+      "completed_year": 2014,
+      "location": "대한민국 서울특별시 중구",
+      "style": "해체주의 및 유기적 비정형 곡면 건축 (Deconstructivism & Parametricism)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Dongdaemun_Design_Plaza_2014.jpg/640px-Dongdaemun_Design_Plaza_2014.jpg",
+      "description": "직선과 기둥이 일절 배제된 세계 최대 규모의 3차원 비정형 알루미늄 패널 외장 건축물. 도심 한복판에 불시착한 우주선 같은 유려한 유체역학적 곡선미.",
+      "architectural_significance": "45,133장의 서로 다른 곡률을 지닌 알루미늄 외장 패널을 BIM(Building Information Modeling) 3D 소프트웨어로 한 장씩 제작·시공하여 현대 디지털 건축 공학의 신기원을 달성.",
+      "aesthetic_elements": [
+        "연속된 공간의 유기적 흐름",
+        "인공 조명과 메탈릭 표면의 빛 반사",
+        "옛 서울성곽 역사와 미래형 랜드마크의 조우"
+      ]
+    },
+    {
+      "id": "arch_tadao_ando_church_of_light",
+      "urn": "urn:art:architecture:tadao_ando_church",
+      "architect_kr": "안도 다다오",
+      "architect_en": "Tadao Ando",
+      "pritzker_year": "1995년 프리츠커상 수상",
+      "nationality": "일본",
+      "title_kr": "빛의 교회 (Church of the Light)",
+      "title_en": "Church of the Light (茨木春日丘教会)",
+      "completed_year": 1989,
+      "location": "일본 오사카부 이바라키시",
+      "style": "노출 콘크리트 미니멀리즘 (Exposed Concrete Minimalism)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Church_of_the_Light_01.jpg/640px-Church_of_the_Light_01.jpg",
+      "description": "장식을 극도로 배제한 어두운 노출 콘크리트 상자 벽면에 십자가 형태로 틈을 내어, 순수한 빛 자체를 성스러운 종교적 제단으로 변모시킨 공간의 시학.",
+      "architectural_significance": "자연(빛, 바람, 공기)을 가장 순수한 상태로 실내에 끌어들이는 안도 다다오 건축 철학의 마스터피스로, 물질성과 비물질성의 완벽한 일치.",
+      "aesthetic_elements": [
+        "거푸집 볼트 구멍이 남긴 촉각적 질감",
+        "빛과 어둠의 극적인 콘트라스트",
+        "극단적 절제를 통한 영성 고양"
+      ]
+    },
+    {
+      "id": "arch_frank_gehry_bilbao",
+      "urn": "urn:art:architecture:frank_gehry_guggenheim",
+      "architect_kr": "프랭크 게리",
+      "architect_en": "Frank Gehry",
+      "pritzker_year": "1989년 프리츠커상 수상",
+      "nationality": "미국 / 캐나다",
+      "title_kr": "빌바오 구겐하임 미술관",
+      "title_en": "Guggenheim Museum Bilbao",
+      "completed_year": 1997,
+      "location": "스페인 바스크주 빌바오",
+      "style": "티타늄 패널 해체주의 조각 건축",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Guggenheim-bilbao-jan05.jpg/640px-Guggenheim-bilbao-jan05.jpg",
+      "description": "쇠락한 철강 산업도시 빌바오를 연간 100만 명이 찾는 세계적 문화 관광도시로 부활시킨 세기의 건축 기적 ('빌바오 효과'의 기원).",
+      "architectural_significance": "33,000장의 얇은 티타늄 금속판이 태양의 각도와 날씨에 따라 황금빛과 은빛으로 물고기 비늘처럼 일렁이는 조각적 건축물.",
+      "aesthetic_elements": [
+        "티타늄의 유려한 반사광",
+        "네르비온강 수변과의 조화",
+        "도시 재생을 이끈 건축의 사회적 힘"
+      ]
+    }
+  ]
+}

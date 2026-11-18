@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-18T13:26:00+09:00",
+  "last_updated": "2026-11-18T14:16:47.663245+09:00",
   "service_name": "Let's Art (렛츠아트)",
   "domain": "global_fine_arts_and_masterpieces",
-  "total_masterpieces_indexed": 18540,
+  "total_masterpieces_indexed": 18605,
   "open_access_sources": [
     "The Metropolitan Museum of Art Open Access (Met Open API, 470,000+ items)",
     "Art Institute of Chicago API (IIIF High-Res Imagery)",
@@ -215,5 +215,6 @@
       "curator_notes": "남성의 직사각형·흑백 패턴과 여성의 원형·화려한 꽃 패턴의 기하학적 대조가 두 성의 결합을 상징합니다.",
       "related_literature": "슈테판 츠바이크의 어제의 세계, 오스트리아 빈 모더니즘 문학"
     }
-  ]
+  ],
+  "last_run_status": "SUCCESS_INCREMENT_ADDED"
 }

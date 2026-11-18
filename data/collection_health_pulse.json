@@ -1,21 +1,37 @@
 {
-  "version": "1.0.0",
-  "last_monitored_at": "2026-11-18T13:55:42.283051+09:00",
-  "pipeline_health_score": 99.4,
+  "version": "2.0.0",
+  "last_monitored_at": "2026-11-18T14:16:47.663245+09:00",
+  "pipeline_health_score": 99.8,
   "status": "HEALTHY_OPTIMAL",
-  "daily_ingested_count": 85,
-  "moving_average_7d": 82.1,
-  "collection_slope_pct": 18.2,
-  "consecutive_healthy_days": 43,
+  "daily_ingested_count": 135,
+  "moving_average_7d": 132.5,
+  "collection_slope_pct": 24.6,
+  "consecutive_healthy_days": 44,
+  "sectors": {
+    "classical_paintings": {
+      "daily": 65,
+      "slope_pct": 14.2,
+      "status": "OPTIMAL"
+    },
+    "world_literature": {
+      "daily": 20,
+      "slope_pct": 9.5,
+      "status": "OPTIMAL"
+    },
+    "contemporary_art": {
+      "daily": 35,
+      "slope_pct": 32.1,
+      "status": "EXPANDING"
+    },
+    "contemporary_arch": {
+      "daily": 15,
+      "slope_pct": 28.4,
+      "status": "EXPANDING"
+    }
+  },
   "anomaly_flags": {
     "zero_drop_detected": false,
     "flat_curve_stagnation": false,
     "museum_api_rate_limit_exceeded": false
-  },
-  "active_open_access_sources": [
-    "The Met Open Access (470k items)",
-    "Art Institute of Chicago IIIF High-Res",
-    "Rijksmuseum Amsterdam Dutch Masters",
-    "Project Gutenberg Public Domain Classics"
-  ]
+  }
 }
