@@ -1,0 +1,32 @@
+name: 24/7 Daily Art & Literature Ingest
+
+on:
+  schedule:
+    - cron: '0 21 * * *' # 매일 06:00 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Daily Art Collector
+        run: |
+          python scripts/daily_art_collector.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(auto-ingest): 24/7 daily art & literature incremental update [skip ci]" && git push)

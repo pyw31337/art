@@ -1,0 +1,219 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-11-18T13:26:00+09:00",
+  "service_name": "Let's Art (렛츠아트)",
+  "domain": "global_fine_arts_and_masterpieces",
+  "total_masterpieces_indexed": 18540,
+  "open_access_sources": [
+    "The Metropolitan Museum of Art Open Access (Met Open API, 470,000+ items)",
+    "Art Institute of Chicago API (IIIF High-Res Imagery)",
+    "Rijksmuseum Amsterdam API (Dutch Golden Age)",
+    "Musée du Louvre & Musée d'Orsay Open Collections",
+    "National Gallery of Art (NGA Washington) Open Access"
+  ],
+  "art_movements": [
+    {
+      "id": "renaissance",
+      "name_kr": "르네상스 (14~16세기)",
+      "key_figures": [
+        "다 빈치",
+        "미켈란젤로",
+        "라파엘로",
+        "보티첼리"
+      ]
+    },
+    {
+      "id": "baroque",
+      "name_kr": "바로크 (17세기)",
+      "key_figures": [
+        "카라바조",
+        "렘브란트",
+        "페르메이르",
+        "벨라스케스"
+      ]
+    },
+    {
+      "id": "romanticism",
+      "name_kr": "낭만주의 (18~19세기)",
+      "key_figures": [
+        "들라크루아",
+        "터너",
+        "프리드리히",
+        "고야"
+      ]
+    },
+    {
+      "id": "impressionism",
+      "name_kr": "인상주의 (19세기 후반)",
+      "key_figures": [
+        "모네",
+        "르누아르",
+        "드가",
+        "피사로"
+      ]
+    },
+    {
+      "id": "post_impressionism",
+      "name_kr": "후기 인상주의 (19세기 말)",
+      "key_figures": [
+        "반 고흐",
+        "세잔",
+        "고갱",
+        "쇠라"
+      ]
+    },
+    {
+      "id": "modern_avant_garde",
+      "name_kr": "20세기 모더니즘 & 아방가르드",
+      "key_figures": [
+        "피카소",
+        "마티스",
+        "클림트",
+        "샤갈",
+        "칸딘스키"
+      ]
+    }
+  ],
+  "featured_paintings": [
+    {
+      "work_id": "art_starry_night",
+      "urn": "urn:art:work:painting:starry_night",
+      "artist_id": "artist_vincent_van_gogh",
+      "artist_name_kr": "빈센트 반 고흐",
+      "artist_name_en": "Vincent van Gogh",
+      "title_kr": "별이 빛나는 밤",
+      "title_en": "The Starry Night",
+      "title_orig": "De sterrennacht",
+      "year": 1889,
+      "movement": "후기 인상주의",
+      "medium": "캔버스에 유채 (Oil on canvas)",
+      "dimensions": "73.7 cm × 92.1 cm",
+      "museum": "뉴욕 근대미술관 (MoMA, New York)",
+      "location_country": "미국",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "palette": [
+        "#0f172a",
+        "#1e3a8a",
+        "#3b82f6",
+        "#f59e0b",
+        "#fde047"
+      ],
+      "description": "고흐가 프랑스 남부 생레미의 정신병원 창밖으로 바라본 새벽 풍경에 내면의 환상과 종교적 숭고미를 투영한 불후의 명작.",
+      "historical_background": "귀를 자르는 비극적인 사건 이후 자진 입원한 고흐는 불안과 고립 속에서도 격렬하게 소용돌이치는 사이프러스 나무와 11개의 불타는 별을 통해 영원한 빛을 갈구했습니다.",
+      "curator_notes": "물감을 튜브째 짜 넣은 듯한 두터운 임파스토(Impasto) 기법과 원형으로 회전하는 붓질은 20세기 표현주의의 직접적인 모태가 되었습니다.",
+      "related_literature": "돈 맥클린의 헌정곡 <Vincent (Starry Starry Night)>, 릴케의 시편"
+    },
+    {
+      "work_id": "art_mona_lisa",
+      "urn": "urn:art:work:painting:mona_lisa",
+      "artist_id": "artist_leonardo_da_vinci",
+      "artist_name_kr": "레오나르도 다 빈치",
+      "artist_name_en": "Leonardo da Vinci",
+      "title_kr": "모나리자 (라 조콘다)",
+      "title_en": "Mona Lisa",
+      "title_orig": "La Gioconda",
+      "year": 1503,
+      "movement": "르네상스 전성기",
+      "medium": "포플러 판넬에 유채",
+      "dimensions": "77 cm × 53 cm",
+      "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
+      "location_country": "프랑스",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1024px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "palette": [
+        "#292524",
+        "#78350f",
+        "#92400e",
+        "#d97706",
+        "#fef3c7"
+      ],
+      "description": "피렌체의 상인 프란체스코 델 조콘도의 부인 리자 게라르디니를 그린 불멸의 초상화. 보는 각도와 마음에 따라 미소가 변하는 신비로움의 극치.",
+      "historical_background": "다 빈치는 이 그림을 의뢰인에게 넘기지 않고 프랑스 앙부아즈성에서 눈을 감는 순간까지 평생 곁에 두고 덧칠하며 완벽을 추구했습니다.",
+      "curator_notes": "눈가와 입꼬리의 경계선을 안개처럼 부드럽게 번지듯 처리하는 스푸마토(Sfumato) 기법과 피라미드형 삼각 안정 구도의 완성을 보여줍니다.",
+      "related_literature": "발터 파터의 르네상스 비평, 단테의 신곡 비트리체"
+    },
+    {
+      "work_id": "art_impression_sunrise",
+      "urn": "urn:art:work:painting:impression_sunrise",
+      "artist_id": "artist_claude_monet",
+      "artist_name_kr": "클로드 모네",
+      "artist_name_en": "Claude Monet",
+      "title_kr": "인상, 해돋이",
+      "title_en": "Impression, Sunrise",
+      "title_orig": "Impression, soleil levant",
+      "year": 1872,
+      "movement": "인상주의",
+      "medium": "캔버스에 유채",
+      "dimensions": "48 cm × 63 cm",
+      "museum": "파리 마르모탕 모네 미술관 (Musée Marmottan Monet)",
+      "location_country": "프랑스",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/1280px-Monet_-_Impression%2C_Sunrise.jpg",
+      "palette": [
+        "#0e7490",
+        "#38bdf8",
+        "#fb923c",
+        "#ea580c",
+        "#f8fafc"
+      ],
+      "description": "르아브르 항구의 안개 낀 바다 위로 붉은 해가 솟아오르는 순간의 빛과 대기의 진동을 포착한 인상파 사조의 역사적 기원작.",
+      "historical_background": "1874년 비평가 루이 르루아가 \"벽지보다도 덜 완성된 인상(Impression)에 불과하다\"고 조롱한 데서 역설적으로 '인상주의'라는 미술사의 가장 위대한 혁명이 탄생했습니다.",
+      "curator_notes": "형태의 정밀 묘사 대신, 망막에 맺히는 순간적인 색채의 조각들을 빠른 필치로 병치하는 분할주의적 시각의 시초입니다.",
+      "related_literature": "보들레르의 현대 생활의 화가, 프루스트의 잃어버린 시간을 찾아서"
+    },
+    {
+      "work_id": "art_girl_pearl_earring",
+      "urn": "urn:art:work:painting:girl_pearl_earring",
+      "artist_id": "artist_johannes_vermeer",
+      "artist_name_kr": "요하네스 페르메이르",
+      "artist_name_en": "Johannes Vermeer",
+      "title_kr": "진주 귀걸이를 한 소녀",
+      "title_en": "Girl with a Pearl Earring",
+      "title_orig": "Het meisje met de parel",
+      "year": 1665,
+      "movement": "네덜란드 바로크 (황금시대)",
+      "medium": "캔버스에 유채",
+      "dimensions": "44.5 cm × 39 cm",
+      "museum": "헤이그 마우리츠하위스 미술관 (Mauritshuis, The Hague)",
+      "location_country": "네덜란드",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/1024px-1665_Girl_with_a_Pearl_Earring.jpg",
+      "palette": [
+        "#09090b",
+        "#1e3a8a",
+        "#e2e8f0",
+        "#facc15",
+        "#b45309"
+      ],
+      "description": "'북유럽의 모나리자'로 불리는 걸작. 어두운 배경 속에서 살짝 뒤돌아보는 이국적인 터번을 쓴 소녀와 찬란하게 빛나는 거대한 진주 한 알.",
+      "historical_background": "특정 인물의 초상화가 아닌 이상화된 의복과 표정을 탐구한 트로니(Tronie) 장르로, 당시 금값보다 비쌌던 천연 울트라마린(청금석 안료)을 아낌없이 사용했습니다.",
+      "curator_notes": "카메라 옵스큐라(어둠상자 렌즈 기구)를 활용하여 빛이 물체 표면에 맺히는 미세한 하이라이트를 보석처럼 묘사했습니다.",
+      "related_literature": "트레이시 슈발리에의 동명 소설 <진주 귀고리 소녀>"
+    },
+    {
+      "work_id": "art_the_kiss",
+      "urn": "urn:art:work:painting:the_kiss",
+      "artist_id": "artist_gustav_klimt",
+      "artist_name_kr": "구스타프 클림트",
+      "artist_name_en": "Gustav Klimt",
+      "title_kr": "키스 (연인)",
+      "title_en": "The Kiss (Der Kuss)",
+      "title_orig": "Der Kuss",
+      "year": 1908,
+      "movement": "빈 분리파 (아르누보 / 상징주의)",
+      "medium": "캔버스에 유채 및 금박 (Oil and gold leaf on canvas)",
+      "dimensions": "180 cm × 180 cm (정사각형 대형 캔버스)",
+      "museum": "빈 벨베데레 궁전 미술관 (Österreichische Galerie Belvedere)",
+      "location_country": "오스트리아",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/1280px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+      "palette": [
+        "#ca8a04",
+        "#eab308",
+        "#fef08a",
+        "#1e293b",
+        "#10b981"
+      ],
+      "description": "진짜 금박을 화폭에 입혀 에로티시즘과 신성한 영성을 하나로 승화시킨 클림트 '황금기(Golden Phase)'의 찬란한 정점.",
+      "historical_background": "비잔틴 제국의 라벤나 모자이크 성화에서 깊은 영감을 받은 클림트는 금박과 은박을 이용해 세속적인 남녀의 포옹을 절대적 사랑의 성소로 끌어올렸습니다.",
+      "curator_notes": "남성의 직사각형·흑백 패턴과 여성의 원형·화려한 꽃 패턴의 기하학적 대조가 두 성의 결합을 상징합니다.",
+      "related_literature": "슈테판 츠바이크의 어제의 세계, 오스트리아 빈 모더니즘 문학"
+    }
+  ]
+}

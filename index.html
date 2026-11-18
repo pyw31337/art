@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Art (렛츠아트) — 세계 명화 & 대문호 고전 문학 가상 갤러리</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 26, 43, 0.85);
+      --card-border: rgba(234, 179, 8, 0.25);
+      --gold: #facc15;
+      --gold-dark: #ca8a04;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --rose: #f43f5e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+    
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 14px; }
+    .logo-badge {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #eab308, #b45309);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+    }
+    h1 { font-size: 24px; font-weight: 800; background: linear-gradient(90deg, #fff, #fef08a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .sub-title { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    
+    .nav-links { display: flex; gap: 12px; align-items: center; }
+    .fed-link {
+      font-size: 12px; color: #cbd5e1; text-decoration: none; padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04); transition: all 0.2s;
+    }
+    .fed-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Top Stats Pulse Bar */
+    .pulse-bar {
+      background: linear-gradient(90deg, rgba(234, 179, 8, 0.12), rgba(14, 165, 233, 0.1));
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .pulse-stat { display: flex; flex-direction: column; }
+    .pulse-stat .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .pulse-stat .value { font-size: 22px; font-weight: 800; color: #fff; margin-top: 2px; }
+    .pulse-stat .value span { font-size: 13px; color: var(--gold); font-weight: 600; }
+
+    /* Search & Tabs */
+    .controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 280px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0.7);
+      color: #fff;
+      font-size: 14px;
+    }
+    .search-input:focus { outline: none; border-color: var(--gold); }
+    .tab-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.25), rgba(202, 138, 4, 0.35));
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+    .art-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .art-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(234, 179, 8, 0.2);
+    }
+
+    /* 3D Frame & Image */
+    .frame-container {
+      position: relative;
+      background: #020617;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+    .art-frame {
+      border: 8px solid #b45309;
+      box-shadow: inset 0 0 10px #78350f, 0 10px 25px rgba(0,0,0,0.8);
+      border-radius: 4px;
+      overflow: hidden;
+      max-height: 280px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #000;
+    }
+    .art-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
+    .art-card:hover .art-img { transform: scale(1.05); }
+
+    /* Card Details */
+    .art-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .art-header-row { display: flex; justify-content: space-between; align-items: flex-start; }
+    .art-title { font-size: 18px; font-weight: 800; color: #fff; }
+    .art-year { font-size: 12px; color: var(--gold); font-weight: 700; background: rgba(234, 179, 8, 0.15); padding: 2px 8px; border-radius: 6px; }
+    .art-artist { font-size: 13px; color: #cbd5e1; font-weight: 600; }
+    .art-museum { font-size: 12px; color: var(--accent); }
+
+    .palette-row { display: flex; gap: 6px; align-items: center; margin-top: 4px; }
+    .palette-swatch { width: 22px; height: 16px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, 0.2); }
+
+    .art-desc { font-size: 12px; color: #cbd5e1; line-height: 1.5; background: rgba(0, 0, 0, 0.3); padding: 10px 12px; border-radius: 8px; }
+    .art-curator { font-size: 11px; color: #fef08a; border-left: 3px solid var(--gold); padding-left: 8px; line-height: 1.4; }
+
+    .btn-view-detail {
+      margin-top: auto;
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(202, 138, 4, 0.25));
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-view-detail:hover { background: var(--gold); color: #000; }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px;
+    }
+    .modal-card {
+      background: #0f172a; border: 1px solid var(--gold); border-radius: 16px;
+      max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 24px; position: relative;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <div class="logo-badge">🏛️</div>
+        <div>
+          <h1>Let's Art (렛츠아트)</h1>
+          <div class="sub-title">세계 18,540점 명화 갤러리 & 6,240편 불후의 고전 문학 아카이브</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="https://pyw31337.github.io/people/" target="_blank" class="fed-link">👥 렛츠피플 거장 연계</a>
+        <a href="https://pyw31337.github.io/law/" target="_blank" class="fed-link">⚖️ 렛츠로 법률</a>
+        <a href="https://pyw31337.github.io/insu/" target="_blank" class="fed-link">🛡️ 렛츠인슈 보험</a>
+        <a href="https://pyw31337.github.io/asset/" target="_blank" class="fed-link">📈 렛츠에셋 금융</a>
+      </div>
+    </header>
+
+    <!-- Top Pulse Stats -->
+    <div class="pulse-bar">
+      <div class="pulse-stat">
+        <div class="label">세계 명화 마스터피스 원장</div>
+        <div class="value" id="statPaintings">18,540 <span>점</span></div>
+      </div>
+      <div class="pulse-stat">
+        <div class="label">세계 대문호 고전 문학</div>
+        <div class="value" id="statLiterature">6,240 <span>편</span></div>
+      </div>
+      <div class="pulse-stat">
+        <div class="label">글로벌 연계 미술관 (Open Access)</div>
+        <div class="value">85 <span>개소 (Met·Louvre·MoMA)</span></div>
+      </div>
+      <div class="pulse-stat">
+        <div class="label">24/7 무인 자동 증분 수집</div>
+        <div class="value" style="color:#34d399">가동 중 <span>(CC0 Public Domain)</span></div>
+      </div>
+    </div>
+
+    <!-- Controls Row -->
+    <div class="controls-row">
+      <input type="text" class="search-input" id="artSearch" placeholder="작품명, 화가/작가, 사조(인상파/르네상스), 소장 미술관 검색..." oninput="applyFilter()">
+      <div class="tab-group">
+        <button class="tab-btn active" onclick="switchTab('paintings')">🏛️ 세계 명화 갤러리</button>
+        <button class="tab-btn" onclick="switchTab('literature')">📖 세계 대문호 고전</button>
+      </div>
+    </div>
+
+    <!-- Main Gallery Grid -->
+    <div class="gallery-grid" id="mainGrid">
+      <p style="color:var(--muted)">작품 데이터를 불러오는 중입니다...</p>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="artModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    let paintings = [];
+    let literature = [];
+    let activeTab = 'paintings';
+
+    async function loadArtData() {
+      try {
+        const [pRes, lRes] = await Promise.all([
+          fetch('data/art_paintings_master_db.json'),
+          fetch('data/world_literature_master_db.json')
+        ]);
+        const pData = await pRes.json();
+        const lData = await lRes.json();
+        paintings = pData.featured_paintings || [];
+        literature = lData.featured_classics || [];
+
+        renderContent();
+      } catch (e) {
+        document.getElementById('mainGrid').innerHTML = '<p style="color:#ef4444">데이터를 불러오지 못했습니다.</p>';
+      }
+    }
+
+    function switchTab(tab) {
+      activeTab = tab;
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('active');
+        if (b.getAttribute('onclick').includes(tab)) b.classList.add('active');
+      });
+      renderContent();
+    }
+
+    function applyFilter() {
+      renderContent();
+    }
+
+    function renderContent() {
+      const q = document.getElementById('artSearch').value.toLowerCase().trim();
+      const grid = document.getElementById('mainGrid');
+
+      if (activeTab === 'paintings') {
+        let list = paintings;
+        if (q) {
+          list = list.filter(p => 
+            p.title_kr.toLowerCase().includes(q) ||
+            p.title_en.toLowerCase().includes(q) ||
+            p.artist_name_kr.toLowerCase().includes(q) ||
+            p.movement.toLowerCase().includes(q) ||
+            p.museum.toLowerCase().includes(q)
+          );
+        }
+
+        if (!list.length) {
+          grid.innerHTML = '<p style="color:var(--muted)">검색 결과가 없습니다.</p>';
+          return;
+        }
+
+        grid.innerHTML = list.map(p => `
+          <div class="art-card">
+            <div class="frame-container">
+              <div class="art-frame">
+                <img class="art-img" src="${p.image_url}" alt="${p.title_kr}" onclick="openModal('${p.work_id}')">
+              </div>
+            </div>
+            <div class="art-body">
+              <div class="art-header-row">
+                <div class="art-title">${p.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${p.title_en})</small></div>
+                <div class="art-year">${p.year}년</div>
+              </div>
+              <div class="art-artist">🎨 ${p.artist_name_kr} · <span style="color:var(--gold); font-size:12px;">${p.movement}</span></div>
+              <div class="art-museum">🏛️ ${p.museum}</div>
+
+              <!-- 대표 색상 팔레트 -->
+              <div class="palette-row">
+                <span style="font-size:11px; color:var(--muted);">색채 팔레트:</span>
+                ${(p.palette || []).map(color => `<div class="palette-swatch" style="background:${color};" title="${color}"></div>`).join('')}
+              </div>
+
+              <div class="art-desc">${p.description}</div>
+              <div class="art-curator">💡 <b>큐레이터 해설:</b> ${p.curator_notes}</div>
+
+              <button class="btn-view-detail" onclick="openModal('${p.work_id}')">🔍 작품 심층 해설 & 도상학 보기</button>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        let list = literature;
+        if (q) {
+          list = list.filter(l =>
+            l.title_kr.toLowerCase().includes(q) ||
+            l.title_en.toLowerCase().includes(q) ||
+            l.author_kr.toLowerCase().includes(q) ||
+            l.genre.toLowerCase().includes(q)
+          );
+        }
+
+        grid.innerHTML = list.map(l => `
+          <div class="art-card" style="border-top:3px solid var(--accent);">
+            <div class="art-body">
+              <div class="art-header-row">
+                <div class="art-title">📖 ${l.title_kr}</div>
+                <div class="art-year" style="color:var(--accent); background:rgba(56,189,248,0.15);">${l.year}년</div>
+              </div>
+              <div class="art-artist">✍️ ${l.author_kr} · <span style="color:var(--muted); font-size:12px;">${l.genre}</span></div>
+              <div style="font-size:12px; color:#94a3b8; margin-top:4px;">시대 사조: <b>${l.era}</b></div>
+
+              <div class="art-desc" style="margin-top:8px;">${l.synopsis}</div>
+
+              <div style="background:rgba(56,189,248,0.06); border-left:3px solid var(--accent); padding:8px 10px; border-radius:4px; font-size:12px; margin-top:6px;">
+                <div style="font-weight:700; color:var(--accent); margin-bottom:4px;">✨ 불후의 명문장:</div>
+                ${(l.immortal_quotes || []).map(q => `
+                  <div style="margin-bottom:4px;">
+                    <div style="font-style:italic; color:#fff;">"${q.quote_kr}"</div>
+                    <div style="font-size:10px; color:var(--muted);">${q.quote_orig}</div>
+                  </div>
+                `).join('')}
+              </div>
+
+              <div style="margin-top:10px; font-size:11px; color:#cbd5e1;">
+                <b>철학적 쟁점:</b> ${(l.philosophical_themes || []).join(' · ')}
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function openModal(workId) {
+      const p = paintings.find(w => w.work_id === workId);
+      if (!p) return;
+
+      const body = document.getElementById('modalBody');
+      body.innerHTML = `
+        <h2 style="font-size:22px; color:#fff; margin-bottom:4px;">${p.title_kr} (${p.title_en})</h2>
+        <div style="font-size:13px; color:var(--gold); margin-bottom:14px;">화가: <b>${p.artist_name_kr}</b> (${p.year}년작, ${p.medium})</div>
+        <img src="${p.image_url}" alt="${p.title_kr}" style="width:100%; max-height:420px; object-fit:contain; background:#000; border-radius:8px; margin-bottom:14px;">
+        <div style="font-size:13px; color:#e2e8f0; line-height:1.6; margin-bottom:12px;">
+          <b>📜 시대적 배경:</b><br>${p.historical_background}
+        </div>
+        <div style="font-size:13px; color:#e2e8f0; line-height:1.6; margin-bottom:12px;">
+          <b>🏛️ 소장처 및 규격:</b> ${p.museum} (${p.dimensions})
+        </div>
+        <div style="font-size:13px; color:#fef08a; background:rgba(234,179,8,0.1); border-left:3px solid var(--gold); padding:8px 12px; border-radius:4px;">
+          <b>📖 연관 문학 및 문화유산:</b> ${p.related_literature}
+        </div>
+      `;
+      document.getElementById('artModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('artModal').style.display = 'none';
+    }
+
+    loadArtData();
+  </script>
+</body>
+</html>

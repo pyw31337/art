@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-11-18T13:26:00+09:00",
+  "service_name": "Let's Art (세계 문학 아카이브)",
+  "domain": "world_classic_literature",
+  "total_classics_indexed": 6240,
+  "open_access_sources": [
+    "Project Gutenberg (70,000+ Free eBooks)",
+    "Internet Archive Open Library",
+    "Standard Ebooks Public Domain Collections"
+  ],
+  "featured_classics": [
+    {
+      "lit_id": "lit_hamlet",
+      "urn": "urn:art:literature:hamlet",
+      "author_id": "writer_william_shakespeare",
+      "author_kr": "윌리엄 셰익스피어",
+      "title_kr": "햄릿",
+      "title_en": "The Tragedy of Hamlet, Prince of Denmark",
+      "year": 1601,
+      "genre": "세계 4대 비극 (극문학)",
+      "era": "영국 르네상스 (엘리자베스조)",
+      "synopsis": "덴마크 엘시노어 성을 무대로, 부왕의 유령으로부터 숙부 클로디어스의 독살 음모를 전해들은 왕자 햄릿이 진실의 규명과 복수, 그리고 존재론적 회의 사이에서 겪는 비극적 서사.",
+      "philosophical_themes": [
+        "존재와 무 (Being vs Non-being)",
+        "도덕적 결벽증과 복수의 딜레마",
+        "운명과 자유의지",
+        "위선과 광기"
+      ],
+      "immortal_quotes": [
+        {
+          "quote_orig": "To be, or not to be, that is the question.",
+          "quote_kr": "사느냐 죽느냐, 그것이 문제로다."
+        },
+        {
+          "quote_orig": "There are more things in heaven and earth, Horatio, Than are dreamt of in your philosophy.",
+          "quote_kr": "호레이쇼, 천지간에는 자네의 철학으로는 꿈도 꾸지 못할 일들이 얼마든지 있네."
+        }
+      ],
+      "major_characters": [
+        {
+          "name": "햄릿",
+          "role": "고뇌하는 덴마크 왕자",
+          "archetype": "우유부단한 지성인"
+        },
+        {
+          "name": "오필리어",
+          "role": "비극적 죽음을 맞는 햄릿의 연인",
+          "archetype": "순수와 희생"
+        },
+        {
+          "name": "클로디어스",
+          "role": "형을 살해하고 왕좌를 찬탈한 숙부",
+          "archetype": "권력욕의 화신"
+        }
+      ]
+    },
+    {
+      "lit_id": "lit_faust",
+      "urn": "urn:art:literature:faust",
+      "author_id": "writer_johann_wolfgang_von_goethe",
+      "author_kr": "요한 볼프강 폰 괴테",
+      "title_kr": "파우스트 (전 2부)",
+      "title_en": "Faust: A Tragedy",
+      "year": 1808,
+      "genre": "비극 희곡 (대서사시)",
+      "era": "독일 고전주의 & 낭만주의",
+      "synopsis": "모든 학문을 섭렵했으나 인생의 허무에 빠진 파우스트 박사가 악마 메피스토펠레스와 영혼을 건 계약을 맺고 세속의 온갖 유혹과 시험을 거쳐, 마침내 타인을 위한 간척 사업에서 진정한 삶의 가치를 발견하고 천상의 구원을 받는 대서사시.",
+      "philosophical_themes": [
+        "끊임없이 방황하고 지향하는 인간성 (Streben)",
+        "선과 악의 변증법",
+        "영원히 여성적인 것이 우리를 이끈다 (Das Ewig-Weibliche)"
+      ],
+      "immortal_quotes": [
+        {
+          "quote_orig": "Es irrt der Mensch, solang er strebt.",
+          "quote_kr": "인간은 노력하는 한 방황한다."
+        },
+        {
+          "quote_orig": "Verweile doch! du bist so schön!",
+          "quote_kr": "멈추어라, 너 정말 아름답구나!"
+        }
+      ],
+      "major_characters": [
+        {
+          "name": "하인리히 파우스트",
+          "role": "진리를 갈망하는 학자"
+        },
+        {
+          "name": "메피스토펠레스",
+          "role": "항상 악을 원하면서도 선을 창조하는 부정의 영"
+        },
+        {
+          "name": "그레트헨",
+          "role": "순결한 사랑으로 파우스트를 구원으로 이끄는 여인"
+        }
+      ]
+    },
+    {
+      "lit_id": "lit_divine_comedy",
+      "urn": "urn:art:literature:divine_comedy",
+      "author_id": "writer_dante_alighieri",
+      "author_kr": "단테 알리기에리",
+      "title_kr": "신곡 (지옥·연옥·천국편)",
+      "title_en": "The Divine Comedy (Divina Commedia)",
+      "year": 1320,
+      "genre": "종교 서사시",
+      "era": "중세 말기 ~ 르네상스 여명기",
+      "synopsis": "서른다섯 살의 단테가 어두운 숲에서 길을 잃은 뒤, 고대 로마 시인 베르길리우스의 안내를 받아 지옥(Inferno) 9개 동심원과 연옥(Purgatorio)을 통과하고, 영원의 연인 베아트리체의 인도로 천국(Paradiso)에 이르러 신의 사랑을 목도하는 여정.",
+      "philosophical_themes": [
+        "인간 영혼의 정화와 구원",
+        "우주를 움직이는 사랑 (L'amor che move il sole e l'altre stelle)",
+        "정의와 역사 심판"
+      ],
+      "immortal_quotes": [
+        {
+          "quote_orig": "Lasciate ogne speranza, voi ch'intrate.",
+          "quote_kr": "이곳에 들어오는 자, 모든 희망을 버릴지어다. (지옥의 문 문구)"
+        }
+      ]
+    }
+  ]
+}
