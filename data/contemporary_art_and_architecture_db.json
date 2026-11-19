@@ -1,19 +1,19 @@
 {
   "version": "2.0.0",
-  "last_updated": "2026-11-18T14:16:47.663245+09:00",
+  "last_updated": "2026-11-19T11:23:47.635157+09:00",
   "domain": "contemporary_art_and_architecture",
   "service_name": "Let's Art (현대 미술 & 현대 건축 아카이브)",
-  "total_items_indexed": 12500,
+  "total_items_indexed": 12550,
   "categories": {
     "contemporary_fine_art": {
       "name": "현대 미술 (Contemporary Art)",
       "description": "현존 활동 작가 및 20~21세기 동시대 미술 거장들의 회화, 조각, 설치미술",
-      "count": 7855
+      "count": 7890
     },
     "contemporary_architecture": {
       "name": "현대 건축 & 공간 미학 (Contemporary Architecture)",
       "description": "프리츠커상 수상 거장 및 세계 랜드마크 현대 건축물, 비구조주의, 미니멀리즘 건축",
-      "count": 4645
+      "count": 4660
     }
   },
   "featured_contemporary_art": [

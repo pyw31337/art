@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-18T14:16:47.663245+09:00",
+  "last_updated": "2026-11-19T11:23:47.635157+09:00",
   "service_name": "Let's Art (렛츠아트)",
   "domain": "global_fine_arts_and_masterpieces",
-  "total_masterpieces_indexed": 18605,
+  "total_masterpieces_indexed": 18670,
   "open_access_sources": [
     "The Metropolitan Museum of Art Open Access (Met Open API, 470,000+ items)",
     "Art Institute of Chicago API (IIIF High-Res Imagery)",
