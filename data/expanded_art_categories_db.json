@@ -1,0 +1,559 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-11-19T18:32:32.225417+09:00",
+  "service_name": "Let's Art (다변화 예술 카테고리 아카이브)",
+  "domain": "multi_category_fine_arts",
+  "total_extended_items_indexed": 38780,
+  "museum_sources": [
+    "뉴욕 근대미술관 (The Museum of Modern Art, MoMA)",
+    "파리 루브르 박물관 (Musée du Louvre)",
+    "런던 대영박물관 (The British Museum)",
+    "대한민국 국립중앙박물관 (National Museum of Korea, NMK)",
+    "뉴욕 메트로폴리탄 미술관 (The Metropolitan Museum of Art, Met)",
+    "국립현대미술관 (National Museum of Modern and Contemporary Art, MMCA)",
+    "암스테르담 국립미술관 (Rijksmuseum)",
+    "피렌체 아카데미아 미술관 (Galleria dell'Accademia, Florence)"
+  ],
+  "categories": {
+    "sculpture": {
+      "name": "조각 & 입체 예술 (Sculpture & 3D Form)",
+      "description": "고대 헬레니즘부터 르네상스, 근현대 입체 조형 거장들의 걸작",
+      "count": 8990
+    },
+    "asian_art": {
+      "name": "동양화 & 한국 전통 고미술 (Asian Masterpieces & Korean Heritage)",
+      "description": "조선 진경산수화, 풍속화, 일본 우키요에, 고려청자 및 조선 백자",
+      "count": 7730
+    },
+    "prints": {
+      "name": "판화, 소묘 & 판각 (Prints, Drawings & Woodcuts)",
+      "description": "뒤러, 렘브란트, 에셔의 정밀 판화 및 목판 예술",
+      "count": 6480
+    },
+    "photography": {
+      "name": "사진 예술 (Fine Art Photography)",
+      "description": "20세기 순수 사진, 결정적 순간 및 다큐멘터리 사진 예술",
+      "count": 5250
+    },
+    "decorative": {
+      "name": "공예, 도예 & 장식 미술 (Decorative Arts & Ceramics)",
+      "description": "아르누보 글라스, 도자기, 금속 공예 및 바우하우스 가구 디자인",
+      "count": 6180
+    },
+    "media_art": {
+      "name": "미디어 & 설치 미술 (Media & Installation Art)",
+      "description": "비디오 아트의 창시자 백남준, 공간과 빛의 설치미술, 개념 미술",
+      "count": 4150
+    }
+  },
+  "featured_sculpture": [
+    {
+      "id": "sculpt_rodin_thinker",
+      "work_id": "sculpt_rodin_thinker",
+      "urn": "urn:art:work:sculpture:rodin_the_thinker",
+      "artist_name_kr": "오귀스트 로댕",
+      "artist_name_en": "Auguste Rodin",
+      "title_kr": "생각하는 사람",
+      "title_en": "The Thinker",
+      "title_orig": "Le Penseur",
+      "year": 1904,
+      "category": "sculpture",
+      "category_kr": "조각 & 입체 조형",
+      "medium": "청동 주조 (Bronze casting)",
+      "dimensions": "189 cm × 98 cm × 140 cm",
+      "museum": "파리 로댕 미술관 (Musée Rodin, Paris)",
+      "museum_key": "louvre_paris",
+      "location": "프랑스 파리",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Thinker%2C_Rodin.jpg/800px-The_Thinker%2C_Rodin.jpg",
+      "palette": [
+        "#1c1917",
+        "#44403c",
+        "#78716c",
+        "#a8a29e",
+        "#d6d3d1"
+      ],
+      "aesthetic_elements": [
+        "인간 실존의 번뇌",
+        "근육질 해부학적 긴장감",
+        "지옥의 문",
+        "근대 조각의 정점"
+      ],
+      "description": "단테의 <신곡> 지옥 편에서 영감을 얻은 <지옥의 문> 상단에서 인간의 비극과 운명을 깊은 고뇌로 내려다보는 시인의 형상을 독립된 대형 입체 조각으로 완성한 근대 조각의 불멸의 기념비.",
+      "curator_notes": "로댕은 단순한 신체 묘사를 넘어 고뇌하는 정신의 내적 에너지를 잔뜩 웅크린 등 근육과 굳게 쥔 주먹, 턱을 괸 손가락의 팽팽한 장력으로 물질화했습니다."
+    },
+    {
+      "id": "sculpt_nike_samothrace",
+      "work_id": "sculpt_nike_samothrace",
+      "urn": "urn:art:work:sculpture:nike_of_samothrace",
+      "artist_name_kr": "작가 미상 (헬레니즘 조각가)",
+      "artist_name_en": "Hellenistic Sculptor",
+      "title_kr": "사모트라케의 니케 (승리의 여신)",
+      "title_en": "Winged Victory of Samothrace",
+      "title_orig": "Victoire de Samothrace",
+      "year": "BC 190년경",
+      "category": "sculpture",
+      "category_kr": "조각 & 입체 조형",
+      "medium": "파로스 대리석 (Parian marble)",
+      "dimensions": "높이 244 cm (받침대 포함 557 cm)",
+      "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
+      "museum_key": "louvre",
+      "location": "프랑스 파리 (다루 계단 상단)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Victoire_de_Samothrace_-_Louvre_Museum_-_May_2014.jpg/800px-Victoire_de_Samothrace_-_Louvre_Museum_-_May_2014.jpg",
+      "palette": [
+        "#f8fafc",
+        "#e2e8f0",
+        "#94a3b8",
+        "#475569",
+        "#1e293b"
+      ],
+      "aesthetic_elements": [
+        "바람에 젖은 옷자락 (Wet Drapery)",
+        "역동적 전진감",
+        "날개의 웅장함",
+        "루브르 3대 보물"
+      ],
+      "description": "에게해 사모트라케 섬의 바위 절벽에서 뱃머리에 내려앉아 승리를 선포하는 순간을 묘사한 헬레니즘 조각의 정수. 머리와 두 팔이 유실되었음에도 바람을 가르는 날개와 얇은 옷감의 주름만으로 압도적인 생명력을 뿜어냅니다.",
+      "curator_notes": "바닷바람에 몸에 감겨붙은 투명한 젖은 옷자락(Wet Drapery) 기법과 앞으로 내딛는 강건한 가슴선의 비례는 고대 그리스 대리석 조각술의 정점을 증명합니다."
+    },
+    {
+      "id": "sculpt_giacometti_walking_man",
+      "work_id": "sculpt_giacometti_walking_man",
+      "urn": "urn:art:work:sculpture:giacometti_walking_man",
+      "artist_name_kr": "알베르토 자코메티",
+      "artist_name_en": "Alberto Giacometti",
+      "title_kr": "걷는 사람 I",
+      "title_en": "Walking Man I",
+      "title_orig": "L'Homme qui marche I",
+      "year": 1960,
+      "category": "sculpture",
+      "category_kr": "조각 & 입체 조형",
+      "medium": "청동 (Bronze)",
+      "dimensions": "183 cm × 26 cm × 97 cm",
+      "museum": "뉴욕 근대미술관 (MoMA, New York)",
+      "museum_key": "moma",
+      "location": "미국 뉴욕",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/L%27Homme_qui_marche_I.jpg/600px-L%27Homme_qui_marche_I.jpg",
+      "palette": [
+        "#18181b",
+        "#3f3f46",
+        "#71717a",
+        "#a1a1aa",
+        "#e4e4e7"
+      ],
+      "aesthetic_elements": [
+        "실존주의 인간상",
+        "극단적 쇠잔미",
+        "상처투성이 청동 질감",
+        "전진하는 의지"
+      ],
+      "description": "2차 세계대전의 참상 이후 앙상하게 뼈대만 남은 실존적 인간이 거친 대지 위를 묵묵히 걸어 나가는 모습을 형상화한 작품. 사르트르의 실존주의 철학을 조형적으로 완벽하게 구현한 20세기 조각의 기념비.",
+      "curator_notes": "살점을 극한까지 깎아내어 더 이상 덜어낼 것이 없는 연약한 막대기 같은 신체 속에 어떤 외부 압력에도 굴하지 않고 앞으로 나아가는 불멸의 인간 존엄성을 응축했습니다."
+    }
+  ],
+  "featured_asian_art": [
+    {
+      "id": "asian_jeongseon_inwang",
+      "work_id": "asian_jeongseon_inwang",
+      "urn": "urn:art:work:asian:jeongseon_inwang_jesaekdo",
+      "artist_name_kr": "겸재 정선",
+      "artist_name_en": "Jeong Seon (Gyeomjae)",
+      "title_kr": "인왕제색도 (국보)",
+      "title_en": "Inwang jesaekdo (Clearing After Rain on Mt. Inwang)",
+      "year": 1751,
+      "category": "asian_art",
+      "category_kr": "동양화 & 한국 고미술",
+      "medium": "지본수묵 (Ink on paper)",
+      "dimensions": "79.2 cm × 138.2 cm",
+      "museum": "국립중앙박물관 (National Museum of Korea, Seoul)",
+      "museum_key": "nmk",
+      "location": "대한민국 서울",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Inwang_jesaekdo.jpg/1280px-Inwang_jesaekdo.jpg",
+      "palette": [
+        "#09090b",
+        "#27272a",
+        "#52525b",
+        "#a1a1aa",
+        "#f4f4f5"
+      ],
+      "aesthetic_elements": [
+        "진경산수화의 절대봉",
+        "비 온 뒤 젖은 암벽",
+        "적묵법(積墨法)",
+        "조선 르네상스 국보"
+      ],
+      "description": "비가 갠 직후 물안개가 자욱하게 피어오르는 인왕산 치마바위의 묵직한 물기를 굵고 대담한 흑갈색 먹물 붓질(적묵법)로 일필휘지한 조선 진경산수화의 최고 걸작. 평생의 벗 이병연의 쾌유를 빌며 그린 애틋한 정신성이 담겨 있습니다.",
+      "curator_notes": "중국 산수화의 관념적 모방을 타파하고 조선의 산천을 독창적인 시점과 필묵으로 포착한 회화 혁명으로, 암벽의 중후한 양감과 계곡의 흰 안개가 극적 흑백 대비를 이룹니다."
+    },
+    {
+      "id": "asian_shin_yunbok_beauty",
+      "work_id": "asian_shin_yunbok_beauty",
+      "urn": "urn:art:work:asian:shin_yunbok_beauty",
+      "artist_name_kr": "혜원 신윤복",
+      "artist_name_en": "Shin Yun-bok (Hyewon)",
+      "title_kr": "미인도 (보물)",
+      "title_en": "Portrait of a Beauty (Miindo)",
+      "year": "18세기 말~19세기 초",
+      "category": "asian_art",
+      "category_kr": "동양화 & 한국 고미술",
+      "medium": "견본채색 (Color on silk)",
+      "dimensions": "114.2 cm × 45.7 cm",
+      "museum": "간송미술관 (Kansong Art Museum, Seoul)",
+      "museum_key": "nmk",
+      "location": "대한민국 서울",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Hyewon-Miindo.jpg/800px-Hyewon-Miindo.jpg",
+      "palette": [
+        "#1c1917",
+        "#312e81",
+        "#1e3a8a",
+        "#dc2626",
+        "#fef3c7"
+      ],
+      "aesthetic_elements": [
+        "동양의 모나리자",
+        "단아한 흑발 가체",
+        "자주색 고름과 옥빛 치마",
+        "풍속화의 백미"
+      ],
+      "description": "조선 후기 여인의 단아하면서도 은근한 관능미와 서정적 내면을 섬세한 필선과 우아한 천연 채색으로 담아낸 한국 인물화의 정수. 저고리 깃 사이로 살포시 드러난 목선과 삼작노리개를 만지는 섬섬옥수가 압권입니다.",
+      "curator_notes": "신윤복 특유의 부드럽고 유려한 선묘와 절제된 옥색 치마, 붉은 삼작노리개의 색채 조화는 당시 조선 사대부 사회의 억압을 넘어선 인간미의 해방을 시각화합니다."
+    },
+    {
+      "id": "asian_hokusai_great_wave",
+      "work_id": "asian_hokusai_great_wave",
+      "urn": "urn:art:work:asian:hokusai_great_wave",
+      "artist_name_kr": "가쓰시카 호쿠사이",
+      "artist_name_en": "Katsushika Hokusai",
+      "title_kr": "가나가와 해변의 높은 파도 아래",
+      "title_en": "The Great Wave off Kanagawa",
+      "year": 1831,
+      "category": "asian_art",
+      "category_kr": "동양화 & 한국 고미술",
+      "medium": "다색 목판화 (Ukiyo-e woodblock print)",
+      "dimensions": "25.7 cm × 37.8 cm",
+      "museum": "런던 대영박물관 (The British Museum, London) & 메트로폴리탄 미술관",
+      "museum_key": "british_museum",
+      "location": "영국 런던",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/1280px-Tsunami_by_hokusai_19th_century.jpg",
+      "palette": [
+        "#0284c7",
+        "#0369a1",
+        "#075985",
+        "#f1f5f9",
+        "#fef3c7"
+      ],
+      "aesthetic_elements": [
+        "프러시안 블루",
+        "자포니즘의 진원지",
+        "후지산 36경",
+        "자연의 거대한 역동성"
+      ],
+      "description": "거대한 발톱처럼 솟구쳐 오르는 파도와 위태롭게 떠 있는 세 척의 배, 그리고 저 멀리 눈 덮인 후지산의 고요함을 대비시킨 세계에서 가장 유명한 우키요에 목판화. 모네와 고흐 등 19세기 유럽 인상파 화가들에게 폭발적인 자포니즘(Japonisme) 열풍을 촉발했습니다.",
+      "curator_notes": "유럽에서 수입된 합성 안료 프러시안 블루(Prussian Blue)를 과감히 사용하여 파도의 심도 깊은 푸른 층위를 극적으로 표현했으며, 드뷔시의 교향시 <바다>의 직접적 모티브가 되었습니다."
+    },
+    {
+      "id": "asian_white_porcelain_moon_jar",
+      "work_id": "asian_white_porcelain_moon_jar",
+      "urn": "urn:art:work:asian:joseon_white_porcelain_moon_jar",
+      "artist_name_kr": "조선 사옹원 사기장 (조선 18세기 전반)",
+      "artist_name_en": "Joseon Royal Potter",
+      "title_kr": "백자 달항아리 (국보)",
+      "title_en": "White Porcelain Moon Jar",
+      "year": "18세기 전반",
+      "category": "asian_art",
+      "category_kr": "동양화 & 한국 고미술",
+      "medium": "백자 (Porcelain with clear glaze)",
+      "dimensions": "높이 45 cm, 지름 44 cm",
+      "museum": "국립중앙박물관 (NMK, Seoul) & 런던 대영박물관 (한국관 소장)",
+      "museum_key": "british_museum",
+      "location": "대한민국 서울 / 영국 런던",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Moon_jar-Baekja_daeho-National_Treasure_No.309.jpg/800px-Moon_jar-Baekja_daeho-National_Treasure_No.309.jpg",
+      "palette": [
+        "#f8fafc",
+        "#f1f5f9",
+        "#e2e8f0",
+        "#cbd5e1",
+        "#94a3b8"
+      ],
+      "aesthetic_elements": [
+        "부정형의 완벽성 (Non-symmetry)",
+        "포용과 비움의 미학",
+        "순백의 유백색",
+        "한국 미의 극치"
+      ],
+      "description": "상부와 하부를 따로 물레로 빚어 이어 붙인 뒤 가마 안에서 자연스럽게 일그러지며 완성된 백자. 인위적인 대칭을 초월한 둥근 부정형의 선과 은은한 유백색 피부는 조선 선비정신의 소박함과 포용의 미덕을 웅변합니다.",
+      "curator_notes": "버나드 리치와 김환기 화백이 격찬했듯, 어떤 각도에서 보아도 너그럽고 담백한 곡선을 보여주며 빛에 따라 푸른빛과 젖빛이 오묘하게 감도는 동양 도예의 최고봉입니다."
+    }
+  ],
+  "featured_prints": [
+    {
+      "id": "print_durer_melencolia",
+      "work_id": "print_durer_melencolia",
+      "urn": "urn:art:work:print:albrecht_durer_melencolia_i",
+      "artist_name_kr": "알브레히트 뒤러",
+      "artist_name_en": "Albrecht Dürer",
+      "title_kr": "멜랑콜리아 I",
+      "title_en": "Melencolia I",
+      "year": 1514,
+      "category": "prints",
+      "category_kr": "판화 & 소묘",
+      "medium": "동판화 (Engraving)",
+      "dimensions": "24 cm × 18.8 cm",
+      "museum": "런던 대영박물관 (The British Museum, London) & 메트로폴리탄 미술관",
+      "museum_key": "british_museum",
+      "location": "영국 런던",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/D%C3%BCrer_Melancholia_I.jpg/800px-D%C3%BCrer_Melancholia_I.jpg",
+      "palette": [
+        "#09090b",
+        "#27272a",
+        "#52525b",
+        "#71717a",
+        "#e4e4e7"
+      ],
+      "aesthetic_elements": [
+        "마법진 마방진 (Magic Square)",
+        "천재성의 우울",
+        "수학적 기하학",
+        "북유럽 르네상스 판화 최고봉"
+      ],
+      "description": "컴퍼스와 기하학 도구에 둘러싸인 채 깊은 우울에 빠진 날개 달린 천사를 묘사한 알브레히트 뒤러의 최고 걸작 동판화. 배경의 4×4 마방진(가로·세로·대각선 합이 34)과 저울, 다면체는 르네상스 지식인의 지적 탐구와 한계를 상징합니다.",
+      "curator_notes": "미크론 단위의 극미세 해칭(선 긋기) 기법으로 명암과 질감을 조각해낸 판화사상 전무후무한 기교와 철학적 도상학의 복합체입니다."
+    },
+    {
+      "id": "print_escher_relativity",
+      "work_id": "print_escher_relativity",
+      "urn": "urn:art:work:print:mc_escher_relativity",
+      "artist_name_kr": "마우리츠 코르넬리스 에셔",
+      "artist_name_en": "M. C. Escher",
+      "title_kr": "상대성 (불가능한 계단)",
+      "title_en": "Relativity",
+      "year": 1953,
+      "category": "prints",
+      "category_kr": "판화 & 소묘",
+      "medium": "석판화 (Lithograph)",
+      "dimensions": "27.7 cm × 29.2 cm",
+      "museum": "헤이그 에셔 박물관 (Escher in Het Paleis, The Hague)",
+      "museum_key": "moma",
+      "location": "네덜란드 헤이그",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Escher%27s_Relativity.jpg/800px-Escher%27s_Relativity.jpg",
+      "palette": [
+        "#18181b",
+        "#3f3f46",
+        "#71717a",
+        "#d4d4d8",
+        "#fafafa"
+      ],
+      "aesthetic_elements": [
+        "3대 중력장 공존",
+        "착시 예술 (Optical Illusions)",
+        "수학적 테셀레이션",
+        "뫼비우스의 공간"
+      ],
+      "description": "서로 다른 세 개의 중력 법칙이 하나의 건축 공간 안에서 동시에 작용하는 불가사의한 세계를 수학적 정밀함으로 계산해낸 석판화. 올라가는 사람과 내려가는 사람이 한 계단에서 평화롭게 교차하는 초현실적 착시의 정수입니다.",
+      "curator_notes": "수학자 펜로즈와 물리학자들에게 지대한 영감을 주었으며, 영화 <인셉션>의 무한 계단 시퀀스의 직접적 모태가 되었습니다."
+    }
+  ],
+  "featured_photography": [
+    {
+      "id": "photo_bresson_gare_saint_lazare",
+      "work_id": "photo_bresson_gare_saint_lazare",
+      "urn": "urn:art:work:photo:bresson_behind_gare_saint_lazare",
+      "artist_name_kr": "앙리 카르티에 브레송",
+      "artist_name_en": "Henri Cartier-Bresson",
+      "title_kr": "생 라자르 역 뒤에서",
+      "title_en": "Behind the Gare Saint-Lazare",
+      "year": 1932,
+      "category": "photography",
+      "category_kr": "사진 예술",
+      "medium": "젤라틴 실버 프린트 (Gelatin silver print)",
+      "dimensions": "35.2 cm × 24.1 cm",
+      "museum": "뉴욕 근대미술관 (MoMA, New York) & 퐁피두 센터",
+      "museum_key": "moma",
+      "location": "미국 뉴욕 / 프랑스 파리",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Behind_the_Gare_Saint-Lazare.jpg/800px-Behind_the_Gare_Saint-Lazare.jpg",
+      "palette": [
+        "#09090b",
+        "#27272a",
+        "#52525b",
+        "#a1a1aa",
+        "#f4f4f5"
+      ],
+      "aesthetic_elements": [
+        "결정적 순간 (The Decisive Moment)",
+        "물웅덩이 위의 비약",
+        "기하학적 완벽 구도",
+        "라이카 스냅 사진의 고전"
+      ],
+      "description": "물웅덩이를 건너뛰려는 남자의 발꿈치가 수면에 닿기 직전의 찰나와 뒤편 서커스 포스터의 무용수 실루엣이 완벽한 시각적 운율을 이루는 '결정적 순간'의 상징적 사진.",
+      "curator_notes": "카르티에 브레송은 기하학적 형태의 직관적 인지와 찰나의 시간성이 결합할 때 사진이 순수 예술의 경지로 도약함을 증명했습니다."
+    },
+    {
+      "id": "photo_ansel_adams_tetons",
+      "work_id": "photo_ansel_adams_tetons",
+      "urn": "urn:art:work:photo:ansel_adams_tetons_and_snake_river",
+      "artist_name_kr": "안셀 아담스",
+      "artist_name_en": "Ansel Adams",
+      "title_kr": "티턴 산맥과 스네이크 강",
+      "title_en": "The Tetons and the Snake River",
+      "year": 1942,
+      "category": "photography",
+      "category_kr": "사진 예술",
+      "medium": "젤라틴 실버 프린트 (Zone System)",
+      "dimensions": "Large Format View Camera Print",
+      "museum": "미국 국립문서기록청 (NARA) & 뉴욕 MoMA",
+      "museum_key": "moma",
+      "location": "미국 워싱턴 / 뉴욕",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Adams_The_Tetons_and_the_Snake_River.jpg/1280px-Adams_The_Tetons_and_the_Snake_River.jpg",
+      "palette": [
+        "#0a0a0a",
+        "#262626",
+        "#525252",
+        "#a3a3a3",
+        "#fafafa"
+      ],
+      "aesthetic_elements": [
+        "존 시스템 (Zone System)",
+        "웅장한 대자연의 파노라마",
+        "빛과 암부의 11단계 계조",
+        "보이저 골든 레코드 수록"
+      ],
+      "description": "와이오밍주 그랜드 티턴 국립공원의 눈 덮인 거대한 산맥과 은빛으로 굽이쳐 흐르는 스네이크 강의 숭고한 빛을 11단계 명암 계조로 정밀하게 정착시킨 풍경 사진의 신화.",
+      "curator_notes": "인류 문명을 외계 지적 생명체에 알리기 위해 제작된 보이저호 골든 레코드에 지구의 대표 풍경으로 영구 수록되었습니다."
+    }
+  ],
+  "featured_decorative": [
+    {
+      "id": "craft_celadon_melon_bottle",
+      "work_id": "craft_celadon_melon_bottle",
+      "urn": "urn:art:work:craft:goryeo_celadon_melon_shaped_bottle",
+      "artist_name_kr": "고려 강진 관요 도공 (고려 12세기 인종조)",
+      "artist_name_en": "Goryeo Royal Potter",
+      "title_kr": "청자 참외모양 병 (국보)",
+      "title_en": "Celadon Melon-shaped Bottle",
+      "year": 1146,
+      "category": "decorative",
+      "category_kr": "공예, 도예 & 장식 미술",
+      "medium": "비색 청자 (Celadon with jade-green glaze)",
+      "dimensions": "높이 22.8 cm, 몸통지름 14.4 cm",
+      "museum": "국립중앙박물관 (National Museum of Korea, Seoul)",
+      "museum_key": "nmk",
+      "location": "대한민국 서울",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Celadon_Melon-shaped_Bottle_from_the_Tomb_of_King_Injong_of_Goryeo-National_Treasure_No.94.jpg/800px-Celadon_Melon-shaped_Bottle_from_the_Tomb_of_King_Injong_of_Goryeo-National_Treasure_No.94.jpg",
+      "palette": [
+        "#047857",
+        "#059669",
+        "#10b981",
+        "#6ee7b7",
+        "#f0fdf4"
+      ],
+      "aesthetic_elements": [
+        "천하제일 비색 (翡色)",
+        "참외 능골의 정교한 분할",
+        "단아한 치마형 굽",
+        "고려 청자의 금자탑"
+      ],
+      "description": "고려 17대 인종의 장릉에서 출토된 순청자. 여덟 가닥의 참외골로 단정하게 분할된 몸체와 주름치마 모양의 기품 있는 굽받침, 티 없이 맑고 깊은 에메랄드 비색 유약은 송나라 사신 서긍이 <선화봉사고려도경>에서 '천하제일'이라 극찬한 고려 청자의 절정입니다.",
+      "curator_notes": "화려한 상감 문양에 의존하지 않고 오직 기품 넘치는 조형 비례와 유약의 비취색만으로 신비로운 영성을 자아냅니다."
+    },
+    {
+      "id": "craft_lalique_dragonfly_brooch",
+      "work_id": "craft_lalique_dragonfly_brooch",
+      "urn": "urn:art:work:craft:rene_lalique_dragonfly_woman_brooch",
+      "artist_name_kr": "르네 라리크",
+      "artist_name_en": "René Lalique",
+      "title_kr": "잠자리 여인 코사지 브로치",
+      "title_en": "Dragonfly Woman Corsage Brooch",
+      "year": 1898,
+      "category": "decorative",
+      "category_kr": "공예, 도예 & 장식 미술",
+      "medium": "금, 플리카주르 에나멜, 다이아몬드, 문스톤",
+      "dimensions": "23 cm × 26.5 cm",
+      "museum": "리스본 칼루스테 굴벤키안 박물관 (Gulbenkian Museum) & 파리 장식미술관 소장",
+      "museum_key": "louvre_paris",
+      "location": "포르투갈 리스본 / 프랑스 파리",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dragonfly_woman_corsage_ornament.jpg/800px-Dragonfly_woman_corsage_ornament.jpg",
+      "palette": [
+        "#064e3b",
+        "#047857",
+        "#0d9488",
+        "#fbbf24",
+        "#fef3c7"
+      ],
+      "aesthetic_elements": [
+        "아르누보 주얼리의 최고봉",
+        "반투명 플리카주르 에나멜",
+        "여성과 곤충의 신비적 변신",
+        "자연주의 곡선"
+      ],
+      "description": "1900년 파리 만국박람회를 뒤흔든 아르누보 장식미술의 전설. 황금과 보석, 투명한 스테인드글라스 효과를 내는 플리카주르(plique-à-jour) 에나멜 기법으로 잠자리의 시스루 날개와 여인의 매혹적인 얼굴을 융합했습니다.",
+      "curator_notes": "단순한 보석 세공을 순수 예술의 경지로 끌어올린 혁신적인 걸작으로, 프랑스 아르누보의 관능과 자연주의 미학을 대변합니다."
+    }
+  ],
+  "featured_media_art": [
+    {
+      "id": "media_namjune_the_more_the_better",
+      "work_id": "media_namjune_the_more_the_better",
+      "urn": "urn:art:work:media:nam_june_paik_the_more_the_better",
+      "artist_name_kr": "백남준",
+      "artist_name_en": "Nam June Paik",
+      "title_kr": "다다익선 (The More, The Better)",
+      "title_en": "The More, The Better",
+      "year": 1988,
+      "category": "media_art",
+      "category_kr": "미디어 & 설치 미술",
+      "medium": "1,003대의 CRT 브라운관 모니터, 철골 타워",
+      "dimensions": "높이 18.5 m, 지름 7.5 m",
+      "museum": "국립현대미술관 과천관 (MMCA Gwacheon)",
+      "museum_key": "nmk",
+      "location": "대한민국 과천",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Nam_June_Paik_-_The_More_The_Better.jpg/800px-Nam_June_Paik_-_The_More_The_Better.jpg",
+      "palette": [
+        "#1e1b4b",
+        "#4338ca",
+        "#06b6d4",
+        "#f43f5e",
+        "#fde047"
+      ],
+      "aesthetic_elements": [
+        "비디오 아트의 시원",
+        "개천절 10월 3일을 상징하는 1003대 TV",
+        "미디어 탑(Tower)",
+        "글로벌 소통의 비전"
+      ],
+      "description": "1988년 서울 올림픽을 기념하여 개천절(10월 3일)을 상징하는 1,003대의 TV 모니터로 세운 세계 최대 규모의 비디오 타워 조각. 전 세계의 전통 춤과 문화, 현대 예술 영상이 현란하게 교차하며 인류 공존과 정보 고속도로의 도래를 예견했습니다.",
+      "curator_notes": "텔레비전이라는 일방향 수신 매체를 예술적 인터랙티브 조각으로 전복시킨 백남준 예술철학의 총집결체입니다."
+    },
+    {
+      "id": "media_duchamp_fountain",
+      "work_id": "media_duchamp_fountain",
+      "urn": "urn:art:work:media:marcel_duchamp_fountain",
+      "artist_name_kr": "마르셀 뒤샹",
+      "artist_name_en": "Marcel Duchamp",
+      "title_kr": "샘 (Fountain)",
+      "title_en": "Fountain",
+      "year": 1917,
+      "category": "media_art",
+      "category_kr": "미디어 & 설치 미술",
+      "medium": "도기제 남성용 소변기 (Readymade)",
+      "dimensions": "36 cm × 48 cm × 61 cm",
+      "museum": "뉴욕 근대미술관 (MoMA) & 런던 테이트 모던 (Tate Modern)",
+      "museum_key": "moma",
+      "location": "미국 뉴욕 / 영국 런던",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Duchamp_Fountaine.jpg/800px-Duchamp_Fountaine.jpg",
+      "palette": [
+        "#f8fafc",
+        "#e2e8f0",
+        "#94a3b8",
+        "#64748b",
+        "#1e293b"
+      ],
+      "aesthetic_elements": [
+        "레디메이드 (Readymade)",
+        "개념 미술의 시초",
+        "예술의 정의를 바꾼 사건",
+        "20세기 미술사 최대의 충격"
+      ],
+      "description": "공장에서 대량 생산된 기성품 소변기를 거꾸로 세워놓고 가명 'R. Mutt 1917'을 서명하여 전시회에 출품함으로써 '예술이란 무엇인가'라는 질문을 영원히 바꿔놓은 개념 미술의 시초.",
+      "curator_notes": "화가의 손기술이나 시각적 미(Retinal art)가 아니라, 사물에 새로운 생각을 부여하는 작가의 '선택' 자체가 예술의 본질임을 선언한 현대 미술사 최대의 혁명작입니다."
+    }
+  ]
+}

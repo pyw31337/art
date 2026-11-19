@@ -1,37 +1,68 @@
 {
-  "version": "2.0.0",
-  "last_monitored_at": "2026-11-19T11:23:47.635157+09:00",
-  "pipeline_health_score": 99.8,
-  "status": "HEALTHY_OPTIMAL",
-  "daily_ingested_count": 135,
-  "moving_average_7d": 132.5,
-  "collection_slope_pct": 24.6,
-  "consecutive_healthy_days": 44,
+  "version": "3.0.0",
+  "last_monitored_at": "2026-11-19T18:32:32.225417+09:00",
+  "pipeline_health_score": 99.9,
+  "status": "MULTI_MUSEUM_OPTIMAL",
+  "daily_ingested_count": 330,
+  "active_museum_gateways": [
+    "moma",
+    "louvre",
+    "british_museum",
+    "met",
+    "artic",
+    "nmk_korea"
+  ],
   "sectors": {
     "classical_paintings": {
-      "daily": 65,
-      "slope_pct": 14.2,
+      "daily": 85,
+      "source": "MoMA, Louvre, Met, Chicago, Rijksmuseum",
+      "status": "OPTIMAL"
+    },
+    "sculpture_3d": {
+      "daily": 35,
+      "source": "Louvre, Rodin, MoMA, Borghese",
+      "status": "EXPANDED"
+    },
+    "asian_korean_art": {
+      "daily": 40,
+      "source": "NMK Korea, Kansong, British Museum",
+      "status": "EXPANDED"
+    },
+    "prints_drawings": {
+      "daily": 25,
+      "source": "British Museum, Met, Albertina",
+      "status": "EXPANDED"
+    },
+    "fine_art_photography": {
+      "daily": 20,
+      "source": "MoMA Photo Dept, NARA, Pompidou",
+      "status": "EXPANDED"
+    },
+    "decorative_ceramics": {
+      "daily": 30,
+      "source": "V&A, NMK Korea, Gulbenkian",
+      "status": "EXPANDED"
+    },
+    "media_installation": {
+      "daily": 15,
+      "source": "MMCA, MoMA PS1, Tate Modern",
+      "status": "EXPANDED"
+    },
+    "contemporary_art": {
+      "daily": 45,
+      "source": "Tate, Pompidou, Naoshima",
+      "status": "OPTIMAL"
+    },
+    "contemporary_arch": {
+      "daily": 20,
+      "source": "Pritzker Architecture Prize Foundation",
       "status": "OPTIMAL"
     },
     "world_literature": {
-      "daily": 20,
-      "slope_pct": 9.5,
-      "status": "OPTIMAL"
-    },
-    "contemporary_art": {
-      "daily": 35,
-      "slope_pct": 32.1,
-      "status": "EXPANDING"
-    },
-    "contemporary_arch": {
       "daily": 15,
-      "slope_pct": 28.4,
-      "status": "EXPANDING"
+      "source": "Project Gutenberg, Internet Archive",
+      "status": "OPTIMAL"
     }
   },
-  "anomaly_flags": {
-    "zero_drop_detected": false,
-    "flat_curve_stagnation": false,
-    "museum_api_rate_limit_exceeded": false
-  }
+  "total_ecosystem_records": 76830
 }

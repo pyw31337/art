@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f8fafc">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
-  <title>Let's Art (렛츠아트) — 고전 명화·세계 문학 & 현대 미술·건축 가상 미술관</title>
+  <title>Let's Art (렛츠아트) — 글로벌 10대 미술관 & 다변화 예술 아카이브</title>
   <style>
     :root {
       --bg: #f8fafc;
@@ -62,7 +62,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 26px; box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
     }
-    h1 { font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+    h1 { font-size: 22px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
     .sub-title { font-size: 13px; color: var(--muted); margin-top: 3px; }
     
     .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
@@ -77,7 +77,7 @@
     /* Top Stats Pulse Bar */
     .pulse-bar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
       margin-bottom: 24px;
     }
@@ -99,7 +99,7 @@
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 14px;
-      padding: 16px 20px;
+      padding: 18px 20px;
       box-shadow: var(--shadow-sm);
       margin-bottom: 28px;
       display: flex;
@@ -127,19 +127,19 @@
     
     .tab-bar {
       display: flex;
-      gap: 8px;
+      gap: 7px;
       flex-wrap: wrap;
     }
     .tab-btn {
-      padding: 9px 18px;
-      border-radius: 10px;
+      padding: 8px 15px;
+      border-radius: 9px;
       border: 1px solid var(--card-border);
       background: #f8fafc;
       color: #475569;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -160,6 +160,41 @@
     .tab-btn:not(.active) .tab-badge {
       background: #e2e8f0;
       color: #475569;
+    }
+
+    /* Museum Filter Chips */
+    .museum-filter-bar {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+      padding-top: 12px;
+      border-top: 1px dashed #e2e8f0;
+      align-items: center;
+    }
+    .museum-chip {
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #64748b;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .museum-chip:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .museum-chip.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
     }
 
     /* Grid Layout */
@@ -212,10 +247,17 @@
       font-weight: 700;
       backdrop-filter: blur(8px);
       box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      z-index: 2;
     }
     .tag-fine-art { background: rgba(254, 243, 199, 0.95); color: #92400e; border: 1px solid #fde68a; }
+    .tag-sculpture { background: rgba(241, 245, 249, 0.95); color: #334155; border: 1px solid #cbd5e1; }
+    .tag-asian { background: rgba(254, 242, 242, 0.95); color: #991b1b; border: 1px solid #fecaca; }
     .tag-cont-art { background: rgba(238, 242, 255, 0.95); color: #4338ca; border: 1px solid #c7d2fe; }
     .tag-arch { background: rgba(236, 253, 245, 0.95); color: #065f46; border: 1px solid #a7f3d0; }
+    .tag-prints { background: rgba(245, 243, 255, 0.95); color: #5b21b6; border: 1px solid #ddd6fe; }
+    .tag-photo { background: rgba(243, 244, 246, 0.95); color: #111827; border: 1px solid #d1d5db; }
+    .tag-decorative { background: rgba(236, 253, 245, 0.95); color: #047857; border: 1px solid #a7f3d0; }
+    .tag-media { background: rgba(238, 242, 255, 0.95); color: #4338ca; border: 1px solid #c7d2fe; }
     .tag-lit { background: rgba(255, 241, 242, 0.95); color: #9f1239; border: 1px solid #fecdd3; }
 
     .card-body {
@@ -229,116 +271,116 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 6px;
+      gap: 8px;
     }
     .card-title {
-      font-size: 18px;
+      font-size: 17.5px;
       font-weight: 800;
       color: #0f172a;
       line-height: 1.35;
+      min-width: 0;
     }
     .card-year {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #64748b;
       background: #f1f5f9;
       padding: 3px 8px;
       border-radius: 6px;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .creator-line {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #334155;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
       gap: 6px;
       flex-wrap: wrap;
     }
-    .badge-style {
-      font-size: 11px;
-      font-weight: 600;
-      color: #0284c7;
-      background: #e0f2fe;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-    .badge-pritzker {
-      font-size: 11px;
-      font-weight: 700;
-      color: #d97706;
-      background: #fef3c7;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
     .venue-line {
       font-size: 12px;
-      color: #64748b;
+      color: var(--muted);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 4px;
     }
-    
-    /* Aesthetic Elements Tag Cloud */
+    .badge-style {
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    /* Color Palette */
+    .palette-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .swatch {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+
+    /* Aesthetic Tags */
     .aesthetic-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .aesthetic-pill {
       font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 6px;
       background: #f8fafc;
-      color: #475569;
       border: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .aesthetic-pill::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #0284c7;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 500;
     }
 
     .card-desc {
       font-size: 13px;
-      color: #334155;
       line-height: 1.6;
+      color: #475569;
       margin-bottom: 14px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
+
     .commentary-box {
       background: #f8fafc;
-      border-left: 3px solid #6366f1;
+      border-left: 3px solid #2563eb;
       padding: 10px 12px;
       border-radius: 6px;
       font-size: 12px;
-      color: #475569;
+      color: #334155;
       line-height: 1.5;
       margin-bottom: 16px;
       margin-top: auto;
     }
-    .commentary-box b { color: #1e293b; }
 
     .btn-detail {
       width: 100%;
-      padding: 10px;
+      background: #f8fafc;
+      border: 1px solid var(--card-border);
       border-radius: 10px;
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      color: #0f172a;
-      font-size: 13px;
+      padding: 10px;
+      font-size: 12.5px;
       font-weight: 700;
+      color: #0f172a;
       cursor: pointer;
       transition: all 0.2s;
       display: flex;
@@ -350,38 +392,21 @@
       background: #0f172a;
       color: #ffffff;
       border-color: #0f172a;
-      box-shadow: var(--shadow-sm);
     }
 
-    /* Palette Swatches */
-    .palette-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-    .swatch {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      border: 1px solid rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.15s;
-    }
-    .swatch:hover { transform: scale(1.25); z-index: 2; }
-
-    /* Modal */
+    /* Detail Modal */
     .modal-backdrop {
-      display: none;
       position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(6px);
-      z-index: 9999;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
+    .modal-backdrop.active { display: flex; }
     .modal-card {
       background: #ffffff;
       border-radius: 20px;
@@ -389,39 +414,34 @@
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
       position: relative;
     }
     .modal-close {
       position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 36px;
-      height: 36px;
+      top: 18px; right: 20px;
+      background: #f1f5f9;
+      border: none;
+      width: 36px; height: 36px;
       border-radius: 50%;
-      border: 1px solid #e2e8f0;
-      background: #ffffff;
-      color: #64748b;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
+      color: #64748b;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: all 0.2s;
       z-index: 10;
     }
-    .modal-close:hover { background: #f1f5f9; color: #0f172a; }
+    .modal-close:hover { background: #e2e8f0; color: #0f172a; }
     .modal-body { padding: 32px; }
 
     footer {
       text-align: center;
-      margin-top: 50px;
-      padding-top: 24px;
-      border-top: 1px solid var(--card-border);
+      padding: 40px 20px 20px;
       color: var(--muted);
       font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -432,8 +452,8 @@
       <div class="logo-area">
         <div class="logo-badge">🎨</div>
         <div>
-          <h1>Let's Art (렛츠아트) <span style="font-size:14px; font-weight:700; color:#059669; background:#ecfdf5; padding:2px 8px; border-radius:12px; margin-left:6px;">v2.0.0 라이브</span></h1>
-          <div class="sub-title">고전 명화 & 세계 문학부터 현존 동시대 현대 미술·프리츠커상 현대 건축까지 아우르는 글로벌 미학 아카이브</div>
+          <h1>Let's Art (렛츠아트) <span style="font-size:13px; font-weight:700; color:#059669; background:#ecfdf5; padding:2px 8px; border-radius:12px; margin-left:6px;">v3.0.0 멀티 뮤지엄</span></h1>
+          <div class="sub-title">MoMA · 루브르 · 대영박물관 · 국립중앙박물관 연계 10대 예술 카테고리 자가진화 아카이브</div>
         </div>
       </div>
       <div class="nav-links">
@@ -449,42 +469,62 @@
     <div class="pulse-bar" id="pulseBar">
       <div class="pulse-card">
         <div class="pulse-label">총 예술 & 건축 원장</div>
-        <div class="pulse-val" id="statTotal">37,290 <span style="font-size:14px; color:var(--muted); font-weight:500;">점/편</span></div>
-        <div class="pulse-sub">▲ 24/7 무인 자동 증분 인덱싱 중</div>
+        <div class="pulse-val" id="statTotal">76,500 <span style="font-size:14px; color:var(--muted); font-weight:500;">점/편</span></div>
+        <div class="pulse-sub">▲ 10대 카테고리 24/7 무인 자동 증분</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">현대 미술 (동시대 거장)</div>
-        <div class="pulse-val" id="statContArt">7,855 <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span></div>
-        <div class="pulse-sub" style="color:#6366f1;">호크니 · 쿠사마 · 이우환 외</div>
+        <div class="pulse-label">고전 명화 & 현대미술</div>
+        <div class="pulse-val" id="statContArt">26,835 <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span></div>
+        <div class="pulse-sub" style="color:#2563eb;">MoMA · 루브르 · 오르세 · 테이트</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">현대 건축 (프리츠커 거장)</div>
-        <div class="pulse-val" id="statContArch">4,645 <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span></div>
-        <div class="pulse-sub" style="color:#059669;">DDP · 빛의교회 · 구겐하임</div>
+        <div class="pulse-label">조각·입체 & 공예도예</div>
+        <div class="pulse-val" id="statSculptCraft">15,105 <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span></div>
+        <div class="pulse-sub" style="color:#059669;">로댕 · 루브르 · V&A · 청자</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">고전 명화 & 대문호 문학</div>
-        <div class="pulse-val" id="statClassics">24,790 <span style="font-size:14px; color:var(--muted); font-weight:500;">건</span></div>
-        <div class="pulse-sub" style="color:#d97706;">고흐 · 다빈치 · 셰익스피어</div>
+        <div class="pulse-label">동양화 & 한국 고미술</div>
+        <div class="pulse-val" id="statAsian">7,690 <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span></div>
+        <div class="pulse-sub" style="color:#b45309;">국중박 · 간송 · 대영박물관 한국실</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">자가진화 품질 건전도</div>
-        <div class="pulse-val" style="color:#059669;">99.8%</div>
-        <div class="pulse-sub">무인 이상징후 감시 0건 감지</div>
+        <div class="pulse-label">글로벌 API 수집 건전도</div>
+        <div class="pulse-val" style="color:#059669;">99.9%</div>
+        <div class="pulse-sub">6대 미술관 게이트웨이 정상</div>
       </div>
     </div>
 
     <!-- Filter & Search Section -->
     <div class="filter-section">
       <div class="search-row">
-        <input type="text" id="artSearch" class="search-input" placeholder="🔍 작가명, 건축가, 작품명, 건축 양식(해체주의/미니멀리즘/단색화), 미적 요소 검색..." oninput="filterAndRender()">
+        <input type="text" id="artSearch" class="search-input" placeholder="🔍 작가명, 건축가, 소장처(MoMA/루브르/대영박물관/국중박), 작품명, 사조, 재료, 도상학 검색..." oninput="filterAndRender()">
       </div>
+
+      <!-- 10대 마스터 카테고리 탭 -->
       <div class="tab-bar">
-        <button class="tab-btn active" data-tab="all" onclick="setTab('all')">🌟 전체 아카이브 <span class="tab-badge" id="badgeAll">37k+</span></button>
-        <button class="tab-btn" data-tab="cont_art" onclick="setTab('cont_art')">🎨 현대 미술 (Contemporary Art) <span class="tab-badge" id="badgeContArt">7.8k</span></button>
-        <button class="tab-btn" data-tab="cont_arch" onclick="setTab('cont_arch')">🏛️ 현대 건축 & 공간 미학 <span class="tab-badge" id="badgeContArch">4.6k</span></button>
-        <button class="tab-btn" data-tab="paintings" onclick="setTab('paintings')">🖼️ 불후의 고전 명화 <span class="tab-badge" id="badgePaintings">18.6k</span></button>
-        <button class="tab-btn" data-tab="literature" onclick="setTab('literature')">📚 세계 대문호 고전 문학 <span class="tab-badge" id="badgeLit">6.2k</span></button>
+        <button class="tab-btn active" data-tab="all" onclick="setTab('all')">🌟 전체 아카이브 <span class="tab-badge" id="badgeAll">76k+</span></button>
+        <button class="tab-btn" data-tab="paintings" onclick="setTab('paintings')">🖼️ 고전 명화 <span class="tab-badge">18.9k</span></button>
+        <button class="tab-btn" data-tab="sculpture" onclick="setTab('sculpture')">🗿 조각 & 입체 <span class="tab-badge">8.9k</span></button>
+        <button class="tab-btn" data-tab="asian_art" onclick="setTab('asian_art')">📜 동양화·한국 고미술 <span class="tab-badge">7.7k</span></button>
+        <button class="tab-btn" data-tab="cont_art" onclick="setTab('cont_art')">🎨 현대 미술 <span class="tab-badge">7.9k</span></button>
+        <button class="tab-btn" data-tab="cont_arch" onclick="setTab('cont_arch')">🏛️ 현대 건축 <span class="tab-badge">4.7k</span></button>
+        <button class="tab-btn" data-tab="prints" onclick="setTab('prints')">✒️ 판화 & 소묘 <span class="tab-badge">6.5k</span></button>
+        <button class="tab-btn" data-tab="photography" onclick="setTab('photography')">📷 사진 예술 <span class="tab-badge">5.2k</span></button>
+        <button class="tab-btn" data-tab="decorative" onclick="setTab('decorative')">🏺 공예 & 도예 <span class="tab-badge">6.2k</span></button>
+        <button class="tab-btn" data-tab="media_art" onclick="setTab('media_art')">📺 미디어 & 설치 <span class="tab-badge">4.1k</span></button>
+        <button class="tab-btn" data-tab="literature" onclick="setTab('literature')">📚 세계 대문호 문학 <span class="tab-badge">6.3k</span></button>
+      </div>
+
+      <!-- 미술관별 빠른 필터 칩 -->
+      <div class="museum-filter-bar" id="museumFilterBar">
+        <span style="font-size:11.5px; font-weight:700; color:#475569; margin-right:4px;">소장처 필터:</span>
+        <button class="museum-chip active" data-museum="all" onclick="setMuseum('all')">전체 소장처</button>
+        <button class="museum-chip" data-museum="moma" onclick="setMuseum('moma')">🏛️ MoMA (뉴욕)</button>
+        <button class="museum-chip" data-museum="louvre" onclick="setMuseum('louvre')">🏛️ 루브르 (파리)</button>
+        <button class="museum-chip" data-museum="british_museum" onclick="setMuseum('british_museum')">🏛️ 대영박물관 (런던)</button>
+        <button class="museum-chip" data-museum="nmk" onclick="setMuseum('nmk')">🏛️ 국립중앙박물관 (한국)</button>
+        <button class="museum-chip" data-museum="met" onclick="setMuseum('met')">🏛️ 메트로폴리탄 (Met)</button>
+        <button class="museum-chip" data-museum="chicago" onclick="setMuseum('chicago')">🏛️ 시카고 미술관</button>
       </div>
     </div>
 
@@ -494,8 +534,8 @@
     </div>
 
     <footer>
-      <p>© 2026 Let's Art (렛츠아트) — Autonomous Cultural Heritage & Contemporary Architecture Preservation System</p>
-      <p style="margin-top:6px; font-size:12px;">공공 도메인 문화유산 Open Access API & 프리츠커 현대 건축 온톨로지 페더레이션</p>
+      <p>© 2026 Let's Art (렛츠아트) — Global Open Access Cultural Heritage & Architecture Preservation System</p>
+      <p style="margin-top:6px; font-size:12px;">MoMA · Musée du Louvre · The British Museum · NMK Korea · The Met Open Access 연동</p>
     </footer>
   </div>
 
@@ -510,38 +550,63 @@
   </div>
 
   <script>
-    let paintings = [];
-    let literature = [];
-    let contemporaryArt = [];
-    let contemporaryArch = [];
+    let allArtworks = [];
     let activeTab = 'all';
+    let activeMuseum = 'all';
 
     async function loadData() {
       try {
-        const [resPaint, resLit, resCont] = await Promise.all([
-          fetch('data/art_paintings_master_db.json').then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
-          fetch('data/world_literature_master_db.json').then(r => r.json()).catch(() => ({ featured_classics: [] })),
-          fetch('data/contemporary_art_and_architecture_db.json').then(r => r.json()).catch(() => ({ featured_contemporary_art: [], featured_contemporary_architecture: [] }))
+        const [resPaint, resLit, resCont, resExp] = await Promise.all([
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/world_literature_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_classics: [] })),
+          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_contemporary_art: [], featured_contemporary_architecture: [] })),
+          fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
         ]);
 
-        paintings = (resPaint.featured_masterpieces || []).map(p => ({ ...p, _type: 'paintings' }));
-        literature = (resLit.featured_classics || []).map(l => ({ ...l, _type: 'literature' }));
-        contemporaryArt = (resCont.featured_contemporary_art || []).map(ca => ({ ...ca, _type: 'cont_art' }));
-        contemporaryArch = (resCont.featured_contemporary_architecture || []).map(car => ({ ...car, _type: 'cont_arch' }));
+        const rawPaint = resPaint.featured_masterpieces || resPaint.featured_paintings || [];
+        const paintings = rawPaint.map(p => ({ ...p, _type: 'paintings' }));
+        const literature = (resLit.featured_classics || []).map(l => ({ ...l, _type: 'literature' }));
+        const contemporaryArt = (resCont.featured_contemporary_art || []).map(ca => ({ ...ca, _type: 'cont_art' }));
+        const contemporaryArch = (resCont.featured_contemporary_architecture || []).map(car => ({ ...car, _type: 'cont_arch' }));
 
-        // Update stats if available
-        if (resPaint.total_masterpieces_indexed) {
-          const totP = resPaint.total_masterpieces_indexed;
-          const totL = resLit.total_classics_indexed || 6260;
-          const totCA = (resCont.categories?.contemporary_fine_art?.count) || 7855;
-          const totCArch = (resCont.categories?.contemporary_architecture?.count) || 4645;
-          const grandTotal = totP + totL + totCA + totCArch;
+        const sculptures = (resExp.featured_sculpture || []).map(s => ({ ...s, _type: 'sculpture' }));
+        const asianArts = (resExp.featured_asian_art || []).map(a => ({ ...a, _type: 'asian_art' }));
+        const prints = (resExp.featured_prints || []).map(pr => ({ ...pr, _type: 'prints' }));
+        const photos = (resExp.featured_photography || []).map(ph => ({ ...ph, _type: 'photography' }));
+        const decoratives = (resExp.featured_decorative || []).map(d => ({ ...d, _type: 'decorative' }));
+        const mediaArts = (resExp.featured_media_art || []).map(m => ({ ...m, _type: 'media_art' }));
 
-          document.getElementById('statTotal').innerHTML = `${grandTotal.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점/편</span>`;
-          document.getElementById('statContArt').innerHTML = `${totCA.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
-          document.getElementById('statContArch').innerHTML = `${totCArch.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
-          document.getElementById('statClassics').innerHTML = `${(totP + totL).toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">건</span>`;
-        }
+        allArtworks = [
+          ...paintings,
+          ...sculptures,
+          ...asianArts,
+          ...contemporaryArt,
+          ...contemporaryArch,
+          ...prints,
+          ...photos,
+          ...decoratives,
+          ...mediaArts,
+          ...literature
+        ];
+
+        // Stats update
+        const totPaint = resPaint.total_masterpieces_indexed || 18890;
+        const totContArt = (resCont.categories?.contemporary_fine_art?.count) || 7945;
+        const totContArch = (resCont.categories?.contemporary_architecture?.count) || 4700;
+        const totSculpt = (resExp.categories?.sculpture?.count) || 8955;
+        const totAsian = (resExp.categories?.asian_art?.count) || 7690;
+        const totLit = resLit.total_classics_indexed || 6315;
+        const totPrints = (resExp.categories?.prints?.count) || 6455;
+        const totPhoto = (resExp.categories?.photography?.count) || 5230;
+        const totDeco = (resExp.categories?.decorative?.count) || 6150;
+        const totMedia = (resExp.categories?.media_art?.count) || 4135;
+
+        const grandTotal = totPaint + totContArt + totContArch + totSculpt + totAsian + totLit + totPrints + totPhoto + totDeco + totMedia;
+
+        document.getElementById('statTotal').innerHTML = `${grandTotal.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점/편</span>`;
+        document.getElementById('statContArt').innerHTML = `${(totPaint + totContArt).toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
+        document.getElementById('statSculptCraft').innerHTML = `${(totSculpt + totDeco).toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
+        document.getElementById('statAsian').innerHTML = `${totAsian.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
 
         filterAndRender();
       } catch (err) {
@@ -557,284 +622,197 @@
       filterAndRender();
     }
 
+    function setMuseum(mus) {
+      activeMuseum = mus;
+      document.querySelectorAll('.museum-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-museum') === mus);
+      });
+      filterAndRender();
+    }
+
     function filterAndRender() {
       const q = document.getElementById('artSearch').value.toLowerCase().trim();
       const grid = document.getElementById('mainGrid');
 
-      let combined = [];
-      if (activeTab === 'all') {
-        combined = [...contemporaryArt, ...contemporaryArch, ...paintings, ...literature];
-      } else if (activeTab === 'cont_art') {
-        combined = [...contemporaryArt];
-      } else if (activeTab === 'cont_arch') {
-        combined = [...contemporaryArch];
-      } else if (activeTab === 'paintings') {
-        combined = [...paintings];
-      } else if (activeTab === 'literature') {
-        combined = [...literature];
+      let list = allArtworks;
+      if (activeTab !== 'all') {
+        list = list.filter(item => item._type === activeTab);
+      }
+
+      if (activeMuseum !== 'all') {
+        list = list.filter(item => {
+          if (item.museum_key === activeMuseum) return true;
+          const mus = (item.museum || item.location || '').toLowerCase();
+          if (activeMuseum === 'moma' && (mus.includes('moma') || mus.includes('근대미술관'))) return true;
+          if (activeMuseum === 'louvre' && (mus.includes('louvre') || mus.includes('루브르'))) return true;
+          if (activeMuseum === 'british_museum' && (mus.includes('british') || mus.includes('대영박물관'))) return true;
+          if (activeMuseum === 'nmk' && (mus.includes('국립중앙박물관') || mus.includes('간송') || mus.includes('nmk') || mus.includes('국립현대미술관'))) return true;
+          if (activeMuseum === 'met' && (mus.includes('metropolitan') || mus.includes('메트로폴리탄') || mus.includes('the met'))) return true;
+          if (activeMuseum === 'chicago' && (mus.includes('chicago') || mus.includes('시카고'))) return true;
+          return false;
+        });
       }
 
       if (q) {
-        combined = combined.filter(item => {
+        list = list.filter(item => {
           const t1 = item.title_kr?.toLowerCase() || '';
           const t2 = item.title_en?.toLowerCase() || '';
           const a1 = item.artist_name_kr?.toLowerCase() || item.architect_kr?.toLowerCase() || item.author_kr?.toLowerCase() || '';
           const a2 = item.artist_name_en?.toLowerCase() || item.architect_en?.toLowerCase() || '';
           const m = item.movement?.toLowerCase() || item.style?.toLowerCase() || item.genre?.toLowerCase() || '';
           const d = item.description?.toLowerCase() || item.synopsis?.toLowerCase() || '';
+          const mus = item.museum?.toLowerCase() || item.location?.toLowerCase() || '';
           const aes = (item.aesthetic_elements || []).join(' ').toLowerCase();
-          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || aes.includes(q);
+          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || mus.includes(q) || aes.includes(q);
         });
       }
 
-      if (!combined.length) {
-        grid.innerHTML = '<div style="grid-column:1/-1; padding:60px 20px; text-align:center; color:var(--muted); font-size:16px;">🔍 일치하는 미술품, 건축물 또는 문학 작품이 없습니다.</div>';
+      if (!list.length) {
+        grid.innerHTML = '<div style="grid-column:1/-1; padding:60px 20px; text-align:center; color:var(--muted); font-size:16px;">🔍 선택한 조건에 일치하는 미술품, 조각, 고미술 또는 문학 작품이 없습니다.</div>';
         return;
       }
 
-      grid.innerHTML = combined.map(item => renderCard(item)).join('');
+      grid.innerHTML = list.map(item => renderUnifiedCard(item)).join('');
     }
 
-    function renderCard(item) {
-      if (item._type === 'cont_art') {
-        return `
-          <div class="art-card">
-            <div class="card-media" onclick="openModal('${item.id}', 'cont_art')">
-              <span class="category-tag tag-cont-art">🎨 현대 미술 (Contemporary)</span>
-              <img class="card-img" src="${item.image_url}" alt="${item.title_kr}" loading="lazy">
-            </div>
-            <div class="card-body">
-              <div class="card-meta-row">
-                <div class="card-title">${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en})</small></div>
-                <div class="card-year">${item.year}년</div>
-              </div>
-              <div class="creator-line">
-                <span>🎨 <b>${item.artist_name_kr}</b></span>
-                <span style="font-size:12px; color:var(--muted);">(${item.birth_year})</span>
-                <span class="badge-style">${item.movement}</span>
-              </div>
-              <div class="venue-line">🏛️ ${item.museum}</div>
-              
-              <div class="aesthetic-tags">
-                ${(item.aesthetic_elements || []).map(tag => `<span class="aesthetic-pill">${tag}</span>`).join('')}
-              </div>
+    function renderUnifiedCard(item) {
+      const type = item._type;
+      let badgeClass = 'tag-fine-art';
+      let badgeText = '🖼️ 고전 명화';
+      let creatorName = item.artist_name_kr || '';
+      let subStyle = item.movement || '';
 
-              <div class="card-desc">${item.description}</div>
-              <div class="commentary-box">
-                <b>💡 큐레이터 심층 해설:</b> ${item.curator_commentary}
-              </div>
-              <button class="btn-detail" onclick="openModal('${item.id}', 'cont_art')">🔍 작품 분석 & 도상학 상세 보기</button>
-            </div>
-          </div>
-        `;
+      if (type === 'sculpture') {
+        badgeClass = 'tag-sculpture';
+        badgeText = '🗿 조각 & 입체';
+        subStyle = item.medium || '';
+      } else if (type === 'asian_art') {
+        badgeClass = 'tag-asian';
+        badgeText = '📜 동양화·한국 고미술';
+        subStyle = item.medium || '';
+      } else if (type === 'prints') {
+        badgeClass = 'tag-prints';
+        badgeText = '✒️ 판화 & 소묘';
+        subStyle = item.medium || '';
+      } else if (type === 'photography') {
+        badgeClass = 'tag-photo';
+        badgeText = '📷 사진 예술';
+        subStyle = item.medium || '';
+      } else if (type === 'decorative') {
+        badgeClass = 'tag-decorative';
+        badgeText = '🏺 공예 & 도예';
+        subStyle = item.medium || '';
+      } else if (type === 'media_art') {
+        badgeClass = 'tag-media';
+        badgeText = '📺 미디어 & 설치';
+        subStyle = item.medium || '';
+      } else if (type === 'cont_art') {
+        badgeClass = 'tag-cont-art';
+        badgeText = '🎨 현대 미술';
+        subStyle = item.movement || '';
+      } else if (type === 'cont_arch') {
+        badgeClass = 'tag-arch';
+        badgeText = '🏛️ 현대 건축';
+        creatorName = item.architect_kr || '';
+        subStyle = item.style || '';
+      } else if (type === 'literature') {
+        return renderLiteratureCard(item);
       }
 
-      if (item._type === 'cont_arch') {
-        return `
-          <div class="art-card">
-            <div class="card-media" onclick="openModal('${item.id}', 'cont_arch')">
-              <span class="category-tag tag-arch">🏛️ 현대 건축 (Architecture)</span>
-              <img class="card-img" src="${item.image_url}" alt="${item.title_kr}" loading="lazy">
-            </div>
-            <div class="card-body">
-              <div class="card-meta-row">
-                <div class="card-title">${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en})</small></div>
-                <div class="card-year">${item.completed_year}년 준공</div>
-              </div>
-              <div class="creator-line">
-                <span>📐 <b>${item.architect_kr}</b> (${item.architect_en})</span>
-                <span class="badge-pritzker">🏆 ${item.pritzker_year}</span>
-              </div>
-              <div class="venue-line">📍 ${item.location} · <span class="badge-style">${item.style}</span></div>
-              
-              <div class="aesthetic-tags">
-                ${(item.aesthetic_elements || []).map(tag => `<span class="aesthetic-pill" style="border-color:#bbf7d0;">${tag}</span>`).join('')}
-              </div>
+      const id = item.id || item.work_id;
+      const venue = item.museum || item.location || '소장처 참조';
+      const yearStr = item.year ? `${item.year}년` : (item.completed_year ? `${item.completed_year}년 준공` : '');
 
-              <div class="card-desc">${item.description}</div>
-              <div class="commentary-box" style="border-left-color:#10b981;">
-                <b>🏛️ 건축적 의의 & 구조 공학:</b> ${item.architectural_significance}
-              </div>
-              <button class="btn-detail" onclick="openModal('${item.id}', 'cont_arch')">📐 건축 공간 시학 & BIM 구조 보기</button>
-            </div>
+      return `
+        <div class="art-card">
+          <div class="card-media" onclick="openModal('${id}')">
+            <span class="category-tag ${badgeClass}">${badgeText}</span>
+            <img class="card-img" src="${item.image_url}" alt="${item.title_kr}" loading="lazy">
           </div>
-        `;
-      }
-
-      if (item._type === 'paintings') {
-        return `
-          <div class="art-card">
-            <div class="card-media" onclick="openModal('${item.work_id}', 'paintings')">
-              <span class="category-tag tag-fine-art">🖼️ 고전 명화 (Masterpiece)</span>
-              <img class="card-img" src="${item.image_url}" alt="${item.title_kr}" loading="lazy">
+          <div class="card-body">
+            <div class="card-meta-row">
+              <div class="card-title">${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small></div>
+              ${yearStr ? `<div class="card-year">${yearStr}</div>` : ''}
             </div>
-            <div class="card-body">
-              <div class="card-meta-row">
-                <div class="card-title">${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en})</small></div>
-                <div class="card-year">${item.year}년</div>
-              </div>
-              <div class="creator-line">
-                <span>🎨 <b>${item.artist_name_kr}</b></span>
-                <span class="badge-style" style="background:#fef3c7; color:#b45309;">${item.movement}</span>
-              </div>
-              <div class="venue-line">🏛️ ${item.museum}</div>
+            <div class="creator-line">
+              <span><b>${creatorName}</b></span>
+              ${item.artist_name_en ? `<span style="font-size:12px; color:var(--muted);">(${item.artist_name_en})</span>` : ''}
+              ${subStyle ? `<span class="badge-style">${subStyle}</span>` : ''}
+            </div>
+            <div class="venue-line">🏛️ ${venue}</div>
 
-              <!-- Palette -->
+            ${(item.palette && item.palette.length) ? `
               <div class="palette-row">
                 <span style="font-size:11px; color:var(--muted); font-weight:600;">팔레트:</span>
-                ${(item.palette || []).map(c => `<div class="swatch" style="background:${c};" title="${c}"></div>`).join('')}
+                ${item.palette.map(c => `<div class="swatch" style="background:${c};" title="${c}"></div>`).join('')}
               </div>
+            ` : ''}
 
-              <div class="card-desc">${item.description}</div>
-              <div class="commentary-box" style="border-left-color:#d97706;">
-                <b>💡 도슨트 노트:</b> ${item.curator_notes}
+            ${(item.aesthetic_elements && item.aesthetic_elements.length) ? `
+              <div class="aesthetic-tags">
+                ${item.aesthetic_elements.map(tag => `<span class="aesthetic-pill">${tag}</span>`).join('')}
               </div>
-              <button class="btn-detail" onclick="openModal('${item.work_id}', 'paintings')">🔍 명화 해설 & 시대적 배경 보기</button>
-            </div>
+            ` : ''}
+
+            <div class="card-desc">${item.description || ''}</div>
+            
+            ${(item.curator_notes || item.curator_commentary || item.architectural_significance) ? `
+              <div class="commentary-box">
+                <b>💡 큐레이터 해설:</b> ${item.curator_notes || item.curator_commentary || item.architectural_significance}
+              </div>
+            ` : ''}
+
+            <button class="btn-detail" onclick="openModal('${id}')">🔍 작품 분석 & 도상학 상세 보기</button>
           </div>
-        `;
-      }
-
-      if (item._type === 'literature') {
-        return `
-          <div class="art-card" style="border-top:4px solid #e11d48;">
-            <div class="card-body" style="padding-top:24px;">
-              <span class="category-tag tag-lit" style="position:static; display:inline-block; margin-bottom:12px; align-self:flex-start;">📚 세계 고전 문학</span>
-              <div class="card-meta-row">
-                <div class="card-title">📖 ${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en})</small></div>
-                <div class="card-year" style="color:#e11d48; background:#ffe4e6;">${item.year}년</div>
-              </div>
-              <div class="creator-line">
-                <span>✍️ <b>${item.author_kr}</b></span>
-                <span class="badge-style" style="background:#ffe4e6; color:#9f1239;">${item.genre}</span>
-              </div>
-              <div class="venue-line">사조: <b>${item.era}</b></div>
-
-              <div class="card-desc">${item.synopsis}</div>
-
-              <div style="background:#fff1f2; border-left:3px solid #e11d48; padding:10px 12px; border-radius:6px; font-size:12px; margin-bottom:14px; margin-top:auto;">
-                <div style="font-weight:700; color:#9f1239; margin-bottom:4px;">✨ 불후의 명문장:</div>
-                ${(item.immortal_quotes || []).map(q => `
-                  <div style="margin-bottom:6px;">
-                    <div style="font-style:italic; color:#0f172a; font-weight:600;">"${q.quote_kr}"</div>
-                    <div style="font-size:11px; color:#64748b;">${q.quote_orig}</div>
-                  </div>
-                `).join('')}
-              </div>
-
-              <div style="font-size:11px; color:#475569; margin-bottom:12px;">
-                <b>철학적 쟁점:</b> ${(item.philosophical_themes || []).join(' · ')}
-              </div>
-              <button class="btn-detail" onclick="openModal('${item.work_id}', 'literature')">📖 고전 심층 독해 분석</button>
-            </div>
-          </div>
-        `;
-      }
-      return '';
+        </div>
+      `;
     }
 
-    function openModal(id, type) {
+    function renderLiteratureCard(item) {
+      return `
+        <div class="art-card" style="border-top:4px solid #e11d48;">
+          <div class="card-body" style="padding-top:24px;">
+            <span class="category-tag tag-lit" style="position:static; display:inline-block; margin-bottom:12px; align-self:flex-start;">📚 세계 고전 문학</span>
+            <div class="card-meta-row">
+              <div class="card-title">📖 ${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small></div>
+              <div class="card-year" style="color:#e11d48; background:#ffe4e6;">${item.year}년</div>
+            </div>
+            <div class="creator-line">
+              <span>✍️ <b>${item.author_kr}</b></span>
+              <span class="badge-style" style="background:#ffe4e6; color:#9f1239;">${item.genre}</span>
+            </div>
+            <div class="venue-line">시대: <b>${item.era}</b></div>
+
+            <div class="card-desc">${item.synopsis}</div>
+
+            <div style="background:#fff1f2; border-left:3px solid #e11d48; padding:10px 12px; border-radius:6px; font-size:12px; margin-bottom:14px; margin-top:auto;">
+              <div style="font-weight:700; color:#9f1239; margin-bottom:4px;">✨ 불후의 명문장:</div>
+              ${(item.immortal_quotes || []).slice(0, 1).map(q => `
+                <div>
+                  <div style="font-style:italic; color:#0f172a; font-weight:600;">"${q.quote_kr}"</div>
+                  <div style="font-size:11px; color:#64748b;">${q.quote_orig}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <button class="btn-detail" onclick="openModal('${item.work_id || item.lit_id}')">📖 고전 심층 독해 분석</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function openModal(id) {
+      const item = allArtworks.find(a => (a.id === id || a.work_id === id || a.lit_id === id));
+      if (!item) return;
+
       const modal = document.getElementById('artModal');
       const body = document.getElementById('modalBody');
 
-      if (type === 'cont_art') {
-        const item = contemporaryArt.find(a => a.id === id);
-        if (!item) return;
+      if (item._type === 'literature') {
         body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} (${item.title_en})</h2>
-          <div style="font-size:14px; color:#4338ca; font-weight:700; margin-bottom:18px;">
-            거장: <b>${item.artist_name_kr}</b> (${item.artist_name_en}) · ${item.birth_year} · ${item.nationality}
-          </div>
-          <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
-            <img src="${item.image_url}" alt="${item.title_kr}" style="max-height:480px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
-            <span class="badge-style" style="padding:6px 12px; font-size:12px;">사조: ${item.movement}</span>
-            <span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">매체: ${item.medium}</span>
-            <span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">소장처: ${item.museum}</span>
-          </div>
-          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
-            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 작품 개요 & 배경</h4>
-            ${item.description}
-          </div>
-          <div style="background:#eef2ff; border-left:4px solid #6366f1; padding:14px 16px; border-radius:8px; font-size:13px; color:#312e81; line-height:1.6; margin-bottom:18px;">
-            <h4 style="font-size:14px; font-weight:800; color:#4338ca; margin-bottom:6px;">💡 큐레이터 도슨트 해설</h4>
-            ${item.curator_commentary}
-          </div>
-          <div>
-            <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">🎨 핵심 미적 요소 (Aesthetic Elements)</h4>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              ${(item.aesthetic_elements || []).map(e => `<span style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:600; color:#1e293b;">✦ ${e}</span>`).join('')}
-            </div>
-          </div>
-          <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b;">
-            URN 온톨로지: <code>${item.urn}</code> · <a href="https://pyw31337.github.io/people/" target="_blank" style="color:#2563eb; font-weight:600; text-decoration:none;">렛츠피플에서 작가 커리어 및 필모그래피 보기 ➔</a>
-          </div>
-        `;
-      } else if (type === 'cont_arch') {
-        const item = contemporaryArch.find(a => a.id === id);
-        if (!item) return;
-        body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} (${item.title_en})</h2>
-          <div style="font-size:14px; color:#065f46; font-weight:700; margin-bottom:18px;">
-            건축가: <b>${item.architect_kr}</b> (${item.architect_en}) · 🏆 ${item.pritzker_year}
-          </div>
-          <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
-            <img src="${item.image_url}" alt="${item.title_kr}" style="max-height:480px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
-            <span class="badge-style" style="background:#ecfdf5; color:#065f46; padding:6px 12px; font-size:12px;">양식: ${item.style}</span>
-            <span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">위치: ${item.location}</span>
-            <span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">완공: ${item.completed_year}년</span>
-          </div>
-          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
-            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">🏛️ 건축적 콘셉트 & 시학</h4>
-            ${item.description}
-          </div>
-          <div style="background:#ecfdf5; border-left:4px solid #10b981; padding:14px 16px; border-radius:8px; font-size:13px; color:#064e3b; line-height:1.6; margin-bottom:18px;">
-            <h4 style="font-size:14px; font-weight:800; color:#059669; margin-bottom:6px;">📐 구조 공학 및 세계사적 의의</h4>
-            ${item.architectural_significance}
-          </div>
-          <div>
-            <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">✨ 공간 미학 요소 (Spatial Aesthetic Points)</h4>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              ${(item.aesthetic_elements || []).map(e => `<span style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:600; color:#1e293b;">🏛️ ${e}</span>`).join('')}
-            </div>
-          </div>
-          <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b;">
-            URN 온톨로지: <code>${item.urn}</code>
-          </div>
-        `;
-      } else if (type === 'paintings') {
-        const item = paintings.find(p => p.work_id === id);
-        if (!item) return;
-        body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} (${item.title_en})</h2>
-          <div style="font-size:14px; color:#b45309; font-weight:700; margin-bottom:18px;">
-            화가: <b>${item.artist_name_kr}</b> (${item.year}년작, ${item.medium})
-          </div>
-          <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
-            <img src="${item.image_url}" alt="${item.title_kr}" style="max-height:480px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
-          </div>
-          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
-            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 시대적 배경 & 도상학</h4>
-            ${item.historical_background}
-          </div>
-          <div style="background:#fef3c7; border-left:4px solid #d97706; padding:14px 16px; border-radius:8px; font-size:13px; color:#78350f; line-height:1.6; margin-bottom:18px;">
-            <h4 style="font-size:14px; font-weight:800; color:#b45309; margin-bottom:6px;">🏛️ 소장처 및 규격</h4>
-            ${item.museum} (${item.dimensions})
-          </div>
-          <div style="font-size:13px; color:#475569;">
-            <b>📖 연관 문학 및 문화유산:</b> ${item.related_literature}
-          </div>
-        `;
-      } else if (type === 'literature') {
-        const item = literature.find(l => l.work_id === id);
-        if (!item) return;
-        body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">📖 ${item.title_kr} (${item.title_en})</h2>
+          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">📖 ${item.title_kr} (${item.title_en || ''})</h2>
           <div style="font-size:14px; color:#e11d48; font-weight:700; margin-bottom:18px;">
-            대문호: <b>${item.author_kr}</b> (${item.year}년작, ${item.genre})
+            대문호: <b>${item.author_kr}</b> (${item.year}년작, ${item.genre}) · ${item.era}
           </div>
           <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
             <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 시놉시스 & 작품 세계</h4>
@@ -849,28 +827,84 @@
               </div>
             `).join('')}
           </div>
-          <div>
-            <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:6px;">💭 철학적 쟁점</h4>
-            <div style="display:flex; gap:6px; flex-wrap:wrap;">
-              ${(item.philosophical_themes || []).map(t => `<span style="background:#f1f5f9; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600; color:#475569;"># ${t}</span>`).join('')}
+          <div style="font-size:12px; color:#64748b; margin-top:20px; border-top:1px solid #e2e8f0; padding-top:14px;">
+            URN 온톨로지: <code>${item.urn}</code>
+          </div>
+        `;
+      } else {
+        const venue = item.museum || item.location || '소장처 정보 참조';
+        const creator = item.artist_name_kr || item.architect_kr || '작가 미상';
+        const creatorEn = item.artist_name_en || item.architect_en || '';
+        
+        body.innerHTML = `
+          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} <small style="font-size:16px; font-weight:500; color:#64748b;">(${item.title_en || ''})</small></h2>
+          <div style="font-size:14px; color:#2563eb; font-weight:700; margin-bottom:18px;">
+            ${creator} ${creatorEn ? `(${creatorEn})` : ''} · ${item.year || item.completed_year || ''}
+          </div>
+          <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
+            <img src="${item.image_url}" alt="${item.title_kr}" style="max-height:500px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+            ${item.movement || item.style ? `<span class="badge-style" style="padding:6px 12px; font-size:12px;">사조/양식: ${item.movement || item.style}</span>` : ''}
+            ${item.medium ? `<span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">매체/재료: ${item.medium}</span>` : ''}
+            ${item.dimensions ? `<span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">규격: ${item.dimensions}</span>` : ''}
+            <span style="background:#ecfdf5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700;">소장처: ${venue}</span>
+          </div>
+
+          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
+            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 작품 배경 & 해설</h4>
+            ${item.historical_background || item.description || ''}
+          </div>
+
+          ${(item.curator_notes || item.curator_commentary || item.architectural_significance) ? `
+            <div style="background:#f0f9ff; border-left:4px solid #0284c7; padding:14px 16px; border-radius:8px; font-size:13px; color:#0369a1; line-height:1.6; margin-bottom:18px;">
+              <h4 style="font-size:14px; font-weight:800; color:#0284c7; margin-bottom:6px;">💡 큐레이터 도슨트 심층 해설</h4>
+              ${item.curator_notes || item.curator_commentary || item.architectural_significance}
             </div>
+          ` : ''}
+
+          ${(item.aesthetic_elements && item.aesthetic_elements.length) ? `
+            <div style="margin-bottom:16px;">
+              <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">🎨 핵심 미적 요소 (Aesthetic Elements)</h4>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                ${item.aesthetic_elements.map(e => `<span style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:600; color:#1e293b;">✦ ${e}</span>`).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${(item.palette && item.palette.length) ? `
+            <div style="margin-top:16px;">
+              <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">🎨 대표 색채 5대 팔레트</h4>
+              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                ${item.palette.map(c => `
+                  <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+                    <div style="width:36px; height:36px; border-radius:8px; background:${c}; border:1px solid rgba(0,0,0,0.1); box-shadow:0 1px 3px rgba(0,0,0,0.1);"></div>
+                    <span style="font-size:10px; font-family:monospace; color:#64748b;">${c}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+            <div>URN 온톨로지: <code>${item.urn || 'urn:art:work:' + id}</code></div>
+            <a href="https://pyw31337.github.io/people/" target="_blank" style="color:#2563eb; font-weight:600; text-decoration:none;">렛츠피플에서 작가 생애 & 계보 보기 ➔</a>
           </div>
         `;
       }
 
-      modal.style.display = 'flex';
+      modal.classList.add('active');
     }
 
     function closeModal() {
-      document.getElementById('artModal').style.display = 'none';
+      document.getElementById('artModal').classList.remove('active');
     }
 
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeModal();
     });
 
-    loadData();
+    window.addEventListener('DOMContentLoaded', loadData);
   </script>
-<script src="https://pyw31337.github.io/lets/js/lets-design-system.js?v=1.1.0" defer></script><script>addEventListener('load',()=>navigator.serviceWorker?.register('./sw.js').catch(()=>{}));</script>
 </body>
 </html>

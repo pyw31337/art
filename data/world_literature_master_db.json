@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-19T11:23:47.635157+09:00",
+  "last_updated": "2026-11-19T18:32:32.225417+09:00",
   "service_name": "Let's Art (세계 문학 아카이브)",
   "domain": "world_classic_literature",
-  "total_classics_indexed": 6280,
+  "total_classics_indexed": 6310,
   "open_access_sources": [
     "Project Gutenberg (70,000+ Free eBooks)",
     "Internet Archive Open Library",
