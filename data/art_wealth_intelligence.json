@@ -1,0 +1,40 @@
+{
+  "service_name": "Let's Art Intelligence Platform",
+  "service_version": "LDS v2.5.0 (MutualArt Ultra-High-Value Art Wealth Benchmark)",
+  "updated_at": "2026-11-19 14:58:30 KST",
+  "macro_stats": {
+    "total_tracked_art_wealth_trillion_krw": 2.68,
+    "total_masterpieces_indexed": 23202,
+    "tax_payment_in_kind_savings_trillion_krw": 1.15,
+    "illicit_collateral_investigations_count": 2
+  },
+  "art_wealth_cases": [
+    {
+      "id": "art-case-001",
+      "collection_name": "삼성 이건희 컬렉션 (Lee Kun-hee Art Collection)",
+      "collector": "고 이건희 회장 유족 (이재용 삼성전자 회장 외)",
+      "total_value_trillion_krw": 2.30,
+      "pieces_count": 23188,
+      "tax_mechanism": "상속세 물납(Payment in Kind) 및 국립박물관 전격 기증을 통한 1조 원 상당 절세 및 사법 리스크 완화",
+      "masterpieces": [
+        "정선 '인왕제색도' (국보 제216호)",
+        "클로드 모네 '수련이 있는 연못' (추정가 500억)",
+        "파블로 피카소 '도자기 및 회화' 112점",
+        "알베르토 자코메티 '거대한 여인 III'"
+      ]
+    },
+    {
+      "id": "art-case-002",
+      "collection_name": "오리온 서미갤러리 미술품 비자금 스캔들",
+      "collector": "담철곤 오리온 회장 일가",
+      "total_value_trillion_krw": 0.04,
+      "pieces_count": 14,
+      "tax_mechanism": "법인 자금 40억으로 프란츠 클라인 회화(시가 140억) 매입 후 자택 은닉 및 비자금 현금 대출 담보 악용 배임",
+      "masterpieces": [
+        "프란츠 클라인(Franz Kline) 'Painting No.11'",
+        "앤디 워홀 '재키'",
+        "데미안 허스트 '스팟 페인팅'"
+      ]
+    }
+  ]
+}
