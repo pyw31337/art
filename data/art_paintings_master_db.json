@@ -1,9 +1,9 @@
 {
   "version": "2.0.0",
-  "last_updated": "2026-11-19T18:32:32.225417+09:00",
+  "last_updated": "2026-11-20T11:07:05.182920+09:00",
   "service_name": "Let's Art (세계 명화 갤러리)",
   "domain": "global_fine_arts_and_masterpieces",
-  "total_masterpieces_indexed": 19060,
+  "total_masterpieces_indexed": 19145,
   "open_access_sources": [
     "뉴욕 근대미술관 (MoMA, 140,000+ works GitHub Dataset)",
     "파리 루브르 박물관 (Musée du Louvre Open Collections, 480,000+ items)",

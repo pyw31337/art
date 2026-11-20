@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-11-19T18:32:32.225417+09:00",
+  "last_updated": "2026-11-20T11:07:05.182920+09:00",
   "service_name": "Let's Art (다변화 예술 카테고리 아카이브)",
   "domain": "multi_category_fine_arts",
-  "total_extended_items_indexed": 38780,
+  "total_extended_items_indexed": 38945,
   "museum_sources": [
     "뉴욕 근대미술관 (The Museum of Modern Art, MoMA)",
     "파리 루브르 박물관 (Musée du Louvre)",
@@ -18,32 +18,32 @@
     "sculpture": {
       "name": "조각 & 입체 예술 (Sculpture & 3D Form)",
       "description": "고대 헬레니즘부터 르네상스, 근현대 입체 조형 거장들의 걸작",
-      "count": 8990
+      "count": 9025
     },
     "asian_art": {
       "name": "동양화 & 한국 전통 고미술 (Asian Masterpieces & Korean Heritage)",
       "description": "조선 진경산수화, 풍속화, 일본 우키요에, 고려청자 및 조선 백자",
-      "count": 7730
+      "count": 7770
     },
     "prints": {
       "name": "판화, 소묘 & 판각 (Prints, Drawings & Woodcuts)",
       "description": "뒤러, 렘브란트, 에셔의 정밀 판화 및 목판 예술",
-      "count": 6480
+      "count": 6505
     },
     "photography": {
       "name": "사진 예술 (Fine Art Photography)",
       "description": "20세기 순수 사진, 결정적 순간 및 다큐멘터리 사진 예술",
-      "count": 5250
+      "count": 5270
     },
     "decorative": {
       "name": "공예, 도예 & 장식 미술 (Decorative Arts & Ceramics)",
       "description": "아르누보 글라스, 도자기, 금속 공예 및 바우하우스 가구 디자인",
-      "count": 6180
+      "count": 6210
     },
     "media_art": {
       "name": "미디어 & 설치 미술 (Media & Installation Art)",
       "description": "비디오 아트의 창시자 백남준, 공간과 빛의 설치미술, 개념 미술",
-      "count": 4150
+      "count": 4165
     }
   },
   "featured_sculpture": [

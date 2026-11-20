@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "last_monitored_at": "2026-11-19T18:32:32.225417+09:00",
+  "last_monitored_at": "2026-11-20T11:07:05.182920+09:00",
   "pipeline_health_score": 99.9,
   "status": "MULTI_MUSEUM_OPTIMAL",
   "daily_ingested_count": 330,
@@ -64,5 +64,5 @@
       "status": "OPTIMAL"
     }
   },
-  "total_ecosystem_records": 76830
+  "total_ecosystem_records": 77160
 }
