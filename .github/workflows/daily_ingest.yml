@@ -20,9 +20,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run Daily Art Collector
+      - name: Record unavailable collector
         run: |
-          python scripts/daily_art_collector.py
+          python scripts/record_observability.py
 
       - name: Commit and push changes
         run: |
