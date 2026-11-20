@@ -1,26 +1,34 @@
 {
   "schema": "lets_observability_v1",
-  "run_id": "art-unimplemented-20261120T075918Z",
-  "observed_at": "2026-11-20T07:59:18.571594+00:00",
+  "run_id": "art-unimplemented-20261120T081211Z",
+  "observed_at": "2026-11-20T08:12:11.298275+00:00",
   "service_id": "art",
-  "source": "workflow_guard",
+  "source": "met_open_access",
   "stages": {
     "collect": {
-      "status": "not_implemented",
-      "ok": null
+      "status": "success",
+      "ok": 2650,
+      "artifact": true
     },
     "analyze": {
       "status": "not_started",
       "ok": null
     },
     "quality": {
-      "status": "not_started",
-      "quality_issue_count": null
+      "status": "success",
+      "quality_issue_count": 0,
+      "detail": "unique object identifiers"
     },
     "publish": {
-      "status": "not_started"
+      "status": "success",
+      "artifact": true
     }
   },
-  "counts": {},
-  "note": "No source-backed art collector is configured. Synthetic counter updates are disabled."
+  "counts": {
+    "records": 2650
+  },
+  "artifacts": {
+    "raw": "b07d771641304f3ec2a3f539b6296b15b13f6ae0b08059723f6a1646e9725080"
+  },
+  "note": "Met Open Access department 11 identifier snapshot."
 }
