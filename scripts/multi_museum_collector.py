@@ -59,6 +59,14 @@ MUSEUM_ENDPOINTS = {
         "format": "REST XML/JSON",
         "license": "KOGL Type 1",
         "status": "ONLINE_ACTIVE"
+    },
+    "eco_gallery": {
+        "name": "이씨오 디지털 갤러리 (ECO Digital Gallery)",
+        "source": "디지털 갤러리 REST API & UHD CDN",
+        "total_catalog": 7865,
+        "format": "REST JSON",
+        "license": "Open Access / Educational",
+        "status": "ONLINE_ACTIVE"
     }
 }
 

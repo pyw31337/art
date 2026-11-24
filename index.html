@@ -525,6 +525,7 @@
         <button class="museum-chip" data-museum="nmk" onclick="setMuseum('nmk')">🏛️ 국립중앙박물관 (한국)</button>
         <button class="museum-chip" data-museum="met" onclick="setMuseum('met')">🏛️ 메트로폴리탄 (Met)</button>
         <button class="museum-chip" data-museum="chicago" onclick="setMuseum('chicago')">🏛️ 시카고 미술관</button>
+        <button class="museum-chip" data-museum="eco_gallery" onclick="setMuseum('eco_gallery')">🖼️ 이씨오 디지털 갤러리 (7.8k)</button>
       </div>
     </div>
 
@@ -622,11 +623,43 @@
       filterAndRender();
     }
 
-    function setMuseum(mus) {
+    let digitalGalleryLoaded = false;
+    let loadingDigitalGallery = false;
+
+    async function loadDigitalGallery() {
+      if (digitalGalleryLoaded || loadingDigitalGallery) return;
+      loadingDigitalGallery = true;
+      const chip = document.querySelector('[data-museum="eco_gallery"]');
+      if (chip) chip.textContent = '⏳ 디지털 갤러리 로딩 중...';
+      try {
+        const res = await fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json());
+        if (res && res.artworks) {
+          const existingIds = new Set(allArtworks.map(a => a.id));
+          const newItems = res.artworks.filter(a => !existingIds.has(a.id)).map(a => ({
+            ...a,
+            _type: a.category || 'paintings'
+          }));
+          allArtworks = [...allArtworks, ...newItems];
+          digitalGalleryLoaded = true;
+          if (chip) chip.textContent = `🖼️ 이씨오 디지털 갤러리 (${res.artworks.length.toLocaleString()}점)`;
+          filterAndRender();
+        }
+      } catch (e) {
+        console.error("Failed to load digital gallery db:", e);
+        if (chip) chip.textContent = '🖼️ 이씨오 디지털 갤러리';
+      } finally {
+        loadingDigitalGallery = false;
+      }
+    }
+
+    async function setMuseum(mus) {
       activeMuseum = mus;
       document.querySelectorAll('.museum-chip').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-museum') === mus);
       });
+      if (mus === 'eco_gallery' && !digitalGalleryLoaded) {
+        await loadDigitalGallery();
+      }
       filterAndRender();
     }
 
@@ -649,8 +682,13 @@
           if (activeMuseum === 'nmk' && (mus.includes('국립중앙박물관') || mus.includes('간송') || mus.includes('nmk') || mus.includes('국립현대미술관'))) return true;
           if (activeMuseum === 'met' && (mus.includes('metropolitan') || mus.includes('메트로폴리탄') || mus.includes('the met'))) return true;
           if (activeMuseum === 'chicago' && (mus.includes('chicago') || mus.includes('시카고'))) return true;
+          if (activeMuseum === 'eco_gallery' && (item.museum_key === 'eco_gallery' || mus.includes('이씨오') || mus.includes('디지털 갤러리'))) return true;
           return false;
         });
+      }
+
+      if (q && !digitalGalleryLoaded) {
+        loadDigitalGallery();
       }
 
       if (q) {
@@ -888,6 +926,8 @@
 
           <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
             <div>URN 온톨로지: <code>${item.urn || 'urn:art:work:' + id}</code></div>
+            ${item.image_url ? `<a href="${item.image_url}" target="_blank" style="color:#0284c7; font-weight:600; text-decoration:none;">🖼️ 초고화질(UHD) 원본 보기 ➔</a>` : ''}
+            ${item.external_source ? `<a href="${item.external_source}" target="_blank" style="color:#6366f1; font-weight:600; text-decoration:none;">📱 디지털 갤러리 원문 보기 ➔</a>` : ''}
             <a href="https://pyw31337.github.io/people/" target="_blank" style="color:#2563eb; font-weight:600; text-decoration:none;">렛츠피플에서 작가 생애 & 계보 보기 ➔</a>
           </div>
         `;
