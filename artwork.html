@@ -3,37 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#1e1b4b">
+  <meta name="theme-color" content="#090d16">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
   <title>작품 상세 및 디지털 액자 — 렛츠아트 (Let's Art)</title>
   <style>
+    /* LDS v3.5.0 & Impeccable Design Specification */
     :root {
-      --bg: #090d16;
-      --hero-bg: radial-gradient(circle at 50% 30%, #312e81 0%, #1e1b4b 60%, #0b0f19 100%);
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --purple-primary: #6366f1;
-      --purple-deep: #4338ca;
-      --gold: #d97706;
-      --shadow-sheet: 0 -20px 50px rgba(0, 0, 0, 0.4);
+      --lds-brand-600: #2563eb;
+      --lds-brand-700: #1d4ed8;
+      --lds-brand-50:  #eff6ff;
+      --lds-canvas-bg: #ffffff;
+      --lds-surface-subtle: #fafbfc;
+      --lds-divider-faint: #f1f5f9;
+      --lds-divider-line: #e2e8f0;
+      --lds-text-strong: #0f172a;
+      --lds-text-body: #334155;
+      --lds-text-muted: #64748b;
+      --lds-text-faint: #94a3b8;
+      --lds-status-normal: #059669;
+
+      --gallery-noir: #07090e;
+      --gallery-stage: #0c1017;
+      --hairline-dark: rgba(255, 255, 255, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       width: 100%;
       height: 100%;
-      background: var(--bg);
-      color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background-color: var(--gallery-noir);
+      color: var(--lds-text-body);
+      font-family: var(--lds-font-sans);
+      font-size: 13px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     /* ========================================================
-       STICKY ROYAL PURPLE HERO ZONE (100vh)
+       STICKY MUSEUM HERO ZONE (100vh) — PURE GALLERY NOIR
        ======================================================== */
     .hero-container {
       position: sticky;
@@ -41,36 +51,36 @@
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      background: var(--hero-bg);
+      background: var(--gallery-noir);
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 10;
     }
 
-    /* Ambient background glow from artwork colors */
+    /* Ambient atmospheric glow — restrained, authentic to artwork */
     .hero-ambient-bg {
       position: absolute;
-      inset: -20px;
+      inset: -40px;
       background-size: cover;
       background-position: center;
-      filter: blur(60px) brightness(0.35) saturate(1.4);
-      transform: scale(1.1);
+      filter: blur(90px) brightness(0.2) saturate(1.2);
+      transform: scale(1.15);
       z-index: 1;
-      opacity: 0.85;
-      transition: background-image 0.5s ease;
+      opacity: 0.6;
+      transition: background-image 0.6s ease;
+      pointer-events: none;
     }
 
-    /* Radial gradient vignette overlay */
     .hero-vignette {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.1) 0%, rgba(10, 15, 29, 0.8) 85%, #080c16 100%);
+      background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.85) 85%, #07090e 100%);
       z-index: 2;
       pointer-events: none;
     }
 
-    /* Continuous Micro-Animation Artwork Stage */
+    /* Centered Artwork Stage */
     .artwork-stage {
       position: relative;
       z-index: 3;
@@ -80,8 +90,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--hairline-dark);
+      background: #000000;
     }
 
     .artwork-animated-img {
@@ -90,37 +101,37 @@
       object-fit: contain;
       transform-origin: center center;
       will-change: transform;
-      animation: heroCameraMove 15s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+      animation: heroCameraTimeline 15s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
       cursor: pointer;
     }
 
-    /* Continuous 15-second Micro-Animation Timeline:
+    /* 15s Micro-Animation Timeline:
        0s~5s: Center gentle Ken Burns zoom in
-       5s~10s: Downward slow vertical panning
-       10s~15s: Subtle diagonal float & pan */
-    @keyframes heroCameraMove {
+       5s~10s: Slow downward vertical panning
+       10s~15s: Subtle diagonal float */
+    @keyframes heroCameraTimeline {
       0% {
         transform: scale(1.0) translateY(0) translateX(0);
       }
       33% {
-        transform: scale(1.08) translateY(0) translateX(0);
+        transform: scale(1.07) translateY(0) translateX(0);
       }
       66% {
-        transform: scale(1.08) translateY(-4%) translateX(0);
+        transform: scale(1.07) translateY(-3.5%) translateX(0);
       }
       100% {
-        transform: scale(1.04) translateY(-2%) translateX(-2%);
+        transform: scale(1.03) translateY(-1.5%) translateX(-1.5%);
       }
     }
 
     /* ========================================================
-       TOP FLOATING NAV HUD
+       TOP FLOATING NAV BAR — LDS DISCIPLINED FROSTED
        ======================================================== */
     .hero-top-nav {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
+      top: 24px;
+      left: 28px;
+      right: 28px;
       z-index: 30;
       display: flex;
       justify-content: space-between;
@@ -129,179 +140,171 @@
       pointer-events: auto;
     }
 
-    .nav-btn {
-      display: inline-flex;
+    .nav-brand-group {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      color: #ffffff;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    }
-    .nav-btn:hover {
-      background: rgba(30, 41, 59, 0.95);
-      border-color: rgba(255, 255, 255, 0.4);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
-    }
-    .nav-btn.primary {
-      background: linear-gradient(135deg, #6366f1, #4f46e5);
-      border-color: #818cf8;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
-    }
-    .nav-btn.primary:hover {
-      background: linear-gradient(135deg, #4f46e5, #4338ca);
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.7);
+      gap: 12px;
     }
 
-    .nav-right-actions {
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: rgba(12, 16, 23, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--hairline-dark);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-back-link:hover {
+      background: rgba(22, 28, 40, 0.9);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-actions {
       display: flex;
       gap: 8px;
       align-items: center;
+    }
+
+    .lds-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      background: rgba(12, 16, 23, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--hairline-dark);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .lds-nav-btn:hover {
+      background: rgba(22, 28, 40, 0.9);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .lds-nav-btn.primary {
+      background: var(--lds-brand-600);
+      border-color: var(--lds-brand-600);
+      color: #ffffff;
+    }
+    .lds-nav-btn.primary:hover {
+      background: var(--lds-brand-700);
     }
 
     /* ========================================================
-       써드플로어 (LOWER-THIRD MOTION GRAPHIC SUBTITLE)
+       써드플로어 (LOWER-THIRD) — GALLERY CAPTION
        ======================================================== */
     .hero-lower-third-wrap {
       position: absolute;
-      bottom: 24px;
-      left: 24px;
-      right: 24px;
-      max-width: 860px;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      max-width: 820px;
       margin: 0 auto;
       z-index: 25;
       pointer-events: none;
-      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     .hero-lower-third-wrap.hidden {
       opacity: 0;
-      transform: translateY(35px);
+      transform: translateY(20px);
       pointer-events: none;
     }
 
-    .lower-third-card {
+    .lower-third-panel {
       pointer-events: auto;
-      background: rgba(15, 23, 42, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 18px;
-      padding: 18px 24px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+      background: rgba(10, 14, 22, 0.8);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--hairline-dark);
+      border-radius: 6px;
+      padding: 16px 20px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      position: relative;
+      gap: 6px;
     }
 
-    .lower-third-badges {
+    .lt-meta-header {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      text-transform: uppercase;
       flex-wrap: wrap;
     }
-    .lt-badge-story {
-      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      letter-spacing: 0.3px;
-    }
-    .lt-badge-museum {
-      background: rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 6px;
-    }
-    .lt-badge-secret {
-      background: #f59e0b;
-      color: #000000;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+    .lt-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lds-brand-600);
+      display: inline-block;
     }
 
     .lower-third-title {
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 700;
       color: #ffffff;
       line-height: 1.3;
       letter-spacing: -0.3px;
     }
     .lower-third-artist {
-      font-size: 14px;
+      font-size: 13px;
       color: #cbd5e1;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .lower-third-artist span.year {
-      color: #94a3b8;
-      font-weight: 400;
+      font-weight: 500;
     }
     .lower-third-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #94a3b8;
-      line-height: 1.5;
+      line-height: 1.6;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      margin-top: 2px;
     }
 
-    /* Subtitle Show/Hide Floating Toggle Button */
+    /* Subtitle Toggle Button */
     .toggle-subtitle-btn {
       position: absolute;
-      bottom: 24px;
-      right: 24px;
+      bottom: 28px;
+      right: 28px;
       z-index: 35;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #f1f5f9;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
+      background: rgba(10, 14, 22, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--hairline-dark);
+      color: #cbd5e1;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: all 0.15s ease;
     }
     .toggle-subtitle-btn:hover {
-      background: rgba(30, 41, 59, 0.95);
-      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(20, 26, 38, 0.9);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
     }
 
-    /* Scroll Down Indicator */
+    /* Scroll Prompt */
     .scroll-indicator {
       position: absolute;
       bottom: 12px;
@@ -309,348 +312,323 @@
       transform: translateX(-50%);
       z-index: 22;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 4px;
-      color: rgba(255, 255, 255, 0.65);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      animation: bounce 2s infinite;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.45);
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       cursor: pointer;
       pointer-events: auto;
+      transition: color 0.15s ease;
     }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-      40% { transform: translate(-50%, -8px); }
-      60% { transform: translate(-50%, -4px); }
+    .scroll-indicator:hover {
+      color: #ffffff;
     }
 
     /* ========================================================
-       PARALLAX BOTTOM CONTENT SHEET
+       PARALLAX BOTTOM CONTENT SHEET — LDS ANTI-BOX CANVAS
        ======================================================== */
     .content-sheet-container {
       position: relative;
       z-index: 20;
       margin-top: 100vh;
-      background: #ffffff;
-      color: var(--text-main);
-      border-radius: 36px 36px 0 0;
-      box-shadow: var(--shadow-sheet);
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      border-top: 1px solid var(--lds-divider-line);
       min-height: 100vh;
-      padding: 50px 24px 80px;
+      padding: 56px 28px 96px;
     }
 
     .content-sheet-inner {
-      max-width: 1080px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
-    /* Drag handle indicator */
-    .sheet-handle {
-      width: 44px;
-      height: 5px;
-      background: #cbd5e1;
-      border-radius: 99px;
-      margin: -24px auto 36px;
+    /* Curatorial Header Block */
+    .curatorial-header {
+      margin-bottom: 32px;
     }
-
-    .artwork-header-block {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 36px;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 28px;
+    .curatorial-breadcrumb {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--lds-brand-600);
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
-
     .artwork-title-main {
       font-size: 32px;
       font-weight: 800;
-      color: #0f172a;
+      color: var(--lds-text-strong);
       letter-spacing: -0.6px;
       line-height: 1.25;
+      margin-bottom: 4px;
     }
     .artwork-title-en {
       font-size: 16px;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-top: 4px;
+      color: var(--lds-text-muted);
+      font-weight: 400;
+      margin-bottom: 12px;
     }
-
     .artist-credit-line {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 16px;
-      color: #334155;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--lds-text-strong);
     }
     .artist-name-bold {
-      font-weight: 800;
-      color: #1e1b4b;
-      font-size: 18px;
+      font-weight: 700;
+      font-size: 16px;
     }
 
-    /* Metadata Specification Grid */
-    .specs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
+    /* LDS Hairline Divider */
+    .lds-divider {
+      height: 1px;
+      background-color: var(--lds-divider-faint);
+      border: none;
+      margin: 32px 0;
+    }
+
+    /* Flat Specifications Definition Table (Anti-Box) */
+    .lds-specs-table {
+      width: 100%;
+      border-top: 1px solid var(--lds-divider-faint);
+      border-bottom: 1px solid var(--lds-divider-faint);
       margin-bottom: 36px;
     }
-    .spec-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 14px 16px;
-    }
-    .spec-label {
-      font-size: 12px;
-      font-weight: 700;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
-    }
-    .spec-value {
-      font-size: 15px;
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    /* Human Story Taxonomy Spotlight Card */
-    .story-card {
-      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-      border: 1px solid #d8b4fe;
-      border-radius: 18px;
-      padding: 24px;
-      margin-bottom: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-    .story-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-    .story-badge-lg {
-      background: linear-gradient(135deg, #7c3aed, #6d28d9);
-      color: #ffffff;
+    .lds-spec-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--lds-divider-faint);
       font-size: 13px;
-      font-weight: 800;
-      padding: 6px 14px;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      align-items: baseline;
     }
-    .story-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #581c87;
+    .lds-spec-row:last-child {
+      border-bottom: none;
     }
-    .story-body {
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: #3b0764;
+    .lds-spec-label {
+      color: var(--lds-text-muted);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+    .lds-spec-val {
+      color: var(--lds-text-strong);
+      font-weight: 500;
     }
 
-    /* Behind-the-Scenes Story Card (Handmaker, ArtInsight, Canvas Secrets) */
-    .behind-secret-card {
-      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-      border: 1px solid #fde68a;
-      border-radius: 18px;
-      padding: 24px;
-      margin-bottom: 32px;
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+    /* Editorial Story Spotlight (No Cheesy Gradient Box) */
+    .editorial-story-block {
+      background: var(--lds-surface-subtle);
+      border-left: 2px solid var(--lds-brand-600);
+      padding: 24px 28px;
+      margin-bottom: 36px;
     }
-    .behind-secret-badge {
-      background: #b45309;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
+    .editorial-story-tag {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--lds-brand-600);
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
-    .behind-secret-title {
+    .editorial-story-title {
       font-size: 17px;
-      font-weight: 800;
-      color: #78350f;
+      font-weight: 700;
+      color: var(--lds-text-strong);
       margin-bottom: 10px;
     }
-    .behind-secret-content {
-      font-size: 14.5px;
+    .editorial-story-body {
+      font-size: 14px;
       line-height: 1.75;
-      color: #451a03;
+      color: var(--lds-text-body);
     }
 
-    /* Curatorial Commentary Box */
-    .commentary-section {
+    /* Behind-the-Scenes Secret Investigation (Handmaker / Met X-ray) */
+    .behind-investigation-block {
+      background: #fafaf9;
+      border-top: 2px solid var(--lds-text-strong);
+      padding: 24px 28px;
       margin-bottom: 36px;
     }
-    .section-headline {
-      font-size: 20px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 14px;
+    .behind-inv-header {
       display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .commentary-text {
-      font-size: 15px;
-      line-height: 1.8;
-      color: #334155;
-    }
-
-    /* Aesthetic Palette & Mood Elements */
-    .aesthetic-section {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 36px;
-    }
-    .palette-swatches {
-      display: flex;
-      gap: 10px;
+      justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-top: 10px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
-    .swatch-pill {
+    .behind-inv-label {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #92400e;
+      text-transform: uppercase;
+    }
+    .behind-inv-source {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      color: var(--lds-text-muted);
+    }
+    .behind-inv-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      margin-bottom: 12px;
+    }
+    .behind-inv-text {
+      font-size: 13.5px;
+      line-height: 1.8;
+      color: #44403c;
+    }
+
+    /* Curatorial Commentary & Historical Section */
+    .article-section {
+      margin-bottom: 36px;
+    }
+    .article-headline {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      margin-bottom: 12px;
+      letter-spacing: -0.2px;
+    }
+    .article-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--lds-text-body);
+      max-width: 780px;
+    }
+
+    /* Aesthetic Palette — Minimalist LDS Swatches */
+    .palette-flat-grid {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .palette-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
+      gap: 6px;
+      padding: 4px 8px;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 3px;
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 12px;
-      font-family: monospace;
-      font-weight: 700;
-      color: #475569;
+      cursor: pointer;
     }
-    .swatch-color-box {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      border: 1px solid rgba(0,0,0,0.15);
+    .palette-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      border: 1px solid rgba(0,0,0,0.1);
     }
-    .aesthetic-tags-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .aesthetic-chip {
-      background: #e2e8f0;
-      color: #334155;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
+    .palette-hex {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      color: var(--lds-text-muted);
+      font-weight: 500;
     }
 
     /* ========================================================
-       MULTIMEDIA DOCENT HUB (100% Video Guaranteed)
+       MULTIMEDIA DOCENT HUB — LDS DISCIPLINED CINEMA FRAME
        ======================================================== */
-    .docent-hub-box {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-      border: 1px solid #312e81;
-      border-radius: 20px;
-      padding: 28px;
-      color: #ffffff;
-      margin-bottom: 40px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    .docent-cinema-section {
+      margin-bottom: 48px;
     }
-    .docent-hub-header {
+    .docent-cinema-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
+      align-items: baseline;
+      margin-bottom: 12px;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
-    .docent-live-pill {
-      background: #ef4444;
-      color: #ffffff;
+    .docent-cinema-badge {
+      font-family: var(--lds-font-mono);
       font-size: 11px;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 6px;
-      letter-spacing: 0.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--lds-brand-600);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .video-responsive-wrap {
+    .video-cinema-wrap {
       position: relative;
       padding-top: 56.25%;
-      border-radius: 14px;
+      border-radius: 4px;
       overflow: hidden;
-      background: #000;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      margin-bottom: 16px;
+      background: #000000;
+      border: 1px solid #1e293b;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
-    .video-responsive-wrap iframe {
+    .video-cinema-wrap iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       border: none;
     }
-
     .docent-video-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #e2e8f0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--lds-text-strong);
       margin-bottom: 18px;
-      display: flex;
-      align-items: center;
+    }
+
+    /* Unified Platform Links Grid (LDS Anti-Rainbow) */
+    .platform-links-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 8px;
     }
-
-    .platform-links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 12px;
-    }
-    .platform-btn {
-      padding: 12px 14px;
-      border-radius: 10px;
-      font-size: 12.5px;
-      font-weight: 700;
+    .lds-platform-btn {
+      padding: 9px 12px;
+      background: var(--lds-surface-subtle);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      color: var(--lds-text-strong);
+      font-size: 12px;
+      font-weight: 500;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 8px;
-      transition: transform 0.2s, filter 0.2s;
+      justify-content: space-between;
+      transition: all 0.15s ease;
     }
-    .platform-btn:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
+    .lds-platform-btn:hover {
+      background: #ffffff;
+      border-color: var(--lds-brand-600);
+      color: var(--lds-brand-600);
+    }
+    .lds-platform-btn span.arrow {
+      color: var(--lds-text-faint);
+      font-size: 11px;
     }
 
-    /* Bottom Action Bar */
-    .bottom-action-bar {
+    /* Bottom Action Row */
+    .bottom-cta-row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
-      padding-top: 24px;
-      border-top: 1px solid var(--card-border);
+      padding-top: 32px;
+      border-top: 1px solid var(--lds-divider-faint);
     }
 
     /* ========================================================
-       PRESENTATION GALLERY (디지털 액자 / FULLSCREEN MODE)
+       PRESENTATION GALLERY — FULLSCREEN IMMERSIVE CINEMA
        ======================================================== */
     .presentation-overlay {
       position: fixed;
@@ -669,7 +647,6 @@
       display: flex;
     }
 
-    /* Canvas Stage inside Fullscreen Presentation */
     .pres-canvas-wrap {
       position: absolute;
       inset: 0;
@@ -691,32 +668,30 @@
       will-change: transform;
       transition: transform 0.1s ease-out;
     }
-
     .pres-artwork-img.auto-tour {
-      animation: presentationCameraTour 18s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+      animation: presentationCameraTour 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
     }
-
     @keyframes presentationCameraTour {
       0% {
         transform: scale(1.0) translateY(0) translateX(0);
       }
       30% {
-        transform: scale(1.15) translateY(-3%) translateX(2%);
+        transform: scale(1.14) translateY(-3%) translateX(2%);
       }
       60% {
-        transform: scale(1.22) translateY(3%) translateX(-3%);
+        transform: scale(1.20) translateY(3%) translateX(-3%);
       }
       100% {
-        transform: scale(1.08) translateY(0) translateX(0);
+        transform: scale(1.06) translateY(0) translateX(0);
       }
     }
 
-    /* Presentation HUD Controls (Floating Top & Bottom) */
+    /* Presentation HUD */
     .pres-hud-top {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
+      top: 24px;
+      left: 24px;
+      right: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -725,35 +700,35 @@
     }
 
     .pres-hud-btn {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(12, 16, 23, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--hairline-dark);
       color: #ffffff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
     .pres-hud-btn:hover {
-      background: rgba(30, 41, 59, 0.95);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(22, 28, 40, 0.9);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     .pres-hud-btn.active {
-      background: #4f46e5;
-      border-color: #818cf8;
-      box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+      background: var(--lds-brand-600);
+      border-color: var(--lds-brand-600);
     }
 
     .pres-hud-bottom {
       position: absolute;
       bottom: 24px;
-      left: 20px;
-      right: 20px;
+      left: 24px;
+      right: 24px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -761,248 +736,235 @@
       pointer-events: none;
     }
 
-    .pres-lower-third {
+    .pres-caption-box {
       pointer-events: auto;
-      max-width: 680px;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 16px;
-      padding: 16px 20px;
+      max-width: 640px;
+      background: rgba(10, 14, 22, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--hairline-dark);
+      border-radius: 4px;
+      padding: 14px 18px;
       color: #ffffff;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .pres-lower-third.hidden {
+    .pres-caption-box.hidden {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
       pointer-events: none;
     }
 
-    .pres-controls-right {
-      pointer-events: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    /* Screen Wake Lock Status Badge */
-    .wakelock-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #10b981;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       .artwork-stage { width: 95vw; height: 75vh; }
       .artwork-title-main { font-size: 24px; }
-      .lower-third-title { font-size: 18px; }
-      .hero-lower-third-wrap { left: 14px; right: 14px; bottom: 20px; }
-      .content-sheet-container { padding: 40px 16px 60px; border-radius: 28px 28px 0 0; }
-      .platform-links-grid { grid-template-columns: 1fr; }
+      .hero-lower-third-wrap { left: 16px; right: 16px; bottom: 20px; }
+      .content-sheet-container { padding: 40px 16px 60px; }
+      .lds-spec-row { grid-template-columns: 100px 1fr; }
+      .platform-links-bar { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <!-- ========================================================
-       STICKY ROYAL PURPLE HERO ZONE (100vh)
+       STICKY MUSEUM HERO ZONE (100vh) — GALLERY NOIR
        ======================================================== -->
   <div class="hero-container" id="heroZone">
-    <!-- Ambient blurred background from artwork -->
     <div class="hero-ambient-bg" id="heroAmbientBg"></div>
     <div class="hero-vignette"></div>
 
     <!-- Top Floating HUD -->
     <div class="hero-top-nav">
-      <a href="index.html" class="nav-btn">
-        <span>← 렛츠아트 갤러리</span>
-      </a>
-      <div class="nav-right-actions">
-        <button class="nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" title="화면 꺼짐 방지 & 카메라 줌인/패닝 디지털 액자">
-          <span>🖼️ 디지털 액자 모드</span>
+      <div class="nav-brand-group">
+        <a href="index.html" class="nav-back-link">
+          <span>← 렛츠아트 (전체 아카이브)</span>
+        </a>
+      </div>
+      <div class="nav-actions">
+        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" title="화면 꺼짐 방지 디지털 액자 전체화면 감상">
+          <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
+          <span>디지털 액자 모드</span>
         </button>
-        <button class="nav-btn" onclick="scrollToDocent()" title="영상 해설 영역으로 바로 이동">
-          <span>🎬 영상 도슨트</span>
+        <button class="lds-nav-btn" onclick="scrollToDocent()" title="영상 해설 영역으로 바로 이동">
+          <span>영상 도슨트</span>
         </button>
       </div>
     </div>
 
-    <!-- Micro-Animation Centered Artwork Stage -->
-    <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 전체화면 디지털 액자 모드로 감상">
+    <!-- Centered Artwork Stage with Ken Burns Micro-Animation -->
+    <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 디지털 액자 전체화면 모드로 감상">
       <img id="heroArtworkImg" class="artwork-animated-img" src="" alt="Masterpiece Artwork">
     </div>
 
-    <!-- 써드플로어 (LOWER-THIRD MOTION GRAPHIC SUBTITLE) -->
+    <!-- 써드플로어 (LOWER-THIRD CAPTION) -->
     <div class="hero-lower-third-wrap" id="heroLowerThird">
-      <div class="lower-third-card">
-        <div class="lower-third-badges">
-          <span class="lt-badge-story" id="ltStoryBadge">👨‍👩‍👧 가족 이야기</span>
-          <span class="lt-badge-museum" id="ltMuseumBadge">🏛️ 소장처 정보</span>
-          <span class="lt-badge-secret" id="ltSecretBadge" style="display:none;">🎭 비하인드 스토리</span>
+      <div class="lower-third-panel">
+        <div class="lt-meta-header">
+          <span class="lt-dot"></span>
+          <span id="ltMuseumBadge">소장처 정보</span>
+          <span>·</span>
+          <span id="ltYearMeta">연도</span>
+          <span>·</span>
+          <span id="ltStoryBadge">스토리</span>
         </div>
-        <div class="lower-third-title" id="ltTitle">로딩 중...</div>
-        <div class="lower-third-artist">
-          <span id="ltArtist">작가 정보</span>
-          <span class="year" id="ltYear"></span>
-        </div>
-        <div class="lower-third-desc" id="ltDesc">명화의 역사와 숨겨진 도상학적 세계를 감상해보세요.</div>
+        <div class="lower-third-title" id="ltTitle">작품명 로딩 중...</div>
+        <div class="lower-third-artist" id="ltArtist">작가명</div>
+        <div class="lower-third-desc" id="ltDesc">명화의 역사와 도상학적 세계를 감상해보세요.</div>
       </div>
     </div>
 
-    <!-- Lower-third Show/Hide Floating Toggle Button -->
+    <!-- Lower-Third Subtitle Toggle Button -->
     <button class="toggle-subtitle-btn" id="btnToggleSubtitle" onclick="toggleLowerThird()">
       <span id="toggleSubtitleIcon">💬</span>
       <span id="toggleSubtitleText">자막 숨기기</span>
     </button>
 
-    <!-- Scroll Down Indicator -->
+    <!-- Scroll Down Prompt -->
     <div class="scroll-indicator" onclick="scrollToSheet()">
-      <span>상세 해설 & 영상 도슨트 보기</span>
-      <span>▼</span>
+      <span>SCROLL TO EXPLORE</span>
+      <span>↓</span>
     </div>
   </div>
 
   <!-- ========================================================
-       PARALLAX BOTTOM CONTENT SHEET (SLIDES OVER HERO)
-       ======================================================== -->
+       PARALLAX BOTTOM CONTENT SHEET — LDS ANTI-BOX CANVAS
+       ======================================================== */
+  -->
   <div class="content-sheet-container" id="contentSheet">
     <div class="content-sheet-inner">
-      <div class="sheet-handle"></div>
 
-      <!-- Main Artwork Header -->
-      <div class="artwork-header-block">
+      <!-- Curatorial Header Block -->
+      <div class="curatorial-header">
+        <div class="curatorial-breadcrumb" id="sheetBreadcrumb">인류 문화유산 원장 아카이브</div>
         <h1 class="artwork-title-main" id="sheetTitleKr">로딩 중...</h1>
         <div class="artwork-title-en" id="sheetTitleEn"></div>
         <div class="artist-credit-line">
           <span class="artist-name-bold" id="sheetArtistKr"></span>
-          <span id="sheetArtistEn" style="color:var(--text-muted);"></span>
-          <span id="sheetMovementBadge" style="background:#f1f5f9; padding:4px 10px; border-radius:6px; font-size:13px; font-weight:700; color:#475569;"></span>
+          <span id="sheetArtistEn" style="color:var(--lds-text-muted);"></span>
         </div>
       </div>
 
-      <!-- Specifications Grid -->
-      <div class="specs-grid">
-        <div class="spec-item">
-          <div class="spec-label">제작 연도</div>
-          <div class="spec-value" id="specYear">-</div>
+      <!-- Flat Specifications Table (Anti-Box) -->
+      <div class="lds-specs-table">
+        <div class="lds-spec-row">
+          <div class="lds-spec-label">제작 연도</div>
+          <div class="lds-spec-val" id="specYear">-</div>
         </div>
-        <div class="spec-item">
-          <div class="spec-label">기법 / 재료</div>
-          <div class="spec-value" id="specMedium">-</div>
+        <div class="lds-spec-row">
+          <div class="lds-spec-label">기법 및 매체</div>
+          <div class="lds-spec-val" id="specMedium">-</div>
         </div>
-        <div class="spec-item">
-          <div class="spec-label">작품 규격</div>
-          <div class="spec-value" id="specDimensions">-</div>
+        <div class="lds-spec-row">
+          <div class="lds-spec-label">작품 규격</div>
+          <div class="lds-spec-val" id="specDimensions">-</div>
         </div>
-        <div class="spec-item">
-          <div class="spec-label">소장처</div>
-          <div class="spec-value" id="specMuseum">-</div>
+        <div class="lds-spec-row">
+          <div class="lds-spec-label">현재 소장처</div>
+          <div class="lds-spec-val" id="specMuseum">-</div>
+        </div>
+        <div class="lds-spec-row">
+          <div class="lds-spec-label">아카이브 URN</div>
+          <div class="lds-spec-val lds-mono" id="specUrn" style="font-size:11.5px; color:var(--lds-text-muted);">-</div>
         </div>
       </div>
 
-      <!-- Human Story Taxonomy Card -->
-      <div class="story-card" id="storyCard">
-        <div class="story-header">
-          <span class="story-badge-lg" id="storyBadge">👨‍👩‍👧 가족 이야기</span>
-          <span style="font-size:12px; font-weight:700; color:#7c3aed;">HUMAN STORY TAXONOMY</span>
+      <!-- Behind Story Feature (Handmaker, Salon Scandal, X-ray) -->
+      <div class="behind-investigation-block" id="behindSecretCard" style="display:none;">
+        <div class="behind-inv-header">
+          <span class="behind-inv-label">캔버스 비하인드 조사 보고서</span>
+          <span class="behind-inv-source" id="behindSecretSource"></span>
         </div>
-        <div class="story-title" id="storyHeaderTitle">삶의 온기와 유대감을 담은 작품</div>
-        <div class="story-body" id="storyDescription">
+        <div class="behind-inv-title" id="behindSecretTitle">캔버스 밑에 감춰진 비밀과 복원 비화</div>
+        <div class="behind-inv-text" id="behindSecretContent"></div>
+      </div>
+
+      <!-- Human Story Taxonomy Feature -->
+      <div class="editorial-story-block" id="storyCard">
+        <div class="editorial-story-tag" id="storyTag">HUMAN STORY TAXONOMY</div>
+        <div class="editorial-story-title" id="storyHeaderTitle">인간의 삶과 유대감을 투영한 명화</div>
+        <div class="editorial-story-body" id="storyDescription">
           이 작품은 인간의 삶과 관계성에서 중요한 테마를 담고 있으며, 깊은 정서적 교감과 시대적 울림을 전해줍니다.
         </div>
       </div>
 
-      <!-- Handmaker / Canvas Secret Spotlight Card -->
-      <div class="behind-secret-card" id="behindSecretCard" style="display:none;">
-        <span class="behind-secret-badge">🕵️ 숨겨진 캔버스의 비밀 & 비하인드 스토리</span>
-        <div class="behind-secret-title" id="behindSecretTitle">캔버스 밑에 숨겨진 X-ray 비밀과 비화</div>
-        <div class="behind-secret-content" id="behindSecretContent"></div>
-      </div>
-
-      <!-- Curatorial Commentary & Historical Background -->
-      <div class="commentary-section">
-        <h2 class="section-headline">💡 큐레이터 작품 해설 & 도상학</h2>
-        <div class="commentary-text" id="curatorCommentary">
+      <!-- Curatorial Commentary -->
+      <div class="article-section">
+        <h2 class="article-headline">도상학 및 큐레이터 작품 해설</h2>
+        <div class="article-text" id="curatorCommentary">
           작품 해설을 불러오는 중입니다...
         </div>
       </div>
 
       <!-- Historical Context -->
-      <div class="commentary-section" id="historicalSection" style="display:none;">
-        <h2 class="section-headline">📜 시대적 배경과 역사적 의의</h2>
-        <div class="commentary-text" id="historicalContent"></div>
+      <div class="article-section" id="historicalSection" style="display:none;">
+        <h2 class="article-headline">시대적 배경과 미술사적 의의</h2>
+        <div class="article-text" id="historicalContent"></div>
       </div>
 
-      <!-- Aesthetic Elements & Extracted Palette -->
-      <div class="aesthetic-section">
-        <div style="font-size:14px; font-weight:800; color:#0f172a; margin-bottom:4px;">🎨 작품 시각 팔레트 & 감성 무드</div>
-        <div class="palette-swatches" id="paletteSwatches"></div>
-        <div class="aesthetic-tags-row" id="aestheticTags"></div>
+      <!-- Visual Color Palette (Minimalist LDS Swatches) -->
+      <div class="article-section">
+        <h2 class="article-headline">시각 컬러 팔레트 & 톤</h2>
+        <div class="palette-flat-grid" id="paletteSwatches"></div>
       </div>
+
+      <hr class="lds-divider">
 
       <!-- ========================================================
-           MULTIMEDIA DOCENT HUB (100% Video Guaranteed)
+           MULTIMEDIA DOCENT HUB (100% Video Coverage)
            ======================================================== -->
-      <div class="docent-hub-box" id="docentHubSection">
-        <div class="docent-hub-header">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <span class="docent-live-pill">ONLINE DOCENT</span>
-            <h3 style="font-size:17px; font-weight:800; color:#f8fafc; margin:0;">🎬 온라인 영상 도슨트 & 멀티 플랫폼 해설</h3>
-          </div>
-          <span style="font-size:12px; color:#94a3b8;">유튜브 · 쇼츠 · 네이버 · 다음 · 인스타 · 틱톡 100% 연동</span>
+      <div class="docent-cinema-section" id="docentHubSection">
+        <div class="docent-cinema-header">
+          <span class="docent-cinema-badge">
+            <span style="width:6px; height:6px; border-radius:50%; background:#ef4444; display:inline-block;"></span>
+            ONLINE DOCENT LECTURE
+          </span>
+          <span class="lds-mono" style="font-size:11px; color:var(--lds-text-muted);">100% MULTI-PLATFORM VERIFIED</span>
         </div>
 
-        <!-- Embedded YouTube Video Player -->
-        <div class="video-responsive-wrap" id="videoWrapper">
+        <!-- 16:9 Video Player -->
+        <div class="video-cinema-wrap" id="videoWrapper">
           <iframe id="docentYoutubeIframe" src="" title="Video Docent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="docent-video-title" id="docentVideoTitle">📺 명화 해설 영상</div>
 
-        <!-- 9-Platform Direct Jump Links -->
-        <div class="platform-links-grid" id="platformLinksGrid">
-          <!-- Dynamically populated -->
+        <!-- Unified 9 Platform Direct Access Links -->
+        <div class="platform-links-bar" id="platformLinksGrid">
+          <!-- Dynamically populated via JS -->
         </div>
       </div>
 
-      <!-- Bottom Navigation & Action Bar -->
-      <div class="bottom-action-bar">
-        <button class="nav-btn primary" onclick="enterPresentationMode()" style="padding:14px 28px; font-size:15px;">
-          <span>🖼️ 디지털 액자 전체화면 감상 (화면 꺼짐 방지)</span>
+      <!-- Bottom Action Row -->
+      <div class="bottom-cta-row">
+        <button class="lds-btn-primary" onclick="enterPresentationMode()" style="padding:10px 20px; font-size:13px;">
+          <span>🖼️ 디지털 액자 전체화면 감상 (Screen WakeLock)</span>
         </button>
-        <a href="index.html" class="nav-btn" style="padding:14px 24px; font-size:14px;">
-          <span>← 다른 명화 둘러보기</span>
+        <a href="index.html" class="lds-btn-quiet" style="padding:9px 18px; font-size:13px; text-decoration:none;">
+          <span>← 아카이브 목록으로 돌아가기</span>
         </a>
       </div>
+
     </div>
   </div>
 
   <!-- ========================================================
-       PRESENTATION GALLERY (디지털 액자 / FULLSCREEN OVERLAY)
+       PRESENTATION GALLERY — FULLSCREEN IMMERSIVE CINEMA
        ======================================================== -->
   <div class="presentation-overlay" id="presOverlay">
-    <!-- Fullscreen Canvas Stage -->
     <div class="pres-canvas-wrap" id="presCanvasWrap">
       <img id="presImg" class="pres-artwork-img auto-tour" src="" alt="Presentation Masterpiece">
     </div>
 
-    <!-- HUD Top Controls -->
+    <!-- HUD Top -->
     <div class="pres-hud-top">
-      <div style="display:flex; align-items:center; gap:10px;">
+      <div style="display:flex; align-items:center; gap:12px;">
         <button class="pres-hud-btn" onclick="exitPresentationMode()">
           <span>✕ 나가기</span>
         </button>
-        <span class="wakelock-badge" id="wakeLockBadge">
-          <span>●</span> <span id="wakeLockText">화면 꺼짐 방지 활성 (WakeLock)</span>
+        <span class="lds-mono" style="font-size:11px; color:#10b981; display:inline-flex; align-items:center; gap:6px;">
+          <span style="width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
+          <span id="wakeLockText">화면 꺼짐 방지 활성 (WakeLock)</span>
         </span>
       </div>
 
@@ -1022,27 +984,28 @@
       </div>
     </div>
 
-    <!-- HUD Bottom Lower-Third & Actions -->
+    <!-- HUD Bottom -->
     <div class="pres-hud-bottom">
-      <div class="pres-lower-third" id="presLowerThird">
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-          <span class="lt-badge-story" id="presStoryBadge">가족 이야기</span>
-          <span class="lt-badge-museum" id="presMuseumBadge">소장처</span>
+      <div class="pres-caption-box" id="presLowerThird">
+        <div class="lt-meta-header" style="margin-bottom:4px;">
+          <span class="lt-dot"></span>
+          <span id="presMuseumBadge">소장처</span>
+          <span>·</span>
+          <span id="presStoryBadge">스토리</span>
         </div>
-        <div style="font-size:20px; font-weight:800; margin-bottom:2px;" id="presTitle">작품 제목</div>
-        <div style="font-size:13px; color:#cbd5e1;" id="presArtist">작가명</div>
+        <div style="font-size:18px; font-weight:700; margin-bottom:2px;" id="presTitle">작품 제목</div>
+        <div style="font-size:12.5px; color:#cbd5e1;" id="presArtist">작가명</div>
         <div style="font-size:12px; color:#94a3b8; margin-top:6px; line-height:1.5;" id="presDesc"></div>
       </div>
 
-      <div class="pres-controls-right">
-        <button class="pres-hud-btn" id="btnPresToggleSub" onclick="togglePresSubtitle()">
+      <div style="pointer-events:auto;">
+        <button class="pres-hud-btn" onclick="togglePresSubtitle()">
           <span>💬 자막 켜기/끄기</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Script Logic -->
   <script>
     let currentArtwork = null;
     let wakeLock = null;
@@ -1060,30 +1023,27 @@
 
     // Extract artwork ID from URL (?id=...)
     const urlParams = new URLSearchParams(window.location.search);
-    const targetId = urlParams.get('id') || 'art_starry_night';
+    const targetId = urlParams.get('id') || 'paint_sargent_001';
     const autoPresentation = urlParams.get('mode') === 'presentation';
 
-    // Story Taxonomy Map
     const STORY_MAP = {
-      family: { label: '👨‍👩‍👧 가족 이야기', headline: '가족의 사랑과 따스한 유대감' },
-      lovers: { label: '💑 연인 & 애인', headline: '열정과 낭만, 사랑의 속삭임' },
-      children: { label: '👶 아이 & 동심', headline: '순수한 동심과 천진난만한 시절' },
-      friendship: { label: '🤝 우정 & 연대', headline: '함께하는 이들과의 깊은 우정과 신뢰' },
-      tragedy: { label: '🥀 비극 & 상실', headline: '인간의 고뇌와 슬픔, 실존적 비극' },
-      solitude: { label: '🕊️ 자아 & 고독', headline: '내면의 성찰과 침묵 속의 사색' },
-      nature: { label: '🌿 자연 & 정글', headline: '야생의 숨결과 경이로운 대자연' },
-      mystery: { label: '🕵️ 미스터리 & 비밀', headline: '캔버스 밑에 감춰진 비밀과 미스터리' }
+      family: { label: '가족 이야기', headline: '가족의 사랑과 따스한 유대감' },
+      lovers: { label: '연인 & 애인', headline: '열정과 낭만, 사랑의 속삭임' },
+      children: { label: '아이 & 동심', headline: '순수한 동심과 천진난만한 시절' },
+      friendship: { label: '우정 & 연대', headline: '함께하는 이들과의 깊은 우정과 신뢰' },
+      tragedy: { label: '비극 & 상실', headline: '인간의 고뇌와 슬픔, 실존적 비극' },
+      solitude: { label: '자아 & 고독', headline: '내면의 성찰과 침묵 속의 사색' },
+      nature: { label: '자연 & 정글', headline: '야생의 숨결과 경이로운 대자연' },
+      mystery: { label: '미스터리 & 비밀', headline: '캔버스 밑에 감춰진 비밀과 미스터리' }
     };
 
     async function loadArtworkData() {
       try {
-        // First try art_paintings_master_db.json
         const res1 = await fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json());
         const list1 = res1.featured_masterpieces || [];
         let found = list1.find(a => (a.id === targetId || a.work_id === targetId));
 
         if (!found) {
-          // Try contemporary / expanded
           try {
             const exp = await fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json());
             const expList = [
@@ -1097,14 +1057,12 @@
         }
 
         if (!found) {
-          // Try digital_gallery_master_db.json
           const resDg = await fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json());
           const dgList = resDg.artworks || [];
           found = dgList.find(a => (a.id === targetId || a.work_id === targetId));
         }
 
         if (!found && list1.length > 0) {
-          // Fallback to first masterpiece
           found = list1[0];
         }
 
@@ -1124,9 +1082,9 @@
       document.title = `${item.title_kr} (${item.artist_name_kr || '명화'}) — 렛츠아트`;
 
       const imgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
-      const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231e1b4b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%23ffffff%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%96%BC%EF%B8%8F%20%EB%AA%85%ED%99%94%20%EC%A0%84%EC%8B%9C%3C%2Ftext%3E%3C%2Fsvg%3E";
+      const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23080a0f%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2394a3b8%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%EC%9E%91%ED%92%88%20%EC%A0%84%EC%8B%9C%20%EC%A4%80%EB%B9%84%20%EC%A4%91%3C%2Ftext%3E%3C%2Fsvg%3E";
 
-      // 1. Hero Zone Elements
+      // 1. Hero Zone
       const heroImg = document.getElementById('heroArtworkImg');
       heroImg.src = imgUrl;
       heroImg.onerror = () => { heroImg.src = fallbackSvg; };
@@ -1134,51 +1092,47 @@
       const heroBg = document.getElementById('heroAmbientBg');
       heroBg.style.backgroundImage = `url('${imgUrl}')`;
 
-      // Hero Lower-Third
+      // Hero Lower-Third Caption
       const storyMeta = STORY_MAP[item.story_category] || STORY_MAP.solitude;
+      document.getElementById('ltMuseumBadge').textContent = item.museum || item.location || '소장처 참조';
+      document.getElementById('ltYearMeta').textContent = item.year ? `${item.year}년` : '연도 미상';
       document.getElementById('ltStoryBadge').textContent = item.story_label || storyMeta.label;
-      document.getElementById('ltMuseumBadge').textContent = `🏛️ ${item.museum || item.location || '소장처 참조'}`;
       document.getElementById('ltTitle').textContent = `${item.title_kr} ${item.title_en ? `(${item.title_en})` : ''}`;
-      document.getElementById('ltArtist').textContent = item.artist_name_kr || '작가 미상';
-      document.getElementById('ltYear').textContent = item.year ? `· ${item.year}년` : '';
-      document.getElementById('ltDesc').textContent = item.description || item.curator_notes || '인류의 위대한 예술적 유산을 감상해보세요.';
-
-      if (item.behind_story) {
-        document.getElementById('ltSecretBadge').style.display = 'inline-flex';
-      }
+      document.getElementById('ltArtist').textContent = `${item.artist_name_kr || '작가 미상'} ${item.artist_name_en ? `(${item.artist_name_en})` : ''}`;
+      document.getElementById('ltDesc').textContent = item.description || item.curator_notes || '인류의 위대한 문화유산을 감상해보세요.';
 
       // 2. Parallax Sheet Content
+      document.getElementById('sheetBreadcrumb').textContent = `인류 문화유산 아카이브 / ${item.category_kr || '회화'} / ${item.movement || '명화'}`;
       document.getElementById('sheetTitleKr').textContent = item.title_kr;
       document.getElementById('sheetTitleEn').textContent = item.title_en || '';
       document.getElementById('sheetArtistKr').textContent = item.artist_name_kr || '작가 미상';
       document.getElementById('sheetArtistEn').textContent = item.artist_name_en ? `(${item.artist_name_en})` : '';
-      document.getElementById('sheetMovementBadge').textContent = item.movement || item.category_kr || '서양화 / 명화';
 
       document.getElementById('specYear').textContent = item.year ? `${item.year}년` : '연도 미상';
-      document.getElementById('specMedium').textContent = item.medium || '캔버스에 유채';
-      document.getElementById('specDimensions').textContent = item.dimensions || '소장처 규격 참조';
+      document.getElementById('specMedium').textContent = item.medium || '캔버스에 유채 (Oil on canvas)';
+      document.getElementById('specDimensions').textContent = item.dimensions || '소장처 규격 정보 참조';
       document.getElementById('specMuseum').textContent = item.museum || item.location || '소장처 정보 참조';
+      document.getElementById('specUrn').textContent = item.urn || `urn:art:work:${item.id || item.work_id}`;
 
-      // Story Taxonomy Card
-      document.getElementById('storyBadge').textContent = item.story_label || storyMeta.label;
-      document.getElementById('storyHeaderTitle').textContent = storyMeta.headline;
-      document.getElementById('storyDescription').textContent = `${item.title_kr} 작품은 [${item.story_label || storyMeta.label}] 테마로 분류되어 관람객에게 깊은 공감과 스토리텔링을 선사합니다. ${item.description || ''}`;
-
-      // Behind Story Card (Handmaker / Secrets)
+      // Behind Story Investigation (Handmaker / Secrets)
       const secretCard = document.getElementById('behindSecretCard');
       if (item.behind_story) {
         secretCard.style.display = 'block';
-        document.getElementById('behindSecretContent').innerHTML = `
-          <p style="margin-bottom:8px;">${item.behind_story}</p>
-          ${item.behind_story_source ? `<div style="font-size:12px; color:#b45309; font-weight:700; margin-top:8px;">출처 / 연구자료: ${item.behind_story_source}</div>` : ''}
-        `;
+        document.getElementById('behindSecretContent').textContent = item.behind_story;
+        if (item.behind_story_source) {
+          document.getElementById('behindSecretSource').textContent = `조사 출처: ${item.behind_story_source}`;
+        }
       } else {
         secretCard.style.display = 'none';
       }
 
+      // Story Taxonomy Card
+      document.getElementById('storyTag').textContent = `HUMAN STORY TAXONOMY · ${item.story_label || storyMeta.label}`;
+      document.getElementById('storyHeaderTitle').textContent = storyMeta.headline;
+      document.getElementById('storyDescription').textContent = `${item.title_kr} 작품은 [${item.story_label || storyMeta.label}] 테마로 분류되어 깊은 예술적 통찰과 인간적 공감을 전합니다. ${item.description || ''}`;
+
       // Curatorial Commentary
-      const curatorEl = document.getElementById('curatorCommentary');
-      curatorEl.textContent = item.curator_notes || item.description || '이 작품은 시대를 뛰어넘는 조형미와 깊은 철학적 함의를 지니고 있습니다.';
+      document.getElementById('curatorCommentary').textContent = item.curator_notes || item.description || '이 작품은 시대를 뛰어넘는 조형미와 깊은 철학적 함의를 지니고 있습니다.';
 
       // Historical Background
       if (item.historical_background) {
@@ -1186,28 +1140,20 @@
         document.getElementById('historicalContent').textContent = item.historical_background;
       }
 
-      // Palette Swatches
+      // Minimalist Palette Swatches
       const paletteContainer = document.getElementById('paletteSwatches');
       if (item.palette && item.palette.length) {
         paletteContainer.innerHTML = item.palette.map(hex => `
-          <div class="swatch-pill" onclick="navigator.clipboard.writeText('${hex}'); alert('색상코드 ${hex} 복사되었습니다!');" title="클릭하여 복사">
-            <div class="swatch-color-box" style="background:${hex};"></div>
-            <span>${hex}</span>
+          <div class="palette-item" onclick="navigator.clipboard.writeText('${hex}'); alert('색상코드 ${hex} 복사되었습니다.');" title="클릭하여 복사">
+            <div class="palette-color" style="background:${hex};"></div>
+            <span class="palette-hex">${hex}</span>
           </div>
         `).join('');
       } else {
-        paletteContainer.innerHTML = '<span style="font-size:12px; color:var(--text-muted);">팔레트 데이터 준비 중</span>';
+        paletteContainer.innerHTML = '<span class="lds-mono" style="font-size:11px; color:var(--lds-text-muted);">PALETTE DATA PENDING</span>';
       }
 
-      // Aesthetic Tags
-      const tagsContainer = document.getElementById('aestheticTags');
-      if (item.aesthetic_elements && item.aesthetic_elements.length) {
-        tagsContainer.innerHTML = item.aesthetic_elements.map(t => `
-          <span class="aesthetic-chip">✦ ${t}</span>
-        `).join('');
-      }
-
-      // 3. Multimedia Docent Station (100% Video Coverage)
+      // 3. Multimedia Docent Hub
       const media = item.media_resources || {};
       const docentIframe = document.getElementById('docentYoutubeIframe');
       const docentTitle = document.getElementById('docentVideoTitle');
@@ -1216,35 +1162,35 @@
       docentIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
       docentTitle.textContent = `📺 ${media.youtube_title || (item.artist_name_kr + ' 명화 세계와 해설')}`;
 
-      // Populate 9 Platform Links
+      // Clean Unified 9 Platform Links
       const grid = document.getElementById('platformLinksGrid');
       grid.innerHTML = `
-        <a href="${media.youtube_video_url || media.youtube_search_url}" target="_blank" class="platform-btn" style="background:#dc2626; color:#fff;">
-          <span>▶️ 유튜브 해설 풀영상 ➔</span>
+        <a href="${media.youtube_video_url || media.youtube_search_url}" target="_blank" class="lds-platform-btn">
+          <span>▶️ 유튜브 해설 풀영상</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.channel_shorts_url || media.youtube_shorts_search_url}" target="_blank" class="platform-btn" style="background:#991b1b; color:#fff;">
-          <span>⚡ 서정욱 미술토크 Shorts ➔</span>
+        <a href="${media.channel_shorts_url || media.youtube_shorts_search_url}" target="_blank" class="lds-platform-btn">
+          <span>⚡ 서정욱 미술토크 Shorts</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.channel_reason_of_art}" target="_blank" class="platform-btn" style="background:#475569; color:#fff;">
-          <span>🎨 미술의 이유 채널 ➔</span>
+        <a href="${media.channel_reason_of_art}" target="_blank" class="lds-platform-btn">
+          <span>🎨 미술의 이유 채널</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" class="platform-btn" style="background:#059669; color:#fff;">
-          <span>🟢 네이버 TV·비디오 클립 ➔</span>
+        <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" class="lds-platform-btn">
+          <span>🟢 네이버 TV·클립 해설</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" class="platform-btn" style="background:#d97706; color:#fff;">
-          <span>🟡 다음·카카오TV 영상 ➔</span>
+        <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" class="lds-platform-btn">
+          <span>🟡 다음·카카오TV 영상</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.instagram_channel_url}" target="_blank" class="platform-btn" style="background:#c026d3; color:#fff;">
-          <span>📸 인스타 Behind Stories ➔</span>
+        <a href="${media.instagram_channel_url}" target="_blank" class="lds-platform-btn">
+          <span>📸 인스타 Behind Stories</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.tiktok_search_url}" target="_blank" class="platform-btn" style="background:#18181b; border:1px solid #52525b; color:#fff;">
-          <span>🎵 틱톡 1분 도슨트 ➔</span>
+        <a href="${media.tiktok_search_url}" target="_blank" class="lds-platform-btn">
+          <span>🎵 틱톡 1분 도슨트</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.vimeo_search_url}" target="_blank" class="platform-btn" style="background:#0284c7; color:#fff;">
-          <span>🎬 비메오(Vimeo) 다큐 ➔</span>
+        <a href="${media.vimeo_search_url}" target="_blank" class="lds-platform-btn">
+          <span>🎬 비메오(Vimeo) 다큐</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.channel_nulart || 'https://www.youtube.com/@nulart'}" target="_blank" class="platform-btn" style="background:#312e81; color:#fff;">
-          <span>🏛️ 널 위한 문화예술 ➔</span>
+        <a href="${media.channel_nulart || 'https://www.youtube.com/@nulart'}" target="_blank" class="lds-platform-btn">
+          <span>🏛️ 널 위한 문화예술</span> <span class="arrow">➔</span>
         </a>
       `;
 
@@ -1259,7 +1205,7 @@
       document.getElementById('presDesc').textContent = item.curator_notes || item.description || '';
     }
 
-    // Toggle Lower-Third in Hero Zone
+    // Toggle Lower-Third
     function toggleLowerThird() {
       const el = document.getElementById('heroLowerThird');
       const icon = document.getElementById('toggleSubtitleIcon');
@@ -1291,7 +1237,6 @@
       const overlay = document.getElementById('presOverlay');
       overlay.classList.add('active');
 
-      // Request Fullscreen
       try {
         if (document.documentElement.requestFullscreen) {
           await document.documentElement.requestFullscreen();
@@ -1299,13 +1244,10 @@
           await document.documentElement.webkitRequestFullscreen();
         }
       } catch (e) {
-        console.warn("Fullscreen request declined or unsupported:", e);
+        console.warn("Fullscreen request declined:", e);
       }
 
-      // Request Screen Wake Lock (화면 꺼짐 방지)
       requestScreenWakeLock();
-
-      // Reset transforms
       resetZoomPan();
     }
 
@@ -1313,10 +1255,8 @@
       const overlay = document.getElementById('presOverlay');
       overlay.classList.remove('active');
 
-      // Release WakeLock
       releaseScreenWakeLock();
 
-      // Exit Fullscreen
       try {
         if (document.fullscreenElement) {
           await document.exitFullscreen();
@@ -1327,18 +1267,16 @@
     }
 
     async function requestScreenWakeLock() {
-      const badge = document.getElementById('wakeLockBadge');
       const text = document.getElementById('wakeLockText');
       if ('wakeLock' in navigator) {
         try {
           wakeLock = await navigator.wakeLock.request('screen');
           text.textContent = '화면 꺼짐 방지 활성 (WakeLock)';
-          badge.style.display = 'inline-flex';
           wakeLock.addEventListener('release', () => {
             text.textContent = '화면 꺼짐 방지 해제됨';
           });
         } catch (err) {
-          text.textContent = '화면 꺼짐 방지 미지원 환경';
+          text.textContent = '화면 꺼짐 방지 미지원';
         }
       } else {
         text.textContent = '디지털 액자 모드 (WakeLock 미지원)';
@@ -1409,7 +1347,6 @@
       }
     }
 
-    // Mouse Wheel Zoom
     const presCanvas = document.getElementById('presCanvasWrap');
     presCanvas.addEventListener('wheel', (e) => {
       e.preventDefault();
@@ -1418,7 +1355,6 @@
       applyPresTransform();
     }, { passive: false });
 
-    // Mouse Drag Pan
     presCanvas.addEventListener('mousedown', (e) => {
       isDragging = true;
       startX = e.clientX - panX;
@@ -1436,7 +1372,6 @@
       isDragging = false;
     });
 
-    // Touch Devices Pinch to Zoom & Drag
     presCanvas.addEventListener('touchstart', (e) => {
       if (e.touches.length === 2) {
         initialPinchDistance = Math.hypot(
@@ -1476,19 +1411,16 @@
       }
     });
 
-    // Double tap / Double click to reset
     presCanvas.addEventListener('dblclick', () => {
       resetZoomPan();
     });
 
-    // Handle ESC key to exit fullscreen
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && document.getElementById('presOverlay').classList.contains('active')) {
         exitPresentationMode();
       }
     });
 
-    // Initialize
     loadArtworkData();
   </script>
 </body>
