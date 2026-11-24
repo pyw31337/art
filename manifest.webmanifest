@@ -1,1 +1,41 @@
-{"name":"렛츠아트","short_name":"렛츠아트","start_url":"./","display":"standalone","background_color":"#f8fafc","theme_color":"#f8fafc","icons":[{"src":"https://pyw31337.github.io/news/favicon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "렛츠아트 · 글로벌 명화 디지털 액자 & 아카이브",
+  "short_name": "렛츠아트",
+  "description": "글로벌 10대 미술관 & 다변화 인류 문화유산 원장 아카이브, 화면 꺼짐 방지 디지털 액자 감상실",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    {
+      "src": "./assets/icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -2,5 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 downloads/
-assets/
+assets/*
+!assets/icons/
 data/r2_upload_checkpoint.json

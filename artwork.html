@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#090d16">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
   <title>작품 상세 및 디지털 액자 — 렛츠아트 (Let's Art)</title>
   <style>
@@ -545,6 +547,87 @@
     .docent-cinema-section {
       margin-bottom: 48px;
     }
+    /* AI Voice Docent Station (LDS Anti-Box Architecture) */
+    .voice-docent-station {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      background: #f8fafc;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      flex-wrap: wrap;
+    }
+    .voice-station-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .voice-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 4px;
+      background: var(--lds-brand-600);
+      color: #ffffff;
+      font-size: 12.5px;
+      font-weight: 600;
+      border: 1px solid var(--lds-brand-700);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .voice-play-btn:hover { background: var(--lds-brand-700); }
+    .voice-soundwave {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+    }
+    .voice-bar {
+      width: 3px;
+      height: 5px;
+      background: var(--lds-brand-600);
+      border-radius: 999px;
+      transition: height 0.2s ease;
+    }
+    .voice-soundwave.active .voice-bar:nth-child(1) { animation: soundwave 0.8s infinite ease-in-out alternate; }
+    .voice-soundwave.active .voice-bar:nth-child(2) { animation: soundwave 1.1s infinite ease-in-out alternate 0.2s; }
+    .voice-soundwave.active .voice-bar:nth-child(3) { animation: soundwave 0.9s infinite ease-in-out alternate 0.4s; }
+    .voice-soundwave.active .voice-bar:nth-child(4) { animation: soundwave 1.2s infinite ease-in-out alternate 0.1s; }
+    @keyframes soundwave {
+      0% { height: 4px; }
+      100% { height: 16px; }
+    }
+    .voice-status-label {
+      font-size: 12px;
+      color: var(--lds-text-muted);
+    }
+    .voice-speed-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .voice-rate-btn {
+      padding: 3px 8px;
+      font-size: 11px;
+      font-family: var(--lds-font-mono);
+      background: #ffffff;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 3px;
+      cursor: pointer;
+      color: var(--lds-text-body);
+    }
+    .voice-rate-btn.active {
+      background: var(--lds-brand-50);
+      color: var(--lds-brand-600);
+      border-color: var(--lds-brand-600);
+      font-weight: 700;
+    }
+
     .docent-cinema-header {
       display: flex;
       justify-content: space-between;
@@ -786,6 +869,10 @@
         <a href="admin" class="lds-nav-btn" style="text-decoration:none;" title="수집 & 분석 관제 어드민">
           <span>⚙️ 관제</span>
         </a>
+        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트 해설">
+          <span id="voicePulseIcon" style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#3b82f6;"></span>
+          <span id="voiceNavText">AI 음성 도슨트</span>
+        </button>
         <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" title="화면 꺼짐 방지 디지털 액자 전체화면 감상">
           <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
           <span>디지털 액자 모드</span>
@@ -870,6 +957,29 @@
         <div class="lds-spec-row">
           <div class="lds-spec-label">아카이브 URN</div>
           <div class="lds-spec-val lds-mono" id="specUrn" style="font-size:11.5px; color:var(--lds-text-muted);">-</div>
+        </div>
+      </div>
+
+      <!-- AI Audio Docent Station -->
+      <div class="voice-docent-station">
+        <div class="voice-station-left">
+          <button class="voice-play-btn" onclick="toggleVoiceDocent()">
+            <span id="voicePlayIcon">🎙️</span>
+            <span id="sheetVoiceBtnText">AI 한국어 음성 도슨트 해설 재생</span>
+          </button>
+          <div class="voice-soundwave" id="voiceSoundwave">
+            <span class="voice-bar"></span>
+            <span class="voice-bar"></span>
+            <span class="voice-bar"></span>
+            <span class="voice-bar"></span>
+          </div>
+          <span class="voice-status-label" id="voiceStatusLabel">명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다</span>
+        </div>
+        <div class="voice-speed-group">
+          <span style="font-size:11px; color:var(--lds-text-muted);">속도:</span>
+          <button class="voice-rate-btn" data-rate="0.9" onclick="setVoiceRate(0.9)">0.9x</button>
+          <button class="voice-rate-btn active" data-rate="1.0" onclick="setVoiceRate(1.0)">1.0x</button>
+          <button class="voice-rate-btn" data-rate="1.2" onclick="setVoiceRate(1.2)">1.2x</button>
         </div>
       </div>
 
@@ -972,6 +1082,10 @@
       </div>
 
       <div style="display:flex; align-items:center; gap:8px;">
+        <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트 해설">
+          <span id="voicePresIcon">🎙️</span>
+          <span id="voicePresText">AI 해설</span>
+        </button>
         <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()">
           <span>🎥 카메라 모션 On</span>
         </button>
@@ -1234,6 +1348,114 @@
     }
 
     // ========================================================
+    // AI VOICE DOCENT ENGINE (Web Speech API)
+    // ========================================================
+    let voiceSynth = window.speechSynthesis;
+    let voiceUtterance = null;
+    let isVoicePlaying = false;
+    let currentVoiceRate = 1.0;
+
+    function getCuratedDocentScript() {
+      if (!currentArtwork) return "";
+      const title = currentArtwork.title_kr || currentArtwork.title || "명화";
+      const artist = currentArtwork.artist_name_kr || currentArtwork.artist || "작가 미상";
+      const year = currentArtwork.year || "연도 미상";
+      const museum = currentArtwork.museum || currentArtwork.location || "소장처";
+      const behind = currentArtwork.behind_story ? ` 비하인드 조사 기록에 따르면, ${currentArtwork.behind_story}` : '';
+      const notes = currentArtwork.curator_notes || currentArtwork.description || "";
+
+      return `안녕하세요. 렛츠아트 인공지능 음성 도슨트입니다. `
+        + `지금 감상하시는 작품은 ${artist}의 걸작, ${title}입니다. `
+        + `${year}년에 완성되었으며, 현재 ${museum}에 소장되어 있습니다. `
+        + `${notes} `
+        + `${behind} `
+        + `화면을 통해 명화의 붓터치와 빛의 울림을 천천히 감상해보시기 바랍니다.`;
+    }
+
+    function toggleVoiceDocent() {
+      if (!('speechSynthesis' in window)) {
+        alert("현재 브라우저 환경에서 음성 합성(Speech Synthesis)을 지원하지 않습니다.");
+        return;
+      }
+
+      if (isVoicePlaying) {
+        window.speechSynthesis.cancel();
+        isVoicePlaying = false;
+        updateVoiceUI(false);
+      } else {
+        window.speechSynthesis.cancel();
+        const script = getCuratedDocentScript();
+        if (!script) return;
+
+        voiceUtterance = new SpeechSynthesisUtterance(script);
+        voiceUtterance.rate = currentVoiceRate;
+        voiceUtterance.pitch = 1.0;
+        voiceUtterance.lang = 'ko-KR';
+
+        const voices = window.speechSynthesis.getVoices();
+        const koVoice = voices.find(v => v.lang === 'ko-KR' || v.lang.startsWith('ko'));
+        if (koVoice) voiceUtterance.voice = koVoice;
+
+        voiceUtterance.onstart = () => {
+          isVoicePlaying = true;
+          updateVoiceUI(true);
+        };
+
+        voiceUtterance.onend = () => {
+          isVoicePlaying = false;
+          updateVoiceUI(false);
+        };
+
+        voiceUtterance.onerror = (e) => {
+          console.warn("Speech synthesis notice:", e);
+          isVoicePlaying = false;
+          updateVoiceUI(false);
+        };
+
+        window.speechSynthesis.speak(voiceUtterance);
+      }
+    }
+
+    function setVoiceRate(rate) {
+      currentVoiceRate = rate;
+      document.querySelectorAll('.voice-rate-btn').forEach(b => {
+        b.classList.toggle('active', parseFloat(b.dataset.rate) === rate);
+      });
+      if (isVoicePlaying) {
+        toggleVoiceDocent();
+        setTimeout(toggleVoiceDocent, 150);
+      }
+    }
+
+    function updateVoiceUI(playing) {
+      const navText = document.getElementById('voiceNavText');
+      const presText = document.getElementById('voicePresText');
+      const sheetBtnText = document.getElementById('sheetVoiceBtnText');
+      const pulseIcon = document.getElementById('voicePulseIcon');
+      const soundwave = document.getElementById('voiceSoundwave');
+      const statusLabel = document.getElementById('voiceStatusLabel');
+      const playIcon = document.getElementById('voicePlayIcon');
+
+      if (playing) {
+        if (navText) navText.textContent = "해설 멈춤";
+        if (presText) presText.textContent = "해설 멈춤";
+        if (sheetBtnText) sheetBtnText.textContent = "⏹️ AI 해설 멈춤";
+        if (pulseIcon) pulseIcon.style.background = "#ef4444";
+        if (soundwave) soundwave.classList.add('active');
+        if (playIcon) playIcon.textContent = "⏹️";
+        if (statusLabel) statusLabel.textContent = "🎙️ AI 도슨트가 명화의 역사와 도상학적 비하인드 스토리를 해설 중입니다";
+      } else {
+        if (navText) navText.textContent = "AI 음성 도슨트";
+        if (presText) presText.textContent = "AI 해설";
+        if (sheetBtnText) sheetBtnText.textContent = "AI 한국어 음성 도슨트 해설 재생";
+        if (pulseIcon) pulseIcon.style.background = "#3b82f6";
+        if (soundwave) soundwave.classList.remove('active');
+        if (playIcon) playIcon.textContent = "🎙️";
+        if (statusLabel) statusLabel.textContent = "명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다";
+      }
+    }
+
+    // ========================================================
     // PRESENTATION GALLERY (디지털 액자 & WAKELOCK)
     // ========================================================
     async function enterPresentationMode() {
@@ -1425,6 +1647,12 @@
     });
 
     loadArtworkData();
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => console.log('SW reg fail:', err));
+      });
+    }
   </script>
 </body>
 </html>

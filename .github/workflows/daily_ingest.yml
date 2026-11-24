@@ -20,8 +20,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Collect source evidence
+      - name: Run 24/7 Daily Art Pipeline
         run: |
+          python scripts/daily_art_pipeline.py
           python scripts/record_observability.py
 
       - name: Commit and push changes

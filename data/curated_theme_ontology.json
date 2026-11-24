@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2026-11-24T16:54:47.260416",
+  "last_updated": "2026-11-24T17:59:27.575015",
   "channels": {
     "nulart": {
       "name": "널 위한 문화예술",
@@ -111,49 +111,5 @@
       "label": "💥 입체파 & 초현실주의 (Cubism & Surrealism)",
       "count": 109
     }
-  },
-  "story_taxonomy": {
-    "family": {
-      "label": "👨‍👩‍👧 가족 & 모성애 (Family & Maternal Love)",
-      "icon": "👨‍👩‍👧",
-      "count": 1493
-    },
-    "lovers": {
-      "label": "💑 연인 & 사랑 (Lovers & Romance)",
-      "icon": "💑",
-      "count": 434
-    },
-    "children": {
-      "label": "👶 아이 & 동심 (Children & Innocence)",
-      "icon": "👶",
-      "count": 723
-    },
-    "friendship": {
-      "label": "🤝 우정 & 동료 (Friendship & Camaraderie)",
-      "icon": "🤝",
-      "count": 382
-    },
-    "tragedy": {
-      "label": "🥀 비극 & 상실 (Tragedy & Sorrow)",
-      "icon": "🥀",
-      "count": 799
-    },
-    "solitude": {
-      "label": "🕊️ 자아 & 고독 (Self & Solitude)",
-      "icon": "🕊️",
-      "count": 2627
-    },
-    "nature": {
-      "label": "🌿 자연 & 정글 (Jungle & Nature)",
-      "icon": "🌿",
-      "count": 1114
-    },
-    "mystery": {
-      "label": "🕵️ 미스터리 & 비밀 (Mystery & Secrets)",
-      "icon": "🕵️",
-      "count": 406
-    }
-  },
-  "video_coverage_rate": "100.0%",
-  "total_artworks_with_video": 7978
+  }
 }
