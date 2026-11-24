@@ -526,6 +526,7 @@
         <button class="museum-chip" data-museum="met" onclick="setMuseum('met')">🏛️ 메트로폴리탄 (Met)</button>
         <button class="museum-chip" data-museum="chicago" onclick="setMuseum('chicago')">🏛️ 시카고 미술관</button>
         <button class="museum-chip" data-museum="eco_gallery" onclick="setMuseum('eco_gallery')">🖼️ 이씨오 디지털 갤러리 (7.8k)</button>
+        <button class="museum-chip" data-museum="behind_story" onclick="setMuseum('behind_story')" style="border-color:#f59e0b; color:#b45309; background:#fffbeb;">🎭 비하인드 스토리 수록작 (2.7k)</button>
       </div>
     </div>
 
@@ -657,7 +658,7 @@
       document.querySelectorAll('.museum-chip').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-museum') === mus);
       });
-      if (mus === 'eco_gallery' && !digitalGalleryLoaded) {
+      if ((mus === 'eco_gallery' || mus === 'behind_story') && !digitalGalleryLoaded) {
         await loadDigitalGallery();
       }
       filterAndRender();
@@ -674,6 +675,7 @@
 
       if (activeMuseum !== 'all') {
         list = list.filter(item => {
+          if (activeMuseum === 'behind_story') return !!item.behind_story;
           if (item.museum_key === activeMuseum) return true;
           const mus = (item.museum || item.location || '').toLowerCase();
           if (activeMuseum === 'moma' && (mus.includes('moma') || mus.includes('근대미술관'))) return true;
@@ -699,9 +701,10 @@
           const a2 = item.artist_name_en?.toLowerCase() || item.architect_en?.toLowerCase() || '';
           const m = item.movement?.toLowerCase() || item.style?.toLowerCase() || item.genre?.toLowerCase() || '';
           const d = item.description?.toLowerCase() || item.synopsis?.toLowerCase() || '';
+          const bs = (item.behind_story || '').toLowerCase();
           const mus = item.museum?.toLowerCase() || item.location?.toLowerCase() || '';
           const aes = (item.aesthetic_elements || []).join(' ').toLowerCase();
-          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || mus.includes(q) || aes.includes(q);
+          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || bs.includes(q) || mus.includes(q) || aes.includes(q);
         });
       }
 
@@ -778,6 +781,7 @@
               <span><b>${creatorName}</b></span>
               ${item.artist_name_en ? `<span style="font-size:12px; color:var(--muted);">(${item.artist_name_en})</span>` : ''}
               ${subStyle ? `<span class="badge-style">${subStyle}</span>` : ''}
+              ${item.behind_story ? `<span style="background:#fef3c7; color:#92400e; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:3px;">🎭 비하인드 스토리</span>` : ''}
             </div>
             <div class="venue-line">🏛️ ${venue}</div>
 
@@ -896,6 +900,18 @@
             <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 작품 배경 & 해설</h4>
             ${item.historical_background || item.description || ''}
           </div>
+
+          ${item.behind_story ? `
+            <div style="background:#fffbeb; border:1px solid #fef08a; border-left:5px solid #d97706; padding:18px 20px; border-radius:10px; font-size:14px; color:#78350f; line-height:1.75; margin-bottom:20px; box-shadow:0 2px 6px rgba(217,119,6,0.06);">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px; border-bottom:1px dashed #fde68a; padding-bottom:8px;">
+                <h4 style="font-size:15px; font-weight:800; color:#b45309; margin:0; display:flex; align-items:center; gap:6px;">
+                  <span>🎭</span> 명화 속 숨겨진 비하인드 스토리 & 미스터리
+                </h4>
+                ${item.behind_story_source ? `<span style="font-size:11.5px; color:#92400e; background:#fef3c7; padding:3px 10px; border-radius:6px; font-weight:700;">출처: ${item.behind_story_source}</span>` : ''}
+              </div>
+              <div style="white-space:pre-line; color:#451a03; font-size:13.5px;">${item.behind_story}</div>
+            </div>
+          ` : ''}
 
           ${(item.curator_notes || item.curator_commentary || item.architectural_significance) ? `
             <div style="background:#f0f9ff; border-left:4px solid #0284c7; padding:14px 16px; border-radius:8px; font-size:13px; color:#0369a1; line-height:1.6; margin-bottom:18px;">
