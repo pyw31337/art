@@ -1,0 +1,115 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2026-11-24T15:36:19.009606",
+  "channels": {
+    "nulart": {
+      "name": "널 위한 문화예술",
+      "url": "https://www.youtube.com/@nulart",
+      "desc": "대한민국 1위 문화예술 유튜브 채널의 명화 스토리텔링"
+    },
+    "sapiens": {
+      "name": "사피엔스 스튜디오",
+      "url": "https://www.youtube.com/@sapiens_studio",
+      "desc": "양정무 교수의 난처한 미술이야기 & 명화 인문학 강의"
+    },
+    "seo_arttalk": {
+      "name": "서정욱 미술토크",
+      "url": "https://www.youtube.com/@서정욱_미술토크",
+      "shorts_url": "https://www.youtube.com/@서정욱_미술토크/shorts",
+      "desc": "명화 1분 도슨트 쇼츠 및 깊이 있는 명화 해설"
+    },
+    "reason_of_art": {
+      "name": "미술의 이유",
+      "url": "https://www.youtube.com/@Reason_Of_Art/videos",
+      "desc": "작품 속 미스터리와 역사적 탄생 배경 전문 해설"
+    },
+    "room_art": {
+      "name": "방구석 미술관 (조원재)",
+      "url": "https://www.youtube.com/@100book",
+      "desc": "미술계 최고의 베스트셀러 작가가 들려주는 화가들의 생생한 뒷이야기"
+    },
+    "ebs_art": {
+      "name": "EBS 클래스e 미술관",
+      "url": "https://www.youtube.com/@ebsclass_e",
+      "desc": "최고의 석학들이 전하는 정통 미술사 강의 아카이브"
+    }
+  },
+  "season_definitions": {
+    "spring": {
+      "label": "🌸 봄의 찬가 (Spring)",
+      "count": 520
+    },
+    "summer": {
+      "label": "☀️ 눈부신 여름 (Summer)",
+      "count": 679
+    },
+    "autumn": {
+      "label": "🍂 쓸쓸한 가을빛 (Autumn)",
+      "count": 257
+    },
+    "winter": {
+      "label": "❄️ 시린 겨울과 설경 (Winter)",
+      "count": 412
+    }
+  },
+  "theme_definitions": {
+    "love": {
+      "label": "💘 세기의 연인 & 사랑 (Love & Passion)",
+      "count": 418
+    },
+    "night": {
+      "label": "🌙 밤과 별빛의 선율 (Night & Stars)",
+      "count": 1060
+    },
+    "mystery": {
+      "label": "🕵️ 미스터리 & 비밀의 방 (Mystery & Hidden Secrets)",
+      "count": 876
+    },
+    "revolution": {
+      "label": "🔥 혁명과 자유, 저항 (Revolution & Liberty)",
+      "count": 575
+    },
+    "solitude": {
+      "label": "🕊️ 고독과 실존, 치유 (Solitude & Healing)",
+      "count": 1587
+    },
+    "nature": {
+      "label": "🌿 야성과 원시 정글 (Jungle & Wild Nature)",
+      "count": 224
+    },
+    "korean": {
+      "label": "🇰🇷 한국의 멋과 해학 (Korean Wit & Soul)",
+      "count": 811
+    }
+  },
+  "movement_definitions": {
+    "renaissance": {
+      "label": "🏛️ 르네상스 (Renaissance)",
+      "count": 269
+    },
+    "baroque": {
+      "label": "👑 바로크 & 로코코 (Baroque)",
+      "count": 752
+    },
+    "romanticism": {
+      "label": "🚩 낭만주의 & 사실주의 (Romanticism)",
+      "count": 1029
+    },
+    "impressionism": {
+      "label": "🎨 인상주의 & 신인상주의 (Impressionism)",
+      "count": 1437
+    },
+    "post_impressionism": {
+      "label": "🌻 후기인상주의 (Post-Impressionism)",
+      "count": 867
+    },
+    "expressionism": {
+      "label": "😱 표현주의 & 야수파 (Expressionism & Fauvism)",
+      "count": 733
+    },
+    "modern": {
+      "label": "💥 입체파 & 초현실주의 (Cubism & Surrealism)",
+      "count": 109
+    }
+  }
+}

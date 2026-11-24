@@ -196,6 +196,31 @@
       border-color: #2563eb;
       box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
     }
+    .theme-chip {
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .theme-chip:hover {
+      background: #eef2ff;
+      border-color: #6366f1;
+      color: #4f46e5;
+    }
+    .theme-chip.active {
+      background: #4f46e5;
+      color: #ffffff;
+      border-color: #4f46e5;
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+    }
 
     /* Grid Layout */
     .grid {
@@ -528,6 +553,23 @@
         <button class="museum-chip" data-museum="eco_gallery" onclick="setMuseum('eco_gallery')">🖼️ 이씨오 디지털 갤러리 (7.8k)</button>
         <button class="museum-chip" data-museum="behind_story" onclick="setMuseum('behind_story')" style="border-color:#f59e0b; color:#b45309; background:#fffbeb;">🎭 비하인드 스토리 수록작 (2.7k)</button>
       </div>
+
+      <!-- 다차원 온톨로지 테마 & 계절 큐레이션 바 -->
+      <div class="museum-filter-bar" id="themeFilterBar" style="margin-top:6px; padding-top:8px; border-top:1px dashed #e2e8f0;">
+        <span style="font-size:11.5px; font-weight:700; color:#6366f1; margin-right:4px;">온톨로지 테마:</span>
+        <button class="theme-chip active" data-theme="all" onclick="setTheme('all')">전체 테마</button>
+        <button class="theme-chip" data-theme="spring" onclick="setTheme('spring')">🌸 봄의 찬가</button>
+        <button class="theme-chip" data-theme="summer" onclick="setTheme('summer')">☀️ 눈부신 여름</button>
+        <button class="theme-chip" data-theme="autumn" onclick="setTheme('autumn')">🍂 가을빛</button>
+        <button class="theme-chip" data-theme="winter" onclick="setTheme('winter')">❄️ 겨울 설경</button>
+        <button class="theme-chip" data-theme="love" onclick="setTheme('love')">💘 세기의 사랑</button>
+        <button class="theme-chip" data-theme="night" onclick="setTheme('night')">🌙 밤과 별빛</button>
+        <button class="theme-chip" data-theme="mystery" onclick="setTheme('mystery')">🕵️ 미스터리</button>
+        <button class="theme-chip" data-theme="revolution" onclick="setTheme('revolution')">🔥 혁명과 자유</button>
+        <button class="theme-chip" data-theme="solitude" onclick="setTheme('solitude')">🕊️ 고독과 치유</button>
+        <button class="theme-chip" data-theme="nature" onclick="setTheme('nature')">🌿 야성과 정글</button>
+        <button class="theme-chip" data-theme="korean" onclick="setTheme('korean')">🇰🇷 한국의 멋</button>
+      </div>
     </div>
 
     <!-- Main Grid -->
@@ -624,6 +666,7 @@
       filterAndRender();
     }
 
+    let activeTheme = 'all';
     let digitalGalleryLoaded = false;
     let loadingDigitalGallery = false;
 
@@ -664,6 +707,17 @@
       filterAndRender();
     }
 
+    async function setTheme(theme) {
+      activeTheme = theme;
+      document.querySelectorAll('.theme-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+      });
+      if (theme !== 'all' && !digitalGalleryLoaded) {
+        await loadDigitalGallery();
+      }
+      filterAndRender();
+    }
+
     function filterAndRender() {
       const q = document.getElementById('artSearch').value.toLowerCase().trim();
       const grid = document.getElementById('mainGrid');
@@ -685,6 +739,15 @@
           if (activeMuseum === 'met' && (mus.includes('metropolitan') || mus.includes('메트로폴리탄') || mus.includes('the met'))) return true;
           if (activeMuseum === 'chicago' && (mus.includes('chicago') || mus.includes('시카고'))) return true;
           if (activeMuseum === 'eco_gallery' && (item.museum_key === 'eco_gallery' || mus.includes('이씨오') || mus.includes('디지털 갤러리'))) return true;
+          return false;
+        });
+      }
+
+      if (activeTheme !== 'all') {
+        list = list.filter(item => {
+          if (item.season === activeTheme) return true;
+          if (item.themes && item.themes.includes(activeTheme)) return true;
+          if (item.movement_category === activeTheme) return true;
           return false;
         });
       }
@@ -782,6 +845,12 @@
               ${item.artist_name_en ? `<span style="font-size:12px; color:var(--muted);">(${item.artist_name_en})</span>` : ''}
               ${subStyle ? `<span class="badge-style">${subStyle}</span>` : ''}
               ${item.behind_story ? `<span style="background:#fef3c7; color:#92400e; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:3px;">🎭 비하인드 스토리</span>` : ''}
+              ${(item.themes && item.themes.length && item.themes[0] !== 'classic') ? `
+                <span style="background:#f3e8ff; color:#6b21a8; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:2px;">✦ ${item.themes[0]}</span>
+              ` : ''}
+              ${(item.season && item.season !== 'all') ? `
+                <span style="background:#ecfdf5; color:#065f46; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:2px;">🌿 ${item.season}</span>
+              ` : ''}
             </div>
             <div class="venue-line">🏛️ ${venue}</div>
 
@@ -962,6 +1031,26 @@
               <a href="${media.vimeo_search_url}" target="_blank" 
                  style="background:#0284c7; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
                 <span>🎬 비메오(Vimeo) 다큐 ➔</span>
+              </a>
+
+              <a href="https://www.youtube.com/@nulart" target="_blank" 
+                 style="background:#1e1b4b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🏛️ 널 위한 문화예술 ➔</span>
+              </a>
+
+              <a href="https://www.youtube.com/@sapiens_studio" target="_blank" 
+                 style="background:#14532d; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🎓 사피엔스 스튜디오 (양정무) ➔</span>
+              </a>
+
+              <a href="https://www.youtube.com/@100book" target="_blank" 
+                 style="background:#701a75; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>📖 방구석 미술관 (조원재) ➔</span>
+              </a>
+
+              <a href="https://www.youtube.com/@ebsclass_e" target="_blank" 
+                 style="background:#0f766e; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🏫 EBS 클래스e 미술관 ➔</span>
               </a>
 
               ${media.article_url ? `

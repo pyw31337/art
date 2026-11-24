@@ -137,7 +137,12 @@
         "youtube_title": "서정욱 미술토크 - 빈센트 반 고흐 '별이 빛나는 밤' 도슨트 해설",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "아트인사이트 <기묘한 미술관>"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_mona_lisa",
@@ -197,7 +202,12 @@
         "youtube_title": "서정욱 미술토크 - 레오나르도 다 빈치 '모나리자' 도난 사건과 미스터리",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57708",
         "article_source": "아트인사이트 <기묘한 미술관>"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "renaissance"
     },
     {
       "work_id": "art_picasso_demoiselles",
@@ -256,7 +266,12 @@
         "youtube_title": "미술의 이유 - 파블로 피카소 '아비뇽의 처녀들' 입체파의 혁명",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "뉴욕 현대미술관(MoMA) 큐레이터 아카이브"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "revolution"
+      ],
+      "movement_category": "modern"
     },
     {
       "work_id": "art_dali_persistence_of_memory",
@@ -316,7 +331,12 @@
         "youtube_title": "미술의 이유 - 살바도르 달리 '기억의 지속' 치즈에서 영감받은 녹아내리는 시계",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72258",
         "article_source": "살바도르 달리 자서전 / MoMA 아카이브"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "modern"
     },
     {
       "work_id": "art_delacroix_liberty",
@@ -375,7 +395,12 @@
         "youtube_title": "미술의 이유 - 외젠 들라크루아 '민중을 이끄는 자유의 여신'과 7월 혁명",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "루브르 박물관 역사 기록관"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "revolution"
+      ],
+      "movement_category": "romanticism"
     },
     {
       "work_id": "art_seurat_grande_jatte",
@@ -433,7 +458,12 @@
         "youtube_title": "서정욱 미술토크 - 조르주 쇠라 '그랑드 자트 섬의 일요일 오후' 2년간의 점묘법",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72246",
         "article_source": "시카고 미술관 / <기묘한 미술관>"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "impressionism"
     },
     {
       "work_id": "art_botticelli_venus",
@@ -491,7 +521,12 @@
         "youtube_title": "서정욱 미술토크 - 산드로 보티첼리 '비너스의 탄생' 시모네타를 향한 순애보",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "우피치 미술관 컬렉션 / <사랑을 그린 화가들>"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "love"
+      ],
+      "movement_category": "renaissance"
     },
     {
       "work_id": "art_velazquez_meninas",
@@ -549,7 +584,12 @@
         "youtube_title": "미술의 이유 - 디에고 벨라스케스 '시녀들' 거울 속 시점의 수수께끼",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "프라도 미술관 공식 해설"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "baroque"
     },
     {
       "work_id": "art_munch_scream",
@@ -608,7 +648,12 @@
         "youtube_title": "서정욱 미술토크 - 에드바르 뭉크 '절규' 자연의 비명과 숨은 낙서",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "노르웨이 국립미술관 연구 보고서 / 아트인사이트"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "solitude"
+      ],
+      "movement_category": "expressionism"
     },
     {
       "work_id": "art_klimt_the_kiss",
@@ -668,7 +713,12 @@
         "youtube_title": "서정욱 미술토크 - 구스타프 클림트 '키스' 황금빛 연인 에밀리 플뢰게",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "빈 벨베데레 궁전 큐레이터 노트"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "love"
+      ],
+      "movement_category": "expressionism"
     },
     {
       "work_id": "paint_sargent_001",
@@ -729,7 +779,113 @@
         "youtube_title": "미술의 이유 - 존 싱어 사전트 '마담 X' 흘러내린 어깨끈 스캔들",
         "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
         "article_source": "핸드메이커(handmaker) 명화 비하인드 칼럼"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "romanticism"
+    },
+    {
+      "work_id": "paint_anthonissen_whale",
+      "id": "paint_anthonissen_whale",
+      "urn": "urn:art:painting:fitzwilliam:scheveningen_sands:pd1641",
+      "artist_id": "artist_anthonissen_01",
+      "artist_name_kr": "헨드릭 반 안토니센",
+      "artist_name_en": "Hendrick van Anthonissen",
+      "title_kr": "스헤베닝언 해변의 풍경 (View of Scheveningen Sands)",
+      "title_en": "View of Scheveningen Sands",
+      "year": 1641,
+      "movement": "네덜란드 황금기 해양 풍경화",
+      "category": "paintings",
+      "category_kr": "서양 고전 명화",
+      "medium": "패널에 유채",
+      "dimensions": "68.5 × 106.5 cm",
+      "museum": "피츠윌리엄 박물관 (The Fitzwilliam Museum, Cambridge)",
+      "museum_key": "british_museum",
+      "location_country": "영국 (UK)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Anthonissen_Hendrik_van_1606-1660_02.jpg",
+      "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Anthonissen_Hendrik_van_1606-1660_02.jpg",
+      "palette": [
+        "#64748b",
+        "#e2e8f0",
+        "#334155",
+        "#94a3b8",
+        "#0f172a"
+      ],
+      "aesthetic_elements": [
+        "150년 만에 드러난 거대 향유고래",
+        "스헤베닝언 해변의 파도",
+        "구경꾼들의 운집",
+        "바니시 속 복원 미스터리"
+      ],
+      "description": "17세기 네덜란드 회화 복원 과정에서 노랗게 변한 바니시를 걷어내자 150년 동안 바다 풍경 뒤에 감춰져 있던 거대한 향유고래가 기적처럼 나타난 전설적인 복원 명작.",
+      "historical_background": "케임브리지 대학 피츠윌리엄 박물관의 복원사 샨 쿠앙(Shan Kuang)이 오래된 그림을 세척하던 중 해수면에 떠 있는 돛단배 옆으로 노란 바니시 밑에서 이상한 검은 형태를 발견했습니다. 조심스럽게 표면을 벗겨내자, 해변에 좌초된 거대한 향유고래와 이를 보기 위해 모여든 수많은 군중의 진실이 150년 만에 밝혀졌습니다.",
+      "behind_story": "🐋 150년 만에 바니시 밑에서 부활한 거대한 향유고래의 미스터리.\n\n기존에 이 그림은 그저 네덜란드 스헤베닝언 해변에 평화롭게 모여 있는 사람들을 그린 평범한 풍경화로 여겨졌습니다. 사람들은 왜 저곳에 저렇게 모여 있는지 아무도 몰랐습니다.\n\n2014년 피츠윌리엄 박물관 복원팀이 바니시 덧칠을 벗겨내자 해변에 좌초된 거대한 향유고래가 마침내 모습을 드러냈습니다! 18세기 수집가가 그림을 거실에 걸어두려다 죽은 고래의 모습이 흉측하다고 생각해 붓으로 덧칠해 고래를 지워버렸던 것입니다. 150년 만에 원래의 진실을 되찾은 미술사상 가장 유쾌하고 놀라운 복원 실화입니다.",
+      "behind_story_source": "핸드메이커(handmaker) 명화 비하인드 (No. 17213) / 케임브리지 대학 피츠윌리엄 박물관 공식 발표",
+      "media_resources": {
+        "youtube_video_id": "IQEZQAUNCjU",
+        "youtube_video_url": "https://www.youtube.com/results?search_query=헨드릭+반+안토니센+스헤베닝언+고래",
+        "youtube_title": "미술 복원 다큐 - 150년 만에 캔버스에서 나타난 고래",
+        "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
+        "article_source": "핸드메이커(handmaker) 아트 칼럼"
+      },
+      "season": "summer",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "classic"
+    },
+    {
+      "work_id": "paint_picasso_guitarist",
+      "id": "paint_picasso_guitarist",
+      "urn": "urn:art:painting:artic:old_guitarist:28067",
+      "artist_id": "artist_picasso_01",
+      "artist_name_kr": "파블로 피카소",
+      "artist_name_en": "Pablo Picasso",
+      "title_kr": "늙은 기타 연주자 (The Old Guitarist)",
+      "title_en": "The Old Guitarist",
+      "year": 1903,
+      "movement": "청색 시대 / 표현주의",
+      "category": "paintings",
+      "category_kr": "서양 고전 명화",
+      "medium": "패널에 유채",
+      "dimensions": "122.9 × 82.6 cm",
+      "museum": "시카고 미술관 (Art Institute of Chicago)",
+      "museum_key": "chicago",
+      "location_country": "미국 (USA)",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg",
+      "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg",
+      "palette": [
+        "#1e3a8a",
+        "#172554",
+        "#60a5fa",
+        "#94a3b8",
+        "#475569"
+      ],
+      "aesthetic_elements": [
+        "청색조의 극단적 모노크롬",
+        "왜곡된 신체 비율",
+        "눈먼 노인의 손가락",
+        "캔버스 속 숨겨진 여인",
+        "실존적 고독"
+      ],
+      "description": "친구 카사헤마스의 자살 이후 절망과 극심한 빈곤 속에서 탄생한 피카소 청색 시대의 불후의 걸작. 엑스레이 투과 결과 캔버스 밑에 여인과 아이의 숨겨진 스케치가 발견되었습니다.",
+      "historical_background": "시카고 아트 인스티튜트 연구팀이 적외선 엑스레이 촬영을 진행한 결과, 눈먼 늙은 노인의 머리 뒤편과 목 부분에 또 다른 여성의 얼굴과 젖을 먹이는 아이의 윤곽선이 발견되었습니다. 1903년 파리에서 극심한 굶주림에 시달렸던 22세의 청년 피카소는 새 캔버스를 살 돈이 없어, 이전에 그렸던 다른 그림 위에 짙은 푸른 물감을 덧칠해 이 걸작을 그렸던 것입니다.",
+      "behind_story": "🎸 엑스레이가 밝혀낸 캔버스 밑바닥의 비밀: 청년 피카소의 눈물겨운 청색 시대.\n\n시카고 미술관 연구진이 이 그림을 과학적으로 정밀 분석했을 때 전 세계 미술계가 깜짝 놀랐습니다. 눈먼 노인의 목덜미 뒤쪽에 희미하게 젖을 먹이는 젊은 어머니의 얼굴과 황소, 아이의 형상이 숨겨져 있었기 때문입니다.\n\n피카소는 1901~1904년 파리에서 난방비도 없어 자신의 스케치를 난로에 태워가며 극심한 가난을 견뎠습니다. 새 캔버스를 살 단 몇 푼의 돈조차 없었던 피카소는 자신이 과거에 그렸던 그림 위에 그대로 붓질을 덧대어 이 고독한 노인을 완성했습니다.",
+      "behind_story_source": "핸드메이커(handmaker) 명화 비하인드 (No. 17213) / 시카고 아트 인스티튜트 연구 보고서",
+      "media_resources": {
+        "youtube_video_id": "wPukVfGyW0E",
+        "youtube_video_url": "https://www.youtube.com/watch?v=wPukVfGyW0E",
+        "youtube_title": "미술의 이유 - 피카소 청색 시대의 비애와 숨겨진 캔버스",
+        "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
+        "article_source": "핸드메이커(handmaker) 아트 칼럼"
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "modern"
     },
     {
       "work_id": "art_eco_250",
@@ -784,7 +940,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_251",
@@ -839,7 +1000,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Prostitute%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Prostitute",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_252",
@@ -894,7 +1060,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Woman%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Woman",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_253",
@@ -949,7 +1120,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20woman%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20woman",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_254",
@@ -1004,7 +1180,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Roulin%E2%80%99s%20Baby%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Roulin%E2%80%99s%20Baby",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_255",
@@ -1059,7 +1240,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Madame%20Roulin%20and%20Her%20Baby%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Madame%20Roulin%20and%20Her%20Baby",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_256",
@@ -1114,7 +1300,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant%20Woman%20with%20Dark%20Cap%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant%20Woman%20with%20Dark%20Cap",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_257",
@@ -1169,7 +1360,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Marguerite%20Gachet%20at%20the%20Piano%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Marguerite%20Gachet%20at%20the%20Piano",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "love",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_262",
@@ -1223,7 +1420,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20Woman%20Cooking%20by%20a%20Fireplace%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20Woman%20Cooking%20by%20a%20Fireplace",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_268",
@@ -1278,7 +1480,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Courtesan%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Courtesan",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_270",
@@ -1332,7 +1539,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Pair%20of%20Boots%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Pair%20of%20Boots",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_284",
@@ -1386,7 +1598,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Potato%20Peeler%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Potato%20Peeler",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_296",
@@ -1440,7 +1657,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Women%20Picking%20Olives%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Women%20Picking%20Olives",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_384",
@@ -1494,7 +1716,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20of%20Oranges%20and%20Lemons%20with%20Blue%20Gloves%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20of%20Oranges%20and%20Lemons%20with%20Blue%20Gloves",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "love"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_388",
@@ -1548,7 +1775,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Shelter%20on%20Montmartre%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Shelter%20on%20Montmartre",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_392",
@@ -1602,7 +1834,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20River%20Bank%20in%20Springtime%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20River%20Bank%20in%20Springtime",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_400",
@@ -1656,7 +1893,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Parc%20de%20l%E2%80%99h%C3%B4pital%20Saint-Paul%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Parc%20de%20l%E2%80%99h%C3%B4pital%20Saint-Paul",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_404",
@@ -1710,7 +1952,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Orchard%20Bordered%20by%20Cypresse%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Orchard%20Bordered%20by%20Cypresse",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_410",
@@ -1764,7 +2011,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Oleanders%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Oleanders",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_414",
@@ -1818,7 +2070,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Moulin%20de%20la%20Galette%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Moulin%20de%20la%20Galette",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_416",
@@ -1872,7 +2129,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Le%20Moulin%20de%20la%20Galette%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Le%20Moulin%20de%20la%20Galette",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_423",
@@ -1926,7 +2188,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Landscape%20at%20Saint-R%C3%A9my%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Landscape%20at%20Saint-R%C3%A9my",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_424",
@@ -1980,7 +2247,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20La%20maison%20de%20La%20Crau%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20La%20maison%20de%20La%20Crau",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_426",
@@ -2034,7 +2306,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Houses%20seen%20from%20the%20back%20window%20of%20Sien%E2%80%99s%20Mother%E2%80%99s%20House%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Houses%20seen%20from%20the%20back%20window%20of%20Sien%E2%80%99s%20Mother%E2%80%99s%20House",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_435",
@@ -2088,7 +2365,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20House%20at%20Auvers%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20House%20at%20Auvers",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_436",
@@ -2142,7 +2424,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Green%20Wheat%20Fields%2C%20Auvers%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Green%20Wheat%20Fields%2C%20Auvers",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_437",
@@ -2196,7 +2483,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Grapes%2C%20Lemons%2C%20Pears%2C%20and%20Apples%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Grapes%2C%20Lemons%2C%20Pears%2C%20and%20Apples",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_448",
@@ -2250,7 +2542,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20First%20Steps%2C%20after%20Millet%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20First%20Steps%2C%20after%20Millet",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "romanticism"
     },
     {
       "work_id": "art_eco_449",
@@ -2304,7 +2601,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Farmhouse%20in%20Provence%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Farmhouse%20in%20Provence",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_451",
@@ -2358,7 +2660,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Factories%20at%20Clichy%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Factories%20at%20Clichy",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_454",
@@ -2412,7 +2719,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Die%20Ebene%20Von%20Auvers%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Die%20Ebene%20Von%20Auvers",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_461",
@@ -2466,7 +2778,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bouquet%20of%20Flowers%20in%20a%20Vase%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bouquet%20of%20Flowers%20in%20a%20Vase",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_463",
@@ -2520,7 +2837,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Avenue%20of%20Poplars%20in%20Autumn%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Avenue%20of%20Poplars%20in%20Autumn",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_466",
@@ -2574,7 +2896,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peach%20Tree%20in%20Blossom%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peach%20Tree%20in%20Blossom",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_467",
@@ -2628,7 +2955,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Weaver%27s%20Cottage%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Weaver%27s%20Cottage",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_468",
@@ -2682,7 +3014,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Peasant%20Woman%20Digging%20in%20Front%20of%20Her%20Cottage%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Peasant%20Woman%20Digging%20in%20Front%20of%20Her%20Cottage",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_485",
@@ -2736,7 +3073,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Nursery%20on%20Schenkweg%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Nursery%20on%20Schenkweg",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_486",
@@ -2790,7 +3132,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Cineraria%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Cineraria",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_489",
@@ -2844,7 +3191,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Square%20Saint-Pierre%2C%20Paris%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Square%20Saint-Pierre%2C%20Paris",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_492",
@@ -2898,7 +3250,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Four%20Sunflowers%20gone%20to%20Seed%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Four%20Sunflowers%20gone%20to%20Seed",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_494",
@@ -2952,7 +3309,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20L%E2%80%99all%C3%A9e%20Aux%20Deux%20Promeneurs%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20L%E2%80%99all%C3%A9e%20Aux%20Deux%20Promeneurs",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_495",
@@ -3006,7 +3368,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20Bible%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20Bible",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "mystery",
+        "solitude"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_497",
@@ -3060,7 +3428,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Farming%20Village%20at%20Twilight%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Farming%20Village%20at%20Twilight",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_499",
@@ -3114,7 +3487,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Olive%20Trees%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Olive%20Trees",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_511",
@@ -3169,7 +3547,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20with%20Pipe%20and%20Straw%20Hat%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20with%20Pipe%20and%20Straw%20Hat",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_512",
@@ -3224,7 +3607,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20as%20a%20Painter%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20as%20a%20Painter",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_515",
@@ -3279,7 +3667,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Blossoming%20Chestnut%20Branches%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Blossoming%20Chestnut%20Branches",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_516",
@@ -3333,7 +3726,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bridges%20across%20the%20Seine%20at%20Asni%C3%A8res%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bridges%20across%20the%20Seine%20at%20Asni%C3%A8res",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_519",
@@ -3388,7 +3786,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant%20Woman%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20Peasant%20Woman",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_520",
@@ -3442,7 +3845,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Old%20Tower%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Old%20Tower",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_529",
@@ -3497,7 +3905,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20with%20Dark%20Felt%20Hat%20at%20the%20Easel%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Self-Portrait%20with%20Dark%20Felt%20Hat%20at%20the%20Easel",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_541",
@@ -3551,7 +3964,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Eglogue%20En%20Provence%20%3A%20Un%20Couple%20D%E2%80%99amoureux%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Eglogue%20En%20Provence%20%3A%20Un%20Couple%20D%E2%80%99amoureux",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_555",
@@ -3606,7 +4024,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Portrait%20of%20P%C3%A8re%20Tanguy%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Portrait%20of%20P%C3%A8re%20Tanguy",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_558",
@@ -3660,7 +4083,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Fishing%20Boats%20on%20the%20Beach%20at%20Saintes-Maries%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Fishing%20Boats%20on%20the%20Beach%20at%20Saintes-Maries",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6514",
@@ -3714,7 +4142,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Roses%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Roses",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6525",
@@ -3768,7 +4201,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Apples%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Apples",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6557",
@@ -3822,7 +4260,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Fisherman%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Fisherman",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "winter",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6561",
@@ -3876,7 +4319,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Loom%20with%20weaver%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Loom%20with%20weaver",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "baroque"
     },
     {
       "work_id": "art_eco_6559",
@@ -3930,7 +4378,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Orphan%20Man%2C%20Standing%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Orphan%20Man%2C%20Standing",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6553",
@@ -3985,7 +4438,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Two%20Women%20on%20the%20Peat%20Moor%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Two%20Women%20on%20the%20Peat%20Moor",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6537",
@@ -4039,7 +4497,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Falling%20Leaves%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Falling%20Leaves",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6535",
@@ -4093,7 +4556,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Walk%20at%20Twilight%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20A%20Walk%20at%20Twilight",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night",
+        "solitude"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6554",
@@ -4147,7 +4616,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Tree%20roots%20in%20a%20sandy%20ground%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Tree%20roots%20in%20a%20sandy%20ground",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "love",
+        "revolution"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6560",
@@ -4201,7 +4676,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bleaching%20Ground%20at%20Scheveningen%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bleaching%20Ground%20at%20Scheveningen",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6529",
@@ -4255,7 +4735,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Wheat%20Fields%20in%20a%20Mountainous%20Landscape%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Wheat%20Fields%20in%20a%20Mountainous%20Landscape",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6558",
@@ -4309,7 +4794,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Landscape%20with%20Wheelbarrow%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Landscape%20with%20Wheelbarrow",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "revolution"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6527",
@@ -4363,7 +4853,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Arles%3A%20View%20from%20the%20Wheatfields%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Arles%3A%20View%20from%20the%20Wheatfields",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6536",
@@ -4417,7 +4912,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20Meadow%20Flowers%20and%20Roses%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20Meadow%20Flowers%20and%20Roses",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6567",
@@ -4471,7 +4971,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Shepherd%20with%20a%20Flock%20of%20Sheep%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20Shepherd%20with%20a%20Flock%20of%20Sheep",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6564",
@@ -4525,7 +5030,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Loom%20with%20Weaver%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Loom%20with%20Weaver",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6570",
@@ -4579,7 +5089,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20old%20church%20tower%20at%20Nuenen%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20old%20church%20tower%20at%20Nuenen",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "winter",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6562",
@@ -4633,7 +5148,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasants%20planting%20potatoes%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasants%20planting%20potatoes",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "night",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6582",
@@ -4687,7 +5208,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20old%20tower%20at%20Nuenen%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20old%20tower%20at%20Nuenen",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "winter",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6576",
@@ -4741,7 +5267,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20a%20Bearded-Man%20Jar%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20Life%20with%20a%20Bearded-Man%20Jar",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "love",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6577",
@@ -4796,7 +5328,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20man%20with%20a%20pipe%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Head%20of%20a%20man%20with%20a%20pipe",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "winter",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6583",
@@ -4850,7 +5387,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20women%20digging%20up%20potatoes%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20women%20digging%20up%20potatoes",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "romanticism"
     },
     {
       "work_id": "art_eco_6586",
@@ -4904,7 +5446,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Houses%20Seen%20from%20the%20Back%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Houses%20Seen%20from%20the%20Back",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "winter",
+      "themes": [
+        "solitude"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6588",
@@ -4958,7 +5505,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Cottage%20with%20Peasant%20Woman%20Digging%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Cottage%20with%20Peasant%20Woman%20Digging",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6585",
@@ -5012,7 +5564,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20cottage%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20cottage",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6591",
@@ -5066,7 +5623,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Woman%20with%20a%20broom%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Woman%20with%20a%20broom",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6592",
@@ -5120,7 +5682,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Caba%C3%B1a%20con%20Campesino%20Regresando%20a%20Casa%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Caba%C3%B1a%20con%20Campesino%20Regresando%20a%20Casa",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "autumn",
+      "themes": [
+        "night",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6595",
@@ -5174,7 +5742,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Man%20at%20table%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Man%20at%20table",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6598",
@@ -5228,7 +5801,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Woman%20at%20table%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Woman%20at%20table",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night"
+      ],
+      "movement_category": "romanticism"
     },
     {
       "work_id": "art_eco_6597",
@@ -5282,7 +5860,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Digger%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Digger",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6602",
@@ -5336,7 +5919,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20View%20of%20Paris%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20View%20of%20Paris",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6599",
@@ -5390,7 +5978,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Birds%27%20nests%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Birds%27%20nests",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "night",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6604",
@@ -5445,7 +6039,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Vase%20with%20Red%20and%20White%20Flowers%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Vase%20with%20Red%20and%20White%20Flowers",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6611",
@@ -5499,7 +6098,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Montmartre%20%3A%20behind%20the%20Moulin%20de%20la%20Galette%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Montmartre%20%3A%20behind%20the%20Moulin%20de%20la%20Galette",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6610",
@@ -5554,7 +6158,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Flowers%20in%20a%20blue%20vase%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Flowers%20in%20a%20blue%20vase",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6617",
@@ -5608,7 +6217,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20By%20the%20Seine%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20By%20the%20Seine",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6615",
@@ -5662,7 +6276,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bank%20of%20the%20Seine%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Bank%20of%20the%20Seine",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6614",
@@ -5716,7 +6335,14 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20life%20with%20plaster%20statuette%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Still%20life%20with%20plaster%20statuette",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "love",
+        "night",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6616",
@@ -5771,7 +6397,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Red%20Cabbages%20and%20Onions%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Red%20Cabbages%20and%20Onions",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night",
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6618",
@@ -5825,7 +6457,13 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Impasse%20des%20Deux%20Fr%C3%A8res%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Impasse%20des%20Deux%20Fr%C3%A8res",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "night",
+        "revolution"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6623",
@@ -5879,7 +6517,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Les%20bretonnes%20et%20le%20Pardon%20%C3%A0%20Pont%20Aven%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Les%20bretonnes%20et%20le%20Pardon%20%C3%A0%20Pont%20Aven",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6625",
@@ -5934,7 +6577,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20of%20the%20Camargue%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Peasant%20of%20the%20Camargue",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6629",
@@ -5988,7 +6636,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Corn%20Harvest%20in%20Provence%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Corn%20Harvest%20in%20Provence",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "summer",
+      "themes": [
+        "classic"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6633",
@@ -6042,7 +6695,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Basket%20of%20lemons%20and%20bottle%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Basket%20of%20lemons%20and%20bottle",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "all",
+      "themes": [
+        "mystery"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6631",
@@ -6096,7 +6754,12 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20green%20vineyard%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20The%20green%20vineyard",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "korean"
+      ],
+      "movement_category": "post_impressionism"
     },
     {
       "work_id": "art_eco_6632",
@@ -6151,7 +6814,14 @@
         "tiktok_search_url": "https://www.tiktok.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Daisies%2C%20Arles%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20Daisies%2C%20Arles",
         "wahooart_url": "https://wahooart.com/ko/"
-      }
+      },
+      "season": "spring",
+      "themes": [
+        "night",
+        "mystery",
+        "solitude"
+      ],
+      "movement_category": "post_impressionism"
     }
   ],
   "featured_paintings": [
