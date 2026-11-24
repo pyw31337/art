@@ -301,7 +301,7 @@
       "museum": "런던 대영박물관 (The British Museum, London) & 메트로폴리탄 미술관",
       "museum_key": "british_museum",
       "location": "영국 런던",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/D%C3%BCrer_Melancholia_I.jpg/800px-D%C3%BCrer_Melancholia_I.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/D%C3%BCrer_Melancholia_I.jpg/960px-D%C3%BCrer_Melancholia_I.jpg",
       "palette": [
         "#09090b",
         "#27272a",
@@ -538,7 +538,7 @@
       "museum": "뉴욕 근대미술관 (MoMA) & 런던 테이트 모던 (Tate Modern)",
       "museum_key": "moma",
       "location": "미국 뉴욕 / 영국 런던",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Duchamp_Fountaine.jpg/800px-Duchamp_Fountaine.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Duchamp_Fountaine.jpg/960px-Duchamp_Fountaine.jpg",
       "palette": [
         "#f8fafc",
         "#e2e8f0",

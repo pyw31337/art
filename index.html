@@ -760,12 +760,14 @@
       const id = item.id || item.work_id;
       const venue = item.museum || item.location || '소장처 참조';
       const yearStr = item.year ? `${item.year}년` : (item.completed_year ? `${item.completed_year}년 준공` : '');
+      const thumbUrl = (item.thumbnail_url || item.image_url || '').replace(/ /g, '%20');
+      const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231e293b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2394a3b8%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%96%BC%EF%B8%8F%20%EC%9E%91%ED%92%88%20%EC%A0%84%EC%8B%9C%3C%2Ftext%3E%3C%2Fsvg%3E";
 
       return `
         <div class="art-card">
           <div class="card-media" onclick="openModal('${id}')">
             <span class="category-tag ${badgeClass}">${badgeText}</span>
-            <img class="card-img" src="${item.image_url}" alt="${item.title_kr}" loading="lazy">
+            <img class="card-img" src="${thumbUrl}" alt="${item.title_kr}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';">
           </div>
           <div class="card-body">
             <div class="card-meta-row">
@@ -874,13 +876,14 @@
         const creator = item.artist_name_kr || item.architect_kr || '작가 미상';
         const creatorEn = item.artist_name_en || item.architect_en || '';
         
+        const modalImgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
         body.innerHTML = `
           <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} <small style="font-size:16px; font-weight:500; color:#64748b;">(${item.title_en || ''})</small></h2>
           <div style="font-size:14px; color:#2563eb; font-weight:700; margin-bottom:18px;">
             ${creator} ${creatorEn ? `(${creatorEn})` : ''} · ${item.year || item.completed_year || ''}
           </div>
           <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
-            <img src="${item.image_url}" alt="${item.title_kr}" style="max-height:500px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
+            <img src="${modalImgUrl}" alt="${item.title_kr}" style="max-height:500px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
             ${item.movement || item.style ? `<span class="badge-style" style="padding:6px 12px; font-size:12px;">사조/양식: ${item.movement || item.style}</span>` : ''}
