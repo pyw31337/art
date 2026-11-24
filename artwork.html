@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1b4b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
+  <title>작품 상세 및 디지털 액자 — 렛츠아트 (Let's Art)</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --hero-bg: radial-gradient(circle at 50% 30%, #312e81 0%, #1e1b4b 60%, #0b0f19 100%);
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --purple-primary: #6366f1;
+      --purple-deep: #4338ca;
+      --gold: #d97706;
+      --shadow-sheet: 0 -20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* ========================================================
+       STICKY ROYAL PURPLE HERO ZONE (100vh)
+       ======================================================== */
+    .hero-container {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--hero-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    /* Ambient background glow from artwork colors */
+    .hero-ambient-bg {
+      position: absolute;
+      inset: -20px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(60px) brightness(0.35) saturate(1.4);
+      transform: scale(1.1);
+      z-index: 1;
+      opacity: 0.85;
+      transition: background-image 0.5s ease;
+    }
+
+    /* Radial gradient vignette overlay */
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.1) 0%, rgba(10, 15, 29, 0.8) 85%, #080c16 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Continuous Micro-Animation Artwork Stage */
+    .artwork-stage {
+      position: relative;
+      z-index: 3;
+      width: 90vw;
+      height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .artwork-animated-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform-origin: center center;
+      will-change: transform;
+      animation: heroCameraMove 15s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+      cursor: pointer;
+    }
+
+    /* Continuous 15-second Micro-Animation Timeline:
+       0s~5s: Center gentle Ken Burns zoom in
+       5s~10s: Downward slow vertical panning
+       10s~15s: Subtle diagonal float & pan */
+    @keyframes heroCameraMove {
+      0% {
+        transform: scale(1.0) translateY(0) translateX(0);
+      }
+      33% {
+        transform: scale(1.08) translateY(0) translateX(0);
+      }
+      66% {
+        transform: scale(1.08) translateY(-4%) translateX(0);
+      }
+      100% {
+        transform: scale(1.04) translateY(-2%) translateX(-2%);
+      }
+    }
+
+    /* ========================================================
+       TOP FLOATING NAV HUD
+       ======================================================== */
+    .hero-top-nav {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 30;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      pointer-events: auto;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: #ffffff;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+    .nav-btn:hover {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
+    }
+    .nav-btn.primary {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      border-color: #818cf8;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
+    }
+    .nav-btn.primary:hover {
+      background: linear-gradient(135deg, #4f46e5, #4338ca);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.7);
+    }
+
+    .nav-right-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    /* ========================================================
+       써드플로어 (LOWER-THIRD MOTION GRAPHIC SUBTITLE)
+       ======================================================== */
+    .hero-lower-third-wrap {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+      z-index: 25;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-lower-third-wrap.hidden {
+      opacity: 0;
+      transform: translateY(35px);
+      pointer-events: none;
+    }
+
+    .lower-third-card {
+      pointer-events: auto;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 18px 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+
+    .lower-third-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .lt-badge-story {
+      background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      letter-spacing: 0.3px;
+    }
+    .lt-badge-museum {
+      background: rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .lt-badge-secret {
+      background: #f59e0b;
+      color: #000000;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lower-third-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+    .lower-third-artist {
+      font-size: 14px;
+      color: #cbd5e1;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .lower-third-artist span.year {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+    .lower-third-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+
+    /* Subtitle Show/Hide Floating Toggle Button */
+    .toggle-subtitle-btn {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      z-index: 35;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f1f5f9;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+    .toggle-subtitle-btn:hover {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Scroll Down Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 22;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -8px); }
+      60% { transform: translate(-50%, -4px); }
+    }
+
+    /* ========================================================
+       PARALLAX BOTTOM CONTENT SHEET
+       ======================================================== */
+    .content-sheet-container {
+      position: relative;
+      z-index: 20;
+      margin-top: 100vh;
+      background: #ffffff;
+      color: var(--text-main);
+      border-radius: 36px 36px 0 0;
+      box-shadow: var(--shadow-sheet);
+      min-height: 100vh;
+      padding: 50px 24px 80px;
+    }
+
+    .content-sheet-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Drag handle indicator */
+    .sheet-handle {
+      width: 44px;
+      height: 5px;
+      background: #cbd5e1;
+      border-radius: 99px;
+      margin: -24px auto 36px;
+    }
+
+    .artwork-header-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 28px;
+    }
+
+    .artwork-title-main {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.6px;
+      line-height: 1.25;
+    }
+    .artwork-title-en {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .artist-credit-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 16px;
+      color: #334155;
+    }
+    .artist-name-bold {
+      font-weight: 800;
+      color: #1e1b4b;
+      font-size: 18px;
+    }
+
+    /* Metadata Specification Grid */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .spec-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .spec-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .spec-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* Human Story Taxonomy Spotlight Card */
+    .story-card {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      border: 1px solid #d8b4fe;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .story-badge-lg {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .story-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #581c87;
+    }
+    .story-body {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #3b0764;
+    }
+
+    /* Behind-the-Scenes Story Card (Handmaker, ArtInsight, Canvas Secrets) */
+    .behind-secret-card {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1px solid #fde68a;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+    }
+    .behind-secret-badge {
+      background: #b45309;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .behind-secret-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #78350f;
+      margin-bottom: 10px;
+    }
+    .behind-secret-content {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #451a03;
+    }
+
+    /* Curatorial Commentary Box */
+    .commentary-section {
+      margin-bottom: 36px;
+    }
+    .section-headline {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .commentary-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #334155;
+    }
+
+    /* Aesthetic Palette & Mood Elements */
+    .aesthetic-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 36px;
+    }
+    .palette-swatches {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .swatch-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 12px;
+      font-family: monospace;
+      font-weight: 700;
+      color: #475569;
+    }
+    .swatch-color-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    .aesthetic-tags-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .aesthetic-chip {
+      background: #e2e8f0;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ========================================================
+       MULTIMEDIA DOCENT HUB (100% Video Guaranteed)
+       ======================================================== */
+    .docent-hub-box {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      border: 1px solid #312e81;
+      border-radius: 20px;
+      padding: 28px;
+      color: #ffffff;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+    .docent-hub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .docent-live-pill {
+      background: #ef4444;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .video-responsive-wrap {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      margin-bottom: 16px;
+    }
+    .video-responsive-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    .docent-video-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .platform-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .platform-btn {
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, filter 0.2s;
+    }
+    .platform-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    /* Bottom Action Bar */
+    .bottom-action-bar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    /* ========================================================
+       PRESENTATION GALLERY (디지털 액자 / FULLSCREEN MODE)
+       ======================================================== */
+    .presentation-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #000000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: none;
+      user-select: none;
+    }
+    .presentation-overlay.active {
+      display: flex;
+    }
+
+    /* Canvas Stage inside Fullscreen Presentation */
+    .pres-canvas-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: grab;
+    }
+    .pres-canvas-wrap:active {
+      cursor: grabbing;
+    }
+
+    .pres-artwork-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform-origin: center center;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+    }
+
+    .pres-artwork-img.auto-tour {
+      animation: presentationCameraTour 18s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+    }
+
+    @keyframes presentationCameraTour {
+      0% {
+        transform: scale(1.0) translateY(0) translateX(0);
+      }
+      30% {
+        transform: scale(1.15) translateY(-3%) translateX(2%);
+      }
+      60% {
+        transform: scale(1.22) translateY(3%) translateX(-3%);
+      }
+      100% {
+        transform: scale(1.08) translateY(0) translateX(0);
+      }
+    }
+
+    /* Presentation HUD Controls (Floating Top & Bottom) */
+    .pres-hud-top {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      pointer-events: auto;
+    }
+
+    .pres-hud-btn {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .pres-hud-btn:hover {
+      background: rgba(30, 41, 59, 0.95);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+    .pres-hud-btn.active {
+      background: #4f46e5;
+      border-color: #818cf8;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+    }
+
+    .pres-hud-bottom {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .pres-lower-third {
+      pointer-events: auto;
+      max-width: 680px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      padding: 16px 20px;
+      color: #ffffff;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pres-lower-third.hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      pointer-events: none;
+    }
+
+    .pres-controls-right {
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* Screen Wake Lock Status Badge */
+    .wakelock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .artwork-stage { width: 95vw; height: 75vh; }
+      .artwork-title-main { font-size: 24px; }
+      .lower-third-title { font-size: 18px; }
+      .hero-lower-third-wrap { left: 14px; right: 14px; bottom: 20px; }
+      .content-sheet-container { padding: 40px 16px 60px; border-radius: 28px 28px 0 0; }
+      .platform-links-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       STICKY ROYAL PURPLE HERO ZONE (100vh)
+       ======================================================== -->
+  <div class="hero-container" id="heroZone">
+    <!-- Ambient blurred background from artwork -->
+    <div class="hero-ambient-bg" id="heroAmbientBg"></div>
+    <div class="hero-vignette"></div>
+
+    <!-- Top Floating HUD -->
+    <div class="hero-top-nav">
+      <a href="index.html" class="nav-btn">
+        <span>← 렛츠아트 갤러리</span>
+      </a>
+      <div class="nav-right-actions">
+        <button class="nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" title="화면 꺼짐 방지 & 카메라 줌인/패닝 디지털 액자">
+          <span>🖼️ 디지털 액자 모드</span>
+        </button>
+        <button class="nav-btn" onclick="scrollToDocent()" title="영상 해설 영역으로 바로 이동">
+          <span>🎬 영상 도슨트</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Micro-Animation Centered Artwork Stage -->
+    <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 전체화면 디지털 액자 모드로 감상">
+      <img id="heroArtworkImg" class="artwork-animated-img" src="" alt="Masterpiece Artwork">
+    </div>
+
+    <!-- 써드플로어 (LOWER-THIRD MOTION GRAPHIC SUBTITLE) -->
+    <div class="hero-lower-third-wrap" id="heroLowerThird">
+      <div class="lower-third-card">
+        <div class="lower-third-badges">
+          <span class="lt-badge-story" id="ltStoryBadge">👨‍👩‍👧 가족 이야기</span>
+          <span class="lt-badge-museum" id="ltMuseumBadge">🏛️ 소장처 정보</span>
+          <span class="lt-badge-secret" id="ltSecretBadge" style="display:none;">🎭 비하인드 스토리</span>
+        </div>
+        <div class="lower-third-title" id="ltTitle">로딩 중...</div>
+        <div class="lower-third-artist">
+          <span id="ltArtist">작가 정보</span>
+          <span class="year" id="ltYear"></span>
+        </div>
+        <div class="lower-third-desc" id="ltDesc">명화의 역사와 숨겨진 도상학적 세계를 감상해보세요.</div>
+      </div>
+    </div>
+
+    <!-- Lower-third Show/Hide Floating Toggle Button -->
+    <button class="toggle-subtitle-btn" id="btnToggleSubtitle" onclick="toggleLowerThird()">
+      <span id="toggleSubtitleIcon">💬</span>
+      <span id="toggleSubtitleText">자막 숨기기</span>
+    </button>
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator" onclick="scrollToSheet()">
+      <span>상세 해설 & 영상 도슨트 보기</span>
+      <span>▼</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PARALLAX BOTTOM CONTENT SHEET (SLIDES OVER HERO)
+       ======================================================== -->
+  <div class="content-sheet-container" id="contentSheet">
+    <div class="content-sheet-inner">
+      <div class="sheet-handle"></div>
+
+      <!-- Main Artwork Header -->
+      <div class="artwork-header-block">
+        <h1 class="artwork-title-main" id="sheetTitleKr">로딩 중...</h1>
+        <div class="artwork-title-en" id="sheetTitleEn"></div>
+        <div class="artist-credit-line">
+          <span class="artist-name-bold" id="sheetArtistKr"></span>
+          <span id="sheetArtistEn" style="color:var(--text-muted);"></span>
+          <span id="sheetMovementBadge" style="background:#f1f5f9; padding:4px 10px; border-radius:6px; font-size:13px; font-weight:700; color:#475569;"></span>
+        </div>
+      </div>
+
+      <!-- Specifications Grid -->
+      <div class="specs-grid">
+        <div class="spec-item">
+          <div class="spec-label">제작 연도</div>
+          <div class="spec-value" id="specYear">-</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">기법 / 재료</div>
+          <div class="spec-value" id="specMedium">-</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">작품 규격</div>
+          <div class="spec-value" id="specDimensions">-</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">소장처</div>
+          <div class="spec-value" id="specMuseum">-</div>
+        </div>
+      </div>
+
+      <!-- Human Story Taxonomy Card -->
+      <div class="story-card" id="storyCard">
+        <div class="story-header">
+          <span class="story-badge-lg" id="storyBadge">👨‍👩‍👧 가족 이야기</span>
+          <span style="font-size:12px; font-weight:700; color:#7c3aed;">HUMAN STORY TAXONOMY</span>
+        </div>
+        <div class="story-title" id="storyHeaderTitle">삶의 온기와 유대감을 담은 작품</div>
+        <div class="story-body" id="storyDescription">
+          이 작품은 인간의 삶과 관계성에서 중요한 테마를 담고 있으며, 깊은 정서적 교감과 시대적 울림을 전해줍니다.
+        </div>
+      </div>
+
+      <!-- Handmaker / Canvas Secret Spotlight Card -->
+      <div class="behind-secret-card" id="behindSecretCard" style="display:none;">
+        <span class="behind-secret-badge">🕵️ 숨겨진 캔버스의 비밀 & 비하인드 스토리</span>
+        <div class="behind-secret-title" id="behindSecretTitle">캔버스 밑에 숨겨진 X-ray 비밀과 비화</div>
+        <div class="behind-secret-content" id="behindSecretContent"></div>
+      </div>
+
+      <!-- Curatorial Commentary & Historical Background -->
+      <div class="commentary-section">
+        <h2 class="section-headline">💡 큐레이터 작품 해설 & 도상학</h2>
+        <div class="commentary-text" id="curatorCommentary">
+          작품 해설을 불러오는 중입니다...
+        </div>
+      </div>
+
+      <!-- Historical Context -->
+      <div class="commentary-section" id="historicalSection" style="display:none;">
+        <h2 class="section-headline">📜 시대적 배경과 역사적 의의</h2>
+        <div class="commentary-text" id="historicalContent"></div>
+      </div>
+
+      <!-- Aesthetic Elements & Extracted Palette -->
+      <div class="aesthetic-section">
+        <div style="font-size:14px; font-weight:800; color:#0f172a; margin-bottom:4px;">🎨 작품 시각 팔레트 & 감성 무드</div>
+        <div class="palette-swatches" id="paletteSwatches"></div>
+        <div class="aesthetic-tags-row" id="aestheticTags"></div>
+      </div>
+
+      <!-- ========================================================
+           MULTIMEDIA DOCENT HUB (100% Video Guaranteed)
+           ======================================================== -->
+      <div class="docent-hub-box" id="docentHubSection">
+        <div class="docent-hub-header">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="docent-live-pill">ONLINE DOCENT</span>
+            <h3 style="font-size:17px; font-weight:800; color:#f8fafc; margin:0;">🎬 온라인 영상 도슨트 & 멀티 플랫폼 해설</h3>
+          </div>
+          <span style="font-size:12px; color:#94a3b8;">유튜브 · 쇼츠 · 네이버 · 다음 · 인스타 · 틱톡 100% 연동</span>
+        </div>
+
+        <!-- Embedded YouTube Video Player -->
+        <div class="video-responsive-wrap" id="videoWrapper">
+          <iframe id="docentYoutubeIframe" src="" title="Video Docent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="docent-video-title" id="docentVideoTitle">📺 명화 해설 영상</div>
+
+        <!-- 9-Platform Direct Jump Links -->
+        <div class="platform-links-grid" id="platformLinksGrid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Bottom Navigation & Action Bar -->
+      <div class="bottom-action-bar">
+        <button class="nav-btn primary" onclick="enterPresentationMode()" style="padding:14px 28px; font-size:15px;">
+          <span>🖼️ 디지털 액자 전체화면 감상 (화면 꺼짐 방지)</span>
+        </button>
+        <a href="index.html" class="nav-btn" style="padding:14px 24px; font-size:14px;">
+          <span>← 다른 명화 둘러보기</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PRESENTATION GALLERY (디지털 액자 / FULLSCREEN OVERLAY)
+       ======================================================== -->
+  <div class="presentation-overlay" id="presOverlay">
+    <!-- Fullscreen Canvas Stage -->
+    <div class="pres-canvas-wrap" id="presCanvasWrap">
+      <img id="presImg" class="pres-artwork-img auto-tour" src="" alt="Presentation Masterpiece">
+    </div>
+
+    <!-- HUD Top Controls -->
+    <div class="pres-hud-top">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="pres-hud-btn" onclick="exitPresentationMode()">
+          <span>✕ 나가기</span>
+        </button>
+        <span class="wakelock-badge" id="wakeLockBadge">
+          <span>●</span> <span id="wakeLockText">화면 꺼짐 방지 활성 (WakeLock)</span>
+        </span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()">
+          <span>🎥 카메라 모션 On</span>
+        </button>
+        <button class="pres-hud-btn" onclick="zoomIn()" title="확대 (+)">
+          <span>➕</span>
+        </button>
+        <button class="pres-hud-btn" onclick="zoomOut()" title="축소 (-)">
+          <span>➖</span>
+        </button>
+        <button class="pres-hud-btn" onclick="resetZoomPan()" title="원래 크기로 초기화">
+          <span>↺ 리셋</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- HUD Bottom Lower-Third & Actions -->
+    <div class="pres-hud-bottom">
+      <div class="pres-lower-third" id="presLowerThird">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span class="lt-badge-story" id="presStoryBadge">가족 이야기</span>
+          <span class="lt-badge-museum" id="presMuseumBadge">소장처</span>
+        </div>
+        <div style="font-size:20px; font-weight:800; margin-bottom:2px;" id="presTitle">작품 제목</div>
+        <div style="font-size:13px; color:#cbd5e1;" id="presArtist">작가명</div>
+        <div style="font-size:12px; color:#94a3b8; margin-top:6px; line-height:1.5;" id="presDesc"></div>
+      </div>
+
+      <div class="pres-controls-right">
+        <button class="pres-hud-btn" id="btnPresToggleSub" onclick="togglePresSubtitle()">
+          <span>💬 자막 켜기/끄기</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Logic -->
+  <script>
+    let currentArtwork = null;
+    let wakeLock = null;
+    let lowerThirdVisible = true;
+    let presLowerThirdVisible = true;
+    let isAutoTour = true;
+
+    // Interactive Zoom & Pan State for Presentation Mode
+    let zoomScale = 1.0;
+    let panX = 0;
+    let panY = 0;
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let initialPinchDistance = null;
+
+    // Extract artwork ID from URL (?id=...)
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetId = urlParams.get('id') || 'art_starry_night';
+    const autoPresentation = urlParams.get('mode') === 'presentation';
+
+    // Story Taxonomy Map
+    const STORY_MAP = {
+      family: { label: '👨‍👩‍👧 가족 이야기', headline: '가족의 사랑과 따스한 유대감' },
+      lovers: { label: '💑 연인 & 애인', headline: '열정과 낭만, 사랑의 속삭임' },
+      children: { label: '👶 아이 & 동심', headline: '순수한 동심과 천진난만한 시절' },
+      friendship: { label: '🤝 우정 & 연대', headline: '함께하는 이들과의 깊은 우정과 신뢰' },
+      tragedy: { label: '🥀 비극 & 상실', headline: '인간의 고뇌와 슬픔, 실존적 비극' },
+      solitude: { label: '🕊️ 자아 & 고독', headline: '내면의 성찰과 침묵 속의 사색' },
+      nature: { label: '🌿 자연 & 정글', headline: '야생의 숨결과 경이로운 대자연' },
+      mystery: { label: '🕵️ 미스터리 & 비밀', headline: '캔버스 밑에 감춰진 비밀과 미스터리' }
+    };
+
+    async function loadArtworkData() {
+      try {
+        // First try art_paintings_master_db.json
+        const res1 = await fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json());
+        const list1 = res1.featured_masterpieces || [];
+        let found = list1.find(a => (a.id === targetId || a.work_id === targetId));
+
+        if (!found) {
+          // Try contemporary / expanded
+          try {
+            const exp = await fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json());
+            const expList = [
+              ...(exp.sculptures || []),
+              ...(exp.photography || []),
+              ...(exp.decorative_arts || []),
+              ...(exp.media_and_installation || [])
+            ];
+            found = expList.find(a => (a.id === targetId || a.work_id === targetId));
+          } catch (e) {}
+        }
+
+        if (!found) {
+          // Try digital_gallery_master_db.json
+          const resDg = await fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json());
+          const dgList = resDg.artworks || [];
+          found = dgList.find(a => (a.id === targetId || a.work_id === targetId));
+        }
+
+        if (!found && list1.length > 0) {
+          // Fallback to first masterpiece
+          found = list1[0];
+        }
+
+        if (found) {
+          currentArtwork = found;
+          renderArtworkDetails(found);
+          if (autoPresentation) {
+            enterPresentationMode();
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load artwork data:", err);
+      }
+    }
+
+    function renderArtworkDetails(item) {
+      document.title = `${item.title_kr} (${item.artist_name_kr || '명화'}) — 렛츠아트`;
+
+      const imgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
+      const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231e1b4b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%23ffffff%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%96%BC%EF%B8%8F%20%EB%AA%85%ED%99%94%20%EC%A0%84%EC%8B%9C%3C%2Ftext%3E%3C%2Fsvg%3E";
+
+      // 1. Hero Zone Elements
+      const heroImg = document.getElementById('heroArtworkImg');
+      heroImg.src = imgUrl;
+      heroImg.onerror = () => { heroImg.src = fallbackSvg; };
+
+      const heroBg = document.getElementById('heroAmbientBg');
+      heroBg.style.backgroundImage = `url('${imgUrl}')`;
+
+      // Hero Lower-Third
+      const storyMeta = STORY_MAP[item.story_category] || STORY_MAP.solitude;
+      document.getElementById('ltStoryBadge').textContent = item.story_label || storyMeta.label;
+      document.getElementById('ltMuseumBadge').textContent = `🏛️ ${item.museum || item.location || '소장처 참조'}`;
+      document.getElementById('ltTitle').textContent = `${item.title_kr} ${item.title_en ? `(${item.title_en})` : ''}`;
+      document.getElementById('ltArtist').textContent = item.artist_name_kr || '작가 미상';
+      document.getElementById('ltYear').textContent = item.year ? `· ${item.year}년` : '';
+      document.getElementById('ltDesc').textContent = item.description || item.curator_notes || '인류의 위대한 예술적 유산을 감상해보세요.';
+
+      if (item.behind_story) {
+        document.getElementById('ltSecretBadge').style.display = 'inline-flex';
+      }
+
+      // 2. Parallax Sheet Content
+      document.getElementById('sheetTitleKr').textContent = item.title_kr;
+      document.getElementById('sheetTitleEn').textContent = item.title_en || '';
+      document.getElementById('sheetArtistKr').textContent = item.artist_name_kr || '작가 미상';
+      document.getElementById('sheetArtistEn').textContent = item.artist_name_en ? `(${item.artist_name_en})` : '';
+      document.getElementById('sheetMovementBadge').textContent = item.movement || item.category_kr || '서양화 / 명화';
+
+      document.getElementById('specYear').textContent = item.year ? `${item.year}년` : '연도 미상';
+      document.getElementById('specMedium').textContent = item.medium || '캔버스에 유채';
+      document.getElementById('specDimensions').textContent = item.dimensions || '소장처 규격 참조';
+      document.getElementById('specMuseum').textContent = item.museum || item.location || '소장처 정보 참조';
+
+      // Story Taxonomy Card
+      document.getElementById('storyBadge').textContent = item.story_label || storyMeta.label;
+      document.getElementById('storyHeaderTitle').textContent = storyMeta.headline;
+      document.getElementById('storyDescription').textContent = `${item.title_kr} 작품은 [${item.story_label || storyMeta.label}] 테마로 분류되어 관람객에게 깊은 공감과 스토리텔링을 선사합니다. ${item.description || ''}`;
+
+      // Behind Story Card (Handmaker / Secrets)
+      const secretCard = document.getElementById('behindSecretCard');
+      if (item.behind_story) {
+        secretCard.style.display = 'block';
+        document.getElementById('behindSecretContent').innerHTML = `
+          <p style="margin-bottom:8px;">${item.behind_story}</p>
+          ${item.behind_story_source ? `<div style="font-size:12px; color:#b45309; font-weight:700; margin-top:8px;">출처 / 연구자료: ${item.behind_story_source}</div>` : ''}
+        `;
+      } else {
+        secretCard.style.display = 'none';
+      }
+
+      // Curatorial Commentary
+      const curatorEl = document.getElementById('curatorCommentary');
+      curatorEl.textContent = item.curator_notes || item.description || '이 작품은 시대를 뛰어넘는 조형미와 깊은 철학적 함의를 지니고 있습니다.';
+
+      // Historical Background
+      if (item.historical_background) {
+        document.getElementById('historicalSection').style.display = 'block';
+        document.getElementById('historicalContent').textContent = item.historical_background;
+      }
+
+      // Palette Swatches
+      const paletteContainer = document.getElementById('paletteSwatches');
+      if (item.palette && item.palette.length) {
+        paletteContainer.innerHTML = item.palette.map(hex => `
+          <div class="swatch-pill" onclick="navigator.clipboard.writeText('${hex}'); alert('색상코드 ${hex} 복사되었습니다!');" title="클릭하여 복사">
+            <div class="swatch-color-box" style="background:${hex};"></div>
+            <span>${hex}</span>
+          </div>
+        `).join('');
+      } else {
+        paletteContainer.innerHTML = '<span style="font-size:12px; color:var(--text-muted);">팔레트 데이터 준비 중</span>';
+      }
+
+      // Aesthetic Tags
+      const tagsContainer = document.getElementById('aestheticTags');
+      if (item.aesthetic_elements && item.aesthetic_elements.length) {
+        tagsContainer.innerHTML = item.aesthetic_elements.map(t => `
+          <span class="aesthetic-chip">✦ ${t}</span>
+        `).join('');
+      }
+
+      // 3. Multimedia Docent Station (100% Video Coverage)
+      const media = item.media_resources || {};
+      const docentIframe = document.getElementById('docentYoutubeIframe');
+      const docentTitle = document.getElementById('docentVideoTitle');
+
+      const videoId = media.youtube_video_id || "82Z0HfOkX_0";
+      docentIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
+      docentTitle.textContent = `📺 ${media.youtube_title || (item.artist_name_kr + ' 명화 세계와 해설')}`;
+
+      // Populate 9 Platform Links
+      const grid = document.getElementById('platformLinksGrid');
+      grid.innerHTML = `
+        <a href="${media.youtube_video_url || media.youtube_search_url}" target="_blank" class="platform-btn" style="background:#dc2626; color:#fff;">
+          <span>▶️ 유튜브 해설 풀영상 ➔</span>
+        </a>
+        <a href="${media.channel_shorts_url || media.youtube_shorts_search_url}" target="_blank" class="platform-btn" style="background:#991b1b; color:#fff;">
+          <span>⚡ 서정욱 미술토크 Shorts ➔</span>
+        </a>
+        <a href="${media.channel_reason_of_art}" target="_blank" class="platform-btn" style="background:#475569; color:#fff;">
+          <span>🎨 미술의 이유 채널 ➔</span>
+        </a>
+        <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" class="platform-btn" style="background:#059669; color:#fff;">
+          <span>🟢 네이버 TV·비디오 클립 ➔</span>
+        </a>
+        <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" class="platform-btn" style="background:#d97706; color:#fff;">
+          <span>🟡 다음·카카오TV 영상 ➔</span>
+        </a>
+        <a href="${media.instagram_channel_url}" target="_blank" class="platform-btn" style="background:#c026d3; color:#fff;">
+          <span>📸 인스타 Behind Stories ➔</span>
+        </a>
+        <a href="${media.tiktok_search_url}" target="_blank" class="platform-btn" style="background:#18181b; border:1px solid #52525b; color:#fff;">
+          <span>🎵 틱톡 1분 도슨트 ➔</span>
+        </a>
+        <a href="${media.vimeo_search_url}" target="_blank" class="platform-btn" style="background:#0284c7; color:#fff;">
+          <span>🎬 비메오(Vimeo) 다큐 ➔</span>
+        </a>
+        <a href="${media.channel_nulart || 'https://www.youtube.com/@nulart'}" target="_blank" class="platform-btn" style="background:#312e81; color:#fff;">
+          <span>🏛️ 널 위한 문화예술 ➔</span>
+        </a>
+      `;
+
+      // 4. Setup Presentation Mode Data
+      const presImg = document.getElementById('presImg');
+      presImg.src = imgUrl;
+      presImg.onerror = () => { presImg.src = fallbackSvg; };
+      document.getElementById('presStoryBadge').textContent = item.story_label || storyMeta.label;
+      document.getElementById('presMuseumBadge').textContent = item.museum || item.location || '소장처 참조';
+      document.getElementById('presTitle').textContent = item.title_kr;
+      document.getElementById('presArtist').textContent = `${item.artist_name_kr || ''} ${item.year ? `(${item.year})` : ''}`;
+      document.getElementById('presDesc').textContent = item.curator_notes || item.description || '';
+    }
+
+    // Toggle Lower-Third in Hero Zone
+    function toggleLowerThird() {
+      const el = document.getElementById('heroLowerThird');
+      const icon = document.getElementById('toggleSubtitleIcon');
+      const txt = document.getElementById('toggleSubtitleText');
+      lowerThirdVisible = !lowerThirdVisible;
+      if (lowerThirdVisible) {
+        el.classList.remove('hidden');
+        icon.textContent = '💬';
+        txt.textContent = '자막 숨기기';
+      } else {
+        el.classList.add('hidden');
+        icon.textContent = '👁️';
+        txt.textContent = '자막 켜기';
+      }
+    }
+
+    function scrollToSheet() {
+      document.getElementById('contentSheet').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToDocent() {
+      document.getElementById('docentHubSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========================================================
+    // PRESENTATION GALLERY (디지털 액자 & WAKELOCK)
+    // ========================================================
+    async function enterPresentationMode() {
+      const overlay = document.getElementById('presOverlay');
+      overlay.classList.add('active');
+
+      // Request Fullscreen
+      try {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          await document.documentElement.webkitRequestFullscreen();
+        }
+      } catch (e) {
+        console.warn("Fullscreen request declined or unsupported:", e);
+      }
+
+      // Request Screen Wake Lock (화면 꺼짐 방지)
+      requestScreenWakeLock();
+
+      // Reset transforms
+      resetZoomPan();
+    }
+
+    async function exitPresentationMode() {
+      const overlay = document.getElementById('presOverlay');
+      overlay.classList.remove('active');
+
+      // Release WakeLock
+      releaseScreenWakeLock();
+
+      // Exit Fullscreen
+      try {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen();
+        } else if (document.webkitFullscreenElement) {
+          await document.webkitExitFullscreen();
+        }
+      } catch (e) {}
+    }
+
+    async function requestScreenWakeLock() {
+      const badge = document.getElementById('wakeLockBadge');
+      const text = document.getElementById('wakeLockText');
+      if ('wakeLock' in navigator) {
+        try {
+          wakeLock = await navigator.wakeLock.request('screen');
+          text.textContent = '화면 꺼짐 방지 활성 (WakeLock)';
+          badge.style.display = 'inline-flex';
+          wakeLock.addEventListener('release', () => {
+            text.textContent = '화면 꺼짐 방지 해제됨';
+          });
+        } catch (err) {
+          text.textContent = '화면 꺼짐 방지 미지원 환경';
+        }
+      } else {
+        text.textContent = '디지털 액자 모드 (WakeLock 미지원)';
+      }
+    }
+
+    function releaseScreenWakeLock() {
+      if (wakeLock) {
+        wakeLock.release().then(() => { wakeLock = null; });
+      }
+    }
+
+    function toggleAutoTour() {
+      isAutoTour = !isAutoTour;
+      const img = document.getElementById('presImg');
+      const btn = document.getElementById('btnTourToggle');
+      if (isAutoTour) {
+        img.classList.add('auto-tour');
+        btn.classList.add('active');
+        btn.innerHTML = '<span>🎥 카메라 모션 On</span>';
+        resetZoomPan();
+      } else {
+        img.classList.remove('auto-tour');
+        btn.classList.remove('active');
+        btn.innerHTML = '<span>🖐️ 수동 탐색 모드</span>';
+      }
+    }
+
+    function togglePresSubtitle() {
+      presLowerThirdVisible = !presLowerThirdVisible;
+      const lt = document.getElementById('presLowerThird');
+      if (presLowerThirdVisible) {
+        lt.classList.remove('hidden');
+      } else {
+        lt.classList.add('hidden');
+      }
+    }
+
+    function applyPresTransform() {
+      const img = document.getElementById('presImg');
+      if (isAutoTour) {
+        img.classList.remove('auto-tour');
+        isAutoTour = false;
+        document.getElementById('btnTourToggle').classList.remove('active');
+        document.getElementById('btnTourToggle').innerHTML = '<span>🖐️ 수동 탐색 모드</span>';
+      }
+      img.style.transform = `scale(${zoomScale}) translate(${panX}px, ${panY}px)`;
+    }
+
+    function zoomIn() {
+      zoomScale = Math.min(zoomScale + 0.3, 5.0);
+      applyPresTransform();
+    }
+
+    function zoomOut() {
+      zoomScale = Math.max(zoomScale - 0.3, 0.8);
+      applyPresTransform();
+    }
+
+    function resetZoomPan() {
+      zoomScale = 1.0;
+      panX = 0;
+      panY = 0;
+      const img = document.getElementById('presImg');
+      img.style.transform = '';
+      if (isAutoTour) {
+        img.classList.add('auto-tour');
+      }
+    }
+
+    // Mouse Wheel Zoom
+    const presCanvas = document.getElementById('presCanvasWrap');
+    presCanvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const delta = e.deltaY * -0.0015;
+      zoomScale = Math.min(Math.max(0.8, zoomScale + delta), 5.0);
+      applyPresTransform();
+    }, { passive: false });
+
+    // Mouse Drag Pan
+    presCanvas.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX - panX;
+      startY = e.clientY - panY;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      panX = e.clientX - startX;
+      panY = e.clientY - startY;
+      applyPresTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch Devices Pinch to Zoom & Drag
+    presCanvas.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        initialPinchDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+      } else if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - panX;
+        startY = e.touches[0].clientY - panY;
+      }
+    }, { passive: true });
+
+    presCanvas.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2 && initialPinchDistance) {
+        const currentDist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        const ratio = currentDist / initialPinchDistance;
+        zoomScale = Math.min(Math.max(0.8, zoomScale * ratio), 5.0);
+        initialPinchDistance = currentDist;
+        applyPresTransform();
+      } else if (e.touches.length === 1 && isDragging) {
+        panX = e.touches[0].clientX - startX;
+        panY = e.touches[0].clientY - startY;
+        applyPresTransform();
+      }
+    }, { passive: true });
+
+    presCanvas.addEventListener('touchend', (e) => {
+      if (e.touches.length < 2) {
+        initialPinchDistance = null;
+      }
+      if (e.touches.length === 0) {
+        isDragging = false;
+      }
+    });
+
+    // Double tap / Double click to reset
+    presCanvas.addEventListener('dblclick', () => {
+      resetZoomPan();
+    });
+
+    // Handle ESC key to exit fullscreen
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.getElementById('presOverlay').classList.contains('active')) {
+        exitPresentationMode();
+      }
+    });
+
+    // Initialize
+    loadArtworkData();
+  </script>
+</body>
+</html>

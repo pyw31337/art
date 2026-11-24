@@ -221,6 +221,31 @@
       border-color: #4f46e5;
       box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
     }
+    .story-chip {
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #e9d5ff;
+      background: #faf5ff;
+      color: #6b21a8;
+      font-size: 11.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .story-chip:hover {
+      background: #f3e8ff;
+      border-color: #c084fc;
+      color: #581c87;
+    }
+    .story-chip.active {
+      background: #7c3aed;
+      color: #ffffff;
+      border-color: #7c3aed;
+      box-shadow: 0 2px 6px rgba(124, 58, 237, 0.3);
+    }
 
     /* Grid Layout */
     .grid {
@@ -482,7 +507,8 @@
         </div>
       </div>
       <div class="nav-links">
-        <a class="fed-link primary" href="https://pyw31337.github.io/lets/" target="_blank">⚡ 렛츠 통합 대시보드</a>
+        <a class="fed-link primary" href="artwork.html?id=paint_sargent_001&mode=presentation" style="background:linear-gradient(135deg, #4f46e5, #7c3aed); border-color:#818cf8; color:#fff; box-shadow:0 3px 10px rgba(99,102,241,0.35);">🖼️ 디지털 액자 감상실</a>
+        <a class="fed-link" href="https://pyw31337.github.io/lets/" target="_blank">⚡ 렛츠 통합 대시보드</a>
         <a class="fed-link" href="https://pyw31337.github.io/people/" target="_blank">👥 렛츠피플 (인물·작가)</a>
         <a class="fed-link" href="https://pyw31337.github.io/law/" target="_blank">⚖️ 렛츠로 (법률)</a>
         <a class="fed-link" href="https://pyw31337.github.io/insu/" target="_blank">🛡️ 렛츠인슈 (보험)</a>
@@ -569,6 +595,20 @@
         <button class="theme-chip" data-theme="solitude" onclick="setTheme('solitude')">🕊️ 고독과 치유</button>
         <button class="theme-chip" data-theme="nature" onclick="setTheme('nature')">🌿 야성과 정글</button>
         <button class="theme-chip" data-theme="korean" onclick="setTheme('korean')">🇰🇷 한국의 멋</button>
+      </div>
+
+      <!-- 인간 스토리 텍소노미 필터 바 (가족, 애인, 아이, 우정, 비극, 자아, 자연, 미스터리) -->
+      <div class="museum-filter-bar" id="storyFilterBar" style="margin-top:6px; padding-top:8px; border-top:1px dashed #e2e8f0;">
+        <span style="font-size:11.5px; font-weight:700; color:#7c3aed; margin-right:4px;">📖 스토리 테마:</span>
+        <button class="story-chip active" data-story="all" onclick="setStory('all')">전체 스토리</button>
+        <button class="story-chip" data-story="family" onclick="setStory('family')">👨‍👩‍👧 가족 이야기</button>
+        <button class="story-chip" data-story="lovers" onclick="setStory('lovers')">💑 연인 & 애인</button>
+        <button class="story-chip" data-story="children" onclick="setStory('children')">👶 아이 & 동심</button>
+        <button class="story-chip" data-story="friendship" onclick="setStory('friendship')">🤝 우정 & 연대</button>
+        <button class="story-chip" data-story="tragedy" onclick="setStory('tragedy')">🥀 비극 & 상실</button>
+        <button class="story-chip" data-story="solitude" onclick="setStory('solitude')">🕊️ 자아 & 고독</button>
+        <button class="story-chip" data-story="nature" onclick="setStory('nature')">🌿 자연 & 정글</button>
+        <button class="story-chip" data-story="mystery" onclick="setStory('mystery')">🕵️ 미스터리 & 비밀</button>
       </div>
     </div>
 
@@ -667,6 +707,7 @@
     }
 
     let activeTheme = 'all';
+    let activeStory = 'all';
     let digitalGalleryLoaded = false;
     let loadingDigitalGallery = false;
 
@@ -718,6 +759,17 @@
       filterAndRender();
     }
 
+    async function setStory(story) {
+      activeStory = story;
+      document.querySelectorAll('.story-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-story') === story);
+      });
+      if (story !== 'all' && !digitalGalleryLoaded) {
+        await loadDigitalGallery();
+      }
+      filterAndRender();
+    }
+
     function filterAndRender() {
       const q = document.getElementById('artSearch').value.toLowerCase().trim();
       const grid = document.getElementById('mainGrid');
@@ -752,6 +804,14 @@
         });
       }
 
+      if (activeStory !== 'all') {
+        list = list.filter(item => {
+          if (item.story_category === activeStory) return true;
+          if (item.stories && item.stories.includes(activeStory)) return true;
+          return false;
+        });
+      }
+
       if (q && !digitalGalleryLoaded) {
         loadDigitalGallery();
       }
@@ -767,7 +827,9 @@
           const bs = (item.behind_story || '').toLowerCase();
           const mus = item.museum?.toLowerCase() || item.location?.toLowerCase() || '';
           const aes = (item.aesthetic_elements || []).join(' ').toLowerCase();
-          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || bs.includes(q) || mus.includes(q) || aes.includes(q);
+          const sc = (item.story_category || '').toLowerCase();
+          const sl = (item.story_label || '').toLowerCase();
+          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || bs.includes(q) || mus.includes(q) || aes.includes(q) || sc.includes(q) || sl.includes(q);
         });
       }
 
@@ -831,19 +893,22 @@
 
       return `
         <div class="art-card">
-          <div class="card-media" onclick="openModal('${id}')">
+          <div class="card-media" onclick="location.href='artwork.html?id=${id}'" style="cursor:pointer;" title="상세 작품 및 디지털 액자 감상하기">
             <span class="category-tag ${badgeClass}">${badgeText}</span>
             <img class="card-img" src="${thumbUrl}" alt="${item.title_kr}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';">
           </div>
           <div class="card-body">
             <div class="card-meta-row">
-              <div class="card-title">${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small></div>
+              <a href="artwork.html?id=${id}" class="card-title" style="text-decoration:none; color:inherit; cursor:pointer;" title="작품 상세 페이지 보기">
+                ${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small>
+              </a>
               ${yearStr ? `<div class="card-year">${yearStr}</div>` : ''}
             </div>
             <div class="creator-line">
               <span><b>${creatorName}</b></span>
               ${item.artist_name_en ? `<span style="font-size:12px; color:var(--muted);">(${item.artist_name_en})</span>` : ''}
               ${subStyle ? `<span class="badge-style">${subStyle}</span>` : ''}
+              ${item.story_label ? `<span style="background:#f3e8ff; color:#6b21a8; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:2px;">${item.story_label}</span>` : ''}
               ${item.behind_story ? `<span style="background:#fef3c7; color:#92400e; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:3px;">🎭 비하인드 스토리</span>` : ''}
               ${(item.themes && item.themes.length && item.themes[0] !== 'classic') ? `
                 <span style="background:#f3e8ff; color:#6b21a8; font-size:11px; font-weight:700; padding:2px 8px; border-radius:4px; display:inline-flex; align-items:center; gap:2px;">✦ ${item.themes[0]}</span>
@@ -875,10 +940,15 @@
               </div>
             ` : ''}
 
-            <div style="display:flex; gap:8px; margin-top:auto;">
-              <button class="btn-detail" onclick="openModal('${id}')" style="flex:1.2;">🔍 작품 분석 & 도상학</button>
-              <button class="btn-detail" onclick="openModal('${id}', true)" style="flex:1; background:#fee2e2; color:#b91c1c; border-color:#fca5a5;" title="유튜브·쇼츠·네이버 영상 해설 바로보기">
-                ▶️ 영상 해설
+            <div style="display:flex; gap:6px; margin-top:auto;">
+              <a href="artwork.html?id=${id}" class="btn-detail" style="flex:1.2; text-decoration:none;">
+                🔍 상세 분석
+              </a>
+              <a href="artwork.html?id=${id}&mode=presentation" class="btn-detail" style="flex:1.1; background:#312e81; color:#ffffff; border-color:#4338ca; text-decoration:none;" title="화면 꺼짐 없는 디지털 액자 감상">
+                🖼️ 액자 모드
+              </a>
+              <button class="btn-detail" onclick="openModal('${id}', true)" style="flex:0.8; background:#fee2e2; color:#b91c1c; border-color:#fca5a5;" title="유튜브·쇼츠·네이버 영상 해설">
+                ▶️ 영상
               </button>
             </div>
           </div>
@@ -1129,8 +1199,9 @@
 
           <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
             <div>URN 온톨로지: <code>${item.urn || 'urn:art:work:' + id}</code></div>
-            ${item.image_url ? `<a href="${item.image_url}" target="_blank" style="color:#0284c7; font-weight:600; text-decoration:none;">🖼️ 초고화질(UHD) 원본 보기 ➔</a>` : ''}
-            ${item.external_source ? `<a href="${item.external_source}" target="_blank" style="color:#6366f1; font-weight:600; text-decoration:none;">📱 디지털 갤러리 원문 보기 ➔</a>` : ''}
+            <a href="artwork.html?id=${id}&mode=presentation" style="color:#7c3aed; font-weight:700; text-decoration:none;">🖼️ 디지털 액자 감상 ➔</a>
+            <a href="artwork.html?id=${id}" style="color:#4f46e5; font-weight:700; text-decoration:none;">📄 전용 페이지 ➔</a>
+            ${item.image_url ? `<a href="${item.image_url}" target="_blank" style="color:#0284c7; font-weight:600; text-decoration:none;">🖼️ 초고화질 원본 보기 ➔</a>` : ''}
             <a href="https://pyw31337.github.io/people/" target="_blank" style="color:#2563eb; font-weight:600; text-decoration:none;">렛츠피플에서 작가 생애 & 계보 보기 ➔</a>
           </div>
         `;
