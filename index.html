@@ -806,7 +806,12 @@
               </div>
             ` : ''}
 
-            <button class="btn-detail" onclick="openModal('${id}')">🔍 작품 분석 & 도상학 상세 보기</button>
+            <div style="display:flex; gap:8px; margin-top:auto;">
+              <button class="btn-detail" onclick="openModal('${id}')" style="flex:1.2;">🔍 작품 분석 & 도상학</button>
+              <button class="btn-detail" onclick="openModal('${id}', true)" style="flex:1; background:#fee2e2; color:#b91c1c; border-color:#fca5a5;" title="유튜브·쇼츠·네이버 영상 해설 바로보기">
+                ▶️ 영상 해설
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -845,7 +850,7 @@
       `;
     }
 
-    function openModal(id) {
+    function openModal(id, scrollToMedia = false) {
       const item = allArtworks.find(a => (a.id === id || a.work_id === id || a.lit_id === id));
       if (!item) return;
 
@@ -881,6 +886,94 @@
         const creatorEn = item.artist_name_en || item.architect_en || '';
         
         const modalImgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
+
+        const media = item.media_resources || {
+          youtube_search_url: `https://www.youtube.com/results?search_query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+해설`,
+          youtube_shorts_search_url: `https://www.youtube.com/results?search_query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+쇼츠`,
+          channel_shorts_url: 'https://www.youtube.com/@서정욱_미술토크/shorts',
+          channel_reason_of_art: 'https://www.youtube.com/@Reason_Of_Art/videos',
+          naver_tv_url: `https://tv.naver.com/search?query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`,
+          naver_video_search_url: `https://search.naver.com/search.naver?where=video&query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
+          kakao_tv_url: `https://tv.kakao.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`,
+          daum_clip_url: `https://search.daum.net/search?w=vclip&q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
+          instagram_channel_url: 'https://www.instagram.com/behind_canvas_stories_kr/',
+          tiktok_search_url: `https://www.tiktok.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
+          vimeo_search_url: `https://vimeo.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`
+        };
+
+        const mediaHtml = `
+          <div id="mediaDocentStation" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border:1px solid #334155; border-radius:14px; padding:20px; color:#ffffff; margin-bottom:22px; box-shadow:0 8px 20px rgba(0,0,0,0.25);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="background:#ef4444; color:#fff; font-size:11px; font-weight:800; padding:4px 8px; border-radius:6px; letter-spacing:0.5px;">ONLINE DOCENT</span>
+                <h3 style="font-size:16px; font-weight:800; color:#f8fafc; margin:0;">🎬 온라인 영상 도슨트 & 멀티 플랫폼 해설</h3>
+              </div>
+              <span style="font-size:12px; color:#94a3b8;">유튜브 · 쇼츠 · 네이버 · 다음 · 인스타 · 틱톡 실시간 연동</span>
+            </div>
+
+            ${media.youtube_video_id ? `
+              <div style="margin-bottom:12px; border-radius:10px; overflow:hidden; background:#000; position:relative; padding-top:56.25%; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+                <iframe src="https://www.youtube-nocookie.com/embed/${media.youtube_video_id}" 
+                  title="${media.youtube_title || item.title_kr}" 
+                  style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              ${media.youtube_title ? `<div style="font-size:13px; color:#e2e8f0; margin-bottom:14px; font-weight:600;">📺 ${media.youtube_title}</div>` : ''}
+            ` : ''}
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)); gap:10px;">
+              <a href="${media.youtube_video_url || media.youtube_search_url}" target="_blank" 
+                 style="background:#dc2626; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px; box-shadow:0 2px 4px rgba(220,38,38,0.3);">
+                <span>▶️ 유튜브 해설 영상 ➔</span>
+              </a>
+
+              <a href="${media.channel_shorts_url || media.youtube_shorts_search_url}" target="_blank" 
+                 style="background:#991b1b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>⚡ 서정욱 미술토크 Shorts ➔</span>
+              </a>
+
+              <a href="${media.channel_reason_of_art}" target="_blank" 
+                 style="background:#475569; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🎨 미술의 이유 채널 ➔</span>
+              </a>
+
+              <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" 
+                 style="background:#059669; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🟢 네이버 TV·클립 해설 ➔</span>
+              </a>
+
+              <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" 
+                 style="background:#d97706; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🟡 다음·카카오TV 영상 ➔</span>
+              </a>
+
+              <a href="${media.instagram_channel_url}" target="_blank" 
+                 style="background:#c026d3; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>📸 인스타 @behind_canvas ➔</span>
+              </a>
+
+              <a href="${media.tiktok_search_url}" target="_blank" 
+                 style="background:#18181b; border:1px solid #52525b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🎵 틱톡 1분 도슨트 ➔</span>
+              </a>
+
+              <a href="${media.vimeo_search_url}" target="_blank" 
+                 style="background:#0284c7; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                <span>🎬 비메오(Vimeo) 다큐 ➔</span>
+              </a>
+
+              ${media.article_url ? `
+                <a href="${media.article_url}" target="_blank" 
+                   style="background:#4f46e5; color:#fff; padding:11px 14px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:8px; grid-column:1/-1;">
+                  <span>📑 ${media.article_source || '전문 미술 칼럼'} 기사 원문 심층 분석 보기 ➔</span>
+                </a>
+              ` : ''}
+            </div>
+          </div>
+        `;
+
         body.innerHTML = `
           <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} <small style="font-size:16px; font-weight:500; color:#64748b;">(${item.title_en || ''})</small></h2>
           <div style="font-size:14px; color:#2563eb; font-weight:700; margin-bottom:18px;">
@@ -895,6 +988,8 @@
             ${item.dimensions ? `<span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">규격: ${item.dimensions}</span>` : ''}
             <span style="background:#ecfdf5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700;">소장처: ${venue}</span>
           </div>
+
+          ${mediaHtml}
 
           <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
             <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 작품 배경 & 해설</h4>
@@ -953,10 +1048,21 @@
       }
 
       modal.classList.add('active');
+
+      if (scrollToMedia) {
+        setTimeout(() => {
+          const mEl = document.getElementById('mediaDocentStation');
+          if (mEl) mEl.scrollIntoView({ behavior: 'smooth' });
+        }, 80);
+      }
     }
 
     function closeModal() {
-      document.getElementById('artModal').classList.remove('active');
+      const modal = document.getElementById('artModal');
+      modal.classList.remove('active');
+      // Stop iframe video playback
+      const body = document.getElementById('modalBody');
+      if (body) body.innerHTML = '';
     }
 
     document.addEventListener('keydown', e => {
