@@ -775,17 +775,27 @@
     /* Category Navigation Bar (Below Hero Zone) */
     .hero-category-nav-bar {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      align-items: center;
       gap: 12px;
-      padding: 16px 20px;
+      padding: 14px 24px;
       background: #0f172a;
       border-bottom: 1px solid #1e293b;
       overflow-x: auto;
       scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    @media (min-width: 1024px) {
+      .hero-category-nav-bar {
+        justify-content: center;
+      }
     }
     .hero-category-nav-bar::-webkit-scrollbar { height: 3px; }
     .hero-category-nav-bar::-webkit-scrollbar-thumb { background: #334155; }
     .hero-cat-pill {
+      flex-shrink: 0;
+      white-space: nowrap;
+      min-width: max-content;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -797,7 +807,6 @@
       font-size: 13px;
       font-weight: 600;
       text-decoration: none;
-      white-space: nowrap;
       transition: all 0.15s ease;
       cursor: pointer;
     }
@@ -857,6 +866,10 @@
       <a href="index.html" class="nav-link-btn" style="color:#ffffff;">
         <svg class="icon"><use href="#i-frame"/></svg>
         <span>홈</span>
+      </a>
+      <a href="themes.html" class="nav-link-btn" style="color:#38bdf8;">
+        <svg class="icon" style="color:#38bdf8;"><use href="#i-sparkles"/></svg>
+        <span>테마밸리</span>
       </a>
       <a href="museum.html" class="nav-link-btn">
         <svg class="icon"><use href="#i-museum"/></svg>
@@ -921,6 +934,10 @@
   </section>
   <!-- Category Navigation Strip (Icons & Destination Jump) -->
   <nav class="hero-category-nav-bar">
+    <a href="themes.html" class="hero-cat-pill" style="border-color:#38bdf8; color:#38bdf8; background:rgba(56,189,248,0.12);">
+      <svg class="icon" style="color:#38bdf8;"><use href="#i-sparkles"/></svg>
+      <span>테마밸리 (롤링 갤러리)</span>
+    </a>
     <a href="javascript:void(0)" onclick="filterByCategoryTab('classic_painting')" class="hero-cat-pill">
       <svg class="icon"><use href="#i-frame"/></svg>
       <span>고전명화</span>

@@ -1,0 +1,518 @@
+[
+  {
+    "id": "winter_white",
+    "title_kr": "겨울에 빛나는 컬러, 화이트",
+    "title_en": "Winter White & Snow",
+    "subtitle": "순백의 설원과 눈꽃, 하얀 꽃잎과 그리스 산토리니의 흰 벽",
+    "description": "차가운 겨울에 더욱 빛나며, 언제봐도 마음을 맑고 평온하게 정화시키는 순백의 감성 갤러리입니다. 눈 덮인 들판, 하얀 메모지, 흰 꽃들과 산토리니의 하얀 골목길을 만나보세요.",
+    "color_accent": "#f8fafc",
+    "color_tag": "#ffffff",
+    "badge": "COLOR WHITE",
+    "category": "color_mood",
+    "default_bgm": "bgm_gymnopedie.mp3",
+    "items": [
+      {
+        "id": "white_01",
+        "title": "타트라 산맥의 순백 설원",
+        "artist": "Aleksil Strogonov",
+        "query": "Winter in Tatry Mountains - Poland.jpg"
+      },
+      {
+        "id": "white_02",
+        "title": "서리 맺힌 자작나무 숲",
+        "artist": "Bogdan Dada",
+        "query": "Winter Landscape with Snow-covered Trees (SM 535).png"
+      },
+      {
+        "id": "white_03",
+        "title": "산토리니의 흰 벽과 코발트 블루",
+        "artist": "Galina N",
+        "query": "Oia Santorini Greece.jpg"
+      },
+      {
+        "id": "white_04",
+        "title": "설원 속 겨울 오두막",
+        "artist": "Jill Heyer",
+        "query": "Angelus Hut in the winter, Nelson Lakes National Park, New Zealand.jpg"
+      },
+      {
+        "id": "white_05",
+        "title": "순백의 수련과 물방울",
+        "artist": "Artsy Vibes",
+        "query": "White Water Lily (Nymphaea alba) in pond.jpg"
+      },
+      {
+        "id": "white_06",
+        "title": "겨울 숲의 정적",
+        "artist": "Christine White",
+        "query": "Winter in the Black Forest, Germany.jpg"
+      },
+      {
+        "id": "white_07",
+        "title": "눈 덮인 후지산의 순백 분화구",
+        "artist": "Gino Canto",
+        "query": "Mount Fuji from Lake Kawaguchi in winter.jpg"
+      },
+      {
+        "id": "white_08",
+        "title": "순백의 장미 꽃잎",
+        "artist": "Logan Weaver",
+        "query": "White Rose Macro Photography.jpg"
+      },
+      {
+        "id": "white_09",
+        "title": "화이트 샌즈 백색 사구의 능선",
+        "artist": "Beatriz Perez Moya",
+        "query": "White Sands National Park New Mexico.jpg"
+      },
+      {
+        "id": "white_10",
+        "title": "설경 속의 고요한 호수",
+        "artist": "Chris Ouzounis",
+        "query": "Snow Scene at Shipka Pass 1.JPG"
+      },
+      {
+        "id": "white_11",
+        "title": "하얀 서리꽃 핀 들판",
+        "artist": "Monika Neff",
+        "query": "Frost on winter meadow landscape.jpg"
+      },
+      {
+        "id": "white_12",
+        "title": "정선의 설경 산수 (조선의 흰 여백)",
+        "artist": "겸재 정선 (Gyeomjae Jeong Seon)",
+        "query": "assets/featured/asian_jeongseon_inwang.webp"
+      }
+    ]
+  },
+  {
+    "id": "color_mint",
+    "title_kr": "싱그러운 청량감, 컬러 민트",
+    "title_en": "Fresh Color Mint",
+    "subtitle": "싱그러운 민트빛 빈티지 카, 청량한 에메랄드빛 해변과 초록의 호흡",
+    "description": "일상의 답답함을 시원하게 씻어내고 기분을 상쾌하게 전환시키는 청량한 파스텔 민트의 감성입니다. 에메랄드빛 바다와 싱그러운 잎사귀의 맑은 숨결을 느껴보세요.",
+    "color_accent": "#34d399",
+    "color_tag": "#10b981",
+    "badge": "COLOR MINT",
+    "category": "color_mood",
+    "default_bgm": "bgm_bossa_antigua.mp3",
+    "items": [
+      {
+        "id": "mint_01",
+        "title": "민트빛 클래식 빈티지 카",
+        "artist": "Logan Weaver",
+        "query": "Vintage mint green car parked.jpg"
+      },
+      {
+        "id": "mint_02",
+        "title": "에메랄드빛 몰디브 라군",
+        "artist": "Mohamed Thasneem",
+        "query": "Maldives turquoise lagoon aerial view.jpg"
+      },
+      {
+        "id": "mint_03",
+        "title": "아침 이슬 머금은 민트 잎",
+        "artist": "Botanical Studio",
+        "query": "Fresh mint leaves with water drops macro.jpg"
+      },
+      {
+        "id": "mint_04",
+        "title": "파스텔 민트빛 유럽의 문",
+        "artist": "Clara M.",
+        "query": "Mint green vintage wooden door Europe.jpg"
+      },
+      {
+        "id": "mint_05",
+        "title": "청록빛 오로라의 밤하늘",
+        "artist": "Nordic Vision",
+        "query": "Green Aurora Borealis over snowy mountains.jpg"
+      },
+      {
+        "id": "mint_06",
+        "title": "세이지 민트빛 유칼립투스",
+        "artist": "Elena R.",
+        "query": "Eucalyptus branch pastel green background.jpg"
+      },
+      {
+        "id": "mint_07",
+        "title": "모로코 마라케시 민트 모자이크",
+        "artist": "Tariq Al-Mansoor",
+        "query": "Moroccan green zellij mosaic tile.jpg"
+      },
+      {
+        "id": "mint_08",
+        "title": "레이크 루이스의 빙하 에메랄드",
+        "artist": "Canadian Peaks",
+        "query": "Lake Louise turquoise water Banff National Park.jpg"
+      },
+      {
+        "id": "mint_09",
+        "title": "민트빛 다육식물의 기하학",
+        "artist": "Green Sanctuary",
+        "query": "Succulent plant Echeveria green rosette.jpg"
+      },
+      {
+        "id": "mint_10",
+        "title": "온실 속 열대 식물의 숨결",
+        "artist": "Flora Design",
+        "query": "Botanical garden greenhouse tropical leaves.jpg"
+      },
+      {
+        "id": "mint_11",
+        "title": "청량한 여름 바다의 파도말림",
+        "artist": "Wave Seeker",
+        "query": "Turquoise sea wave breaking closeup.jpg"
+      },
+      {
+        "id": "mint_12",
+        "title": "모네의 지베르니 일본식 다리",
+        "artist": "클로드 모네 (Claude Monet)",
+        "query": "assets/featured/paint_monet_001.webp"
+      }
+    ]
+  },
+  {
+    "id": "camping_forest",
+    "title_kr": "숲과 자연, 힐링 캠핑 & 포레스트",
+    "title_en": "Forest Sanctuary & Camping",
+    "subtitle": "울창한 침엽수림, 안개 낀 호숫가, 따스한 모닥불과 숲속 텐트",
+    "description": "도심의 소음을 벗어나 피톤치드 가득한 깊은 숲에서 누리는 온전한 사색과 휴식의 시간입니다. 타오르는 모닥불과 안개 자욱한 침엽수림 속으로 초대합니다.",
+    "color_accent": "#22c55e",
+    "color_tag": "#15803d",
+    "badge": "HEALING FOREST",
+    "category": "nature_healing",
+    "default_bgm": "bgm_backbay_lounge.mp3",
+    "items": [
+      {
+        "id": "camp_01",
+        "title": "은하수 아래 따스한 캠핑 텐트",
+        "artist": "Outdoor Nomad",
+        "query": "Camping tent illuminated under starry night sky.jpg"
+      },
+      {
+        "id": "camp_02",
+        "title": "모닥불과 타오르는 장작 불꽃",
+        "artist": "Campfire Hearth",
+        "query": "Campfire glowing embers and wood flames.jpg"
+      },
+      {
+        "id": "camp_03",
+        "title": "안개 자욱한 삼나무 숲길",
+        "artist": "Pacific Forest",
+        "query": "Misty redwoods forest morning fog.jpg"
+      },
+      {
+        "id": "camp_04",
+        "title": "고요한 호숫가의 카누 한 척",
+        "artist": "Alpine Waters",
+        "query": "Canoe docked on calm alpine lake morning.jpg"
+      },
+      {
+        "id": "camp_05",
+        "title": "피톤치드 가득한 솔숲 햇살",
+        "artist": "Forest Whisper",
+        "query": "Sunlight streaming through pine trees forest.jpg"
+      },
+      {
+        "id": "camp_06",
+        "title": "산속 목조 오두막의 아늑함",
+        "artist": "Cabin Living",
+        "query": "Rustic wooden cabin in mountain forest.jpg"
+      },
+      {
+        "id": "camp_07",
+        "title": "숲속 나무 사이의 해먹",
+        "artist": "Slow Breeze",
+        "query": "Hammock tied between trees in peaceful woods.jpg"
+      },
+      {
+        "id": "camp_08",
+        "title": "맑은 숲속 계곡의 물결",
+        "artist": "Clear Stream",
+        "query": "Crystal clear stream flowing through green moss forest.jpg"
+      },
+      {
+        "id": "camp_09",
+        "title": "새벽 물안개 피어오르는 호수",
+        "artist": "Dawn Serenade",
+        "query": "Misty lake sunrise with pine tree silhouettes.jpg"
+      },
+      {
+        "id": "camp_10",
+        "title": "단풍으로 물든 가을 캠프 사이트",
+        "artist": "Autumn Leaves",
+        "query": "Autumn foliage camping tent golden trees.jpg"
+      },
+      {
+        "id": "camp_11",
+        "title": "해안 절벽 위의 캠핑카 노을",
+        "artist": "Van Life Journal",
+        "query": "Camper van parked at sunset coastal cliff.jpg"
+      },
+      {
+        "id": "camp_12",
+        "title": "반 고흐의 생레미의 올리브 나무",
+        "artist": "빈센트 반 고흐 (Vincent van Gogh)",
+        "query": "assets/featured/paint_gogh_001.webp"
+      }
+    ]
+  },
+  {
+    "id": "midnight_blue",
+    "title_kr": "사색의 밤, 미드나잇 블루 & 시티",
+    "title_en": "Midnight Blue & City Lights",
+    "subtitle": "어두운 밤하늘을 수놓은 은하수, 젖은 도시의 네온 불빛과 고요한 심야",
+    "description": "깊어가는 밤, 고요한 음악과 함께 내면의 사색에 몰입하는 시간입니다. 짙푸른 밤하늘의 성운과 비에 젖은 도시의 아스팔트에 반사된 빛무리를 감상해보세요.",
+    "color_accent": "#60a5fa",
+    "color_tag": "#1e3a8a",
+    "badge": "MIDNIGHT NOIR",
+    "category": "night_urban",
+    "default_bgm": "bgm_chopin_nocturne.mp3",
+    "items": [
+      {
+        "id": "night_01",
+        "title": "칠흑 같은 심야의 은하수 성운",
+        "artist": "Deep Cosmos",
+        "query": "Milky Way galaxy night sky stars panorama.jpg"
+      },
+      {
+        "id": "night_02",
+        "title": "비에 젖은 도쿄 밤거리 네온",
+        "artist": "Neon Wanderer",
+        "query": "Rainy night city street neon light reflections.jpg"
+      },
+      {
+        "id": "night_03",
+        "title": "심해로 쏟아지는 푸른 빛기둥",
+        "artist": "Abyssal Blue",
+        "query": "Underwater sun rays penetrating deep blue ocean.jpg"
+      },
+      {
+        "id": "night_04",
+        "title": "맨해튼 스카이라인의 블루 아워",
+        "artist": "Hudson River",
+        "query": "New York Manhattan skyline blue hour evening.jpg"
+      },
+      {
+        "id": "night_05",
+        "title": "별빛이 쏟아지는 호수 반영",
+        "artist": "Night Reflection",
+        "query": "Stars reflecting on calm lake water night.jpg"
+      },
+      {
+        "id": "night_06",
+        "title": "자정을 비추는 바다 등대의 불빛",
+        "artist": "Beacon Watch",
+        "query": "Lighthouse beam shining into dark stormy sea.jpg"
+      },
+      {
+        "id": "night_07",
+        "title": "안개 자욱한 파리의 심야 가로등",
+        "artist": "Midnight Paris",
+        "query": "Foggy night street with vintage streetlamp glow.jpg"
+      },
+      {
+        "id": "night_08",
+        "title": "우주 궤도에서 바라본 푸른 지구",
+        "artist": "Earth Observatory",
+        "query": "Earth atmosphere blue crescent from space ISS.jpg"
+      },
+      {
+        "id": "night_09",
+        "title": "에펠탑의 화려한 자정 일루미네이션",
+        "artist": "City of Light",
+        "query": "Eiffel tower illuminated at night blue sky Paris.jpg"
+      },
+      {
+        "id": "night_10",
+        "title": "푸른빛 발광 플랑크톤 파도",
+        "artist": "Ocean Glow",
+        "query": "Bioluminescent waves glowing blue on dark beach.jpg"
+      },
+      {
+        "id": "night_11",
+        "title": "북극 밤하늘의 별 궤적 회전",
+        "artist": "Polar Trails",
+        "query": "Star trails long exposure night sky circular motion.jpg"
+      },
+      {
+        "id": "night_12",
+        "title": "피카소의 늙은 기타리스트 (청색 시대)",
+        "artist": "파블로 피카소 (Pablo Picasso)",
+        "query": "assets/featured/paint_picasso_guitarist.webp"
+      }
+    ]
+  },
+  {
+    "id": "monet_garden",
+    "title_kr": "빛과 낭만, 모네의 정원과 인상파",
+    "title_en": "Monet's Garden & Impressionism",
+    "subtitle": "지베르니 정원의 수련, 반짝이는 햇살과 잔잔한 물결의 유화 마티에르",
+    "description": "자연의 찰나의 빛과 색채를 캔버스에 영원히 새겨넣은 인상주의 거장들의 낭만적인 야외 테마입니다. 은은하게 흔들리는 지베르니의 수련과 따스한 정원의 오후를 거닐어보세요.",
+    "color_accent": "#f59e0b",
+    "color_tag": "#d97706",
+    "badge": "IMPRESSIONISM",
+    "category": "masterpiece_art",
+    "default_bgm": "bgm_clair_de_lune.mp3",
+    "items": [
+      {
+        "id": "monet_01",
+        "title": "지베르니 연못의 수련과 버드나무",
+        "artist": "클로드 모네 (Claude Monet)",
+        "query": "assets/featured/paint_monet_001.webp"
+      },
+      {
+        "id": "monet_02",
+        "title": "아를의 꽃피는 과수원",
+        "artist": "빈센트 반 고흐 (Vincent van Gogh)",
+        "query": "assets/featured/paint_gogh_orchard.webp"
+      },
+      {
+        "id": "monet_03",
+        "title": "햇살 쏟아지는 정원의 보트놀이",
+        "artist": "피에르 오귀스트 르누아르",
+        "query": "assets/featured/paint_renoir_001.webp"
+      },
+      {
+        "id": "monet_04",
+        "title": "양산을 쓴 여인 (야외 인상 습작)",
+        "artist": "클로드 모네 (Claude Monet)",
+        "query": "assets/featured/paint_monet_parasol.webp"
+      },
+      {
+        "id": "monet_05",
+        "title": "봄날 퐁투아즈의 과수원 풍경",
+        "artist": "카미유 피사로 (Camille Pissarro)",
+        "query": "assets/featured/paint_pissarro_001.webp"
+      },
+      {
+        "id": "monet_06",
+        "title": "분홍빛 튀튀의 발레 수업",
+        "artist": "에드가 드가 (Edgar Degas)",
+        "query": "assets/featured/paint_degas_ballet.webp"
+      },
+      {
+        "id": "monet_07",
+        "title": "생트 빅투아르 산의 남프랑스 빛",
+        "artist": "폴 세잔 (Paul Cézanne)",
+        "query": "assets/featured/paint_cezanne_001.webp"
+      },
+      {
+        "id": "monet_08",
+        "title": "황금빛 자작나무 숲의 정원",
+        "artist": "구스타프 클림트 (Gustav Klimt)",
+        "query": "assets/featured/paint_klimt_001.webp"
+      },
+      {
+        "id": "monet_09",
+        "title": "그랑드 자트 섬의 일요일 오후",
+        "artist": "조르주 쇠라 (Georges Seurat)",
+        "query": "assets/featured/paint_seurat_jatte.webp"
+      },
+      {
+        "id": "monet_10",
+        "title": "눈 덮인 루브시엔 마을 길",
+        "artist": "알프레드 시슬레 (Alfred Sisley)",
+        "query": "assets/featured/paint_sisley_snow.webp"
+      },
+      {
+        "id": "monet_11",
+        "title": "비 오는 날의 파리 거리 (우산 풍경)",
+        "artist": "귀스타브 카유보트 (Gustave Caillebotte)",
+        "query": "assets/featured/paint_caillebotte_paris.webp"
+      },
+      {
+        "id": "monet_12",
+        "title": "아르장퇴유의 붉은 양귀비 들판",
+        "artist": "클로드 모네 (Claude Monet)",
+        "query": "assets/featured/paint_monet_poppies.webp"
+      }
+    ]
+  },
+  {
+    "id": "zen_minimal",
+    "title_kr": "여백의 미학, 젠 미니멀리즘",
+    "title_en": "Zen & Architectural Minimalism",
+    "subtitle": "정갈한 돌과 모래, 한 줄기 햇살이 드리운 건축의 비움과 절제",
+    "description": "불필요한 장식과 시각적 소음을 덜어내고, 오직 사물의 순수한 형태와 빛과 그림자의 조화에 집중하는 여백의 공간입니다. 마음의 평정과 균형을 찾아보세요.",
+    "color_accent": "#94a3b8",
+    "color_tag": "#475569",
+    "badge": "ZEN MINIMAL",
+    "category": "minimal_zen",
+    "default_bgm": "bgm_bach_air.mp3",
+    "items": [
+      {
+        "id": "zen_01",
+        "title": "교토 료안지 돌과 모래의 사색 정원",
+        "artist": "Zen Master Heritage",
+        "query": "Ryoanji dry zen garden stones and raked gravel.jpg"
+      },
+      {
+        "id": "zen_02",
+        "title": "노출 콘크리트 벽에 비치는 한 줄기 빛",
+        "artist": "Tadao Studio",
+        "query": "Minimalist concrete wall with diagonal sunlight.jpg"
+      },
+      {
+        "id": "zen_03",
+        "title": "바람에 사각거리는 대나무 숲길",
+        "artist": "Kyoto Silence",
+        "query": "Bamboo forest Arashiyama Kyoto vertical green.jpg"
+      },
+      {
+        "id": "zen_04",
+        "title": "눈 덮인 대지 위 홀로 선 고목",
+        "artist": "Hokkaido Minimal",
+        "query": "Lone tree in snow snowy landscape minimal composition.jpg"
+      },
+      {
+        "id": "zen_05",
+        "title": "고즈넉한 다실의 창살과 빛",
+        "artist": "Wabi-Sabi Spirit",
+        "query": "Traditional Japanese tatami room shoji window light.jpg"
+      },
+      {
+        "id": "zen_06",
+        "title": "고요한 수면 위 한 방울의 파문",
+        "artist": "Ripple Effect",
+        "query": "Single water droplet concentric ripples surface macro.jpg"
+      },
+      {
+        "id": "zen_07",
+        "title": "사막 모래 언덕의 유려한 능선 곡선",
+        "artist": "Dune Shadow",
+        "query": "Desert sand dune sharp ridge shadow abstract.jpg"
+      },
+      {
+        "id": "zen_08",
+        "title": "수백 년 분재(Bonsai)의 단아한 선",
+        "artist": "Bonsai Artistry",
+        "query": "Traditional Japanese bonsai tree white background minimal.jpg"
+      },
+      {
+        "id": "zen_09",
+        "title": "백색 벽면에 드리운 나뭇가지 그림자",
+        "artist": "Monochrome Shadow",
+        "query": "Tree branch shadow on plain white plaster wall.jpg"
+      },
+      {
+        "id": "zen_10",
+        "title": "이끼 덮인 돌등롱과 봄비",
+        "artist": "Temple Garden",
+        "query": "Moss covered stone lantern in Japanese rain garden.jpg"
+      },
+      {
+        "id": "zen_11",
+        "title": "곡면 원목 건축의 유기적 미학",
+        "artist": "Organic Form",
+        "query": "Curved minimalist wood architecture interior light.jpg"
+      },
+      {
+        "id": "zen_12",
+        "title": "백자 달항아리의 담백한 원형미 (국보)",
+        "artist": "조선 사옹원 도공 (Joseon Master Potter)",
+        "query": "assets/featured/asian_white_porcelain_moon_jar.webp"
+      }
+    ]
+  }
+]

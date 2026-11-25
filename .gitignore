@@ -6,4 +6,6 @@ assets/*
 !assets/icons/
 !assets/artists/
 !assets/museums/
+!assets/themes/
+!assets/audio/
 data/r2_upload_checkpoint.json
