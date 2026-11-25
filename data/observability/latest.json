@@ -1,7 +1,7 @@
 {
   "schema": "lets_observability_v1",
-  "run_id": "art-unimplemented-20261124T051053Z",
-  "observed_at": "2026-11-24T05:10:53.766168+00:00",
+  "run_id": "art-20261125T021656Z",
+  "observed_at": "2026-11-25T02:16:56.636676+00:00",
   "service_id": "art",
   "source": "met_open_access",
   "stages": {
@@ -25,10 +25,11 @@
     }
   },
   "counts": {
-    "records": 2650
+    "records": 2650,
+    "increment": 0
   },
   "artifacts": {
-    "raw": "2347357c1a1f9f84622a979c4639e77f0331885b66b685c13e9b5b66e7aa1255"
+    "raw": "67af8418fe62502f7eeb85997f24c8c78216420ba874121fe21c5343cb6fbf00"
   },
   "note": "Met Open Access department 11 identifier snapshot."
 }
