@@ -209,10 +209,10 @@
        ======================================================== */
     .hero-lower-third-wrap {
       position: absolute;
-      bottom: 28px;
-      left: 28px;
-      right: 28px;
-      max-width: 820px;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      max-width: 780px;
       margin: 0 auto;
       z-index: 25;
       pointer-events: none;
@@ -220,19 +220,20 @@
     }
     .hero-lower-third-wrap.hidden {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(18px);
       pointer-events: none;
     }
 
+    /* True Airy Glassmorphism: Background artwork shines through cleanly */
     .lower-third-panel {
       pointer-events: auto;
-      background: rgba(10, 14, 22, 0.8);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--hairline-dark);
-      border-radius: 6px;
-      padding: 16px 20px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      background: rgba(15, 23, 42, 0.32);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 18px 24px;
+      box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -282,28 +283,83 @@
     /* Subtitle Toggle Button */
     .toggle-subtitle-btn {
       position: absolute;
-      bottom: 28px;
-      right: 28px;
+      bottom: 24px;
+      right: 24px;
       z-index: 35;
-      background: rgba(10, 14, 22, 0.75);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--hairline-dark);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #cbd5e1;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 11.5px;
-      font-weight: 600;
+      padding: 0;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
     .toggle-subtitle-btn:hover {
-      background: rgba(20, 26, 38, 0.9);
+      background: rgba(255, 255, 255, 0.18);
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.06);
+    }
+
+    /* Floating Left & Right Navigation Arrows for Artworks */
+    .nav-artwork-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.32);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 40;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.2s cubic-bezier(0.2, 0, 0, 1), background 0.2s;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .nav-artwork-arrow.left { left: 24px; }
+    .nav-artwork-arrow.right { right: 24px; }
+    .nav-artwork-arrow:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.45);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .nav-artwork-arrow:active {
+      transform: translateY(-50%) scale(0.94);
+    }
+    .hero-container:hover .nav-artwork-arrow,
+    .hero-container.active-nav .nav-artwork-arrow,
+    .presentation-overlay:hover .nav-artwork-arrow,
+    .presentation-overlay.active-nav .nav-artwork-arrow {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Slideshow Countdown Progress Indicator */
+    .slideshow-progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: #3b82f6;
+      width: 0%;
+      z-index: 101;
+      transition: width 0.1s linear;
     }
 
     /* Scroll Prompt */
@@ -336,33 +392,33 @@
       position: relative;
       z-index: 20;
       margin-top: 100vh;
-      background: #fafaf9;
+      background: #ffffff;
       color: var(--lds-text-body);
-      border-top: 1px solid rgba(226, 232, 240, 0.9);
+      border: none;
       min-height: 100vh;
-      padding: 56px 20px 100px;
+      padding: 48px 24px 100px;
     }
 
     .content-sheet-inner {
-      max-width: 900px;
+      max-width: 880px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 40px;
     }
 
-    /* Museum Editorial Card Base */
+    /* Anti-Box Editorial Museum Section (Minimal borders) */
     .museum-sheet-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 32px 36px;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.65);
+      border-radius: 0;
+      padding: 0 0 40px;
+      box-shadow: none;
       position: relative;
-      overflow: hidden;
     }
     @media (max-width: 768px) {
-      .museum-sheet-card { padding: 22px 20px; }
+      .museum-sheet-card { padding: 0 0 32px; }
     }
 
     /* Curatorial Header Block */
@@ -421,38 +477,36 @@
     /* Modern Specification 4-Pill Grid */
     .artwork-spec-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
     }
-    @media (max-width: 640px) {
-      .artwork-spec-grid { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      .artwork-spec-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
     }
     .spec-pill {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      padding: 12px 16px;
-      background: #f8fafc;
-      border: 1px solid #edf2f7;
-      border-radius: 8px;
-      transition: border-color 0.15s ease;
-    }
-    .spec-pill:hover {
-      border-color: #cbd5e1;
+      gap: 4px;
+      background: transparent;
+      border: none;
+      padding: 0;
     }
     .spec-label {
       font-size: 11px;
-      font-weight: 600;
-      color: #64748b;
-      letter-spacing: 0.03em;
+      font-weight: 700;
+      color: #94a3b8;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
     .spec-val {
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 600;
       color: #0f172a;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     /* AI Voice Docent Station (Refined) */
@@ -664,14 +718,22 @@
        MULTIMEDIA DOCENT CINEMA HUB
        ======================================================== */
     .docent-cinema-section {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 32px 36px;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.65);
+      border-radius: 0;
+      padding: 0 0 40px;
+      box-shadow: none;
     }
     @media (max-width: 768px) {
-      .docent-cinema-section { padding: 22px 20px; }
+      .docent-cinema-section {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.65);
+      border-radius: 0;
+      padding: 0 0 40px;
+      box-shadow: none;
+    }
     }
     .docent-cinema-header {
       display: flex;
@@ -889,8 +951,9 @@
       justify-content: center;
       overflow: hidden;
       cursor: grab;
+      touch-action: none;
     }
-    .pres-canvas-wrap:active {
+    .pres-canvas-wrap.is-dragging {
       cursor: grabbing;
     }
 
@@ -900,7 +963,9 @@
       object-fit: contain;
       transform-origin: center center;
       will-change: transform;
-      transition: transform 0.1s ease-out;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
     }
     .pres-artwork-img.auto-tour {
       animation: presentationCameraTour 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
@@ -934,28 +999,41 @@
     }
 
     .pres-hud-btn {
-      background: rgba(12, 16, 23, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--hairline-dark);
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #ffffff;
-      padding: 7px 14px;
-      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.15s ease;
+      justify-content: center;
+      padding: 0;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     }
     .pres-hud-btn:hover {
-      background: rgba(22, 28, 40, 0.9);
-      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
     }
     .pres-hud-btn.active {
-      background: var(--lds-brand-600);
-      border-color: var(--lds-brand-600);
+      background: #2563eb;
+      border-color: #3b82f6;
+    }
+    .pres-hud-btn.pill {
+      width: auto;
+      height: 38px;
+      border-radius: 20px;
+      padding: 0 14px;
+      gap: 6px;
+      font-family: var(--lds-font-mono);
+      font-size: 11.5px;
     }
 
     .pres-hud-bottom {
@@ -970,17 +1048,18 @@
       pointer-events: none;
     }
 
+    /* Glassmorphism for Presentation Mode Caption: artwork visible behind */
     .pres-caption-box {
       pointer-events: auto;
-      max-width: 640px;
-      background: rgba(10, 14, 22, 0.85);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--hairline-dark);
-      border-radius: 4px;
-      padding: 14px 18px;
+      max-width: 600px;
+      background: rgba(15, 23, 42, 0.32);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 16px 22px;
       color: #ffffff;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.4);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .pres-caption-box.hidden {
@@ -1365,6 +1444,16 @@
       <line x1="18" y1="7.5" x2="18" y2="20" stroke="#38BDF8" stroke-width="2"/>
     </symbol>
 
+    <symbol id="i-chevron-left" viewBox="0 0 24 24">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </symbol>
   </defs>
 </svg>
 
@@ -1434,10 +1523,17 @@
       </div>
     </div>
 
-    <!-- Lower-Third Subtitle Toggle Button -->
-    <button class="toggle-subtitle-btn" id="btnToggleSubtitle" onclick="toggleLowerThird()">
+    <!-- Left & Right Artwork Navigation Arrows (Touch & Hover) -->
+    <button class="nav-artwork-arrow left" id="heroNavPrev" onclick="navigateArtwork(-1)" title="이전 작품 (←)">
+      <svg class="icon" style="width:22px; height:22px;"><use href="#i-chevron-left"></use></svg>
+    </button>
+    <button class="nav-artwork-arrow right" id="heroNavNext" onclick="navigateArtwork(1)" title="다음 작품 (→)">
+      <svg class="icon" style="width:22px; height:22px;"><use href="#i-chevron-right"></use></svg>
+    </button>
+
+    <!-- Lower-Third Subtitle Toggle Button (Icon-Only Clean Design) -->
+    <button class="toggle-subtitle-btn" id="btnToggleSubtitle" onclick="toggleLowerThird()" title="자막 켜기/끄기">
       <span id="toggleSubtitleIcon"><svg class="icon"><use href="#i-message"></use></svg></span>
-      <span id="toggleSubtitleText">자막 숨기기</span>
     </button>
 
     <!-- Scroll Down Prompt -->
@@ -1621,27 +1717,38 @@
       <img id="presImg" class="pres-artwork-img auto-tour" src="" alt="Presentation Masterpiece">
     </div>
 
-    <!-- HUD Top -->
+    <!-- Slideshow Progress Bar -->
+    <div class="slideshow-progress-bar" id="slideshowProgressBar"></div>
+
+    <!-- Left & Right Artwork Navigation Arrows in Fullscreen Presentation -->
+    <button class="nav-artwork-arrow left" id="presNavPrev" onclick="navigateArtwork(-1)" title="이전 작품 (←)">
+      <svg class="icon" style="width:24px; height:24px;"><use href="#i-chevron-left"></use></svg>
+    </button>
+    <button class="nav-artwork-arrow right" id="presNavNext" onclick="navigateArtwork(1)" title="다음 작품 (→)">
+      <svg class="icon" style="width:24px; height:24px;"><use href="#i-chevron-right"></use></svg>
+    </button>
+
+    <!-- HUD Top (Clean Icon-Only & Interval Controls) -->
     <div class="pres-hud-top">
-      <div style="display:flex; align-items:center; gap:12px;">
-        <button class="pres-hud-btn" onclick="exitPresentationMode()">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="pres-hud-btn" onclick="exitPresentationMode()" title="전체화면 종료 (ESC)">
           <svg class="icon"><use href="#i-close"></use></svg>
-          <span>나가기</span>
         </button>
-        <span class="lds-mono" style="font-size:11px; color:#10b981; display:inline-flex; align-items:center; gap:6px;">
-          <span style="width:6px; height:6px; border-radius:50%; background:#10b981;"></span>
-          <span id="wakeLockText">화면 꺼짐 방지 활성 (WakeLock)</span>
-        </span>
+        <!-- Discreet WakeLock status pulse (No noisy verbose text) -->
+        <span id="wakeLockDot" style="width:8px; height:8px; border-radius:50%; background:#10b981; box-shadow:0 0 10px #10b981; display:inline-block;" title="화면 꺼짐 방지 활성화 (WakeLock)"></span>
       </div>
 
       <div style="display:flex; align-items:center; gap:8px;">
-        <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트 해설">
-          <svg class="icon"><use href="#i-mic"></use></svg>
-          <span id="voicePresText">AI 해설</span>
+        <!-- Auto-Advance Slideshow Interval Selector (OFF / 10s / 15s / 20s) -->
+        <button class="pres-hud-btn pill" id="btnSlideshowInterval" onclick="cycleSlideshowInterval()" title="자동 작품 넘김 시간 (클릭하여 10초/15초/20초 설정)">
+          <svg class="icon"><use href="#i-clock"></use></svg>
+          <span id="intervalBadge">OFF</span>
         </button>
-        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()">
+        <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트">
+          <svg class="icon"><use href="#i-mic"></use></svg>
+        </button>
+        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()" title="카메라 모션 투어">
           <svg class="icon"><use href="#i-camera"></use></svg>
-          <span>카메라 투어</span>
         </button>
         <button class="pres-hud-btn" onclick="zoomIn()" title="확대 (+)">
           <svg class="icon"><use href="#i-zoom-in"></use></svg>
@@ -1649,7 +1756,7 @@
         <button class="pres-hud-btn" onclick="zoomOut()" title="축소 (-)">
           <svg class="icon"><use href="#i-zoom-out"></use></svg>
         </button>
-        <button class="pres-hud-btn" onclick="resetZoomPan()" title="원래 크기로 초기화">
+        <button class="pres-hud-btn" onclick="resetZoomPan()" title="원래 크기 및 중앙 정렬">
           <svg class="icon"><use href="#i-refresh"></use></svg>
         </button>
       </div>
@@ -1670,9 +1777,8 @@
       </div>
 
       <div style="pointer-events:auto;">
-        <button class="pres-hud-btn" onclick="togglePresSubtitle()">
+        <button class="pres-hud-btn" onclick="togglePresSubtitle()" title="자막 켜기/끄기">
           <svg class="icon"><use href="#i-message"></use></svg>
-          <span>자막 켜기/끄기</span>
         </button>
       </div>
     </div>
@@ -1680,22 +1786,53 @@
 
   <script>
     let currentArtwork = null;
+    let artworkCatalog = [];
+    let currentCatalogIndex = 0;
     let wakeLock = null;
     let lowerThirdVisible = true;
     let presLowerThirdVisible = true;
     let isAutoTour = true;
 
-    // Interactive Zoom & Pan State for Presentation Mode
+    // Slideshow Auto-Advance State (OFF, 10s, 15s, 20s)
+    let slideshowIntervalSeconds = 0;
+    let slideshowTimer = null;
+    let slideshowStartTime = 0;
+    let progressAnimFrame = null;
+
+    // Interactive Zoom & Pan State (Rock-solid 60fps Pointer-based)
     let zoomScale = 1.0;
     let panX = 0;
     let panY = 0;
-    let isDragging = false;
-    let startX = 0, startY = 0;
-    let initialPinchDistance = null;
+    let isPointerDragging = false;
+    let dragStartScreenX = 0, dragStartScreenY = 0;
+    let dragStartPanX = 0, dragStartPanY = 0;
+    const activePointers = new Map();
+    let initialPinchDistance = 0;
+    let initialPinchScale = 1.0;
+
+    // Navigation arrows auto-hide on hover/touch
+    let navHideTimeout = null;
+
+    function triggerNavActivity() {
+      const hero = document.getElementById('heroZone');
+      const pres = document.getElementById('presOverlay');
+      if (hero) hero.classList.add('active-nav');
+      if (pres) pres.classList.add('active-nav');
+
+      if (navHideTimeout) clearTimeout(navHideTimeout);
+      navHideTimeout = setTimeout(() => {
+        if (hero) hero.classList.remove('active-nav');
+        if (pres) pres.classList.remove('active-nav');
+      }, 3500);
+    }
+
+    ['mousemove', 'touchstart', 'click', 'pointerdown'].forEach(evt => {
+      window.addEventListener(evt, triggerNavActivity, { passive: true });
+    });
 
     // Extract artwork ID from URL (?id=...)
     const urlParams = new URLSearchParams(window.location.search);
-    const targetId = urlParams.get('id') || 'paint_sargent_001';
+    let targetId = urlParams.get('id') || 'sculpt_rodin_thinker';
     const autoPresentation = urlParams.get('mode') === 'presentation';
 
     const STORY_MAP = {
@@ -1711,88 +1848,105 @@
 
     let videoDocentRegistry = {};
 
-    // Helper: Strip raw emojis from database strings to keep Impeccable SVG standard
     function stripEmoji(str) {
       if (!str) return '';
       return String(str).replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{1FA00}-\u{1FAFF}]/gu, '').replace(/^\s*[·•\-]\s*/, '').trim();
     }
 
+    // Safe DOM text/HTML setters
+    const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val != null ? val : ''; };
+    const setHtml = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val != null ? val : ''; };
+
     async function loadArtworkData() {
       try {
-        // Load 1:1 Video Docent Registry first
         try {
           videoDocentRegistry = await fetch('data/artwork_video_docent_registry.json?v=' + Date.now()).then(r => r.json());
         } catch(e) {
           console.warn("Docent registry load error:", e);
         }
 
-        // 1. Check Master Paintings DB
-        const res1 = await fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json());
+        const [res1, exp, cont, resDg] = await Promise.all([
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
+        ]);
+
         const list1 = [...(res1.featured_masterpieces || []), ...(res1.featured_paintings || [])];
-        let found = list1.find(a => (a.id === targetId || a.work_id === targetId));
+        const expList = [];
+        Object.values(exp).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') expList.push(...v);
+        });
+        const contList = [];
+        Object.values(cont).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') contList.push(...v);
+        });
+        const dgList = resDg.artworks || [];
 
-        // 2. Check Expanded Art Categories DB (all arrays)
-        if (!found) {
-          try {
-            const exp = await fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json());
-            const expList = [];
-            Object.values(exp).forEach(v => {
-              if (Array.isArray(v) && v.length && typeof v[0] === 'object') {
-                expList.push(...v);
-              }
-            });
-            found = expList.find(a => (a.id === targetId || a.work_id === targetId));
-          } catch (e) {
-            console.warn("Expanded categories load error:", e);
+        // Build deduplicated unified catalog
+        const combined = [];
+        const seenIds = new Set();
+        [...list1, ...expList, ...contList, ...dgList].forEach(item => {
+          const cid = item.id || item.work_id;
+          if (cid && !seenIds.has(cid)) {
+            seenIds.add(cid);
+            combined.push(item);
           }
-        }
+        });
+        artworkCatalog = combined;
 
-        // 3. Check Contemporary Art & Architecture DB
-        if (!found) {
-          try {
-            const cont = await fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json());
-            const contList = [];
-            Object.values(cont).forEach(v => {
-              if (Array.isArray(v) && v.length && typeof v[0] === 'object') {
-                contList.push(...v);
-              }
-            });
-            found = contList.find(a => (a.id === targetId || a.work_id === targetId));
-          } catch (e) {
-            console.warn("Contemporary art load error:", e);
-          }
-        }
-
-        // 4. Check Digital Gallery Master DB (7,858 works)
-        if (!found) {
-          try {
-            const resDg = await fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json());
-            const dgList = resDg.artworks || [];
-            found = dgList.find(a => (a.id === targetId || a.work_id === targetId));
-          } catch(e) {
-            console.warn("Digital gallery load error:", e);
-          }
-        }
-
-        // Fallback only if absolutely no artwork matched
-        if (!found && list1.length > 0) {
-          found = list1[0];
+        // Find initial artwork
+        let found = artworkCatalog.find(a => (a.id === targetId || a.work_id === targetId));
+        if (!found && artworkCatalog.length > 0) {
+          found = artworkCatalog[0];
         }
 
         if (found) {
-          // Attach 1:1 verified docent
-          const regDocent = videoDocentRegistry[found.id] || videoDocentRegistry[found.work_id];
-          if (regDocent) {
-            found.verified_docent = regDocent;
-          }
-          currentArtwork = found;
-          renderArtworkDetails(found);
+          currentCatalogIndex = artworkCatalog.findIndex(a => (a.id === found.id || a.work_id === found.work_id));
+          if (currentCatalogIndex < 0) currentCatalogIndex = 0;
+          switchArtwork(found, false);
           if (autoPresentation) {
             enterPresentationMode();
           }
         }
       } catch (err) {
         console.error("Failed to load artwork data:", err);
+      }
+    }
+
+    function switchArtwork(item, updateHistory = true) {
+      currentArtwork = item;
+      targetId = item.id || item.work_id;
+
+      // Attach 1:1 verified docent
+      const regDocent = videoDocentRegistry[item.id] || videoDocentRegistry[item.work_id];
+      if (regDocent) {
+        item.verified_docent = regDocent;
+      }
+
+      renderArtworkDetails(item);
+
+      if (updateHistory) {
+        const url = new URL(window.location);
+        url.searchParams.set('id', targetId);
+        window.history.pushState({ id: targetId }, '', url);
+      }
+
+      // Reset slideshow timer if active
+      if (slideshowIntervalSeconds > 0) {
+        restartSlideshowTimer();
+      }
+    }
+
+    function navigateArtwork(delta) {
+      if (!artworkCatalog.length) return;
+      currentCatalogIndex = (currentCatalogIndex + delta + artworkCatalog.length) % artworkCatalog.length;
+      const nextItem = artworkCatalog[currentCatalogIndex];
+      switchArtwork(nextItem, true);
+
+      // Smooth Ken Burns tour restart in presentation mode
+      if (document.getElementById('presOverlay').classList.contains('active')) {
+        resetZoomPan();
       }
     }
 
@@ -1816,11 +1970,7 @@
       };
 
       const heroBg = document.getElementById('heroAmbientBg');
-      heroBg.style.backgroundImage = `url('${imgUrl}')`;
-
-      // Safe DOM text/HTML setters
-      const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val != null ? val : ''; };
-      const setHtml = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val != null ? val : ''; };
+      if (heroBg) heroBg.style.backgroundImage = `url('${imgUrl}')`;
 
       // De-duplicate Korean and English titles/artists
       const titleKr = (item.title_kr || '').trim();
@@ -1910,7 +2060,6 @@
       }
       
       if (docent) {
-        // Strip duplicate channel name from title if present
         let cleanTitle = docent.video_title || '';
         if (docent.channel_name && cleanTitle.includes(docent.channel_name)) {
           cleanTitle = cleanTitle.replace(`[${docent.channel_name}]`, '').replace(docent.channel_name, '').trim();
@@ -1930,100 +2079,101 @@
         if (analysisBox) analysisBox.style.display = 'none';
       }
 
-      // Clean De-duplicated 9 Platform Dock Grid (No redundant arrows or words)
-      const queryEnc = encodeURIComponent(`${item.title_kr} ${item.artist_name_kr || ''}`);
+      // Clean De-duplicated 9 Platform Dock Grid
+      const queryEnc = encodeURIComponent(`${titleKr} ${artistKr}`);
       const grid = document.getElementById('platformLinksGrid');
-      grid.innerHTML = `
-        <a href="${(docent && docent.youtube_url) || media.youtube_video_url || 'https://www.youtube.com/results?search_query=' + queryEnc}" target="_blank" class="platform-dock-card" title="YouTube 1:1 풀영상 해설">
-          <svg class="brand-icon"><use href="#i-brand-youtube"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">YouTube</span>
-            <span class="dock-sub">1:1 심층 풀영상</span>
-          </div>
-        </a>
-        <a href="${media.channel_shorts_url || 'https://www.youtube.com/results?search_query=' + queryEnc + '+shorts'}" target="_blank" class="platform-dock-card" title="Shorts 1분 클립">
-          <svg class="brand-icon"><use href="#i-brand-shorts"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">Shorts</span>
-            <span class="dock-sub">서정욱 미술토크</span>
-          </div>
-        </a>
-        <a href="${media.channel_reason_of_art || 'https://www.youtube.com/@Reason_Of_Art/videos'}" target="_blank" class="platform-dock-card" title="미술의 이유">
-          <svg class="brand-icon"><use href="#i-brand-reason-of-art"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">미술의 이유</span>
-            <span class="dock-sub">비하인드 분석</span>
-          </div>
-        </a>
-        <a href="https://search.naver.com/search.naver?where=video&query=${queryEnc}" target="_blank" class="platform-dock-card" title="네이버 동영상">
-          <svg class="brand-icon"><use href="#i-brand-naver"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">네이버 TV</span>
-            <span class="dock-sub">클립 & 미디어</span>
-          </div>
-        </a>
-        <a href="https://tv.kakao.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="카카오TV">
-          <svg class="brand-icon"><use href="#i-brand-kakao"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">카카오TV</span>
-            <span class="dock-sub">테마 동영상</span>
-          </div>
-        </a>
-        <a href="${media.instagram_channel_url || 'https://www.instagram.com/behind_canvas_stories_kr/'}" target="_blank" class="platform-dock-card" title="Instagram Behind Stories">
-          <svg class="brand-icon"><use href="#i-brand-instagram"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">Instagram</span>
-            <span class="dock-sub">캔버스 스토리</span>
-          </div>
-        </a>
-        <a href="https://www.tiktok.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="TikTok 1분 도슨트">
-          <svg class="brand-icon"><use href="#i-brand-tiktok"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">TikTok</span>
-            <span class="dock-sub">1분 도슨트</span>
-          </div>
-        </a>
-        <a href="https://vimeo.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="Vimeo 예술 다큐멘터리">
-          <svg class="brand-icon"><use href="#i-brand-vimeo"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">Vimeo</span>
-            <span class="dock-sub">예술 다큐</span>
-          </div>
-        </a>
-        <a href="${media.channel_nulart || 'https://www.youtube.com/@nulart'}" target="_blank" class="platform-dock-card" title="널 위한 문화예술">
-          <svg class="brand-icon"><use href="#i-brand-nulart"></use></svg>
-          <div class="dock-meta">
-            <span class="dock-title">널 위한 문화예술</span>
-            <span class="dock-sub">인문학 특강</span>
-          </div>
-        </a>
-      `;
+      if (grid) {
+        grid.innerHTML = `
+          <a href="${(docent && docent.youtube_url) || media.youtube_video_url || 'https://www.youtube.com/results?search_query=' + queryEnc}" target="_blank" class="platform-dock-card" title="YouTube 1:1 풀영상 해설">
+            <svg class="brand-icon"><use href="#i-brand-youtube"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">YouTube</span>
+              <span class="dock-sub">1:1 심층 풀영상</span>
+            </div>
+          </a>
+          <a href="${media.channel_shorts_url || 'https://www.youtube.com/results?search_query=' + queryEnc + '+shorts'}" target="_blank" class="platform-dock-card" title="Shorts 1분 클립">
+            <svg class="brand-icon"><use href="#i-brand-shorts"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">Shorts</span>
+              <span class="dock-sub">서정욱 미술토크</span>
+            </div>
+          </a>
+          <a href="${media.channel_reason_of_art || 'https://www.youtube.com/@Reason_Of_Art/videos'}" target="_blank" class="platform-dock-card" title="미술의 이유">
+            <svg class="brand-icon"><use href="#i-brand-reason-of-art"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">미술의 이유</span>
+              <span class="dock-sub">비하인드 분석</span>
+            </div>
+          </a>
+          <a href="https://search.naver.com/search.naver?where=video&query=${queryEnc}" target="_blank" class="platform-dock-card" title="네이버 동영상">
+            <svg class="brand-icon"><use href="#i-brand-naver"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">네이버 TV</span>
+              <span class="dock-sub">클립 & 미디어</span>
+            </div>
+          </a>
+          <a href="https://tv.kakao.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="카카오TV">
+            <svg class="brand-icon"><use href="#i-brand-kakao"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">카카오TV</span>
+              <span class="dock-sub">테마 동영상</span>
+            </div>
+          </a>
+          <a href="${media.instagram_channel_url || 'https://www.instagram.com/behind_canvas_stories_kr/'}" target="_blank" class="platform-dock-card" title="Instagram Behind Stories">
+            <svg class="brand-icon"><use href="#i-brand-instagram"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">Instagram</span>
+              <span class="dock-sub">캔버스 스토리</span>
+            </div>
+          </a>
+          <a href="https://www.tiktok.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="TikTok 1분 도슨트">
+            <svg class="brand-icon"><use href="#i-brand-tiktok"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">TikTok</span>
+              <span class="dock-sub">1분 도슨트</span>
+            </div>
+          </a>
+          <a href="https://vimeo.com/search?q=${queryEnc}" target="_blank" class="platform-dock-card" title="Vimeo 예술 다큐멘터리">
+            <svg class="brand-icon"><use href="#i-brand-vimeo"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">Vimeo</span>
+              <span class="dock-sub">예술 다큐</span>
+            </div>
+          </a>
+          <a href="${media.channel_nulart || 'https://www.youtube.com/@nulart'}" target="_blank" class="platform-dock-card" title="널 위한 문화예술">
+            <svg class="brand-icon"><use href="#i-brand-nulart"></use></svg>
+            <div class="dock-meta">
+              <span class="dock-title">널 위한 문화예술</span>
+              <span class="dock-sub">인문학 특강</span>
+            </div>
+          </a>
+        `;
+      }
 
       // 4. Setup Presentation Mode Data
       const presImg = document.getElementById('presImg');
-      presImg.src = imgUrl;
-      presImg.onerror = () => { presImg.src = fallbackSvg; };
-      document.getElementById('presStoryBadge').textContent = stripEmoji(item.story_label) || storyMeta.label;
-      document.getElementById('presMuseumBadge').textContent = item.museum || item.location || '소장처 참조';
-      document.getElementById('presTitle').textContent = item.title_kr;
-      document.getElementById('presArtist').textContent = `${item.artist_name_kr || ''} ${item.year ? `(${item.year})` : ''}`;
-      document.getElementById('presDesc').textContent = item.curator_notes || item.description || '';
+      if (presImg) {
+        presImg.src = imgUrl;
+        presImg.onerror = () => { presImg.src = fallbackSvg; };
+      }
+      setTxt('presStoryBadge', stripEmoji(item.story_label) || storyMeta.label);
+      setTxt('presMuseumBadge', item.museum || item.location || '소장처 참조');
+      setTxt('presTitle', titleKr);
+      setTxt('presArtist', `${artistKr} ${item.year ? `(${item.year})` : ''}`);
+      setTxt('presDesc', item.curator_notes || item.description || '');
     }
 
-    // Toggle Lower-Third
+    // Toggle Lower-Third (Icon-Only Clean Design)
     function toggleLowerThird() {
       const el = document.getElementById('heroLowerThird');
       const icon = document.getElementById('toggleSubtitleIcon');
-      const txt = document.getElementById('toggleSubtitleText');
       lowerThirdVisible = !lowerThirdVisible;
       if (lowerThirdVisible) {
         el.classList.remove('hidden');
-        icon.innerHTML = '<svg class="icon"><use href="#i-message"></use></svg>';
-        txt.textContent = '자막 숨기기';
+        if (icon) icon.innerHTML = '<svg class="icon"><use href="#i-message"></use></svg>';
       } else {
         el.classList.add('hidden');
-        icon.innerHTML = '<svg class="icon"><use href="#i-eye-off"></use></svg>';
-        txt.textContent = '자막 켜기';
+        if (icon) icon.innerHTML = '<svg class="icon"><use href="#i-eye-off"></use></svg>';
       }
     }
 
@@ -2036,7 +2186,58 @@
     }
 
     // ========================================================
-    // AI VOICE DOCENT ENGINE (Web Speech API)
+    // SLIDESHOW INTERVAL TIMER (OFF / 10s / 15s / 20s)
+    // ========================================================
+    function cycleSlideshowInterval() {
+      const intervals = [0, 10, 15, 20];
+      const curIdx = intervals.indexOf(slideshowIntervalSeconds);
+      const nextIdx = (curIdx + 1) % intervals.length;
+      slideshowIntervalSeconds = intervals[nextIdx];
+
+      const badge = document.getElementById('intervalBadge');
+      if (slideshowIntervalSeconds === 0) {
+        if (badge) badge.textContent = 'OFF';
+        clearSlideshowTimer();
+      } else {
+        if (badge) badge.textContent = `${slideshowIntervalSeconds}s`;
+        restartSlideshowTimer();
+      }
+    }
+
+    function clearSlideshowTimer() {
+      if (slideshowTimer) clearInterval(slideshowTimer);
+      slideshowTimer = null;
+      if (progressAnimFrame) cancelAnimationFrame(progressAnimFrame);
+      progressAnimFrame = null;
+      const bar = document.getElementById('slideshowProgressBar');
+      if (bar) bar.style.width = '0%';
+    }
+
+    function restartSlideshowTimer() {
+      clearSlideshowTimer();
+      if (slideshowIntervalSeconds <= 0) return;
+
+      slideshowStartTime = performance.now();
+      const durationMs = slideshowIntervalSeconds * 1000;
+      const bar = document.getElementById('slideshowProgressBar');
+
+      function updateProgress() {
+        const elapsed = performance.now() - slideshowStartTime;
+        const progress = Math.min(100, (elapsed / durationMs) * 100);
+        if (bar) bar.style.width = `${progress}%`;
+
+        if (elapsed < durationMs) {
+          progressAnimFrame = requestAnimationFrame(updateProgress);
+        } else {
+          if (bar) bar.style.width = '100%';
+          navigateArtwork(1);
+        }
+      }
+      progressAnimFrame = requestAnimationFrame(updateProgress);
+    }
+
+    // ========================================================
+    // AI VOICE DOCENT ENGINE
     // ========================================================
     let voiceSynth = window.speechSynthesis;
     let voiceUtterance = null;
@@ -2062,7 +2263,7 @@
 
     function toggleVoiceDocent() {
       if (!('speechSynthesis' in window)) {
-        alert("현재 브라우저 환경에서 음성 합성(Speech Synthesis)을 지원하지 않습니다.");
+        alert("현재 브라우저 환경에서 음성 합성을 지원하지 않습니다.");
         return;
       }
 
@@ -2084,21 +2285,9 @@
         const koVoice = voices.find(v => v.lang === 'ko-KR' || v.lang.startsWith('ko'));
         if (koVoice) voiceUtterance.voice = koVoice;
 
-        voiceUtterance.onstart = () => {
-          isVoicePlaying = true;
-          updateVoiceUI(true);
-        };
-
-        voiceUtterance.onend = () => {
-          isVoicePlaying = false;
-          updateVoiceUI(false);
-        };
-
-        voiceUtterance.onerror = (e) => {
-          console.warn("Speech synthesis notice:", e);
-          isVoicePlaying = false;
-          updateVoiceUI(false);
-        };
+        voiceUtterance.onstart = () => { isVoicePlaying = true; updateVoiceUI(true); };
+        voiceUtterance.onend = () => { isVoicePlaying = false; updateVoiceUI(false); };
+        voiceUtterance.onerror = () => { isVoicePlaying = false; updateVoiceUI(false); };
 
         window.speechSynthesis.speak(voiceUtterance);
       }
@@ -2117,26 +2306,20 @@
 
     function updateVoiceUI(playing) {
       const navText = document.getElementById('voiceNavText');
-      const presText = document.getElementById('voicePresText');
       const sheetBtnText = document.getElementById('sheetVoiceBtnText');
-      const pulseIcon = document.getElementById('voicePulseIcon');
       const soundwave = document.getElementById('voiceSoundwave');
       const statusLabel = document.getElementById('voiceStatusLabel');
       const playIcon = document.getElementById('voicePlayIcon');
 
       if (playing) {
         if (navText) navText.textContent = "해설 멈춤";
-        if (presText) navText ? (presText.textContent = "해설 멈춤") : null;
         if (sheetBtnText) sheetBtnText.textContent = "AI 해설 멈춤";
-        if (pulseIcon) pulseIcon.style.background = "#ef4444";
         if (soundwave) soundwave.classList.add('active');
         if (playIcon) playIcon.innerHTML = '<svg class="icon"><use href="#i-pause"></use></svg>';
         if (statusLabel) statusLabel.textContent = "AI 음성 도슨트가 명화의 역사와 도상학적 비하인드 스토리를 해설 중입니다";
       } else {
         if (navText) navText.textContent = "음성 도슨트";
-        if (presText) navText ? (presText.textContent = "AI 해설") : null;
         if (sheetBtnText) sheetBtnText.textContent = "AI 한국어 음성 도슨트 해설 재생";
-        if (pulseIcon) pulseIcon.style.background = "#3b82f6";
         if (soundwave) soundwave.classList.remove('active');
         if (playIcon) playIcon.innerHTML = '<svg class="icon"><use href="#i-mic"></use></svg>';
         if (statusLabel) statusLabel.textContent = "명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다";
@@ -2157,7 +2340,7 @@
           await document.documentElement.webkitRequestFullscreen();
         }
       } catch (e) {
-        console.warn("Fullscreen request declined:", e);
+        console.warn("Fullscreen request notice:", e);
       }
 
       requestScreenWakeLock();
@@ -2169,6 +2352,7 @@
       overlay.classList.remove('active');
 
       releaseScreenWakeLock();
+      clearSlideshowTimer();
 
       try {
         if (document.fullscreenElement) {
@@ -2180,19 +2364,27 @@
     }
 
     async function requestScreenWakeLock() {
-      const text = document.getElementById('wakeLockText');
+      const dot = document.getElementById('wakeLockDot');
       if ('wakeLock' in navigator) {
         try {
           wakeLock = await navigator.wakeLock.request('screen');
-          text.textContent = '화면 꺼짐 방지 활성 (WakeLock)';
+          if (dot) {
+            dot.style.background = '#10b981';
+            dot.style.boxShadow = '0 0 10px #10b981';
+            dot.title = '화면 꺼짐 방지 활성화 (WakeLock)';
+          }
           wakeLock.addEventListener('release', () => {
-            text.textContent = '화면 꺼짐 방지 해제됨';
+            if (dot) {
+              dot.style.background = '#64748b';
+              dot.style.boxShadow = 'none';
+              dot.title = '화면 꺼짐 방지 해제됨';
+            }
           });
         } catch (err) {
-          text.textContent = '화면 꺼짐 방지 미지원';
+          if (dot) dot.style.display = 'none';
         }
       } else {
-        text.textContent = '디지털 액자 모드 (WakeLock 미지원)';
+        if (dot) dot.style.display = 'none';
       }
     }
 
@@ -2203,18 +2395,20 @@
     }
 
     function toggleAutoTour() {
-      isAutoTour = !isAutoTour;
+      setAutoTour(!isAutoTour);
+    }
+
+    function setAutoTour(active) {
+      isAutoTour = active;
       const img = document.getElementById('presImg');
       const btn = document.getElementById('btnTourToggle');
       if (isAutoTour) {
-        img.classList.add('auto-tour');
-        btn.classList.add('active');
-        btn.innerHTML = '<svg class="icon"><use href="#i-camera"></use></svg> <span>카메라 투어</span>';
+        if (img) img.classList.add('auto-tour');
+        if (btn) btn.classList.add('active');
         resetZoomPan();
       } else {
-        img.classList.remove('auto-tour');
-        btn.classList.remove('active');
-        btn.innerHTML = '<svg class="icon"><use href="#i-compass"></use></svg> <span>수동 탐색</span>';
+        if (img) img.classList.remove('auto-tour');
+        if (btn) btn.classList.remove('active');
       }
     }
 
@@ -2228,24 +2422,33 @@
       }
     }
 
+    // ========================================================
+    // 60FPS ROCK-SOLID POINTER-BASED DRAG & ZOOM ENGINE
+    // ========================================================
     function applyPresTransform() {
       const img = document.getElementById('presImg');
+      if (!img) return;
+
+      // When zooming or panning, cancel CSS keyframe camera tour immediately
       if (isAutoTour) {
-        img.classList.remove('auto-tour');
-        isAutoTour = false;
-        document.getElementById('btnTourToggle').classList.remove('active');
-        document.getElementById('btnTourToggle').innerHTML = '<svg class="icon"><use href="#i-compass"></use></svg> <span>수동 탐색</span>';
+        setAutoTour(false);
       }
-      img.style.transform = `scale(${zoomScale}) translate(${panX}px, ${panY}px)`;
+
+      // translate3d first, scale second: ensures 1:1 screen pixel dragging!
+      img.style.transform = `translate3d(${panX}px, ${panY}px, 0) scale(${zoomScale})`;
     }
 
     function zoomIn() {
-      zoomScale = Math.min(zoomScale + 0.3, 5.0);
+      zoomScale = Math.min(zoomScale * 1.25, 6.0);
+      const img = document.getElementById('presImg');
+      if (img) img.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
       applyPresTransform();
     }
 
     function zoomOut() {
-      zoomScale = Math.max(zoomScale - 0.3, 0.8);
+      zoomScale = Math.max(zoomScale * 0.8, 0.75);
+      const img = document.getElementById('presImg');
+      if (img) img.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
       applyPresTransform();
     }
 
@@ -2254,83 +2457,127 @@
       panX = 0;
       panY = 0;
       const img = document.getElementById('presImg');
-      img.style.transform = '';
+      if (img) {
+        img.style.transition = 'transform 0.25s cubic-bezier(0.2, 0, 0, 1)';
+        img.style.transform = '';
+      }
       if (isAutoTour) {
         img.classList.add('auto-tour');
       }
     }
 
     const presCanvas = document.getElementById('presCanvasWrap');
-    presCanvas.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const delta = e.deltaY * -0.0015;
-      zoomScale = Math.min(Math.max(0.8, zoomScale + delta), 5.0);
-      applyPresTransform();
-    }, { passive: false });
+    const presImgEl = document.getElementById('presImg');
 
-    presCanvas.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      startX = e.clientX - panX;
-      startY = e.clientY - panY;
-    });
+    if (presCanvas) {
+      // 1. Mouse Wheel Zoom centered around pointer
+      presCanvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (isAutoTour) setAutoTour(false);
 
-    window.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      panX = e.clientX - startX;
-      panY = e.clientY - startY;
-      applyPresTransform();
-    });
+        const zoomFactor = e.deltaY < 0 ? 1.14 : 0.88;
+        const newScale = Math.min(Math.max(0.7, zoomScale * zoomFactor), 6.0);
 
-    window.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
+        const rect = presCanvas.getBoundingClientRect();
+        const cursorX = e.clientX - rect.left - rect.width / 2;
+        const cursorY = e.clientY - rect.top - rect.height / 2;
 
-    presCanvas.addEventListener('touchstart', (e) => {
-      if (e.touches.length === 2) {
-        initialPinchDistance = Math.hypot(
-          e.touches[0].clientX - e.touches[1].clientX,
-          e.touches[0].clientY - e.touches[1].clientY
-        );
-      } else if (e.touches.length === 1) {
-        isDragging = true;
-        startX = e.touches[0].clientX - panX;
-        startY = e.touches[0].clientY - panY;
-      }
-    }, { passive: true });
+        panX = cursorX - (cursorX - panX) * (newScale / zoomScale);
+        panY = cursorY - (cursorY - panY) * (newScale / zoomScale);
+        zoomScale = newScale;
 
-    presCanvas.addEventListener('touchmove', (e) => {
-      if (e.touches.length === 2 && initialPinchDistance) {
-        const currentDist = Math.hypot(
-          e.touches[0].clientX - e.touches[1].clientX,
-          e.touches[0].clientY - e.touches[1].clientY
-        );
-        const ratio = currentDist / initialPinchDistance;
-        zoomScale = Math.min(Math.max(0.8, zoomScale * ratio), 5.0);
-        initialPinchDistance = currentDist;
+        if (presImgEl) presImgEl.style.transition = 'transform 0.1s ease-out';
         applyPresTransform();
-      } else if (e.touches.length === 1 && isDragging) {
-        panX = e.touches[0].clientX - startX;
-        panY = e.touches[0].clientY - startY;
-        applyPresTransform();
-      }
-    }, { passive: true });
+      }, { passive: false });
 
-    presCanvas.addEventListener('touchend', (e) => {
-      if (e.touches.length < 2) {
-        initialPinchDistance = null;
-      }
-      if (e.touches.length === 0) {
-        isDragging = false;
-      }
-    });
+      // 2. High-performance PointerDrag (Desktop Mouse + Mobile Touch unified)
+      presCanvas.addEventListener('pointerdown', (e) => {
+        activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
-    presCanvas.addEventListener('dblclick', () => {
-      resetZoomPan();
-    });
+        if (activePointers.size === 1) {
+          isPointerDragging = true;
+          dragStartScreenX = e.clientX;
+          dragStartScreenY = e.clientY;
+          dragStartPanX = panX;
+          dragStartPanY = panY;
 
+          if (isAutoTour) setAutoTour(false);
+          presCanvas.classList.add('is-dragging');
+          if (presImgEl) presImgEl.style.transition = 'none'; // Instant 60fps tracking!
+          try { presCanvas.setPointerCapture(e.pointerId); } catch(err){}
+        } else if (activePointers.size === 2) {
+          // Pinch-to-zoom start
+          const pts = Array.from(activePointers.values());
+          initialPinchDistance = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+          initialPinchScale = zoomScale;
+        }
+      });
+
+      presCanvas.addEventListener('pointermove', (e) => {
+        if (!activePointers.has(e.pointerId)) return;
+        activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+        if (activePointers.size === 1 && isPointerDragging) {
+          const dx = e.clientX - dragStartScreenX;
+          const dy = e.clientY - dragStartScreenY;
+          panX = dragStartPanX + dx;
+          panY = dragStartPanY + dy;
+          applyPresTransform();
+        } else if (activePointers.size === 2 && initialPinchDistance > 0) {
+          const pts = Array.from(activePointers.values());
+          const curDist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+          const ratio = curDist / initialPinchDistance;
+          zoomScale = Math.min(Math.max(0.7, initialPinchScale * ratio), 6.0);
+          applyPresTransform();
+        }
+      });
+
+      const endPointer = (e) => {
+        activePointers.delete(e.pointerId);
+        if (activePointers.size === 0) {
+          isPointerDragging = false;
+          presCanvas.classList.remove('is-dragging');
+          if (presImgEl) presImgEl.style.transition = 'transform 0.15s cubic-bezier(0.2, 0, 0, 1)';
+        }
+        try { presCanvas.releasePointerCapture(e.pointerId); } catch(err){}
+      };
+
+      presCanvas.addEventListener('pointerup', endPointer);
+      presCanvas.addEventListener('pointercancel', endPointer);
+
+      // Double click to toggle smart zoom (2.2x) or reset
+      presCanvas.addEventListener('dblclick', () => {
+        if (zoomScale > 1.1) {
+          resetZoomPan();
+        } else {
+          zoomScale = 2.2;
+          panX = 0;
+          panY = 0;
+          if (presImgEl) presImgEl.style.transition = 'transform 0.25s cubic-bezier(0.2, 0, 0, 1)';
+          applyPresTransform();
+        }
+      });
+    }
+
+    // Keyboard Shortcuts: Left/Right arrows for artwork navigation, Esc to exit
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.getElementById('presOverlay').classList.contains('active')) {
-        exitPresentationMode();
+      if (e.key === 'ArrowRight') {
+        navigateArtwork(1);
+      } else if (e.key === 'ArrowLeft') {
+        navigateArtwork(-1);
+      } else if (e.key === 'Escape') {
+        if (document.getElementById('presOverlay').classList.contains('active')) {
+          exitPresentationMode();
+        }
+      }
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', (e) => {
+      const curId = new URLSearchParams(window.location.search).get('id');
+      if (curId && artworkCatalog.length) {
+        const item = artworkCatalog.find(a => (a.id === curId || a.work_id === curId));
+        if (item) switchArtwork(item, false);
       }
     });
 
