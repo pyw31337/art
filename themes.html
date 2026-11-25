@@ -176,6 +176,62 @@
       transform: translateY(0);
     }
 
+    /* ── Theme Category Filter Tabs ── */
+    .theme-cat-switch-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .theme-cat-tab-btn {
+      padding: 7px 18px;
+      border-radius: 9999px;
+      border: 1px solid var(--lds-divider-line);
+      background: #ffffff;
+      color: var(--lds-text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .theme-cat-tab-btn:hover {
+      background: var(--lds-divider-faint);
+      color: var(--lds-text-strong);
+    }
+    .theme-cat-tab-btn.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    .theme-load-more-row {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 48px 0;
+    }
+    .btn-load-more-themes {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 9999px;
+      border: 1px solid var(--lds-divider-line);
+      background: #ffffff;
+      color: var(--lds-text-strong);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.15s ease;
+    }
+    .btn-load-more-themes:hover {
+      border-color: var(--lds-brand-600);
+      color: var(--lds-brand-600);
+      transform: translateY(-1px);
+    }
+
     /* ── Theme Switcher Tabs ── */
     .theme-tabs-row {
       display: flex;
@@ -722,6 +778,13 @@
       <circle cx="12" cy="12" r="10"></circle>
       <polyline points="12 6 12 12 16 14"></polyline>
     </symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24">
+      <polyline points="16 3 21 3 21 8"></polyline>
+      <line x1="4" y1="20" x2="21" y2="3"></line>
+      <polyline points="21 16 21 21 16 21"></polyline>
+      <line x1="15" y1="15" x2="21" y2="21"></line>
+      <line x1="4" y1="4" x2="9" y2="9"></line>
+    </symbol>
   </svg>
 
   <!-- Top App Navigation -->
@@ -770,15 +833,30 @@
       </div>
     </section>
 
+    <!-- Category Switcher: All / Season / Color & Mood -->
+    <div class="theme-cat-switch-row">
+      <button class="theme-cat-tab-btn active" data-cat="all" onclick="filterCategoryTab('all')">전체 테마 (11)</button>
+      <button class="theme-cat-tab-btn" data-cat="season" onclick="filterCategoryTab('season')">시즌 테마: 크리스마스 & 사계절 (5)</button>
+      <button class="theme-cat-tab-btn" data-cat="color_mood" onclick="filterCategoryTab('color_mood')">컬러 & 감성 무드 (6)</button>
+    </div>
+
     <!-- Theme Switcher Pills -->
     <div class="theme-tabs-row" id="themePillsContainer">
       <!-- Generated dynamically -->
     </div>
 
-    <!-- 12-Item Photo Showcase Grid (Whale Style) -->
+    <!-- Photo Showcase Grid (Whale Style) -->
     <section class="theme-cards-grid" id="themeGrid">
       <!-- Generated dynamically -->
     </section>
+
+    <!-- Progressive Load More Button -->
+    <div class="theme-load-more-row" id="loadMoreRow">
+      <button class="btn-load-more-themes" id="btnLoadMore" onclick="loadMoreThemeCards()">
+        <span id="loadMoreLabel">이 테마 작품 더보기 (+24점)</span>
+        <svg class="icon" style="width:14px; height:14px;"><use href="#i-arrow-right"/></svg>
+      </button>
+    </div>
 
     <!-- Theme Editorial Description -->
     <section class="theme-story-box">
@@ -841,6 +919,12 @@
         <!-- Play/Pause Toggle -->
         <button class="hud-btn" id="btnPlayPause" onclick="togglePlayPause()" title="재생 / 일시정지 (단축키: Space)">
           <svg class="icon" id="playPauseIcon"><use href="#i-pause"/></svg>
+        </button>
+
+        <!-- Shuffle Toggle (Sequential vs Random Shuffle) -->
+        <button class="hud-btn" id="btnShuffle" onclick="toggleShuffle()" title="순차 / 무작위 셔플 롤링 (단축키: S)">
+          <svg class="icon"><use href="#i-shuffle"/></svg>
+          <span id="shuffleLabel">순차</span>
         </button>
 
         <!-- Voice Docent Narration Toggle -->
@@ -932,8 +1016,10 @@
     let masterThemes = [];
     let activeThemeIndex = 0;
     let activeSlideIndex = 0;
+    let activeCategory = 'all';
     let isViewerOpen = false;
     let isPlaying = true;
+    let isShuffleMode = false;
     let isLetterboxMode = false; // false = Cover & Slow Pan, true = Contain with black bars
     let rollingIntervalMs = 15000; // default 15s
     let intervalOptions = [10000, 15000, 20000, 30000];
@@ -944,6 +1030,7 @@
     let isVoiceDocentActive = false;
     let speechUtterance = null;
     let isBgmDucked = false;
+    let currentRenderedCount = 24;
 
     const bgmAudio = document.getElementById('ambientBgmAudio');
 
@@ -960,14 +1047,15 @@
         // Fallback default theme specification
         masterThemes = [
           {
-            id: 'winter_white',
-            title_kr: '겨울에 빛나는 컬러, 화이트',
-            subtitle: '순백의 설원과 눈꽃, 하얀 꽃잎과 산토리니',
-            description: '차가운 겨울에 더욱 빛나며, 언제봐도 마음을 맑고 평온하게 정화시키는 순백의 감성 갤러리입니다. 눈 덮인 들판, 하얀 메모지, 흰 꽃들과 산토리니의 하얀 골목길을 만나보세요.',
-            color_accent: '#f8fafc',
-            color_tag: '#ffffff',
-            badge: 'COLOR WHITE · WHALE THEME VALLEY',
-            default_bgm: 'assets/audio/bgm_gymnopedie.mp3',
+            id: 'season_christmas',
+            type: 'season',
+            title_kr: '크리스마스 & 윈터 홀리데이',
+            subtitle: '성탄의 설렘과 따스한 불빛, 축복의 성화와 아늑한 겨울 축제',
+            description: '반짝이는 트리와 눈꽃, 따스한 벽난로와 거장들의 성탄 명화가 선사하는 홀리데이의 감동입니다.',
+            color_accent: '#ef4444',
+            color_tag: '#dc2626',
+            badge: 'SEASONAL SPECIAL · CHRISTMAS',
+            default_bgm: 'assets/audio/bgm_bach_air.mp3',
             items: []
           }
         ];
@@ -978,20 +1066,50 @@
       setupKeyboardNavigation();
     }
 
+    // ── Filter Themes by Category (All / Season / Color & Mood) ──
+    function filterCategoryTab(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.theme-cat-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+      });
+
+      // Find first matching theme for the category
+      const filtered = getFilteredThemes();
+      if (filtered.length) {
+        const firstIdx = masterThemes.indexOf(filtered[0]);
+        selectTheme(firstIdx >= 0 ? firstIdx : 0);
+      } else {
+        renderThemePills();
+      }
+    }
+
+    function getFilteredThemes() {
+      if (activeCategory === 'all') return masterThemes;
+      return masterThemes.filter(t => t.type === activeCategory);
+    }
+
     // ── Render Theme Switcher Pills ──
     function renderThemePills() {
       const container = document.getElementById('themePillsContainer');
-      container.innerHTML = masterThemes.map((theme, idx) => `
-        <button class="theme-pill-chip ${idx === activeThemeIndex ? 'active' : ''}" onclick="selectTheme(${idx})">
-          <span class="theme-color-dot" style="background:${theme.color_tag};"></span>
-          <span>${theme.title_kr}</span>
-        </button>
-      `).join('');
+      const filtered = getFilteredThemes();
+
+      container.innerHTML = filtered.map(theme => {
+        const actualIdx = masterThemes.indexOf(theme);
+        const countStr = theme.total_count ? `${theme.total_count.toLocaleString()}` : `${theme.items.length}`;
+        return `
+          <button class="theme-pill-chip ${actualIdx === activeThemeIndex ? 'active' : ''}" onclick="selectTheme(${actualIdx})">
+            <span class="theme-color-dot" style="background:${theme.color_tag};"></span>
+            <span>${theme.title_kr}</span>
+            <span style="font-size:11px; opacity:0.65; font-family:var(--lds-font-mono);">(${countStr})</span>
+          </button>
+        `;
+      }).join('');
     }
 
     // ── Select and Render Active Theme ──
     function selectTheme(idx) {
       activeThemeIndex = idx;
+      currentRenderedCount = 24;
       renderThemePills();
       renderActiveThemeView(idx);
     }
@@ -1002,37 +1120,63 @@
 
       document.getElementById('heroBadgeText').textContent = `${theme.badge || 'LET\'S ART AMBIENT'}`;
       document.getElementById('heroTitle').textContent = theme.title_kr;
-      document.getElementById('heroItemCount').textContent = `${theme.items.length || 12}개 작품 & 사진`;
-      document.getElementById('storyTitle').textContent = `다양한 곳에서 만나는 ${theme.title_kr.split(',')[1] || theme.title_kr}의 모습들`;
+      const countDisplay = theme.total_count ? theme.total_count.toLocaleString() : (theme.items.length || 12).toLocaleString();
+      document.getElementById('heroItemCount').textContent = `${countDisplay}개 작품 & 사진 수록`;
+      document.getElementById('storyTitle').textContent = `다양한 곳에서 만나는 ${theme.title_kr.split(',')[0]}의 모습들`;
       document.getElementById('storyDescription').textContent = theme.description;
 
-      // Render 12 Cards Grid
-      const grid = document.getElementById('themeGrid');
-      grid.innerHTML = (theme.items || []).map((item, itemIdx) => `
-        <div class="valley-photo-card" onclick="startAmbientRolling(${itemIdx})" title="${item.title} — 클릭하여 롤링 갤러리 시작">
-          <img class="valley-photo-img" src="${item.image_url}" alt="${item.title}" loading="lazy" onerror="this.src='assets/featured/paint_sargent_001.webp'">
-          <div class="valley-photo-overlay">
-            <div class="photo-card-author">${item.artist || 'Let\'s Art Artist'}</div>
-            <div class="photo-card-sub">${item.title}</div>
-          </div>
-        </div>
-      `).join('');
+      // Render Cards Grid (Progressive 24 initial cards)
+      renderGridCards(theme);
 
       // Render Recommended Other Collections
       const recomContainer = document.getElementById('recomCardsContainer');
-      const otherThemes = masterThemes.filter((_, i) => i !== idx);
+      const otherThemes = masterThemes.filter((_, i) => i !== idx).slice(0, 4);
       recomContainer.innerHTML = otherThemes.map(ot => {
         const targetIdx = masterThemes.indexOf(ot);
         const thumbImg = ot.items && ot.items[0] ? ot.items[0].image_url : ot.hero_image;
+        const subCount = ot.total_count ? `${ot.total_count.toLocaleString()}점` : `${ot.items.length}점`;
         return `
-          <div class="recom-mini-card" onclick="selectTheme(${targetIdx})" title="${ot.title_kr}">
+          <div class="recom-mini-card" onclick="selectTheme(${targetIdx})" title="${ot.title_kr} (${subCount})">
             <img class="recom-mini-img" src="${thumbImg}" alt="${ot.title_kr}" onerror="this.src='assets/featured/paint_sargent_001.webp'">
             <div class="recom-mini-overlay">
               <div class="recom-mini-title">${ot.title_kr}</div>
+              <div style="font-size:11px; color:#94a3b8; font-family:var(--lds-font-mono);">${subCount}</div>
             </div>
           </div>
         `;
       }).join('');
+    }
+
+    function renderGridCards(theme) {
+      const grid = document.getElementById('themeGrid');
+      const itemsToRender = (theme.items || []).slice(0, currentRenderedCount);
+
+      grid.innerHTML = itemsToRender.map((item, itemIdx) => `
+        <div class="valley-photo-card" onclick="startAmbientRolling(${itemIdx})" title="${item.title} (${item.artist}) — 클릭하여 롤링 갤러리 시작">
+          <img class="valley-photo-img" src="${item.image_url}" alt="${item.title}" loading="lazy" onerror="this.src='assets/featured/paint_sargent_001.webp'">
+          <div class="valley-photo-overlay">
+            <div class="photo-card-author">${item.artist || 'Let\'s Art Artist'}</div>
+            <div class="photo-card-sub">${item.title} ${item.year ? `(${item.year})` : ''}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // Update Load More Button
+      const row = document.getElementById('loadMoreRow');
+      const label = document.getElementById('loadMoreLabel');
+      if (theme.items.length > currentRenderedCount) {
+        row.style.display = 'flex';
+        label.textContent = `이 테마 작품 더보기 (+24점) — 총 ${theme.items.length.toLocaleString()}점 중 ${currentRenderedCount}점 표시`;
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    function loadMoreThemeCards() {
+      const theme = masterThemes[activeThemeIndex];
+      if (!theme) return;
+      currentRenderedCount = Math.min(theme.items.length, currentRenderedCount + 24);
+      renderGridCards(theme);
     }
 
     // ========================================================
@@ -1087,6 +1231,14 @@
       }
     }
 
+    function toggleShuffle() {
+      isShuffleMode = !isShuffleMode;
+      const btn = document.getElementById('btnShuffle');
+      const label = document.getElementById('shuffleLabel');
+      if (btn) btn.classList.toggle('active', isShuffleMode);
+      if (label) label.textContent = isShuffleMode ? '셔플' : '순차';
+    }
+
     function displaySlide(index) {
       const theme = masterThemes[activeThemeIndex];
       const item = theme.items[index];
@@ -1094,10 +1246,10 @@
 
       // Update HUD & Metadata
       document.getElementById('hudThemeName').textContent = theme.title_kr;
-      document.getElementById('hudIndexCounter').textContent = `${index + 1} / ${theme.items.length}`;
+      document.getElementById('hudIndexCounter').textContent = `${index + 1} / ${theme.items.length.toLocaleString()}`;
       document.getElementById('captionCategory').textContent = `${theme.badge || 'LET\'S ART AMBIENT'}`;
       document.getElementById('captionTitle').textContent = item.title;
-      document.getElementById('captionArtist').textContent = `${item.artist} · 고해상도 WebP 마스터`;
+      document.getElementById('captionArtist').textContent = `${item.artist} ${item.year ? `(${item.year})` : ''} · ${item.museum || '4K 마스터 컬렉션'}`;
 
       // Cross-fade image layers
       const imgA = document.getElementById('ambientImgA');
@@ -1165,7 +1317,15 @@
     function nextSlide() {
       const theme = masterThemes[activeThemeIndex];
       if (!theme || !theme.items.length) return;
-      activeSlideIndex = (activeSlideIndex + 1) % theme.items.length;
+      if (isShuffleMode) {
+        let nextIdx = Math.floor(Math.random() * theme.items.length);
+        if (nextIdx === activeSlideIndex && theme.items.length > 1) {
+          nextIdx = (nextIdx + 1) % theme.items.length;
+        }
+        activeSlideIndex = nextIdx;
+      } else {
+        activeSlideIndex = (activeSlideIndex + 1) % theme.items.length;
+      }
       displaySlide(activeSlideIndex);
       startSlideTimer();
     }
@@ -1345,6 +1505,7 @@
         else if (e.key === 'l' || e.key === 'L') toggleLetterboxMode();
         else if (e.key === 'm' || e.key === 'M') toggleBgmMute();
         else if (e.key === 'v' || e.key === 'V') toggleVoiceDocent();
+        else if (e.key === 's' || e.key === 'S') toggleShuffle();
         else if (e.key === 'f' || e.key === 'F') toggleFullscreen();
       });
     }
