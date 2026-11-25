@@ -421,7 +421,6 @@ old_render_docent = """      // 3. Multimedia Docent Hub
         <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" class="lds-platform-btn">
           <span>🟢 네이버 TV·클립 해설</span> <span class="arrow">➔</span>
         </a>
-        <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" class="lds-platform-btn">
           <span>🟡 다음·카카오TV 영상</span> <span class="arrow">➔</span>
         </a>
         <a href="${media.instagram_channel_url}" target="_blank" class="lds-platform-btn">

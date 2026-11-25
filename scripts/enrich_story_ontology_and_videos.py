@@ -170,7 +170,6 @@ def resolve_multimedia(artist_kr, artist_en, title_kr, title_en, current_media):
     media["channel_roomart"] = "https://www.youtube.com/@100book"
     media["naver_tv_url"] = f"https://tv.naver.com/search?query={encoded_search}"
     media["naver_video_search_url"] = f"https://search.naver.com/search.naver?where=video&query={encoded_clip}"
-    media["kakao_tv_url"] = f"https://tv.kakao.com/search?q={encoded_search}"
     media["daum_clip_url"] = f"https://search.daum.net/search?w=vclip&q={encoded_clip}"
     media["instagram_channel_url"] = "https://www.instagram.com/behind_canvas_stories_kr/"
     media["tiktok_search_url"] = f"https://www.tiktok.com/search?q={encoded_clip}"

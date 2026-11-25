@@ -185,7 +185,6 @@ def generate_media_resources(artist_name_kr, artist_name_en, title_kr, title_en)
         "channel_reason_of_art": "https://www.youtube.com/@Reason_Of_Art/videos",
         "naver_tv_url": f"https://tv.naver.com/search?query={encoded_search}",
         "naver_video_search_url": f"https://search.naver.com/search.naver?where=video&query={encoded_clip}",
-        "kakao_tv_url": f"https://tv.kakao.com/search?q={encoded_search}",
         "daum_clip_url": f"https://search.daum.net/search?w=vclip&q={encoded_clip}",
         "instagram_channel_url": "https://www.instagram.com/behind_canvas_stories_kr/",
         "tiktok_search_url": f"https://www.tiktok.com/search?q={encoded_clip}",
