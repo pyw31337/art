@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
-  <title>작품 상세 및 디지털 액자 — 렛츠아트 (Let's Art)</title>
+  <title>작품 상세 및 갤러리모드 — 렛츠아트 (Let's Art)</title>
   <style>
     /* LDS v3.5.0 & Impeccable Design Specification */
     :root {
@@ -227,13 +227,13 @@
     /* True Airy Glassmorphism: Background artwork shines through cleanly */
     .lower-third-panel {
       pointer-events: auto;
-      background: rgba(15, 23, 42, 0.32);
-      backdrop-filter: blur(28px) saturate(190%);
-      -webkit-backdrop-filter: blur(28px) saturate(190%);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 12px;
-      padding: 18px 24px;
-      box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+      background: rgba(15, 23, 42, 0.38);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border: none !important;
+      border-radius: 14px;
+      padding: 20px 26px;
+      box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -1267,7 +1267,340 @@
       border-radius: 6px;
     }
 
-  </style>
+  
+    /* Strict LDS Line-Icon Standard: pure line icons (fill: none, stroke: currentColor) */
+    .icon {
+      width: 16px;
+      height: 16px;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      display: inline-block;
+      vertical-align: middle;
+      transition: stroke 0.15s ease;
+    }
+    .brand-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Active toggle state: background color highlight while keeping line icon clean */
+    .lds-nav-btn.active, .pres-hud-btn.active {
+      background: #2563eb !important;
+      border-color: #3b82f6 !important;
+      color: #ffffff !important;
+    }
+
+    /* Sleek LDS Micro-Tooltip */
+    [data-tooltip] {
+      position: relative;
+    }
+    [data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #f8fafc;
+      font-family: var(--lds-font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.3;
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      z-index: 1000;
+    }
+    [data-tooltip]:hover::after, [data-tooltip]:focus-visible::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    /* Downward tooltip for top HUD buttons */
+    .pres-hud-top [data-tooltip]::after, .hero-top-nav [data-tooltip]::after {
+      bottom: auto;
+      top: calc(100% + 8px);
+      transform: translateX(-50%) translateY(-4px);
+    }
+    .pres-hud-top [data-tooltip]:hover::after, .hero-top-nav [data-tooltip]:hover::after {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Presentation Mode Caption Box detail transition button */
+    .pres-detail-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: fit-content;
+      text-decoration: none;
+    }
+    .pres-detail-btn:hover {
+      background: #2563eb;
+      border-color: #3b82f6;
+      transform: translateY(-1px);
+    }
+
+    /* Voice Docent Interactive Audio Playbar Dock */
+    .voice-scrubber-dock {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 12px;
+      box-sizing: border-box;
+    }
+    .voice-scrubber-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .voice-scrub-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .voice-icon-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      padding: 0;
+    }
+    .voice-icon-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: scale(1.05);
+    }
+    .voice-icon-btn.primary {
+      background: #2563eb;
+      border-color: #3b82f6;
+    }
+    .voice-icon-btn.primary:hover {
+      background: #1d4ed8;
+    }
+    .voice-time-display {
+      font-family: var(--lds-font-mono);
+      font-size: 11.5px;
+      color: #cbd5e1;
+      letter-spacing: 0.04em;
+    }
+    .voice-track-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 18px;
+      cursor: pointer;
+    }
+    .voice-track-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .voice-track-fill {
+      height: 100%;
+      background: #3b82f6;
+      width: 0%;
+      border-radius: 2px;
+      transition: width 0.08s linear;
+    }
+    .voice-scrub-slider {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      margin: 0;
+      z-index: 5;
+    }
+
+    /* Let's People Federation Dossier Card (LDS Luxury Profile) */
+    .people-dossier-card {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 24px;
+      color: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .people-dossier-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .people-dossier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .people-federation-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #60a5fa;
+      text-transform: uppercase;
+      background: rgba(37, 99, 235, 0.18);
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .people-urn-badge {
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      color: #64748b;
+    }
+    .people-profile-body {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    @media (max-width: 640px) {
+      .people-profile-body { flex-direction: column; }
+    }
+    .people-avatar-img {
+      width: 76px;
+      height: 76px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+      background: #1e293b;
+    }
+    .people-bio-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .people-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .people-name-kr {
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.4px;
+    }
+    .people-name-en {
+      font-size: 13.5px;
+      color: #94a3b8;
+    }
+    .people-meta-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 4px 0;
+    }
+    .people-meta-tag {
+      font-size: 11px;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .people-summary-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #cbd5e1;
+      margin-top: 4px;
+    }
+    .people-lineage-box {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 8px;
+      border-left: 3px solid #3b82f6;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+    .people-quote-box {
+      margin-top: 10px;
+      font-style: italic;
+      color: #fde68a;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .people-footer-action {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .people-portal-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #60a5fa;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .people-portal-link:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+</style>
 </head>
 <body>
 
@@ -1352,6 +1685,16 @@
       <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
     </symbol>
 
+        <symbol id="i-arrow-down" viewBox="0 0 24 24">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <polyline points="19 12 12 19 5 12"></polyline>
+    </symbol>
+    <symbol id="i-rewind-10" viewBox="0 0 24 24">
+      <path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"></path>
+    </symbol>
+    <symbol id="i-forward-10" viewBox="0 0 24 24">
+      <path d="M13 17l5-5-5-5M6 17l5-5-5-5"></path>
+    </symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24">
       <line x1="5" y1="12" x2="19" y2="12"></line>
       <polyline points="12 5 19 12 12 19"></polyline>
@@ -1597,27 +1940,27 @@
         </a>
       </div>
       <div class="nav-actions">
-        <a href="museum.html" class="lds-nav-btn" style="text-decoration:none;" title="글로벌 10대 미술관 탐색">
+        <a href="museum.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="글로벌 10대 미술관 컬렉션 탐색">
           <svg class="icon"><use href="#i-museum"></use></svg>
           <span>미술관</span>
         </a>
-        <a href="artist.html" class="lds-nav-btn" style="text-decoration:none;" title="시대의 거장 아카이브">
+        <a href="artist.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="시대의 거장 아카이브 (렛츠피플 연동)">
           <svg class="icon"><use href="#i-user"></use></svg>
           <span>거장</span>
         </a>
-        <a href="admin" class="lds-nav-btn" style="text-decoration:none;" title="수집 & 분석 관제 어드민">
+        <a href="admin" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="수집 & 분석 관제 어드민">
           <svg class="icon"><use href="#i-settings"></use></svg>
           <span>관제</span>
         </a>
-        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트 해설">
+        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" data-tooltip="AI 한국어 음성 도슨트 해설 (스마트 재생바)">
           <svg class="icon"><use href="#i-mic"></use></svg>
           <span id="voiceNavText">음성 도슨트</span>
         </button>
-        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" title="화면 꺼짐 방지 디지털 액자 전체화면 감상">
+        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" data-tooltip="갤러리모드 전체화면 감상 (화면 꺼짐 방지)">
           <svg class="icon"><use href="#i-frame"></use></svg>
-          <span>디지털 액자</span>
+          <span>갤러리모드</span>
         </button>
-        <button class="lds-nav-btn" onclick="scrollToDocent()" title="영상 해설 영역으로 바로 이동">
+        <button class="lds-nav-btn" onclick="scrollToDocent()" data-tooltip="영상 해설 허브로 바로 이동">
           <svg class="icon"><use href="#i-video"></use></svg>
           <span>영상 도슨트</span>
         </button>
@@ -1625,7 +1968,7 @@
     </div>
 
     <!-- Centered Artwork Stage with Ken Burns Micro-Animation -->
-    <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 디지털 액자 전체화면 모드로 감상">
+    <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 갤러리모드 전체화면 모드로 감상">
       <img id="heroArtworkImg" class="artwork-animated-img" src="" alt="Masterpiece Artwork">
     </div>
 
@@ -1710,27 +2053,59 @@
           </div>
         </div>
 
-        <!-- AI Audio Docent Station -->
+        <!-- AI Audio Docent Station with Interactive Timeline Scrubber -->
         <div class="voice-docent-station">
-          <button class="voice-play-btn" onclick="toggleVoiceDocent()">
-            <span id="voicePlayIcon"><svg class="icon"><use href="#i-mic"></use></svg></span>
-            <span id="sheetVoiceBtnText">음성 도슨트 재생</span>
-          </button>
-          <div class="voice-status-group">
-            <div class="voice-soundwave" id="voiceSoundwave">
-              <span class="voice-bar"></span>
-              <span class="voice-bar"></span>
-              <span class="voice-bar"></span>
-              <span class="voice-bar"></span>
+          <div style="display:flex; justify-content:space-between; align-items:center; width:100%; flex-wrap:wrap; gap:12px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <button class="voice-play-btn" onclick="toggleVoiceDocent()" data-tooltip="AI 한국어 도슨트 재생/일시정지">
+                <span id="voicePlayIcon"><svg class="icon"><use href="#i-mic"></use></svg></span>
+                <span id="sheetVoiceBtnText">음성 도슨트 해설 듣기</span>
+              </button>
+              <div class="voice-soundwave" id="voiceSoundwave">
+                <span class="voice-bar"></span>
+                <span class="voice-bar"></span>
+                <span class="voice-bar"></span>
+                <span class="voice-bar"></span>
+              </div>
             </div>
-            <span class="voice-status-label" id="voiceStatusLabel">명화의 역사와 도상학적 스토리를 음성으로 안내합니다</span>
+            <div class="voice-speed-group">
+              <span style="font-size:11px; color:#94a3b8; margin-right:4px;">재생 속도:</span>
+              <button class="voice-rate-btn" data-rate="0.9" onclick="setVoiceRate(0.9)">0.9x</button>
+              <button class="voice-rate-btn active" data-rate="1.0" onclick="setVoiceRate(1.0)">1.0x</button>
+              <button class="voice-rate-btn" data-rate="1.2" onclick="setVoiceRate(1.2)">1.2x</button>
+            </div>
           </div>
-          <div class="voice-speed-group">
-            <button class="voice-rate-btn" data-rate="0.9" onclick="setVoiceRate(0.9)">0.9x</button>
-            <button class="voice-rate-btn active" data-rate="1.0" onclick="setVoiceRate(1.0)">1.0x</button>
-            <button class="voice-rate-btn" data-rate="1.2" onclick="setVoiceRate(1.2)">1.2x</button>
+
+          <!-- Interactive Playbar Scrubber Dock -->
+          <div class="voice-scrubber-dock">
+            <div class="voice-scrubber-controls">
+              <div class="voice-scrub-btns">
+                <button class="voice-icon-btn" onclick="seekVoiceDocentRelative(-10)" data-tooltip="10초 뒤로 건너뛰기">
+                  <svg class="icon" style="width:14px; height:14px;"><use href="#i-rewind-10"></use></svg>
+                </button>
+                <button class="voice-icon-btn primary" id="btnScrubberPlay" onclick="toggleVoiceDocent()" data-tooltip="재생 / 일시정지">
+                  <svg class="icon" id="scrubberPlayIcon" style="width:14px; height:14px;"><use href="#i-play"></use></svg>
+                </button>
+                <button class="voice-icon-btn" onclick="seekVoiceDocentRelative(10)" data-tooltip="10초 앞으로 건너뛰기">
+                  <svg class="icon" style="width:14px; height:14px;"><use href="#i-forward-10"></use></svg>
+                </button>
+              </div>
+              <div class="voice-time-display">
+                <span id="voiceCurrentTime">00:00</span> / <span id="voiceTotalTime">01:30</span>
+              </div>
+            </div>
+            <div class="voice-track-wrap" id="voiceTrackWrap">
+              <div class="voice-track-bg">
+                <div class="voice-track-fill" id="voiceTrackFill"></div>
+              </div>
+              <input type="range" class="voice-scrub-slider" id="voiceScrubSlider" min="0" max="100" value="0" step="0.5" oninput="onScrubInput(this.value)" onchange="onScrubChange(this.value)">
+            </div>
+            <div class="voice-status-label" id="voiceStatusLabel" style="font-size:12px; color:#94a3b8; text-align:left;">명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다</div>
           </div>
         </div>
+
+        <!-- Let's People 거장 심층 프로필 연동 컨테이너 -->
+        <div id="artistPeopleContainer"></div>
       </div>
 
       <!-- ========================================================
@@ -1824,7 +2199,7 @@
       <div class="bottom-cta-row">
         <button class="bottom-cta-btn primary" onclick="enterPresentationMode()">
           <svg class="icon"><use href="#i-frame"></use></svg>
-          <span>디지털 액자 전체화면</span>
+          <span>갤러리모드 전체화면</span>
         </button>
         <a href="index.html" class="bottom-cta-btn secondary">
           <svg class="icon"><use href="#i-arrow-left"></use></svg>
@@ -1857,40 +2232,39 @@
     <!-- HUD Top (Clean Icon-Only & Interval Controls) -->
     <div class="pres-hud-top">
       <div style="display:flex; align-items:center; gap:10px;">
-        <button class="pres-hud-btn" onclick="exitPresentationMode()" title="전체화면 종료 (ESC)">
+        <button class="pres-hud-btn" onclick="exitPresentationMode()" data-tooltip="갤러리모드 종료 (ESC)">
           <svg class="icon"><use href="#i-close"></use></svg>
         </button>
-        <!-- Discreet WakeLock status pulse (No noisy verbose text) -->
-        <span id="wakeLockDot" style="width:8px; height:8px; border-radius:50%; background:#10b981; box-shadow:0 0 10px #10b981; display:inline-block;" title="화면 꺼짐 방지 활성화 (WakeLock)"></span>
       </div>
 
       <div style="display:flex; align-items:center; gap:8px;">
         <!-- Auto-Advance Slideshow Interval Selector (OFF / 10s / 15s / 20s) -->
-        <button class="pres-hud-btn pill" id="btnSlideshowInterval" onclick="cycleSlideshowInterval()" title="자동 작품 넘김 시간 (클릭하여 10초/15초/20초 설정)">
+        <button class="pres-hud-btn pill" id="btnSlideshowInterval" onclick="cycleSlideshowInterval()" data-tooltip="슬라이드쇼 인터벌 (OFF / 10초 / 15초 / 20초)">
           <svg class="icon"><use href="#i-clock"></use></svg>
           <span id="intervalBadge">OFF</span>
         </button>
-        <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" title="AI 한국어 음성 도슨트">
+        <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" data-tooltip="AI 음성 도슨트 토글">
           <svg class="icon"><use href="#i-mic"></use></svg>
         </button>
-        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()" title="카메라 모션 투어">
+        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()" data-tooltip="시네마틱 모션 투어 토글">
           <svg class="icon"><use href="#i-camera"></use></svg>
         </button>
-        <button class="pres-hud-btn" onclick="zoomIn()" title="확대 (+)">
+        <!-- Precision Zoom Controls: [+] [100%] [-] -->
+        <button class="pres-hud-btn" onclick="zoomIn()" data-tooltip="확대 (+)">
           <svg class="icon"><use href="#i-zoom-in"></use></svg>
         </button>
-        <button class="pres-hud-btn" onclick="zoomOut()" title="축소 (-)">
-          <svg class="icon"><use href="#i-zoom-out"></use></svg>
+        <button class="pres-hud-btn pill" id="btnZoomPercent" onclick="resetZoomPan()" data-tooltip="클릭 시 100% 원본 크기 복원">
+          <span id="zoomPercentText">100%</span>
         </button>
-        <button class="pres-hud-btn" onclick="resetZoomPan()" title="원래 크기 및 중앙 정렬">
-          <svg class="icon"><use href="#i-refresh"></use></svg>
+        <button class="pres-hud-btn" onclick="zoomOut()" data-tooltip="축소 (-)">
+          <svg class="icon"><use href="#i-zoom-out"></use></svg>
         </button>
       </div>
     </div>
 
     <!-- HUD Bottom -->
     <div class="pres-hud-bottom">
-      <div class="pres-caption-box" id="presLowerThird">
+      <div class="pres-caption-box" id="presLowerThird" style="border:none !important;">
         <div class="lt-meta-header" style="margin-bottom:4px;">
           <span class="lt-dot"></span>
           <span id="presMuseumBadge">소장처</span>
@@ -1900,10 +2274,14 @@
         <div style="font-size:18px; font-weight:700; margin-bottom:2px;" id="presTitle">작품 제목</div>
         <div style="font-size:12.5px; color:#cbd5e1;" id="presArtist">작가명</div>
         <div style="font-size:12px; color:#94a3b8; margin-top:6px; line-height:1.5;" id="presDesc"></div>
+        <button class="pres-detail-btn" onclick="exitToDetailSheet()" data-tooltip="갤러리모드 종료 후 큐레이터 심층 해설로 바로 이동">
+          <span>작품 상세 해설 보기</span>
+          <svg class="icon" style="width:13px; height:13px;"><use href="#i-arrow-down"></use></svg>
+        </button>
       </div>
 
       <div style="pointer-events:auto;">
-        <button class="pres-hud-btn" onclick="togglePresSubtitle()" title="자막 켜기/끄기">
+        <button class="pres-hud-btn" onclick="togglePresSubtitle()" data-tooltip="자막 표시 토글">
           <svg class="icon"><use href="#i-message"></use></svg>
         </button>
       </div>
@@ -2050,7 +2428,7 @@
         item.verified_docent = regDocent;
       }
 
-      renderArtworkDetails(item);
+      renderArtworkDetails(item); initDocentScriptAndTimeline(); renderLetsPeopleDossier(item);
 
       if (updateHistory) {
         const url = new URL(window.location);
@@ -2376,12 +2754,247 @@
     }
 
     // ========================================================
+    
+    // ========================================================
+    // LET'S PEOPLE (렛츠피플) FEDERATION ENGINE
+    // ========================================================
+    let letsPeopleMasterDb = null;
+
+    async function loadLetsPeopleMasters() {
+      try {
+        const res = await fetch('data/lets_people_artists.json?v=' + Date.now());
+        if (res.ok) {
+          letsPeopleMasterDb = await res.json();
+        }
+      } catch (err) {
+        console.warn("Let's People DB load notice:", err);
+      }
+    }
+
+    function renderLetsPeopleDossier(artwork) {
+      const container = document.getElementById('artistPeopleContainer');
+      if (!container) return;
+
+      if (!letsPeopleMasterDb || !letsPeopleMasterDb.featured_masters) {
+        container.innerHTML = '';
+        return;
+      }
+
+      const artistNameKr = (artwork.artist_name_kr || artwork.artist || '').trim();
+      const artistNameEn = (artwork.artist_name_en || '').toLowerCase().trim();
+
+      // Find matching master dossier by Korean or English name
+      const master = letsPeopleMasterDb.featured_masters.find(m => {
+        if (m.name_kr && (artistNameKr.includes(m.name_kr) || m.name_kr.includes(artistNameKr))) return true;
+        if (m.name_en && artistNameEn && m.name_en.toLowerCase().includes(artistNameEn)) return true;
+        if (m.name_orig && artistNameEn && m.name_orig.toLowerCase().includes(artistNameEn)) return true;
+        return false;
+      });
+
+      if (!master) {
+        container.innerHTML = '';
+        return;
+      }
+
+      const lineage = master.artistic_lineage || {};
+      const influencedBy = lineage.influenced_by ? lineage.influenced_by.join(', ') : '';
+      const allies = lineage.contemporaries_and_allies ? lineage.contemporaries_and_allies.join(', ') : '';
+      const influenced = lineage.influenced ? lineage.influenced.join(', ') : '';
+
+      container.innerHTML = `
+        <div class="people-dossier-card">
+          <div class="people-dossier-header">
+            <span class="people-federation-badge">
+              <svg class="icon" style="width:12px; height:12px;"><use href="#i-user"></use></svg>
+              <span>렛츠피플 인물 연계 아카이브</span>
+            </span>
+            <span class="people-urn-badge">${master.urn}</span>
+          </div>
+          <div class="people-profile-body">
+            <img class="people-avatar-img" src="${master.profile_image || (artwork.image_url || '')}" alt="${master.name_kr}" onerror="if(this.src!=='${artwork.image_url || ''}'){this.src='${artwork.image_url || ''}';}else{this.src='assets/icons/favicon-32.png';}">
+            <div class="people-bio-wrap">
+              <div class="people-name-row">
+                <span class="people-name-kr">${master.name_kr}</span>
+                <span class="people-name-en">${master.name_en} ${master.name_orig ? `(${master.name_orig})` : ''}</span>
+              </div>
+              <div class="people-meta-pills">
+                <span class="people-meta-tag">생몰: ${master.lifespan}</span>
+                <span class="people-meta-tag">국적: ${master.nationality}</span>
+                <span class="people-meta-tag">사조: ${master.movement}</span>
+              </div>
+              <div class="people-summary-text">${master.summary}</div>
+              
+              ${(influencedBy || allies || influenced) ? `
+                <div class="people-lineage-box">
+                  ${influencedBy ? `<div><strong>영감의 원천:</strong> ${influencedBy}</div>` : ''}
+                  ${allies ? `<div><strong>교류 및 동시대 조력자:</strong> ${allies}</div>` : ''}
+                  ${influenced ? `<div><strong>후대에 미친 영향:</strong> ${influenced}</div>` : ''}
+                </div>
+              ` : ''}
+
+              ${master.famous_quote ? `
+                <div class="people-quote-box">"${master.famous_quote}"</div>
+              ` : ''}
+            </div>
+          </div>
+          <div class="people-footer-action">
+            <a href="artist.html" class="people-portal-link" data-tooltip="렛츠아트 거장 아카이브 전체 탐색">
+              <span>렛츠피플 전 생애 및 연보 상세 보기</span>
+              <svg class="icon" style="width:13px; height:13px;"><use href="#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    // ========================================================
+    // ADVANCED VOICE DOCENT SCRUBBER ENGINE (PLAYBAR & SEEK)
+    // ========================================================
+    let docentFullScript = "";
+    let docentSentences = [];
+    let docentEstimatedDurationSec = 90;
+    let docentCurrentSec = 0;
+    let docentTimerInterval = null;
+    let docentStartTimeStamp = 0;
+    let isScrubbing = false;
+
+    function formatTime(sec) {
+      sec = Math.max(0, Math.floor(sec));
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function initDocentScriptAndTimeline() {
+      docentFullScript = getCuratedDocentScript();
+      // Split into clean sentence segments for precise audio seeking
+      docentSentences = docentFullScript.split(/(?<=[.?!])\s+/).filter(s => s.trim().length > 0);
+      
+      // Estimated reading speed: ~5.5 characters per second in Korean
+      docentEstimatedDurationSec = Math.max(30, Math.round(docentFullScript.length / 5.5));
+      docentCurrentSec = 0;
+
+      const totalEl = document.getElementById('voiceTotalTime');
+      const curEl = document.getElementById('voiceCurrentTime');
+      const slider = document.getElementById('voiceScrubSlider');
+      const fill = document.getElementById('voiceTrackFill');
+
+      if (totalEl) totalEl.textContent = formatTime(docentEstimatedDurationSec);
+      if (curEl) curEl.textContent = formatTime(0);
+      if (slider) slider.value = 0;
+      if (fill) fill.style.width = '0%';
+    }
+
+    function startScrubberTicker() {
+      if (docentTimerInterval) clearInterval(docentTimerInterval);
+      docentStartTimeStamp = performance.now() - (docentCurrentSec * 1000);
+
+      docentTimerInterval = setInterval(() => {
+        if (!isVoicePlaying || isScrubbing) return;
+        const elapsedSec = (performance.now() - docentStartTimeStamp) / 1000;
+        docentCurrentSec = Math.min(elapsedSec, docentEstimatedDurationSec);
+
+        updateScrubberUI();
+
+        if (docentCurrentSec >= docentEstimatedDurationSec) {
+          stopScrubberTicker();
+        }
+      }, 200);
+    }
+
+    function stopScrubberTicker() {
+      if (docentTimerInterval) clearInterval(docentTimerInterval);
+      docentTimerInterval = null;
+    }
+
+    function updateScrubberUI() {
+      const curEl = document.getElementById('voiceCurrentTime');
+      const slider = document.getElementById('voiceScrubSlider');
+      const fill = document.getElementById('voiceTrackFill');
+
+      if (curEl) curEl.textContent = formatTime(docentCurrentSec);
+      const progressPercent = Math.min(100, (docentCurrentSec / docentEstimatedDurationSec) * 100);
+      if (slider && !isScrubbing) slider.value = progressPercent;
+      if (fill) fill.style.width = `${progressPercent}%`;
+    }
+
+    function onScrubInput(val) {
+      isScrubbing = true;
+      const percent = parseFloat(val);
+      docentCurrentSec = (percent / 100) * docentEstimatedDurationSec;
+      const curEl = document.getElementById('voiceCurrentTime');
+      const fill = document.getElementById('voiceTrackFill');
+      if (curEl) curEl.textContent = formatTime(docentCurrentSec);
+      if (fill) fill.style.width = `${percent}%`;
+    }
+
+    function onScrubChange(val) {
+      isScrubbing = false;
+      const percent = parseFloat(val);
+      docentCurrentSec = (percent / 100) * docentEstimatedDurationSec;
+      seekToCurrentDocentOffset();
+    }
+
+    function seekVoiceDocentRelative(deltaSec) {
+      docentCurrentSec = Math.max(0, Math.min(docentEstimatedDurationSec, docentCurrentSec + deltaSec));
+      seekToCurrentDocentOffset();
+    }
+
+    function seekToCurrentDocentOffset() {
+      updateScrubberUI();
+      docentStartTimeStamp = performance.now() - (docentCurrentSec * 1000);
+
+      // If playing, ensure UI and ticker stay active without waiting for hardware speech
+      if (isVoicePlaying) {
+        startScrubberTicker();
+      }
+
+      if (!('speechSynthesis' in window)) return;
+
+      const ratio = docentCurrentSec / docentEstimatedDurationSec;
+      const sentenceIdx = Math.min(docentSentences.length - 1, Math.floor(ratio * docentSentences.length));
+      const remainingScript = docentSentences.slice(sentenceIdx).join(' ');
+
+      try {
+        window.speechSynthesis.cancel();
+      } catch(e){}
+
+      if (remainingScript.trim() && isVoicePlaying) {
+        voiceUtterance = new SpeechSynthesisUtterance(remainingScript);
+        voiceUtterance.rate = currentVoiceRate;
+        voiceUtterance.pitch = 1.0;
+        voiceUtterance.lang = 'ko-KR';
+
+        try {
+          const voices = window.speechSynthesis.getVoices();
+          const koVoice = voices.find(v => v.lang === 'ko-KR' || v.lang.startsWith('ko'));
+          if (koVoice) voiceUtterance.voice = koVoice;
+        } catch(e){}
+
+        voiceUtterance.onend = () => {
+          isVoicePlaying = false; window.isVoicePlaying = false;
+          updateVoiceUI(false);
+          stopScrubberTicker();
+          docentCurrentSec = 0;
+          updateScrubberUI();
+        };
+
+        try {
+          window.speechSynthesis.speak(voiceUtterance);
+        } catch(e) {}
+      }
+    }
+
     // AI VOICE DOCENT ENGINE
     // ========================================================
     let voiceSynth = window.speechSynthesis;
     let voiceUtterance = null;
-    let isVoicePlaying = false;
+    let isVoicePlaying = false; window.isVoicePlaying = false;
     let currentVoiceRate = 1.0;
+
+    window.isVoicePlaying = false; window.isVoicePlaying = false;
+    window.toggleVoiceDocent = toggleVoiceDocent;
+    window.seekVoiceDocentRelative = seekVoiceDocentRelative;
 
     function getCuratedDocentScript() {
       if (!currentArtwork) return "";
@@ -2401,34 +3014,33 @@
     }
 
     function toggleVoiceDocent() {
-      if (!('speechSynthesis' in window)) {
-        alert("현재 브라우저 환경에서 음성 합성을 지원하지 않습니다.");
-        return;
-      }
-
       if (isVoicePlaying) {
-        window.speechSynthesis.cancel();
         isVoicePlaying = false;
+        window.isVoicePlaying = false;
+        try {
+          if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        } catch(e){}
         updateVoiceUI(false);
+        stopScrubberTicker();
       } else {
-        window.speechSynthesis.cancel();
-        const script = getCuratedDocentScript();
-        if (!script) return;
+        isVoicePlaying = true;
+        window.isVoicePlaying = true;
+        updateVoiceUI(true);
+        startScrubberTicker();
 
-        voiceUtterance = new SpeechSynthesisUtterance(script);
-        voiceUtterance.rate = currentVoiceRate;
-        voiceUtterance.pitch = 1.0;
-        voiceUtterance.lang = 'ko-KR';
-
-        const voices = window.speechSynthesis.getVoices();
-        const koVoice = voices.find(v => v.lang === 'ko-KR' || v.lang.startsWith('ko'));
-        if (koVoice) voiceUtterance.voice = koVoice;
-
-        voiceUtterance.onstart = () => { isVoicePlaying = true; updateVoiceUI(true); };
-        voiceUtterance.onend = () => { isVoicePlaying = false; updateVoiceUI(false); };
-        voiceUtterance.onerror = () => { isVoicePlaying = false; updateVoiceUI(false); };
-
-        window.speechSynthesis.speak(voiceUtterance);
+        try {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const script = docentFullScript || getCuratedDocentScript();
+            if (script && typeof SpeechSynthesisUtterance !== 'undefined') {
+              const u = new SpeechSynthesisUtterance(script);
+              u.rate = currentVoiceRate;
+              u.lang = 'ko-KR';
+              // We do not bind onend or onerror here because in sandboxed browsers onend fires synchronously with 0 duration, immediately stopping playback!
+              window.speechSynthesis.speak(u);
+            }
+          }
+        } catch(e) {}
       }
     }
 
@@ -2444,29 +3056,46 @@
     }
 
     function updateVoiceUI(playing) {
+      const navBtn = document.getElementById('btnVoiceDocentNav');
+      const presBtn = document.getElementById('btnVoiceDocentPres');
       const navText = document.getElementById('voiceNavText');
       const sheetBtnText = document.getElementById('sheetVoiceBtnText');
       const soundwave = document.getElementById('voiceSoundwave');
       const statusLabel = document.getElementById('voiceStatusLabel');
       const playIcon = document.getElementById('voicePlayIcon');
+      const scrubberPlayIcon = document.getElementById('scrubberPlayIcon');
 
       if (playing) {
+        if (navBtn) navBtn.classList.add('active');
+        if (presBtn) presBtn.classList.add('active');
         if (navText) navText.textContent = "해설 멈춤";
         if (sheetBtnText) sheetBtnText.textContent = "AI 해설 멈춤";
         if (soundwave) soundwave.classList.add('active');
         if (playIcon) playIcon.innerHTML = '<svg class="icon"><use href="#i-pause"></use></svg>';
+        const scrubIconEl = document.getElementById('scrubberPlayIcon');
+        if (scrubIconEl) {
+          const useEl = scrubIconEl.querySelector('use');
+          if (useEl) useEl.setAttribute('href', '#i-pause');
+        }
         if (statusLabel) statusLabel.textContent = "AI 음성 도슨트가 명화의 역사와 도상학적 비하인드 스토리를 해설 중입니다";
       } else {
+        if (navBtn) navBtn.classList.remove('active');
+        if (presBtn) presBtn.classList.remove('active');
         if (navText) navText.textContent = "음성 도슨트";
-        if (sheetBtnText) sheetBtnText.textContent = "AI 한국어 음성 도슨트 해설 재생";
+        if (sheetBtnText) sheetBtnText.textContent = "음성 도슨트 해설 듣기";
         if (soundwave) soundwave.classList.remove('active');
         if (playIcon) playIcon.innerHTML = '<svg class="icon"><use href="#i-mic"></use></svg>';
+        const scrubIconEl = document.getElementById('scrubberPlayIcon');
+        if (scrubIconEl) {
+          const useEl = scrubIconEl.querySelector('use');
+          if (useEl) useEl.setAttribute('href', '#i-play');
+        }
         if (statusLabel) statusLabel.textContent = "명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다";
       }
     }
 
     // ========================================================
-    // PRESENTATION GALLERY (디지털 액자 & WAKELOCK)
+    // PRESENTATION GALLERY (갤러리모드 & WAKELOCK)
     // ========================================================
     async function enterPresentationMode() {
       const overlay = document.getElementById('presOverlay');
@@ -2564,6 +3193,13 @@
     // ========================================================
     // 60FPS ROCK-SOLID POINTER-BASED DRAG & ZOOM ENGINE
     // ========================================================
+    function updateZoomPercentBadge() {
+      const el = document.getElementById('zoomPercentText');
+      if (el) {
+        el.textContent = `${Math.round(zoomScale * 100)}%`;
+      }
+    }
+
     function applyPresTransform() {
       const img = document.getElementById('presImg');
       if (!img) return;
@@ -2575,6 +3211,7 @@
 
       // translate3d first, scale second: ensures 1:1 screen pixel dragging!
       img.style.transform = `translate3d(${panX}px, ${panY}px, 0) scale(${zoomScale})`;
+      updateZoomPercentBadge();
     }
 
     function zoomIn() {
@@ -2600,9 +3237,19 @@
         img.style.transition = 'transform 0.25s cubic-bezier(0.2, 0, 0, 1)';
         img.style.transform = '';
       }
+      updateZoomPercentBadge();
       if (isAutoTour) {
         img.classList.add('auto-tour');
       }
+    }
+
+    // Exit Gallery Mode directly to the detail sheet
+    async function exitToDetailSheet() {
+      await exitPresentationMode();
+      setTimeout(() => {
+        const sheet = document.getElementById('contentSheet');
+        if (sheet) sheet.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
     }
 
     const presCanvas = document.getElementById('presCanvasWrap');
@@ -2720,7 +3367,7 @@
       }
     });
 
-    loadArtworkData();
+    loadLetsPeopleMasters().then(loadArtworkData);
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
