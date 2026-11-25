@@ -1600,6 +1600,176 @@
       text-decoration: underline;
     }
 
+
+    /* ========================================================
+       LDS ANTI-BOX SPECIFICATION (Borders Purged & Airy Rhythm)
+       ======================================================== */
+    .museum-sheet-card {
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 1px solid rgba(241, 245, 249, 0.9) !important;
+      border-radius: 0 !important;
+      padding: 0 0 36px !important;
+      box-shadow: none !important;
+    }
+    .behind-investigation-card {
+      background: linear-gradient(135deg, rgba(254, 252, 232, 0.5) 0%, rgba(254, 243, 199, 0.3) 100%) !important;
+      border: none !important;
+      border-left: 3px solid #d97706 !important;
+      border-radius: 0 !important;
+      padding: 20px 24px !important;
+      box-shadow: none !important;
+    }
+    .editorial-story-card {
+      background: rgba(248, 250, 252, 0.7) !important;
+      border: none !important;
+      border-left: 3px solid #2563eb !important;
+      border-radius: 0 !important;
+      padding: 20px 24px !important;
+      box-shadow: none !important;
+    }
+    .curator-quote-box {
+      border: none !important;
+      border-left: 3px solid #64748b !important;
+      border-radius: 0 !important;
+      background: rgba(248, 250, 252, 0.8) !important;
+      padding: 18px 24px !important;
+    }
+    .artwork-spec-grid {
+      border-top: 1px solid rgba(241, 245, 249, 0.9) !important;
+      border-bottom: 1px solid rgba(241, 245, 249, 0.9) !important;
+      padding: 18px 0 !important;
+    }
+    .people-dossier-card {
+      border: none !important;
+      border-left: 3px solid #3b82f6 !important;
+      border-radius: 0 !important;
+      background: linear-gradient(135deg, #090d16 0%, #0f172a 100%) !important;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.15) !important;
+    }
+    .voice-docent-station {
+      border: none !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+      background: #090d16 !important;
+    }
+    .voice-scrubber-dock {
+      border: none !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+    .verified-resource-card {
+      border: none !important;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6) !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      padding: 16px 0 !important;
+    }
+
+    /* ========================================================
+       KARAOKE-STYLE SYNCHRONIZED TIMELINE SCRIPT DOCK
+       ======================================================== */
+    .karaoke-script-container {
+      margin-top: 20px;
+      padding: 18px 20px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 8px;
+      color: #cbd5e1;
+      font-size: 13.5px;
+      line-height: 1.8;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: relative;
+    }
+    .karaoke-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .karaoke-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .karaoke-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      animation: karaokePulse 1.4s infinite alternate ease-in-out;
+    }
+    @keyframes karaokePulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.15); }
+    }
+    .karaoke-lines-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 220px;
+      overflow-y: auto;
+      padding-right: 6px;
+      scroll-behavior: smooth;
+    }
+    .karaoke-lines-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .karaoke-lines-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+    }
+    .karaoke-line {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      opacity: 0.45;
+    }
+    .karaoke-line:hover {
+      opacity: 0.85;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .karaoke-line-time {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      color: #94a3b8;
+      flex-shrink: 0;
+      width: 42px;
+    }
+    .karaoke-line-text {
+      flex: 1;
+      transition: all 0.25s ease;
+    }
+    /* Active Karaoke Line (Highlight glowing blue like karaoke machine) */
+    .karaoke-line.active {
+      opacity: 1;
+      background: rgba(37, 99, 235, 0.25);
+      border-left: 3px solid #38bdf8;
+      padding-left: 12px;
+    }
+    .karaoke-line.active .karaoke-line-time {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .karaoke-line.active .karaoke-line-text {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14.5px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+
 </style>
 </head>
 <body>
@@ -2171,6 +2341,20 @@
         </div>
         <div class="docent-video-title" id="docentVideoTitle">명화 해설 영상</div>
 
+        <!-- Karaoke-Style Synchronized Script Dock -->
+        <div class="karaoke-script-container" id="karaokeScriptDock">
+          <div class="karaoke-header-bar">
+            <span class="karaoke-badge">
+              <span class="karaoke-live-dot"></span>
+              <span>1:1 해설 자막 싱크 동기화 (KARAOKE SCRIPT)</span>
+            </span>
+            <span style="font-family:var(--lds-font-mono); font-size:11px; color:#94a3b8;" id="karaokeTimeSync">00:00 / 00:00</span>
+          </div>
+          <div class="karaoke-lines-list" id="karaokeLinesList">
+            <!-- Dynamically populated karaoke script lines -->
+          </div>
+        </div>
+
         <!-- 1:1 Precision Docent Review & Curator Analysis -->
         <div class="docent-analysis-box" id="docentAnalysisBox" style="display:none;">
           <div class="docent-analysis-header">
@@ -2428,7 +2612,7 @@
         item.verified_docent = regDocent;
       }
 
-      renderArtworkDetails(item); initDocentScriptAndTimeline(); renderLetsPeopleDossier(item);
+      renderArtworkDetails(item); initDocentScriptAndTimeline(); renderKaraokeScript(item.verified_docent && item.verified_docent.timed_script); renderLetsPeopleDossier(item);
 
       if (updateHistory) {
         const url = new URL(window.location);
@@ -2848,6 +3032,77 @@
     }
 
     // ========================================================
+    
+    // ========================================================
+    // KARAOKE-STYLE SYNCHRONIZED SCRIPT ENGINE
+    // ========================================================
+    let currentDocentTimedScript = [];
+    let currentKaraokeActiveIndex = -1;
+
+    function renderKaraokeScript(timedScript) {
+      const container = document.getElementById('karaokeScriptDock');
+      const listEl = document.getElementById('karaokeLinesList');
+      if (!listEl) return;
+
+      currentDocentTimedScript = timedScript || [];
+
+      if (!currentDocentTimedScript.length) {
+        // Fallback default script from audio docent sentences
+        const sentences = (docentFullScript || getCuratedDocentScript()).split(/(?<=[.?!])\s+/).filter(s => s.trim().length > 0);
+        let accumulatedSec = 0;
+        currentDocentTimedScript = sentences.map((st, idx) => {
+          const item = { time: Math.round(accumulatedSec), text: st };
+          accumulatedSec += Math.max(8, Math.round(st.length / 5.5));
+          return item;
+        });
+      }
+
+      listEl.innerHTML = currentDocentTimedScript.map((item, idx) => `
+        <div class="karaoke-line ${idx === 0 ? 'active' : ''}" id="kline-${idx}" onclick="jumpToKaraokeTime(${item.time})">
+          <span class="karaoke-line-time">${formatTime(item.time)}</span>
+          <span class="karaoke-line-text">${item.text}</span>
+        </div>
+      `).join('');
+
+      currentKaraokeActiveIndex = 0;
+    }
+
+    function syncKaraokeScriptHighlight(currentSec) {
+      if (!currentDocentTimedScript.length) return;
+
+      let activeIdx = 0;
+      for (let i = 0; i < currentDocentTimedScript.length; i++) {
+        if (currentSec >= currentDocentTimedScript[i].time) {
+          activeIdx = i;
+        } else {
+          break;
+        }
+      }
+
+      if (activeIdx !== currentKaraokeActiveIndex) {
+        currentKaraokeActiveIndex = activeIdx;
+        document.querySelectorAll('.karaoke-line').forEach((el, idx) => {
+          el.classList.toggle('active', idx === activeIdx);
+        });
+
+        const activeLine = document.getElementById(`kline-${activeIdx}`);
+        if (activeLine) {
+          activeLine.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      const syncBadge = document.getElementById('karaokeTimeSync');
+      if (syncBadge) {
+        syncBadge.textContent = `${formatTime(currentSec)} / ${formatTime(docentEstimatedDurationSec)}`;
+      }
+    }
+
+    function jumpToKaraokeTime(sec) {
+      docentCurrentSec = sec;
+      seekToCurrentDocentOffset();
+      syncKaraokeScriptHighlight(sec);
+    }
+
     // ADVANCED VOICE DOCENT SCRUBBER ENGINE (PLAYBAR & SEEK)
     // ========================================================
     let docentFullScript = "";
@@ -2894,7 +3149,7 @@
         const elapsedSec = (performance.now() - docentStartTimeStamp) / 1000;
         docentCurrentSec = Math.min(elapsedSec, docentEstimatedDurationSec);
 
-        updateScrubberUI();
+        updateScrubberUI(); syncKaraokeScriptHighlight(docentCurrentSec);
 
         if (docentCurrentSec >= docentEstimatedDurationSec) {
           stopScrubberTicker();
@@ -2941,7 +3196,7 @@
     }
 
     function seekToCurrentDocentOffset() {
-      updateScrubberUI();
+      updateScrubberUI(); syncKaraokeScriptHighlight(docentCurrentSec);
       docentStartTimeStamp = performance.now() - (docentCurrentSec * 1000);
 
       // If playing, ensure UI and ticker stay active without waiting for hardware speech
@@ -2976,7 +3231,7 @@
           updateVoiceUI(false);
           stopScrubberTicker();
           docentCurrentSec = 0;
-          updateScrubberUI();
+          updateScrubberUI(); syncKaraokeScriptHighlight(docentCurrentSec);
         };
 
         try {

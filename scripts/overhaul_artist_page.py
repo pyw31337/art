@@ -1,0 +1,711 @@
+import json
+
+# Read master artists directory
+with open('data/master_artists_directory.json', 'r', encoding='utf-8') as f:
+    master_dir = json.load(f)
+
+print(f"Total artists in master directory: {len(master_dir['artists'])}")
+
+# Build new modern artist.html with Korean/English Alphabetical Tabs, Search, Anti-Box Cards
+artist_html_content = """<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
+  <title>시대의 거장 아카이브 — 렛츠아트 (Let's Art)</title>
+  <style>
+    :root {
+      --lds-brand-600: #2563eb;
+      --lds-brand-700: #1d4ed8;
+      --lds-brand-50:  #eff6ff;
+      --lds-canvas-bg: #ffffff;
+      --lds-surface-subtle: #f8fafc;
+      --lds-divider-faint: #f1f5f9;
+      --lds-divider-line: #e2e8f0;
+      --lds-text-strong: #0f172a;
+      --lds-text-body: #334155;
+      --lds-text-muted: #64748b;
+      --lds-text-faint: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+    body {
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-family: var(--lds-font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .container { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
+
+    /* Unified Line Icons */
+    .icon {
+      width: 16px;
+      height: 16px;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    header {
+      background: var(--lds-canvas-bg);
+      border-bottom: 1px solid var(--lds-divider-faint);
+      padding: 18px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-badge {
+      width: 36px; height: 36px;
+      border-radius: 6px;
+      background: #0f172a;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+    }
+    h1 { font-size: 20px; font-weight: 800; color: var(--lds-text-strong); letter-spacing: -0.4px; display: flex; align-items: center; gap: 8px; }
+    .sub-title { font-size: 12px; color: var(--lds-text-muted); margin-top: 2px; }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .lds-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--lds-text-body);
+      text-decoration: none;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      transition: all 0.15s ease;
+    }
+    .lds-btn-nav:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); }
+    .lds-btn-nav.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+
+    /* Hero Headline & Search */
+    .hero-search-section {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero-lead-text h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--lds-text-strong);
+      letter-spacing: -0.6px;
+    }
+    .hero-lead-text p {
+      font-size: 13px;
+      color: var(--lds-text-muted);
+      margin-top: 4px;
+    }
+    .search-box-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      font-size: 13px;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 6px;
+      background: #f8fafc;
+      outline: none;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .search-input:focus {
+      background: #ffffff;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+
+    /* Alphabetical & Hangul Filter Indexes (Anti-Box Minimalist Strip) */
+    .filter-index-container {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px 0;
+      border-top: 1px solid var(--lds-divider-faint);
+      border-bottom: 1px solid var(--lds-divider-faint);
+    }
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .filter-row-label {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--lds-text-faint);
+      margin-right: 6px;
+      width: 32px;
+    }
+    .alpha-pill-btn {
+      min-width: 28px;
+      height: 28px;
+      padding: 0 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--lds-text-body);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+    .alpha-pill-btn:hover {
+      background: var(--lds-surface-subtle);
+      color: #2563eb;
+    }
+    .alpha-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .alpha-pill-btn.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Artist Selection Rail & Dossier Profile */
+    .artist-selection-rail {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      scrollbar-width: thin;
+    }
+    .artist-selection-rail::-webkit-scrollbar { height: 4px; }
+    .artist-selection-rail::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+
+    .artist-rail-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      background: #f8fafc;
+      border: 1px solid transparent;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--lds-text-strong);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .artist-rail-item:hover {
+      background: #f1f5f9;
+      color: #2563eb;
+    }
+    .artist-rail-item.active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .artist-rail-count {
+      font-size: 10.5px;
+      opacity: 0.75;
+      font-family: var(--lds-font-mono);
+    }
+
+    /* Anti-Box Master Profile Showcase */
+    .artist-showcase-card {
+      margin-bottom: 36px;
+      background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+      border: none;
+      border-left: 3px solid #3b82f6;
+      border-radius: 0;
+      padding: 28px 32px;
+      color: #f1f5f9;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .artist-showcase-card { flex-direction: column; padding: 20px 24px; }
+    }
+    .artist-avatar-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #1e293b;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      flex-shrink: 0;
+    }
+    .showcase-info-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .showcase-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .showcase-name-kr {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .showcase-name-en {
+      font-size: 15px;
+      color: #94a3b8;
+    }
+    .showcase-meta-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 4px 0;
+    }
+    .showcase-meta-pill {
+      font-size: 11px;
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      color: #cbd5e1;
+    }
+    .showcase-bio-text {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #cbd5e1;
+      margin-top: 4px;
+      max-width: 900px;
+    }
+
+    /* Artwork Grid Title */
+    .artwork-grid-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--lds-divider-faint);
+    }
+    .artwork-grid-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Anti-Box Artwork Grid */
+    .artworks-flat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px 24px;
+    }
+    .flat-art-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .flat-art-card:hover {
+      transform: translateY(-2px);
+    }
+    .flat-thumb-wrap {
+      aspect-ratio: 4/3;
+      background: #0f172a;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .flat-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .flat-art-card:hover .flat-thumb-img {
+      transform: scale(1.03);
+    }
+    .flat-card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-family: var(--lds-font-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .flat-card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .flat-card-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .flat-card-title:hover {
+      color: #2563eb;
+    }
+    .flat-card-museum {
+      font-size: 12px;
+      color: var(--lds-text-muted);
+    }
+    .flat-card-action-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .flat-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #2563eb;
+      padding: 4px 8px;
+      background: #eff6ff;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+    .flat-card-btn:hover {
+      background: #dbeafe;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Unified Lucide / Tabler SVG Icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <defs>
+      <symbol id="i-user" viewBox="0 0 24 24">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </symbol>
+      <symbol id="i-museum" viewBox="0 0 24 24">
+        <line x1="3" y1="21" x2="21" y2="21"></line>
+        <line x1="12" y1="3" x2="3" y2="8"></line>
+        <line x1="12" y1="3" x2="21" y2="8"></line>
+        <line x1="3" y1="8" x2="21" y2="8"></line>
+        <line x1="6" y1="8" x2="6" y2="21"></line>
+        <line x1="10" y1="8" x2="10" y2="21"></line>
+        <line x1="14" y1="8" x2="14" y2="21"></line>
+        <line x1="18" y1="8" x2="18" y2="21"></line>
+      </symbol>
+      <symbol id="i-frame" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <div class="logo-badge">
+          <svg class="icon" style="stroke:#fff;"><use href="#i-user"/></svg>
+        </div>
+        <div>
+          <h1>시대의 거장 아카이브</h1>
+          <div class="sub-title">세계 미술사 거장 217인 및 한글·알파벳 정렬 색인 원장</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="lds-btn-nav">아카이브 홈</a>
+        <a href="museum.html" class="lds-btn-nav">10대 미술관</a>
+        <a href="artist.html" class="lds-btn-nav active">거장 색인</a>
+        <a href="admin" class="lds-btn-nav">관제 어드민</a>
+      </nav>
+    </header>
+
+    <!-- Hero Search -->
+    <div class="hero-search-section">
+      <div class="hero-lead-text">
+        <h2>세계 미술사 거장 인덱스</h2>
+        <p>인류 회화·조각의 역사를 수놓은 위대한 거장들의 생애와 대표작을 탐색합니다.</p>
+      </div>
+      <div class="search-box-wrap">
+        <svg class="icon search-icon"><use href="#i-search"/></svg>
+        <input type="text" id="artistSearchInput" class="search-input" placeholder="거장 이름 또는 사조 검색 (예: 고흐, 로댕, 인상주의)...">
+      </div>
+    </div>
+
+    <!-- Hangul & Alphabetical Index Filter -->
+    <div class="filter-index-container">
+      <div class="filter-row" id="chosungFilterRow">
+        <span class="filter-row-label">한글</span>
+        <button class="alpha-pill-btn active" data-type="all" onclick="filterByChosung('ALL')">전체</button>
+        <!-- Hangul buttons dynamically added -->
+      </div>
+      <div class="filter-row" id="alphaFilterRow">
+        <span class="filter-row-label">영문</span>
+        <!-- Alpha buttons dynamically added -->
+      </div>
+    </div>
+
+    <!-- Active Filter Artist Rail -->
+    <div class="artist-selection-rail" id="artistSelectionRail"></div>
+
+    <!-- Selected Artist Showcase Card (Anti-Box Design) -->
+    <div class="artist-showcase-card" id="artistShowcaseCard"></div>
+
+    <!-- Artwork Grid Header -->
+    <div class="artwork-grid-header">
+      <div class="artwork-grid-title">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span id="artworkGridTitleText">작가의 대표 걸작 전편</span>
+      </div>
+      <span style="font-family:var(--lds-font-mono); font-size:12px; color:var(--lds-text-muted);" id="artworkGridCountText">0 ITEMS</span>
+    </div>
+
+    <!-- Artworks Flat Grid -->
+    <div class="artworks-flat-grid" id="artworksFlatGrid"></div>
+  </div>
+
+  <script>
+    let masterDirectory = [];
+    let allMasterworks = [];
+    let currentFilterType = 'ALL';
+    let currentFilterValue = 'ALL';
+    let currentArtist = null;
+
+    async function initArtistDirectory() {
+      try {
+        const [dirRes, dbRes] = await Promise.all([
+          fetch('data/master_artists_directory.json?v=' + Date.now()).then(r => r.json()),
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] }))
+        ]);
+
+        masterDirectory = dirRes.artists || [];
+        allMasterworks = dbRes.featured_masterpieces || [];
+
+        renderIndexFilters(dirRes.chosung_indices, dirRes.alpha_indices);
+        renderArtistRail(masterDirectory);
+
+        if (masterDirectory.length > 0) {
+          selectArtist(masterDirectory[0]);
+        }
+
+        // Setup live search
+        document.getElementById('artistSearchInput').addEventListener('input', (e) => {
+          const q = e.target.value.toLowerCase().trim();
+          if (!q) {
+            renderArtistRail(masterDirectory);
+            return;
+          }
+          const filtered = masterDirectory.filter(a => 
+            a.name_kr.toLowerCase().includes(q) || 
+            a.name_en.toLowerCase().includes(q) ||
+            a.movement.toLowerCase().includes(q)
+          );
+          renderArtistRail(filtered);
+          if (filtered.length > 0) {
+            selectArtist(filtered[0]);
+          }
+        });
+      } catch (err) {
+        console.error("Failed to load master directory:", err);
+      }
+    }
+
+    function renderIndexFilters(chosungList, alphaList) {
+      const choRow = document.getElementById('chosungFilterRow');
+      chosungList.forEach(ch => {
+        const hasAny = masterDirectory.some(a => a.chosung === ch);
+        const btn = document.createElement('button');
+        btn.className = `alpha-pill-btn ${hasAny ? '' : 'disabled'}`;
+        btn.textContent = ch;
+        btn.onclick = () => filterByChosung(ch);
+        choRow.appendChild(btn);
+      });
+
+      const alphaRow = document.getElementById('alphaFilterRow');
+      alphaList.forEach(al => {
+        const hasAny = masterDirectory.some(a => a.alpha === al);
+        const btn = document.createElement('button');
+        btn.className = `alpha-pill-btn ${hasAny ? '' : 'disabled'}`;
+        btn.textContent = al;
+        btn.onclick = () => filterByAlpha(al);
+        alphaRow.appendChild(btn);
+      });
+    }
+
+    function filterByChosung(ch) {
+      currentFilterType = 'CHOSUNG';
+      currentFilterValue = ch;
+      document.querySelectorAll('.alpha-pill-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent === ch || (ch === 'ALL' && b.dataset.type === 'all'));
+      });
+
+      const list = ch === 'ALL' ? masterDirectory : masterDirectory.filter(a => a.chosung === ch);
+      renderArtistRail(list);
+      if (list.length > 0) selectArtist(list[0]);
+    }
+
+    function filterByAlpha(al) {
+      currentFilterType = 'ALPHA';
+      currentFilterValue = al;
+      document.querySelectorAll('.alpha-pill-btn').forEach(b => {
+        b.classList.toggle('active', b.textContent === al);
+      });
+
+      const list = masterDirectory.filter(a => a.alpha === al);
+      renderArtistRail(list);
+      if (list.length > 0) selectArtist(list[0]);
+    }
+
+    function renderArtistRail(artists) {
+      const rail = document.getElementById('artistSelectionRail');
+      if (!artists.length) {
+        rail.innerHTML = `<span style="font-size:12px; color:var(--lds-text-muted); padding:8px 0;">해당 분류의 작가가 없습니다.</span>`;
+        return;
+      }
+
+      rail.innerHTML = artists.map((a, idx) => `
+        <button class="artist-rail-item ${idx === 0 ? 'active' : ''}" onclick="selectArtistById('${a.id}')" id="rail-btn-${a.id}">
+          <span>${a.name_kr}</span>
+          <span class="artist-rail-count">${a.work_count}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectArtistById(id) {
+      const a = masterDirectory.find(x => x.id === id);
+      if (a) selectArtist(a);
+    }
+
+    function selectArtist(artist) {
+      currentArtist = artist;
+      document.querySelectorAll('.artist-rail-item').forEach(b => {
+        b.classList.toggle('active', b.id === `rail-btn-${artist.id}`);
+      });
+
+      const card = document.getElementById('artistShowcaseCard');
+      card.innerHTML = `
+        <img class="artist-avatar-img" src="${artist.avatar}" alt="${artist.name_kr}" onerror="this.src='assets/icons/favicon-32.png'">
+        <div class="showcase-info-wrap">
+          <div class="showcase-name-row">
+            <span class="showcase-name-kr">${artist.name_kr}</span>
+            <span class="showcase-name-en">${artist.name_en}</span>
+          </div>
+          <div class="showcase-meta-row">
+            <span class="showcase-meta-pill">국적: ${artist.nationality}</span>
+            <span class="showcase-meta-pill">생몰: ${artist.lifespan}</span>
+            <span class="showcase-meta-pill">사조: ${artist.movement}</span>
+            <span class="showcase-meta-pill">${artist.work_count}개 작품 소장</span>
+          </div>
+          <div class="showcase-bio-text">${artist.description}</div>
+        </div>
+      `;
+
+      renderArtistArtworks(artist);
+    }
+
+    function renderArtistArtworks(artist) {
+      const titleEl = document.getElementById('artworkGridTitleText');
+      const countEl = document.getElementById('artworkGridCountText');
+      const grid = document.getElementById('artworksFlatGrid');
+
+      titleEl.textContent = `${artist.name_kr} 걸작 컬렉션`;
+
+      // Filter matching artworks
+      const matched = allMasterworks.filter(art => {
+        const nameKr = (art.artist_name_kr || art.artist || '').toLowerCase();
+        const nameEn = (art.artist_name_en || '').toLowerCase();
+        const targetKr = artist.name_kr.toLowerCase();
+        const targetEn = artist.name_en.toLowerCase();
+        return nameKr.includes(targetKr) || targetKr.includes(nameKr) || (targetEn && nameEn.includes(targetEn));
+      });
+
+      countEl.textContent = `${matched.length} ITEMS CATALOGUED`;
+
+      if (matched.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--lds-text-muted);">현재 디지털 컬렉션 이미지 복원 및 원장 연동 작업 중입니다.</div>`;
+        return;
+      }
+
+      grid.innerHTML = matched.map(art => {
+        const thumb = art.thumbnail_url || art.image_url || `assets/featured/thumbs/${art.id}.webp`;
+        return `
+          <div class="flat-art-card">
+            <div class="flat-thumb-wrap">
+              <img class="flat-thumb-img" src="${thumb}" alt="${art.title_kr}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'300\\' height=\\'200\\'%3E%3Crect width=\\'100%25\\' height=\\'100%25\\' fill=\\'%230f172a\\'%2F%3E%3C%2Fsvg%3E'">
+              <span class="flat-card-badge">${art.year || '시대 미상'}</span>
+            </div>
+            <div class="flat-card-info">
+              <a href="artwork.html?id=${art.id}" class="flat-card-title">${art.title_kr}</a>
+              <div class="flat-card-museum">🏛️ ${art.museum || '소장처 참조'}</div>
+              <div class="flat-card-action-row">
+                <a href="artwork.html?id=${art.id}" class="flat-card-btn">작품 상세</a>
+                <a href="artwork.html?id=${art.id}&mode=presentation" class="flat-card-btn">갤러리모드</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', initArtistDirectory);
+  </script>
+</body>
+</html>
+"""
+
+with open('artist.html', 'w', encoding='utf-8') as f:
+    f.write(artist_html_content)
+
+print("artist.html completely overhauled with 217 artists, Hangul/Alpha filters, and Anti-Box design!")
