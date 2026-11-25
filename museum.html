@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#090d16">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
-  <title>글로벌 10대 미술관 & 국립 박물관 컬렉션 — 렛츠아트 (Let's Art)</title>
+  <title>글로벌 10대 미술관 & 국립 박물관 테마관 — 렛츠아트 (Let's Art)</title>
   <style>
     :root {
       --lds-brand-600: #2563eb;
       --lds-brand-700: #1d4ed8;
-      --lds-brand-50:  #eff6ff;
       --lds-canvas-bg: #ffffff;
-      --lds-surface-subtle: #fafbfc;
+      --lds-surface-subtle: #f8fafc;
       --lds-divider-faint: #f1f5f9;
       --lds-divider-line: #e2e8f0;
       --lds-text-strong: #0f172a;
       --lds-text-body: #334155;
       --lds-text-muted: #64748b;
       --lds-text-faint: #94a3b8;
-      --lds-status-normal: #059669;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
     body {
@@ -34,606 +32,761 @@
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
     }
-    .container { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
 
-    /* SVG Icon System (Tabler & Lucide Standard) */
     .icon {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
       display: inline-block;
-      vertical-align: -3px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      vertical-align: middle;
       flex-shrink: 0;
-      transition: all 0.15s ease;
-    }
-    button:hover .icon, button:focus .icon, button:active .icon,
-    a:hover .icon, a:focus .icon, a:active .icon,
-    .active .icon, .icon.filled {
-      fill: currentColor;
     }
 
-    /* Header */
-    header {
-      background: var(--lds-canvas-bg);
-      border-bottom: 1px solid var(--lds-divider-faint);
-      padding: 18px 0 24px;
+    /* Global Nav Header */
+    .top-global-header {
+      background: #090d16;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
     .logo-area { display: flex; align-items: center; gap: 12px; }
     .logo-badge {
-      width: 36px; height: 36px;
-      border-radius: 4px;
-      background: #0f172a;
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: #2563eb;
       color: #ffffff;
       display: grid;
       place-items: center;
     }
-    .logo-badge .icon { stroke: #ffffff; width: 20px; height: 20px; }
-    h1 { font-size: 19px; font-weight: 700; color: var(--lds-text-strong); letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
-    .sub-title { font-size: 12px; color: var(--lds-text-muted); margin-top: 2px; }
-    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .header-title-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 8px; align-items: center; }
     .lds-btn-nav {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
       border-radius: 4px;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--lds-text-body);
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
       text-decoration: none;
-      border: 1px solid var(--lds-divider-line);
-      background: var(--lds-canvas-bg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
       transition: all 0.15s ease;
     }
-    .lds-btn-nav:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); border-color: var(--lds-text-faint); }
-    .lds-btn-nav.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
-    .lds-btn-nav.primary:hover { background: var(--lds-brand-700); }
-    .lds-btn-nav.active { background: var(--lds-brand-50); color: var(--lds-brand-600); border-color: var(--lds-brand-600); font-weight: 700; }
+    .lds-btn-nav:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+    .lds-btn-nav.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
 
-    /* Page Hero */
-    .museum-hero {
-      background: linear-gradient(135deg, #090e17 0%, #172554 100%);
-      color: #ffffff;
-      border-radius: 6px;
-      padding: 44px 36px;
-      margin-bottom: 36px;
+    /* ========================================================
+       GRAND IMMERSIVE THEME PAVILION HERO ZONE
+       ======================================================== */
+    .museum-pavilion-hero {
       position: relative;
+      height: 480px;
+      background: #090d16;
+      color: #ffffff;
       overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 48px 36px;
     }
-    .museum-hero-badge {
-      display: inline-flex;
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.65) saturate(1.1);
+      transform: scale(1.02);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-vignette-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(9, 13, 22, 0.95) 0%, rgba(9, 13, 22, 0.45) 50%, rgba(9, 13, 22, 0.8) 100%);
+      pointer-events: none;
+    }
+    .hero-content-box {
+      position: relative;
+      z-index: 10;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pavilion-badge-row {
+      display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pavilion-pill {
       font-family: var(--lds-font-mono);
       font-size: 11px;
       font-weight: 700;
+      letter-spacing: 0.08em;
       color: #60a5fa;
-      background: rgba(37, 99, 235, 0.2);
-      border: 1px solid rgba(96, 165, 250, 0.3);
-      padding: 3px 8px;
+      background: rgba(37, 99, 235, 0.25);
+      padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      text-transform: uppercase;
     }
-    .museum-hero h2 {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
+    .museum-hero-title {
+      font-size: 38px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
     }
-    .museum-hero p {
+    .museum-hero-title-en {
+      font-size: 16px;
+      color: #94a3b8;
+      font-weight: 400;
+      font-style: italic;
+    }
+    .museum-hero-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
       color: #cbd5e1;
-      font-size: 14px;
-      max-width: 720px;
-      line-height: 1.6;
+    }
+    .museum-hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .museum-hero-desc {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #e2e8f0;
+      max-width: 860px;
     }
 
-    /* Museum Filter Tabs */
-    .museum-nav-bar {
+    /* Main Container */
+    .container { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
+
+    /* Museum Selection Horizontal Strip */
+    .museum-selection-strip {
       display: flex;
       gap: 10px;
       overflow-x: auto;
-      padding-bottom: 8px;
+      padding: 16px 0;
       margin-bottom: 28px;
-      border-bottom: 1px solid var(--lds-divider-line);
+      border-bottom: 1px solid var(--lds-divider-faint);
+      scrollbar-width: thin;
     }
-    .museum-pill-btn {
+    .museum-selection-strip::-webkit-scrollbar { height: 4px; }
+    .museum-selection-strip::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+
+    .museum-pill-tab {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       padding: 8px 16px;
-      border-radius: 4px;
+      background: #f8fafc;
       border: 1px solid var(--lds-divider-line);
-      background: var(--lds-canvas-bg);
-      color: var(--lds-text-body);
+      border-radius: 999px;
       font-size: 13px;
       font-weight: 600;
+      color: var(--lds-text-strong);
       cursor: pointer;
       white-space: nowrap;
       transition: all 0.15s ease;
+      flex-shrink: 0;
+      text-decoration: none;
     }
-    .museum-pill-btn:hover { background: var(--lds-surface-subtle); border-color: var(--lds-text-faint); }
-    .museum-pill-btn.active {
-      background: var(--lds-text-strong);
+    .museum-pill-tab:hover {
+      background: #eff6ff;
+      border-color: #3b82f6;
+      color: #2563eb;
+    }
+    .museum-pill-tab.active {
+      background: #2563eb;
       color: #ffffff;
-      border-color: var(--lds-text-strong);
-    }
-    .museum-pill-btn .count {
-      font-family: var(--lds-font-mono);
-      font-size: 11px;
-      opacity: 0.8;
+      border-color: #2563eb;
     }
 
-    /* Museum Detail Profile Card */
-    .museum-profile-card {
-      background: var(--lds-surface-subtle);
-      border: 1px solid var(--lds-divider-line);
-      border-radius: 4px;
-      padding: 24px;
+    /* Curator Theme Pavilion Quote Box */
+    .pavilion-curator-box {
+      background: linear-gradient(135deg, #090d16 0%, #111827 100%);
+      border-left: 3px solid #3b82f6;
+      padding: 20px 24px;
+      color: #f1f5f9;
       margin-bottom: 32px;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 28px;
-    }
-    @media (max-width: 860px) {
-      .museum-profile-card { grid-template-columns: 1fr; }
-    }
-    .museum-profile-img {
-      width: 100%;
-      height: 200px;
-      border-radius: 4px;
-      object-fit: cover;
-      background: #0f172a;
-    }
-    .museum-profile-title {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--lds-text-strong);
-      margin-bottom: 6px;
-    }
-    .museum-profile-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--lds-text-muted);
-      margin-bottom: 12px;
-    }
-    .museum-profile-desc {
       font-size: 13.5px;
-      color: var(--lds-text-body);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .museum-profile-tags {
+      line-height: 1.8;
       display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .museum-tag-chip {
-      font-family: var(--lds-font-mono);
-      font-size: 11px;
-      background: #ffffff;
-      border: 1px solid var(--lds-divider-line);
-      padding: 2px 8px;
-      border-radius: 3px;
-      color: var(--lds-text-muted);
+      align-items: flex-start;
+      gap: 16px;
     }
 
-    /* Artwork Cards Grid */
-    .grid-title-row {
+    /* Grid Section Header */
+    .grid-header-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--lds-divider-faint);
     }
-    .grid-title {
-      font-size: 16px;
-      font-weight: 700;
+    .grid-header-title {
+      font-size: 18px;
+      font-weight: 800;
       color: var(--lds-text-strong);
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .grid {
+
+    /* Anti-Box Flat Masterpiece Grid */
+    .museum-art-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px 24px;
     }
-    .art-card {
-      background: var(--lds-canvas-bg);
-      border: 1px solid var(--lds-divider-line);
-      border-radius: 4px;
-      overflow: hidden;
+    .art-flat-card {
       display: flex;
       flex-direction: column;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      gap: 10px;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .art-card:hover {
-      border-color: var(--lds-brand-600);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    .art-flat-card:hover {
+      transform: translateY(-2px);
     }
-    .card-img-wrap {
-      width: 100%;
-      height: 220px;
-      position: relative;
-      background: #090e17;
+    .art-flat-thumb {
+      aspect-ratio: 4/3;
+      background: #0f172a;
+      border-radius: 6px;
       overflow: hidden;
+      position: relative;
     }
-    .card-img {
+    .art-flat-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
       transition: transform 0.3s ease;
     }
-    .art-card:hover .card-img { transform: scale(1.03); }
-    .card-badge {
+    .art-flat-card:hover .art-flat-img {
+      transform: scale(1.03);
+    }
+    .art-flat-badge {
       position: absolute;
       top: 10px;
       left: 10px;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
       font-family: var(--lds-font-mono);
       font-size: 10px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 2px;
-      background: rgba(15, 23, 42, 0.85);
-      color: #ffffff;
-      backdrop-filter: blur(4px);
+      padding: 3px 8px;
+      border-radius: 4px;
     }
-    .card-video-pill {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(239, 68, 68, 0.9);
-      color: #ffffff;
-      padding: 2px 7px;
-      border-radius: 2px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-    .card-body {
-      padding: 16px;
+    .art-flat-info {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      gap: 4px;
     }
-    .card-title {
-      font-size: 14px;
+    .art-flat-title {
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--lds-text-strong);
-      margin-bottom: 2px;
-    }
-    .card-artist {
-      font-size: 12px;
-      color: var(--lds-text-muted);
-      margin-bottom: 8px;
-    }
-    .card-desc {
-      font-size: 12px;
-      color: var(--lds-text-body);
-      line-height: 1.5;
-      margin-bottom: 12px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .card-actions {
-      margin-top: auto;
-      display: flex;
-      gap: 6px;
-      border-top: 1px solid var(--lds-divider-faint);
-      padding-top: 12px;
-    }
-    .card-btn {
-      flex: 1;
-      padding: 6px 10px;
-      border-radius: 3px;
-      font-size: 11.5px;
-      font-weight: 600;
-      text-align: center;
       text-decoration: none;
+      line-height: 1.4;
+    }
+    .art-flat-title:hover {
+      color: #2563eb;
+    }
+    .art-flat-artist {
+      font-size: 12.5px;
+      color: var(--lds-text-muted);
+    }
+    .art-flat-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .art-flat-btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 4px;
-      border: 1px solid var(--lds-divider-line);
-      background: var(--lds-canvas-bg);
-      color: var(--lds-text-body);
+      font-size: 11.5px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #2563eb;
+      padding: 4px 8px;
+      background: #eff6ff;
+      border-radius: 4px;
       transition: all 0.15s ease;
     }
-    .card-btn:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); }
-    .card-btn.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
-    .card-btn.primary:hover { background: var(--lds-brand-700); }
+    .art-flat-btn:hover { background: #dbeafe; }
   </style>
 </head>
 <body>
 
-  <!-- Tabler & Lucide Standard SVG Sprite -->
-  <svg width="0" height="0" style="position:absolute; display:none;" aria-hidden="true">
+  <!-- Top Global Header -->
+  <header class="top-global-header">
+    <div class="logo-area">
+      <div class="logo-badge">
+        <svg class="icon"><use href="#i-museum"/></svg>
+      </div>
+      <span class="header-title-text">렛츠아트 미술관 테마관</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="lds-btn-nav">홈</a>
+      <a href="museum.html" class="lds-btn-nav active">10대 미술관</a>
+      <a href="artist.html" class="lds-btn-nav">거장 아카이브</a>
+      <a href="admin" class="lds-btn-nav">관제 어드민</a>
+    </nav>
+  </header>
+
+  <!-- SVG Icons Suite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
-      <symbol id="i-museum" viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="12" y1="3" x2="3" y2="8"></line><line x1="12" y1="3" x2="21" y2="8"></line><line x1="3" y1="8" x2="21" y2="8"></line><line x1="6" y1="8" x2="6" y2="21"></line><line x1="10" y1="8" x2="10" y2="21"></line><line x1="14" y1="8" x2="14" y2="21"></line><line x1="18" y1="8" x2="18" y2="21"></line></symbol>
-      <symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></symbol>
-      <symbol id="i-video" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></symbol>
-      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></symbol>
-      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></symbol>
-      <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></symbol>
-      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path></symbol>
+      <symbol id="i-museum" viewBox="0 0 24 24">
+        <line x1="3" y1="21" x2="21" y2="21"></line>
+        <line x1="12" y1="3" x2="3" y2="8"></line>
+        <line x1="12" y1="3" x2="21" y2="8"></line>
+        <line x1="3" y1="8" x2="21" y2="8"></line>
+        <line x1="6" y1="8" x2="6" y2="21"></line>
+        <line x1="10" y1="8" x2="10" y2="21"></line>
+        <line x1="14" y1="8" x2="14" y2="21"></line>
+        <line x1="18" y1="8" x2="18" y2="21"></line>
+      </symbol>
+      <symbol id="i-frame" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+        <polyline points="21 15 16 10 5 21"></polyline>
+      </symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24">
+        <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path>
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </symbol>
     </defs>
   </svg>
 
+  <!-- Grand Immersive Theme Pavilion Hero Zone -->
+  <section class="museum-pavilion-hero" id="pavilionHero">
+    <img class="hero-bg-photo" id="heroBgPhoto" src="assets/museums/louvre.jpg" alt="Museum Pavilion">
+    <div class="hero-vignette-overlay"></div>
+    <div class="hero-content-box">
+      <div class="pavilion-badge-row">
+        <span class="pavilion-pill">GLOBAL MASTERPIECE PAVILION</span>
+        <span class="pavilion-pill" id="heroCollectionBadge" style="color:#fde68a; border-color:rgba(253, 230, 138, 0.4); background:rgba(217, 119, 6, 0.2);">소장품 380,000+</span>
+      </div>
+      <h1 class="museum-hero-title" id="heroTitleKr">파리 루브르 박물관</h1>
+      <div class="museum-hero-title-en" id="heroTitleEn">Musée du Louvre</div>
+      <div class="museum-hero-meta-row">
+        <span class="museum-hero-meta-item">📍 <span id="heroCity">프랑스 파리</span></span>
+        <span class="museum-hero-meta-item">🏛️ <span id="heroEstablished">1793년 개관</span></span>
+        <span class="museum-hero-meta-item">🌐 <span>공식 디지털 갤러리 원장 연동</span></span>
+      </div>
+      <p class="museum-hero-desc" id="heroDesc">
+        세계에서 가장 많은 방문객이 찾는 세계 최대의 미술관. 르네상스부터 19세기까지 인류 예술사의 기적이라 불리는 소장품을 품고 있으며, <모나리자>, <사모트라케의 니케>, <밀로의 비너스>가 자리한 프랑스 문화의 상징입니다.
+      </p>
+    </div>
+  </section>
+
   <div class="container">
-    <header>
-      <div class="logo-area">
-        <div class="logo-badge">
-          <svg class="icon"><use href="#i-museum"/></svg>
-        </div>
-        <div>
-          <h1>LET'S ART <span class="lds-tag-mono normal" style="margin-left:6px; font-size:10px; padding:2px 6px; background:#eff6ff; color:#2563eb; border-radius:3px;">MUSEUM EXPEDITION</span></h1>
-          <div class="sub-title">글로벌 10대 미술관 & 국립 박물관 명작 컬렉션 탐색</div>
-        </div>
+    <!-- Museum Selection Strip -->
+    <div class="museum-selection-strip" id="museumSelectionStrip"></div>
+
+    <!-- Curator Theme Pavilion Insight -->
+    <div class="pavilion-curator-box">
+      <svg class="icon" style="color:#60a5fa; width:22px; height:22px; margin-top:2px;"><use href="#i-sparkles"/></svg>
+      <div>
+        <div style="font-weight:700; color:#60a5fa; margin-bottom:4px; font-size:12px; letter-spacing:0.05em;">CURATORIAL PAVILION PERSPECTIVE</div>
+        <div id="curatorPavilionText">미술관 큐레이터 관점 로딩 중...</div>
       </div>
-      <div class="nav-links">
-        <a class="lds-btn-nav" href="index.html">
-          <svg class="icon"><use href="#i-frame"/></svg>
-          <span>갤러리 홈</span>
-        </a>
-        <a class="lds-btn-nav active" href="museum.html">
-          <svg class="icon"><use href="#i-museum"/></svg>
-          <span>미술관 탐색</span>
-        </a>
-        <a class="lds-btn-nav" href="artist.html">
-          <svg class="icon"><use href="#i-user"/></svg>
-          <span>거장 아카이브</span>
-        </a>
-        <a class="lds-btn-nav primary" href="artwork.html?id=paint_sargent_001&mode=presentation">
-          <svg class="icon"><use href="#i-sparkles"/></svg>
-          <span>디지털 액자 감상실</span>
-        </a>
-        <a class="lds-btn-nav" href="admin">
-          <svg class="icon"><use href="#i-settings"/></svg>
-          <span>관제 어드민</span>
-        </a>
+    </div>
+
+    <!-- Grid Header -->
+    <div class="grid-header-row">
+      <div class="grid-header-title">
+        <svg class="icon" style="color:#2563eb;"><use href="#i-frame"/></svg>
+        <span id="museumGridTitle">테마관 소장 및 대표 걸작</span>
       </div>
-    </header>
-
-    <!-- Museum Hero Banner -->
-    <div class="museum-hero">
-      <div class="museum-hero-badge">GLOBAL 10 MUSEUMS OPEN ACCESS ARCHIVE</div>
-      <h2>시대를 초월한 인류의 보물창고를 거닐다</h2>
-      <p>파리 루브르와 오르세, 뉴욕 MoMA와 메트로폴리탄, 런던 대영박물관, 서울 국립중앙박물관까지. 각 미술관이 보존하고 있는 최고 수준의 인류 문화유산을 1:1 도슨트 해설과 함께 깊이 있게 탐색해 보세요.</p>
+      <span style="font-family:var(--lds-font-mono); font-size:12px; color:var(--lds-text-muted);" id="museumWorkCount">0 ITEMS</span>
     </div>
 
-    <!-- Museum Selection Tabs -->
-    <div class="museum-nav-bar" id="museumTabBar">
-      <!-- Injected via JS -->
-    </div>
-
-    <!-- Selected Museum Profile -->
-    <div class="museum-profile-card" id="museumProfileCard">
-      <!-- Injected via JS -->
-    </div>
-
-    <!-- Collection Artworks Grid -->
-    <div class="grid-title-row">
-      <div class="grid-title" id="gridTitleHeader">
-        <svg class="icon"><use href="#i-frame"/></svg>
-        <span>소장 명작 아카이브</span>
-      </div>
-      <span class="lds-mono" style="font-size:11.5px; color:var(--lds-text-muted);" id="gridCountBadge">0 ITEMS</span>
-    </div>
-
-    <div class="grid" id="museumArtworkGrid">
-      <!-- Artworks Injected via JS -->
-    </div>
+    <!-- Artworks Flat Grid -->
+    <div class="museum-art-grid" id="museumArtGrid"></div>
   </div>
 
   <script>
-    const MUSEUMS = [
-      {
-        id: "louvre",
-        name_kr: "파리 루브르 박물관",
-        name_en: "Musée du Louvre",
-        city: "프랑스 파리 (Paris, France)",
-        established: "1793년",
-        description: "세계에서 가장 많은 방문객이 찾는 세계 최대의 미술관. 르네상스부터 19세기까지 인류 예술사의 기적이라 불리는 38만 점 이상의 소장품을 품고 있으며, <모나리자>, <사모트라케의 니케>, <밀로의 비너스>가 자리한 프랑스 문화의 상징입니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_mona_lisa.webp",
-        tags: ["고대 유물", "르네상스", "루브르 3대 보물", "프랑스 왕실 컬렉션"]
-      },
-      {
-        id: "met",
-        name_kr: "메트로폴리탄 미술관 (The Met)",
-        name_en: "The Metropolitan Museum of Art",
-        city: "미국 뉴욕 (New York, USA)",
-        established: "1870년",
-        description: "5번가 센트럴 파크에 위치한 북미 최대의 종합 미술관. 5천 년 인류 문명 전체를 포괄하는 200만 점 이상의 원장 컬렉션을 보유하고 있으며, 존 싱어 사전트의 <마담 X>, 베르메르, 렘브란트, 그리고 방대한 오픈 액세스 디지털 이니셔티브를 선도합니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_sargent_001.webp",
-        tags: ["세계 4대 미술관", "오픈 액세스 선도", "고전 & 근현대", "센트럴파크"]
-      },
-      {
-        id: "moma",
-        name_kr: "뉴욕 근대미술관 (MoMA)",
-        name_en: "The Museum of Modern Art",
-        city: "미국 뉴욕 맨해튼 (Manhattan, New York)",
-        established: "1929년",
-        description: "현대 시각 예술의 가장 영향력 있는 산실. 빈센트 반 고흐의 <별이 빛나는 밤>, 살바도르 달리의 <기억의 지속>, 피카소의 <아비뇽의 처녀들>, 자코메티의 <걷는 사람> 등 20세기 모더니즘과 아방가르드 혁명의 정수가 살아 숨 쉬는 공간입니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_starry_night.webp",
-        tags: ["모더니즘", "아방가르드", "뉴욕의 심장", "반 고흐 & 피카소"]
-      },
-      {
-        id: "nmk",
-        name_kr: "국립중앙박물관 (NMK)",
-        name_en: "National Museum of Korea",
-        city: "대한민국 서울 용산 (Seoul, Korea)",
-        established: "1945년",
-        description: "반만년 유구한 한민족의 문화유산과 동아시아 문명을 아우르는 대한민국 대표 국립 박물관. 겸재 정선의 국보 <인왕제색도>, 티 없이 맑은 조선 <백자 달항아리>, 신라 금관과 금동미륵보살반가사유상 등 한국 미학의 극치를 보존합니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/asian_jeongseon_inwang.webp",
-        tags: ["대한민국 국보", "진경산수화", "조선 백자", "사유의 방"]
-      },
-      {
-        id: "british_museum",
-        name_kr: "대영박물관 (British Museum)",
-        name_en: "The British Museum",
-        city: "영국 런던 (London, UK)",
-        established: "1753년",
-        description: "세계 최초의 국립 공공 박물관. 로제타석, 파르테논 신전 조각군, 호쿠사이의 <가나가와 해변의 높은 파도> 목판화 원본 및 한광호 한국실 컬렉션을 소장하고 있으며, 인류 문명의 기원과 전파를 통시적으로 증언합니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/asian_hokusai_great_wave.webp",
-        tags: ["세계 3대 박물관", "인류 문명사", "호쿠사이 우키요에", "런던 랜드마크"]
-      },
-      {
-        id: "chicago",
-        name_kr: "시카고 미술관 (AIC)",
-        name_en: "Art Institute of Chicago",
-        city: "미국 시카고 (Chicago, USA)",
-        established: "1879년",
-        description: "미국에서 두 번째로 큰 미술관으로 인상파 및 후기 인상파 소장 규모는 파리 외부에서 최고 수준입니다. 조르주 쇠라의 <그랑드 자트 섬의 일요일 오후>, 피카소 청색시대의 <늙은 기타 연주자>, 에드워드 호퍼의 <밤을 지새우는 사람들>을 소장하고 있습니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_seurat_grande_jatte.webp",
-        tags: ["점묘주의 명작", "인상파 걸작", "피카소 청색시대", "시카고 랜드마크"]
-      },
-      {
-        id: "rodin",
-        name_kr: "파리 로댕 미술관",
-        name_en: "Musée Rodin",
-        city: "프랑스 파리 (Paris, France)",
-        established: "1919년",
-        description: "비롱 저택(Hôtel Biron)과 고요한 장미 정원에 자리한 근대 조각의 성지. 오귀스트 로댕이 생전에 기증한 <생각하는 사람>, <지옥의 문>, <입맞춤>, 카미유 클로델의 조각들을 원래 예술가가 호흡하던 공간 그대로 보존하고 있습니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/sculpt_rodin_thinker.webp",
-        tags: ["로댕의 생각하는 사람", "지옥의 문", "장미 정원", "파리 조각 성지"]
-      },
-      {
-        id: "orsay",
-        name_kr: "오르세 미술관",
-        name_en: "Musée d'Orsay",
-        city: "프랑스 파리 (Paris, France)",
-        established: "1986년",
-        description: "1900년 파리 만국박람회를 위해 건축된 옛 오르세 기차역을 개조하여 탄생한 인상주의의 성전. 마네, 모네, 르누아르, 세잔, 고흐의 아를 연작 등 1848년부터 1914년까지 빛을 좇은 인상파 화가들의 불멸의 캔버스가 모여 있습니다.",
-        image: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/uhd/250.webp",
-        tags: ["인상주의 성지", "옛 기차역의 변신", "모네 & 반 고흐", "센강변"]
-      }
-    ];
-
+    let MUSEUMS = [
+    {
+        "id": "louvre",
+        "name_kr": "파리 루브르 박물관",
+        "name_en": "Musée du Louvre",
+        "city": "프랑스 파리 (Paris, France)",
+        "established": "1793년",
+        "collection_count_display": "380,000+",
+        "image": "assets/museums/louvre.jpg",
+        "description": "세계에서 가장 많은 방문객이 찾는 세계 최대의 미술관. 르네상스부터 19세기까지 인류 예술사의 기적이라 불리는 소장품을 품고 있으며, <모나리자>, <사모트라케의 니케>, <밀로의 비너스>가 자리한 프랑스 문화의 상징입니다.",
+        "curator_note": "중세 요새에서 시작해 프랑스 왕실의 보물고이자 혁명 이후 만인의 예술 전당으로 거듭난 루브르는 인류 문명과 고전 회화의 정점을 증언합니다.",
+        "artists": [
+            "레오나르도 다 빈치",
+            "라파엘로 산치오",
+            "외젠 들라크루아",
+            "자크루이 다비드",
+            "티치아노",
+            "니콜라 푸생",
+            "미켈란젤로",
+            "장 오귀스트 도미니크 앵그르",
+            "베로네세",
+            "렘브란트",
+            "조르주 드 라 투르",
+            "카라바조"
+        ]
+    },
+    {
+        "id": "moma",
+        "name_kr": "뉴욕 근대미술관 (MoMA)",
+        "name_en": "The Museum of Modern Art",
+        "city": "미국 뉴욕 맨해튼 (Manhattan, New York)",
+        "established": "1929년",
+        "collection_count_display": "200,000+",
+        "image": "assets/museums/moma.jpg",
+        "description": "현대 시각 예술의 가장 영향력 있는 산실. 빈센트 반 고흐의 <별이 빛나는 밤>, 살바도르 달리의 <기억의 지속>, 피카소의 <아비뇽의 처녀들>, 자코메티의 <걷는 사람> 등 20세기 모더니즘과 아방가르드 혁명의 정수가 살아 숨 쉬는 공간입니다.",
+        "curator_note": "근대미술의 교과서라 불리는 MoMA는 회화, 조각뿐만 아니라 건축, 디자인, 사진, 미디어 아트에 이르기까지 20세기 시각 문화 전반을 혁신했습니다.",
+        "artists": [
+            "파블로 피카소",
+            "살바도르 달리",
+            "알베르토 자코메티",
+            "앙리 마티스",
+            "피에트 몬드리안",
+            "바실리 칸딘스키",
+            "마르크 샤갈",
+            "앤디 워홀",
+            "잭슨 폴록",
+            "로이 리히텐슈타인",
+            "르네 마그리트",
+            "빈센트 반 고흐"
+        ]
+    },
+    {
+        "id": "met",
+        "name_kr": "메트로폴리탄 미술관 (The Met)",
+        "name_en": "The Metropolitan Museum of Art",
+        "city": "미국 뉴욕 (New York, USA)",
+        "established": "1870년",
+        "collection_count_display": "2,000,000+",
+        "image": "assets/museums/met.jpg",
+        "description": "5번가 센트럴 파크에 위치한 북미 최대의 종합 미술관. 5천 년 인류 문명 전체를 포괄하는 200만 점 이상의 원장 컬렉션을 보유하고 있으며, 존 싱어 사전트의 <마담 X>, 베르메르, 렘브란트, 엘 그레코의 명작이 전시되어 있습니다.",
+        "curator_note": "고대 이집트 덴두르 신전부터 유럽 고전 거장, 미국 회화에 이르기까지 전 대륙의 문명사를 한자리에서 조망할 수 있는 백과사전적 미술관입니다.",
+        "artists": [
+            "존 싱어 사전트",
+            "요하네스 베르메르",
+            "엘 그레코",
+            "렘브란트",
+            "오귀스트 르누아르",
+            "에드가 드가",
+            "클로드 모네",
+            "폴 고갱",
+            "빈센트 반 고흐",
+            "귀스타브 쿠르베"
+        ]
+    },
+    {
+        "id": "orsay",
+        "name_kr": "파리 오르세 미술관",
+        "name_en": "Musée d'Orsay",
+        "city": "프랑스 파리 (Paris, France)",
+        "established": "1986년",
+        "collection_count_display": "150,000+",
+        "image": "assets/museums/orsay.jpg",
+        "description": "루브르와 퐁피두 센터의 가교 역할을 하는 인상주의와 후기 인상주의의 성지. 옛 오르세 기차역을 개조한 웅장한 건축미 속에서 마네, 모네, 르누아르, 고흐, 세잔, 드가의 빛의 향연을 만날 수 있습니다.",
+        "curator_note": "19세기 후반 파리를 중심으로 폭발한 빛과 색채의 혁명을 가장 순수하게 간직한 미술관으로, 고전 아카데미즘에서 모더니즘으로 넘어가는 전환기를 증언합니다.",
+        "artists": [
+            "클로드 모네",
+            "에두아르 마네",
+            "오귀스트 르누아르",
+            "폴 세잔",
+            "에드가 드가",
+            "빈센트 반 고흐",
+            "폴 고갱",
+            "조르주 쇠라",
+            "카미유 피사로",
+            "앙리 드 툴루즈로트레크"
+        ]
+    },
+    {
+        "id": "prado",
+        "name_kr": "마드리드 프라도 미술관",
+        "name_en": "Museo del Prado",
+        "city": "스페인 마드리드 (Madrid, Spain)",
+        "established": "1819년",
+        "collection_count_display": "130,000+",
+        "image": "assets/museums/prado.jpg",
+        "description": "스페인 왕실 컬렉션을 기반으로 한 세계 최고의 회화 전문 미술관. 디에고 벨라스케스의 <시녀들(라스 메니냐스)>, 프란시스코 고야의 걸작 전편, 그리고 엘 그레코와 히에로니무스 보스의 기이하고 환상적인 제단화가 소장되어 있습니다.",
+        "curator_note": "벨라스케스의 공간 마술과 고야의 어두운 내면까지, 스페인 황금세기 회화의 극치를 경험할 수 있는 세계 3대 미술관 중 하나입니다.",
+        "artists": [
+            "디에고 벨라스케스",
+            "프란시스코 고야",
+            "엘 그레코",
+            "히에로니무스 보스",
+            "페테르 파울 루벤스",
+            "티치아노",
+            "바르톨로메 에스테반 무리요",
+            "호세 데 리베라"
+        ]
+    },
+    {
+        "id": "uffizi",
+        "name_kr": "피렌체 우피치 미술관",
+        "name_en": "Galleria degli Uffizi",
+        "city": "이탈리아 피렌체 (Florence, Italy)",
+        "established": "1581년",
+        "collection_count_display": "100,000+",
+        "image": "assets/museums/uffizi.jpg",
+        "description": "이탈리아 르네상스의 태동과 영광을 고스란히 간직한 메디치 가문의 불멸의 유산. 산드로 보티첼리의 <비너스의 탄생>과 <봄(프리마베라)>, 레오나르도 다 빈치, 미켈란젤로, 라파엘로의 초기 명작들이 숨 쉬는 르네상스의 성역입니다.",
+        "curator_note": "피렌체를 인문주의와 예술의 중심지로 번영시킨 메디치 가문이 인류에게 남긴 최고의 축복이자 르네상스 회화의 산실입니다.",
+        "artists": [
+            "산드로 보티첼리",
+            "레오나르도 다 빈치",
+            "미켈란젤로",
+            "라파엘로 산치오",
+            "필리포 리피",
+            "조토",
+            "티치아노",
+            "카라바조",
+            "피에로 델라 프란체스카"
+        ]
+    },
+    {
+        "id": "national_gallery",
+        "name_kr": "런던 내셔널 갤러리",
+        "name_en": "The National Gallery, London",
+        "city": "영국 런던 트라팔가 광장 (London, UK)",
+        "established": "1824년",
+        "collection_count_display": "2,300+",
+        "image": "assets/museums/national_gallery.jpg",
+        "description": "트라팔가 광장 중심에 자리한 대영제국의 국립 회화관. 얀 반 에이크의 <아르놀피니 부부의 초상>, 윌리엄 터너의 <전함 테메레르>, 레오나르도의 <암굴의 성모>, 빈센트 반 고흐의 <해바라기> 등 서유럽 회화사의 핵심 걸작 2,300여 점을 정선 보존합니다.",
+        "curator_note": "양보다 질을 추구하여 서양 미술사의 각 사조별 가장 대표적인 정수만을 엄선하여 소장하고 있는 영국 문화의 자존심입니다.",
+        "artists": [
+            "조지프 말로드 윌리엄 터너",
+            "존 컨스터블",
+            "얀 반 에이크",
+            "빈센트 반 고흐",
+            "한스 홀바인",
+            "디에고 벨라스케스",
+            "조르주 쇠라",
+            "클로드 모네"
+        ]
+    },
+    {
+        "id": "nmk",
+        "name_kr": "국립중앙박물관 & 간송미술관",
+        "name_en": "National Museum of Korea",
+        "city": "대한민국 서울 용산 (Seoul, Korea)",
+        "established": "1945년",
+        "collection_count_display": "430,000+",
+        "image": "assets/museums/nmk.jpg",
+        "description": "반만년 한민족의 숨결과 고요한 정신 세계를 담은 대한민국 최고의 국립 문화유산 전당. 겸재 정선의 <인왕제색도>, 혜원 신윤복의 <미인도>, 단원 김홍도의 풍속화첩, 금동미륵보살반가사유상 등 인류가 보존해야 할 국보·보물의 보고입니다.",
+        "curator_note": "한국 고유의 담백한 필선과 비움의 미학, 그리고 선조들의 삶과 해학이 깃든 진경산수화와 국보급 서화 컬렉션의 진수를 선보입니다.",
+        "artists": [
+            "겸재 정선",
+            "혜원 신윤복",
+            "단원 김홍도",
+            "김홍도",
+            "정선",
+            "신윤복",
+            "강세황",
+            "장승업",
+            "안견",
+            "신사임당",
+            "추사 김정희"
+        ]
+    },
+    {
+        "id": "rijksmuseum",
+        "name_kr": "암스테르담 암스테르담 국립미술관",
+        "name_en": "Rijksmuseum, Amsterdam",
+        "city": "네덜란드 암스테르담 (Amsterdam, Netherlands)",
+        "established": "1800년",
+        "collection_count_display": "1,000,000+",
+        "image": "assets/museums/rijksmuseum.jpg",
+        "description": "네덜란드 황금시대의 찬란한 빛과 시민 사회의 품격을 증언하는 국보급 미술관. 렘브란트 판 레인의 대표작 <야경(야간 순찰)>, 요하네스 베르메르의 <우유를 따르는 여인>, 프란스 할스의 생동감 넘치는 시민 초상화가 자리합니다.",
+        "curator_note": "17세기 상업과 무역의 번영 속에 꽃피운 네덜란드 바로크 회화의 정수이자 빛과 어둠의 극적인 조화를 만끽할 수 있는 공간입니다.",
+        "artists": [
+            "렘브란트",
+            "요하네스 베르메르",
+            "프란스 할스",
+            "얀 스텐",
+            "야코프 판 라위스달",
+            "헨드릭 판 안토니선",
+            "피터르 더 호흐"
+        ]
+    },
+    {
+        "id": "tate",
+        "name_kr": "런던 테이트 모던 & 테이트 브리튼",
+        "name_en": "Tate Modern & Tate Britain",
+        "city": "영국 런던 템스강변 (London, UK)",
+        "established": "1897년",
+        "collection_count_display": "70,000+",
+        "image": "assets/museums/tate.jpg",
+        "description": "템스 강변의 뱅크사이드 화력발전소를 개조하여 탄생한 세계 최대 규모의 현대미술관. 터빈 홀의 압도적인 공간미와 함께 피카소, 마티스, 마크 로스코의 <시그램 벽화>, 데이비드 호크니, 프랜시스 베이컨의 파격적인 현대미술이 전시됩니다.",
+        "curator_note": "산업 유산을 예술의 전당으로 환골탈태시킨 21세기 건축의 신화이자 현대 시각 문화의 최전선을 이끄는 글로벌 아트 허브입니다.",
+        "artists": [
+            "데이비드 호크니",
+            "프랜시스 베이컨",
+            "마크 로스코",
+            "윌리엄 터너",
+            "파블로 피카소",
+            "앙리 마티스",
+            "조셉 보이스",
+            "야요이 쿠사마"
+        ]
+    }
+];
+    let allArtworks = [];
     let currentMuseumId = "louvre";
-    let allMasterworks = [];
 
-    async function initMuseumExplorer() {
-      // 1. Render Tabs
-      const tabBar = document.getElementById('museumTabBar');
-      tabBar.innerHTML = MUSEUMS.map((m, idx) => `
-        <button class="museum-pill-btn ${idx === 0 ? 'active' : ''}" data-id="${m.id}" onclick="selectMuseum('${m.id}')">
+    // Read URL query parameter ?id=...
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetMuseumParam = urlParams.get('id');
+    if (targetMuseumParam && MUSEUMS.some(m => m.id === targetMuseumParam)) {
+      currentMuseumId = targetMuseumParam;
+    }
+
+    async function initMuseumPavilion() {
+      // 1. Render Strip
+      const strip = document.getElementById('museumSelectionStrip');
+      strip.innerHTML = MUSEUMS.map(m => `
+        <button class="museum-pill-tab ${m.id === currentMuseumId ? 'active' : ''}" onclick="selectMuseum('${m.id}')" id="tab-${m.id}">
           <svg class="icon"><use href="#i-museum"/></svg>
           <span>${m.name_kr}</span>
         </button>
       `).join('');
 
-      // 2. Fetch Databases
+      // 2. Fetch all collections (7,865+ works)
       try {
-        const [rPaint, rExp, rCont] = await Promise.all([
+        const [rPaint, rDg, rExp, rCont] = await Promise.all([
           fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ artworks: [] })),
           fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
           fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
         ]);
 
-        const list = [...(rPaint.featured_masterpieces || [])];
+        const combined = [...(rPaint.featured_masterpieces || []), ...(rPaint.featured_paintings || []), ...(rDg.artworks || [])];
         Object.values(rExp).forEach(v => {
-          if (Array.isArray(v) && v.length && typeof v[0] === 'object') list.push(...v);
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') combined.push(...v);
         });
         Object.values(rCont).forEach(v => {
-          if (Array.isArray(v) && v.length && typeof v[0] === 'object') list.push(...v);
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') combined.push(...v);
         });
 
-        allMasterworks = list;
-        selectMuseum(currentMuseumId);
-      } catch (e) {
-        console.error("Museum load error:", e);
+        // Deduplicate
+        const seen = new Set();
+        allArtworks = [];
+        combined.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid && !seen.has(cid)) {
+            seen.add(cid);
+            allArtworks.push(it);
+          }
+        });
+
+        selectMuseum(currentMuseumId, false);
+      } catch (err) {
+        console.error("Museum collection fetch error:", err);
       }
     }
 
-    function selectMuseum(id) {
+    function selectMuseum(id, updateHistory = true) {
       currentMuseumId = id;
-      document.querySelectorAll('.museum-pill-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.id === id);
+      document.querySelectorAll('.museum-pill-tab').forEach(t => {
+        t.classList.toggle('active', t.id === `tab-${id}`);
       });
 
       const m = MUSEUMS.find(x => x.id === id);
       if (!m) return;
 
-      // Profile Card
-      document.getElementById('museumProfileCard').innerHTML = `
-        <img class="museum-profile-img" src="${m.image}" alt="${m.name_kr}" onerror="this.src='assets/icons/icon-512.png'">
-        <div>
-          <h3 class="museum-profile-title">${m.name_kr}</h3>
-          <div class="museum-profile-meta">
-            <span>📍 ${m.city}</span>
-            <span>·</span>
-            <span>🏛️ 설립: ${m.established}</span>
-            <span>·</span>
-            <span>🌐 공식 오픈액세스 연동</span>
-          </div>
-          <p class="museum-profile-desc">${m.description}</p>
-          <div class="museum-profile-tags">
-            ${m.tags.map(t => `<span class="museum-tag-chip">#${t}</span>`).join('')}
-          </div>
-        </div>
-      `;
+      // Update Immersive Theme Pavilion Hero Zone
+      document.getElementById('heroBgPhoto').src = m.image;
+      document.getElementById('heroTitleKr').textContent = m.name_kr;
+      document.getElementById('heroTitleEn').textContent = m.name_en;
+      document.getElementById('heroCity').textContent = m.city;
+      document.getElementById('heroEstablished').textContent = `${m.established} 개관`;
+      document.getElementById('heroDesc').textContent = m.description;
+      document.getElementById('heroCollectionBadge').textContent = `원장 소장품 ${m.collection_count_display}`;
+      document.getElementById('curatorPavilionText').textContent = m.curator_note;
 
-      // Filter Artworks
-      const matched = allMasterworks.filter(art => {
-        const mus = (art.museum || art.location || '').toLowerCase();
-        const key = (art.museum_key || '').toLowerCase();
-        if (id === 'louvre') return mus.includes('루브르') || mus.includes('louvre') || key === 'louvre';
-        if (id === 'met') return mus.includes('메트로폴리탄') || mus.includes('met') || key === 'met';
-        if (id === 'moma') return mus.includes('moma') || mus.includes('근대미술관') || key === 'moma';
-        if (id === 'nmk') return mus.includes('국립중앙') || mus.includes('간송') || mus.includes('korea') || key === 'nmk';
-        if (id === 'british_museum') return mus.includes('대영') || mus.includes('british') || key === 'british_museum';
-        if (id === 'chicago') return mus.includes('시카고') || mus.includes('chicago') || key === 'chicago';
-        if (id === 'rodin') return mus.includes('로댕') || mus.includes('rodin') || key === 'rodin';
-        if (id === 'orsay') return mus.includes('오르세') || mus.includes('orsay') || key === 'orsay';
+      if (updateHistory) {
+        const url = new URL(window.location);
+        url.searchParams.set('id', id);
+        window.history.pushState({ id }, '', url);
+      }
+
+      // Match artworks by direct museum string OR key artists
+      const mArtists = (m.artists || []).map(a => a.toLowerCase().trim());
+      const matched = allArtworks.filter(art => {
+        const mus = (art.museum || art.location || art.museum_key || '').toLowerCase();
+        const akr = (art.artist_name_kr || art.artist || '').toLowerCase();
+        const aen = (art.artist_name_en || '').toLowerCase();
+
+        // 1. Direct museum match
+        if (id === 'louvre' && (mus.includes('루브르') || mus.includes('louvre'))) return true;
+        if (id === 'moma' && (mus.includes('moma') || mus.includes('근대미술관'))) return true;
+        if (id === 'met' && (mus.includes('메트로폴리탄') || mus.includes('metropolitan') || mus.includes('the met'))) return true;
+        if (id === 'orsay' && (mus.includes('오르세') || mus.includes('orsay'))) return true;
+        if (id === 'prado' && (mus.includes('프라도') || mus.includes('prado'))) return true;
+        if (id === 'uffizi' && (mus.includes('우피치') || mus.includes('uffizi'))) return true;
+        if (id === 'national_gallery' && (mus.includes('내셔널') || mus.includes('national gallery'))) return true;
+        if (id === 'nmk' && (mus.includes('국립중앙박물관') || mus.includes('간송') || mus.includes('사기장') || akr.includes('김홍도') || akr.includes('정선') || akr.includes('신윤복') || akr.includes('강세황'))) return true;
+        if (id === 'rijksmuseum' && (mus.includes('암스테르담') || mus.includes('rijks'))) return true;
+        if (id === 'tate' && (mus.includes('테이트') || mus.includes('tate'))) return true;
+
+        // 2. Representative Artist Collection matching
+        if (mArtists.some(artName => akr.includes(artName) || artName.includes(akr))) return true;
+
         return false;
       });
 
-      document.getElementById('gridCountBadge').textContent = `${matched.length} ITEMS CURATED`;
+      document.getElementById('museumGridTitle').textContent = `${m.name_kr} 대표 컬렉션`;
+      document.getElementById('museumWorkCount').textContent = `${matched.length} ITEMS EXHIBITED`;
 
-      const grid = document.getElementById('museumArtworkGrid');
+      const grid = document.getElementById('museumArtGrid');
       if (matched.length === 0) {
-        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--lds-text-muted);">해당 미술관 소장 원장을 분석하여 선별 중입니다.</div>`;
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--lds-text-muted);">미술관 컬렉션을 동기화 중입니다.</div>`;
         return;
       }
 
       grid.innerHTML = matched.map(art => {
         const thumb = art.thumbnail_url || art.image_url || `assets/featured/thumbs/${art.id}.webp`;
-        const hasVideo = art.verified_docent || (art.media_resources && art.media_resources.youtube_title);
         return `
-          <div class="art-card">
-            <div class="card-img-wrap">
-              <img class="card-img" src="${thumb}" alt="${art.title_kr}" loading="lazy" onerror="this.src='assets/featured/thumbs/${art.id}.webp'">
-              <span class="card-badge">${art.category_kr || '명화'}</span>
-              ${hasVideo ? `<span class="card-video-pill"><svg class="icon" style="width:11px; height:11px; fill:#fff;"><use href="#i-video"/></svg> 1:1 도슨트</span>` : ''}
+          <div class="art-flat-card">
+            <div class="art-flat-thumb">
+              <img class="art-flat-img" src="${thumb}" alt="${art.title_kr}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'200\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%230f172a\'%2F%3E%3C%2Fsvg%3E'">
+              <span class="art-flat-badge">${art.year || '시기 미상'}</span>
             </div>
-            <div class="card-body">
-              <div class="card-title">${art.title_kr}</div>
-              <div class="card-artist">${art.artist_name_kr || ''} · ${art.year || ''}</div>
-              <div class="card-desc">${art.curator_notes || art.description || '인류 문화유산 원장 상세 해설'}</div>
-              <div class="card-actions">
-                <a href="artwork.html?id=${art.id}" class="card-btn primary">
-                  <span>작품 상세</span>
-                  <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
-                </a>
-                <a href="artwork.html?id=${art.id}&mode=presentation" class="card-btn">
-                  <span>액자 모드</span>
-                </a>
+            <div class="art-flat-info">
+              <a href="artwork.html?id=${art.id || art.work_id}" class="art-flat-title">${art.title_kr}</a>
+              <div class="art-flat-artist">${art.artist_name_kr || art.artist || '거장 미상'}</div>
+              <div class="art-flat-actions">
+                <a href="artwork.html?id=${art.id || art.work_id}" class="art-flat-btn">작품 상세</a>
+                <a href="artwork.html?id=${art.id || art.work_id}&mode=presentation" class="art-flat-btn">갤러리모드</a>
               </div>
             </div>
           </div>
@@ -641,7 +794,7 @@
       }).join('');
     }
 
-    window.addEventListener('DOMContentLoaded', initMuseumExplorer);
+    window.addEventListener('DOMContentLoaded', initMuseumPavilion);
   </script>
 </body>
 </html>

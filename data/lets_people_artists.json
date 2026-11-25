@@ -258,7 +258,7 @@
       "nationality": "영국 (잉글랜드)",
       "movement": "엘리자베스조 르네상스 문학 (English Renaissance)",
       "category": "literature_masters",
-      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_sargent_001.webp",
+      "profile_image": "assets/artists/shakespeare.jpg",
       "summary": "영문학뿐만 아니라 인류 언어문화사의 최고봉. 인간 영혼의 가장 깊은 욕망, 질투, 비극, 사랑을 운율과 시적 언어로 완벽히 구현한 대극작가.",
       "major_works": [
         {
@@ -316,7 +316,7 @@
       "nationality": "독일 (바이마르 공국)",
       "movement": "질풍노도(Sturm und Drang) 및 바이마르 고전주의",
       "category": "literature_masters",
-      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_eco_448.webp",
+      "profile_image": "assets/artists/goethe.jpg",
       "summary": "독일 문학의 정점이자 세계 문학(Weltliteratur) 개념을 제창한 철인. 60년에 걸쳐 완성한 희곡 <파우스트>로 인간 구원의 지평을 연 거장.",
       "major_works": [
         {

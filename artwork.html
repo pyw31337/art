@@ -2219,8 +2219,10 @@
             <span class="spec-val" id="specDimensions">규격 정보</span>
           </div>
           <div class="spec-pill">
-            <span class="spec-label">소장처</span>
-            <span class="spec-val" id="specMuseum">소장처 정보</span>
+            <span class="spec-label">소장처 및 소장관</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="spec-val" id="specMuseum">소장처 정보</span>
+            </div>
           </div>
         </div>
 
@@ -2289,9 +2291,7 @@
           </div>
         </div>
 
-        <!-- Let's People 거장 심층 프로필 연동 컨테이너 -->
-        <div id="artistPeopleContainer"></div>
-      </div>
+        </div>
 
       <!-- ========================================================
            CARD 2: BEHIND STORIES & STORY TAXONOMY
@@ -2341,6 +2341,21 @@
       <!-- ========================================================
            CARD 4: MULTIMEDIA DOCENT CINEMA HUB
            ======================================================== -->
+      
+      <!-- ========================================================
+           SECTION 2: ARTIST DOSSIER & LIFE LEGACY (시대의 거장 프로필)
+           ======================================================== -->
+      <div class="museum-sheet-card" style="border-bottom:1px solid rgba(226, 232, 240, 0.65) !important;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <h2 class="article-headline" style="margin-bottom:0; display:flex; align-items:center; gap:8px;">
+            <svg class="icon" style="color:#2563eb;"><use href="#i-user"></use></svg>
+            <span>시대의 거장 프로필 & 예술적 계보</span>
+          </h2>
+          <span class="lds-mono" style="font-size:11px; color:#64748b;">LET'S PEOPLE FEDERATED DOSSIER</span>
+        </div>
+        <div id="artistPeopleContainer"></div>
+      </div>
+
       <div class="docent-cinema-section" id="docentHubSection">
         <div class="docent-cinema-header">
           <span class="docent-cinema-badge">

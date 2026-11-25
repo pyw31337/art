@@ -4,5 +4,6 @@ __pycache__/
 downloads/
 assets/*
 !assets/icons/
-data/r2_upload_checkpoint.json
 !assets/artists/
+!assets/museums/
+data/r2_upload_checkpoint.json
