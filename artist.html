@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f8fafc">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
+  <title>시대의 거장 아카이브 — 렛츠아트 (Let's Art)</title>
+  <style>
+    :root {
+      --lds-brand-600: #2563eb;
+      --lds-brand-700: #1d4ed8;
+      --lds-brand-50:  #eff6ff;
+      --lds-canvas-bg: #ffffff;
+      --lds-surface-subtle: #fafbfc;
+      --lds-divider-faint: #f1f5f9;
+      --lds-divider-line: #e2e8f0;
+      --lds-text-strong: #0f172a;
+      --lds-text-body: #334155;
+      --lds-text-muted: #64748b;
+      --lds-text-faint: #94a3b8;
+      --lds-status-normal: #059669;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+    body {
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-family: var(--lds-font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .container { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
+
+    /* SVG Icon System */
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: -3px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    button:hover .icon, button:focus .icon, button:active .icon,
+    a:hover .icon, a:focus .icon, a:active .icon,
+    .active .icon, .icon.filled {
+      fill: currentColor;
+    }
+
+    header {
+      background: var(--lds-canvas-bg);
+      border-bottom: 1px solid var(--lds-divider-faint);
+      padding: 18px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-badge {
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      background: #0f172a;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+    }
+    .logo-badge .icon { stroke: #ffffff; width: 20px; height: 20px; }
+    h1 { font-size: 19px; font-weight: 700; color: var(--lds-text-strong); letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
+    .sub-title { font-size: 12px; color: var(--lds-text-muted); margin-top: 2px; }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .lds-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--lds-text-body);
+      text-decoration: none;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      transition: all 0.15s ease;
+    }
+    .lds-btn-nav:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); border-color: var(--lds-text-faint); }
+    .lds-btn-nav.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
+    .lds-btn-nav.primary:hover { background: var(--lds-brand-700); }
+    .lds-btn-nav.active { background: var(--lds-brand-50); color: var(--lds-brand-600); border-color: var(--lds-brand-600); font-weight: 700; }
+
+    /* Hero */
+    .artist-hero {
+      background: linear-gradient(135deg, #18181b 0%, #312e81 100%);
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 44px 36px;
+      margin-bottom: 36px;
+    }
+    .artist-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #a5b4fc;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(165, 180, 252, 0.3);
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .artist-hero h2 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .artist-hero p {
+      color: #e2e8f0;
+      font-size: 14px;
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    /* Artist Nav Chips */
+    .artist-nav-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--lds-divider-line);
+    }
+    .artist-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .artist-pill-btn:hover { background: var(--lds-surface-subtle); border-color: var(--lds-text-faint); }
+    .artist-pill-btn.active {
+      background: var(--lds-text-strong);
+      color: #ffffff;
+      border-color: var(--lds-text-strong);
+    }
+
+    /* Artist Profile Card */
+    .artist-profile-card {
+      background: var(--lds-surface-subtle);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) {
+      .artist-profile-card { grid-template-columns: 1fr; }
+    }
+    .artist-avatar-wrap {
+      width: 100%;
+      height: 240px;
+      border-radius: 4px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+    .artist-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .artist-name-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--lds-text-strong);
+      margin-bottom: 4px;
+    }
+    .artist-meta-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--lds-text-muted);
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .artist-bio-text {
+      font-size: 13.5px;
+      color: var(--lds-text-body);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .artist-tag-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .artist-tag-pill {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      background: #ffffff;
+      border: 1px solid var(--lds-divider-line);
+      padding: 2px 8px;
+      border-radius: 3px;
+      color: var(--lds-text-muted);
+    }
+
+    /* Grid */
+    .grid-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .grid-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .art-card {
+      background: var(--lds-canvas-bg);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .art-card:hover {
+      border-color: var(--lds-brand-600);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    }
+    .card-img-wrap {
+      width: 100%;
+      height: 220px;
+      position: relative;
+      background: #090e17;
+      overflow: hidden;
+    }
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .art-card:hover .card-img { transform: scale(1.03); }
+    .card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: var(--lds-font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 2px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      backdrop-filter: blur(4px);
+    }
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      margin-bottom: 2px;
+    }
+    .card-museum {
+      font-size: 12px;
+      color: var(--lds-text-muted);
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--lds-text-body);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 6px;
+      border-top: 1px solid var(--lds-divider-faint);
+      padding-top: 12px;
+    }
+    .card-btn {
+      flex: 1;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      transition: all 0.15s ease;
+    }
+    .card-btn:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); }
+    .card-btn.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
+    .card-btn.primary:hover { background: var(--lds-brand-700); }
+  </style>
+</head>
+<body>
+
+  <!-- Tabler & Lucide Standard SVG Sprite -->
+  <svg width="0" height="0" style="position:absolute; display:none;" aria-hidden="true">
+    <defs>
+      <symbol id="i-museum" viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="12" y1="3" x2="3" y2="8"></line><line x1="12" y1="3" x2="21" y2="8"></line><line x1="3" y1="8" x2="21" y2="8"></line><line x1="6" y1="8" x2="6" y2="21"></line><line x1="10" y1="8" x2="10" y2="21"></line><line x1="14" y1="8" x2="14" y2="21"></line><line x1="18" y1="8" x2="18" y2="21"></line></symbol>
+      <symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path></symbol>
+    </defs>
+  </svg>
+
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <div class="logo-badge">
+          <svg class="icon"><use href="#i-user"/></svg>
+        </div>
+        <div>
+          <h1>LET'S ART <span class="lds-tag-mono normal" style="margin-left:6px; font-size:10px; padding:2px 6px; background:#eff6ff; color:#2563eb; border-radius:3px;">MASTER ARTISTS</span></h1>
+          <div class="sub-title">시대의 영혼을 화폭과 물질에 새긴 불멸의 거장 아카이브</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="lds-btn-nav" href="index.html">
+          <svg class="icon"><use href="#i-frame"/></svg>
+          <span>갤러리 홈</span>
+        </a>
+        <a class="lds-btn-nav" href="museum.html">
+          <svg class="icon"><use href="#i-museum"/></svg>
+          <span>미술관 탐색</span>
+        </a>
+        <a class="lds-btn-nav active" href="artist.html">
+          <svg class="icon"><use href="#i-user"/></svg>
+          <span>거장 아카이브</span>
+        </a>
+        <a class="lds-btn-nav primary" href="artwork.html?id=paint_sargent_001&mode=presentation">
+          <svg class="icon"><use href="#i-sparkles"/></svg>
+          <span>디지털 액자 감상실</span>
+        </a>
+        <a class="lds-btn-nav" href="admin">
+          <svg class="icon"><use href="#i-settings"/></svg>
+          <span>관제 어드민</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="artist-hero">
+      <div class="artist-hero-badge">IMMORTAL MASTERS RETROSPECTIVE</div>
+      <h2>시대를 전복하고 아름다움을 창조한 거장들의 궤적</h2>
+      <p>불꽃 같은 영혼의 반 고흐, 근대 조각의 거인 로댕, 파리의 스캔들을 빚어낸 사전트, 피카소의 청색시대와 조선 진경산수의 성인 겸재 정선까지. 각 예술가의 삶과 작품 전편을 1:1 도슨트 해설로 깊이 있게 마주해보세요.</p>
+    </div>
+
+    <!-- Artist Nav Bar -->
+    <div class="artist-nav-bar" id="artistTabBar"></div>
+
+    <!-- Selected Artist Profile -->
+    <div class="artist-profile-card" id="artistProfileCard"></div>
+
+    <div class="grid-title-row">
+      <div class="grid-title" id="artistGridTitle">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span>작가의 대표 걸작 전편</span>
+      </div>
+      <span class="lds-mono" style="font-size:11.5px; color:var(--lds-text-muted);" id="artistWorkCount">0 ITEMS</span>
+    </div>
+
+    <div class="grid" id="artistArtworkGrid"></div>
+  </div>
+
+  <script>
+    const ARTISTS = [
+      {
+        id: "van_gogh",
+        name_kr: "빈센트 반 고흐",
+        name_en: "Vincent van Gogh",
+        period: "1853–1890",
+        country: "네덜란드 (Netherlands)",
+        movement: "후기 인상주의 (Post-Impressionism)",
+        description: "살아생전 단 한 점의 그림밖에 팔지 못했던 가난과 고독 속에서도, 영혼을 태우는 노란 햇살과 소용돌이치는 밤하늘을 통해 영원한 빛을 남긴 서양 미술사 최고의 비운의 천재 화가.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_starry_night.webp",
+        tags: ["후기 인상주의", "별이 빛나는 밤", "아를 연작", "붓터치의 격정"]
+      },
+      {
+        id: "rodin",
+        name_kr: "오귀스트 로댕",
+        name_en: "Auguste Rodin",
+        period: "1840–1917",
+        country: "프랑스 (France)",
+        movement: "근대 조각의 정점 (Modern Sculpture)",
+        description: "고전적 이상화와 아카데미즘을 탈피하여 인간 육체의 팽팽한 긴장감과 내면의 실존적 번뇌를 울퉁불퉁한 표면과 거친 손자국으로 형상화한 '근대 조각의 아버지'.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/sculpt_rodin_thinker.webp",
+        tags: ["생각하는 사람", "지옥의 문", "청동 주조", "근육질 해부학"]
+      },
+      {
+        id: "sargent",
+        name_kr: "존 싱어 사전트",
+        name_en: "John Singer Sargent",
+        period: "1856–1925",
+        country: "미국 / 프랑스 / 영국",
+        movement: "사실주의 & 인상주의 인물화 (Realism / Portraiture)",
+        description: "놀랍도록 날카롭고 유려한 붓질로 벨 에포크 시대 상류사회의 우아함과 심리적 기류를 포착한 세기의 초상화 거장. 파리 살롱전을 뒤흔든 <마담 X>의 주인공.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_sargent_001.webp",
+        tags: ["마담 X", "흘러내린 어깨끈", "초상화의 대가", "벨 에포크"]
+      },
+      {
+        id: "picasso",
+        name_kr: "파블로 피카소",
+        name_en: "Pablo Picasso",
+        period: "1881–1973",
+        country: "스페인 / 프랑스",
+        movement: "입체주의 (Cubism) & 청색시대",
+        description: "20세기 미술의 지형도를 바꾼 혁명가. 가난과 상실의 눈물을 푸른빛으로 채색한 '청색시대'를 지나 다각도의 시점을 단일 평면에 해체·재조합한 입체주의의 신화.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_picasso_demoiselles.webp",
+        tags: ["늙은 기타 연주자", "청색시대", "입체주의", "아비뇽의 처녀들"]
+      },
+      {
+        id: "jeongseon",
+        name_kr: "겸재 정선",
+        name_en: "Jeong Seon",
+        period: "1676–1759",
+        country: "조선 (Joseon Korea)",
+        movement: "진경산수화 (True-View Landscape)",
+        description: "중국의 관념 산수를 벗어나 우리 땅의 바위산과 강줄기를 직접 사생하고 육중한 부벽준과 미점준으로 조선의 독자적인 산수화 미학을 개척한 조선 회화의 거봉.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/asian_jeongseon_inwang.webp",
+        tags: ["인왕제색도", "진경산수", "국보", "조선 후기 르네상스"]
+      },
+      {
+        id: "shin_yunbok",
+        name_kr: "혜원 신윤복",
+        name_en: "Shin Yun-bok",
+        period: "1758–1813경",
+        country: "조선 (Joseon Korea)",
+        movement: "조선 풍속화 (Joseon Genre Painting)",
+        description: "당대 금기시되던 여인들의 일상과 남녀의 애틋한 연정을 과감하고 감각적인 필선과 세련된 채색으로 담아낸 조선 최고의 풍속화가. '조선의 모나리자' <미인도>의 작가.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/asian_shin_yunbok_beauty.webp",
+        tags: ["미인도", "보물", "월하정인", "조선 여인 심리 묘사"]
+      },
+      {
+        id: "klimt",
+        name_kr: "구스타프 클림트",
+        name_en: "Gustav Klimt",
+        period: "1862–1918",
+        country: "오스트리아 (Austria)",
+        movement: "비엔나 분리파 (Vienna Secession)",
+        description: "찬란한 금박 장식과 관능적인 에로티시즘, 그리고 삶과 죽음의 영원한 수수께끼를 황금빛 모자이크 기법으로 아로새긴 아르누보 장식미술의 절대적 군주.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_klimt_the_kiss.webp",
+        tags: ["키스", "황금시대", "비엔나 분리파", "아르누보"]
+      },
+      {
+        id: "giacometti",
+        name_kr: "알베르토 자코메티",
+        name_en: "Alberto Giacometti",
+        period: "1901–1966",
+        country: "스위스 / 프랑스",
+        movement: "실존주의 조각 (Existential Sculpture)",
+        description: "전쟁의 폐허 속에서 살아남은 인간의 고독을 앙상하게 마른 청동 골격 하나로 응축해 낸 실존주의 조각의 거장. 끝없는 공허를 딛고 묵묵히 전진하는 <걷는 사람>.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/sculpt_giacometti_walking_man.webp",
+        tags: ["걷는 사람", "실존주의", "청동 조각", "사르트르"]
+      },
+      {
+        id: "namjune_paik",
+        name_kr: "백남준",
+        name_en: "Nam June Paik",
+        period: "1932–2006",
+        country: "대한민국 / 미국",
+        movement: "비디오 아트의 창시 (Video & Media Art)",
+        description: "TV 브라운관과 전자 신호를 캔버스와 붓으로 삼아 전 세계를 연결한 '비디오 아트의 창시자이자 20세기 레오나르도 다 빈치'. 국립현대미술관의 1,003대 모니터 탑 <다다익선>.",
+        avatar: "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/media_namjune_the_more_the_better.webp",
+        tags: ["다다익선", "플럭서스", "비디오 아트 창시자", "전자 고속도로"]
+      }
+    ];
+
+    let currentArtistId = "van_gogh";
+    let allMasterworks = [];
+
+    async function initArtistArchive() {
+      // 1. Render Tabs
+      const tabBar = document.getElementById('artistTabBar');
+      tabBar.innerHTML = ARTISTS.map((a, idx) => `
+        <button class="artist-pill-btn ${idx === 0 ? 'active' : ''}" data-id="${a.id}" onclick="selectArtist('${a.id}')">
+          <svg class="icon"><use href="#i-user"/></svg>
+          <span>${a.name_kr}</span>
+        </button>
+      `).join('');
+
+      // 2. Fetch Databases
+      try {
+        const [rPaint, rExp, rCont] = await Promise.all([
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
+        ]);
+
+        const list = [...(rPaint.featured_masterpieces || [])];
+        Object.values(rExp).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') list.push(...v);
+        });
+        Object.values(rCont).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') list.push(...v);
+        });
+
+        allMasterworks = list;
+        selectArtist(currentArtistId);
+      } catch (e) {
+        console.error("Artist load error:", e);
+      }
+    }
+
+    function selectArtist(id) {
+      currentArtistId = id;
+      document.querySelectorAll('.artist-pill-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.id === id);
+      });
+
+      const a = ARTISTS.find(x => x.id === id);
+      if (!a) return;
+
+      document.getElementById('artistProfileCard').innerHTML = `
+        <div class="artist-avatar-wrap">
+          <img class="artist-avatar-img" src="${a.avatar}" alt="${a.name_kr}">
+        </div>
+        <div>
+          <h3 class="artist-name-title">${a.name_kr}</h3>
+          <div class="artist-meta-line">
+            <span>🌍 ${a.country}</span>
+            <span>·</span>
+            <span>⏳ 활동: ${a.period}</span>
+            <span>·</span>
+            <span>🎨 사조: ${a.movement}</span>
+          </div>
+          <p class="artist-bio-text">${a.description}</p>
+          <div class="artist-tag-chips">
+            ${a.tags.map(t => `<span class="artist-tag-pill">#${t}</span>`).join('')}
+          </div>
+        </div>
+      `;
+
+      // Match artworks by artist name
+      const matched = allMasterworks.filter(art => {
+        const nameKr = (art.artist_name_kr || '').toLowerCase();
+        const nameEn = (art.artist_name_en || '').toLowerCase();
+        if (id === 'van_gogh') return nameKr.includes('고흐') || nameEn.includes('gogh');
+        if (id === 'rodin') return nameKr.includes('로댕') || nameEn.includes('rodin');
+        if (id === 'sargent') return nameKr.includes('사전트') || nameEn.includes('sargent');
+        if (id === 'picasso') return nameKr.includes('피카소') || nameEn.includes('picasso');
+        if (id === 'jeongseon') return nameKr.includes('정선') || nameEn.includes('jeong');
+        if (id === 'shin_yunbok') return nameKr.includes('신윤복') || nameEn.includes('shin');
+        if (id === 'klimt') return nameKr.includes('클림트') || nameEn.includes('klimt');
+        if (id === 'giacometti') return nameKr.includes('자코메티') || nameEn.includes('giacometti');
+        if (id === 'namjune_paik') return nameKr.includes('백남준') || nameEn.includes('paik');
+        return false;
+      });
+
+      document.getElementById('artistWorkCount').textContent = `${matched.length} ITEMS CATALOGUED`;
+
+      const grid = document.getElementById('artistArtworkGrid');
+      if (matched.length === 0) {
+        grid.innerHTML = `<div style="grid-column: 1/-1; padding: 48px; text-align: center; color: var(--lds-text-muted);">해당 작가의 원장을 분석 중입니다.</div>`;
+        return;
+      }
+
+      grid.innerHTML = matched.map(art => {
+        const thumb = art.thumbnail_url || art.image_url || `assets/featured/thumbs/${art.id}.webp`;
+        return `
+          <div class="art-card">
+            <div class="card-img-wrap">
+              <img class="card-img" src="${thumb}" alt="${art.title_kr}" loading="lazy" onerror="this.src='assets/featured/thumbs/${art.id}.webp'">
+              <span class="card-badge">${art.year || '시기 미상'}</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title">${art.title_kr}</div>
+              <div class="card-museum">🏛️ ${art.museum || '소장처 참조'}</div>
+              <div class="card-desc">${art.curator_notes || art.description || '인류 문화유산 원장 상세 해설'}</div>
+              <div class="card-actions">
+                <a href="artwork.html?id=${art.id}" class="card-btn primary">
+                  <span>작품 상세</span>
+                  <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
+                </a>
+                <a href="artwork.html?id=${art.id}&mode=presentation" class="card-btn">
+                  <span>액자 모드</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', initArtistArchive);
+  </script>
+</body>
+</html>

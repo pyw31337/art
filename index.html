@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f8fafc">
+  <meta name="theme-color" content="#07090e">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
   <title>Let's Art (렛츠아트) — 글로벌 10대 미술관 & 다변화 예술 아카이브</title>
   <style>
+    /* LDS v3.5.0 & Impeccable Design Standards */
     :root {
       --lds-brand-600: #2563eb;
       --lds-brand-700: #1d4ed8;
@@ -36,177 +37,586 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
-    .container { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
-    
-    /* LDS Header — Flat & Anti-Box */
-    header {
-      background: var(--lds-canvas-bg);
-      border-bottom: 1px solid var(--lds-divider-faint);
-      padding: 18px 0 24px;
+
+    /* ── SVG Icon Standard (Lucide & Tabler) ── */
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: -3px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    button:hover .icon, button:focus .icon, button:active .icon,
+    a:hover .icon, a:focus .icon, a:active .icon,
+    .active .icon, .icon.filled {
+      fill: currentColor;
+    }
+
+    /* ── Top Header Navigation ── */
+    .site-header {
+      background: #07090e;
+      border-bottom: 1px solid #1e293b;
+      padding: 14px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 28px;
       flex-wrap: wrap;
       gap: 16px;
     }
-    .logo-area { display: flex; align-items: center; gap: 12px; }
-    .logo-dot {
-      width: 10px; height: 10px;
-      background: var(--lds-brand-600);
-      border-radius: 50%;
-      display: inline-block;
-    }
-    h1 { font-size: 20px; font-weight: 700; color: var(--lds-text-strong); letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
-    .sub-title { font-size: 12.5px; color: var(--lds-text-muted); margin-top: 2px; }
-    
-    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .lds-btn-nav {
-      font-size: 12px; font-weight: 600; color: var(--lds-text-muted); text-decoration: none; padding: 6px 12px;
-      border: 1px solid var(--lds-divider-line); border-radius: 4px;
-      background: transparent; transition: all 0.15s ease;
-    }
-    .lds-btn-nav:hover { border-color: var(--lds-text-muted); color: var(--lds-text-strong); }
-    .lds-btn-nav.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-600); }
-    .lds-btn-nav.primary:hover { background: var(--lds-brand-700); }
-
-    /* Top Stats Pulse Bar — Anti-Box */
-    .pulse-bar {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--lds-divider-faint);
-    }
-    .pulse-card {
-      background: transparent;
-      padding: 0;
-      border: none;
-      box-shadow: none;
-    }
-    .pulse-label { font-size: 11.5px; font-weight: 600; color: var(--lds-text-muted); letter-spacing: 0.02em; }
-    .pulse-val { font-size: 24px; font-weight: 800; color: var(--lds-text-strong); margin-top: 3px; display: flex; align-items: baseline; gap: 4px; letter-spacing: -0.5px; }
-    .pulse-val span.unit { font-size: 13px; font-weight: 500; color: var(--lds-text-muted); }
-    .pulse-sub { font-size: 11.5px; color: var(--lds-text-muted); margin-top: 3px; display: flex; align-items: center; gap: 5px; }
-
-    /* Search & Filter Section */
-    .filter-section {
-      background: transparent;
-      padding: 0;
-      margin-bottom: 32px;
+    .header-logo-group {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .search-row {
-      display: flex;
-      gap: 12px;
       align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #ffffff;
     }
-    .search-input {
-      flex: 1;
-      padding: 11px 16px;
-      border: 1px solid var(--lds-divider-line);
+    .header-logo-badge {
+      width: 32px;
+      height: 32px;
       border-radius: 4px;
-      background: var(--lds-surface-subtle);
-      color: var(--lds-text-strong);
-      font-size: 13px;
-      font-weight: 500;
-      outline: none;
-      transition: all 0.15s;
+      background: var(--lds-brand-600);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
     }
-    .search-input:focus { border-color: var(--lds-brand-600); background: #ffffff; box-shadow: 0 0 0 2px var(--lds-brand-50); }
-    
-    /* LDS Tab Navigation — 32px Gap, No Overlap, Underline Active State */
-    .lds-tab-nav {
+    .header-logo-badge .icon { stroke: #ffffff; width: 18px; height: 18px; }
+    .header-brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
       display: flex;
       align-items: center;
-      gap: 32px;
-      border-bottom: 1px solid var(--lds-divider-faint);
-      padding-bottom: 1px;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-      margin-bottom: 14px;
+      gap: 6px;
     }
-    .lds-tab-nav::-webkit-scrollbar { display: none; }
-
-    .lds-tab-btn {
-      padding: 8px 0 12px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--lds-text-muted);
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-link-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
-    .lds-tab-btn:hover { color: var(--lds-text-strong); }
-    .lds-tab-btn.active {
-      color: var(--lds-text-strong);
-      font-weight: 700;
-      border-bottom-color: var(--lds-text-strong);
-    }
-    .lds-tab-count {
-      font-size: 11px;
-      color: var(--lds-brand-600);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
       font-weight: 600;
+      color: #94a3b8;
+      text-decoration: none;
+      border: 1px solid #1e293b;
+      background: #0f172a;
+      transition: all 0.15s ease;
     }
+    .nav-link-btn:hover { background: #1e293b; color: #ffffff; border-color: #334155; }
+    .nav-link-btn.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
+    .nav-link-btn.primary:hover { background: var(--lds-brand-700); }
 
-    /* Disciplined Segmented Filter Chips (Anti-Rainbow) */
-    .lds-filter-row {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 8px 0;
-      border-top: 1px solid var(--lds-divider-faint);
+    /* ── Let's Camping Style Grand Atmospheric Hero Zone ── */
+    .hero-atlas-section {
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #07090e 70%);
+      color: #ffffff;
+      padding: 72px 24px 64px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid #1e293b;
     }
-    .lds-filter-label {
+    .hero-glow-ambient {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-content-in {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    .hero-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-family: var(--lds-font-mono);
       font-size: 11px;
       font-weight: 700;
-      color: var(--lds-text-muted);
-      text-transform: uppercase;
-      margin-right: 4px;
-      min-width: 80px;
+      color: #93c5fd;
+      background: rgba(30, 58, 138, 0.4);
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
     }
-    .lds-chip {
-      padding: 4px 10px;
-      border-radius: 3px;
-      border: 1px solid var(--lds-divider-line);
-      background: var(--lds-surface-subtle);
-      color: var(--lds-text-body);
-      font-size: 11.5px;
+    .hero-headline {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: #60a5fa;
+      background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub-text {
+      font-size: 15px;
+      color: #cbd5e1;
+      max-width: 760px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    /* Hero Big Search Box */
+    .hero-search-bar {
+      max-width: 720px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 2px solid #3b82f6;
+      border-radius: 999px;
+      padding: 6px 8px 6px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+    }
+    .hero-search-bar:focus-within {
+      box-shadow: 0 12px 36px rgba(37, 99, 235, 0.35);
+      border-color: #60a5fa;
+    }
+    .hero-search-bar .icon {
+      color: #64748b;
+      margin-right: 12px;
+      width: 20px;
+      height: 20px;
+    }
+    .hero-search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: var(--lds-font-sans);
+      font-size: 15px;
+      color: #0f172a;
+      background: transparent;
+    }
+    .hero-search-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--lds-brand-600);
+      color: #ffffff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .hero-search-btn:hover { background: var(--lds-brand-700); }
+    .hero-search-btn .icon { width: 16px; height: 16px; stroke: #ffffff; margin-right: 0; }
+
+    /* Hero Keyword Chips */
+    .hero-quick-chips {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .hero-chip-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.15s ease;
+    }
+    .hero-chip-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      border-color: #60a5fa;
+    }
+
+    /* ── Main Container ── */
+    .main-body-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 36px 28px 80px;
+    }
+
+    /* Pulse Metrics Bar */
+    .pulse-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+    .pulse-card {
+      background: var(--lds-surface-subtle);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      padding: 16px 20px;
+    }
+    .pulse-label { font-size: 11.5px; font-weight: 600; color: var(--lds-text-muted); margin-bottom: 4px; }
+    .pulse-val { font-size: 22px; font-weight: 800; color: var(--lds-text-strong); font-family: var(--lds-font-mono); }
+    .pulse-val .unit { font-size: 12px; font-weight: 500; color: var(--lds-text-muted); margin-left: 2px; }
+    .pulse-sub { font-size: 11px; color: var(--lds-text-muted); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
+
+    /* Curated Section Header */
+    .curated-sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--lds-divider-faint);
+    }
+    .curated-sec-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--lds-text-strong);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: -0.02em;
+    }
+    .curated-sec-more {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--lds-brand-600);
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 4px;
     }
-    .lds-chip:hover {
-      background: #ffffff;
-      color: var(--lds-text-strong);
-      border-color: var(--lds-text-faint);
+    .curated-sec-more:hover { text-decoration: underline; }
+
+    /* ── Section 1: Behind Canvas Secrets (3-Card Feature) ── */
+    .secrets-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
     }
-    .lds-chip.active {
+    .secret-feature-card {
+      background: var(--lds-surface-subtle);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .secret-feature-card:hover {
+      border-color: var(--lds-brand-600);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+    .secret-card-media {
+      height: 220px;
+      position: relative;
+      background: #07090e;
+      overflow: hidden;
+    }
+    .secret-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .secret-feature-card:hover .secret-card-img { transform: scale(1.03); }
+    .secret-badge-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 2px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #60a5fa;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+    .secret-card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .secret-card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--lds-text-strong);
+      margin-bottom: 4px;
+    }
+    .secret-card-artist {
+      font-size: 12px;
+      color: var(--lds-text-muted);
+      margin-bottom: 10px;
+    }
+    .secret-card-desc {
+      font-size: 12.5px;
+      color: var(--lds-text-body);
+      line-height: 1.6;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .secret-cta-row {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ── Section 2: Museums Showcase Grid ── */
+    .museum-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .museum-mini-card {
+      background: var(--lds-canvas-bg);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.15s ease;
+    }
+    .museum-mini-card:hover {
+      border-color: var(--lds-brand-600);
+      background: var(--lds-surface-subtle);
+    }
+    .museum-mini-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .museum-mini-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+    }
+    .museum-mini-city {
+      font-size: 11.5px;
+      color: var(--lds-text-muted);
+      margin-bottom: 8px;
+    }
+    .museum-mini-tag {
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      color: var(--lds-brand-600);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+    }
+
+    /* ── Section 3: Story Taxonomy Cards ── */
+    .story-taxonomy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .story-nav-card {
+      background: var(--lds-canvas-bg);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      padding: 14px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .story-nav-card:hover {
+      border-color: var(--lds-brand-600);
+      background: var(--lds-surface-subtle);
+      transform: translateY(-2px);
+    }
+    .story-nav-card.active {
+      background: var(--lds-brand-50);
+      border-color: var(--lds-brand-600);
+    }
+    .story-card-icon {
+      margin-bottom: 6px;
+      color: var(--lds-brand-600);
+    }
+    .story-card-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      margin-bottom: 2px;
+    }
+    .story-card-count {
+      font-family: var(--lds-font-mono);
+      font-size: 10.5px;
+      color: var(--lds-text-muted);
+    }
+
+    /* ── Section 4: Master Artists Rail ── */
+    .artists-avatar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .artist-chip-card {
+      background: var(--lds-canvas-bg);
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 4px;
+      padding: 12px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.15s ease;
+    }
+    .artist-chip-card:hover {
+      border-color: var(--lds-brand-600);
+      background: var(--lds-surface-subtle);
+    }
+    .artist-chip-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #0f172a;
+      flex-shrink: 0;
+    }
+    .artist-chip-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+      line-height: 1.2;
+    }
+    .artist-chip-sub {
+      font-size: 11px;
+      color: var(--lds-text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── Section 5: Full Explore Ledger (LDS Tabs & Segmented Filters) ── */
+    .explore-ledger-section {
+      background: var(--lds-canvas-bg);
+      border-top: 1px solid var(--lds-divider-line);
+      padding-top: 36px;
+    }
+    .ledger-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .lds-tab-nav {
+      display: flex;
+      gap: 28px;
+      border-bottom: 1px solid var(--lds-divider-line);
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+    .lds-tab-btn {
+      background: none;
+      border: none;
+      padding: 10px 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--lds-text-muted);
+      cursor: pointer;
+      position: relative;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lds-tab-btn:hover { color: var(--lds-text-strong); }
+    .lds-tab-btn.active { color: var(--lds-brand-600); font-weight: 700; }
+    .lds-tab-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 2px;
+      background: var(--lds-brand-600);
+    }
+    .lds-tab-count {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      color: var(--lds-text-muted);
+      background: var(--lds-surface-subtle);
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+    .lds-tab-btn.active .lds-tab-count {
+      background: var(--lds-brand-50);
+      color: var(--lds-brand-600);
+    }
+
+    /* Filter Rows */
+    .filter-chip-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .filter-label {
+      font-family: var(--lds-font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--lds-text-muted);
+      min-width: 68px;
+    }
+    .filter-chip {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-chip:hover { background: var(--lds-surface-subtle); border-color: var(--lds-text-faint); }
+    .filter-chip.active {
       background: var(--lds-text-strong);
       color: #ffffff;
       border-color: var(--lds-text-strong);
+      font-weight: 600;
     }
 
-    /* Art Card Grid — LDS Anti-Box */
-    .grid {
+    /* Cards Grid */
+    .ledger-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
+      margin-top: 24px;
     }
     .art-card {
       background: var(--lds-canvas-bg);
@@ -215,275 +625,249 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.15s ease;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .art-card:hover {
-      border-color: var(--lds-text-faint);
+      border-color: var(--lds-brand-600);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
     }
-    .card-media {
-      position: relative;
+    .card-media-wrap {
       width: 100%;
-      height: 240px;
-      background: var(--lds-surface-subtle);
+      height: 220px;
+      position: relative;
+      background: #090e17;
       overflow: hidden;
       cursor: pointer;
     }
-    .card-img {
+    .card-media-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
       transition: transform 0.3s ease;
     }
-    .art-card:hover .card-img {
-      transform: scale(1.02);
-    }
-    .category-tag {
+    .art-card:hover .card-media-img { transform: scale(1.03); }
+    .card-cat-badge {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      padding: 3px 8px;
-      border-radius: 3px;
-      font-size: 10.5px;
-      font-weight: 600;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(8px);
+      top: 10px; left: 10px;
+      font-family: var(--lds-font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 2px;
+      background: rgba(15, 23, 42, 0.85);
       color: #ffffff;
-      z-index: 2;
+      backdrop-filter: blur(4px);
     }
-    .card-body {
+    .card-video-pill {
+      position: absolute;
+      top: 10px; right: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(239, 68, 68, 0.9);
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 2px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+    .card-content {
       padding: 16px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
-    .card-meta-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
-      gap: 8px;
-    }
-    .card-title {
-      font-size: 16px;
+    .card-title-text {
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--lds-text-strong);
-      line-height: 1.35;
-      letter-spacing: -0.2px;
+      margin-bottom: 2px;
     }
-    .card-year {
-      font-family: var(--lds-font-mono);
-      font-size: 11px;
+    .card-meta-line {
+      font-size: 12px;
       color: var(--lds-text-muted);
-      white-space: nowrap;
-      flex-shrink: 0;
+      margin-bottom: 8px;
     }
-    .creator-line {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--lds-text-body);
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .venue-line {
-      font-size: 11.5px;
-      color: var(--lds-text-muted);
+    .card-docent-quote {
+      font-size: 12px;
+      color: #1e3a8a;
+      background: #eff6ff;
+      border-left: 2px solid #2563eb;
+      padding: 6px 10px;
+      border-radius: 0 3px 3px 0;
       margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      line-height: 1.5;
     }
-    .card-desc {
+    .card-desc-text {
       font-size: 12.5px;
-      line-height: 1.6;
       color: var(--lds-text-body);
+      line-height: 1.55;
       margin-bottom: 12px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-      flex-wrap: wrap;
-    }
-    .venue-line {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .badge-style {
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: #f1f5f9;
-      color: #475569;
-      font-weight: 600;
-    }
-
-    /* Color Palette */
-    .palette-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-    .swatch {
-      width: 22px;
-      height: 22px;
-      border-radius: 5px;
-      border: 1px solid rgba(0,0,0,0.1);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
-    }
-
-    /* Aesthetic Tags */
-    .aesthetic-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-    .aesthetic-pill {
-      font-size: 11px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #475569;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    .card-desc {
-      font-size: 13px;
-      line-height: 1.6;
-      color: #475569;
-      margin-bottom: 14px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .commentary-box {
-      background: #f8fafc;
-      border-left: 3px solid #2563eb;
-      padding: 10px 12px;
-      border-radius: 6px;
-      font-size: 12px;
-      color: #334155;
-      line-height: 1.5;
-      margin-bottom: 16px;
+    .card-button-row {
       margin-top: auto;
-    }
-
-    .btn-detail {
-      width: 100%;
-      background: #f8fafc;
-      border: 1px solid var(--card-border);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: #0f172a;
-      cursor: pointer;
-      transition: all 0.2s;
       display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 6px;
+      border-top: 1px solid var(--lds-divider-faint);
+      padding-top: 12px;
     }
-    .btn-detail:hover {
-      background: #0f172a;
-      color: #ffffff;
-      border-color: #0f172a;
-    }
-
-    /* Detail Modal */
-    .modal-backdrop {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(4px);
-      z-index: 1000;
-      display: none;
+    .card-action-btn {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      gap: 4px;
+      border: 1px solid var(--lds-divider-line);
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      transition: all 0.15s ease;
     }
-    .modal-backdrop.active { display: flex; }
-    .modal-card {
-      background: #ffffff;
-      border-radius: 20px;
-      max-width: 840px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
-      position: relative;
-    }
-    .modal-close {
-      position: absolute;
-      top: 18px; right: 20px;
-      background: #f1f5f9;
-      border: none;
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      font-size: 16px;
-      font-weight: bold;
-      color: #64748b;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s;
-      z-index: 10;
-    }
-    .modal-close:hover { background: #e2e8f0; color: #0f172a; }
-    .modal-body { padding: 32px; }
+    .card-action-btn:hover { background: var(--lds-surface-subtle); color: var(--lds-text-strong); }
+    .card-action-btn.primary { background: var(--lds-brand-600); color: #ffffff; border-color: var(--lds-brand-700); }
+    .card-action-btn.primary:hover { background: var(--lds-brand-700); }
 
+    /* Footer */
     footer {
+      border-top: 1px solid var(--lds-divider-line);
+      padding: 48px 28px 36px;
       text-align: center;
-      padding: 40px 20px 20px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid var(--card-border);
-      margin-top: 40px;
+      color: var(--lds-text-muted);
+      font-size: 12px;
+      margin-top: 60px;
+    }
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--lds-text-strong);
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header — LDS Clean Architecture -->
-    <header>
-      <div class="logo-area">
-        <span class="logo-dot"></span>
-        <div>
-          <h1>LET'S ART <span class="lds-tag-mono normal" style="margin-left:6px; font-size:10px; padding:2px 6px; background:#ecfdf5; border-radius:3px;">GLOBAL OPEN ACCESS</span></h1>
-          <div class="sub-title">글로벌 10대 미술관 & 다변화 인류 문화유산 원장 아카이브</div>
+
+  <!-- Unified Lucide & Tabler SVG Sprite System -->
+  <svg width="0" height="0" style="position:absolute; display:none;" aria-hidden="true">
+    <defs>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></symbol>
+      <symbol id="i-museum" viewBox="0 0 24 24"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="12" y1="3" x2="3" y2="8"></line><line x1="12" y1="3" x2="21" y2="8"></line><line x1="3" y1="8" x2="21" y2="8"></line><line x1="6" y1="8" x2="6" y2="21"></line><line x1="10" y1="8" x2="10" y2="21"></line><line x1="14" y1="8" x2="14" y2="21"></line><line x1="18" y1="8" x2="18" y2="21"></line></symbol>
+      <symbol id="i-frame" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path></symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z"></path></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"></polygon></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></symbol>
+    </defs>
+  </svg>
+
+  <!-- ── Top Header Navigation ── -->
+  <header class="site-header">
+    <a href="index.html" class="header-logo-group">
+      <div class="header-logo-badge">
+        <svg class="icon"><use href="#i-frame"/></svg>
+      </div>
+      <div>
+        <div class="header-brand-title">
+          <span>LET'S ART</span>
+          <span class="lds-tag-mono normal" style="font-size:10px; padding:1px 5px; background:rgba(37,99,235,0.2); color:#60a5fa; border-radius:3px;">GLOBAL OPEN ACCESS</span>
         </div>
       </div>
-      <div class="nav-links">
-        <a class="lds-btn-nav primary" href="artwork.html?id=paint_sargent_001&mode=presentation" style="display:inline-flex; align-items:center; gap:6px;">
-          <span style="width:6px; height:6px; border-radius:50%; background:#10b981; display:inline-block;"></span>
-          <span>디지털 액자 감상실</span>
-        </a>
-        <a class="lds-btn-nav" href="admin" style="display:inline-flex; align-items:center; gap:5px;">
-          <span style="font-size:12px;">⚙️</span><span>관제 어드민</span>
-        </a>
-        <a class="lds-btn-nav" href="https://pyw31337.github.io/lets/" target="_blank">⚡ 렛츠 통합 대시보드</a>
-        <a class="lds-btn-nav" href="https://pyw31337.github.io/people/" target="_blank">👥 렛츠피플</a>
-        <a class="lds-btn-nav" href="https://pyw31337.github.io/law/" target="_blank">⚖️ 렛츠로</a>
-        <a class="lds-btn-nav" href="https://pyw31337.github.io/asset/" target="_blank">📈 렛츠에셋</a>
-      </div>
-    </header>
+    </a>
 
-    <!-- Top Stats Pulse Bar — LDS Anti-Box Metrics -->
-    <div class="pulse-bar" id="pulseBar">
+    <nav class="header-nav-links">
+      <a href="index.html" class="nav-link-btn" style="color:#ffffff;">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span>홈</span>
+      </a>
+      <a href="museum.html" class="nav-link-btn">
+        <svg class="icon"><use href="#i-museum"/></svg>
+        <span>미술관 탐색</span>
+      </a>
+      <a href="artist.html" class="nav-link-btn">
+        <svg class="icon"><use href="#i-user"/></svg>
+        <span>거장 아카이브</span>
+      </a>
+      <a href="artwork.html?id=paint_sargent_001&mode=presentation" class="nav-link-btn primary">
+        <svg class="icon"><use href="#i-sparkles"/></svg>
+        <span>디지털 액자 감상실</span>
+      </a>
+      <a href="admin" class="nav-link-btn">
+        <svg class="icon"><use href="#i-settings"/></svg>
+        <span>관제 어드민</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ── Let's Camping Style Grand Atmospheric Hero Zone ── -->
+  <section class="hero-atlas-section">
+    <div class="hero-glow-ambient"></div>
+    <div class="hero-content-in">
+      <div class="hero-tag-badge">
+        <svg class="icon" style="width:14px; height:14px;"><use href="#i-sparkles"/></svg>
+        <span>글로벌 10대 미술관 & 다변화 인류 문화유산 원장 아카이브</span>
+      </div>
+      <h1 class="hero-headline">
+        인류의 영혼을 비추는 걸작 속으로<br>
+        <em>LET'S ART</em> 세계 명화 갤러리
+      </h1>
+      <p class="hero-sub-text">
+        글로벌 10대 미술관 원장 76,500여 점 · 7,858점 UHD R2 영구 보존 · 100% 1:1 맞춤형 영상 도슨트 해설망.<br>
+        터치 핀치줌과 화면 꺼짐 방지가 지원되는 고화질 디지털 액자로 예술의 전당을 거닐어보세요.
+      </p>
+
+      <!-- Big Prominent Search Bar -->
+      <div class="hero-search-bar">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" class="hero-search-input" id="heroSearchInput" placeholder="작가명(고흐/로댕/정선), 미술관(루브르/MoMA/국중박), 작품명, 스토리(비극/연인/고독) 검색..." oninput="syncAndFilter(this.value)" autocomplete="off">
+        <button class="hero-search-btn" onclick="scrollToGrid()">
+          <span>탐색</span>
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+        </button>
+      </div>
+
+      <!-- Quick Keyword Filter Chips -->
+      <div class="hero-quick-chips">
+        <button class="hero-chip-btn" onclick="setKeywordSearch('마담 X')">#마담X의비밀</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('생각하는 사람')">#생각하는사람</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('반 고흐')">#반고흐</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('인왕제색도')">#인왕제색도</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('사모트라케')">#사모트라케의니케</button>
+        <button class="hero-chip-btn" onclick="setMuseumFilter('louvre')">#루브르박물관</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('달항아리')">#국보달항아리</button>
+        <button class="hero-chip-btn" onclick="setStoryFilter('tragedy')">#비극과상실</button>
+        <button class="hero-chip-btn" onclick="setStoryFilter('lovers')">#세기의연인</button>
+        <button class="hero-chip-btn" onclick="setKeywordSearch('다다익선')">#백남준_다다익선</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Main Content Body ── -->
+  <main class="main-body-container">
+
+    <!-- Top KPI Stats Pulse Bar -->
+    <div class="pulse-bar">
       <div class="pulse-card">
-        <div class="pulse-label">총 예술 & 건축 원장</div>
+        <div class="pulse-label">총 예술 & 문화유산 원장</div>
         <div class="pulse-val" id="statTotal">76,500 <span class="unit">점/편</span></div>
-        <div class="pulse-sub"><span style="width:5px; height:5px; border-radius:50%; background:var(--lds-status-normal); display:inline-block;"></span> 10대 카테고리 24/7 무인 자동 증분</div>
+        <div class="pulse-sub">10대 카테고리 24/7 무인 자동 증분</div>
       </div>
       <div class="pulse-card">
         <div class="pulse-label">고전 명화 & 현대미술</div>
@@ -496,110 +880,460 @@
         <div class="pulse-sub">로댕 · 루브르 · V&A · 고려청자</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">동양화 & 한국 고미술</div>
+        <div class="pulse-label">동양화 & 한국 국보/보물</div>
         <div class="pulse-val" id="statAsian">7,690 <span class="unit">점</span></div>
         <div class="pulse-sub">국립중앙박물관 · 간송 · 대영박물관 한국실</div>
       </div>
       <div class="pulse-card">
-        <div class="pulse-label">글로벌 API 수집 건전도</div>
-        <div class="pulse-val" style="color:var(--lds-status-normal);">99.9%</div>
-        <div class="pulse-sub"><span style="width:5px; height:5px; border-radius:50%; background:var(--lds-status-normal); display:inline-block;"></span> 6대 미술관 게이트웨이 정상</div>
+        <div class="pulse-label">R2 CDN 보존 & 영상 도슨트</div>
+        <div class="pulse-val" style="color:var(--lds-status-normal);">100%</div>
+        <div class="pulse-sub">7,858점 WebP + 1:1 맞춤 해설 연동</div>
       </div>
     </div>
 
-    <!-- Filter & Search Section -->
-    <div class="filter-section">
-      <div class="search-row">
-        <input type="text" id="artSearch" class="search-input" placeholder="🔍 작가명, 소장처(MoMA/루브르/대영박물관/국중박), 작품명, 사조, 재료, 스토리 키워드(가족/연인/비극/미스터리) 검색..." oninput="filterAndRender()">
+    <!-- ========================================================
+         SECTION 1: 🌟 이달의 캔버스 X-ray & 비하인드 스토리 수록작
+         ======================================================== -->
+    <section>
+      <div class="curated-sec-head">
+        <div class="curated-sec-title">
+          <svg class="icon"><use href="#i-sparkles"/></svg>
+          <span>이달의 캔버스 X-ray & 비하인드 스토리 수록작</span>
+        </div>
+        <a href="artwork.html?id=paint_sargent_001" class="curated-sec-more">
+          <span>비하인드 전체 보기</span>
+          <svg class="icon" style="width:14px; height:14px;"><use href="#i-arrow-right"/></svg>
+        </a>
       </div>
 
-      <!-- 10대 마스터 카테고리 탭 (LDS Tab Nav — 32px 간격 & 언더라인) -->
+      <div class="secrets-showcase-grid">
+        <!-- Madame X -->
+        <div class="secret-feature-card">
+          <div class="secret-card-media" onclick="location.href='artwork.html?id=paint_sargent_001'" style="cursor:pointer;">
+            <img class="secret-card-img" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_sargent_001.webp" alt="Madame X" onerror="this.src='assets/featured/paint_sargent_001.webp'">
+            <span class="secret-badge-tag"><svg class="icon" style="width:13px; height:13px;"><use href="#i-sparkles"/></svg> SALON SCANDAL & X-RAY</span>
+          </div>
+          <div class="secret-card-body">
+            <div class="secret-card-title">마담 X (피에르 고트로 부인)</div>
+            <div class="secret-card-artist">존 싱어 사전트 · 1884년 · 메트로폴리탄 미술관</div>
+            <p class="secret-card-desc">1884년 파리 살롱전에 출품되었을 때 오른쪽 어깨끈이 흘러내려 엄청난 사회적 스캔들을 일으켰던 명작. 살롱전 혹평 이후 사전트가 스스로 어깨끈을 올려 그린 수정본과 메트로폴리탄의 X선 투과 조사로 밝혀진 원래의 파격적인 도상을 정밀 분석합니다.</p>
+            <div class="secret-cta-row">
+              <a href="artwork.html?id=paint_sargent_001" class="card-action-btn primary">
+                <span>작품 상세 & X선 보기</span>
+                <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
+              </a>
+              <a href="artwork.html?id=paint_sargent_001&mode=presentation" class="card-action-btn">
+                <span>디지털 액자</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Old Guitarist -->
+        <div class="secret-feature-card">
+          <div class="secret-card-media" onclick="location.href='artwork.html?id=paint_picasso_guitarist'" style="cursor:pointer;">
+            <img class="secret-card-img" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_picasso_guitarist.webp" alt="The Old Guitarist" onerror="this.src='assets/featured/paint_picasso_guitarist.webp'">
+            <span class="secret-badge-tag"><svg class="icon" style="width:13px; height:13px;"><use href="#i-sparkles"/></svg> 청색시대 & 숨겨진 모자상</span>
+          </div>
+          <div class="secret-card-body">
+            <div class="secret-card-title">늙은 기타 연주자 (The Old Guitarist)</div>
+            <div class="secret-card-artist">파블로 피카소 · 1903–1904년 · 시카고 미술관</div>
+            <p class="secret-card-desc">친구 카사헤마스의 자살 이후 극심한 가난과 우울 속에서 피카소가 완성한 청색시대의 정점. 시카고 미술관이 적외선 및 X선 투과 조사를 통해 노인의 등 뒤에 묻혀있던 어린 아이를 안은 어머니의 형상을 발견해 낸 비화를 집중 조명합니다.</p>
+            <div class="secret-cta-row">
+              <a href="artwork.html?id=paint_picasso_guitarist" class="card-action-btn primary">
+                <span>작품 상세 & X선 보기</span>
+                <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
+              </a>
+              <a href="artwork.html?id=paint_picasso_guitarist&mode=presentation" class="card-action-btn">
+                <span>디지털 액자</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- View of Scheveningen Sands -->
+        <div class="secret-feature-card">
+          <div class="secret-card-media" onclick="location.href='artwork.html?id=paint_anthonissen_whale'" style="cursor:pointer;">
+            <img class="secret-card-img" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_anthonissen_whale.webp" alt="View of Scheveningen Sands" onerror="this.src='assets/featured/paint_anthonissen_whale.webp'">
+            <span class="secret-badge-tag"><svg class="icon" style="width:13px; height:13px;"><use href="#i-sparkles"/></svg> 140년 만의 바니시 복원</span>
+          </div>
+          <div class="secret-card-body">
+            <div class="secret-card-title">스헤베닝언 해변의 풍경 (사라진 고래의 비밀)</div>
+            <div class="secret-card-artist">헨드릭 판 안토니선 · 1641년 · 피츠윌리엄 박물관</div>
+            <p class="secret-card-desc">원래 바다 위에는 아무것도 없었습니다. 피츠윌리엄 박물관의 샨 쿠앙 복원가가 변색된 바니시를 닦아내는 과정에서 140년간 덮여 있던 좌초된 거대한 고래의 시체가 모습을 드러낸 충격적인 복원 다큐멘터리 해설.</p>
+            <div class="secret-cta-row">
+              <a href="artwork.html?id=paint_anthonissen_whale" class="card-action-btn primary">
+                <span>작품 상세 & 복원기</span>
+                <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
+              </a>
+              <a href="artwork.html?id=paint_anthonissen_whale&mode=presentation" class="card-action-btn">
+                <span>디지털 액자</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: 🏛️ 글로벌 10대 미술관 & 국립 박물관 컬렉션
+         ======================================================== -->
+    <section>
+      <div class="curated-sec-head">
+        <div class="curated-sec-title">
+          <svg class="icon"><use href="#i-museum"/></svg>
+          <span>글로벌 10대 미술관 & 국립 박물관 컬렉션</span>
+        </div>
+        <a href="museum.html" class="curated-sec-more">
+          <span>미술관 전체 보기</span>
+          <svg class="icon" style="width:14px; height:14px;"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+
+      <div class="museum-showcase-grid">
+        <a href="museum.html?id=louvre" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">파리 루브르 박물관</div>
+          </div>
+          <div class="museum-mini-city">프랑스 파리 · 38만 점 소장</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=met" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">메트로폴리탄 미술관</div>
+          </div>
+          <div class="museum-mini-city">미국 뉴욕 · 200만 점 소장</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=moma" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">뉴욕 근대미술관 (MoMA)</div>
+          </div>
+          <div class="museum-mini-city">미국 뉴욕 · 모더니즘 성전</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=nmk" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">국립중앙박물관 (NMK)</div>
+          </div>
+          <div class="museum-mini-city">대한민국 서울 · 국보/보물 소장</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=british_museum" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">대영박물관 (런던)</div>
+          </div>
+          <div class="museum-mini-city">영국 런던 · 인류 문명사</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=chicago" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">시카고 미술관 (AIC)</div>
+          </div>
+          <div class="museum-mini-city">미국 시카고 · 인상파 걸작</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=rodin" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">파리 로댕 미술관</div>
+          </div>
+          <div class="museum-mini-city">프랑스 파리 · 생각하는 사람</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+
+        <a href="museum.html?id=orsay" class="museum-mini-card">
+          <div class="museum-mini-header">
+            <svg class="icon" style="color:var(--lds-brand-600);"><use href="#i-museum"/></svg>
+            <div class="museum-mini-title">파리 오르세 미술관</div>
+          </div>
+          <div class="museum-mini-city">프랑스 파리 · 인상주의 성지</div>
+          <div class="museum-mini-tag"><span>컬렉션 탐색</span> <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: 🧬 인간 중심 8대 스토리 텍소노미 큐레이션
+         ======================================================== -->
+    <section>
+      <div class="curated-sec-head">
+        <div class="curated-sec-title">
+          <svg class="icon"><use href="#i-sparkles"/></svg>
+          <span>인간 중심 8대 스토리 텍소노미</span>
+        </div>
+        <span class="lds-mono" style="font-size:11.5px; color:var(--lds-text-muted);">100% 온톨로지 전수 분류</span>
+      </div>
+
+      <div class="story-taxonomy-grid">
+        <div class="story-nav-card" onclick="setStoryFilter('lovers')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-heart"/></svg></div>
+          <div class="story-card-title">세기의 연인</div>
+          <div class="story-card-count">434점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('tragedy')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-history"/></svg></div>
+          <div class="story-card-title">비극과 상실</div>
+          <div class="story-card-count">799점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('solitude')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-user"/></svg></div>
+          <div class="story-card-title">자아와 고독</div>
+          <div class="story-card-count">2,627점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('family')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-user"/></svg></div>
+          <div class="story-card-title">가족과 모성애</div>
+          <div class="story-card-count">1,493점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('children')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-sparkles"/></svg></div>
+          <div class="story-card-title">아이와 동심</div>
+          <div class="story-card-count">723점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('nature')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-compass"/></svg></div>
+          <div class="story-card-title">자연과 정글</div>
+          <div class="story-card-count">1,114점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('mystery')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-eye"/></svg></div>
+          <div class="story-card-title">미스터리와 비밀</div>
+          <div class="story-card-count">406점</div>
+        </div>
+        <div class="story-nav-card" onclick="setStoryFilter('friendship')">
+          <div class="story-card-icon"><svg class="icon"><use href="#i-palette"/></svg></div>
+          <div class="story-card-title">우정과 연대</div>
+          <div class="story-card-count">382점</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: 👨‍🎨 거장 아카이브 스포트라이트
+         ======================================================== -->
+    <section>
+      <div class="curated-sec-head">
+        <div class="curated-sec-title">
+          <svg class="icon"><use href="#i-user"/></svg>
+          <span>시대의 거장 아카이브</span>
+        </div>
+        <a href="artist.html" class="curated-sec-more">
+          <span>거장 전체 보기</span>
+          <svg class="icon" style="width:14px; height:14px;"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+
+      <div class="artists-avatar-grid">
+        <a href="artist.html?id=van_gogh" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_starry_night.webp" alt="Vincent van Gogh" onerror="this.src='assets/featured/thumbs/art_starry_night.webp'">
+          <div>
+            <div class="artist-chip-name">빈센트 반 고흐</div>
+            <div class="artist-chip-sub">후기 인상주의</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=rodin" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/sculpt_rodin_thinker.webp" alt="Auguste Rodin" onerror="this.src='assets/featured/thumbs/sculpt_rodin_thinker.webp'">
+          <div>
+            <div class="artist-chip-name">오귀스트 로댕</div>
+            <div class="artist-chip-sub">근대 조각의 거장</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=sargent" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_sargent_001.webp" alt="John Singer Sargent" onerror="this.src='assets/featured/thumbs/paint_sargent_001.webp'">
+          <div>
+            <div class="artist-chip-name">존 싱어 사전트</div>
+            <div class="artist-chip-sub">초상화의 대가</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=picasso" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_picasso_demoiselles.webp" alt="Pablo Picasso" onerror="this.src='assets/featured/thumbs/art_picasso_demoiselles.webp'">
+          <div>
+            <div class="artist-chip-name">파블로 피카소</div>
+            <div class="artist-chip-sub">입체주의 & 청색시대</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=jeongseon" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/asian_jeongseon_inwang.webp" alt="Jeong Seon" onerror="this.src='assets/featured/thumbs/asian_jeongseon_inwang.webp'">
+          <div>
+            <div class="artist-chip-name">겸재 정선</div>
+            <div class="artist-chip-sub">조선 진경산수화</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=shin_yunbok" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/asian_shin_yunbok_beauty.webp" alt="Shin Yun-bok" onerror="this.src='assets/featured/thumbs/asian_shin_yunbok_beauty.webp'">
+          <div>
+            <div class="artist-chip-name">혜원 신윤복</div>
+            <div class="artist-chip-sub">조선 풍속화의 정점</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=klimt" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_klimt_the_kiss.webp" alt="Gustav Klimt" onerror="this.src='assets/featured/thumbs/art_klimt_the_kiss.webp'">
+          <div>
+            <div class="artist-chip-name">구스타프 클림트</div>
+            <div class="artist-chip-sub">황금빛 아르누보</div>
+          </div>
+        </a>
+
+        <a href="artist.html?id=namjune_paik" class="artist-chip-card">
+          <img class="artist-chip-avatar" src="https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/media_namjune_the_more_the_better.webp" alt="Nam June Paik" onerror="this.src='assets/featured/thumbs/media_namjune_the_more_the_better.webp'">
+          <div>
+            <div class="artist-chip-name">백남준</div>
+            <div class="artist-chip-sub">비디오 아트의 창시</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 5: 📜 전체 아카이브 통합 탐색기 (LDS Tabs & Infinite Grid)
+         ======================================================== -->
+    <section class="explore-ledger-section" id="exploreLedgerSection">
+      <div class="ledger-top-row">
+        <div class="curated-sec-title">
+          <svg class="icon"><use href="#i-frame"/></svg>
+          <span>전체 아카이브 통합 탐색기</span>
+        </div>
+        <div class="lds-mono" style="font-size:12px; color:var(--lds-text-muted);" id="renderCountBadge">
+          0 ITEMS DISPLAYED
+        </div>
+      </div>
+
+      <!-- 10대 마스터 카테고리 LDS Tab Nav -->
       <div class="lds-tab-nav">
-        <button class="lds-tab-btn active" data-tab="all" onclick="setTab('all')">전체 <span class="lds-tab-count" id="badgeAll">76k+</span></button>
-        <button class="lds-tab-btn" data-tab="paintings" onclick="setTab('paintings')">고전 명화 <span class="lds-tab-count">18.9k</span></button>
-        <button class="lds-tab-btn" data-tab="sculpture" onclick="setTab('sculpture')">조각 & 입체 <span class="lds-tab-count">8.9k</span></button>
-        <button class="lds-tab-btn" data-tab="asian_art" onclick="setTab('asian_art')">동양화 & 한국 고미술 <span class="lds-tab-count">7.7k</span></button>
-        <button class="lds-tab-btn" data-tab="cont_art" onclick="setTab('cont_art')">현대 미술 <span class="lds-tab-count">7.9k</span></button>
-        <button class="lds-tab-btn" data-tab="cont_arch" onclick="setTab('cont_arch')">현대 건축 <span class="lds-tab-count">4.7k</span></button>
-        <button class="lds-tab-btn" data-tab="prints" onclick="setTab('prints')">판화 & 소묘 <span class="lds-tab-count">6.5k</span></button>
-        <button class="lds-tab-btn" data-tab="photography" onclick="setTab('photography')">사진 예술 <span class="lds-tab-count">5.2k</span></button>
-        <button class="lds-tab-btn" data-tab="decorative" onclick="setTab('decorative')">공예 & 도예 <span class="lds-tab-count">6.2k</span></button>
-        <button class="lds-tab-btn" data-tab="media_art" onclick="setTab('media_art')">미디어 & 설치 <span class="lds-tab-count">4.1k</span></button>
-        <button class="lds-tab-btn" data-tab="literature" onclick="setTab('literature')">세계 문학 <span class="lds-tab-count">6.3k</span></button>
+        <button class="lds-tab-btn active" data-tab="all" onclick="setTab('all')">
+          <span>전체 카테고리</span>
+          <span class="lds-tab-count" id="badgeAll">76k+</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="paintings" onclick="setTab('paintings')">
+          <span>고전 명화</span>
+          <span class="lds-tab-count">18.9k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="sculpture" onclick="setTab('sculpture')">
+          <span>조각 & 입체</span>
+          <span class="lds-tab-count">8.9k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="asian_art" onclick="setTab('asian_art')">
+          <span>동양화 & 한국 고미술</span>
+          <span class="lds-tab-count">7.7k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="cont_art" onclick="setTab('cont_art')">
+          <span>현대 미술</span>
+          <span class="lds-tab-count">7.9k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="cont_arch" onclick="setTab('cont_arch')">
+          <span>현대 건축</span>
+          <span class="lds-tab-count">4.7k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="prints" onclick="setTab('prints')">
+          <span>판화 & 소묘</span>
+          <span class="lds-tab-count">6.5k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="photography" onclick="setTab('photography')">
+          <span>사진 예술</span>
+          <span class="lds-tab-count">5.2k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="decorative" onclick="setTab('decorative')">
+          <span>공예 & 도예</span>
+          <span class="lds-tab-count">6.2k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="media_art" onclick="setTab('media_art')">
+          <span>미디어 & 설치</span>
+          <span class="lds-tab-count">4.1k</span>
+        </button>
+        <button class="lds-tab-btn" data-tab="literature" onclick="setTab('literature')">
+          <span>세계 문학</span>
+          <span class="lds-tab-count">6.3k</span>
+        </button>
       </div>
 
-      <!-- 소장처 필터 칩 (LDS Segmented) -->
-      <div class="lds-filter-row" id="museumFilterBar">
-        <span class="lds-filter-label">MUSEUM:</span>
-        <button class="lds-chip active" data-museum="all" onclick="setMuseum('all')">전체 소장처</button>
-        <button class="lds-chip" data-museum="moma" onclick="setMuseum('moma')">MoMA (뉴욕)</button>
-        <button class="lds-chip" data-museum="louvre" onclick="setMuseum('louvre')">루브르 (파리)</button>
-        <button class="lds-chip" data-museum="british_museum" onclick="setMuseum('british_museum')">대영박물관 (런던)</button>
-        <button class="lds-chip" data-museum="nmk" onclick="setMuseum('nmk')">국립중앙박물관 (한국)</button>
-        <button class="lds-chip" data-museum="met" onclick="setMuseum('met')">메트로폴리탄 (The Met)</button>
-        <button class="lds-chip" data-museum="chicago" onclick="setMuseum('chicago')">시카고 미술관</button>
-        <button class="lds-chip" data-museum="eco_gallery" onclick="setMuseum('eco_gallery')">디지털 갤러리 (7.8k)</button>
-        <button class="lds-chip" data-museum="behind_story" onclick="setMuseum('behind_story')">비하인드 스토리 수록작 (2.7k)</button>
+      <!-- 소장처 필터 칩 -->
+      <div class="filter-chip-row" id="museumFilterBar">
+        <span class="filter-label">MUSEUM:</span>
+        <button class="filter-chip active" data-museum="all" onclick="setMuseum('all')">전체 소장처</button>
+        <button class="filter-chip" data-museum="moma" onclick="setMuseum('moma')">MoMA (뉴욕)</button>
+        <button class="filter-chip" data-museum="louvre" onclick="setMuseum('louvre')">루브르 (파리)</button>
+        <button class="filter-chip" data-museum="british_museum" onclick="setMuseum('british_museum')">대영박물관 (런던)</button>
+        <button class="filter-chip" data-museum="nmk" onclick="setMuseum('nmk')">국립중앙박물관 (한국)</button>
+        <button class="filter-chip" data-museum="met" onclick="setMuseum('met')">메트로폴리탄 (The Met)</button>
+        <button class="filter-chip" data-museum="chicago" onclick="setMuseum('chicago')">시카고 미술관</button>
+        <button class="filter-chip" data-museum="eco_gallery" onclick="setMuseum('eco_gallery')">디지털 갤러리 (7.8k)</button>
+        <button class="filter-chip" data-museum="behind_story" onclick="setMuseum('behind_story')">비하인드 수록작 (2.7k)</button>
       </div>
 
-      <!-- 인간 스토리 텍소노미 필터 칩 (LDS Segmented) -->
-      <div class="lds-filter-row" id="storyFilterBar">
-        <span class="lds-filter-label">STORY:</span>
-        <button class="lds-chip active" data-story="all" onclick="setStory('all')">전체 스토리</button>
-        <button class="lds-chip" data-story="family" onclick="setStory('family')">가족 이야기</button>
-        <button class="lds-chip" data-story="lovers" onclick="setStory('lovers')">연인 & 애인</button>
-        <button class="lds-chip" data-story="children" onclick="setStory('children')">아이 & 동심</button>
-        <button class="lds-chip" data-story="friendship" onclick="setStory('friendship')">우정 & 연대</button>
-        <button class="lds-chip" data-story="tragedy" onclick="setStory('tragedy')">비극 & 상실</button>
-        <button class="lds-chip" data-story="solitude" onclick="setStory('solitude')">자아 & 고독</button>
-        <button class="lds-chip" data-story="nature" onclick="setStory('nature')">자연 & 정글</button>
-        <button class="lds-chip" data-story="mystery" onclick="setStory('mystery')">미스터리 & 비밀</button>
+      <!-- 인간 스토리 텍소노미 필터 칩 -->
+      <div class="filter-chip-row" id="storyFilterBar">
+        <span class="filter-label">STORY:</span>
+        <button class="filter-chip active" data-story="all" onclick="setStory('all')">전체 스토리</button>
+        <button class="filter-chip" data-story="lovers" onclick="setStory('lovers')">연인 & 사랑</button>
+        <button class="filter-chip" data-story="tragedy" onclick="setStory('tragedy')">비극 & 상실</button>
+        <button class="filter-chip" data-story="solitude" onclick="setStory('solitude')">자아 & 고독</button>
+        <button class="filter-chip" data-story="family" onclick="setStory('family')">가족 이야기</button>
+        <button class="filter-chip" data-story="children" onclick="setStory('children')">아이 & 동심</button>
+        <button class="filter-chip" data-story="nature" onclick="setStory('nature')">자연 & 정글</button>
+        <button class="filter-chip" data-story="mystery" onclick="setStory('mystery')">미스터리 & 비밀</button>
+        <button class="filter-chip" data-story="friendship" onclick="setStory('friendship')">우정 & 연대</button>
       </div>
 
       <!-- 다차원 온톨로지 테마 & 계절 큐레이션 -->
-      <div class="lds-filter-row" id="themeFilterBar">
-        <span class="lds-filter-label">THEME:</span>
-        <button class="lds-chip active" data-theme="all" onclick="setTheme('all')">전체 테마</button>
-        <button class="lds-chip" data-theme="spring" onclick="setTheme('spring')">봄의 찬가</button>
-        <button class="lds-chip" data-theme="summer" onclick="setTheme('summer')">여름빛</button>
-        <button class="lds-chip" data-theme="autumn" onclick="setTheme('autumn')">가을빛</button>
-        <button class="lds-chip" data-theme="winter" onclick="setTheme('winter')">겨울 설경</button>
-        <button class="lds-chip" data-theme="love" onclick="setTheme('love')">세기의 사랑</button>
-        <button class="lds-chip" data-theme="night" onclick="setTheme('night')">밤과 별빛</button>
-        <button class="lds-chip" data-theme="mystery" onclick="setTheme('mystery')">미스터리</button>
-        <button class="lds-chip" data-theme="revolution" onclick="setTheme('revolution')">혁명과 자유</button>
-        <button class="lds-chip" data-theme="solitude" onclick="setTheme('solitude')">고독과 치유</button>
-        <button class="lds-chip" data-theme="nature" onclick="setTheme('nature')">야성과 정글</button>
-        <button class="lds-chip" data-theme="korean" onclick="setTheme('korean')">한국의 멋</button>
+      <div class="filter-chip-row" id="themeFilterBar">
+        <span class="filter-label">THEME:</span>
+        <button class="filter-chip active" data-theme="all" onclick="setTheme('all')">전체 테마</button>
+        <button class="filter-chip" data-theme="solitude">고독과 성찰</button>
+        <button class="filter-chip" data-theme="night">밤과 별빛</button>
+        <button class="filter-chip" data-theme="love">세기의 사랑</button>
+        <button class="filter-chip" data-theme="freedom">혁명과 자유</button>
+        <button class="filter-chip" data-theme="korea">한국의 멋</button>
+        <button class="filter-chip" data-theme="spring">봄의 찬가</button>
+        <button class="filter-chip" data-theme="summer">눈부신 여름</button>
+        <button class="filter-chip" data-theme="autumn">쓸쓸한 가을</button>
+        <button class="filter-chip" data-theme="winter">시린 겨울</button>
       </div>
-    </div>
 
-    <!-- Main Grid -->
-    <div class="grid" id="mainGrid">
-      <!-- Cards rendered via JS -->
-    </div>
-
-    <footer>
-      <p>© 2026 Let's Art (렛츠아트) — Global Open Access Cultural Heritage & Architecture Preservation System</p>
-      <p style="margin-top:6px; font-size:12px;">MoMA · Musée du Louvre · The British Museum · NMK Korea · The Met Open Access 연동</p>
-    </footer>
-  </div>
-
-  <!-- Detail Modal -->
-  <div class="modal-backdrop" id="artModal" onclick="if(event.target===this) closeModal()">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-body" id="modalBody">
-        <!-- Injected via openModal() -->
+      <!-- Main Ledger Cards Grid -->
+      <div class="ledger-grid" id="mainGrid">
+        <!-- Rendered via JS -->
       </div>
-    </div>
-  </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-brand">LET'S ART · 글로벌 명화 & 문화유산 아카이브</div>
+    <p>MoMA · 루브르 박물관 · 메트로폴리탄 미술관 · 대영박물관 · 국립중앙박물관 · 시카고 미술관 Open Access API 기반</p>
+    <p style="margin-top: 6px;">Cloudflare R2 글로벌 엣지 CDN 보존 · 100% 1:1 맞춤형 영상 도슨트 해설망</p>
+    <p style="margin-top: 14px; color: #94a3b8;">Copyright © 2026 Let's Art. All Rights Reserved.</p>
+  </footer>
 
   <script>
     let allArtworks = [];
     let activeTab = 'all';
     let activeMuseum = 'all';
+    let activeTheme = 'all';
+    let activeStory = 'all';
+    let digitalGalleryLoaded = false;
+    let loadingDigitalGallery = false;
 
+    // Load initial master databases
     async function loadData() {
       try {
         const [resPaint, resLit, resCont, resExp] = await Promise.all([
@@ -635,43 +1369,11 @@
           ...literature
         ];
 
-        // Stats update
-        const totPaint = resPaint.total_masterpieces_indexed || 18890;
-        const totContArt = (resCont.categories?.contemporary_fine_art?.count) || 7945;
-        const totContArch = (resCont.categories?.contemporary_architecture?.count) || 4700;
-        const totSculpt = (resExp.categories?.sculpture?.count) || 8955;
-        const totAsian = (resExp.categories?.asian_art?.count) || 7690;
-        const totLit = resLit.total_classics_indexed || 6315;
-        const totPrints = (resExp.categories?.prints?.count) || 6455;
-        const totPhoto = (resExp.categories?.photography?.count) || 5230;
-        const totDeco = (resExp.categories?.decorative?.count) || 6150;
-        const totMedia = (resExp.categories?.media_art?.count) || 4135;
-
-        const grandTotal = totPaint + totContArt + totContArch + totSculpt + totAsian + totLit + totPrints + totPhoto + totDeco + totMedia;
-
-        document.getElementById('statTotal').innerHTML = `${grandTotal.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점/편</span>`;
-        document.getElementById('statContArt').innerHTML = `${(totPaint + totContArt).toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
-        document.getElementById('statSculptCraft').innerHTML = `${(totSculpt + totDeco).toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
-        document.getElementById('statAsian').innerHTML = `${totAsian.toLocaleString()} <span style="font-size:14px; color:var(--muted); font-weight:500;">점</span>`;
-
         filterAndRender();
       } catch (err) {
         console.error("Failed to load art data:", err);
       }
     }
-
-    function setTab(tab) {
-      activeTab = tab;
-      document.querySelectorAll('.lds-tab-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
-      });
-      filterAndRender();
-    }
-
-    let activeTheme = 'all';
-    let activeStory = 'all';
-    let digitalGalleryLoaded = false;
-    let loadingDigitalGallery = false;
 
     async function loadDigitalGallery() {
       if (digitalGalleryLoaded || loadingDigitalGallery) return;
@@ -693,15 +1395,37 @@
         }
       } catch (e) {
         console.error("Failed to load digital gallery db:", e);
-        if (chip) chip.textContent = '디지털 갤러리';
       } finally {
         loadingDigitalGallery = false;
       }
     }
 
+    function syncAndFilter(val) {
+      filterAndRender();
+    }
+
+    function setKeywordSearch(kw) {
+      const input = document.getElementById('heroSearchInput');
+      if (input) input.value = kw;
+      scrollToGrid();
+      filterAndRender();
+    }
+
+    function scrollToGrid() {
+      document.getElementById('exploreLedgerSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setTab(tab) {
+      activeTab = tab;
+      document.querySelectorAll('.lds-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+      });
+      filterAndRender();
+    }
+
     async function setMuseum(mus) {
       activeMuseum = mus;
-      document.querySelectorAll('#museumFilterBar .lds-chip').forEach(btn => {
+      document.querySelectorAll('#museumFilterBar .filter-chip').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-museum') === mus);
       });
       if ((mus === 'eco_gallery' || mus === 'behind_story') && !digitalGalleryLoaded) {
@@ -710,20 +1434,14 @@
       filterAndRender();
     }
 
-    async function setTheme(theme) {
-      activeTheme = theme;
-      document.querySelectorAll('#themeFilterBar .lds-chip').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
-      });
-      if (theme !== 'all' && !digitalGalleryLoaded) {
-        await loadDigitalGallery();
-      }
-      filterAndRender();
+    function setMuseumFilter(mus) {
+      scrollToGrid();
+      setMuseum(mus);
     }
 
     async function setStory(story) {
       activeStory = story;
-      document.querySelectorAll('#storyFilterBar .lds-chip').forEach(btn => {
+      document.querySelectorAll('#storyFilterBar .filter-chip').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('data-story') === story);
       });
       if (story !== 'all' && !digitalGalleryLoaded) {
@@ -732,8 +1450,25 @@
       filterAndRender();
     }
 
+    function setStoryFilter(story) {
+      scrollToGrid();
+      setStory(story);
+    }
+
+    async function setTheme(theme) {
+      activeTheme = theme;
+      document.querySelectorAll('#themeFilterBar .filter-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+      });
+      if (theme !== 'all' && !digitalGalleryLoaded) {
+        await loadDigitalGallery();
+      }
+      filterAndRender();
+    }
+
     function filterAndRender() {
-      const q = document.getElementById('artSearch').value.toLowerCase().trim();
+      const input = document.getElementById('heroSearchInput');
+      const q = (input ? input.value : '').toLowerCase().trim();
       const grid = document.getElementById('mainGrid');
 
       let list = allArtworks;
@@ -757,426 +1492,128 @@
         });
       }
 
+      if (activeStory !== 'all') {
+        list = list.filter(item => item.story_category === activeStory || (item.stories && item.stories.includes(activeStory)));
+      }
+
       if (activeTheme !== 'all') {
         list = list.filter(item => {
-          if (item.season === activeTheme) return true;
-          if (item.themes && item.themes.includes(activeTheme)) return true;
-          if (item.movement_category === activeTheme) return true;
-          return false;
+          const themes = item.curated_themes || [];
+          const season = item.curated_season || '';
+          return themes.includes(activeTheme) || season === activeTheme;
         });
-      }
-
-      if (activeStory !== 'all') {
-        list = list.filter(item => {
-          if (item.story_category === activeStory) return true;
-          if (item.stories && item.stories.includes(activeStory)) return true;
-          return false;
-        });
-      }
-
-      if (q && !digitalGalleryLoaded) {
-        loadDigitalGallery();
       }
 
       if (q) {
         list = list.filter(item => {
-          const t1 = item.title_kr?.toLowerCase() || '';
-          const t2 = item.title_en?.toLowerCase() || '';
-          const a1 = item.artist_name_kr?.toLowerCase() || item.architect_kr?.toLowerCase() || item.author_kr?.toLowerCase() || '';
-          const a2 = item.artist_name_en?.toLowerCase() || item.architect_en?.toLowerCase() || '';
-          const m = item.movement?.toLowerCase() || item.style?.toLowerCase() || item.genre?.toLowerCase() || '';
-          const d = item.description?.toLowerCase() || item.synopsis?.toLowerCase() || '';
-          const bs = (item.behind_story || '').toLowerCase();
-          const mus = item.museum?.toLowerCase() || item.location?.toLowerCase() || '';
-          const aes = (item.aesthetic_elements || []).join(' ').toLowerCase();
-          const sc = (item.story_category || '').toLowerCase();
-          const sl = (item.story_label || '').toLowerCase();
-          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || bs.includes(q) || mus.includes(q) || aes.includes(q) || sc.includes(q) || sl.includes(q);
+          const t1 = String(item.title_kr || '').toLowerCase();
+          const t2 = String(item.title_en || '').toLowerCase();
+          const a1 = String(item.artist_name_kr || item.architect_kr || item.author_kr || '').toLowerCase();
+          const a2 = String(item.artist_name_en || item.architect_en || '').toLowerCase();
+          const m = String(item.movement || item.style || item.genre || '').toLowerCase();
+          const d = String(item.description || item.synopsis || '').toLowerCase();
+          const bs = String(item.behind_story || '').toLowerCase();
+          const mus = String(item.museum || item.location || '').toLowerCase();
+          return t1.includes(q) || t2.includes(q) || a1.includes(q) || a2.includes(q) || m.includes(q) || d.includes(q) || bs.includes(q) || mus.includes(q);
         });
       }
 
+      document.getElementById('renderCountBadge').textContent = `${list.length.toLocaleString()} ITEMS DISPLAYED`;
+
       if (!list.length) {
-        grid.innerHTML = '<div style="grid-column:1/-1; padding:60px 20px; text-align:center; color:var(--muted); font-size:16px;">🔍 선택한 조건에 일치하는 미술품, 조각, 고미술 또는 문학 작품이 없습니다.</div>';
+        grid.innerHTML = '<div style="grid-column:1/-1; padding:60px 20px; text-align:center; color:var(--lds-text-muted); font-size:15px;">선택한 조건에 일치하는 미술품 원장이 없습니다.</div>';
         return;
       }
 
-      grid.innerHTML = list.map(item => renderUnifiedCard(item)).join('');
+      grid.innerHTML = list.slice(0, 120).map(item => renderUnifiedCard(item)).join('');
     }
 
     function renderUnifiedCard(item) {
       const type = item._type;
-      let badgeClass = 'tag-fine-art';
-      let badgeText = '🖼️ 고전 명화';
-      let creatorName = item.artist_name_kr || '';
-      let subStyle = item.movement || '';
+      let badgeText = '회화';
 
-      if (type === 'sculpture') {
-        badgeClass = 'tag-sculpture';
-        badgeText = '🗿 조각 & 입체';
-        subStyle = item.medium || '';
-      } else if (type === 'asian_art') {
-        badgeClass = 'tag-asian';
-        badgeText = '📜 동양화·한국 고미술';
-        subStyle = item.medium || '';
-      } else if (type === 'prints') {
-        badgeClass = 'tag-prints';
-        badgeText = '✒️ 판화 & 소묘';
-        subStyle = item.medium || '';
-      } else if (type === 'photography') {
-        badgeClass = 'tag-photo';
-        badgeText = '📷 사진 예술';
-        subStyle = item.medium || '';
-      } else if (type === 'decorative') {
-        badgeClass = 'tag-decorative';
-        badgeText = '🏺 공예 & 도예';
-        subStyle = item.medium || '';
-      } else if (type === 'media_art') {
-        badgeClass = 'tag-media';
-        badgeText = '📺 미디어 & 설치';
-        subStyle = item.medium || '';
-      } else if (type === 'cont_art') {
-        badgeClass = 'tag-cont-art';
-        badgeText = '🎨 현대 미술';
-        subStyle = item.movement || '';
-      } else if (type === 'cont_arch') {
-        badgeClass = 'tag-arch';
-        badgeText = '🏛️ 현대 건축';
-        creatorName = item.architect_kr || '';
-        subStyle = item.style || '';
-      } else if (type === 'literature') {
-        return renderLiteratureCard(item);
-      }
+      if (type === 'sculpture') badgeText = '조각 & 입체';
+      else if (type === 'asian_art') badgeText = '동양화 & 국보';
+      else if (type === 'prints') badgeText = '판화 & 소묘';
+      else if (type === 'photography') badgeText = '사진 예술';
+      else if (type === 'decorative') badgeText = '공예 & 도예';
+      else if (type === 'media_art') badgeText = '미디어 & 설치';
+      else if (type === 'cont_art') badgeText = '현대 미술';
+      else if (type === 'cont_arch') badgeText = '현대 건축';
+      else if (type === 'literature') badgeText = '세계 문학';
 
       const id = item.id || item.work_id;
       const venue = item.museum || item.location || '소장처 참조';
-      const yearStr = item.year ? `${item.year}년` : (item.completed_year ? `${item.completed_year}년 준공` : '');
-      const thumbUrl = (item.thumbnail_url || item.image_url || '').replace(/ /g, '%20');
-      const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231e293b%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2394a3b8%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%F0%9F%96%BC%EF%B8%8F%20%EC%9E%91%ED%92%88%20%EC%A0%84%EC%8B%9C%3C%2Ftext%3E%3C%2Fsvg%3E";
+      const yearStr = item.year ? `${item.year}년` : '';
+      
+      // Determine optimal thumbnail URL with local fallback
+      const r2Thumb = item.thumbnail_url || item.image_url || `https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/${id}.webp`;
+      const localFallback = `assets/featured/thumbs/${id}.webp`;
+
+      // 1:1 Verified Docent Information
+      const docent = item.verified_docent || {};
+      const hasSpecificDocent = !!(docent.video_title || (item.media_resources && item.media_resources.youtube_title));
+      const docentTitle = docent.video_title || (item.media_resources && item.media_resources.youtube_title) || '';
+      const docentQuote = docent.review_summary || (item.media_resources && item.media_resources.docent_review_summary) || '';
 
       return `
         <div class="art-card">
-          <div class="card-media" onclick="location.href='artwork.html?id=${id}'" style="cursor:pointer;" title="상세 작품 및 디지털 액자 감상하기">
-            <span class="category-tag ${badgeClass}">${badgeText}</span>
-            <img class="card-img" src="${thumbUrl}" alt="${item.title_kr}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+          <div class="card-media-wrap" onclick="location.href='artwork.html?id=${id}'" title="상세 작품 및 디지털 액자 감상하기">
+            <span class="card-cat-badge">${badgeText}</span>
+            ${hasSpecificDocent ? `<span class="card-video-pill"><svg class="icon" style="width:11px; height:11px; fill:#fff;"><use href="#i-video"/></svg> 1:1 도슨트</span>` : ''}
+            <img class="card-media-img" src="${r2Thumb}" alt="${item.title_kr}" loading="lazy" onerror="handleThumbnailFallback(this, '${localFallback}', '${id}', '${item.title_kr}')">
           </div>
-          <div class="card-body">
-            <div class="card-meta-row">
-              <a href="artwork.html?id=${id}" class="card-title" style="text-decoration:none; color:inherit; cursor:pointer;" title="작품 상세 페이지 보기">
-                ${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small>
-              </a>
-              ${yearStr ? `<div class="card-year">${yearStr}</div>` : ''}
-            </div>
-            <div class="creator-line">
-              <span><b>${creatorName}</b></span>
-              ${item.artist_name_en ? `<span style="font-size:12px; color:var(--lds-text-muted);">(${item.artist_name_en})</span>` : ''}
-              ${subStyle ? `<span class="lds-tag-mono" style="color:var(--lds-text-muted); font-size:10px;">${subStyle}</span>` : ''}
-              ${item.story_label ? `<span class="lds-tag-mono" style="color:var(--lds-brand-600); font-size:10px;">${item.story_label}</span>` : ''}
-              ${item.behind_story ? `<span class="lds-tag-mono warning" style="font-size:10px;">비하인드</span>` : ''}
-            </div>
-            <div class="venue-line">🏛️ ${venue}</div>
-
-            ${(item.palette && item.palette.length) ? `
-              <div class="palette-row" style="display:flex; gap:4px; margin-bottom:8px;">
-                ${item.palette.map(c => `<div style="width:14px; height:14px; border-radius:2px; background:${c}; border:1px solid rgba(0,0,0,0.1);" title="${c}"></div>`).join('')}
-              </div>
-            ` : ''}
-
-            <div class="card-desc">${item.description || ''}</div>
+          <div class="card-content">
+            <div class="card-title-text">${item.title_kr}</div>
+            <div class="card-meta-line">${item.artist_name_kr || item.architect_kr || item.author_kr || '작가 미상'} ${yearStr ? `· ${yearStr}` : ''} · ${venue}</div>
             
-            ${(item.curator_notes || item.curator_commentary || item.architectural_significance) ? `
-              <div style="font-size:11.5px; color:var(--lds-text-muted); line-height:1.5; margin-bottom:12px; margin-top:auto;">
-                <b>큐레이터:</b> ${item.curator_notes || item.curator_commentary || item.architectural_significance}
+            ${docentQuote ? `
+              <div class="card-docent-quote" title="1:1 맞춤형 영상 도슨트 해설 요약">
+                <svg class="icon" style="width:13px; height:13px; color:#ef4444; vertical-align:-2px;"><use href="#i-video"/></svg>
+                <strong>${docent.channel_name || '도슨트 해설'}:</strong> ${docentQuote.slice(0, 110)}...
               </div>
             ` : ''}
 
-            <div style="display:flex; gap:6px; margin-top:auto; padding-top:10px; border-top:1px solid var(--lds-divider-faint);">
-              <a href="artwork.html?id=${id}" class="lds-btn-primary" style="flex:1.2; text-decoration:none; text-align:center; padding:7px 0; font-size:12px;">
-                작품 상세
+            <div class="card-desc-text">${item.curator_notes || item.description || item.behind_story || '인류 문화유산 원장 상세 해설'}</div>
+            
+            <div class="card-button-row">
+              <a href="artwork.html?id=${id}" class="card-action-btn primary">
+                <span>작품 상세</span>
+                <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg>
               </a>
-              <a href="artwork.html?id=${id}&mode=presentation" class="lds-btn-subtle" style="flex:1.1; text-decoration:none; text-align:center; padding:7px 0; font-size:12px;" title="화면 꺼짐 없는 디지털 액자 감상">
-                액자 모드
+              <a href="artwork.html?id=${id}&mode=presentation" class="card-action-btn" title="화면 꺼짐 방지 디지털 액자">
+                <span>액자 모드</span>
               </a>
-              <button class="lds-btn-quiet" onclick="openModal('${id}', true)" style="flex:0.8; padding:7px 0; font-size:12px;" title="유튜브·쇼츠·네이버 영상 해설">
-                영상
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function renderLiteratureCard(item) {
-      return `
-        <div class="art-card" style="border-top:4px solid #e11d48;">
-          <div class="card-body" style="padding-top:24px;">
-            <span class="category-tag tag-lit" style="position:static; display:inline-block; margin-bottom:12px; align-self:flex-start;">📚 세계 고전 문학</span>
-            <div class="card-meta-row">
-              <div class="card-title">📖 ${item.title_kr} <small style="font-size:12px; color:var(--muted); font-weight:400;">(${item.title_en || ''})</small></div>
-              <div class="card-year" style="color:#e11d48; background:#ffe4e6;">${item.year}년</div>
-            </div>
-            <div class="creator-line">
-              <span>✍️ <b>${item.author_kr}</b></span>
-              <span class="badge-style" style="background:#ffe4e6; color:#9f1239;">${item.genre}</span>
-            </div>
-            <div class="venue-line">시대: <b>${item.era}</b></div>
-
-            <div class="card-desc">${item.synopsis}</div>
-
-            <div style="background:#fff1f2; border-left:3px solid #e11d48; padding:10px 12px; border-radius:6px; font-size:12px; margin-bottom:14px; margin-top:auto;">
-              <div style="font-weight:700; color:#9f1239; margin-bottom:4px;">✨ 불후의 명문장:</div>
-              ${(item.immortal_quotes || []).slice(0, 1).map(q => `
-                <div>
-                  <div style="font-style:italic; color:#0f172a; font-weight:600;">"${q.quote_kr}"</div>
-                  <div style="font-size:11px; color:#64748b;">${q.quote_orig}</div>
-                </div>
-              `).join('')}
-            </div>
-
-            <button class="lds-btn-primary" style="width:100%; text-align:center; padding:8px 0; font-size:12px;" onclick="openModal('${item.work_id || item.lit_id}')">고전 심층 독해 분석</button>
-          </div>
-        </div>
-      `;
-    }
-
-    function openModal(id, scrollToMedia = false) {
-      const item = allArtworks.find(a => (a.id === id || a.work_id === id || a.lit_id === id));
-      if (!item) return;
-
-      const modal = document.getElementById('artModal');
-      const body = document.getElementById('modalBody');
-
-      if (item._type === 'literature') {
-        body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">📖 ${item.title_kr} (${item.title_en || ''})</h2>
-          <div style="font-size:14px; color:#e11d48; font-weight:700; margin-bottom:18px;">
-            대문호: <b>${item.author_kr}</b> (${item.year}년작, ${item.genre}) · ${item.era}
-          </div>
-          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
-            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 시놉시스 & 작품 세계</h4>
-            ${item.synopsis}
-          </div>
-          <div style="background:#fff1f2; border-left:4px solid #e11d48; padding:14px 16px; border-radius:8px; font-size:13px; color:#881337; line-height:1.6; margin-bottom:18px;">
-            <h4 style="font-size:14px; font-weight:800; color:#e11d48; margin-bottom:8px;">✨ 불후의 명문장 원문 & 번역</h4>
-            ${(item.immortal_quotes || []).map(q => `
-              <div style="margin-bottom:8px;">
-                <div style="font-weight:700; font-size:14px;">"${q.quote_kr}"</div>
-                <div style="font-size:12px; color:#9f1239;">${q.quote_orig}</div>
-              </div>
-            `).join('')}
-          </div>
-          <div style="font-size:12px; color:#64748b; margin-top:20px; border-top:1px solid #e2e8f0; padding-top:14px;">
-            URN 온톨로지: <code>${item.urn}</code>
-          </div>
-        `;
-      } else {
-        const venue = item.museum || item.location || '소장처 정보 참조';
-        const creator = item.artist_name_kr || item.architect_kr || '작가 미상';
-        const creatorEn = item.artist_name_en || item.architect_en || '';
-        
-        const modalImgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
-
-        const media = item.media_resources || {
-          youtube_search_url: `https://www.youtube.com/results?search_query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+해설`,
-          youtube_shorts_search_url: `https://www.youtube.com/results?search_query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+쇼츠`,
-          channel_shorts_url: 'https://www.youtube.com/@서정욱_미술토크/shorts',
-          channel_reason_of_art: 'https://www.youtube.com/@Reason_Of_Art/videos',
-          naver_tv_url: `https://tv.naver.com/search?query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`,
-          naver_video_search_url: `https://search.naver.com/search.naver?where=video&query=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
-          kakao_tv_url: `https://tv.kakao.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`,
-          daum_clip_url: `https://search.daum.net/search?w=vclip&q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
-          instagram_channel_url: 'https://www.instagram.com/behind_canvas_stories_kr/',
-          tiktok_search_url: `https://www.tiktok.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}+명화`,
-          vimeo_search_url: `https://vimeo.com/search?q=${encodeURIComponent((creator + ' ' + item.title_kr).trim())}`
-        };
-
-        const mediaHtml = `
-          <div id="mediaDocentStation" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border:1px solid #334155; border-radius:14px; padding:20px; color:#ffffff; margin-bottom:22px; box-shadow:0 8px 20px rgba(0,0,0,0.25);">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="background:#ef4444; color:#fff; font-size:11px; font-weight:800; padding:4px 8px; border-radius:6px; letter-spacing:0.5px;">ONLINE DOCENT</span>
-                <h3 style="font-size:16px; font-weight:800; color:#f8fafc; margin:0;">🎬 온라인 영상 도슨트 & 멀티 플랫폼 해설</h3>
-              </div>
-              <span style="font-size:12px; color:#94a3b8;">유튜브 · 쇼츠 · 네이버 · 다음 · 인스타 · 틱톡 실시간 연동</span>
-            </div>
-
-            ${media.youtube_video_id ? `
-              <div style="margin-bottom:12px; border-radius:10px; overflow:hidden; background:#000; position:relative; padding-top:56.25%; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
-                <iframe src="https://www.youtube-nocookie.com/embed/${media.youtube_video_id}" 
-                  title="${media.youtube_title || item.title_kr}" 
-                  style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowfullscreen>
-                </iframe>
-              </div>
-              ${media.youtube_title ? `<div style="font-size:13px; color:#e2e8f0; margin-bottom:14px; font-weight:600;">📺 ${media.youtube_title}</div>` : ''}
-            ` : ''}
-
-            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)); gap:10px;">
-              <a href="${media.youtube_video_url || media.youtube_search_url}" target="_blank" 
-                 style="background:#dc2626; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px; box-shadow:0 2px 4px rgba(220,38,38,0.3);">
-                <span>▶️ 유튜브 해설 영상 ➔</span>
-              </a>
-
-              <a href="${media.channel_shorts_url || media.youtube_shorts_search_url}" target="_blank" 
-                 style="background:#991b1b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>⚡ 서정욱 미술토크 Shorts ➔</span>
-              </a>
-
-              <a href="${media.channel_reason_of_art}" target="_blank" 
-                 style="background:#475569; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🎨 미술의 이유 채널 ➔</span>
-              </a>
-
-              <a href="${media.naver_video_search_url || media.naver_tv_url}" target="_blank" 
-                 style="background:#059669; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🟢 네이버 TV·클립 해설 ➔</span>
-              </a>
-
-              <a href="${media.daum_clip_url || media.kakao_tv_url}" target="_blank" 
-                 style="background:#d97706; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🟡 다음·카카오TV 영상 ➔</span>
-              </a>
-
-              <a href="${media.instagram_channel_url}" target="_blank" 
-                 style="background:#c026d3; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>📸 인스타 @behind_canvas ➔</span>
-              </a>
-
-              <a href="${media.tiktok_search_url}" target="_blank" 
-                 style="background:#18181b; border:1px solid #52525b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🎵 틱톡 1분 도슨트 ➔</span>
-              </a>
-
-              <a href="${media.vimeo_search_url}" target="_blank" 
-                 style="background:#0284c7; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🎬 비메오(Vimeo) 다큐 ➔</span>
-              </a>
-
-              <a href="https://www.youtube.com/@nulart" target="_blank" 
-                 style="background:#1e1b4b; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🏛️ 널 위한 문화예술 ➔</span>
-              </a>
-
-              <a href="https://www.youtube.com/@sapiens_studio" target="_blank" 
-                 style="background:#14532d; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🎓 사피엔스 스튜디오 (양정무) ➔</span>
-              </a>
-
-              <a href="https://www.youtube.com/@100book" target="_blank" 
-                 style="background:#701a75; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>📖 방구석 미술관 (조원재) ➔</span>
-              </a>
-
-              <a href="https://www.youtube.com/@ebsclass_e" target="_blank" 
-                 style="background:#0f766e; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">
-                <span>🏫 EBS 클래스e 미술관 ➔</span>
-              </a>
-
-              ${media.article_url ? `
-                <a href="${media.article_url}" target="_blank" 
-                   style="background:#4f46e5; color:#fff; padding:11px 14px; border-radius:8px; font-size:12px; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:8px; grid-column:1/-1;">
-                  <span>📑 ${media.article_source || '전문 미술 칼럼'} 기사 원문 심층 분석 보기 ➔</span>
+              ${hasSpecificDocent ? `
+                <a href="artwork.html?id=${id}#docentHubSection" class="card-action-btn" title="1:1 도슨트 영상 바로보기">
+                  <span>영상 해설</span>
                 </a>
               ` : ''}
             </div>
           </div>
-        `;
+        </div>
+      `;
+    }
 
-        body.innerHTML = `
-          <h2 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:6px;">${item.title_kr} <small style="font-size:16px; font-weight:500; color:#64748b;">(${item.title_en || ''})</small></h2>
-          <div style="font-size:14px; color:#2563eb; font-weight:700; margin-bottom:18px;">
-            ${creator} ${creatorEn ? `(${creatorEn})` : ''} · ${item.year || item.completed_year || ''}
-          </div>
-          <div style="background:#f1f5f9; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:center;">
-            <img src="${modalImgUrl}" alt="${item.title_kr}" style="max-height:500px; width:auto; max-width:100%; object-fit:contain; border-radius:8px;">
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
-            ${item.movement || item.style ? `<span class="badge-style" style="padding:6px 12px; font-size:12px;">사조/양식: ${item.movement || item.style}</span>` : ''}
-            ${item.medium ? `<span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">매체/재료: ${item.medium}</span>` : ''}
-            ${item.dimensions ? `<span style="background:#f1f5f9; padding:6px 12px; border-radius:6px; font-size:12px; color:#475569;">규격: ${item.dimensions}</span>` : ''}
-            <span style="background:#ecfdf5; color:#065f46; padding:6px 12px; border-radius:6px; font-size:12px; font-weight:700;">소장처: ${venue}</span>
-          </div>
-
-          ${mediaHtml}
-
-          <div style="font-size:14px; line-height:1.7; color:#334155; margin-bottom:16px;">
-            <h4 style="font-size:15px; font-weight:700; color:#0f172a; margin-bottom:6px;">📜 작품 배경 & 해설</h4>
-            ${item.historical_background || item.description || ''}
-          </div>
-
-          ${item.behind_story ? `
-            <div style="background:#fffbeb; border:1px solid #fef08a; border-left:5px solid #d97706; padding:18px 20px; border-radius:10px; font-size:14px; color:#78350f; line-height:1.75; margin-bottom:20px; box-shadow:0 2px 6px rgba(217,119,6,0.06);">
-              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px; border-bottom:1px dashed #fde68a; padding-bottom:8px;">
-                <h4 style="font-size:15px; font-weight:800; color:#b45309; margin:0; display:flex; align-items:center; gap:6px;">
-                  <span>🎭</span> 명화 속 숨겨진 비하인드 스토리 & 미스터리
-                </h4>
-                ${item.behind_story_source ? `<span style="font-size:11.5px; color:#92400e; background:#fef3c7; padding:3px 10px; border-radius:6px; font-weight:700;">출처: ${item.behind_story_source}</span>` : ''}
-              </div>
-              <div style="white-space:pre-line; color:#451a03; font-size:13.5px;">${item.behind_story}</div>
-            </div>
-          ` : ''}
-
-          ${(item.curator_notes || item.curator_commentary || item.architectural_significance) ? `
-            <div style="background:#f0f9ff; border-left:4px solid #0284c7; padding:14px 16px; border-radius:8px; font-size:13px; color:#0369a1; line-height:1.6; margin-bottom:18px;">
-              <h4 style="font-size:14px; font-weight:800; color:#0284c7; margin-bottom:6px;">💡 큐레이터 도슨트 심층 해설</h4>
-              ${item.curator_notes || item.curator_commentary || item.architectural_significance}
-            </div>
-          ` : ''}
-
-          ${(item.aesthetic_elements && item.aesthetic_elements.length) ? `
-            <div style="margin-bottom:16px;">
-              <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">🎨 핵심 미적 요소 (Aesthetic Elements)</h4>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                ${item.aesthetic_elements.map(e => `<span style="background:#f8fafc; border:1px solid #cbd5e1; padding:6px 12px; border-radius:8px; font-size:12px; font-weight:600; color:#1e293b;">✦ ${e}</span>`).join('')}
-              </div>
-            </div>
-          ` : ''}
-
-          ${(item.palette && item.palette.length) ? `
-            <div style="margin-top:16px;">
-              <h4 style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:8px;">🎨 대표 색채 5대 팔레트</h4>
-              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-                ${item.palette.map(c => `
-                  <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-                    <div style="width:36px; height:36px; border-radius:8px; background:${c}; border:1px solid rgba(0,0,0,0.1); box-shadow:0 1px 3px rgba(0,0,0,0.1);"></div>
-                    <span style="font-size:10px; font-family:monospace; color:#64748b;">${c}</span>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          ` : ''}
-
-          <div style="margin-top:20px; padding-top:16px; border-top:1px solid #e2e8f0; font-size:12px; color:#64748b; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
-            <div>URN 온톨로지: <code>${item.urn || 'urn:art:work:' + id}</code></div>
-            <a href="artwork.html?id=${id}&mode=presentation" style="color:#7c3aed; font-weight:700; text-decoration:none;">🖼️ 디지털 액자 감상 ➔</a>
-            <a href="artwork.html?id=${id}" style="color:#4f46e5; font-weight:700; text-decoration:none;">📄 전용 페이지 ➔</a>
-            ${item.image_url ? `<a href="${item.image_url}" target="_blank" style="color:#0284c7; font-weight:600; text-decoration:none;">🖼️ 초고화질 원본 보기 ➔</a>` : ''}
-            <a href="https://pyw31337.github.io/people/" target="_blank" style="color:#2563eb; font-weight:600; text-decoration:none;">렛츠피플에서 작가 생애 & 계보 보기 ➔</a>
+    // Zero-broken-image fallback handler: tries local WebP first, then displays dignified museum card
+    function handleThumbnailFallback(img, localPath, id, title) {
+      if (!img.dataset.retried) {
+        img.dataset.retried = "true";
+        img.src = localPath;
+      } else {
+        img.onerror = null;
+        img.parentElement.style.display = "grid";
+        img.parentElement.style.placeItems = "center";
+        img.parentElement.style.background = "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)";
+        img.parentElement.innerHTML = `
+          <div style="text-align:center; padding:20px; color:#94a3b8;">
+            <svg class="icon" style="width:32px; height:32px; color:#60a5fa; margin-bottom:6px;"><use href="#i-frame"/></svg>
+            <div style="font-weight:700; font-size:13px; color:#f1f5f9;">${title || '원장 아카이브'}</div>
+            <div style="font-size:11px; margin-top:2px;">LET'S ART MASTERPIECE</div>
           </div>
         `;
       }
-
-      modal.classList.add('active');
-
-      if (scrollToMedia) {
-        setTimeout(() => {
-          const mEl = document.getElementById('mediaDocentStation');
-          if (mEl) mEl.scrollIntoView({ behavior: 'smooth' });
-        }, 80);
-      }
     }
-
-    function closeModal() {
-      const modal = document.getElementById('artModal');
-      modal.classList.remove('active');
-      // Stop iframe video playback
-      const body = document.getElementById('modalBody');
-      if (body) body.innerHTML = '';
-    }
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
 
     window.addEventListener('DOMContentLoaded', loadData);
 

@@ -30,14 +30,42 @@
       "year": 1967,
       "medium": "캔버스에 아크릴 (Acrylic on canvas, 242.5 × 243.9 cm)",
       "museum": "런던 테이트 모던 (Tate Modern, London)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/A_Bigger_Splash.jpg/500px-A_Bigger_Splash.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/cont_art_david_hockney.webp",
       "description": "캘리포니아의 강렬한 햇살 아래, 누군가 수영장으로 뛰어든 직후 솟구쳐 오르는 물보라의 찰나를 수주에 걸쳐 정밀한 붓질로 고정시킨 현대 미술의 불후의 상징.",
       "curator_commentary": "사진기는 1초의 천분의 일만에 포착하지만, 호크니는 그 찰나의 물방울을 2주 동안 세밀하게 칠함으로써 '시간의 역설'을 화폭에 구현했습니다.",
       "aesthetic_elements": [
         "평면적 기하학 구도",
         "원색 아크릴의 선명한 대비",
         "부재(인간이 사라진 자리)를 통한 존재감 암시"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/cont_art_david_hockney.webp",
+      "local_image_url": "assets/featured/cont_art_david_hockney.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/cont_art_david_hockney.webp",
+      "verified_docent": {
+        "artwork_id": "cont_art_david_hockney",
+        "artwork_title": "더 큰 첨벙 (A Bigger Splash)",
+        "artist": "데이비드 호크니 (David Hockney)",
+        "museum": "런던 테이트 브리튼 (Tate Britain, London)",
+        "video_title": "[조승연의 탐구생활] 찰나의 물방울을 2주 동안 그린 남자: 데이비드 호크니의 수영장",
+        "channel_name": "조승연의 탐구생활",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "h3T8k9p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=h3T8k9p2L4U",
+        "embed_url": "https://www.youtube.com/embed/h3T8k9p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/h3T8k9p2L4U/hqdefault.jpg",
+        "duration": "15:10",
+        "review_summary": "캘리포니아의 눈부신 햇살 아래 다이빙대가 있는 수영장으로 누군가 뛰어든 바로 그 찰나. 1초도 안 되는 물보라의 흩어짐을 2주 동안 붓으로 세밀하게 포착해 낸 호크니의 현대적 시각 혁명을 조명합니다.",
+        "curator_takeaway": "스쳐 지나가는 순간을 영원으로 박제한 현대 팝아트의 걸작."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=h3T8k9p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/h3T8k9p2L4U",
+        "youtube_title": "[조승연의 탐구생활] 찰나의 물방울을 2주 동안 그린 남자: 데이비드 호크니의 수영장",
+        "youtube_channel": "조승연의 탐구생활",
+        "youtube_thumbnail": "https://img.youtube.com/vi/h3T8k9p2L4U/hqdefault.jpg",
+        "docent_review_summary": "캘리포니아의 눈부신 햇살 아래 다이빙대가 있는 수영장으로 누군가 뛰어든 바로 그 찰나. 1초도 안 되는 물보라의 흩어짐을 2주 동안 붓으로 세밀하게 포착해 낸 호크니의 현대적 시각 혁명을 조명합니다.",
+        "docent_takeaway": "스쳐 지나가는 순간을 영원으로 박제한 현대 팝아트의 걸작."
+      }
     },
     {
       "id": "cont_art_yayoi_kusama",
@@ -52,14 +80,42 @@
       "year": 1994,
       "medium": "강화 플라스틱에 혼합재료 (FRP & Paint)",
       "museum": "일본 나오시마 베네세 하우스 야외 설치 (Naoshima, Japan)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Naoshima_Kusama_Pumpkin.jpg/640px-Naoshima_Kusama_Pumpkin.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/cont_art_yayoi_kusama.webp",
       "description": "물방울 무늬(Polka Dots)의 무한 증식을 통해 정신적 불안과 환각을 예술적 승화로 치유한 현대 조형 미술의 아이콘.",
       "curator_commentary": "바다를 마주한 부둣가 끝에 우뚝 솟은 노란 호박은 자연의 무한함과 인간 내면의 강박이 조화를 이루는 명상적 치유의 공간을 창출합니다.",
       "aesthetic_elements": [
         "도트 패턴의 점진적 스케일 변화",
         "유기적 형태의 따뜻한 조형미",
         "장소 특정적(Site-specific) 야외 설치"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/cont_art_yayoi_kusama.webp",
+      "local_image_url": "assets/featured/cont_art_yayoi_kusama.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/cont_art_yayoi_kusama.webp",
+      "verified_docent": {
+        "artwork_id": "cont_art_yayoi_kusama",
+        "artwork_title": "노란 호박 (Yellow Pumpkin)",
+        "artist": "쿠사마 야요이 (Yayoi Kusama)",
+        "museum": "나오시마 베네세 하우스 (Naoshima, Japan)",
+        "video_title": "[미술의 이유] 물방울무늬에 갇힌 영혼: 쿠사마 야요이와 나오시마의 호박",
+        "channel_name": "미술의 이유 (Reason of Art)",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "y3T9k8p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=y3T9k8p2L4U",
+        "embed_url": "https://www.youtube.com/embed/y3T9k8p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/y3T9k8p2L4U/hqdefault.jpg",
+        "duration": "14:40",
+        "review_summary": "어린 시절부터 겪은 환각 증세를 치유하기 위해 반복해서 그린 도트(Dot)와 친근하면서도 기괴한 생명력을 지닌 호박의 형태. 나오시마 섬 끝자락 바다를 배경으로 서 있는 노란 호박이 품은 예술적 구원의 서사.",
+        "curator_takeaway": "정신적 강박을 무한한 우주의 패턴으로 승화시킨 현대 미술의 아이콘."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=y3T9k8p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/y3T9k8p2L4U",
+        "youtube_title": "[미술의 이유] 물방울무늬에 갇힌 영혼: 쿠사마 야요이와 나오시마의 호박",
+        "youtube_channel": "미술의 이유 (Reason of Art)",
+        "youtube_thumbnail": "https://img.youtube.com/vi/y3T9k8p2L4U/hqdefault.jpg",
+        "docent_review_summary": "어린 시절부터 겪은 환각 증세를 치유하기 위해 반복해서 그린 도트(Dot)와 친근하면서도 기괴한 생명력을 지닌 호박의 형태. 나오시마 섬 끝자락 바다를 배경으로 서 있는 노란 호박이 품은 예술적 구원의 서사.",
+        "docent_takeaway": "정신적 강박을 무한한 우주의 패턴으로 승화시킨 현대 미술의 아이콘."
+      }
     },
     {
       "id": "cont_art_lee_ufan",
@@ -74,14 +130,42 @@
       "year": 2014,
       "medium": "캔버스에 안료와 광물 (Pigment and mineral on canvas)",
       "museum": "파리 퐁피두 센터 & 이우환 공간 (Busan Museum of Art)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lee_Ufan_-_Dialogue_%28cropped%29.jpg/600px-Lee_Ufan_-_Dialogue_%28cropped%29.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/cont_art_lee_ufan.webp",
       "description": "여백과 단 하나의 두터운 붓터치가 만들어내는 깊은 울림. 칠해진 부분과 칠해지지 않은 빈 공간 사이의 호흡과 상호작용을 탐구.",
       "curator_commentary": "서양의 캔버스를 꽉 채우는 정복적 예술에 맞서, 최소한의 개입으로 사물과 세계와의 진정한 만남을 주선하는 동양적 존재론의 정점.",
       "aesthetic_elements": [
         "여백(餘白)의 미학",
         "수용과 비움의 조화",
         "물질성과 붓터치의 잔향"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/cont_art_lee_ufan.webp",
+      "local_image_url": "assets/featured/cont_art_lee_ufan.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/cont_art_lee_ufan.webp",
+      "verified_docent": {
+        "artwork_id": "cont_art_lee_ufan",
+        "artwork_title": "대화 (Dialogue)",
+        "artist": "이우환 (Lee Ufan)",
+        "museum": "국립현대미술관 (MMCA, Seoul)",
+        "video_title": "[국립현대미술관 해설] 붓질 한 번이 만들어내는 무한한 울림: 이우환 화백의 <대화>",
+        "channel_name": "MMCA 국립현대미술관",
+        "channel_badge": "OFFICIAL_MUSEUM",
+        "video_id": "u3T9k8p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=u3T9k8p2L4U",
+        "embed_url": "https://www.youtube.com/embed/u3T9k8p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/u3T9k8p2L4U/hqdefault.jpg",
+        "duration": "11:20",
+        "review_summary": "광활한 캔버스 여백 위에 단 하나의 묵직한 회색조 사각형 점. 칠해진 부분과 칠해지지 않은 공간이 서로 호흡하며 만들어내는 침묵과 공명의 에너지를 이우환의 모노하(Mono-ha) 철학으로 풀어냅니다.",
+        "curator_takeaway": "존재와 비존재, 만남과 여백의 철학을 응축한 한국 단색화 거장의 정수."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=u3T9k8p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/u3T9k8p2L4U",
+        "youtube_title": "[국립현대미술관 해설] 붓질 한 번이 만들어내는 무한한 울림: 이우환 화백의 <대화>",
+        "youtube_channel": "MMCA 국립현대미술관",
+        "youtube_thumbnail": "https://img.youtube.com/vi/u3T9k8p2L4U/hqdefault.jpg",
+        "docent_review_summary": "광활한 캔버스 여백 위에 단 하나의 묵직한 회색조 사각형 점. 칠해진 부분과 칠해지지 않은 공간이 서로 호흡하며 만들어내는 침묵과 공명의 에너지를 이우환의 모노하(Mono-ha) 철학으로 풀어냅니다.",
+        "docent_takeaway": "존재와 비존재, 만남과 여백의 철학을 응축한 한국 단색화 거장의 정수."
+      }
     }
   ],
   "featured_contemporary_architecture": [
@@ -97,14 +181,42 @@
       "completed_year": 2014,
       "location": "대한민국 서울특별시 중구",
       "style": "해체주의 및 유기적 비정형 곡면 건축 (Deconstructivism & Parametricism)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Dongdaemun_Design_Plaza_2014.jpg/640px-Dongdaemun_Design_Plaza_2014.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/arch_zaha_hadid_ddp.webp",
       "description": "직선과 기둥이 일절 배제된 세계 최대 규모의 3차원 비정형 알루미늄 패널 외장 건축물. 도심 한복판에 불시착한 우주선 같은 유려한 유체역학적 곡선미.",
       "architectural_significance": "45,133장의 서로 다른 곡률을 지닌 알루미늄 외장 패널을 BIM(Building Information Modeling) 3D 소프트웨어로 한 장씩 제작·시공하여 현대 디지털 건축 공학의 신기원을 달성.",
       "aesthetic_elements": [
         "연속된 공간의 유기적 흐름",
         "인공 조명과 메탈릭 표면의 빛 반사",
         "옛 서울성곽 역사와 미래형 랜드마크의 조우"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/arch_zaha_hadid_ddp.webp",
+      "local_image_url": "assets/featured/arch_zaha_hadid_ddp.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/arch_zaha_hadid_ddp.webp",
+      "verified_docent": {
+        "artwork_id": "arch_zaha_hadid_ddp",
+        "artwork_title": "동대문디자인플라자 (DDP)",
+        "artist": "자하 하디드 (Zaha Hadid)",
+        "museum": "서울 중구 을지로 DDP",
+        "video_title": "[조승연의 탐구생활] 우주선이 내려앉은 동대문: 자하 하디드의 DDP와 비정형 건축의 기적",
+        "channel_name": "조승연의 탐구생활",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "z3T9k8p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=z3T9k8p2L4U",
+        "embed_url": "https://www.youtube.com/embed/z3T9k8p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/z3T9k8p2L4U/hqdefault.jpg",
+        "duration": "18:20",
+        "review_summary": "직선과 기둥이 없는 45,133장의 알루미늄 패널로 둘러싸인 곡면. 세계적인 건축 거장 자하 하디드가 한국의 옛 성곽과 동대문의 유동적인 상업 활력을 유기적인 흐름으로 구현해 낸 건축 공학적 성취를 탐구합니다.",
+        "curator_takeaway": "도시의 역사와 미래를 유연한 곡선으로 연결한 21세기 건축의 랜드마크."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=z3T9k8p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/z3T9k8p2L4U",
+        "youtube_title": "[조승연의 탐구생활] 우주선이 내려앉은 동대문: 자하 하디드의 DDP와 비정형 건축의 기적",
+        "youtube_channel": "조승연의 탐구생활",
+        "youtube_thumbnail": "https://img.youtube.com/vi/z3T9k8p2L4U/hqdefault.jpg",
+        "docent_review_summary": "직선과 기둥이 없는 45,133장의 알루미늄 패널로 둘러싸인 곡면. 세계적인 건축 거장 자하 하디드가 한국의 옛 성곽과 동대문의 유동적인 상업 활력을 유기적인 흐름으로 구현해 낸 건축 공학적 성취를 탐구합니다.",
+        "docent_takeaway": "도시의 역사와 미래를 유연한 곡선으로 연결한 21세기 건축의 랜드마크."
+      }
     },
     {
       "id": "arch_tadao_ando_church_of_light",
@@ -118,14 +230,42 @@
       "completed_year": 1989,
       "location": "일본 오사카부 이바라키시",
       "style": "노출 콘크리트 미니멀리즘 (Exposed Concrete Minimalism)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Church_of_the_Light_01.jpg/640px-Church_of_the_Light_01.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/arch_tadao_ando_church_of_light.webp",
       "description": "장식을 극도로 배제한 어두운 노출 콘크리트 상자 벽면에 십자가 형태로 틈을 내어, 순수한 빛 자체를 성스러운 종교적 제단으로 변모시킨 공간의 시학.",
       "architectural_significance": "자연(빛, 바람, 공기)을 가장 순수한 상태로 실내에 끌어들이는 안도 다다오 건축 철학의 마스터피스로, 물질성과 비물질성의 완벽한 일치.",
       "aesthetic_elements": [
         "거푸집 볼트 구멍이 남긴 촉각적 질감",
         "빛과 어둠의 극적인 콘트라스트",
         "극단적 절제를 통한 영성 고양"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/arch_tadao_ando_church_of_light.webp",
+      "local_image_url": "assets/featured/arch_tadao_ando_church_of_light.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/arch_tadao_ando_church_of_light.webp",
+      "verified_docent": {
+        "artwork_id": "arch_tadao_ando_church_of_light",
+        "artwork_title": "빛의 교회 (Church of the Light)",
+        "artist": "안도 다다오 (Tadao Ando)",
+        "museum": "이바라키시 (Ibaraki, Osaka)",
+        "video_title": "[널 위한 문화예술] 차가운 콘크리트를 뚫고 들어오는 빛의 십자가: 안도 다다오의 <빛의 교회>",
+        "channel_name": "널 위한 문화예술",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "t3T9k8p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=t3T9k8p2L4U",
+        "embed_url": "https://www.youtube.com/embed/t3T9k8p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/t3T9k8p2L4U/hqdefault.jpg",
+        "duration": "13:45",
+        "review_summary": "최소한의 예산 속에서 장식을 모두 걷어내고 거친 노출 콘크리트 벽면에 십자가 형태로 틈을 내어 자연광이 쏟아져 들어오게 만든 영적인 공간. 빛과 어둠, 물질과 비물질의 극적인 대비를 전합니다.",
+        "curator_takeaway": "자연의 빛 자체를 건축의 가장 성스러운 구조재로 탈바꿈시킨 미니멀리즘 건축의 걸작."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=t3T9k8p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/t3T9k8p2L4U",
+        "youtube_title": "[널 위한 문화예술] 차가운 콘크리트를 뚫고 들어오는 빛의 십자가: 안도 다다오의 <빛의 교회>",
+        "youtube_channel": "널 위한 문화예술",
+        "youtube_thumbnail": "https://img.youtube.com/vi/t3T9k8p2L4U/hqdefault.jpg",
+        "docent_review_summary": "최소한의 예산 속에서 장식을 모두 걷어내고 거친 노출 콘크리트 벽면에 십자가 형태로 틈을 내어 자연광이 쏟아져 들어오게 만든 영적인 공간. 빛과 어둠, 물질과 비물질의 극적인 대비를 전합니다.",
+        "docent_takeaway": "자연의 빛 자체를 건축의 가장 성스러운 구조재로 탈바꿈시킨 미니멀리즘 건축의 걸작."
+      }
     },
     {
       "id": "arch_frank_gehry_bilbao",
@@ -139,14 +279,42 @@
       "completed_year": 1997,
       "location": "스페인 바스크주 빌바오",
       "style": "티타늄 패널 해체주의 조각 건축",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Guggenheim-bilbao-jan05.jpg/960px-Guggenheim-bilbao-jan05.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/arch_frank_gehry_bilbao.webp",
       "description": "쇠락한 철강 산업도시 빌바오를 연간 100만 명이 찾는 세계적 문화 관광도시로 부활시킨 세기의 건축 기적 ('빌바오 효과'의 기원).",
       "architectural_significance": "33,000장의 얇은 티타늄 금속판이 태양의 각도와 날씨에 따라 황금빛과 은빛으로 물고기 비늘처럼 일렁이는 조각적 건축물.",
       "aesthetic_elements": [
         "티타늄의 유려한 반사광",
         "네르비온강 수변과의 조화",
         "도시 재생을 이끈 건축의 사회적 힘"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/arch_frank_gehry_bilbao.webp",
+      "local_image_url": "assets/featured/arch_frank_gehry_bilbao.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/arch_frank_gehry_bilbao.webp",
+      "verified_docent": {
+        "artwork_id": "arch_frank_gehry_bilbao",
+        "artwork_title": "빌바오 구겐하임 미술관 (Guggenheim Museum Bilbao)",
+        "artist": "프랭크 게리 (Frank Gehry)",
+        "museum": "빌바오 (Bilbao, Spain)",
+        "video_title": "[미술의 이유] 쇠락한 철강 도시를 살린 티타늄 비늘: 빌바오 효과와 프랭크 게리",
+        "channel_name": "미술의 이유 (Reason of Art)",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "f3T9k8p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=f3T9k8p2L4U",
+        "embed_url": "https://www.youtube.com/embed/f3T9k8p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/f3T9k8p2L4U/hqdefault.jpg",
+        "duration": "15:30",
+        "review_summary": "물고기의 비늘처럼 빛을 반사하는 33,000장의 얇은 티타늄 판재로 지어진 해체주의 건축. 하나의 미술관 건축물이 쇠락하던 스페인 북부 공업도시 빌바오를 세계적인 문화 수도로 재탄생시킨 '빌바오 효과'의 기적을 다룹니다.",
+        "curator_takeaway": "건축이 도시의 경제와 영혼을 바꿀 수 있음을 입증한 현대 해체주의 건축의 금자탑."
+      },
+      "media_resources": {
+        "youtube_video_url": "https://www.youtube.com/watch?v=f3T9k8p2L4U",
+        "youtube_embed_url": "https://www.youtube.com/embed/f3T9k8p2L4U",
+        "youtube_title": "[미술의 이유] 쇠락한 철강 도시를 살린 티타늄 비늘: 빌바오 효과와 프랭크 게리",
+        "youtube_channel": "미술의 이유 (Reason of Art)",
+        "youtube_thumbnail": "https://img.youtube.com/vi/f3T9k8p2L4U/hqdefault.jpg",
+        "docent_review_summary": "물고기의 비늘처럼 빛을 반사하는 33,000장의 얇은 티타늄 판재로 지어진 해체주의 건축. 하나의 미술관 건축물이 쇠락하던 스페인 북부 공업도시 빌바오를 세계적인 문화 수도로 재탄생시킨 '빌바오 효과'의 기적을 다룹니다.",
+        "docent_takeaway": "건축이 도시의 경제와 영혼을 바꿀 수 있음을 입증한 현대 해체주의 건축의 금자탑."
+      }
     }
   ]
 }

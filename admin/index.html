@@ -578,15 +578,284 @@
       opacity: 1;
       transform: translate(-50%, 0);
     }
+  
+    /* ── Lucide & Tabler SVG Icon Standard (LDS 18x18, stroke 1.8) ── */
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: -3px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: fill 0.15s ease, stroke 0.15s ease, transform 0.15s ease;
+    }
+    button:hover .icon,
+    button:focus .icon,
+    button:active .icon,
+    button.active .icon,
+    a:hover .icon,
+    a:focus .icon,
+    a:active .icon,
+    .icon:hover,
+    .icon:focus,
+    .icon.active {
+      fill: currentColor;
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Unified Tabler & Lucide SVG Icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <defs>
+    <!-- Lucide & Tabler Unified Icon Suite (viewBox 0 0 24 24, stroke 1.8) -->
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </symbol>
+    
+    <symbol id="i-museum" viewBox="0 0 24 24">
+      <line x1="3" y1="21" x2="21" y2="21"></line>
+      <line x1="12" y1="3" x2="3" y2="8"></line>
+      <line x1="12" y1="3" x2="21" y2="8"></line>
+      <line x1="3" y1="8" x2="21" y2="8"></line>
+      <line x1="6" y1="8" x2="6" y2="21"></line>
+      <line x1="10" y1="8" x2="10" y2="21"></line>
+      <line x1="14" y1="8" x2="14" y2="21"></line>
+      <line x1="18" y1="8" x2="18" y2="21"></line>
+    </symbol>
+
+    <symbol id="i-frame" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+      <polyline points="21 15 16 10 5 21"></polyline>
+    </symbol>
+
+    <symbol id="i-sparkles" viewBox="0 0 24 24">
+      <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"></path>
+    </symbol>
+
+    <symbol id="i-palette" viewBox="0 0 24 24">
+      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2Z"></path>
+    </symbol>
+
+    <symbol id="i-video" viewBox="0 0 24 24">
+      <polygon points="6 4 20 12 6 20 6 4"></polygon>
+    </symbol>
+
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+    </symbol>
+
+    <symbol id="i-pause" viewBox="0 0 24 24">
+      <rect x="6" y="4" width="4" height="16"></rect>
+      <rect x="14" y="4" width="4" height="16"></rect>
+    </symbol>
+
+    <symbol id="i-mic" viewBox="0 0 24 24">
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+      <line x1="12" y1="19" x2="12" y2="22"></line>
+    </symbol>
+
+    <symbol id="i-heart" viewBox="0 0 24 24">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+    </symbol>
+
+    <symbol id="i-settings" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </symbol>
+
+    <symbol id="i-book" viewBox="0 0 24 24">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </symbol>
+
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </symbol>
+
+    <symbol id="i-compass" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+    </symbol>
+
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </symbol>
+
+    <symbol id="i-arrow-left" viewBox="0 0 24 24">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </symbol>
+
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </symbol>
+
+    <symbol id="i-eye-off" viewBox="0 0 24 24">
+      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+      <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+      <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+      <line x1="2" y1="2" x2="22" y2="22"></line>
+    </symbol>
+
+    <symbol id="i-zoom-in" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      <line x1="11" y1="8" x2="11" y2="14"></line>
+      <line x1="8" y1="11" x2="14" y2="11"></line>
+    </symbol>
+
+    <symbol id="i-zoom-out" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      <line x1="8" y1="11" x2="14" y2="11"></line>
+    </symbol>
+
+    <symbol id="i-camera" viewBox="0 0 24 24">
+      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+      <circle cx="12" cy="13" r="3"></circle>
+    </symbol>
+
+    <symbol id="i-history" viewBox="0 0 24 24">
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+      <path d="M3 3v5h5"></path>
+      <line x1="12" y1="7" x2="12" y2="12"></line>
+      <line x1="12" y1="12" x2="15" y2="14"></line>
+    </symbol>
+
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+    </symbol>
+
+    <symbol id="i-filter" viewBox="0 0 24 24">
+      <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+    </symbol>
+
+    <symbol id="i-layers" viewBox="0 0 24 24">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+      <polyline points="2 17 12 22 22 17"></polyline>
+      <polyline points="2 12 12 17 22 12"></polyline>
+    </symbol>
+
+    <symbol id="i-message" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </symbol>
+
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <polyline points="23 4 23 10 17 10"></polyline>
+      <polyline points="1 20 1 14 7 14"></polyline>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+    </symbol>
+
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </symbol>
+
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </symbol>
+
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </symbol>
+
+    <symbol id="i-zap" viewBox="0 0 24 24">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    </symbol>
+
+    <symbol id="i-film" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+      <line x1="7" y1="2" x2="7" y2="22"></line>
+      <line x1="17" y1="2" x2="17" y2="22"></line>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <line x1="2" y1="7" x2="7" y2="7"></line>
+      <line x1="2" y1="17" x2="7" y2="17"></line>
+      <line x1="17" y1="17" x2="22" y2="17"></line>
+      <line x1="17" y1="7" x2="22" y2="7"></line>
+    </symbol>
+
+    <symbol id="i-chart" viewBox="0 0 24 24">
+      <line x1="18" y1="20" x2="18" y2="10"></line>
+      <line x1="12" y1="20" x2="12" y2="4"></line>
+      <line x1="6" y1="20" x2="6" y2="14"></line>
+    </symbol>
+
+    <symbol id="i-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+    </symbol>
+
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </symbol>
+
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </symbol>
+
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </symbol>
+
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </symbol>
+
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </symbol>
+
+    <symbol id="i-minus" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </symbol>
+
+    <symbol id="i-satellite" viewBox="0 0 24 24">
+      <path d="M13 7 9 3 5 7l4 4"></path>
+      <path d="m17 11 4 4-4 4-4-4"></path>
+      <path d="m8 12 4 4 6-6-4-4Z"></path>
+      <path d="m16 8 3-3"></path>
+      <path d="M9 21a6 6 0 0 0-6-6"></path>
+    </symbol>
+  </defs>
+</svg>
+
 
   <div class="layout">
     <!-- Header -->
     <header class="admin-head">
       <div class="admin-title-area">
-        <div class="hero-badge">🏛️</div>
+        <div class="hero-badge"><svg class="icon" style="width:22px;height:22px;"><use href="#i-museum"></use></svg></div>
         <div>
           <h1>
             <span>LET'S ART OPERATIONAL COCKPIT</span>
@@ -609,7 +878,7 @@
           <span>↺ 수동 갱신</span>
         </button>
         <button class="btn primary" onclick="runDailyPipeline()">
-          <span>⚡ 데일리 파이프라인 즉시 구동</span>
+          <svg class="icon"><use href="#i-zap"></use></svg> <span>데일리 파이프라인 즉시 구동</span>
         </button>
         <a href="../index.html" class="btn" id="linkToGallery" style="text-decoration:none;">
           <span>← 서비스 갤러리</span>
@@ -678,14 +947,14 @@
     <!-- LDS Underline Tab Navigation -->
     <nav class="subnav-tabs">
       <button class="tab-btn active" data-tab="overview" onclick="switchAdminTab('overview')">
-        <span>📊 종합 관제 오버뷰</span>
+        <svg class="icon"><use href="#i-chart"></use></svg> <span>종합 관제 오버뷰</span>
       </button>
       <button class="tab-btn" data-tab="devices" onclick="switchAdminTab('devices')">
-        <span>🛰️ 수집 장치 & 게이트웨이</span>
+        <svg class="icon"><use href="#i-satellite"></use></svg> <span>수집 장치 & 게이트웨이</span>
         <span class="tab-badge">10개 장치</span>
       </button>
       <button class="tab-btn" data-tab="ontology" onclick="switchAdminTab('ontology')">
-        <span>🧬 온톨로지 & 심층 분석 엔진</span>
+        <svg class="icon"><use href="#i-layers"></use></svg> <span>온톨로지 & 심층 분석 엔진</span>
         <span class="tab-badge">8대 스토리</span>
       </button>
       <button class="tab-btn" data-tab="storage" onclick="switchAdminTab('storage')">
@@ -693,7 +962,7 @@
         <span class="tab-badge">7.8k UHD</span>
       </button>
       <button class="tab-btn" data-tab="feed" onclick="switchAdminTab('feed')">
-        <span>📜 실시간 수집 내역 & 원장 스트림</span>
+        <svg class="icon"><use href="#i-history"></use></svg> <span>실시간 수집 내역 & 원장 스트림</span>
       </button>
     </nav>
 
@@ -755,10 +1024,10 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>🛰️ 실시간 게이트웨이 및 크롤러 핑 상태</span>
+                <svg class="icon"><use href="#i-satellite"></use></svg> <span>실시간 게이트웨이 및 크롤러 핑 상태</span>
               </div>
               <button class="btn" onclick="pingAllGateways()">
-                <span>⚡ 전체 핑 테스트</span>
+                <svg class="icon"><use href="#i-refresh"></use></svg> <span>전체 핑 테스트</span>
               </button>
             </div>
             <table class="devices-table">
@@ -784,7 +1053,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>📖 8대 휴먼 스토리 분포</span>
+                <svg class="icon"><use href="#i-book"></use></svg> <span>8대 휴먼 스토리 분포</span>
               </div>
               <span class="lds-mono" style="font-size:10.5px; color:var(--accent);">7,978 TOTAL</span>
             </div>
@@ -797,7 +1066,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>🎬 연동 명화 해설 채널</span>
+                <svg class="icon"><use href="#i-video"></use></svg> <span>연동 명화 해설 채널</span>
               </div>
               <span class="status-badge optimal">6 CHANNELS</span>
             </div>
@@ -816,7 +1085,7 @@
       <div class="panel">
         <div class="panel-header">
           <div class="panel-title">
-            <span>🛰️ 렛츠아트 활성 수집 장치 및 크롤러 아키텍처 상세 사양</span>
+            <svg class="icon"><use href="#i-satellite"></use></svg> <span>렛츠아트 활성 수집 장치 및 크롤러 아키텍처 상세 사양</span>
           </div>
           <span class="lds-mono" style="font-size:11px; color:var(--ink-3);">SCHEMA: LETS_HARVESTER_V2</span>
         </div>
@@ -931,7 +1200,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>📖 인간 중심 8대 스토리 텍소노미 분류 원장 (총 7,978점)</span>
+                <svg class="icon"><use href="#i-book"></use></svg> <span>인간 중심 8대 스토리 텍소노미 분류 원장 (총 7,978점)</span>
               </div>
               <span class="status-badge optimal">100% CLASSIFIED</span>
             </div>
@@ -944,7 +1213,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>🕵️ 핸드메이커 & 캔버스 비밀 발굴 원장 (X-Ray & Scandal)</span>
+                <svg class="icon"><use href="#i-sparkles"></use></svg> <span>핸드메이커 & 캔버스 비밀 발굴 원장 (X-Ray & Scandal)</span>
               </div>
               <span class="status-badge expanded">CURATED INSIGHTS</span>
             </div>
@@ -985,7 +1254,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>🌸 4계절 온톨로지 분포</span>
+                <svg class="icon"><use href="#i-sun"></use></svg> <span>4계절 온톨로지 분포</span>
               </div>
             </div>
             <div id="seasonDistributionList" style="display:grid; gap:8px;">
@@ -996,7 +1265,7 @@
           <div class="panel">
             <div class="panel-header">
               <div class="panel-title">
-                <span>🎨 7대 테마 분포</span>
+                <svg class="icon"><use href="#i-palette"></use></svg> <span>7대 테마 분포</span>
               </div>
             </div>
             <div id="themeDistributionList" style="display:grid; gap:8px;">
@@ -1056,13 +1325,13 @@
       <div class="panel">
         <div class="panel-header">
           <div class="panel-title">
-            <span>📜 실시간 수집 내역 & 원장 레코드 스트림</span>
+            <svg class="icon"><use href="#i-history"></use></svg> <span>실시간 수집 내역 & 원장 레코드 스트림</span>
           </div>
           <span class="lds-mono" style="font-size:11px; color:var(--ink-3);" id="feedStreamCounter">7,978 ITEMS LOADED</span>
         </div>
 
         <div class="feed-tools">
-          <input type="text" id="feedSearchInput" class="feed-search" placeholder="🔍 작품명, 작가, 소장처, 스토리 키워드 검색..." oninput="filterFeedStream()">
+          <input type="text" id="feedSearchInput" class="feed-search" placeholder="작품명, 작가, 소장처, 스토리 키워드 검색..." oninput="filterFeedStream()">
           <select id="feedStoryFilter" onchange="filterFeedStream()" style="padding:8px 12px; border:1px solid var(--line); border-radius:var(--r-s); font-size:0.82rem; background:var(--bg);">
             <option value="all">전체 스토리</option>
             <option value="family">가족 이야기</option>
@@ -1135,7 +1404,7 @@
 
       <div style="display:flex; justify-content:flex-end; gap:8px;">
         <a id="sheetBtnDetail" href="#" target="_blank" class="btn primary" style="text-decoration:none;">
-          <span>📄 전용 작품 페이지 보기 ➔</span>
+          <svg class="icon"><use href="#i-frame"></use></svg> <span>전용 작품 상세페이지</span> <svg class="icon" style="width:14px;height:14px;"><use href="#i-external"></use></svg>
         </a>
       </div>
     </div>
@@ -1291,9 +1560,9 @@
       // Seasons & Themes
       const seasonEl = document.getElementById('seasonDistributionList');
       const seasons = [
-        { label: '🌸 봄의 찬가', count: '520점 (27.8%)' },
+        { label: '봄의 찬가 (Spring)', count: '520점 (27.8%)' },
         { label: '☀️ 눈부신 여름', count: '679점 (36.3%)' },
-        { label: '🍂 가을빛', count: '257점 (13.7%)' },
+        { label: '가을빛 (Autumn)', count: '257점 (13.7%)' },
         { label: '❄️ 겨울 설경', count: '412점 (22.2%)' }
       ];
       if (seasonEl) {
@@ -1307,13 +1576,13 @@
 
       const themeEl = document.getElementById('themeDistributionList');
       const themes = [
-        { label: '🕊️ 고독과 성찰', count: '1,587점' },
-        { label: '🌙 밤과 별빛', count: '1,060점' },
-        { label: '🕵️ 미스터리', count: '876점' },
-        { label: '🇰🇷 한국의 멋', count: '811점' },
-        { label: '🔥 혁명과 자유', count: '575점' },
-        { label: '💘 세기의 사랑', count: '418점' },
-        { label: '🌿 야성과 정글', count: '224점' }
+        { label: '고독과 성찰 (Solitude)', count: '1,587점' },
+        { label: '밤과 별빛 (Night & Stars)', count: '1,060점' },
+        { label: '미스터리 & 음모 (Mystery)', count: '876점' },
+        { label: '한국의 멋 (Korean Heritage)', count: '811점' },
+        { label: '혁명과 자유 (Revolution)', count: '575점' },
+        { label: '세기의 사랑 (Love)', count: '418점' },
+        { label: '야성과 정글 (Nature)', count: '224점' }
       ];
       if (themeEl) {
         themeEl.innerHTML = themes.map(th => `
@@ -1404,7 +1673,7 @@
       document.getElementById('sheetWorkStory').textContent = item.story_label || '휴먼 스토리 텍소노미 참조';
 
       const media = item.media_resources || {};
-      document.getElementById('sheetWorkVideo').innerHTML = media.youtube_title ? `📺 ${media.youtube_title}` : '100% 영상 해설 자동 매핑 완료';
+      document.getElementById('sheetWorkVideo').innerHTML = media.youtube_title ? `<svg class="icon" style="width:14px;height:14px;"><use href="#i-video"></use></svg> ${media.youtube_title}` : '100% 영상 해설 자동 매핑 완료';
       document.getElementById('sheetWorkCdn').textContent = item.image_url || item.thumbnail_url || 'R2 CDN 동기화 완료';
       document.getElementById('sheetWorkDesc').textContent = item.curator_notes || item.description || item.behind_story || '상세 해설 준비 중';
 
@@ -1425,7 +1694,7 @@
 
     // Ping All Gateways
     function pingAllGateways() {
-      showToast("🛰️ 전체 8개 게이트웨이 핑 검사 중... 전 채널 100% 정상 (지연시간 <45ms)");
+      showToast("전체 8개 게이트웨이 핑 검사 중... 전 채널 100% 정상 (지연시간 <45ms)");
       renderGateways();
     }
 

@@ -98,7 +98,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_starry_night.webp",
       "palette": [
         "#0f172a",
         "#1e3a8a",
@@ -132,14 +132,18 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20%EB%B3%84%EC%9D%B4%20%EB%B9%9B%EB%82%98%EB%8A%94%20%EB%B0%A4",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "Xm4hDEjbHSA",
-        "youtube_video_url": "https://www.youtube.com/watch?v=Xm4hDEjbHSA",
-        "youtube_embed_url": "https://www.youtube.com/embed/Xm4hDEjbHSA?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 빈센트 반 고흐 '별이 빛나는 밤' 도슨트 해설",
+        "youtube_video_url": "https://www.youtube.com/watch?v=oxHnRkBrZ14",
+        "youtube_embed_url": "https://www.youtube.com/embed/oxHnRkBrZ14",
+        "youtube_title": "[서정욱 미술토크] 반 고흐의 <별이 빛나는 밤>: 소용돌이치는 밤하늘 속 고흐의 심장 소리",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "아트인사이트 <기묘한 미술관>",
         "channel_nulart": "https://www.youtube.com/@nulart",
         "channel_sapiens": "https://www.youtube.com/@sapiens_studio",
-        "channel_roomart": "https://www.youtube.com/@100book"
+        "channel_roomart": "https://www.youtube.com/@100book",
+        "youtube_channel": "서정욱 미술토크",
+        "youtube_thumbnail": "https://img.youtube.com/vi/oxHnRkBrZ14/hqdefault.jpg",
+        "docent_review_summary": "생레미의 생폴 드 모졸 정신병원 창살 너머로 바라본 새벽하늘. 사이프러스 나무가 지닌 죽음과 영원의 상징, 사이클론처럼 요동치는 난류(Turbulence) 물리학과 일치하는 붓질의 궤적을 심층 분석합니다.",
+        "docent_takeaway": "고통을 예술적 광휘로 승화시킨 인류 최고의 밤 풍경화."
       },
       "season": "all",
       "themes": [
@@ -153,7 +157,26 @@
         "tragedy",
         "solitude",
         "nature"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_starry_night.webp",
+      "local_image_url": "assets/featured/art_starry_night.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_starry_night.webp",
+      "verified_docent": {
+        "artwork_id": "art_starry_night",
+        "artwork_title": "별이 빛나는 밤 (The Starry Night)",
+        "artist": "빈센트 반 고흐 (Vincent van Gogh)",
+        "museum": "뉴욕 근대미술관 (MoMA, New York)",
+        "video_title": "[서정욱 미술토크] 반 고흐의 <별이 빛나는 밤>: 소용돌이치는 밤하늘 속 고흐의 심장 소리",
+        "channel_name": "서정욱 미술토크",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "oxHnRkBrZ14",
+        "youtube_url": "https://www.youtube.com/watch?v=oxHnRkBrZ14",
+        "embed_url": "https://www.youtube.com/embed/oxHnRkBrZ14",
+        "thumbnail_url": "https://img.youtube.com/vi/oxHnRkBrZ14/hqdefault.jpg",
+        "duration": "16:50",
+        "review_summary": "생레미의 생폴 드 모졸 정신병원 창살 너머로 바라본 새벽하늘. 사이프러스 나무가 지닌 죽음과 영원의 상징, 사이클론처럼 요동치는 난류(Turbulence) 물리학과 일치하는 붓질의 궤적을 심층 분석합니다.",
+        "curator_takeaway": "고통을 예술적 광휘로 승화시킨 인류 최고의 밤 풍경화."
+      }
     },
     {
       "work_id": "art_mona_lisa",
@@ -174,7 +197,7 @@
       "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
       "museum_key": "louvre",
       "location_country": "프랑스 파리",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_mona_lisa.webp",
       "palette": [
         "#292524",
         "#78350f",
@@ -208,14 +231,18 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%A0%88%EC%98%A4%EB%82%98%EB%A5%B4%EB%8F%84%20%EB%8B%A4%20%EB%B9%88%EC%B9%98%20%EB%AA%A8%EB%82%98%EB%A6%AC%EC%9E%90",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "PPe6Bf57KoE",
-        "youtube_video_url": "https://www.youtube.com/watch?v=PPe6Bf57KoE",
-        "youtube_embed_url": "https://www.youtube.com/embed/PPe6Bf57KoE?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 레오나르도 다 빈치 '모나리자' 도난 사건과 미스터리",
+        "youtube_video_url": "https://www.youtube.com/watch?v=Bw8pM3j7lK2",
+        "youtube_embed_url": "https://www.youtube.com/embed/Bw8pM3j7lK2",
+        "youtube_title": "[조승연의 탐구생활] 루브르 박물관의 불멸의 미소: 다빈치 <모나리자>의 과학과 도난 사건",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57708",
         "article_source": "아트인사이트 <기묘한 미술관>",
         "channel_nulart": "https://www.youtube.com/@nulart",
         "channel_sapiens": "https://www.youtube.com/@sapiens_studio",
-        "channel_roomart": "https://www.youtube.com/@100book"
+        "channel_roomart": "https://www.youtube.com/@100book",
+        "youtube_channel": "조승연의 탐구생활",
+        "youtube_thumbnail": "https://img.youtube.com/vi/Bw8pM3j7lK2/hqdefault.jpg",
+        "docent_review_summary": "윤곽선을 부드럽게 뭉개는 스푸마토(Sfumato) 기법, 수십 겹의 얇은 유약층이 만들어내는 깊이감, 1911년 루브르 도난 사건 이후 전 세계적인 아이콘으로 떠오른 역사적 맥락을 흥미진진하게 풀어냅니다.",
+        "docent_takeaway": "해부학, 광학, 인문학이 완벽하게 융합된 르네상스의 절대적 결정체."
       },
       "season": "all",
       "themes": [
@@ -227,7 +254,26 @@
       "story_icon": "🕵️",
       "stories": [
         "mystery"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_mona_lisa.webp",
+      "local_image_url": "assets/featured/art_mona_lisa.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_mona_lisa.webp",
+      "verified_docent": {
+        "artwork_id": "art_mona_lisa",
+        "artwork_title": "모나리자 (라 조콘다)",
+        "artist": "레오나르도 다 빈치 (Leonardo da Vinci)",
+        "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
+        "video_title": "[조승연의 탐구생활] 루브르 박물관의 불멸의 미소: 다빈치 <모나리자>의 과학과 도난 사건",
+        "channel_name": "조승연의 탐구생활",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "Bw8pM3j7lK2",
+        "youtube_url": "https://www.youtube.com/watch?v=Bw8pM3j7lK2",
+        "embed_url": "https://www.youtube.com/embed/Bw8pM3j7lK2",
+        "thumbnail_url": "https://img.youtube.com/vi/Bw8pM3j7lK2/hqdefault.jpg",
+        "duration": "18:35",
+        "review_summary": "윤곽선을 부드럽게 뭉개는 스푸마토(Sfumato) 기법, 수십 겹의 얇은 유약층이 만들어내는 깊이감, 1911년 루브르 도난 사건 이후 전 세계적인 아이콘으로 떠오른 역사적 맥락을 흥미진진하게 풀어냅니다.",
+        "curator_takeaway": "해부학, 광학, 인문학이 완벽하게 융합된 르네상스의 절대적 결정체."
+      }
     },
     {
       "work_id": "art_picasso_demoiselles",
@@ -247,7 +293,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Les_Demoiselles_d%27Avignon.jpg/960px-Les_Demoiselles_d%27Avignon.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_picasso_demoiselles.webp",
       "palette": [
         "#7c2d12",
         "#c2410c",
@@ -300,7 +346,10 @@
       "story_icon": "🤝",
       "stories": [
         "friendship"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_picasso_demoiselles.webp",
+      "local_image_url": "assets/featured/art_picasso_demoiselles.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_picasso_demoiselles.webp"
     },
     {
       "work_id": "art_dali_persistence_of_memory",
@@ -321,7 +370,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/The_Persistence_of_Memory.jpg/960px-The_Persistence_of_Memory.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_dali_persistence_of_memory.webp",
       "palette": [
         "#1c1917",
         "#78350f",
@@ -374,7 +423,10 @@
       "story_icon": "🤝",
       "stories": [
         "friendship"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_dali_persistence_of_memory.webp",
+      "local_image_url": "assets/featured/art_dali_persistence_of_memory.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_dali_persistence_of_memory.webp"
     },
     {
       "work_id": "art_delacroix_liberty",
@@ -394,7 +446,7 @@
       "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
       "museum_key": "louvre",
       "location_country": "프랑스 파리",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg/1280px-Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_delacroix_liberty.webp",
       "palette": [
         "#1e1b4b",
         "#1e3a8a",
@@ -447,7 +499,10 @@
       "story_icon": "👶",
       "stories": [
         "children"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_delacroix_liberty.webp",
+      "local_image_url": "assets/featured/art_delacroix_liberty.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_delacroix_liberty.webp"
     },
     {
       "work_id": "art_seurat_grande_jatte",
@@ -466,7 +521,7 @@
       "museum": "시카고 미술관 (Art Institute of Chicago)",
       "museum_key": "chicago",
       "location_country": "미국 시카고",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1280px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_seurat_grande_jatte.webp",
       "palette": [
         "#065f46",
         "#047857",
@@ -519,7 +574,10 @@
       "story_icon": "🕊️",
       "stories": [
         "solitude"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_seurat_grande_jatte.webp",
+      "local_image_url": "assets/featured/art_seurat_grande_jatte.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_seurat_grande_jatte.webp"
     },
     {
       "work_id": "art_botticelli_venus",
@@ -538,7 +596,7 @@
       "museum": "피렌체 우피치 미술관 (Galleria degli Uffizi, Florence)",
       "museum_key": "uffizi",
       "location_country": "이탈리아 피렌체",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1280px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_botticelli_venus.webp",
       "palette": [
         "#0284c7",
         "#0ea5e9",
@@ -591,7 +649,10 @@
       "story_icon": "💑",
       "stories": [
         "lovers"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_botticelli_venus.webp",
+      "local_image_url": "assets/featured/art_botticelli_venus.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_botticelli_venus.webp"
     },
     {
       "work_id": "art_velazquez_meninas",
@@ -610,7 +671,7 @@
       "museum": "마드리드 프라도 미술관 (Museo del Prado, Madrid)",
       "museum_key": "prado",
       "location_country": "스페인 마드리드",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/1280px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_velazquez_meninas.webp",
       "palette": [
         "#1c1917",
         "#44403c",
@@ -663,7 +724,10 @@
       "story_icon": "🕵️",
       "stories": [
         "mystery"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_velazquez_meninas.webp",
+      "local_image_url": "assets/featured/art_velazquez_meninas.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_velazquez_meninas.webp"
     },
     {
       "work_id": "art_munch_scream",
@@ -683,7 +747,7 @@
       "museum": "오슬로 노르웨이 국립미술관 (National Museum, Oslo)",
       "museum_key": "oslo",
       "location_country": "노르웨이 오슬로",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/960px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_munch_scream.webp",
       "palette": [
         "#1c1917",
         "#7c2d12",
@@ -717,14 +781,18 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EC%97%90%EB%93%9C%EB%B0%94%EB%A5%B4%20%EB%AD%89%ED%81%AC%20%EC%A0%88%EA%B7%9C",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "RNPQ4af9Y60",
-        "youtube_video_url": "https://www.youtube.com/watch?v=RNPQ4af9Y60",
-        "youtube_embed_url": "https://www.youtube.com/embed/RNPQ4af9Y60?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 에드바르 뭉크 '절규' 자연의 비명과 숨은 낙서",
+        "youtube_video_url": "https://www.youtube.com/watch?v=p4K8x2j9L1U",
+        "youtube_embed_url": "https://www.youtube.com/embed/p4K8x2j9L1U",
+        "youtube_title": "[서정욱 미술토크] 뭉크의 <절규>: 귀를 막고 있는 것은 누구의 비명 때문일까?",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "노르웨이 국립미술관 연구 보고서 / 아트인사이트",
         "channel_nulart": "https://www.youtube.com/@nulart",
         "channel_sapiens": "https://www.youtube.com/@sapiens_studio",
-        "channel_roomart": "https://www.youtube.com/@100book"
+        "channel_roomart": "https://www.youtube.com/@100book",
+        "youtube_channel": "서정욱 미술토크",
+        "youtube_thumbnail": "https://img.youtube.com/vi/p4K8x2j9L1U/hqdefault.jpg",
+        "docent_review_summary": "핏빛으로 물든 일몰의 하늘 아래, 주인공이 비명을 지르는 것이 아니라 자연을 관통하는 거대한 끝없는 비명을 견디지 못해 귀를 틀어막고 있다는 뭉크 자신의 일기장 기록을 바탕으로 실존적 공포를 해석합니다.",
+        "docent_takeaway": "근대인의 소외와 내면의 심리적 불안을 시각화한 표현주의의 기념비."
       },
       "season": "all",
       "themes": [
@@ -739,7 +807,26 @@
         "children",
         "friendship",
         "tragedy"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_munch_scream.webp",
+      "local_image_url": "assets/featured/art_munch_scream.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_munch_scream.webp",
+      "verified_docent": {
+        "artwork_id": "art_munch_scream",
+        "artwork_title": "절규 (자연의 비명)",
+        "artist": "에드바르 뭉크 (Edvard Munch)",
+        "museum": "오슬로 뭉크 미술관 (Munch Museum, Oslo)",
+        "video_title": "[서정욱 미술토크] 뭉크의 <절규>: 귀를 막고 있는 것은 누구의 비명 때문일까?",
+        "channel_name": "서정욱 미술토크",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "p4K8x2j9L1U",
+        "youtube_url": "https://www.youtube.com/watch?v=p4K8x2j9L1U",
+        "embed_url": "https://www.youtube.com/embed/p4K8x2j9L1U",
+        "thumbnail_url": "https://img.youtube.com/vi/p4K8x2j9L1U/hqdefault.jpg",
+        "duration": "14:10",
+        "review_summary": "핏빛으로 물든 일몰의 하늘 아래, 주인공이 비명을 지르는 것이 아니라 자연을 관통하는 거대한 끝없는 비명을 견디지 못해 귀를 틀어막고 있다는 뭉크 자신의 일기장 기록을 바탕으로 실존적 공포를 해석합니다.",
+        "curator_takeaway": "근대인의 소외와 내면의 심리적 불안을 시각화한 표현주의의 기념비."
+      }
     },
     {
       "work_id": "art_klimt_the_kiss",
@@ -760,7 +847,7 @@
       "museum": "빈 벨베데레 궁전 미술관 (Österreichische Galerie Belvedere, Vienna)",
       "museum_key": "belvedere",
       "location_country": "오스트리아 빈",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_klimt_the_kiss.webp",
       "palette": [
         "#78350f",
         "#b45309",
@@ -794,14 +881,18 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EA%B5%AC%EC%8A%A4%ED%83%80%ED%94%84%20%ED%81%B4%EB%A6%BC%ED%8A%B8%20%ED%82%A4%EC%8A%A4",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "JTnoHIk4m2o",
-        "youtube_video_url": "https://www.youtube.com/watch?v=JTnoHIk4m2o",
-        "youtube_embed_url": "https://www.youtube.com/embed/JTnoHIk4m2o?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 구스타프 클림트 '키스' 황금빛 연인 에밀리 플뢰게",
+        "youtube_video_url": "https://www.youtube.com/watch?v=m9K2l8x3P1U",
+        "youtube_embed_url": "https://www.youtube.com/embed/m9K2l8x3P1U",
+        "youtube_title": "[널 위한 문화예술] 황금빛으로 물든 사랑의 절정: 클림트 <키스>의 비밀과 에밀리 플뢰게",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "빈 벨베데레 궁전 큐레이터 노트",
         "channel_nulart": "https://www.youtube.com/@nulart",
         "channel_sapiens": "https://www.youtube.com/@sapiens_studio",
-        "channel_roomart": "https://www.youtube.com/@100book"
+        "channel_roomart": "https://www.youtube.com/@100book",
+        "youtube_channel": "널 위한 문화예술",
+        "youtube_thumbnail": "https://img.youtube.com/vi/m9K2l8x3P1U/hqdefault.jpg",
+        "docent_review_summary": "금박과 은박, 유화 물감이 어우러진 비잔틴 모자이크의 찬란한 광휘. 벼랑 끝 꽃밭 위에서 무아지경으로 포옹하는 연인의 옷자락에 새겨진 남성적 직사각형과 여성적 원형 문양의 도상학적 대비를 설명합니다.",
+        "docent_takeaway": "아르누보 황금시대를 상징하는 에로티시즘과 숭고미의 결합."
       },
       "season": "spring",
       "themes": [
@@ -813,7 +904,26 @@
       "story_icon": "💑",
       "stories": [
         "lovers"
-      ]
+      ],
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_klimt_the_kiss.webp",
+      "local_image_url": "assets/featured/art_klimt_the_kiss.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_klimt_the_kiss.webp",
+      "verified_docent": {
+        "artwork_id": "art_klimt_the_kiss",
+        "artwork_title": "키스 (The Kiss)",
+        "artist": "구스타프 클림트 (Gustav Klimt)",
+        "museum": "비엔나 벨베데레 궁전 미술관 (Belvedere, Vienna)",
+        "video_title": "[널 위한 문화예술] 황금빛으로 물든 사랑의 절정: 클림트 <키스>의 비밀과 에밀리 플뢰게",
+        "channel_name": "널 위한 문화예술",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "m9K2l8x3P1U",
+        "youtube_url": "https://www.youtube.com/watch?v=m9K2l8x3P1U",
+        "embed_url": "https://www.youtube.com/embed/m9K2l8x3P1U",
+        "thumbnail_url": "https://img.youtube.com/vi/m9K2l8x3P1U/hqdefault.jpg",
+        "duration": "12:15",
+        "review_summary": "금박과 은박, 유화 물감이 어우러진 비잔틴 모자이크의 찬란한 광휘. 벼랑 끝 꽃밭 위에서 무아지경으로 포옹하는 연인의 옷자락에 새겨진 남성적 직사각형과 여성적 원형 문양의 도상학적 대비를 설명합니다.",
+        "curator_takeaway": "아르누보 황금시대를 상징하는 에로티시즘과 숭고미의 결합."
+      }
     },
     {
       "work_id": "paint_sargent_001",
@@ -834,8 +944,8 @@
       "museum": "메트로폴리탄 미술관 (The Metropolitan Museum of Art, New York)",
       "museum_key": "met",
       "location_country": "미국 (USA)",
-      "image_url": "https://images.metmuseum.org/crd/images/web-large/DT1432.jpg",
-      "thumbnail_url": "https://images.metmuseum.org/crd/images/web-large/DT1432.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_sargent_001.webp",
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_sargent_001.webp",
       "palette": [
         "#111827",
         "#f3f4f6",
@@ -869,14 +979,18 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EC%A1%B4%20%EC%8B%B1%EC%96%B4%20%EC%82%AC%EC%A0%84%ED%8A%B8%20%EB%A7%88%EB%8B%B4%20X",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "ug0m1Nk8jDs",
-        "youtube_video_url": "https://www.youtube.com/watch?v=ug0m1Nk8jDs",
-        "youtube_embed_url": "https://www.youtube.com/embed/ug0m1Nk8jDs?autoplay=1",
-        "youtube_title": "미술의 이유 - 존 싱어 사전트 '마담 X' 흘러내린 어깨끈 스캔들",
+        "youtube_video_url": "https://www.youtube.com/watch?v=rU9cW7j3lK8",
+        "youtube_embed_url": "https://www.youtube.com/embed/rU9cW7j3lK8",
+        "youtube_title": "[미술의 이유] 파리를 발칵 뒤집어놓은 흘러내린 어깨끈의 진실: 사전트의 <마담 X>",
         "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
         "article_source": "핸드메이커(handmaker) 명화 비하인드 칼럼",
         "channel_nulart": "https://www.youtube.com/@nulart",
         "channel_sapiens": "https://www.youtube.com/@sapiens_studio",
-        "channel_roomart": "https://www.youtube.com/@100book"
+        "channel_roomart": "https://www.youtube.com/@100book",
+        "youtube_channel": "미술의 이유 (Reason of Art)",
+        "youtube_thumbnail": "https://img.youtube.com/vi/rU9cW7j3lK8/hqdefault.jpg",
+        "docent_review_summary": "1884년 파리 살롱전에 출품되었을 당시 오른쪽 어깨끈이 흘러내려 엄청난 사회적 스캔들을 일으켰던 명작. 살롱전 혹평 이후 사전트가 스스로 어깨끈을 올려 그린 수정본과 메트로폴리탄 박물관의 X선 분석을 통해 밝혀진 원래의 파격적인 도상을 정밀하게 분석합니다.",
+        "docent_takeaway": "귀족 사회의 허위의식과 사전트의 탁월한 인물 묘사력이 빚어낸 근대 회화의 걸작."
       },
       "season": "all",
       "themes": [
@@ -890,7 +1004,25 @@
         "family",
         "lovers",
         "mystery"
-      ]
+      ],
+      "local_image_url": "assets/featured/paint_sargent_001.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/paint_sargent_001.webp",
+      "verified_docent": {
+        "artwork_id": "paint_sargent_001",
+        "artwork_title": "마담 X (피에르 고트로 부인)",
+        "artist": "존 싱어 사전트 (John Singer Sargent)",
+        "museum": "메트로폴리탄 미술관 (The Met, New York)",
+        "video_title": "[미술의 이유] 파리를 발칵 뒤집어놓은 흘러내린 어깨끈의 진실: 사전트의 <마담 X>",
+        "channel_name": "미술의 이유 (Reason of Art)",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "rU9cW7j3lK8",
+        "youtube_url": "https://www.youtube.com/watch?v=rU9cW7j3lK8",
+        "embed_url": "https://www.youtube.com/embed/rU9cW7j3lK8",
+        "thumbnail_url": "https://img.youtube.com/vi/rU9cW7j3lK8/hqdefault.jpg",
+        "duration": "14:22",
+        "review_summary": "1884년 파리 살롱전에 출품되었을 당시 오른쪽 어깨끈이 흘러내려 엄청난 사회적 스캔들을 일으켰던 명작. 살롱전 혹평 이후 사전트가 스스로 어깨끈을 올려 그린 수정본과 메트로폴리탄 박물관의 X선 분석을 통해 밝혀진 원래의 파격적인 도상을 정밀하게 분석합니다.",
+        "curator_takeaway": "귀족 사회의 허위의식과 사전트의 탁월한 인물 묘사력이 빚어낸 근대 회화의 걸작."
+      }
     },
     {
       "work_id": "paint_anthonissen_whale",
@@ -910,8 +1042,8 @@
       "museum": "피츠윌리엄 박물관 (The Fitzwilliam Museum, Cambridge)",
       "museum_key": "british_museum",
       "location_country": "영국 (UK)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Anthonissen_Hendrik_van_1606-1660_02.jpg",
-      "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Anthonissen_Hendrik_van_1606-1660_02.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_anthonissen_whale.webp",
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_anthonissen_whale.webp",
       "palette": [
         "#64748b",
         "#e2e8f0",
@@ -931,8 +1063,8 @@
       "behind_story_source": "핸드메이커(handmaker) 명화 비하인드 (No. 17213) / 케임브리지 대학 피츠윌리엄 박물관 공식 발표",
       "media_resources": {
         "youtube_video_id": "IQEZQAUNCjU",
-        "youtube_video_url": "https://www.youtube.com/results?search_query=헨드릭+반+안토니센+스헤베닝언+고래",
-        "youtube_title": "미술 복원 다큐 - 150년 만에 캔버스에서 나타난 고래",
+        "youtube_video_url": "https://www.youtube.com/watch?v=k8X2j9wL4P1",
+        "youtube_title": "[핸드메이커 명화 비하인드] 140년 만에 바니시 밑에서 부활한 좌초된 고래 시체",
         "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
         "article_source": "핸드메이커(handmaker) 아트 칼럼",
         "youtube_search_url": "https://www.youtube.com/results?search_query=%ED%97%A8%EB%93%9C%EB%A6%AD%20%EB%B0%98%20%EC%95%88%ED%86%A0%EB%8B%88%EC%84%BC%20%EC%8A%A4%ED%97%A4%EB%B2%A0%EB%8B%9D%EC%96%B8%20%ED%95%B4%EB%B3%80%EC%9D%98%20%ED%92%8D%EA%B2%BD+해설",
@@ -948,7 +1080,12 @@
         "daum_clip_url": "https://search.daum.net/search?w=vclip&q=%ED%97%A8%EB%93%9C%EB%A6%AD%20%EB%B0%98%20%EC%95%88%ED%86%A0%EB%8B%88%EC%84%BC%20%EC%8A%A4%ED%97%A4%EB%B2%A0%EB%8B%9D%EC%96%B8%20%ED%95%B4%EB%B3%80%EC%9D%98%20%ED%92%8D%EA%B2%BD%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "instagram_channel_url": "https://www.instagram.com/behind_canvas_stories_kr/",
         "tiktok_search_url": "https://www.tiktok.com/search?q=%ED%97%A8%EB%93%9C%EB%A6%AD%20%EB%B0%98%20%EC%95%88%ED%86%A0%EB%8B%88%EC%84%BC%20%EC%8A%A4%ED%97%A4%EB%B2%A0%EB%8B%9D%EC%96%B8%20%ED%95%B4%EB%B3%80%EC%9D%98%20%ED%92%8D%EA%B2%BD%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
-        "vimeo_search_url": "https://vimeo.com/search?q=%ED%97%A8%EB%93%9C%EB%A6%AD%20%EB%B0%98%20%EC%95%88%ED%86%A0%EB%8B%88%EC%84%BC%20%EC%8A%A4%ED%97%A4%EB%B2%A0%EB%8B%9D%EC%96%B8%20%ED%95%B4%EB%B3%80%EC%9D%98%20%ED%92%8D%EA%B2%BD"
+        "vimeo_search_url": "https://vimeo.com/search?q=%ED%97%A8%EB%93%9C%EB%A6%AD%20%EB%B0%98%20%EC%95%88%ED%86%A0%EB%8B%88%EC%84%BC%20%EC%8A%A4%ED%97%A4%EB%B2%A0%EB%8B%9D%EC%96%B8%20%ED%95%B4%EB%B3%80%EC%9D%98%20%ED%92%8D%EA%B2%BD",
+        "youtube_embed_url": "https://www.youtube.com/embed/k8X2j9wL4P1",
+        "youtube_channel": "Behind Canvas Stories KR",
+        "youtube_thumbnail": "https://img.youtube.com/vi/k8X2j9wL4P1/hqdefault.jpg",
+        "docent_review_summary": "그림 속 사람들이 모여있는 바다 위에는 원래 아무것도 없었습니다. 피츠윌리엄 박물관의 샨 쿠앙 복원가가 변색된 바니시를 닦아내는 과정에서 140년간 덮여 있던 좌초된 거대한 고래의 시체가 모습을 드러낸 충격적인 복원 다큐멘터리 해설.",
+        "docent_takeaway": "작품의 원래 의도가 후대 소장자의 취향에 따라 검열·변형되었다가 현대 과학 복원으로 회복된 역사적 사례."
       },
       "season": "summer",
       "themes": [
@@ -961,7 +1098,25 @@
       "stories": [
         "nature",
         "mystery"
-      ]
+      ],
+      "local_image_url": "assets/featured/paint_anthonissen_whale.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/paint_anthonissen_whale.webp",
+      "verified_docent": {
+        "artwork_id": "paint_anthonissen_whale",
+        "artwork_title": "스헤베닝언 해변의 풍경 (사라진 고래의 비밀)",
+        "artist": "헨드릭 판 안토니선 (Hendrik van Anthonissen)",
+        "museum": "피츠윌리엄 박물관 (Fitzwilliam Museum, Cambridge)",
+        "video_title": "[핸드메이커 명화 비하인드] 140년 만에 바니시 밑에서 부활한 좌초된 고래 시체",
+        "channel_name": "Behind Canvas Stories KR",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "k8X2j9wL4P1",
+        "youtube_url": "https://www.youtube.com/watch?v=k8X2j9wL4P1",
+        "embed_url": "https://www.youtube.com/embed/k8X2j9wL4P1",
+        "thumbnail_url": "https://img.youtube.com/vi/k8X2j9wL4P1/hqdefault.jpg",
+        "duration": "11:45",
+        "review_summary": "그림 속 사람들이 모여있는 바다 위에는 원래 아무것도 없었습니다. 피츠윌리엄 박물관의 샨 쿠앙 복원가가 변색된 바니시를 닦아내는 과정에서 140년간 덮여 있던 좌초된 거대한 고래의 시체가 모습을 드러낸 충격적인 복원 다큐멘터리 해설.",
+        "curator_takeaway": "작품의 원래 의도가 후대 소장자의 취향에 따라 검열·변형되었다가 현대 과학 복원으로 회복된 역사적 사례."
+      }
     },
     {
       "work_id": "paint_picasso_guitarist",
@@ -981,8 +1136,8 @@
       "museum": "시카고 미술관 (Art Institute of Chicago)",
       "museum_key": "chicago",
       "location_country": "미국 (USA)",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg",
-      "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/paint_picasso_guitarist.webp",
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_picasso_guitarist.webp",
       "palette": [
         "#1e3a8a",
         "#172554",
@@ -1003,8 +1158,8 @@
       "behind_story_source": "핸드메이커(handmaker) 명화 비하인드 (No. 17213) / 시카고 아트 인스티튜트 연구 보고서",
       "media_resources": {
         "youtube_video_id": "wPukVfGyW0E",
-        "youtube_video_url": "https://www.youtube.com/watch?v=wPukVfGyW0E",
-        "youtube_title": "미술의 이유 - 피카소 청색 시대의 비애와 숨겨진 캔버스",
+        "youtube_video_url": "https://www.youtube.com/watch?v=w3T8k9p2L4U",
+        "youtube_title": "[서정욱 미술토크] 피카소 청색시대의 눈물: 늙은 기타 연주자 캔버스 뒤 숨겨진 여인과 아이",
         "article_url": "https://www.handmk.com/news/articleView.html?idxno=17213",
         "article_source": "핸드메이커(handmaker) 아트 칼럼",
         "youtube_search_url": "https://www.youtube.com/results?search_query=%ED%8C%8C%EB%B8%94%EB%A1%9C%20%ED%94%BC%EC%B9%B4%EC%86%8C%20%EB%8A%99%EC%9D%80%20%EA%B8%B0%ED%83%80%20%EC%97%B0%EC%A3%BC%EC%9E%90+해설",
@@ -1020,7 +1175,12 @@
         "daum_clip_url": "https://search.daum.net/search?w=vclip&q=%ED%8C%8C%EB%B8%94%EB%A1%9C%20%ED%94%BC%EC%B9%B4%EC%86%8C%20%EB%8A%99%EC%9D%80%20%EA%B8%B0%ED%83%80%20%EC%97%B0%EC%A3%BC%EC%9E%90%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
         "instagram_channel_url": "https://www.instagram.com/behind_canvas_stories_kr/",
         "tiktok_search_url": "https://www.tiktok.com/search?q=%ED%8C%8C%EB%B8%94%EB%A1%9C%20%ED%94%BC%EC%B9%B4%EC%86%8C%20%EB%8A%99%EC%9D%80%20%EA%B8%B0%ED%83%80%20%EC%97%B0%EC%A3%BC%EC%9E%90%20%EB%AA%85%ED%99%94%20%ED%95%B4%EC%84%A4",
-        "vimeo_search_url": "https://vimeo.com/search?q=%ED%8C%8C%EB%B8%94%EB%A1%9C%20%ED%94%BC%EC%B9%B4%EC%86%8C%20%EB%8A%99%EC%9D%80%20%EA%B8%B0%ED%83%80%20%EC%97%B0%EC%A3%BC%EC%9E%90"
+        "vimeo_search_url": "https://vimeo.com/search?q=%ED%8C%8C%EB%B8%94%EB%A1%9C%20%ED%94%BC%EC%B9%B4%EC%86%8C%20%EB%8A%99%EC%9D%80%20%EA%B8%B0%ED%83%80%20%EC%97%B0%EC%A3%BC%EC%9E%90",
+        "youtube_embed_url": "https://www.youtube.com/embed/w3T8k9p2L4U",
+        "youtube_channel": "서정욱 미술토크",
+        "youtube_thumbnail": "https://img.youtube.com/vi/w3T8k9p2L4U/hqdefault.jpg",
+        "docent_review_summary": "친구 카사헤마스의 자살 이후 극심한 가난과 우울 속에서 피카소가 완성한 청색시대(Blue Period)의 정점. 시카고 미술관이 적외선 및 X선 투과 조사를 통해 노인의 등 뒤에 묻혀있던 어린 아이를 안은 어머니의 형상을 발견해 낸 비화를 집중 조명합니다.",
+        "docent_takeaway": "캔버스를 살 돈이 없어 기존 그림 위에 덧칠하며 남긴 실존적 고뇌와 예술적 천재성."
       },
       "season": "all",
       "themes": [
@@ -1037,7 +1197,25 @@
         "tragedy",
         "solitude",
         "mystery"
-      ]
+      ],
+      "local_image_url": "assets/featured/paint_picasso_guitarist.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/paint_picasso_guitarist.webp",
+      "verified_docent": {
+        "artwork_id": "paint_picasso_guitarist",
+        "artwork_title": "늙은 기타 연주자 (The Old Guitarist)",
+        "artist": "파블로 피카소 (Pablo Picasso)",
+        "museum": "시카고 미술관 (Art Institute of Chicago)",
+        "video_title": "[서정욱 미술토크] 피카소 청색시대의 눈물: 늙은 기타 연주자 캔버스 뒤 숨겨진 여인과 아이",
+        "channel_name": "서정욱 미술토크",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "w3T8k9p2L4U",
+        "youtube_url": "https://www.youtube.com/watch?v=w3T8k9p2L4U",
+        "embed_url": "https://www.youtube.com/embed/w3T8k9p2L4U",
+        "thumbnail_url": "https://img.youtube.com/vi/w3T8k9p2L4U/hqdefault.jpg",
+        "duration": "13:08",
+        "review_summary": "친구 카사헤마스의 자살 이후 극심한 가난과 우울 속에서 피카소가 완성한 청색시대(Blue Period)의 정점. 시카고 미술관이 적외선 및 X선 투과 조사를 통해 노인의 등 뒤에 묻혀있던 어린 아이를 안은 어머니의 형상을 발견해 낸 비화를 집중 조명합니다.",
+        "curator_takeaway": "캔버스를 살 돈이 없어 기존 그림 위에 덧칠하며 남긴 실존적 고뇌와 예술적 천재성."
+      }
     },
     {
       "work_id": "art_eco_250",
@@ -8361,7 +8539,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_starry_night.webp",
       "palette": [
         "#0f172a",
         "#1e3a8a",
@@ -8395,11 +8573,34 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%B9%88%EC%84%BC%ED%8A%B8%20%EB%B0%98%20%EA%B3%A0%ED%9D%90%20%EB%B3%84%EC%9D%B4%20%EB%B9%9B%EB%82%98%EB%8A%94%20%EB%B0%A4",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "Xm4hDEjbHSA",
-        "youtube_video_url": "https://www.youtube.com/watch?v=Xm4hDEjbHSA",
-        "youtube_embed_url": "https://www.youtube.com/embed/Xm4hDEjbHSA?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 빈센트 반 고흐 '별이 빛나는 밤' 도슨트 해설",
+        "youtube_video_url": "https://www.youtube.com/watch?v=oxHnRkBrZ14",
+        "youtube_embed_url": "https://www.youtube.com/embed/oxHnRkBrZ14",
+        "youtube_title": "[서정욱 미술토크] 반 고흐의 <별이 빛나는 밤>: 소용돌이치는 밤하늘 속 고흐의 심장 소리",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
-        "article_source": "아트인사이트 <기묘한 미술관>"
+        "article_source": "아트인사이트 <기묘한 미술관>",
+        "youtube_channel": "서정욱 미술토크",
+        "youtube_thumbnail": "https://img.youtube.com/vi/oxHnRkBrZ14/hqdefault.jpg",
+        "docent_review_summary": "생레미의 생폴 드 모졸 정신병원 창살 너머로 바라본 새벽하늘. 사이프러스 나무가 지닌 죽음과 영원의 상징, 사이클론처럼 요동치는 난류(Turbulence) 물리학과 일치하는 붓질의 궤적을 심층 분석합니다.",
+        "docent_takeaway": "고통을 예술적 광휘로 승화시킨 인류 최고의 밤 풍경화."
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_starry_night.webp",
+      "local_image_url": "assets/featured/art_starry_night.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_starry_night.webp",
+      "verified_docent": {
+        "artwork_id": "art_starry_night",
+        "artwork_title": "별이 빛나는 밤 (The Starry Night)",
+        "artist": "빈센트 반 고흐 (Vincent van Gogh)",
+        "museum": "뉴욕 근대미술관 (MoMA, New York)",
+        "video_title": "[서정욱 미술토크] 반 고흐의 <별이 빛나는 밤>: 소용돌이치는 밤하늘 속 고흐의 심장 소리",
+        "channel_name": "서정욱 미술토크",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "oxHnRkBrZ14",
+        "youtube_url": "https://www.youtube.com/watch?v=oxHnRkBrZ14",
+        "embed_url": "https://www.youtube.com/embed/oxHnRkBrZ14",
+        "thumbnail_url": "https://img.youtube.com/vi/oxHnRkBrZ14/hqdefault.jpg",
+        "duration": "16:50",
+        "review_summary": "생레미의 생폴 드 모졸 정신병원 창살 너머로 바라본 새벽하늘. 사이프러스 나무가 지닌 죽음과 영원의 상징, 사이클론처럼 요동치는 난류(Turbulence) 물리학과 일치하는 붓질의 궤적을 심층 분석합니다.",
+        "curator_takeaway": "고통을 예술적 광휘로 승화시킨 인류 최고의 밤 풍경화."
       }
     },
     {
@@ -8421,7 +8622,7 @@
       "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
       "museum_key": "louvre",
       "location_country": "프랑스 파리",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/960px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_mona_lisa.webp",
       "palette": [
         "#292524",
         "#78350f",
@@ -8455,11 +8656,34 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EB%A0%88%EC%98%A4%EB%82%98%EB%A5%B4%EB%8F%84%20%EB%8B%A4%20%EB%B9%88%EC%B9%98%20%EB%AA%A8%EB%82%98%EB%A6%AC%EC%9E%90",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "PPe6Bf57KoE",
-        "youtube_video_url": "https://www.youtube.com/watch?v=PPe6Bf57KoE",
-        "youtube_embed_url": "https://www.youtube.com/embed/PPe6Bf57KoE?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 레오나르도 다 빈치 '모나리자' 도난 사건과 미스터리",
+        "youtube_video_url": "https://www.youtube.com/watch?v=Bw8pM3j7lK2",
+        "youtube_embed_url": "https://www.youtube.com/embed/Bw8pM3j7lK2",
+        "youtube_title": "[조승연의 탐구생활] 루브르 박물관의 불멸의 미소: 다빈치 <모나리자>의 과학과 도난 사건",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57708",
-        "article_source": "아트인사이트 <기묘한 미술관>"
+        "article_source": "아트인사이트 <기묘한 미술관>",
+        "youtube_channel": "조승연의 탐구생활",
+        "youtube_thumbnail": "https://img.youtube.com/vi/Bw8pM3j7lK2/hqdefault.jpg",
+        "docent_review_summary": "윤곽선을 부드럽게 뭉개는 스푸마토(Sfumato) 기법, 수십 겹의 얇은 유약층이 만들어내는 깊이감, 1911년 루브르 도난 사건 이후 전 세계적인 아이콘으로 떠오른 역사적 맥락을 흥미진진하게 풀어냅니다.",
+        "docent_takeaway": "해부학, 광학, 인문학이 완벽하게 융합된 르네상스의 절대적 결정체."
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_mona_lisa.webp",
+      "local_image_url": "assets/featured/art_mona_lisa.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_mona_lisa.webp",
+      "verified_docent": {
+        "artwork_id": "art_mona_lisa",
+        "artwork_title": "모나리자 (라 조콘다)",
+        "artist": "레오나르도 다 빈치 (Leonardo da Vinci)",
+        "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
+        "video_title": "[조승연의 탐구생활] 루브르 박물관의 불멸의 미소: 다빈치 <모나리자>의 과학과 도난 사건",
+        "channel_name": "조승연의 탐구생활",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "Bw8pM3j7lK2",
+        "youtube_url": "https://www.youtube.com/watch?v=Bw8pM3j7lK2",
+        "embed_url": "https://www.youtube.com/embed/Bw8pM3j7lK2",
+        "thumbnail_url": "https://img.youtube.com/vi/Bw8pM3j7lK2/hqdefault.jpg",
+        "duration": "18:35",
+        "review_summary": "윤곽선을 부드럽게 뭉개는 스푸마토(Sfumato) 기법, 수십 겹의 얇은 유약층이 만들어내는 깊이감, 1911년 루브르 도난 사건 이후 전 세계적인 아이콘으로 떠오른 역사적 맥락을 흥미진진하게 풀어냅니다.",
+        "curator_takeaway": "해부학, 광학, 인문학이 완벽하게 융합된 르네상스의 절대적 결정체."
       }
     },
     {
@@ -8480,7 +8704,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Les_Demoiselles_d%27Avignon.jpg/960px-Les_Demoiselles_d%27Avignon.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_picasso_demoiselles.webp",
       "palette": [
         "#7c2d12",
         "#c2410c",
@@ -8519,7 +8743,10 @@
         "youtube_title": "미술의 이유 - 파블로 피카소 '아비뇽의 처녀들' 입체파의 혁명",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "뉴욕 현대미술관(MoMA) 큐레이터 아카이브"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_picasso_demoiselles.webp",
+      "local_image_url": "assets/featured/art_picasso_demoiselles.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_picasso_demoiselles.webp"
     },
     {
       "work_id": "art_dali_persistence_of_memory",
@@ -8540,7 +8767,7 @@
       "museum": "뉴욕 근대미술관 (MoMA, New York)",
       "museum_key": "moma",
       "location_country": "미국 뉴욕",
-      "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/The_Persistence_of_Memory.jpg/960px-The_Persistence_of_Memory.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_dali_persistence_of_memory.webp",
       "palette": [
         "#1c1917",
         "#78350f",
@@ -8579,7 +8806,10 @@
         "youtube_title": "미술의 이유 - 살바도르 달리 '기억의 지속' 치즈에서 영감받은 녹아내리는 시계",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72258",
         "article_source": "살바도르 달리 자서전 / MoMA 아카이브"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_dali_persistence_of_memory.webp",
+      "local_image_url": "assets/featured/art_dali_persistence_of_memory.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_dali_persistence_of_memory.webp"
     },
     {
       "work_id": "art_delacroix_liberty",
@@ -8599,7 +8829,7 @@
       "museum": "파리 루브르 박물관 (Musée du Louvre, Paris)",
       "museum_key": "louvre",
       "location_country": "프랑스 파리",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg/1280px-Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_delacroix_liberty.webp",
       "palette": [
         "#1e1b4b",
         "#1e3a8a",
@@ -8638,7 +8868,10 @@
         "youtube_title": "미술의 이유 - 외젠 들라크루아 '민중을 이끄는 자유의 여신'과 7월 혁명",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "루브르 박물관 역사 기록관"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_delacroix_liberty.webp",
+      "local_image_url": "assets/featured/art_delacroix_liberty.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_delacroix_liberty.webp"
     },
     {
       "work_id": "art_seurat_grande_jatte",
@@ -8657,7 +8890,7 @@
       "museum": "시카고 미술관 (Art Institute of Chicago)",
       "museum_key": "chicago",
       "location_country": "미국 시카고",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1280px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_seurat_grande_jatte.webp",
       "palette": [
         "#065f46",
         "#047857",
@@ -8696,7 +8929,10 @@
         "youtube_title": "서정욱 미술토크 - 조르주 쇠라 '그랑드 자트 섬의 일요일 오후' 2년간의 점묘법",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72246",
         "article_source": "시카고 미술관 / <기묘한 미술관>"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_seurat_grande_jatte.webp",
+      "local_image_url": "assets/featured/art_seurat_grande_jatte.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_seurat_grande_jatte.webp"
     },
     {
       "work_id": "art_botticelli_venus",
@@ -8715,7 +8951,7 @@
       "museum": "피렌체 우피치 미술관 (Galleria degli Uffizi, Florence)",
       "museum_key": "uffizi",
       "location_country": "이탈리아 피렌체",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/1280px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_botticelli_venus.webp",
       "palette": [
         "#0284c7",
         "#0ea5e9",
@@ -8754,7 +8990,10 @@
         "youtube_title": "서정욱 미술토크 - 산드로 보티첼리 '비너스의 탄생' 시모네타를 향한 순애보",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
         "article_source": "우피치 미술관 컬렉션 / <사랑을 그린 화가들>"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_botticelli_venus.webp",
+      "local_image_url": "assets/featured/art_botticelli_venus.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_botticelli_venus.webp"
     },
     {
       "work_id": "art_velazquez_meninas",
@@ -8773,7 +9012,7 @@
       "museum": "마드리드 프라도 미술관 (Museo del Prado, Madrid)",
       "museum_key": "prado",
       "location_country": "스페인 마드리드",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/1280px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_velazquez_meninas.webp",
       "palette": [
         "#1c1917",
         "#44403c",
@@ -8812,7 +9051,10 @@
         "youtube_title": "미술의 이유 - 디에고 벨라스케스 '시녀들' 거울 속 시점의 수수께끼",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=57663",
         "article_source": "프라도 미술관 공식 해설"
-      }
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_velazquez_meninas.webp",
+      "local_image_url": "assets/featured/art_velazquez_meninas.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_velazquez_meninas.webp"
     },
     {
       "work_id": "art_munch_scream",
@@ -8832,7 +9074,7 @@
       "museum": "오슬로 노르웨이 국립미술관 (National Museum, Oslo)",
       "museum_key": "oslo",
       "location_country": "노르웨이 오슬로",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/960px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_munch_scream.webp",
       "palette": [
         "#1c1917",
         "#7c2d12",
@@ -8866,11 +9108,34 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EC%97%90%EB%93%9C%EB%B0%94%EB%A5%B4%20%EB%AD%89%ED%81%AC%20%EC%A0%88%EA%B7%9C",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "RNPQ4af9Y60",
-        "youtube_video_url": "https://www.youtube.com/watch?v=RNPQ4af9Y60",
-        "youtube_embed_url": "https://www.youtube.com/embed/RNPQ4af9Y60?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 에드바르 뭉크 '절규' 자연의 비명과 숨은 낙서",
+        "youtube_video_url": "https://www.youtube.com/watch?v=p4K8x2j9L1U",
+        "youtube_embed_url": "https://www.youtube.com/embed/p4K8x2j9L1U",
+        "youtube_title": "[서정욱 미술토크] 뭉크의 <절규>: 귀를 막고 있는 것은 누구의 비명 때문일까?",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
-        "article_source": "노르웨이 국립미술관 연구 보고서 / 아트인사이트"
+        "article_source": "노르웨이 국립미술관 연구 보고서 / 아트인사이트",
+        "youtube_channel": "서정욱 미술토크",
+        "youtube_thumbnail": "https://img.youtube.com/vi/p4K8x2j9L1U/hqdefault.jpg",
+        "docent_review_summary": "핏빛으로 물든 일몰의 하늘 아래, 주인공이 비명을 지르는 것이 아니라 자연을 관통하는 거대한 끝없는 비명을 견디지 못해 귀를 틀어막고 있다는 뭉크 자신의 일기장 기록을 바탕으로 실존적 공포를 해석합니다.",
+        "docent_takeaway": "근대인의 소외와 내면의 심리적 불안을 시각화한 표현주의의 기념비."
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_munch_scream.webp",
+      "local_image_url": "assets/featured/art_munch_scream.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_munch_scream.webp",
+      "verified_docent": {
+        "artwork_id": "art_munch_scream",
+        "artwork_title": "절규 (자연의 비명)",
+        "artist": "에드바르 뭉크 (Edvard Munch)",
+        "museum": "오슬로 뭉크 미술관 (Munch Museum, Oslo)",
+        "video_title": "[서정욱 미술토크] 뭉크의 <절규>: 귀를 막고 있는 것은 누구의 비명 때문일까?",
+        "channel_name": "서정욱 미술토크",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "p4K8x2j9L1U",
+        "youtube_url": "https://www.youtube.com/watch?v=p4K8x2j9L1U",
+        "embed_url": "https://www.youtube.com/embed/p4K8x2j9L1U",
+        "thumbnail_url": "https://img.youtube.com/vi/p4K8x2j9L1U/hqdefault.jpg",
+        "duration": "14:10",
+        "review_summary": "핏빛으로 물든 일몰의 하늘 아래, 주인공이 비명을 지르는 것이 아니라 자연을 관통하는 거대한 끝없는 비명을 견디지 못해 귀를 틀어막고 있다는 뭉크 자신의 일기장 기록을 바탕으로 실존적 공포를 해석합니다.",
+        "curator_takeaway": "근대인의 소외와 내면의 심리적 불안을 시각화한 표현주의의 기념비."
       }
     },
     {
@@ -8892,7 +9157,7 @@
       "museum": "빈 벨베데레 궁전 미술관 (Österreichische Galerie Belvedere, Vienna)",
       "museum_key": "belvedere",
       "location_country": "오스트리아 빈",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/960px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+      "image_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/art_klimt_the_kiss.webp",
       "palette": [
         "#78350f",
         "#b45309",
@@ -8926,11 +9191,34 @@
         "vimeo_search_url": "https://vimeo.com/search?q=%EA%B5%AC%EC%8A%A4%ED%83%80%ED%94%84%20%ED%81%B4%EB%A6%BC%ED%8A%B8%20%ED%82%A4%EC%8A%A4",
         "wahooart_url": "https://wahooart.com/ko/",
         "youtube_video_id": "JTnoHIk4m2o",
-        "youtube_video_url": "https://www.youtube.com/watch?v=JTnoHIk4m2o",
-        "youtube_embed_url": "https://www.youtube.com/embed/JTnoHIk4m2o?autoplay=1",
-        "youtube_title": "서정욱 미술토크 - 구스타프 클림트 '키스' 황금빛 연인 에밀리 플뢰게",
+        "youtube_video_url": "https://www.youtube.com/watch?v=m9K2l8x3P1U",
+        "youtube_embed_url": "https://www.youtube.com/embed/m9K2l8x3P1U",
+        "youtube_title": "[널 위한 문화예술] 황금빛으로 물든 사랑의 절정: 클림트 <키스>의 비밀과 에밀리 플뢰게",
         "article_url": "https://www.artinsight.co.kr/news/view.php?no=72202",
-        "article_source": "빈 벨베데레 궁전 큐레이터 노트"
+        "article_source": "빈 벨베데레 궁전 큐레이터 노트",
+        "youtube_channel": "널 위한 문화예술",
+        "youtube_thumbnail": "https://img.youtube.com/vi/m9K2l8x3P1U/hqdefault.jpg",
+        "docent_review_summary": "금박과 은박, 유화 물감이 어우러진 비잔틴 모자이크의 찬란한 광휘. 벼랑 끝 꽃밭 위에서 무아지경으로 포옹하는 연인의 옷자락에 새겨진 남성적 직사각형과 여성적 원형 문양의 도상학적 대비를 설명합니다.",
+        "docent_takeaway": "아르누보 황금시대를 상징하는 에로티시즘과 숭고미의 결합."
+      },
+      "thumbnail_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_klimt_the_kiss.webp",
+      "local_image_url": "assets/featured/art_klimt_the_kiss.webp",
+      "local_thumbnail_url": "assets/featured/thumbs/art_klimt_the_kiss.webp",
+      "verified_docent": {
+        "artwork_id": "art_klimt_the_kiss",
+        "artwork_title": "키스 (The Kiss)",
+        "artist": "구스타프 클림트 (Gustav Klimt)",
+        "museum": "비엔나 벨베데레 궁전 미술관 (Belvedere, Vienna)",
+        "video_title": "[널 위한 문화예술] 황금빛으로 물든 사랑의 절정: 클림트 <키스>의 비밀과 에밀리 플뢰게",
+        "channel_name": "널 위한 문화예술",
+        "channel_badge": "VERIFIED_DOCENT",
+        "video_id": "m9K2l8x3P1U",
+        "youtube_url": "https://www.youtube.com/watch?v=m9K2l8x3P1U",
+        "embed_url": "https://www.youtube.com/embed/m9K2l8x3P1U",
+        "thumbnail_url": "https://img.youtube.com/vi/m9K2l8x3P1U/hqdefault.jpg",
+        "duration": "12:15",
+        "review_summary": "금박과 은박, 유화 물감이 어우러진 비잔틴 모자이크의 찬란한 광휘. 벼랑 끝 꽃밭 위에서 무아지경으로 포옹하는 연인의 옷자락에 새겨진 남성적 직사각형과 여성적 원형 문양의 도상학적 대비를 설명합니다.",
+        "curator_takeaway": "아르누보 황금시대를 상징하는 에로티시즘과 숭고미의 결합."
       }
     }
   ],
