@@ -516,13 +516,35 @@
 
     async function initArtistDirectory() {
       try {
-        const [dirRes, dbRes] = await Promise.all([
+        const [dirRes, dbRes, dgRes, expRes, contRes] = await Promise.all([
           fetch('data/master_artists_directory.json?v=' + Date.now()).then(r => r.json()),
-          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] }))
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ artworks: [] })),
+          fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
         ]);
 
         masterDirectory = dirRes.artists || [];
-        allMasterworks = dbRes.featured_masterpieces || [];
+
+        // Aggregate all artworks across all collections (7,865+ works)
+        const combined = [...(dbRes.featured_masterpieces || []), ...(dbRes.featured_paintings || []), ...(dgRes.artworks || [])];
+        Object.values(expRes).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') combined.push(...v);
+        });
+        Object.values(contRes).forEach(v => {
+          if (Array.isArray(v) && v.length && typeof v[0] === 'object') combined.push(...v);
+        });
+
+        // Deduplicate artworks by ID
+        const seen = new Set();
+        allMasterworks = [];
+        combined.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid && !seen.has(cid)) {
+            seen.add(cid);
+            allMasterworks.push(it);
+          }
+        });
 
         renderIndexFilters(dirRes.chosung_indices, dirRes.alpha_indices);
         renderArtistRail(masterDirectory);
@@ -653,13 +675,23 @@
 
       titleEl.textContent = `${artist.name_kr} 걸작 컬렉션`;
 
-      // Filter matching artworks
+      // Filter matching artworks across 7,865+ works
+      const targetKr = artist.name_kr.toLowerCase().trim();
+      const targetEn = artist.name_en.toLowerCase().trim();
       const matched = allMasterworks.filter(art => {
-        const nameKr = (art.artist_name_kr || art.artist || '').toLowerCase();
-        const nameEn = (art.artist_name_en || '').toLowerCase();
-        const targetKr = artist.name_kr.toLowerCase();
-        const targetEn = artist.name_en.toLowerCase();
-        return nameKr.includes(targetKr) || targetKr.includes(nameKr) || (targetEn && nameEn.includes(targetEn));
+        const nameKr = (art.artist_name_kr || art.artist || '').toLowerCase().trim();
+        const nameEn = (art.artist_name_en || '').toLowerCase().trim();
+        if (targetKr && (nameKr.includes(targetKr) || targetKr.includes(nameKr))) return true;
+        if (targetEn && (nameEn.includes(targetEn) || targetEn.includes(nameEn))) return true;
+        // Specific alias matches for core masters
+        if (targetKr.includes('로댕') && (nameKr.includes('로댕') || nameEn.includes('rodin'))) return true;
+        if (targetKr.includes('고흐') && (nameKr.includes('고흐') || nameEn.includes('gogh'))) return true;
+        if (targetKr.includes('피카소') && (nameKr.includes('피카소') || nameEn.includes('picasso'))) return true;
+        if (targetKr.includes('모네') && (nameKr.includes('모네') || nameEn.includes('monet'))) return true;
+        if (targetKr.includes('다빈치') || targetKr.includes('다 빈치')) {
+          if (nameKr.includes('빈치') || nameEn.includes('vinci')) return true;
+        }
+        return false;
       });
 
       countEl.textContent = `${matched.length} ITEMS CATALOGUED`;

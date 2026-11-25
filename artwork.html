@@ -51,7 +51,8 @@
       position: sticky;
       top: 0;
       width: 100%;
-      height: 100vh;
+      height: 78vh;
+      min-height: 520px;
       overflow: hidden;
       background: var(--gallery-noir);
       display: flex;
@@ -391,12 +392,12 @@
     .content-sheet-container {
       position: relative;
       z-index: 20;
-      margin-top: 100vh;
+      margin-top: 78vh;
       background: #ffffff;
       color: var(--lds-text-body);
       border: none;
       min-height: 100vh;
-      padding: 48px 24px 100px;
+      padding: 32px 24px 100px;
     }
 
     .content-sheet-inner {
@@ -2271,6 +2272,20 @@
               <input type="range" class="voice-scrub-slider" id="voiceScrubSlider" min="0" max="100" value="0" step="0.5" oninput="onScrubInput(this.value)" onchange="onScrubChange(this.value)">
             </div>
             <div class="voice-status-label" id="voiceStatusLabel" style="font-size:12px; color:#94a3b8; text-align:left;">명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다</div>
+
+            <!-- Karaoke-Style Synchronized Script Dock integrated with Voice Docent Station -->
+            <div class="karaoke-script-container" id="karaokeScriptDock" style="margin-top:14px; background:rgba(0,0,0,0.3); border-radius:6px; padding:14px 16px;">
+              <div class="karaoke-header-bar" style="border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:10px; padding-bottom:8px;">
+                <span class="karaoke-badge">
+                  <span class="karaoke-live-dot"></span>
+                  <span>1:1 해설 자막 싱크 동기화 (KARAOKE SCRIPT)</span>
+                </span>
+                <span style="font-family:var(--lds-font-mono); font-size:11px; color:#94a3b8;" id="karaokeTimeSync">00:00 / 00:00</span>
+              </div>
+              <div class="karaoke-lines-list" id="karaokeLinesList">
+                <!-- Dynamically populated karaoke script lines -->
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2332,7 +2347,7 @@
             <span style="width:7px; height:7px; border-radius:50%; background:#ef4444; display:inline-block;"></span>
             1:1 OFFICIAL VIDEO DOCENT
           </span>
-          <span class="lds-mono" style="font-size:11px; color:#64748b;">100% VERIFIED LECTURE</span>
+          
         </div>
 
         <!-- 16:9 Cinema Player -->
@@ -2341,19 +2356,7 @@
         </div>
         <div class="docent-video-title" id="docentVideoTitle">명화 해설 영상</div>
 
-        <!-- Karaoke-Style Synchronized Script Dock -->
-        <div class="karaoke-script-container" id="karaokeScriptDock">
-          <div class="karaoke-header-bar">
-            <span class="karaoke-badge">
-              <span class="karaoke-live-dot"></span>
-              <span>1:1 해설 자막 싱크 동기화 (KARAOKE SCRIPT)</span>
-            </span>
-            <span style="font-family:var(--lds-font-mono); font-size:11px; color:#94a3b8;" id="karaokeTimeSync">00:00 / 00:00</span>
-          </div>
-          <div class="karaoke-lines-list" id="karaokeLinesList">
-            <!-- Dynamically populated karaoke script lines -->
-          </div>
-        </div>
+
 
         <!-- 1:1 Precision Docent Review & Curator Analysis -->
         <div class="docent-analysis-box" id="docentAnalysisBox" style="display:none;">
@@ -2660,9 +2663,14 @@
       const heroBg = document.getElementById('heroAmbientBg');
       if (heroBg) heroBg.style.backgroundImage = `url('${imgUrl}')`;
 
-      // De-duplicate Korean and English titles/artists
-      const titleKr = (item.title_kr || '').trim();
-      const titleEn = (item.title_en || '').trim();
+      // De-duplicate Korean and English titles/artists (strips already included parenthetical English)
+      let titleKr = (item.title_kr || '').trim();
+      let titleEn = (item.title_en || '').trim();
+      
+      // If titleKr already contains (English Title), strip it from titleKr or do not append titleEn twice
+      if (titleEn && titleKr.toLowerCase().includes(titleEn.toLowerCase())) {
+        titleKr = titleKr.replace(new RegExp(`\\s*\\(${titleEn}\\)`, 'i'), '').trim();
+      }
       const cleanTitleEn = (titleEn && titleEn.toLowerCase() !== titleKr.toLowerCase()) ? titleEn : '';
 
       const artistKr = (item.artist_name_kr || item.architect_kr || item.author_kr || '작가 미상').trim();
@@ -2995,7 +3003,7 @@
             <span class="people-urn-badge">${master.urn}</span>
           </div>
           <div class="people-profile-body">
-            <img class="people-avatar-img" src="${master.profile_image || (artwork.image_url || '')}" alt="${master.name_kr}" onerror="if(this.src!=='${artwork.image_url || ''}'){this.src='${artwork.image_url || ''}';}else{this.src='assets/icons/favicon-32.png';}">
+            <img class="people-avatar-img" src="${master.profile_image || 'assets/artists/picasso.jpg'}" alt="${master.name_kr}" onerror="this.src='assets/icons/favicon-32.png';">
             <div class="people-bio-wrap">
               <div class="people-name-row">
                 <span class="people-name-kr">${master.name_kr}</span>
@@ -3086,8 +3094,11 @@
         });
 
         const activeLine = document.getElementById(`kline-${activeIdx}`);
-        if (activeLine) {
-          activeLine.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const listContainer = document.getElementById('karaokeLinesList');
+        if (activeLine && listContainer) {
+          // Scroll ONLY inside the karaoke lines list container, NEVER scroll window or document!
+          const topPos = activeLine.offsetTop - listContainer.offsetTop;
+          listContainer.scrollTo({ top: Math.max(0, topPos - 40), behavior: 'smooth' });
         }
       }
 

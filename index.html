@@ -752,7 +752,49 @@
       color: var(--lds-text-strong);
       margin-bottom: 8px;
     }
-  </style>
+  
+    /* Category Navigation Bar (Below Hero Zone) */
+    .hero-category-nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .hero-category-nav-bar::-webkit-scrollbar { height: 3px; }
+    .hero-category-nav-bar::-webkit-scrollbar-thumb { background: #334155; }
+    .hero-cat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .hero-cat-pill:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #3b82f6;
+      transform: translateY(-1px);
+    }
+    .hero-cat-pill .icon {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+    }
+
+</style>
 </head>
 <body>
 
@@ -858,6 +900,37 @@
       </div>
     </div>
   </section>
+  <!-- Category Navigation Strip (Icons & Destination Jump) -->
+  <nav class="hero-category-nav-bar">
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('classic_painting')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-frame"/></svg>
+      <span>고전명화</span>
+    </a>
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('contemporary_art')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-sparkles"/></svg>
+      <span>현대미술</span>
+    </a>
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('sculpture')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-museum"/></svg>
+      <span>조각 & 입체</span>
+    </a>
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('craft_decorative')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-palette"/></svg>
+      <span>공예 & 디자인</span>
+    </a>
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('asian_traditional')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-book"/></svg>
+      <span>동양화 & 한국미술</span>
+    </a>
+    <a href="javascript:void(0)" onclick="filterByCategoryTab('national_treasures')" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-sparkles"/></svg>
+      <span>국보 & 문화재</span>
+    </a>
+    <a href="artist.html" class="hero-cat-pill">
+      <svg class="icon"><use href="#i-user"/></svg>
+      <span>거장 아카이브</span>
+    </a>
+  </nav>
 
   <!-- ── Main Content Body ── -->
   <main class="main-body-container">
@@ -1402,6 +1475,28 @@
 
     function syncAndFilter(val) {
       filterAndRender();
+    }
+
+    
+    function filterByCategoryTab(catKey) {
+      const ledgerSec = document.querySelector('.explore-ledger-section');
+      if (ledgerSec) {
+        ledgerSec.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+      const tabMap = {
+        'classic_painting': 'all',
+        'contemporary_art': 'contemporary',
+        'sculpture': 'sculpture',
+        'craft_decorative': 'crafts',
+        'asian_traditional': 'asian',
+        'national_treasures': 'asian'
+      };
+
+      const targetTab = tabMap[catKey] || 'all';
+      if (typeof switchTab === 'function') {
+        switchTab(targetTab);
+      }
     }
 
     function setKeywordSearch(kw) {

@@ -61,7 +61,7 @@
       "nationality": "네덜란드",
       "movement": "후기 인상주의 (Post-Impressionism)",
       "description": "강렬한 색채와 율동적인 붓터치로 인간 내면의 고뇌와 영혼의 빛을 화폭에 담아낸 서양 미술사상 가장 위대한 천재 화가.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/uhd/448.webp",
+      "avatar": "assets/artists/van_gogh.jpg",
       "work_count": 443,
       "artwork_ids": [
         "art_starry_night",
@@ -121,7 +121,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "서양 고전 명화",
       "description": "오귀스트 르누아르(Auguste Renoir)의 주요 예술 세계. 서양 고전 명화 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/thumbnails/229.webp",
+      "avatar": "assets/artists/renoir.jpg",
       "work_count": 395,
       "artwork_ids": [
         "art_eco_229",
@@ -179,7 +179,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "서양 고전 명화",
       "description": "에드바르 뭉크(Edvard Munch)의 주요 예술 세계. 서양 고전 명화, 표현주의 (Expressionism) 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_munch_scream.webp",
+      "avatar": "assets/artists/munch.jpg",
       "work_count": 342,
       "artwork_ids": [
         "art_munch_scream",
@@ -354,7 +354,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "서양 고전 명화",
       "description": "렘브란트(Rembrandt Harmenszoon van Rijn)의 주요 예술 세계. 서양 고전 명화 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/thumbnails/2848.webp",
+      "avatar": "assets/artists/rembrandt.jpg",
       "work_count": 266,
       "artwork_ids": [
         "art_eco_2848",
@@ -470,7 +470,7 @@
       "nationality": "프랑스",
       "movement": "인상주의 (Impressionism 창시자)",
       "description": "빛의 마술사이자 인상파의 창시자. 시시각각 변화하는 빛과 대기의 찰나를 야외(En plein air)에서 캔버스에 영원히 포착한 화가.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_monet_water_lilies.webp",
+      "avatar": "assets/artists/monet.jpg",
       "work_count": 238,
       "artwork_ids": [
         "art_eco_930",
@@ -528,7 +528,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "서양 고전 명화",
       "description": "폴 세잔(Paul Cézanne)의 주요 예술 세계. 서양 고전 명화 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/thumbnails/196.webp",
+      "avatar": "assets/artists/cezanne.jpg",
       "work_count": 207,
       "artwork_ids": [
         "art_eco_196",
@@ -586,7 +586,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "서양 고전 명화",
       "description": "에드가 드가(Edgar Degas)의 주요 예술 세계. 서양 고전 명화 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/thumbnails/613.webp",
+      "avatar": "assets/artists/degas.jpg",
       "work_count": 201,
       "artwork_ids": [
         "art_eco_613",
@@ -1634,7 +1634,7 @@
       "nationality": "글로벌 문화유산",
       "movement": "빈 분리파 & 아르누보",
       "description": "구스타프 클림트(Gustav Klimt)의 주요 예술 세계. 빈 분리파 & 아르누보, 서양 고전 명화 분야에서 탁월한 조형적 성취를 남긴 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/art_klimt_the_kiss.webp",
+      "avatar": "assets/artists/klimt.jpg",
       "work_count": 89,
       "artwork_ids": [
         "art_klimt_the_kiss",
@@ -3320,7 +3320,7 @@
       "nationality": "이탈리아 (피렌체 공화국)",
       "movement": "르네상스 전성기 (High Renaissance)",
       "description": "회화, 조각, 해부학, 광학, 공학, 비행체 설계 등 전 인류 지성사에서 가장 찬란한 천재성을 발휘한 르네상스 만능인(Homo Universalis).",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_da_vinci_mona_lisa.webp",
+      "avatar": "assets/artists/da_vinci.jpg",
       "work_count": 37,
       "artwork_ids": [
         "art_mona_lisa",
@@ -3639,7 +3639,7 @@
       "nationality": "미국 / 프랑스 / 영국",
       "movement": "사실주의 및 인상주의 초상화",
       "description": "벨 에포크 시대 상류사회의 심리적 기류와 우아함을 번개 같은 붓질로 포착한 세기의 초상화 거장. 살롱전을 뒤흔든 <마담 X>로 미술사의 전환점을 만듦.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_sargent_001.webp",
+      "avatar": "assets/artists/sargent.jpg",
       "work_count": 25,
       "artwork_ids": [
         "paint_sargent_001",
@@ -6439,7 +6439,7 @@
       "nationality": "스페인 / 프랑스 활동",
       "movement": "입체주의 (Cubism 창시자)",
       "description": "20세기 현대 미술을 근본적으로 혁명한 거인. 단일 시점의 르네상스 원근법을 해체하고 다중 시점을 결합한 입체파의 창시자.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/paint_picasso_guernica.webp",
+      "avatar": "assets/artists/picasso.jpg",
       "work_count": 3,
       "artwork_ids": [
         "art_picasso_demoiselles",
@@ -6948,7 +6948,7 @@
       "nationality": "프랑스 (파리)",
       "movement": "근대 조각 (Modern Sculpture)",
       "description": "전통적인 아카데미즘과 이상주의적 미학을 탈피하여, 거친 표면과 근육의 팽팽한 긴장감 속에 인간의 실존적 고뇌와 생명력을 빚어낸 '근대 조각의 아버지'.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/sculpt_rodin_thinker.webp",
+      "avatar": "assets/artists/rodin.jpg",
       "work_count": 1,
       "artwork_ids": [
         "sculpt_rodin_thinker"
@@ -6986,7 +6986,7 @@
       "nationality": "스위스 / 프랑스",
       "movement": "실존주의 조각 (Existentialist Art)",
       "description": "2차 세계대전의 참상 이후 군더더기 살점을 모두 깎아내고 뼈대만 앙상하게 남은 가느다란 청동 조각으로 인간의 근원적 고독과 존엄성을 조각한 실존주의 예술의 거장.",
-      "avatar": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/featured/thumbs/sculpt_giacometti_walking_man.webp",
+      "avatar": "assets/artists/giacometti.jpg",
       "work_count": 1,
       "artwork_ids": [
         "sculpt_giacometti_walking_man"
