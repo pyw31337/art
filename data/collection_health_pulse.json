@@ -1,11 +1,11 @@
 {
   "version": "3.0.0",
-  "last_monitored_at": "2026-11-26T09:00:34.628685",
+  "last_monitored_at": "2026-11-26T03:25:36.218702",
   "pipeline_health_score": 100.0,
   "status": "MULTI_MUSEUM_GENUINE",
   "is_genuine_data": true,
   "total_artworks_indexed": 7978,
-  "r2_uploaded_highres_artworks": 7858,
+  "r2_uploaded_highres_artworks": 0,
   "active_museum_gateways": [
     "국립중앙박물관 (NMK Korea)",
     "The Metropolitan Museum of Art (Met)",
