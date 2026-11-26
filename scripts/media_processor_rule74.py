@@ -20,10 +20,32 @@ from PIL import Image, ImageOps
 MAX_LONG_EDGE = 2400
 WEBP_QUALITY = 86
 
+def find_vault_blobs_dir():
+    env_path = os.environ.get("LETSART_VAULT_ROOT")
+    if env_path and os.path.exists(env_path):
+        return Path(env_path) / "blobs"
+    ptr = Path.home() / ".letsart_vault_path"
+    if ptr.exists():
+        try:
+            with open(ptr, "r") as f:
+                p = f.read().strip()
+                if os.path.exists(p):
+                    return Path(p) / "blobs"
+        except Exception:
+            pass
+    volumes = Path("/Volumes")
+    if volumes.exists():
+        for vol in volumes.iterdir():
+            cand = vol / "LETSART_MASTER_VAULT" / "blobs"
+            if cand.exists():
+                return cand
+    return None
+
 class MediaProcessorRule74:
     def __init__(self, r2_checkpoint_path: str | Path | None = None):
         self.checkpoint_path = Path(r2_checkpoint_path) if r2_checkpoint_path else None
         self.known_hashes = set()
+        self.vault_blobs_dir = find_vault_blobs_dir()
         if self.checkpoint_path and self.checkpoint_path.exists():
             try:
                 with open(self.checkpoint_path, "r", encoding="utf-8") as f:
@@ -42,7 +64,10 @@ class MediaProcessorRule74:
         """
         Process any JPG/PNG/WebP image strictly following RULE #74.
         Returns metadata dictionary ready for Cloudflare R2 and D1 index.
+        Defaults output saving to the external drive LETSART_MASTER_VAULT/blobs.
         """
+        if output_dir is None and self.vault_blobs_dir:
+            output_dir = self.vault_blobs_dir
         if isinstance(input_source, (str, Path)):
             with open(input_source, "rb") as f:
                 raw_bytes = f.read()

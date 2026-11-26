@@ -17,7 +17,31 @@ import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-IMAGE_DIR = os.path.join(BASE_DIR, "downloads", "uhd_images")
+def find_vault_blobs_dir():
+    # 1. Environment variable
+    env_path = os.environ.get("LETSART_VAULT_ROOT")
+    if env_path and os.path.exists(env_path):
+        return os.path.join(env_path, "blobs")
+    # 2. Pointer file
+    ptr = os.path.expanduser("~/.letsart_vault_path")
+    if os.path.exists(ptr):
+        try:
+            with open(ptr, "r") as f:
+                p = f.read().strip()
+                if os.path.exists(p):
+                    return os.path.join(p, "blobs")
+        except Exception:
+            pass
+    # 3. Search /Volumes
+    volumes = "/Volumes"
+    if os.path.exists(volumes):
+        for v in os.listdir(volumes):
+            cand = os.path.join(volumes, v, "LETSART_MASTER_VAULT", "blobs")
+            if os.path.exists(cand):
+                return cand
+    return os.path.join(BASE_DIR, "assets", "uhd_images")
+
+IMAGE_DIR = find_vault_blobs_dir()
 os.makedirs(IMAGE_DIR, exist_ok=True)
 
 HEADERS = {

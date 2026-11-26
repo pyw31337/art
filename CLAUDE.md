@@ -24,7 +24,24 @@
 
 ---
 
-## 2. 진정 실데이터 수집 및 허수(가짜 카운트/모의 헬스체크) 영구 금지 (RULE #75 — IMMUTABLE)
+## 2. 외장하드 우선 저장 및 1-클릭 이관 표준 (RULE #78 — IMMUTABLE)
+
+맥미니(M2)에서 집 아이맥(M1) 또는 다른 기기로 손쉽게 작업 환경과 데이터를 무손실 이관할 수 있도록 다음 규칙을 엄격히 적용합니다:
+
+1. **외장하드 우선 적재 (External Vault First)**:
+   - 모든 대용량 원천 데이터(수집된 원본 파일, SQLite DB 스냅샷, 아카이브 번들)는 맥미니 내장 SSD에 단독 보관하지 않고, 외장하드 통일 경로인 **`/Volumes/My Passport for Mac/LETS_DATA_VAULT/`** 에 실시간 미러링·우선 저장한다.
+   - 외장하드 표준 디렉터리 구조:
+     - `/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/<service_name>/data/` (원천 DB)
+     - `/Volumes/My Passport for Mac/LETS_DATA_VAULT/backups/` (단일 번들 아카이브)
+     - `/Volumes/My Passport for Mac/LETS_DATA_VAULT/manifests/` (무결성 검증 매니페스트)
+2. **동기화 파이프라인 필수 실행**:
+   - 대량 데이터 수집 및 온톨로지 빌드가 완료될 때마다 `python3 scripts/migration/sync_to_external_vault.py`를 호출하여 외장하드와 로컬의 동기화 상태를 100% 일치시킨다.
+3. **1-클릭 무손실 이전 원칙**:
+   - 기기 교체 시 외장하드만 분리하여 새 아이맥(M1)에 연결하면, `python3 scripts/migration/import_ecosystem_backup.py` 1회 실행으로 추가 설정 없이 즉시 전체 서비스가 가동되어야 한다.
+
+---
+
+## 3. 진정 실데이터 수집 및 허수(가짜 카운트/모의 헬스체크) 영구 금지 (RULE #75 — IMMUTABLE)
 
 1. **가짜 증분 코드 금지**:
    - `increment = 168`이나 `db["count"] += 420`과 같이 실제 API 호출이나 파일 다운로드 없이 정수를 덧셈하는 가짜 카운터는 절대 작성하거나 방치하지 않는다.
@@ -32,28 +49,51 @@
    - `pipeline_health_score: 98.5`, `consecutive_healthy_days: 42` 등을 하드코딩으로 찍어내는 스크립트는 원천 금지한다.
    - 모든 모니터링 수치는 **실제 SQLite 레코드 수(`SELECT count(*)`), 실제 JSON 파일 크기, 실제 성공한 API 건수**를 기반으로 실측(True Observability)하여 발행해야 한다.
 3. **단일 진실 소스(Single Source of Truth) 원칙**:
-   - 서비스 간 중복 수집을 지양하고, 뉴스보드의 7.9만명 인물 DB(`people_bio.json`) 및 국회 공식 사진(3,265장)과 같이 이미 확보된 고품질 실데이터는 정규 동기화 파이프라인을 통해 서비스 간 공유한다.
+   - 서비스 간 중복 수집을 지양하고, 이미 확보된 고품질 실데이터는 정규 동기화 파이프라인을 통해 서비스 간 공유한다.
 
 ---
 
-## 3. 일일 점진적 실데이터 누적 및 파이프라인 관리 (RULE #76)
+## 4. 일일 점진적 실데이터 누적 및 파이프라인 관리 (RULE #76)
 
 1. **안전한 일일 누적(Daily Cadence)**:
-   - 외부 기관(공공데이터포털, 금감원 DART, 법제처, 박물관, Wikidata 등)의 Rate Limit(초당 5~10회)을 준수하며 매일 허용 가능한 범위(일일 500~2,000건) 내에서 안정적으로 수집을 누적한다.
+   - 외부 기관(공공데이터포털, 금감원 DART, 법제처, 박물관, Wikidata 등)의 Rate Limit을 준수하며 매일 허용 가능한 범위 내에서 안정적으로 수집을 누적한다.
 2. **체크포인트 기반 중단 없는 수집**:
    - 모든 수집기는 `last_synced_id` 또는 타임스탬프를 보관하여, 장애 발생 시 직전 지점부터 즉시 재개할 수 있는 멱등성(Idempotency)을 유지한다.
-3. **일일 모니터링 로그 기록**:
-   - 매일 수집 완료 시 `data/collection_history_log.json` 및 `data/collection_health_pulse.json`에 `actual_added_count`, `total_db_records`, `storage_mb`, `is_genuine_data: true`를 기록한다.
+3. **24/7 센티널 가디언 감시**:
+   - `scripts/guardian/sentinel_guardian.py`를 통해 DB 손상, 프로세스 중단, Rate Limit 이상징후를 자동 감시하고 복구한다.
 
 ---
 
-## 4. 카테고리별 데이터 구조화 및 프론트엔드 연계 (RULE #77)
+## 5. 카테고리별 데이터 구조화 및 프론트엔드 연계 (RULE #77)
 
 1. **분야별 데이터 분류 체계 유지**:
    - **피플 (`people`)**: 정치·행정, 기업·경제, 법조·사법, 문화·예술, 사회·공공, 학술·연구, 의료·보건
    - **인슈 (`insu`)**: 실손의료비(1~4세대), 3대진단비(암/뇌/심장), 일상생활배상책임(누수/대물), 자동차/운전자, 치매/간병
    - **로 (`law`)**: 헌법·선거, 형사·반부패, 민사·부동산, 노동·산업안전, 행정·조세, 가사·상속, 교통·손해배상, IT·지식재산
-   - **에셋 (`asset`)**: DART 5% 대량보유, 임원·주요주주 소유주식, 최대주주 지배구조, 글로벌 빌리어네어, SEC 13F 포트폴리오
+   - **에셋 (`asset`)**: DART 5% 대량보유, 임원·주요주주 소유주식, 최대주주 지배구조, 글로벌 빌리어네어, KRX 상장사 유니버스
    - **아트 (`art`)**: 계절별(봄/여름/가을/겨울), 테마별(사랑/밤/미스터리/혁명/고독/자연/한국미), 사조별(르네상스/바로크/인상주의/현대)
 2. **서비스 즉시 활용성(Production-Ready)**:
    - 수집된 원천 DB에서 웹 서비스가 0.1초 내로 렌더링할 수 있도록 경량화된 요약 JSON(`master_dossier_db.json`, `fast_search_index.json` 등)을 수집 완료 시점에 자동 생성·배포한다.
+
+---
+
+## 6. 로컬 디스크 무적재 & 외장하드 단일 마스터 볼트(LETSART_MASTER_VAULT) 저장 및 이관 표준 (RULE #78 — IMMUTABLE)
+
+로컬 개발 머신(회사 맥미니 M2 등)의 내장 SSD 잔여 용량 고갈 방지 및 향후 다른 머신(집 아이맥 M1 등)으로의 손쉬운 원클릭 이관을 위해 모든 에이전트(Codex, Claude, Gemini, Antigravity)는 예외 없이 다음 4대 규칙을 영구 준수해야 한다:
+
+1. **로컬 SSD 대용량 바이너리/미디어 적재 절대 금지**:
+   - `assets/`, `downloads/`, `data/` 등 로컬 깃 저장소 내에 대용량 원화 이미지, UHD 파일, 대형 원천 압축 데이터, 비디오, 크롤링 임시 미디어를 새로 다운로드하거나 저장하는 행위를 영구 금지한다.
+   - 로컬 깃 저장소는 **웹 프론트엔드 코드(HTML/CSS/JS), 경량 검색 색인(JSON), 파이프라인 스크립트**만 유지한다.
+2. **외장하드 단일 마스터 볼트(`LETSART_MASTER_VAULT`) 공통 저장 규격**:
+   - 수집되는 모든 대용량 원화 이미지, WebP 블롭, 원본 메타데이터는 오직 연결된 외장하드의 단일 표준 경로인 `/Volumes/[마운트명]/LETSART_MASTER_VAULT/` 산하에 일관된 포맷으로 저장한다:
+     - `blobs/`: RULE #74 규격의 2400px WebP 이미지 (`<sha256>.webp`)
+     - `metadata/`: 각 미술관/수집처의 원본 JSON 레코드
+     - `checkpoints/`: 수집 진행 상태 및 중단 재개(Resume) 체크포인트
+     - `logs/`: 하트비트, DLQ, 수집 감사 로그
+     - `vault_manifest.json`: SHA-256 체크섬 기반 전체 무결성 매니페스트
+   - 외장하드 경로는 절대 하드코딩하지 않고, `find_vault_root()` 탐색기(환경변수 `LETSART_VAULT_ROOT`, `~/.letsart_vault_path`, `/Volumes/*/LETSART_MASTER_VAULT`)를 통해 기기나 드라이브 이름이 달라져도 자동 인식되도록 작성한다.
+3. **웹 서비스 하이브리드 서빙(비용 $0) 원칙**:
+   - 대형 오픈액세스 기관(The Met, AIC, CMA, Rijksmuseum 등)의 작품은 웹 서비스에서 **공식 고성능 영구 CDN 링크를 직접 연결**하여 서빙한다.
+   - 클라우드 R2에는 유실 위험이 높은 소형 출처 및 메인 시그니처 걸작만 선별 적재하여 클라우드 스토리지 유지비를 0원~무료 티어 내로 통제한다.
+4. **단일 폴더 통이관(Portable Archive) 보장**:
+   - 외장하드의 `LETSART_MASTER_VAULT` 폴더 하나만 드래그 앤 드롭으로 새 외장하드로 복사하면, 집 아이맥(M1)이나 다른 기기에서 `python3 scripts/verify_and_mount_on_imac.py` 1회 실행만으로 즉시 100% 무결성 검증 및 작업 재개가 가능해야 한다.
