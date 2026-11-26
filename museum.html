@@ -684,14 +684,20 @@
 
       // 2. Fetch all collections (7,865+ works)
       try {
-        const [rPaint, rDg, rExp, rCont] = await Promise.all([
+        const [rPaint, rDg, rExp, rCont, rFed] = await Promise.all([
           fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
           fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ artworks: [] })),
           fetch('data/expanded_art_categories_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
-          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({}))
+          fetch('data/contemporary_art_and_architecture_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({})),
+          fetch('data/federated_open_masterpieces.json?v=' + Date.now()).then(r => r.json()).catch(() => ([]))
         ]);
 
-        const combined = [...(rPaint.featured_masterpieces || []), ...(rPaint.featured_paintings || []), ...(rDg.artworks || [])];
+        const combined = [
+          ...(rPaint.featured_masterpieces || []),
+          ...(rPaint.featured_paintings || []),
+          ...(rDg.artworks || []),
+          ...(Array.isArray(rFed) ? rFed : [])
+        ];
         Object.values(rExp).forEach(v => {
           if (Array.isArray(v) && v.length && typeof v[0] === 'object') combined.push(...v);
         });
@@ -756,7 +762,7 @@
         if (id === 'prado' && (mus.includes('프라도') || mus.includes('prado'))) return true;
         if (id === 'uffizi' && (mus.includes('우피치') || mus.includes('uffizi'))) return true;
         if (id === 'national_gallery' && (mus.includes('내셔널') || mus.includes('national gallery'))) return true;
-        if (id === 'nmk' && (mus.includes('국립중앙박물관') || mus.includes('간송') || mus.includes('사기장') || akr.includes('김홍도') || akr.includes('정선') || akr.includes('신윤복') || akr.includes('강세황'))) return true;
+        if (id === 'nmk' && (mus.includes('국립중앙박물관') || mus.includes('간송') || mus.includes('nmk') || art.museum_key === 'nmk' || akr.includes('김홍도') || akr.includes('정선') || akr.includes('신윤복') || akr.includes('이중섭') || akr.includes('강세황') || akr.includes('김정희') || akr.includes('안중식') || akr.includes('김득신') || akr.includes('최북'))) return true;
         if (id === 'rijksmuseum' && (mus.includes('암스테르담') || mus.includes('rijks'))) return true;
         if (id === 'tate' && (mus.includes('테이트') || mus.includes('tate'))) return true;
 
