@@ -1,6 +1,6 @@
 {
   "version": "3.1.0",
-  "last_monitored_at": "2026-11-26T16:02:53.673891",
+  "last_monitored_at": "2026-11-26T17:05:18.578464",
   "pipeline_health_score": 100.0,
   "status": "MULTI_MUSEUM_GENUINE",
   "is_genuine_data": true,
@@ -14,5 +14,21 @@
     "Art Institute of Chicago (AIC)",
     "Rijksmuseum Amsterdam",
     "Musée du Louvre"
-  ]
+  ],
+  "vault_storage": {
+    "is_mounted": true,
+    "vault_path": "/Volumes/My Passport for Mac/LETSART_MASTER_VAULT",
+    "free_space_gb": 3919.48,
+    "total_blobs_collected": 7,
+    "total_metadata_records": 5
+  },
+  "harvester_watchdog": {
+    "status": "IDLE",
+    "is_process_active": false,
+    "last_heartbeat_status": "UNKNOWN",
+    "last_ping_seconds_ago": null,
+    "quarantined_dlq_errors": 0,
+    "issue_detected": false,
+    "issue_description": ""
+  }
 }
