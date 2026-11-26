@@ -18,13 +18,25 @@ def find_vault_root():
     env_path = os.environ.get("LETSART_VAULT_ROOT")
     if env_path and os.path.exists(env_path):
         return env_path
+    ptr = os.path.expanduser("~/.letsart_vault_path")
+    if os.path.exists(ptr):
+        try:
+            with open(ptr, "r") as f:
+                p = f.read().strip()
+                if os.path.exists(p):
+                    return p
+        except Exception:
+            pass
     volumes = "/Volumes"
     if os.path.exists(volumes):
         for v in os.listdir(volumes):
+            cand_unified = os.path.join(volumes, v, "LETS_DATA_VAULT", "services", "art")
+            if os.path.exists(cand_unified):
+                return cand_unified
             candidate = os.path.join(volumes, v, "LETSART_MASTER_VAULT")
             if os.path.exists(candidate):
                 return candidate
-    return None
+    return "/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/art"
 
 def compute_file_sha256(filepath):
     h = hashlib.sha256()

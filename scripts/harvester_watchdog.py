@@ -38,10 +38,13 @@ def find_vault():
     volumes = Path("/Volumes")
     if volumes.exists():
         for vol in volumes.iterdir():
+            cand_unified = vol / "LETS_DATA_VAULT" / "services" / "art"
+            if cand_unified.exists() and cand_unified.is_dir():
+                return str(cand_unified)
             candidate = vol / "LETSART_MASTER_VAULT"
             if candidate.exists():
                 return str(candidate)
-    return None
+    return "/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/art"
 
 def check_process_running(script_name="vault_master_harvester.py"):
     try:

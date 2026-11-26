@@ -84,16 +84,16 @@
 1. **로컬 SSD 대용량 바이너리/미디어 적재 절대 금지**:
    - `assets/`, `downloads/`, `data/` 등 로컬 깃 저장소 내에 대용량 원화 이미지, UHD 파일, 대형 원천 압축 데이터, 비디오, 크롤링 임시 미디어를 새로 다운로드하거나 저장하는 행위를 영구 금지한다.
    - 로컬 깃 저장소는 **웹 프론트엔드 코드(HTML/CSS/JS), 경량 검색 색인(JSON), 파이프라인 스크립트**만 유지한다.
-2. **외장하드 단일 마스터 볼트(`LETSART_MASTER_VAULT`) 공통 저장 규격**:
-   - 수집되는 모든 대용량 원화 이미지, WebP 블롭, 원본 메타데이터는 오직 연결된 외장하드의 단일 표준 경로인 `/Volumes/[마운트명]/LETSART_MASTER_VAULT/` 산하에 일관된 포맷으로 저장한다:
+2. **외장하드 단일 마스터 볼트(`LETS_DATA_VAULT/services/art`) 통합 저장 규격**:
+   - 수집되는 모든 대용량 원화 이미지, WebP 블롭, 원본 메타데이터는 외장하드의 통합 마스터 볼트인 `/Volumes/[마운트명]/LETS_DATA_VAULT/services/art/` 산하에 일관된 포맷으로 집중 저장한다:
      - `blobs/`: RULE #74 규격의 2400px WebP 이미지 (`<sha256>.webp`)
      - `metadata/`: 각 미술관/수집처의 원본 JSON 레코드
      - `checkpoints/`: 수집 진행 상태 및 중단 재개(Resume) 체크포인트
      - `logs/`: 하트비트, DLQ, 수집 감사 로그
      - `vault_manifest.json`: SHA-256 체크섬 기반 전체 무결성 매니페스트
-   - 외장하드 경로는 절대 하드코딩하지 않고, `find_vault_root()` 탐색기(환경변수 `LETSART_VAULT_ROOT`, `~/.letsart_vault_path`, `/Volumes/*/LETSART_MASTER_VAULT`)를 통해 기기나 드라이브 이름이 달라져도 자동 인식되도록 작성한다.
+   - 외장하드 경로는 절대 하드코딩하지 않고, `find_vault_root()` 탐색기(환경변수 `LETSART_VAULT_ROOT`, `~/.letsart_vault_path`, `/Volumes/*/LETS_DATA_VAULT/services/art`)를 통해 기기나 드라이브 이름이 달라져도 자동 인식되도록 작성한다. (기존 `LETSART_MASTER_VAULT`는 호환성을 위한 심볼릭 링크로 유지)
 3. **웹 서비스 하이브리드 서빙(비용 $0) 원칙**:
    - 대형 오픈액세스 기관(The Met, AIC, CMA, Rijksmuseum 등)의 작품은 웹 서비스에서 **공식 고성능 영구 CDN 링크를 직접 연결**하여 서빙한다.
    - 클라우드 R2에는 유실 위험이 높은 소형 출처 및 메인 시그니처 걸작만 선별 적재하여 클라우드 스토리지 유지비를 0원~무료 티어 내로 통제한다.
 4. **단일 폴더 통이관(Portable Archive) 보장**:
-   - 외장하드의 `LETSART_MASTER_VAULT` 폴더 하나만 드래그 앤 드롭으로 새 외장하드로 복사하면, 집 아이맥(M1)이나 다른 기기에서 `python3 scripts/verify_and_mount_on_imac.py` 1회 실행만으로 즉시 100% 무결성 검증 및 작업 재개가 가능해야 한다.
+   - 외장하드의 `LETS_DATA_VAULT` 폴더 하나만 드래그 앤 드롭으로 새 외장하드로 복사하면, 아트뿐 아니라 전 에코시스템 데이터가 100% 무손실 동시 이전된다. 집 아이맥(M1)이나 다른 기기에서 `python3 scripts/verify_and_mount_on_imac.py` 1회 실행만으로 즉시 100% 무결성 검증 및 작업 재개가 가능해야 한다.

@@ -18,21 +18,35 @@ def find_vault():
     # 1. Check environment variable
     if "LETSART_VAULT_ROOT" in os.environ and os.path.exists(os.environ["LETSART_VAULT_ROOT"]):
         return os.environ["LETSART_VAULT_ROOT"]
+
+    # 2. Check local pointer
+    ptr = Path.home() / ".letsart_vault_path"
+    if ptr.exists():
+        try:
+            with open(ptr, "r") as f:
+                p = f.read().strip()
+                if os.path.exists(p):
+                    return p
+        except Exception:
+            pass
     
-    # 2. Check all mounted volumes
+    # 3. Check all mounted volumes
     volumes = Path("/Volumes")
     if volumes.exists():
         for vol in volumes.iterdir():
+            cand_unified = vol / "LETS_DATA_VAULT" / "services" / "art"
+            if cand_unified.exists() and cand_unified.is_dir():
+                return str(cand_unified)
             candidate = vol / "LETSART_MASTER_VAULT"
             if candidate.exists() and candidate.is_dir():
                 return str(candidate)
             
-    # 3. Check user home or current directory fallback
-    home_candidate = Path.home() / "LETSART_MASTER_VAULT"
+    # 4. Check user home or current directory fallback
+    home_candidate = Path.home() / "LETS_DATA_VAULT" / "services" / "art"
     if home_candidate.exists():
         return str(home_candidate)
 
-    return None
+    return "/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/art"
 
 def compute_sha256(filepath):
     h = hashlib.sha256()
