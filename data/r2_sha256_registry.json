@@ -1,0 +1,2992 @@
+{
+  "0e54a552e464208914463dfdc4c1687eae61d5d0739aa55ae1495fffc657b8b6": {
+    "sha256": "0e54a552e464208914463dfdc4c1687eae61d5d0739aa55ae1495fffc657b8b6",
+    "blob_key": "att/v1/blobs/0e54a552e464208914463dfdc4c1687eae61d5d0739aa55ae1495fffc657b8b6.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0e54a552e464208914463dfdc4c1687eae61d5d0739aa55ae1495fffc657b8b6.webp",
+    "width": 1280,
+    "height": 538,
+    "bytes": 140838,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/louvre.jpg",
+    "sources": [
+      "assets/museums/louvre.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:24.770124"
+  },
+  "07cc5a734074f9c443e0fbbfc3558208b18447038546fab784f16358d64d93b5": {
+    "sha256": "07cc5a734074f9c443e0fbbfc3558208b18447038546fab784f16358d64d93b5",
+    "blob_key": "att/v1/blobs/07cc5a734074f9c443e0fbbfc3558208b18447038546fab784f16358d64d93b5.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/07cc5a734074f9c443e0fbbfc3558208b18447038546fab784f16358d64d93b5.webp",
+    "width": 1280,
+    "height": 714,
+    "bytes": 269540,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "ALICJA KWADE",
+      "PARAPIO",
+      "LONARIO",
+      "DA VINCIS",
+      "ST. JEROME"
+    ],
+    "first_source": "assets/museums/met.jpg",
+    "sources": [
+      "assets/museums/met.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:25.901394"
+  },
+  "8f96021b3d6e9d0909cc581db8f7d97ae584fa10e0884dfc54a9e5915d306d80": {
+    "sha256": "8f96021b3d6e9d0909cc581db8f7d97ae584fa10e0884dfc54a9e5915d306d80",
+    "blob_key": "att/v1/blobs/8f96021b3d6e9d0909cc581db8f7d97ae584fa10e0884dfc54a9e5915d306d80.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/8f96021b3d6e9d0909cc581db8f7d97ae584fa10e0884dfc54a9e5915d306d80.webp",
+    "width": 1280,
+    "height": 1707,
+    "bytes": 513986,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/moma.jpg",
+    "sources": [
+      "assets/museums/moma.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:26.851593"
+  },
+  "e6d5aa2d585899457f7573a95a52b8ef78c09a5527c0e071e0b418d8600ff7ee": {
+    "sha256": "e6d5aa2d585899457f7573a95a52b8ef78c09a5527c0e071e0b418d8600ff7ee",
+    "blob_key": "att/v1/blobs/e6d5aa2d585899457f7573a95a52b8ef78c09a5527c0e071e0b418d8600ff7ee.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e6d5aa2d585899457f7573a95a52b8ef78c09a5527c0e071e0b418d8600ff7ee.webp",
+    "width": 1280,
+    "height": 678,
+    "bytes": 205612,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/national_gallery.jpg",
+    "sources": [
+      "assets/museums/national_gallery.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:27.538323"
+  },
+  "39fe78b877ce7bad99d22513264999e451d6105015493acffe8f26f947790a9f": {
+    "sha256": "39fe78b877ce7bad99d22513264999e451d6105015493acffe8f26f947790a9f",
+    "blob_key": "att/v1/blobs/39fe78b877ce7bad99d22513264999e451d6105015493acffe8f26f947790a9f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/39fe78b877ce7bad99d22513264999e451d6105015493acffe8f26f947790a9f.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 192712,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "조"
+    ],
+    "first_source": "assets/museums/nmk.jpg",
+    "sources": [
+      "assets/museums/nmk.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:28.345929"
+  },
+  "4905a421c17bc0ff6898a811365ee221acfa9e1a410ff17b55b4a91b75e706ef": {
+    "sha256": "4905a421c17bc0ff6898a811365ee221acfa9e1a410ff17b55b4a91b75e706ef",
+    "blob_key": "att/v1/blobs/4905a421c17bc0ff6898a811365ee221acfa9e1a410ff17b55b4a91b75e706ef.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/4905a421c17bc0ff6898a811365ee221acfa9e1a410ff17b55b4a91b75e706ef.webp",
+    "width": 1280,
+    "height": 586,
+    "bytes": 222646,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/orsay.jpg",
+    "sources": [
+      "assets/museums/orsay.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:28.899286"
+  },
+  "bb8894a8e7ece4739d5f4933695faeb38eeb5a8ab5fc573e9ad7545c90a9355d": {
+    "sha256": "bb8894a8e7ece4739d5f4933695faeb38eeb5a8ab5fc573e9ad7545c90a9355d",
+    "blob_key": "att/v1/blobs/bb8894a8e7ece4739d5f4933695faeb38eeb5a8ab5fc573e9ad7545c90a9355d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/bb8894a8e7ece4739d5f4933695faeb38eeb5a8ab5fc573e9ad7545c90a9355d.webp",
+    "width": 1280,
+    "height": 956,
+    "bytes": 228464,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/prado.jpg",
+    "sources": [
+      "assets/museums/prado.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:29.604014"
+  },
+  "f7442af9b6c0672f393bde3bac0ff21c81946a89b08a71f89935cd4bd651e6c5": {
+    "sha256": "f7442af9b6c0672f393bde3bac0ff21c81946a89b08a71f89935cd4bd651e6c5",
+    "blob_key": "att/v1/blobs/f7442af9b6c0672f393bde3bac0ff21c81946a89b08a71f89935cd4bd651e6c5.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7442af9b6c0672f393bde3bac0ff21c81946a89b08a71f89935cd4bd651e6c5.webp",
+    "width": 1280,
+    "height": 932,
+    "bytes": 300858,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "AL",
+      "REMBRANDTS",
+      "RUKS MUSEUM",
+      "《"
+    ],
+    "first_source": "assets/museums/rijksmuseum.jpg",
+    "sources": [
+      "assets/museums/rijksmuseum.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:30.386244"
+  },
+  "8e955c6128e23417ba377203f8e57a9e86b5873242b82aa4bb84b941229ee462": {
+    "sha256": "8e955c6128e23417ba377203f8e57a9e86b5873242b82aa4bb84b941229ee462",
+    "blob_key": "att/v1/blobs/8e955c6128e23417ba377203f8e57a9e86b5873242b82aa4bb84b941229ee462.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/8e955c6128e23417ba377203f8e57a9e86b5873242b82aa4bb84b941229ee462.webp",
+    "width": 1280,
+    "height": 960,
+    "bytes": 239206,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "FROM AROUND THE WORLD",
+      "TATE MODERN - FREE AND OPEN TO ALL"
+    ],
+    "first_source": "assets/museums/tate.jpg",
+    "sources": [
+      "assets/museums/tate.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:31.234325"
+  },
+  "996802427e6fa5dcd3bc896a89715b078276d9cdabad61c6cb9b3eeaa13cf3f4": {
+    "sha256": "996802427e6fa5dcd3bc896a89715b078276d9cdabad61c6cb9b3eeaa13cf3f4",
+    "blob_key": "att/v1/blobs/996802427e6fa5dcd3bc896a89715b078276d9cdabad61c6cb9b3eeaa13cf3f4.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/996802427e6fa5dcd3bc896a89715b078276d9cdabad61c6cb9b3eeaa13cf3f4.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 245482,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/museums/uffizi.jpg",
+    "sources": [
+      "assets/museums/uffizi.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:31.785865"
+  },
+  "06dc9a2d60cc831b83c078c56b7cad0ff67c49dba4878bad8b66ab1785f9c5d6": {
+    "sha256": "06dc9a2d60cc831b83c078c56b7cad0ff67c49dba4878bad8b66ab1785f9c5d6",
+    "blob_key": "att/v1/blobs/06dc9a2d60cc831b83c078c56b7cad0ff67c49dba4878bad8b66ab1785f9c5d6.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/06dc9a2d60cc831b83c078c56b7cad0ff67c49dba4878bad8b66ab1785f9c5d6.webp",
+    "width": 250,
+    "height": 333,
+    "bytes": 17802,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/cezanne.jpg",
+    "sources": [
+      "assets/artists/cezanne.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:32.233420"
+  },
+  "032f239c0f34bc22d7f52cf91ddde3bcd3a719237abcc4aa0f48509cca04382c": {
+    "sha256": "032f239c0f34bc22d7f52cf91ddde3bcd3a719237abcc4aa0f48509cca04382c",
+    "blob_key": "att/v1/blobs/032f239c0f34bc22d7f52cf91ddde3bcd3a719237abcc4aa0f48509cca04382c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/032f239c0f34bc22d7f52cf91ddde3bcd3a719237abcc4aa0f48509cca04382c.webp",
+    "width": 420,
+    "height": 659,
+    "bytes": 96852,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/da_vinci.jpg",
+    "sources": [
+      "assets/artists/da_vinci.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:32.702566"
+  },
+  "95993c9a0602424e29679cdd78f6bddfa9573fcfa3732790919de6cbfa349598": {
+    "sha256": "95993c9a0602424e29679cdd78f6bddfa9573fcfa3732790919de6cbfa349598",
+    "blob_key": "att/v1/blobs/95993c9a0602424e29679cdd78f6bddfa9573fcfa3732790919de6cbfa349598.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/95993c9a0602424e29679cdd78f6bddfa9573fcfa3732790919de6cbfa349598.webp",
+    "width": 330,
+    "height": 441,
+    "bytes": 25886,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/degas.jpg",
+    "sources": [
+      "assets/artists/degas.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:33.208686"
+  },
+  "db3a3b55c495b1e6f1b3c7f9cc0f35b0a494f0626e003b38139032ff527be7f8": {
+    "sha256": "db3a3b55c495b1e6f1b3c7f9cc0f35b0a494f0626e003b38139032ff527be7f8",
+    "blob_key": "att/v1/blobs/db3a3b55c495b1e6f1b3c7f9cc0f35b0a494f0626e003b38139032ff527be7f8.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/db3a3b55c495b1e6f1b3c7f9cc0f35b0a494f0626e003b38139032ff527be7f8.webp",
+    "width": 330,
+    "height": 345,
+    "bytes": 27146,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/giacometti.jpg",
+    "sources": [
+      "assets/artists/giacometti.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:33.716434"
+  },
+  "0fe52dd2634a417e8fd8534454c337e8af147b62a91c6662d9cb679ecc87f734": {
+    "sha256": "0fe52dd2634a417e8fd8534454c337e8af147b62a91c6662d9cb679ecc87f734",
+    "blob_key": "att/v1/blobs/0fe52dd2634a417e8fd8534454c337e8af147b62a91c6662d9cb679ecc87f734.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0fe52dd2634a417e8fd8534454c337e8af147b62a91c6662d9cb679ecc87f734.webp",
+    "width": 960,
+    "height": 1184,
+    "bytes": 221302,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/goethe.jpg",
+    "sources": [
+      "assets/artists/goethe.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:34.738395"
+  },
+  "feb4d0f2f999a68704c634b12721d83d0e2d4a010f6ad8799b76c972710702e2": {
+    "sha256": "feb4d0f2f999a68704c634b12721d83d0e2d4a010f6ad8799b76c972710702e2",
+    "blob_key": "att/v1/blobs/feb4d0f2f999a68704c634b12721d83d0e2d4a010f6ad8799b76c972710702e2.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/feb4d0f2f999a68704c634b12721d83d0e2d4a010f6ad8799b76c972710702e2.webp",
+    "width": 440,
+    "height": 255,
+    "bytes": 32476,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/jeongseon.webp",
+    "sources": [
+      "assets/artists/jeongseon.webp",
+      "assets/featured/thumbs/asian_jeongseon_inwang.webp"
+    ],
+    "created_at": "2026-11-26T09:16:35.200510"
+  },
+  "a546b75394a8a2ddc37b80a8580c99e4377884abf240ee793db8a049dcf75851": {
+    "sha256": "a546b75394a8a2ddc37b80a8580c99e4377884abf240ee793db8a049dcf75851",
+    "blob_key": "att/v1/blobs/a546b75394a8a2ddc37b80a8580c99e4377884abf240ee793db8a049dcf75851.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a546b75394a8a2ddc37b80a8580c99e4377884abf240ee793db8a049dcf75851.webp",
+    "width": 330,
+    "height": 422,
+    "bytes": 32980,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/klimt.jpg",
+    "sources": [
+      "assets/artists/klimt.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:35.725786"
+  },
+  "6d7800f8c7745d8a199c171535a072291a6955585b3ee8e01106529da9de5cd8": {
+    "sha256": "6d7800f8c7745d8a199c171535a072291a6955585b3ee8e01106529da9de5cd8",
+    "blob_key": "att/v1/blobs/6d7800f8c7745d8a199c171535a072291a6955585b3ee8e01106529da9de5cd8.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6d7800f8c7745d8a199c171535a072291a6955585b3ee8e01106529da9de5cd8.webp",
+    "width": 1800,
+    "height": 2400,
+    "bytes": 222512,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/monet.jpg",
+    "sources": [
+      "assets/artists/monet.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:36.539948"
+  },
+  "d6e66813fa721d81a1b7b188303a5cfa0280647c5b7069055239c3d377f42518": {
+    "sha256": "d6e66813fa721d81a1b7b188303a5cfa0280647c5b7069055239c3d377f42518",
+    "blob_key": "att/v1/blobs/d6e66813fa721d81a1b7b188303a5cfa0280647c5b7069055239c3d377f42518.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d6e66813fa721d81a1b7b188303a5cfa0280647c5b7069055239c3d377f42518.webp",
+    "width": 330,
+    "height": 454,
+    "bytes": 19890,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/munch.jpg",
+    "sources": [
+      "assets/artists/munch.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:36.967855"
+  },
+  "f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae": {
+    "sha256": "f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae",
+    "blob_key": "att/v1/blobs/f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae.webp",
+    "width": 1079,
+    "height": 1261,
+    "bytes": 107368,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/picasso.jpg",
+    "sources": [
+      "assets/artists/picasso.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:37.628925"
+  },
+  "921fc1091e86c7dbae0a51ea242c3a51271f25dfe7b4c9109ffc59097ca72f9f": {
+    "sha256": "921fc1091e86c7dbae0a51ea242c3a51271f25dfe7b4c9109ffc59097ca72f9f",
+    "blob_key": "att/v1/blobs/921fc1091e86c7dbae0a51ea242c3a51271f25dfe7b4c9109ffc59097ca72f9f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/921fc1091e86c7dbae0a51ea242c3a51271f25dfe7b4c9109ffc59097ca72f9f.webp",
+    "width": 330,
+    "height": 427,
+    "bytes": 12364,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/rembrandt.jpg",
+    "sources": [
+      "assets/artists/rembrandt.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:38.076769"
+  },
+  "a48c219fb5fc9bcd3824f5937b6fece111d39329f50de01600f57bf85a3a427e": {
+    "sha256": "a48c219fb5fc9bcd3824f5937b6fece111d39329f50de01600f57bf85a3a427e",
+    "blob_key": "att/v1/blobs/a48c219fb5fc9bcd3824f5937b6fece111d39329f50de01600f57bf85a3a427e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a48c219fb5fc9bcd3824f5937b6fece111d39329f50de01600f57bf85a3a427e.webp",
+    "width": 330,
+    "height": 409,
+    "bytes": 23390,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/renoir.jpg",
+    "sources": [
+      "assets/artists/renoir.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:38.557654"
+  },
+  "e024beddb2acac762821af1174eeb03d15d33526b2984d2af917142f8f37b88d": {
+    "sha256": "e024beddb2acac762821af1174eeb03d15d33526b2984d2af917142f8f37b88d",
+    "blob_key": "att/v1/blobs/e024beddb2acac762821af1174eeb03d15d33526b2984d2af917142f8f37b88d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e024beddb2acac762821af1174eeb03d15d33526b2984d2af917142f8f37b88d.webp",
+    "width": 330,
+    "height": 444,
+    "bytes": 26240,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/rodin.jpg",
+    "sources": [
+      "assets/artists/rodin.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:39.048535"
+  },
+  "0d412b14de72c8a06651fd7a72533f7c5aca00ef559630eb6e1693d88b3d0440": {
+    "sha256": "0d412b14de72c8a06651fd7a72533f7c5aca00ef559630eb6e1693d88b3d0440",
+    "blob_key": "att/v1/blobs/0d412b14de72c8a06651fd7a72533f7c5aca00ef559630eb6e1693d88b3d0440.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0d412b14de72c8a06651fd7a72533f7c5aca00ef559630eb6e1693d88b3d0440.webp",
+    "width": 330,
+    "height": 440,
+    "bytes": 38118,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/sargent.jpg",
+    "sources": [
+      "assets/artists/sargent.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:39.611227"
+  },
+  "f7d00da5f2fc94488ea3cbf6db89e0ab22189eaaacf1a0b197068f325dad2b48": {
+    "sha256": "f7d00da5f2fc94488ea3cbf6db89e0ab22189eaaacf1a0b197068f325dad2b48",
+    "blob_key": "att/v1/blobs/f7d00da5f2fc94488ea3cbf6db89e0ab22189eaaacf1a0b197068f325dad2b48.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7d00da5f2fc94488ea3cbf6db89e0ab22189eaaacf1a0b197068f325dad2b48.webp",
+    "width": 960,
+    "height": 1224,
+    "bytes": 244112,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/shakespeare.jpg",
+    "sources": [
+      "assets/artists/shakespeare.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:40.263001"
+  },
+  "6a02e5541da954cdf90c774ef337f199be19a663f5eae97318de544189e1bb8e": {
+    "sha256": "6a02e5541da954cdf90c774ef337f199be19a663f5eae97318de544189e1bb8e",
+    "blob_key": "att/v1/blobs/6a02e5541da954cdf90c774ef337f199be19a663f5eae97318de544189e1bb8e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6a02e5541da954cdf90c774ef337f199be19a663f5eae97318de544189e1bb8e.webp",
+    "width": 330,
+    "height": 417,
+    "bytes": 62654,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/artists/van_gogh.jpg",
+    "sources": [
+      "assets/artists/van_gogh.jpg"
+    ],
+    "created_at": "2026-11-26T09:16:40.922375"
+  },
+  "fb8f90775c9d925ea15aace5e04143de8ae478b9d1d62e91192b5a5a13cdf4e7": {
+    "sha256": "fb8f90775c9d925ea15aace5e04143de8ae478b9d1d62e91192b5a5a13cdf4e7",
+    "blob_key": "att/v1/blobs/fb8f90775c9d925ea15aace5e04143de8ae478b9d1d62e91192b5a5a13cdf4e7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/fb8f90775c9d925ea15aace5e04143de8ae478b9d1d62e91192b5a5a13cdf4e7.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 629614,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_01.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_01.webp"
+    ],
+    "created_at": "2026-11-26T09:16:41.758458"
+  },
+  "a5d892e390141254b087a1b1286f7b9f1274d2807830941a1bcd8ee98704e462": {
+    "sha256": "a5d892e390141254b087a1b1286f7b9f1274d2807830941a1bcd8ee98704e462",
+    "blob_key": "att/v1/blobs/a5d892e390141254b087a1b1286f7b9f1274d2807830941a1bcd8ee98704e462.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a5d892e390141254b087a1b1286f7b9f1274d2807830941a1bcd8ee98704e462.webp",
+    "width": 1770,
+    "height": 2400,
+    "bytes": 2050772,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_02.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_02.webp"
+    ],
+    "created_at": "2026-11-26T09:16:43.163962"
+  },
+  "b34816fb873aad9dce3dbce3f7f4222bb8bc0f37ecc658d1272b1eb014501cba": {
+    "sha256": "b34816fb873aad9dce3dbce3f7f4222bb8bc0f37ecc658d1272b1eb014501cba",
+    "blob_key": "att/v1/blobs/b34816fb873aad9dce3dbce3f7f4222bb8bc0f37ecc658d1272b1eb014501cba.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b34816fb873aad9dce3dbce3f7f4222bb8bc0f37ecc658d1272b1eb014501cba.webp",
+    "width": 1920,
+    "height": 1422,
+    "bytes": 611220,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_03.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_03.webp"
+    ],
+    "created_at": "2026-11-26T09:16:44.088252"
+  },
+  "305a2daa8b3754b105343253d76f8a29594a96c40ca5cf3755b086361f7e562c": {
+    "sha256": "305a2daa8b3754b105343253d76f8a29594a96c40ca5cf3755b086361f7e562c",
+    "blob_key": "att/v1/blobs/305a2daa8b3754b105343253d76f8a29594a96c40ca5cf3755b086361f7e562c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/305a2daa8b3754b105343253d76f8a29594a96c40ca5cf3755b086361f7e562c.webp",
+    "width": 1920,
+    "height": 2385,
+    "bytes": 1607662,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_04.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_04.webp"
+    ],
+    "created_at": "2026-11-26T09:16:45.459934"
+  },
+  "1fc9428778c668fe0c13d2f65be075d72442a16495fe35c38a780f4982952c66": {
+    "sha256": "1fc9428778c668fe0c13d2f65be075d72442a16495fe35c38a780f4982952c66",
+    "blob_key": "att/v1/blobs/1fc9428778c668fe0c13d2f65be075d72442a16495fe35c38a780f4982952c66.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/1fc9428778c668fe0c13d2f65be075d72442a16495fe35c38a780f4982952c66.webp",
+    "width": 1920,
+    "height": 1572,
+    "bytes": 948100,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_05.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_05.webp"
+    ],
+    "created_at": "2026-11-26T09:16:46.404095"
+  },
+  "91c5539980d98a9b0b7f8a2e29bd13d69d1704ad71ffe819615d83439c7fa315": {
+    "sha256": "91c5539980d98a9b0b7f8a2e29bd13d69d1704ad71ffe819615d83439c7fa315",
+    "blob_key": "att/v1/blobs/91c5539980d98a9b0b7f8a2e29bd13d69d1704ad71ffe819615d83439c7fa315.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/91c5539980d98a9b0b7f8a2e29bd13d69d1704ad71ffe819615d83439c7fa315.webp",
+    "width": 1920,
+    "height": 2141,
+    "bytes": 769452,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_06.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_06.webp"
+    ],
+    "created_at": "2026-11-26T09:16:47.475681"
+  },
+  "6b99326ed392247e465954d2e9667d3c5a676f0fa9845c80ae66c1c8232e4979": {
+    "sha256": "6b99326ed392247e465954d2e9667d3c5a676f0fa9845c80ae66c1c8232e4979",
+    "blob_key": "att/v1/blobs/6b99326ed392247e465954d2e9667d3c5a676f0fa9845c80ae66c1c8232e4979.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6b99326ed392247e465954d2e9667d3c5a676f0fa9845c80ae66c1c8232e4979.webp",
+    "width": 1807,
+    "height": 2400,
+    "bytes": 437768,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "TABLE DES MATIERES",
+      "CONTENUES DANS LA VINGT-SIXIEME ANNEE (1906) DE LART MODERNE",
+      "ETUDES ET PORTRAITS",
+      "Evolution (OCTAVE MACS)",
+      "19",
+      "Les Artistes belges et la Culturt frangaise (L. DtmoNT~",
+      "WIt.DEN)",
+      "25",
+      "La Peinture symbolique future.CAMILIN MAUCEAIR)",
+      "• 299, 307",
+      "Un ubile artistique (OcrAVs MAUSI",
+      "67",
+      "La Gravure en couleurs (GrORGRS LICOMTE)",
+      "155",
+      "Les Vingt CAMILE LIMONNIR'.",
+      "163, 171.",
+      "l. Fsthetique de Ferand Kioptt (L. DUMONT-WIDeN) 387,395",
+      "Lettre & Octave",
+      "Maus",
+      "touclant",
+      "les loisirs de",
+      "mes",
+      "vacances et les honneurs qu'on rend aus morts illus-",
+      "tres",
+      "ANDRE FONTAINAS",
+      "\"83",
+      "Emile Verhaeren. Le",
+      "oet te laction (GAB. MOURBY).",
+      "17",
+      "Tinspination dEmil: Terhaeren (G. Rarcr)",
+      "19",
+      "Kmile",
+      "Verhacren rt los Pointres flamands (MiDERIC",
+      "DIROURI",
+      "227, 235,243",
+      "rmie Verhacren La Jultiple splenden (F. DR MI",
+      "MAYDREI",
+      "371",
+      "Litteralure d'anateurs I. DNovT-WILDEN)",
+      "La Poesie GronGis RRNCY)",
+      "De lIntelligence LEoN Winr;",
+      "La",
+      "Culture intellecturlle en",
+      "Belgique IMAURICH DIS",
+      "OMBIALXI•",
+      "35",
+      "Le Conic de Tacit: Grorits Risev.",
+      "131",
+      "Unt: Frolution du Romin",
+      "CLATDE FARRERL",
+      "219)",
+      "Le Muste du Livre, PAUI OTET)",
+      "251",
+      "Ladultire en litterature (Haver IRSHROCSSART)",
+      "276",
+      "267",
+      "BOISST)",
+      "179",
+      "A propos de CoruillOCrAVI MALS)",
+      "187",
+      "Notre teatre 1GsoneRs Rrycy",
+      "195",
+      "Noles sur le Coup daile Gll.neRr De Volsins)",
+      "propos d Aplronite CLArD: FORRERE:",
+      "Pits OCTAVE MAUS",
+      "Potites villes dItalie (FlesNs-(h:VAART).",
+      "Un ami des Arbres aux rufauts (ID.)",
+      "VALERE BERNARD (HtREVE MONPORTI",
+      "HANRI BRUGNOT (WIt RoRRsI",
+      "HUREN CARRIERE OCTAVE MAUS",
+      "CAMN CLADIL (LOTIS VATXCRILBS)",
+      "123",
+      "379",
+      "139",
+      "291",
+      "2%",
+      "220",
+      ". 109, 117",
+      "154",
+      "KITAN DISPRES (A. F.)",
+      "JIAN DOMMOTB FRANIS DI MMANDREE",
+      "CARRIEL FACRE OCTAVE MALS)",
+      "GAVARNI ANDRE HONTAINAS",
+      "CHARLS GROLLSAT LOUIS THOMAS).",
+      "HMILF GOUDEAU OCTAVI MArS",
+      "ARMAND GUILLAUMIN (GRORGRS LBCONTE)",
+      "RICHARD HRINTY ILICA RIZARDI.",
+      "BERNARD HONTGER LOUIS TAXCRULIBS)",
+      "HENRIK IHSRN (LtiNi-POB.",
+      "FRAVIS JOURDAIN",
+      "CHARL.PS-1.0715 PA.IPPR)",
+      "GEORBITR LRBLANG(O. M.",
+      "259",
+      "91",
+      "363",
+      "342",
+      "300",
+      "203, 211",
+      "116",
+      "93",
+      "165",
+      "231",
+      "11)9",
+      "GEORGES LECONTE (ID.)",
+      "MACRICE MAETERLINCK (LOUIS TAUXCELLBS)",
+      "ARISTIDE MAILLOL (MAURICE DIVIS).",
+      "HENRY MAUBEL (FRANCIS DE MIOMANDRE)",
+      "CAMILLE MAUCLAIR (ID.).",
+      "CLAUDE MONET (LOUIS VAUXCELLBS).",
+      "F.-CHARLES MORISSRAUX (HENRI LIBBRECHT).",
+      "VITTOR PicA EUGENN DIMOLDER)",
+      "PAUL RANSON (ANDRE FONTAINAS)",
+      "ARMAND RASSENPOSSE (POL. NEVHUX)",
+      "GIORGES RENCY (MAURICE DHS OMBIAUX)",
+      "LUCIEN ROLMER (FRANCIS DR MIOMANDRHI.",
+      "ALFRED STEVENS (OCTAVE MAIS).",
+      "CHARLRS VAN LBRRBRGHB (ALBERT KBM)",
+      "ISIDORE TERHEYDEN(OCTAVE MATIS) .",
+      "PIPPE ZILCKEN (LRONCE BENEDITE)",
+      "27",
+      "239",
+      "278",
+      "207",
+      "325",
+      "339,",
+      "347",
+      "356",
+      "1()보",
+      "41",
+      "254, 261",
+      "113",
+      "341",
+      "275",
+      "367",
+      "57",
+      "124",
+      "PEINTURE",
+      "Ls Chfs-dvr dn Musit de IAcademic des Beaux-",
+      "Arts",
+      "Bruges",
+      "minnaces",
+      "dune",
+      "PItil",
+      "complete",
+      "CH.-L CARDON)",
+      "Nos paintres rhttoriciens aus sve rt sure siccies iT",
+      "411",
+      "MARTERLINCK)",
+      "Le Mailre des deni-rigurrs de femmes identitie (In).",
+      "245",
+      "2;7",
+      "Le Tentation du (hoist sur In wontagne ID.).",
+      "Peintres de . bancketten .",
+      "La Restauration des tablraux",
+      "Id",
+      "id",
+      "(1. MANTERLINCK).",
+      "Ia.",
+      "id.",
+      "(CH.-L. CARDOX)",
+      "2jli",
+      "2!44",
+      "30.3",
+      "Id.",
+      "id",
+      "Lettres de",
+      "Ch. 1. CAR-",
+      "DON, L. MARTERINCK, D. ZACKEN AtA",
+      "BREDIESI",
+      "UNiVERSITi NOlVEL.t. Cours d'art el d Histoire de 1'art.",
+      "318",
+      "262",
+      "MICHAL.",
+      "TAN AlPHAN. Mithode worwelle potcr tenseigne",
+      "mext des arts plastignues.",
+      "• 119, 320",
+      "La Genealogit de Rubens",
+      "401",
+      "Lo lieu de naissance des Van Eyek",
+      "409",
+      "Lr Don de M",
+      "Gielen a la Bibliotheque royale",
+      "30)5",
+      "Les Concours de lAcademie de Belgique",
+      "176",
+      "Concours de Rome pour la gravure",
+      "320",
+      "La Societe des Peintres Graneurs",
+      "211",
+      "Le Cercle L'Estaspe",
+      "219",
+      "La Mire de W histler gravec par M. A. BROTET:O M.).",
+      "11;",
+      "La Tigne provengales",
+      "55",
+      "Le Tri-centenaire de Rembrandt",
+      "127, 200",
+      "Lin Roude de nuit et la couleur de Rombrandt",
+      "255",
+      "Mystification a propos de Rembrandt",
+      "273",
+      "Uile kettre d' Eugine Carriere",
+      "231",
+      "Paroles d'Eugine Carriere",
+      "2!5",
+      "Consells de Cezanne a un jeune neintre.",
+      "232",
+      "La Vierget la Tour de Raphael",
+      "3£",
+      "la Decouverte des",
+      "Turnera Londres (A: T:)",
+      "The Sainte Fanille de Murillo a Smyrne",
+      ": 137, 263",
+      "281"
+    ],
+    "first_source": "assets/themes/monet_garden/monet_07.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_07.webp"
+    ],
+    "created_at": "2026-11-26T09:16:51.710695"
+  },
+  "00723d0ee42003b90b43ec5e3d9f1766992b12277bd82227f3575602fa71fe73": {
+    "sha256": "00723d0ee42003b90b43ec5e3d9f1766992b12277bd82227f3575602fa71fe73",
+    "blob_key": "att/v1/blobs/00723d0ee42003b90b43ec5e3d9f1766992b12277bd82227f3575602fa71fe73.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/00723d0ee42003b90b43ec5e3d9f1766992b12277bd82227f3575602fa71fe73.webp",
+    "width": 681,
+    "height": 630,
+    "bytes": 139292,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_08.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_08.webp"
+    ],
+    "created_at": "2026-11-26T09:16:52.313492"
+  },
+  "acb4472bb7eb09d1eda4200df10b12e4c99685606d8d4410ab1db3eacfc0a70d": {
+    "sha256": "acb4472bb7eb09d1eda4200df10b12e4c99685606d8d4410ab1db3eacfc0a70d",
+    "blob_key": "att/v1/blobs/acb4472bb7eb09d1eda4200df10b12e4c99685606d8d4410ab1db3eacfc0a70d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/acb4472bb7eb09d1eda4200df10b12e4c99685606d8d4410ab1db3eacfc0a70d.webp",
+    "width": 1280,
+    "height": 852,
+    "bytes": 471716,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_09.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_09.webp"
+    ],
+    "created_at": "2026-11-26T09:16:52.979324"
+  },
+  "d815426585d4328b5a998cffbd76bba16b454b3dbce672c7a9d42913c65d7efe": {
+    "sha256": "d815426585d4328b5a998cffbd76bba16b454b3dbce672c7a9d42913c65d7efe",
+    "blob_key": "att/v1/blobs/d815426585d4328b5a998cffbd76bba16b454b3dbce672c7a9d42913c65d7efe.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d815426585d4328b5a998cffbd76bba16b454b3dbce672c7a9d42913c65d7efe.webp",
+    "width": 1920,
+    "height": 2360,
+    "bytes": 1493772,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "Sslrp"
+    ],
+    "first_source": "assets/themes/monet_garden/monet_10.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_10.webp"
+    ],
+    "created_at": "2026-11-26T09:16:54.282103"
+  },
+  "0ad4193ea81d277744699bd963b6e2053421996b67d193411e78ef8829f37595": {
+    "sha256": "0ad4193ea81d277744699bd963b6e2053421996b67d193411e78ef8829f37595",
+    "blob_key": "att/v1/blobs/0ad4193ea81d277744699bd963b6e2053421996b67d193411e78ef8829f37595.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0ad4193ea81d277744699bd963b6e2053421996b67d193411e78ef8829f37595.webp",
+    "width": 1920,
+    "height": 1454,
+    "bytes": 395110,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/monet_garden/monet_11.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_11.webp"
+    ],
+    "created_at": "2026-11-26T09:16:55.080463"
+  },
+  "97227362230c038ec7136169a511ed346154fe0774daba8b359aa22341cb6d13": {
+    "sha256": "97227362230c038ec7136169a511ed346154fe0774daba8b359aa22341cb6d13",
+    "blob_key": "att/v1/blobs/97227362230c038ec7136169a511ed346154fe0774daba8b359aa22341cb6d13.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/97227362230c038ec7136169a511ed346154fe0774daba8b359aa22341cb6d13.webp",
+    "width": 500,
+    "height": 975,
+    "bytes": 34444,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "춮",
+      "NEW YORK",
+      "1913",
+      "International Exhibition",
+      "of Modern Art",
+      "Association of American Painters",
+      "and Sculptors, Inc.",
+      "February Seventeenth to March Fifteenth",
+      "Catalogue 25 Cents"
+    ],
+    "first_source": "assets/themes/monet_garden/monet_12.webp",
+    "sources": [
+      "assets/themes/monet_garden/monet_12.webp"
+    ],
+    "created_at": "2026-11-26T09:16:55.880947"
+  },
+  "ba772055edd0ec11e9b59620d85181e88db58d508fe76c79991de6cd36b09e3a": {
+    "sha256": "ba772055edd0ec11e9b59620d85181e88db58d508fe76c79991de6cd36b09e3a",
+    "blob_key": "att/v1/blobs/ba772055edd0ec11e9b59620d85181e88db58d508fe76c79991de6cd36b09e3a.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ba772055edd0ec11e9b59620d85181e88db58d508fe76c79991de6cd36b09e3a.webp",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 353430,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_01.webp",
+    "sources": [
+      "assets/themes/winter_white/white_01.webp"
+    ],
+    "created_at": "2026-11-26T09:16:56.633095"
+  },
+  "7ff301cfcfd4ec23316b2e3c85fc18ff2b59926e32eed130144fe36f4ba5f3ff": {
+    "sha256": "7ff301cfcfd4ec23316b2e3c85fc18ff2b59926e32eed130144fe36f4ba5f3ff",
+    "blob_key": "att/v1/blobs/7ff301cfcfd4ec23316b2e3c85fc18ff2b59926e32eed130144fe36f4ba5f3ff.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/7ff301cfcfd4ec23316b2e3c85fc18ff2b59926e32eed130144fe36f4ba5f3ff.webp",
+    "width": 1920,
+    "height": 1611,
+    "bytes": 527406,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_02.webp",
+    "sources": [
+      "assets/themes/winter_white/white_02.webp"
+    ],
+    "created_at": "2026-11-26T09:16:57.515969"
+  },
+  "0239305f6785d5f6d77dcff85224f67f099f76f11146331702c0e6e3a974b6f9": {
+    "sha256": "0239305f6785d5f6d77dcff85224f67f099f76f11146331702c0e6e3a974b6f9",
+    "blob_key": "att/v1/blobs/0239305f6785d5f6d77dcff85224f67f099f76f11146331702c0e6e3a974b6f9.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0239305f6785d5f6d77dcff85224f67f099f76f11146331702c0e6e3a974b6f9.webp",
+    "width": 1024,
+    "height": 681,
+    "bytes": 83420,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_03.webp",
+    "sources": [
+      "assets/themes/winter_white/white_03.webp"
+    ],
+    "created_at": "2026-11-26T09:16:58.050658"
+  },
+  "950708fde79b779fa43706d04bd7e3ae9422ac25791510ea91bfed326277eb71": {
+    "sha256": "950708fde79b779fa43706d04bd7e3ae9422ac25791510ea91bfed326277eb71",
+    "blob_key": "att/v1/blobs/950708fde79b779fa43706d04bd7e3ae9422ac25791510ea91bfed326277eb71.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/950708fde79b779fa43706d04bd7e3ae9422ac25791510ea91bfed326277eb71.webp",
+    "width": 1920,
+    "height": 897,
+    "bytes": 60408,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_04.webp",
+    "sources": [
+      "assets/themes/winter_white/white_04.webp"
+    ],
+    "created_at": "2026-11-26T09:16:58.601649"
+  },
+  "b3bfae3b38d8a8220d6c1fc5ab589e132ac0b8ff27cf29342465de04120b426e": {
+    "sha256": "b3bfae3b38d8a8220d6c1fc5ab589e132ac0b8ff27cf29342465de04120b426e",
+    "blob_key": "att/v1/blobs/b3bfae3b38d8a8220d6c1fc5ab589e132ac0b8ff27cf29342465de04120b426e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b3bfae3b38d8a8220d6c1fc5ab589e132ac0b8ff27cf29342465de04120b426e.webp",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 461692,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_05.webp",
+    "sources": [
+      "assets/themes/winter_white/white_05.webp"
+    ],
+    "created_at": "2026-11-26T09:16:59.462142"
+  },
+  "dd7270ba1f6e68314462143b120c5e2ac6a79c7ef4762ca98316ca94c171c4f1": {
+    "sha256": "dd7270ba1f6e68314462143b120c5e2ac6a79c7ef4762ca98316ca94c171c4f1",
+    "blob_key": "att/v1/blobs/dd7270ba1f6e68314462143b120c5e2ac6a79c7ef4762ca98316ca94c171c4f1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/dd7270ba1f6e68314462143b120c5e2ac6a79c7ef4762ca98316ca94c171c4f1.webp",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 606870,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_06.webp",
+    "sources": [
+      "assets/themes/winter_white/white_06.webp"
+    ],
+    "created_at": "2026-11-26T09:17:00.301290"
+  },
+  "7018224e570727bd77ffcd9c3f692959e38acc2bb29e1759ce1c2fe3c2885996": {
+    "sha256": "7018224e570727bd77ffcd9c3f692959e38acc2bb29e1759ce1c2fe3c2885996",
+    "blob_key": "att/v1/blobs/7018224e570727bd77ffcd9c3f692959e38acc2bb29e1759ce1c2fe3c2885996.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/7018224e570727bd77ffcd9c3f692959e38acc2bb29e1759ce1c2fe3c2885996.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 389674,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_07.webp",
+    "sources": [
+      "assets/themes/winter_white/white_07.webp"
+    ],
+    "created_at": "2026-11-26T09:17:01.036779"
+  },
+  "97fcfd6fa99a10a919d1e36d3e9c282e69253fcec98a2454abcee0e8746df709": {
+    "sha256": "97fcfd6fa99a10a919d1e36d3e9c282e69253fcec98a2454abcee0e8746df709",
+    "blob_key": "att/v1/blobs/97fcfd6fa99a10a919d1e36d3e9c282e69253fcec98a2454abcee0e8746df709.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/97fcfd6fa99a10a919d1e36d3e9c282e69253fcec98a2454abcee0e8746df709.webp",
+    "width": 1920,
+    "height": 1536,
+    "bytes": 182310,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_08.webp",
+    "sources": [
+      "assets/themes/winter_white/white_08.webp"
+    ],
+    "created_at": "2026-11-26T09:17:01.694679"
+  },
+  "9423e59a097d2bd4fe95b7041db02170a46052504ec8a1a69d8642096381292b": {
+    "sha256": "9423e59a097d2bd4fe95b7041db02170a46052504ec8a1a69d8642096381292b",
+    "blob_key": "att/v1/blobs/9423e59a097d2bd4fe95b7041db02170a46052504ec8a1a69d8642096381292b.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9423e59a097d2bd4fe95b7041db02170a46052504ec8a1a69d8642096381292b.webp",
+    "width": 1920,
+    "height": 148,
+    "bytes": 34300,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_09.webp",
+    "sources": [
+      "assets/themes/winter_white/white_09.webp"
+    ],
+    "created_at": "2026-11-26T09:17:02.253724"
+  },
+  "2ca1b5cc584168aa4fef4d8f686ca79516da7a91c9917bcba0b93c0d86b5807f": {
+    "sha256": "2ca1b5cc584168aa4fef4d8f686ca79516da7a91c9917bcba0b93c0d86b5807f",
+    "blob_key": "att/v1/blobs/2ca1b5cc584168aa4fef4d8f686ca79516da7a91c9917bcba0b93c0d86b5807f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/2ca1b5cc584168aa4fef4d8f686ca79516da7a91c9917bcba0b93c0d86b5807f.webp",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 587774,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_10.webp",
+    "sources": [
+      "assets/themes/winter_white/white_10.webp"
+    ],
+    "created_at": "2026-11-26T09:17:03.082632"
+  },
+  "64472fbbce181f3fef295b2f41bc8a54b7d2396096193e237f8b232150609bf7": {
+    "sha256": "64472fbbce181f3fef295b2f41bc8a54b7d2396096193e237f8b232150609bf7",
+    "blob_key": "att/v1/blobs/64472fbbce181f3fef295b2f41bc8a54b7d2396096193e237f8b232150609bf7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/64472fbbce181f3fef295b2f41bc8a54b7d2396096193e237f8b232150609bf7.webp",
+    "width": 1920,
+    "height": 1282,
+    "bytes": 668758,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_11.webp",
+    "sources": [
+      "assets/themes/winter_white/white_11.webp"
+    ],
+    "created_at": "2026-11-26T09:17:03.944299"
+  },
+  "241ae6ac9bc13f2913ce41c1edc2db2db6ebb9efa17379d4f95e92d03d10c3f7": {
+    "sha256": "241ae6ac9bc13f2913ce41c1edc2db2db6ebb9efa17379d4f95e92d03d10c3f7",
+    "blob_key": "att/v1/blobs/241ae6ac9bc13f2913ce41c1edc2db2db6ebb9efa17379d4f95e92d03d10c3f7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/241ae6ac9bc13f2913ce41c1edc2db2db6ebb9efa17379d4f95e92d03d10c3f7.webp",
+    "width": 1280,
+    "height": 743,
+    "bytes": 325850,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/winter_white/white_12.webp",
+    "sources": [
+      "assets/themes/winter_white/white_12.webp"
+    ],
+    "created_at": "2026-11-26T09:17:04.630888"
+  },
+  "67e6d7971d899ecbcc0e662cf4e1f91c789a0e6fc1b8ecdd0f6976344aa0cd94": {
+    "sha256": "67e6d7971d899ecbcc0e662cf4e1f91c789a0e6fc1b8ecdd0f6976344aa0cd94",
+    "blob_key": "att/v1/blobs/67e6d7971d899ecbcc0e662cf4e1f91c789a0e6fc1b8ecdd0f6976344aa0cd94.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/67e6d7971d899ecbcc0e662cf4e1f91c789a0e6fc1b8ecdd0f6976344aa0cd94.webp",
+    "width": 1280,
+    "height": 960,
+    "bytes": 477928,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_01.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_01.webp"
+    ],
+    "created_at": "2026-11-26T09:17:05.452468"
+  },
+  "cb8cff4f1b858ef5fcc3fde3191a9f1b665c753bee7aea0593bf69c0af410f7c": {
+    "sha256": "cb8cff4f1b858ef5fcc3fde3191a9f1b665c753bee7aea0593bf69c0af410f7c",
+    "blob_key": "att/v1/blobs/cb8cff4f1b858ef5fcc3fde3191a9f1b665c753bee7aea0593bf69c0af410f7c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/cb8cff4f1b858ef5fcc3fde3191a9f1b665c753bee7aea0593bf69c0af410f7c.webp",
+    "width": 1050,
+    "height": 1400,
+    "bytes": 70828,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_02.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_02.webp"
+    ],
+    "created_at": "2026-11-26T09:17:06.085820"
+  },
+  "54d501f31a7fdceb261aa8371cb363312988f023173d9af4be7f933eac847098": {
+    "sha256": "54d501f31a7fdceb261aa8371cb363312988f023173d9af4be7f933eac847098",
+    "blob_key": "att/v1/blobs/54d501f31a7fdceb261aa8371cb363312988f023173d9af4be7f933eac847098.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/54d501f31a7fdceb261aa8371cb363312988f023173d9af4be7f933eac847098.webp",
+    "width": 1599,
+    "height": 2160,
+    "bytes": 1146486,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_03.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_03.webp"
+    ],
+    "created_at": "2026-11-26T09:17:07.097162"
+  },
+  "2cf574ea1706fe68bca44847b14487f0fe015b70b4806bc97274b1ba5eba7cc6": {
+    "sha256": "2cf574ea1706fe68bca44847b14487f0fe015b70b4806bc97274b1ba5eba7cc6",
+    "blob_key": "att/v1/blobs/2cf574ea1706fe68bca44847b14487f0fe015b70b4806bc97274b1ba5eba7cc6.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/2cf574ea1706fe68bca44847b14487f0fe015b70b4806bc97274b1ba5eba7cc6.webp",
+    "width": 1280,
+    "height": 1280,
+    "bytes": 83042,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_04.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_04.webp"
+    ],
+    "created_at": "2026-11-26T09:17:07.849584"
+  },
+  "64987be7713feeab3ff913b428a4f06468aa459e0e9cd9bb6576e61c8713579f": {
+    "sha256": "64987be7713feeab3ff913b428a4f06468aa459e0e9cd9bb6576e61c8713579f",
+    "blob_key": "att/v1/blobs/64987be7713feeab3ff913b428a4f06468aa459e0e9cd9bb6576e61c8713579f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/64987be7713feeab3ff913b428a4f06468aa459e0e9cd9bb6576e61c8713579f.webp",
+    "width": 1236,
+    "height": 2400,
+    "bytes": 232620,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_05.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_05.webp"
+    ],
+    "created_at": "2026-11-26T09:17:08.673679"
+  },
+  "f9901066c0259e29b825d9b43780bb4dad65b1da55197dd9590a19ea4a9985b0": {
+    "sha256": "f9901066c0259e29b825d9b43780bb4dad65b1da55197dd9590a19ea4a9985b0",
+    "blob_key": "att/v1/blobs/f9901066c0259e29b825d9b43780bb4dad65b1da55197dd9590a19ea4a9985b0.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f9901066c0259e29b825d9b43780bb4dad65b1da55197dd9590a19ea4a9985b0.webp",
+    "width": 1920,
+    "height": 1281,
+    "bytes": 184580,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_06.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_06.webp"
+    ],
+    "created_at": "2026-11-26T09:17:09.393860"
+  },
+  "1b55708cdca869982807db371295afd47b251cc176ebdf6ef46271b49488c5a9": {
+    "sha256": "1b55708cdca869982807db371295afd47b251cc176ebdf6ef46271b49488c5a9",
+    "blob_key": "att/v1/blobs/1b55708cdca869982807db371295afd47b251cc176ebdf6ef46271b49488c5a9.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/1b55708cdca869982807db371295afd47b251cc176ebdf6ef46271b49488c5a9.webp",
+    "width": 1920,
+    "height": 1238,
+    "bytes": 333304,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_07.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_07.webp"
+    ],
+    "created_at": "2026-11-26T09:17:10.442661"
+  },
+  "76e251b67c68dbd82bbd287ae0e6ee194dd6371b2462332bb32127dce02118c0": {
+    "sha256": "76e251b67c68dbd82bbd287ae0e6ee194dd6371b2462332bb32127dce02118c0",
+    "blob_key": "att/v1/blobs/76e251b67c68dbd82bbd287ae0e6ee194dd6371b2462332bb32127dce02118c0.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/76e251b67c68dbd82bbd287ae0e6ee194dd6371b2462332bb32127dce02118c0.webp",
+    "width": 1920,
+    "height": 1250,
+    "bytes": 303918,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_08.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_08.webp"
+    ],
+    "created_at": "2026-11-26T09:17:11.286140"
+  },
+  "81552f8d6cbabf0adb8810077b24c7b28376dceae574926d6014fa9b12c6798e": {
+    "sha256": "81552f8d6cbabf0adb8810077b24c7b28376dceae574926d6014fa9b12c6798e",
+    "blob_key": "att/v1/blobs/81552f8d6cbabf0adb8810077b24c7b28376dceae574926d6014fa9b12c6798e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/81552f8d6cbabf0adb8810077b24c7b28376dceae574926d6014fa9b12c6798e.webp",
+    "width": 500,
+    "height": 826,
+    "bytes": 44610,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "SCENTED ISLES",
+      "AND CORAL GARDENS",
+      "EC.D. MACKELLAR"
+    ],
+    "first_source": "assets/themes/zen_minimal/zen_09.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_09.webp"
+    ],
+    "created_at": "2026-11-26T09:17:11.966029"
+  },
+  "64bf7afb49d41b7c91cb9abf62b5f08f3737adbaa38bea1b64fc0d2afda3c5f2": {
+    "sha256": "64bf7afb49d41b7c91cb9abf62b5f08f3737adbaa38bea1b64fc0d2afda3c5f2",
+    "blob_key": "att/v1/blobs/64bf7afb49d41b7c91cb9abf62b5f08f3737adbaa38bea1b64fc0d2afda3c5f2.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/64bf7afb49d41b7c91cb9abf62b5f08f3737adbaa38bea1b64fc0d2afda3c5f2.webp",
+    "width": 960,
+    "height": 1403,
+    "bytes": 123108,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "MINEYEARS",
+      "IN",
+      "TIPIN"
+    ],
+    "first_source": "assets/themes/zen_minimal/zen_10.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_10.webp"
+    ],
+    "created_at": "2026-11-26T09:17:12.741793"
+  },
+  "65879e8e52a312e633e0a7220ff712c5a30012805cd06808fa8411bad3c65703": {
+    "sha256": "65879e8e52a312e633e0a7220ff712c5a30012805cd06808fa8411bad3c65703",
+    "blob_key": "att/v1/blobs/65879e8e52a312e633e0a7220ff712c5a30012805cd06808fa8411bad3c65703.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/65879e8e52a312e633e0a7220ff712c5a30012805cd06808fa8411bad3c65703.webp",
+    "width": 1280,
+    "height": 427,
+    "bytes": 121904,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "NUTON"
+    ],
+    "first_source": "assets/themes/zen_minimal/zen_11.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_11.webp"
+    ],
+    "created_at": "2026-11-26T09:17:13.429991"
+  },
+  "9e2853bb5728d85c3631a5295b6e08dc4a0d1754c3a43a62f91edf4526446de4": {
+    "sha256": "9e2853bb5728d85c3631a5295b6e08dc4a0d1754c3a43a62f91edf4526446de4",
+    "blob_key": "att/v1/blobs/9e2853bb5728d85c3631a5295b6e08dc4a0d1754c3a43a62f91edf4526446de4.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9e2853bb5728d85c3631a5295b6e08dc4a0d1754c3a43a62f91edf4526446de4.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 25002,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/zen_minimal/zen_12.webp",
+    "sources": [
+      "assets/themes/zen_minimal/zen_12.webp"
+    ],
+    "created_at": "2026-11-26T09:17:13.913221"
+  },
+  "8ae1a3cb6c82fd0277239d0a4bd2d2d5dcf6ea60574eda9e327fe0164434b49e": {
+    "sha256": "8ae1a3cb6c82fd0277239d0a4bd2d2d5dcf6ea60574eda9e327fe0164434b49e",
+    "blob_key": "att/v1/blobs/8ae1a3cb6c82fd0277239d0a4bd2d2d5dcf6ea60574eda9e327fe0164434b49e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/8ae1a3cb6c82fd0277239d0a4bd2d2d5dcf6ea60574eda9e327fe0164434b49e.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 672720,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "010",
+      "87:1877"
+    ],
+    "first_source": "assets/themes/color_mint/mint_01.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_01.webp"
+    ],
+    "created_at": "2026-11-26T09:17:14.866123"
+  },
+  "4db733f48beb5e93724df21661f92746c897b2d559ffa125380b1512ffa8cd62": {
+    "sha256": "4db733f48beb5e93724df21661f92746c897b2d559ffa125380b1512ffa8cd62",
+    "blob_key": "att/v1/blobs/4db733f48beb5e93724df21661f92746c897b2d559ffa125380b1512ffa8cd62.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/4db733f48beb5e93724df21661f92746c897b2d559ffa125380b1512ffa8cd62.webp",
+    "width": 1920,
+    "height": 1095,
+    "bytes": 517538,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_02.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_02.webp"
+    ],
+    "created_at": "2026-11-26T09:17:15.870534"
+  },
+  "b18cd0d9bc01267ae31f45759ec362be6d846bc705a292468bc082cd64a1151e": {
+    "sha256": "b18cd0d9bc01267ae31f45759ec362be6d846bc705a292468bc082cd64a1151e",
+    "blob_key": "att/v1/blobs/b18cd0d9bc01267ae31f45759ec362be6d846bc705a292468bc082cd64a1151e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b18cd0d9bc01267ae31f45759ec362be6d846bc705a292468bc082cd64a1151e.webp",
+    "width": 1920,
+    "height": 1469,
+    "bytes": 540156,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_03.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_03.webp"
+    ],
+    "created_at": "2026-11-26T09:17:16.797178"
+  },
+  "8d313a30b9367afff6f9227134a9a0bd431e222c694a392a2572dd229fe93756": {
+    "sha256": "8d313a30b9367afff6f9227134a9a0bd431e222c694a392a2572dd229fe93756",
+    "blob_key": "att/v1/blobs/8d313a30b9367afff6f9227134a9a0bd431e222c694a392a2572dd229fe93756.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/8d313a30b9367afff6f9227134a9a0bd431e222c694a392a2572dd229fe93756.webp",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 1327652,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "N6 19"
+    ],
+    "first_source": "assets/themes/color_mint/mint_04.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_04.webp"
+    ],
+    "created_at": "2026-11-26T09:17:18.133439"
+  },
+  "de9bc2663a90093572e09a35487da422581854c9ba728b8a4891d7e7957739df": {
+    "sha256": "de9bc2663a90093572e09a35487da422581854c9ba728b8a4891d7e7957739df",
+    "blob_key": "att/v1/blobs/de9bc2663a90093572e09a35487da422581854c9ba728b8a4891d7e7957739df.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/de9bc2663a90093572e09a35487da422581854c9ba728b8a4891d7e7957739df.webp",
+    "width": 1920,
+    "height": 1180,
+    "bytes": 241380,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_05.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_05.webp"
+    ],
+    "created_at": "2026-11-26T09:17:18.872016"
+  },
+  "923431f48072e90c1ffecb500217641b95a44d9f8d495bdb31492eb26cb5e91f": {
+    "sha256": "923431f48072e90c1ffecb500217641b95a44d9f8d495bdb31492eb26cb5e91f",
+    "blob_key": "att/v1/blobs/923431f48072e90c1ffecb500217641b95a44d9f8d495bdb31492eb26cb5e91f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/923431f48072e90c1ffecb500217641b95a44d9f8d495bdb31492eb26cb5e91f.webp",
+    "width": 1920,
+    "height": 2333,
+    "bytes": 1837390,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_06.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_06.webp"
+    ],
+    "created_at": "2026-11-26T09:17:20.075289"
+  },
+  "505fb53068ed5d630ca77cf858349d19ea4afb295ee07261bc52fcd87d5f2ad0": {
+    "sha256": "505fb53068ed5d630ca77cf858349d19ea4afb295ee07261bc52fcd87d5f2ad0",
+    "blob_key": "att/v1/blobs/505fb53068ed5d630ca77cf858349d19ea4afb295ee07261bc52fcd87d5f2ad0.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/505fb53068ed5d630ca77cf858349d19ea4afb295ee07261bc52fcd87d5f2ad0.webp",
+    "width": 1800,
+    "height": 2400,
+    "bytes": 1232548,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_07.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_07.webp"
+    ],
+    "created_at": "2026-11-26T09:17:21.619548"
+  },
+  "2a8944fdd198b0fc4c0712a09e5ee0413ba63152f323c89ece64a4d7a878e3ea": {
+    "sha256": "2a8944fdd198b0fc4c0712a09e5ee0413ba63152f323c89ece64a4d7a878e3ea",
+    "blob_key": "att/v1/blobs/2a8944fdd198b0fc4c0712a09e5ee0413ba63152f323c89ece64a4d7a878e3ea.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/2a8944fdd198b0fc4c0712a09e5ee0413ba63152f323c89ece64a4d7a878e3ea.webp",
+    "width": 1800,
+    "height": 2400,
+    "bytes": 1232040,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_08.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_08.webp"
+    ],
+    "created_at": "2026-11-26T09:17:22.757840"
+  },
+  "11e9b60dcf67bd76bf0782db1301646d9a50cc57e9276a8b41fc102c864b30fe": {
+    "sha256": "11e9b60dcf67bd76bf0782db1301646d9a50cc57e9276a8b41fc102c864b30fe",
+    "blob_key": "att/v1/blobs/11e9b60dcf67bd76bf0782db1301646d9a50cc57e9276a8b41fc102c864b30fe.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/11e9b60dcf67bd76bf0782db1301646d9a50cc57e9276a8b41fc102c864b30fe.webp",
+    "width": 1920,
+    "height": 1565,
+    "bytes": 174202,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_09.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_09.webp"
+    ],
+    "created_at": "2026-11-26T09:17:23.442617"
+  },
+  "0aaea5663de384929de0ce90927080baad0ce459536c31b957820a3a16983459": {
+    "sha256": "0aaea5663de384929de0ce90927080baad0ce459536c31b957820a3a16983459",
+    "blob_key": "att/v1/blobs/0aaea5663de384929de0ce90927080baad0ce459536c31b957820a3a16983459.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0aaea5663de384929de0ce90927080baad0ce459536c31b957820a3a16983459.webp",
+    "width": 1520,
+    "height": 2400,
+    "bytes": 776912,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_10.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_10.webp"
+    ],
+    "created_at": "2026-11-26T09:17:24.386800"
+  },
+  "c4ff6863bfb5e52fe7b1b843d227cc34a666adef0514efab665936de728cc5e3": {
+    "sha256": "c4ff6863bfb5e52fe7b1b843d227cc34a666adef0514efab665936de728cc5e3",
+    "blob_key": "att/v1/blobs/c4ff6863bfb5e52fe7b1b843d227cc34a666adef0514efab665936de728cc5e3.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/c4ff6863bfb5e52fe7b1b843d227cc34a666adef0514efab665936de728cc5e3.webp",
+    "width": 1920,
+    "height": 1446,
+    "bytes": 993406,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_11.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_11.webp"
+    ],
+    "created_at": "2026-11-26T09:17:25.759993"
+  },
+  "7e7a4fbddf5437fa9cd81c6d4a3e66fc2b567f319e982c2b583dc8c2cf1e7b58": {
+    "sha256": "7e7a4fbddf5437fa9cd81c6d4a3e66fc2b567f319e982c2b583dc8c2cf1e7b58",
+    "blob_key": "att/v1/blobs/7e7a4fbddf5437fa9cd81c6d4a3e66fc2b567f319e982c2b583dc8c2cf1e7b58.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/7e7a4fbddf5437fa9cd81c6d4a3e66fc2b567f319e982c2b583dc8c2cf1e7b58.webp",
+    "width": 1920,
+    "height": 1803,
+    "bytes": 1008072,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/color_mint/mint_12.webp",
+    "sources": [
+      "assets/themes/color_mint/mint_12.webp"
+    ],
+    "created_at": "2026-11-26T09:17:26.828972"
+  },
+  "c126a6c35743c081e2a73efebc531ce319a1c65f3a8f809af51b8f851f84056d": {
+    "sha256": "c126a6c35743c081e2a73efebc531ce319a1c65f3a8f809af51b8f851f84056d",
+    "blob_key": "att/v1/blobs/c126a6c35743c081e2a73efebc531ce319a1c65f3a8f809af51b8f851f84056d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/c126a6c35743c081e2a73efebc531ce319a1c65f3a8f809af51b8f851f84056d.webp",
+    "width": 1312,
+    "height": 2400,
+    "bytes": 775772,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_01.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_01.webp"
+    ],
+    "created_at": "2026-11-26T09:17:27.770369"
+  },
+  "11244da9e6e778c4808c902e0bea2f2dff2e5135c53465fa6f7b4582b941c49f": {
+    "sha256": "11244da9e6e778c4808c902e0bea2f2dff2e5135c53465fa6f7b4582b941c49f",
+    "blob_key": "att/v1/blobs/11244da9e6e778c4808c902e0bea2f2dff2e5135c53465fa6f7b4582b941c49f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/11244da9e6e778c4808c902e0bea2f2dff2e5135c53465fa6f7b4582b941c49f.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 471700,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "1un-uo 08s",
+      "Watetwani uilndans",
+      "tuntasonns"
+    ],
+    "first_source": "assets/themes/midnight_blue/night_02.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_02.webp"
+    ],
+    "created_at": "2026-11-26T09:17:28.945021"
+  },
+  "02df22aa8a2d94aa4ebf91773f63c26caa01fc09ce31b5e02ccad29ece5ad7bd": {
+    "sha256": "02df22aa8a2d94aa4ebf91773f63c26caa01fc09ce31b5e02ccad29ece5ad7bd",
+    "blob_key": "att/v1/blobs/02df22aa8a2d94aa4ebf91773f63c26caa01fc09ce31b5e02ccad29ece5ad7bd.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/02df22aa8a2d94aa4ebf91773f63c26caa01fc09ce31b5e02ccad29ece5ad7bd.webp",
+    "width": 500,
+    "height": 817,
+    "bytes": 22648,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "E",
+      "51",
+      "U6X",
+      "CRISSI",
+      "SMTTISONIAN INSTITLEPTON",
+      "MUREAU OR AMERIGAN EPINGLOGY",
+      "DELLNHN 13",
+      "TWE DiNE ORIGIN MYTHS OR THE",
+      "NAVAHO INDIANS",
+      "Hy ATLDEN ORRYAN"
+    ],
+    "first_source": "assets/themes/midnight_blue/night_03.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_03.webp"
+    ],
+    "created_at": "2026-11-26T09:17:29.704867"
+  },
+  "d336a83abfdc84d5f5e1d0e3a95e76cf1e55716c37fdceffb53a617885aaac56": {
+    "sha256": "d336a83abfdc84d5f5e1d0e3a95e76cf1e55716c37fdceffb53a617885aaac56",
+    "blob_key": "att/v1/blobs/d336a83abfdc84d5f5e1d0e3a95e76cf1e55716c37fdceffb53a617885aaac56.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d336a83abfdc84d5f5e1d0e3a95e76cf1e55716c37fdceffb53a617885aaac56.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 288290,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_04.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_04.webp"
+    ],
+    "created_at": "2026-11-26T09:17:30.387129"
+  },
+  "13742b1eda9e029b7208ca378420d4c2be397638da2c246d013c4435eae26810": {
+    "sha256": "13742b1eda9e029b7208ca378420d4c2be397638da2c246d013c4435eae26810",
+    "blob_key": "att/v1/blobs/13742b1eda9e029b7208ca378420d4c2be397638da2c246d013c4435eae26810.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/13742b1eda9e029b7208ca378420d4c2be397638da2c246d013c4435eae26810.webp",
+    "width": 1920,
+    "height": 2200,
+    "bytes": 366390,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "THE",
+      "SUNS DIARY",
+      ".",
+      "EtIzABETH",
+      "COAYS WOO RTH",
+      "#!",
+      "#",
+      "Digitized by",
+      "cogle",
+      "Orginal from",
+      "UNIVERSITY OF MINNESOTA"
+    ],
+    "first_source": "assets/themes/midnight_blue/night_05.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_05.webp"
+    ],
+    "created_at": "2026-11-26T09:17:31.476000"
+  },
+  "ee703a6a936010b1594d507d5456095ae1e114b4fa5e78e354a6e2b59bc78c5b": {
+    "sha256": "ee703a6a936010b1594d507d5456095ae1e114b4fa5e78e354a6e2b59bc78c5b",
+    "blob_key": "att/v1/blobs/ee703a6a936010b1594d507d5456095ae1e114b4fa5e78e354a6e2b59bc78c5b.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ee703a6a936010b1594d507d5456095ae1e114b4fa5e78e354a6e2b59bc78c5b.webp",
+    "width": 500,
+    "height": 796,
+    "bytes": 34184,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "PS",
+      "3119",
+      "V3803",
+      "1921",
+      "MAANY CELDREN",
+      "MAS NGJUYER VAN RENSSELADR"
+    ],
+    "first_source": "assets/themes/midnight_blue/night_06.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_06.webp"
+    ],
+    "created_at": "2026-11-26T09:17:32.100939"
+  },
+  "a998e66071a87d2d5fa914b16fb58c495c1268fc3a44ac3c96a9304b5d32adef": {
+    "sha256": "a998e66071a87d2d5fa914b16fb58c495c1268fc3a44ac3c96a9304b5d32adef",
+    "blob_key": "att/v1/blobs/a998e66071a87d2d5fa914b16fb58c495c1268fc3a44ac3c96a9304b5d32adef.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a998e66071a87d2d5fa914b16fb58c495c1268fc3a44ac3c96a9304b5d32adef.webp",
+    "width": 1920,
+    "height": 1920,
+    "bytes": 571016,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_07.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_07.webp"
+    ],
+    "created_at": "2026-11-26T09:17:32.988637"
+  },
+  "fbd3a5f9e878196092110a4649ccef9be9c205dee616de9fe1ab1cd101bca7c1": {
+    "sha256": "fbd3a5f9e878196092110a4649ccef9be9c205dee616de9fe1ab1cd101bca7c1",
+    "blob_key": "att/v1/blobs/fbd3a5f9e878196092110a4649ccef9be9c205dee616de9fe1ab1cd101bca7c1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/fbd3a5f9e878196092110a4649ccef9be9c205dee616de9fe1ab1cd101bca7c1.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 37766,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_08.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_08.webp"
+    ],
+    "created_at": "2026-11-26T09:17:33.571204"
+  },
+  "23738899597542f6b61eb5d8f7d86d449cc8444a421bdf7a5cf376d527254d05": {
+    "sha256": "23738899597542f6b61eb5d8f7d86d449cc8444a421bdf7a5cf376d527254d05",
+    "blob_key": "att/v1/blobs/23738899597542f6b61eb5d8f7d86d449cc8444a421bdf7a5cf376d527254d05.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/23738899597542f6b61eb5d8f7d86d449cc8444a421bdf7a5cf376d527254d05.webp",
+    "width": 1024,
+    "height": 685,
+    "bytes": 40224,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_09.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_09.webp"
+    ],
+    "created_at": "2026-11-26T09:17:34.448481"
+  },
+  "9f2f3f2a5bbd4084ef704b8cbcd0d61f12555a405bd9040d279757d0593fd9a7": {
+    "sha256": "9f2f3f2a5bbd4084ef704b8cbcd0d61f12555a405bd9040d279757d0593fd9a7",
+    "blob_key": "att/v1/blobs/9f2f3f2a5bbd4084ef704b8cbcd0d61f12555a405bd9040d279757d0593fd9a7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9f2f3f2a5bbd4084ef704b8cbcd0d61f12555a405bd9040d279757d0593fd9a7.webp",
+    "width": 1034,
+    "height": 282,
+    "bytes": 32562,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_10.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_10.webp"
+    ],
+    "created_at": "2026-11-26T09:17:35.004729"
+  },
+  "3894d3e8cce98dbd26d9528a6da83fb9bd81b983dd1f2a2ff7ce27c7eb1cc5d2": {
+    "sha256": "3894d3e8cce98dbd26d9528a6da83fb9bd81b983dd1f2a2ff7ce27c7eb1cc5d2",
+    "blob_key": "att/v1/blobs/3894d3e8cce98dbd26d9528a6da83fb9bd81b983dd1f2a2ff7ce27c7eb1cc5d2.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/3894d3e8cce98dbd26d9528a6da83fb9bd81b983dd1f2a2ff7ce27c7eb1cc5d2.webp",
+    "width": 1920,
+    "height": 1254,
+    "bytes": 690096,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_11.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_11.webp"
+    ],
+    "created_at": "2026-11-26T09:17:35.951487"
+  },
+  "a677dd7753f66d1cec720e3d4bda5b6b6c6449eaf82b82e59948147451bcd05b": {
+    "sha256": "a677dd7753f66d1cec720e3d4bda5b6b6c6449eaf82b82e59948147451bcd05b",
+    "blob_key": "att/v1/blobs/a677dd7753f66d1cec720e3d4bda5b6b6c6449eaf82b82e59948147451bcd05b.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a677dd7753f66d1cec720e3d4bda5b6b6c6449eaf82b82e59948147451bcd05b.webp",
+    "width": 960,
+    "height": 1430,
+    "bytes": 118770,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/midnight_blue/night_12.webp",
+    "sources": [
+      "assets/themes/midnight_blue/night_12.webp"
+    ],
+    "created_at": "2026-11-26T09:17:36.557229"
+  },
+  "c23cd3990654ae13ea0cf224187223c1ca43a600ffabaf0fd6ab13394d6b6211": {
+    "sha256": "c23cd3990654ae13ea0cf224187223c1ca43a600ffabaf0fd6ab13394d6b6211",
+    "blob_key": "att/v1/blobs/c23cd3990654ae13ea0cf224187223c1ca43a600ffabaf0fd6ab13394d6b6211.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/c23cd3990654ae13ea0cf224187223c1ca43a600ffabaf0fd6ab13394d6b6211.webp",
+    "width": 1280,
+    "height": 1905,
+    "bytes": 282336,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "In She Sime gf",
+      "ATTILA",
+      "FRANCIS ROLT- WHEELER"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_01.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_01.webp"
+    ],
+    "created_at": "2026-11-26T09:17:37.522893"
+  },
+  "89e98e9c5ad391866391130c1860f1e6c17591522c7ccb397cbcd37084dc1abd": {
+    "sha256": "89e98e9c5ad391866391130c1860f1e6c17591522c7ccb397cbcd37084dc1abd",
+    "blob_key": "att/v1/blobs/89e98e9c5ad391866391130c1860f1e6c17591522c7ccb397cbcd37084dc1abd.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/89e98e9c5ad391866391130c1860f1e6c17591522c7ccb397cbcd37084dc1abd.webp",
+    "width": 1920,
+    "height": 1280,
+    "bytes": 728170,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/camping_forest/camp_02.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_02.webp"
+    ],
+    "created_at": "2026-11-26T09:17:38.343568"
+  },
+  "9aa1b1913317f4e382ebe16ec6da2e44ecba795dcc9854277fe003d64ccf1d54": {
+    "sha256": "9aa1b1913317f4e382ebe16ec6da2e44ecba795dcc9854277fe003d64ccf1d54",
+    "blob_key": "att/v1/blobs/9aa1b1913317f4e382ebe16ec6da2e44ecba795dcc9854277fe003d64ccf1d54.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9aa1b1913317f4e382ebe16ec6da2e44ecba795dcc9854277fe003d64ccf1d54.webp",
+    "width": 500,
+    "height": 750,
+    "bytes": 64406,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "UC",
+      "RLF",
+      "f8 115 139",
+      "A•BERKELEY",
+      "YEAR:",
+      "YC 106375"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_03.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_03.webp"
+    ],
+    "created_at": "2026-11-26T09:17:38.992569"
+  },
+  "c03579837ecfe7f1a1cdb5f66249223d534de9b39768d6fc312f62e0568fe19c": {
+    "sha256": "c03579837ecfe7f1a1cdb5f66249223d534de9b39768d6fc312f62e0568fe19c",
+    "blob_key": "att/v1/blobs/c03579837ecfe7f1a1cdb5f66249223d534de9b39768d6fc312f62e0568fe19c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/c03579837ecfe7f1a1cdb5f66249223d534de9b39768d6fc312f62e0568fe19c.webp",
+    "width": 1920,
+    "height": 663,
+    "bytes": 136918,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/camping_forest/camp_04.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_04.webp"
+    ],
+    "created_at": "2026-11-26T09:17:39.572988"
+  },
+  "b01f4efa55a92948e5b30353f20e54773324b406b54d4654376b0178f283d1f5": {
+    "sha256": "b01f4efa55a92948e5b30353f20e54773324b406b54d4654376b0178f283d1f5",
+    "blob_key": "att/v1/blobs/b01f4efa55a92948e5b30353f20e54773324b406b54d4654376b0178f283d1f5.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b01f4efa55a92948e5b30353f20e54773324b406b54d4654376b0178f283d1f5.webp",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 1467310,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/camping_forest/camp_05.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_05.webp"
+    ],
+    "created_at": "2026-11-26T09:17:40.668504"
+  },
+  "e4c550b5de5cf763ef93cec9375879add4bf08374e3cf00403d1504dbf88ae74": {
+    "sha256": "e4c550b5de5cf763ef93cec9375879add4bf08374e3cf00403d1504dbf88ae74",
+    "blob_key": "att/v1/blobs/e4c550b5de5cf763ef93cec9375879add4bf08374e3cf00403d1504dbf88ae74.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e4c550b5de5cf763ef93cec9375879add4bf08374e3cf00403d1504dbf88ae74.webp",
+    "width": 1920,
+    "height": 1440,
+    "bytes": 493402,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "GRAND ISLAND",
+      "FOREST SERMCE",
+      "Nationall",
+      "Reereaion",
+      "(rea",
+      "YHIAWANHA MATIONAL FOREST'",
+      "DEPARIMENT OF AGRCULTURE"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_06.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_06.webp"
+    ],
+    "created_at": "2026-11-26T09:17:41.753613"
+  },
+  "911cb56c65e43fd6f7162fea3333fb439dc4ef10a9f982fc6008194364c784a0": {
+    "sha256": "911cb56c65e43fd6f7162fea3333fb439dc4ef10a9f982fc6008194364c784a0",
+    "blob_key": "att/v1/blobs/911cb56c65e43fd6f7162fea3333fb439dc4ef10a9f982fc6008194364c784a0.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/911cb56c65e43fd6f7162fea3333fb439dc4ef10a9f982fc6008194364c784a0.webp",
+    "width": 500,
+    "height": 727,
+    "bytes": 80440,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "OVER A MILLION READERS EVERY ISSUE",
+      "TWICE A MONTH",
+      "15 CENTS",
+      "meD opular",
+      "Mae asine"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_07.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_07.webp"
+    ],
+    "created_at": "2026-11-26T09:17:42.535234"
+  },
+  "f1a017a1f1484bae7aa95d8f99c83ece28888086163252233e424aaeda8367b6": {
+    "sha256": "f1a017a1f1484bae7aa95d8f99c83ece28888086163252233e424aaeda8367b6",
+    "blob_key": "att/v1/blobs/f1a017a1f1484bae7aa95d8f99c83ece28888086163252233e424aaeda8367b6.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f1a017a1f1484bae7aa95d8f99c83ece28888086163252233e424aaeda8367b6.webp",
+    "width": 500,
+    "height": 839,
+    "bytes": 129552,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "NYPL RESEARCH LIBRARIES",
+      "3 3433 06827477 2"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_08.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_08.webp"
+    ],
+    "created_at": "2026-11-26T09:17:43.218931"
+  },
+  "abf7645b7188b26744d7450a4a0578b58580f13d46b4558ec65884185e1ccbd3": {
+    "sha256": "abf7645b7188b26744d7450a4a0578b58580f13d46b4558ec65884185e1ccbd3",
+    "blob_key": "att/v1/blobs/abf7645b7188b26744d7450a4a0578b58580f13d46b4558ec65884185e1ccbd3.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/abf7645b7188b26744d7450a4a0578b58580f13d46b4558ec65884185e1ccbd3.webp",
+    "width": 500,
+    "height": 747,
+    "bytes": 13696,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "PR5308",
+      "A37 D3"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_09.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_09.webp"
+    ],
+    "created_at": "2026-11-26T09:17:43.768934"
+  },
+  "462cc7e9d2eabe2a7cbd738d6763d20ce6c861e67abf0d4b1486645d1109a95e": {
+    "sha256": "462cc7e9d2eabe2a7cbd738d6763d20ce6c861e67abf0d4b1486645d1109a95e",
+    "blob_key": "att/v1/blobs/462cc7e9d2eabe2a7cbd738d6763d20ce6c861e67abf0d4b1486645d1109a95e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/462cc7e9d2eabe2a7cbd738d6763d20ce6c861e67abf0d4b1486645d1109a95e.webp",
+    "width": 500,
+    "height": 758,
+    "bytes": 60384,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "MILL IN DEVON, ENG., IN 1897. USED AND OWNED BY ROGER CONANT",
+      "PREVIOUs TO SAILING TO AMERICA WITH THE PILGRIMS IN 1623,"
+    ],
+    "first_source": "assets/themes/camping_forest/camp_10.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_10.webp"
+    ],
+    "created_at": "2026-11-26T09:17:44.500671"
+  },
+  "f0564b5773812f303544679842d9c313dbf33c33bbe19835467a1988f015a4c4": {
+    "sha256": "f0564b5773812f303544679842d9c313dbf33c33bbe19835467a1988f015a4c4",
+    "blob_key": "att/v1/blobs/f0564b5773812f303544679842d9c313dbf33c33bbe19835467a1988f015a4c4.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f0564b5773812f303544679842d9c313dbf33c33bbe19835467a1988f015a4c4.webp",
+    "width": 1920,
+    "height": 1075,
+    "bytes": 223936,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/camping_forest/camp_11.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_11.webp"
+    ],
+    "created_at": "2026-11-26T09:17:45.166400"
+  },
+  "05455533279fdaba6b5cf4b3c749f6469b56bf5c734237ed2286b13772bea57e": {
+    "sha256": "05455533279fdaba6b5cf4b3c749f6469b56bf5c734237ed2286b13772bea57e",
+    "blob_key": "att/v1/blobs/05455533279fdaba6b5cf4b3c749f6469b56bf5c734237ed2286b13772bea57e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/05455533279fdaba6b5cf4b3c749f6469b56bf5c734237ed2286b13772bea57e.webp",
+    "width": 1920,
+    "height": 1525,
+    "bytes": 983560,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/themes/camping_forest/camp_12.webp",
+    "sources": [
+      "assets/themes/camping_forest/camp_12.webp"
+    ],
+    "created_at": "2026-11-26T09:17:46.132693"
+  },
+  "e7edf44c0c0f40d2bd1e9359c8baeac99bafcac32bac620241f9257288d59dcb": {
+    "sha256": "e7edf44c0c0f40d2bd1e9359c8baeac99bafcac32bac620241f9257288d59dcb",
+    "blob_key": "att/v1/blobs/e7edf44c0c0f40d2bd1e9359c8baeac99bafcac32bac620241f9257288d59dcb.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e7edf44c0c0f40d2bd1e9359c8baeac99bafcac32bac620241f9257288d59dcb.webp",
+    "width": 1200,
+    "height": 608,
+    "bytes": 78476,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/arch_frank_gehry_bilbao.webp",
+    "sources": [
+      "assets/featured/arch_frank_gehry_bilbao.webp"
+    ],
+    "created_at": "2026-11-26T09:17:46.675720"
+  },
+  "afa568962c4c6ae6473f4ff2f543ab07a1233fa0092093dea567de7578a001d1": {
+    "sha256": "afa568962c4c6ae6473f4ff2f543ab07a1233fa0092093dea567de7578a001d1",
+    "blob_key": "att/v1/blobs/afa568962c4c6ae6473f4ff2f543ab07a1233fa0092093dea567de7578a001d1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/afa568962c4c6ae6473f4ff2f543ab07a1233fa0092093dea567de7578a001d1.webp",
+    "width": 1050,
+    "height": 1400,
+    "bytes": 94690,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/arch_tadao_ando_church_of_light.webp",
+    "sources": [
+      "assets/featured/arch_tadao_ando_church_of_light.webp"
+    ],
+    "created_at": "2026-11-26T09:17:47.372824"
+  },
+  "cd23579e53c194488509853d33d9aa5e6c8d36073e56d62d01d6a6ea2ee62b1d": {
+    "sha256": "cd23579e53c194488509853d33d9aa5e6c8d36073e56d62d01d6a6ea2ee62b1d",
+    "blob_key": "att/v1/blobs/cd23579e53c194488509853d33d9aa5e6c8d36073e56d62d01d6a6ea2ee62b1d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/cd23579e53c194488509853d33d9aa5e6c8d36073e56d62d01d6a6ea2ee62b1d.webp",
+    "width": 1280,
+    "height": 427,
+    "bytes": 125968,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "NUTON"
+    ],
+    "first_source": "assets/featured/arch_zaha_hadid_ddp.webp",
+    "sources": [
+      "assets/featured/arch_zaha_hadid_ddp.webp"
+    ],
+    "created_at": "2026-11-26T09:17:47.998084"
+  },
+  "e7106d2376730f860c5fe9933d7de63537036ba7ab43a11a69e277584c82f736": {
+    "sha256": "e7106d2376730f860c5fe9933d7de63537036ba7ab43a11a69e277584c82f736",
+    "blob_key": "att/v1/blobs/e7106d2376730f860c5fe9933d7de63537036ba7ab43a11a69e277584c82f736.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e7106d2376730f860c5fe9933d7de63537036ba7ab43a11a69e277584c82f736.webp",
+    "width": 1280,
+    "height": 804,
+    "bytes": 341060,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_botticelli_venus.webp",
+    "sources": [
+      "assets/featured/art_botticelli_venus.webp"
+    ],
+    "created_at": "2026-11-26T09:17:48.629830"
+  },
+  "0b2ef0169c35fc835ab56fa650a4342d75d971b4687a90a51fe6cf49ea084bec": {
+    "sha256": "0b2ef0169c35fc835ab56fa650a4342d75d971b4687a90a51fe6cf49ea084bec",
+    "blob_key": "att/v1/blobs/0b2ef0169c35fc835ab56fa650a4342d75d971b4687a90a51fe6cf49ea084bec.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0b2ef0169c35fc835ab56fa650a4342d75d971b4687a90a51fe6cf49ea084bec.webp",
+    "width": 371,
+    "height": 268,
+    "bytes": 10736,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_dali_persistence_of_memory.webp",
+    "sources": [
+      "assets/featured/art_dali_persistence_of_memory.webp"
+    ],
+    "created_at": "2026-11-26T09:17:49.067584"
+  },
+  "150f36759a4322a7df350f90346a60e695ed9ce170b499c75d1e8d8daca04326": {
+    "sha256": "150f36759a4322a7df350f90346a60e695ed9ce170b499c75d1e8d8daca04326",
+    "blob_key": "att/v1/blobs/150f36759a4322a7df350f90346a60e695ed9ce170b499c75d1e8d8daca04326.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/150f36759a4322a7df350f90346a60e695ed9ce170b499c75d1e8d8daca04326.webp",
+    "width": 1280,
+    "height": 1013,
+    "bytes": 397348,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_delacroix_liberty.webp",
+    "sources": [
+      "assets/featured/art_delacroix_liberty.webp"
+    ],
+    "created_at": "2026-11-26T09:17:49.853848"
+  },
+  "47a36c614efbd61d6690aaa574cae16c8d2189c09889514dfcc283ce7a51df15": {
+    "sha256": "47a36c614efbd61d6690aaa574cae16c8d2189c09889514dfcc283ce7a51df15",
+    "blob_key": "att/v1/blobs/47a36c614efbd61d6690aaa574cae16c8d2189c09889514dfcc283ce7a51df15.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/47a36c614efbd61d6690aaa574cae16c8d2189c09889514dfcc283ce7a51df15.webp",
+    "width": 1280,
+    "height": 1284,
+    "bytes": 654370,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_klimt_the_kiss.webp",
+    "sources": [
+      "assets/featured/art_klimt_the_kiss.webp"
+    ],
+    "created_at": "2026-11-26T09:17:50.830227"
+  },
+  "61cf79434bb568fe37fd057821c07d65a6395b6e5e68df4d59389ce3bbf81783": {
+    "sha256": "61cf79434bb568fe37fd057821c07d65a6395b6e5e68df4d59389ce3bbf81783",
+    "blob_key": "att/v1/blobs/61cf79434bb568fe37fd057821c07d65a6395b6e5e68df4d59389ce3bbf81783.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/61cf79434bb568fe37fd057821c07d65a6395b6e5e68df4d59389ce3bbf81783.webp",
+    "width": 939,
+    "height": 1400,
+    "bytes": 442790,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_mona_lisa.webp",
+    "sources": [
+      "assets/featured/art_mona_lisa.webp"
+    ],
+    "created_at": "2026-11-26T09:17:51.450954"
+  },
+  "35bd58089debae641728af330c900a49663c087aa032ff9f4bff7c72d1a2a10f": {
+    "sha256": "35bd58089debae641728af330c900a49663c087aa032ff9f4bff7c72d1a2a10f",
+    "blob_key": "att/v1/blobs/35bd58089debae641728af330c900a49663c087aa032ff9f4bff7c72d1a2a10f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/35bd58089debae641728af330c900a49663c087aa032ff9f4bff7c72d1a2a10f.webp",
+    "width": 1128,
+    "height": 1400,
+    "bytes": 409436,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "Mund, 1843"
+    ],
+    "first_source": "assets/featured/art_munch_scream.webp",
+    "sources": [
+      "assets/featured/art_munch_scream.webp"
+    ],
+    "created_at": "2026-11-26T09:17:52.442432"
+  },
+  "2503d99048124e6b9c0dc79106f0d2a2b8405d46d0d0cfa2873a4909fcd57011": {
+    "sha256": "2503d99048124e6b9c0dc79106f0d2a2b8405d46d0d0cfa2873a4909fcd57011",
+    "blob_key": "att/v1/blobs/2503d99048124e6b9c0dc79106f0d2a2b8405d46d0d0cfa2873a4909fcd57011.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/2503d99048124e6b9c0dc79106f0d2a2b8405d46d0d0cfa2873a4909fcd57011.webp",
+    "width": 1280,
+    "height": 1326,
+    "bytes": 317376,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_picasso_demoiselles.webp",
+    "sources": [
+      "assets/featured/art_picasso_demoiselles.webp"
+    ],
+    "created_at": "2026-11-26T09:17:53.201383"
+  },
+  "1c0cce2fc14f3f76da86135b978c3bc737ff52dbd46d4f9a1747d091b13de12f": {
+    "sha256": "1c0cce2fc14f3f76da86135b978c3bc737ff52dbd46d4f9a1747d091b13de12f",
+    "blob_key": "att/v1/blobs/1c0cce2fc14f3f76da86135b978c3bc737ff52dbd46d4f9a1747d091b13de12f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/1c0cce2fc14f3f76da86135b978c3bc737ff52dbd46d4f9a1747d091b13de12f.webp",
+    "width": 1280,
+    "height": 852,
+    "bytes": 499172,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_seurat_grande_jatte.webp",
+    "sources": [
+      "assets/featured/art_seurat_grande_jatte.webp"
+    ],
+    "created_at": "2026-11-26T09:17:53.895781"
+  },
+  "ef7b82d9fe9a05e73767f1f5c94c77b787593f3257a25a27c0cd84a18d8ebe86": {
+    "sha256": "ef7b82d9fe9a05e73767f1f5c94c77b787593f3257a25a27c0cd84a18d8ebe86",
+    "blob_key": "att/v1/blobs/ef7b82d9fe9a05e73767f1f5c94c77b787593f3257a25a27c0cd84a18d8ebe86.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ef7b82d9fe9a05e73767f1f5c94c77b787593f3257a25a27c0cd84a18d8ebe86.webp",
+    "width": 1280,
+    "height": 1014,
+    "bytes": 564808,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_starry_night.webp",
+    "sources": [
+      "assets/featured/art_starry_night.webp"
+    ],
+    "created_at": "2026-11-26T09:17:54.600295"
+  },
+  "38e81dc44b267b22efa4b95a4fd60d6e25896bdb67c9cd26fe276958a49adf23": {
+    "sha256": "38e81dc44b267b22efa4b95a4fd60d6e25896bdb67c9cd26fe276958a49adf23",
+    "blob_key": "att/v1/blobs/38e81dc44b267b22efa4b95a4fd60d6e25896bdb67c9cd26fe276958a49adf23.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/38e81dc44b267b22efa4b95a4fd60d6e25896bdb67c9cd26fe276958a49adf23.webp",
+    "width": 1217,
+    "height": 1400,
+    "bytes": 199370,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/art_velazquez_meninas.webp",
+    "sources": [
+      "assets/featured/art_velazquez_meninas.webp"
+    ],
+    "created_at": "2026-11-26T09:17:55.627840"
+  },
+  "32760b566086f81ca0dfc1c05fee4f9604f64d1bd3d3316e98d7c460f7728d2b": {
+    "sha256": "32760b566086f81ca0dfc1c05fee4f9604f64d1bd3d3316e98d7c460f7728d2b",
+    "blob_key": "att/v1/blobs/32760b566086f81ca0dfc1c05fee4f9604f64d1bd3d3316e98d7c460f7728d2b.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/32760b566086f81ca0dfc1c05fee4f9604f64d1bd3d3316e98d7c460f7728d2b.webp",
+    "width": 1600,
+    "height": 1076,
+    "bytes": 446946,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/asian_hokusai_great_wave.webp",
+    "sources": [
+      "assets/featured/asian_hokusai_great_wave.webp"
+    ],
+    "created_at": "2026-11-26T09:17:56.619177"
+  },
+  "b6988d5ad460ab21ef1b2f2adeea730b00746e9c7a7d36aefd6b1256001f9d25": {
+    "sha256": "b6988d5ad460ab21ef1b2f2adeea730b00746e9c7a7d36aefd6b1256001f9d25",
+    "blob_key": "att/v1/blobs/b6988d5ad460ab21ef1b2f2adeea730b00746e9c7a7d36aefd6b1256001f9d25.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b6988d5ad460ab21ef1b2f2adeea730b00746e9c7a7d36aefd6b1256001f9d25.webp",
+    "width": 1280,
+    "height": 743,
+    "bytes": 331302,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/asian_jeongseon_inwang.webp",
+    "sources": [
+      "assets/featured/asian_jeongseon_inwang.webp"
+    ],
+    "created_at": "2026-11-26T09:17:57.735771"
+  },
+  "5fae20d5dfeeb884dcaeffd247f43c50b1769dbda6363d81fec56e37b7324342": {
+    "sha256": "5fae20d5dfeeb884dcaeffd247f43c50b1769dbda6363d81fec56e37b7324342",
+    "blob_key": "att/v1/blobs/5fae20d5dfeeb884dcaeffd247f43c50b1769dbda6363d81fec56e37b7324342.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/5fae20d5dfeeb884dcaeffd247f43c50b1769dbda6363d81fec56e37b7324342.webp",
+    "width": 400,
+    "height": 1050,
+    "bytes": 62148,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/asian_shin_yunbok_beauty.webp",
+    "sources": [
+      "assets/featured/asian_shin_yunbok_beauty.webp"
+    ],
+    "created_at": "2026-11-26T09:17:59.007352"
+  },
+  "692d6c47512458b40518534f1ef206dd6eee9a16611d7d942b5e7b3d31a14501": {
+    "sha256": "692d6c47512458b40518534f1ef206dd6eee9a16611d7d942b5e7b3d31a14501",
+    "blob_key": "att/v1/blobs/692d6c47512458b40518534f1ef206dd6eee9a16611d7d942b5e7b3d31a14501.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/692d6c47512458b40518534f1ef206dd6eee9a16611d7d942b5e7b3d31a14501.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 27766,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/asian_white_porcelain_moon_jar.webp",
+    "sources": [
+      "assets/featured/asian_white_porcelain_moon_jar.webp"
+    ],
+    "created_at": "2026-11-26T09:17:59.690528"
+  },
+  "27d7be163ce02689c23c88223bf3d1aeed325caef0fc8420630127719d39fd1e": {
+    "sha256": "27d7be163ce02689c23c88223bf3d1aeed325caef0fc8420630127719d39fd1e",
+    "blob_key": "att/v1/blobs/27d7be163ce02689c23c88223bf3d1aeed325caef0fc8420630127719d39fd1e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/27d7be163ce02689c23c88223bf3d1aeed325caef0fc8420630127719d39fd1e.webp",
+    "width": 1146,
+    "height": 885,
+    "bytes": 31808,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/cont_art_david_hockney.webp",
+    "sources": [
+      "assets/featured/cont_art_david_hockney.webp"
+    ],
+    "created_at": "2026-11-26T09:18:00.231292"
+  },
+  "d0a87cbd9ee55b24629a842b717818d6f3104f7a23c439101baec2a8aef6adaa": {
+    "sha256": "d0a87cbd9ee55b24629a842b717818d6f3104f7a23c439101baec2a8aef6adaa",
+    "blob_key": "att/v1/blobs/d0a87cbd9ee55b24629a842b717818d6f3104f7a23c439101baec2a8aef6adaa.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d0a87cbd9ee55b24629a842b717818d6f3104f7a23c439101baec2a8aef6adaa.webp",
+    "width": 1280,
+    "height": 1280,
+    "bytes": 92696,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/cont_art_lee_ufan.webp",
+    "sources": [
+      "assets/featured/cont_art_lee_ufan.webp"
+    ],
+    "created_at": "2026-11-26T09:18:00.788138"
+  },
+  "f0489cad14200b9a5ce763412a49229c1f592d22030ee018de87bad380c810c4": {
+    "sha256": "f0489cad14200b9a5ce763412a49229c1f592d22030ee018de87bad380c810c4",
+    "blob_key": "att/v1/blobs/f0489cad14200b9a5ce763412a49229c1f592d22030ee018de87bad380c810c4.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f0489cad14200b9a5ce763412a49229c1f592d22030ee018de87bad380c810c4.webp",
+    "width": 1280,
+    "height": 1018,
+    "bytes": 407714,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/cont_art_yayoi_kusama.webp",
+    "sources": [
+      "assets/featured/cont_art_yayoi_kusama.webp"
+    ],
+    "created_at": "2026-11-26T09:18:01.530007"
+  },
+  "d9431c0bc0949c6061275c863ff8f1e19e9078beca57da0bb3625a3e0bd678ee": {
+    "sha256": "d9431c0bc0949c6061275c863ff8f1e19e9078beca57da0bb3625a3e0bd678ee",
+    "blob_key": "att/v1/blobs/d9431c0bc0949c6061275c863ff8f1e19e9078beca57da0bb3625a3e0bd678ee.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d9431c0bc0949c6061275c863ff8f1e19e9078beca57da0bb3625a3e0bd678ee.webp",
+    "width": 933,
+    "height": 1400,
+    "bytes": 50140,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/craft_celadon_melon_bottle.webp",
+    "sources": [
+      "assets/featured/craft_celadon_melon_bottle.webp"
+    ],
+    "created_at": "2026-11-26T09:18:02.122015"
+  },
+  "655b92ef2b7e84ab00bf4be6f1a8a7501dd35766b655f2214940fb3789f567d7": {
+    "sha256": "655b92ef2b7e84ab00bf4be6f1a8a7501dd35766b655f2214940fb3789f567d7",
+    "blob_key": "att/v1/blobs/655b92ef2b7e84ab00bf4be6f1a8a7501dd35766b655f2214940fb3789f567d7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/655b92ef2b7e84ab00bf4be6f1a8a7501dd35766b655f2214940fb3789f567d7.webp",
+    "width": 788,
+    "height": 1400,
+    "bytes": 51410,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/craft_lalique_dragonfly_brooch.webp",
+    "sources": [
+      "assets/featured/craft_lalique_dragonfly_brooch.webp"
+    ],
+    "created_at": "2026-11-26T09:18:02.657504"
+  },
+  "559bf953c220046ba783566d35138354b7323e55ba7e206f498fc441182c2891": {
+    "sha256": "559bf953c220046ba783566d35138354b7323e55ba7e206f498fc441182c2891",
+    "blob_key": "att/v1/blobs/559bf953c220046ba783566d35138354b7323e55ba7e206f498fc441182c2891.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/559bf953c220046ba783566d35138354b7323e55ba7e206f498fc441182c2891.webp",
+    "width": 1517,
+    "height": 1600,
+    "bytes": 489682,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "AMUTT"
+    ],
+    "first_source": "assets/featured/media_duchamp_fountain.webp",
+    "sources": [
+      "assets/featured/media_duchamp_fountain.webp"
+    ],
+    "created_at": "2026-11-26T09:18:03.732060"
+  },
+  "3515a18f47b4b6cebb00a3671c4b60eefed5b00c1a7a34365bdfbedc434caa4c": {
+    "sha256": "3515a18f47b4b6cebb00a3671c4b60eefed5b00c1a7a34365bdfbedc434caa4c",
+    "blob_key": "att/v1/blobs/3515a18f47b4b6cebb00a3671c4b60eefed5b00c1a7a34365bdfbedc434caa4c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/3515a18f47b4b6cebb00a3671c4b60eefed5b00c1a7a34365bdfbedc434caa4c.webp",
+    "width": 1280,
+    "height": 853,
+    "bytes": 228720,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/media_namjune_the_more_the_better.webp",
+    "sources": [
+      "assets/featured/media_namjune_the_more_the_better.webp"
+    ],
+    "created_at": "2026-11-26T09:18:04.334020"
+  },
+  "e9d476af6620f3d7a57267afa8d6530cf52164d42319de7c1d05cd3bd26767a2": {
+    "sha256": "e9d476af6620f3d7a57267afa8d6530cf52164d42319de7c1d05cd3bd26767a2",
+    "blob_key": "att/v1/blobs/e9d476af6620f3d7a57267afa8d6530cf52164d42319de7c1d05cd3bd26767a2.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e9d476af6620f3d7a57267afa8d6530cf52164d42319de7c1d05cd3bd26767a2.webp",
+    "width": 319,
+    "height": 226,
+    "bytes": 5236,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "H.V.ANT"
+    ],
+    "first_source": "assets/featured/paint_anthonissen_whale.webp",
+    "sources": [
+      "assets/featured/paint_anthonissen_whale.webp"
+    ],
+    "created_at": "2026-11-26T09:18:04.870676"
+  },
+  "126ad2e49f496126ab29e6fc77f696dd3d2ac864a52d6e85ec966fbce272b7c1": {
+    "sha256": "126ad2e49f496126ab29e6fc77f696dd3d2ac864a52d6e85ec966fbce272b7c1",
+    "blob_key": "att/v1/blobs/126ad2e49f496126ab29e6fc77f696dd3d2ac864a52d6e85ec966fbce272b7c1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/126ad2e49f496126ab29e6fc77f696dd3d2ac864a52d6e85ec966fbce272b7c1.webp",
+    "width": 960,
+    "height": 1430,
+    "bytes": 130678,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/paint_picasso_guitarist.webp",
+    "sources": [
+      "assets/featured/paint_picasso_guitarist.webp"
+    ],
+    "created_at": "2026-11-26T09:18:05.532893"
+  },
+  "ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58": {
+    "sha256": "ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58",
+    "blob_key": "att/v1/blobs/ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58.webp",
+    "width": 1236,
+    "height": 2400,
+    "bytes": 244152,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/paint_sargent_001.webp",
+    "sources": [
+      "assets/featured/paint_sargent_001.webp"
+    ],
+    "created_at": "2026-11-26T09:18:06.401186"
+  },
+  "645ba033de04240bbda5d04bb074215227d41fd1b5b87366e13c0f78228c3ca5": {
+    "sha256": "645ba033de04240bbda5d04bb074215227d41fd1b5b87366e13c0f78228c3ca5",
+    "blob_key": "att/v1/blobs/645ba033de04240bbda5d04bb074215227d41fd1b5b87366e13c0f78228c3ca5.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/645ba033de04240bbda5d04bb074215227d41fd1b5b87366e13c0f78228c3ca5.webp",
+    "width": 1600,
+    "height": 1281,
+    "bytes": 276804,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/photo_ansel_adams_tetons.webp",
+    "sources": [
+      "assets/featured/photo_ansel_adams_tetons.webp"
+    ],
+    "created_at": "2026-11-26T09:18:07.083221"
+  },
+  "f0458cd7dc93003e95cd6e56d22d998c6a8f36cbe71dca7f2f133a9057d10886": {
+    "sha256": "f0458cd7dc93003e95cd6e56d22d998c6a8f36cbe71dca7f2f133a9057d10886",
+    "blob_key": "att/v1/blobs/f0458cd7dc93003e95cd6e56d22d998c6a8f36cbe71dca7f2f133a9057d10886.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f0458cd7dc93003e95cd6e56d22d998c6a8f36cbe71dca7f2f133a9057d10886.webp",
+    "width": 1280,
+    "height": 1830,
+    "bytes": 182032,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/photo_bresson_gare_saint_lazare.webp",
+    "sources": [
+      "assets/featured/photo_bresson_gare_saint_lazare.webp"
+    ],
+    "created_at": "2026-11-26T09:18:07.921534"
+  },
+  "9fe5b8f785a1a99aa69f60913933ebe957be782e776b6883ed2e6896f5655774": {
+    "sha256": "9fe5b8f785a1a99aa69f60913933ebe957be782e776b6883ed2e6896f5655774",
+    "blob_key": "att/v1/blobs/9fe5b8f785a1a99aa69f60913933ebe957be782e776b6883ed2e6896f5655774.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9fe5b8f785a1a99aa69f60913933ebe957be782e776b6883ed2e6896f5655774.webp",
+    "width": 1258,
+    "height": 1600,
+    "bytes": 888594,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "MOLENCOLAY"
+    ],
+    "first_source": "assets/featured/print_durer_melencolia.webp",
+    "sources": [
+      "assets/featured/print_durer_melencolia.webp"
+    ],
+    "created_at": "2026-11-26T09:18:09.004755"
+  },
+  "32151e335afabf01dce30a7837dd97e8a2058138ceda9e21953717a3e42c3c3c": {
+    "sha256": "32151e335afabf01dce30a7837dd97e8a2058138ceda9e21953717a3e42c3c3c",
+    "blob_key": "att/v1/blobs/32151e335afabf01dce30a7837dd97e8a2058138ceda9e21953717a3e42c3c3c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/32151e335afabf01dce30a7837dd97e8a2058138ceda9e21953717a3e42c3c3c.webp",
+    "width": 324,
+    "height": 308,
+    "bytes": 44724,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/print_escher_relativity.webp",
+    "sources": [
+      "assets/featured/print_escher_relativity.webp"
+    ],
+    "created_at": "2026-11-26T09:18:09.655172"
+  },
+  "a5a55973ef737aa1f231f03d9be4799298f63ee42a25b546d618f352a6f305dd": {
+    "sha256": "a5a55973ef737aa1f231f03d9be4799298f63ee42a25b546d618f352a6f305dd",
+    "blob_key": "att/v1/blobs/a5a55973ef737aa1f231f03d9be4799298f63ee42a25b546d618f352a6f305dd.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/a5a55973ef737aa1f231f03d9be4799298f63ee42a25b546d618f352a6f305dd.webp",
+    "width": 1280,
+    "height": 846,
+    "bytes": 75288,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/sculpt_giacometti_walking_man.webp",
+    "sources": [
+      "assets/featured/sculpt_giacometti_walking_man.webp"
+    ],
+    "created_at": "2026-11-26T09:18:10.159134"
+  },
+  "aa8e6ca503d2d2ac0df616197c780aeee58cc788a68ed47cd0d9a43256663831": {
+    "sha256": "aa8e6ca503d2d2ac0df616197c780aeee58cc788a68ed47cd0d9a43256663831",
+    "blob_key": "att/v1/blobs/aa8e6ca503d2d2ac0df616197c780aeee58cc788a68ed47cd0d9a43256663831.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/aa8e6ca503d2d2ac0df616197c780aeee58cc788a68ed47cd0d9a43256663831.webp",
+    "width": 1277,
+    "height": 1400,
+    "bytes": 219862,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/sculpt_nike_samothrace.webp",
+    "sources": [
+      "assets/featured/sculpt_nike_samothrace.webp"
+    ],
+    "created_at": "2026-11-26T09:18:10.847454"
+  },
+  "9d1246b76deb0a3613b80af40899a548ef9284bad47491189c28260656153fac": {
+    "sha256": "9d1246b76deb0a3613b80af40899a548ef9284bad47491189c28260656153fac",
+    "blob_key": "att/v1/blobs/9d1246b76deb0a3613b80af40899a548ef9284bad47491189c28260656153fac.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9d1246b76deb0a3613b80af40899a548ef9284bad47491189c28260656153fac.webp",
+    "width": 1200,
+    "height": 1600,
+    "bytes": 267734,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/sculpt_rodin_thinker.webp",
+    "sources": [
+      "assets/featured/sculpt_rodin_thinker.webp"
+    ],
+    "created_at": "2026-11-26T09:18:11.511061"
+  },
+  "e1df5f86d16ad13e96866a0565d80722f16a2e974f2a5a3d7acadbb49ece1728": {
+    "sha256": "e1df5f86d16ad13e96866a0565d80722f16a2e974f2a5a3d7acadbb49ece1728",
+    "blob_key": "att/v1/blobs/e1df5f86d16ad13e96866a0565d80722f16a2e974f2a5a3d7acadbb49ece1728.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e1df5f86d16ad13e96866a0565d80722f16a2e974f2a5a3d7acadbb49ece1728.webp",
+    "width": 480,
+    "height": 243,
+    "bytes": 16716,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/arch_frank_gehry_bilbao.webp",
+    "sources": [
+      "assets/featured/thumbs/arch_frank_gehry_bilbao.webp"
+    ],
+    "created_at": "2026-11-26T09:18:11.990313"
+  },
+  "591ebf405f72246dd5b31c2ce43386371ea10bc8c85e1cac0135b4f215605313": {
+    "sha256": "591ebf405f72246dd5b31c2ce43386371ea10bc8c85e1cac0135b4f215605313",
+    "blob_key": "att/v1/blobs/591ebf405f72246dd5b31c2ce43386371ea10bc8c85e1cac0135b4f215605313.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/591ebf405f72246dd5b31c2ce43386371ea10bc8c85e1cac0135b4f215605313.webp",
+    "width": 330,
+    "height": 440,
+    "bytes": 8780,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/arch_tadao_ando_church_of_light.webp",
+    "sources": [
+      "assets/featured/thumbs/arch_tadao_ando_church_of_light.webp"
+    ],
+    "created_at": "2026-11-26T09:18:12.449522"
+  },
+  "ad62c02a943e9020514aa120d47511e80405e67251a9cc1514d761559ef86ee5": {
+    "sha256": "ad62c02a943e9020514aa120d47511e80405e67251a9cc1514d761559ef86ee5",
+    "blob_key": "att/v1/blobs/ad62c02a943e9020514aa120d47511e80405e67251a9cc1514d761559ef86ee5.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ad62c02a943e9020514aa120d47511e80405e67251a9cc1514d761559ef86ee5.webp",
+    "width": 440,
+    "height": 147,
+    "bytes": 15008,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/arch_zaha_hadid_ddp.webp",
+    "sources": [
+      "assets/featured/thumbs/arch_zaha_hadid_ddp.webp"
+    ],
+    "created_at": "2026-11-26T09:18:12.934628"
+  },
+  "48ca1d0b4db60caae3d897ed5f14023bfc5fdee85923f63ff3735a4ced5f931c": {
+    "sha256": "48ca1d0b4db60caae3d897ed5f14023bfc5fdee85923f63ff3735a4ced5f931c",
+    "blob_key": "att/v1/blobs/48ca1d0b4db60caae3d897ed5f14023bfc5fdee85923f63ff3735a4ced5f931c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/48ca1d0b4db60caae3d897ed5f14023bfc5fdee85923f63ff3735a4ced5f931c.webp",
+    "width": 440,
+    "height": 276,
+    "bytes": 39160,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_botticelli_venus.webp",
+    "sources": [
+      "assets/featured/thumbs/art_botticelli_venus.webp"
+    ],
+    "created_at": "2026-11-26T09:18:13.389971"
+  },
+  "d941f7861626075abb56f1c74636d5729b91dea86722c35431059740da959205": {
+    "sha256": "d941f7861626075abb56f1c74636d5729b91dea86722c35431059740da959205",
+    "blob_key": "att/v1/blobs/d941f7861626075abb56f1c74636d5729b91dea86722c35431059740da959205.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/d941f7861626075abb56f1c74636d5729b91dea86722c35431059740da959205.webp",
+    "width": 371,
+    "height": 268,
+    "bytes": 9336,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_dali_persistence_of_memory.webp",
+    "sources": [
+      "assets/featured/thumbs/art_dali_persistence_of_memory.webp"
+    ],
+    "created_at": "2026-11-26T09:18:13.838201"
+  },
+  "ef3e061de88480d83653b392d2312748a682ef69f9236a923b4a89996be02b5f": {
+    "sha256": "ef3e061de88480d83653b392d2312748a682ef69f9236a923b4a89996be02b5f",
+    "blob_key": "att/v1/blobs/ef3e061de88480d83653b392d2312748a682ef69f9236a923b4a89996be02b5f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ef3e061de88480d83653b392d2312748a682ef69f9236a923b4a89996be02b5f.webp",
+    "width": 440,
+    "height": 348,
+    "bytes": 34422,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_delacroix_liberty.webp",
+    "sources": [
+      "assets/featured/thumbs/art_delacroix_liberty.webp"
+    ],
+    "created_at": "2026-11-26T09:18:14.305257"
+  },
+  "de16077051e272c78b93504d20c52c40c344d701db06005607ebde9a10ef2a73": {
+    "sha256": "de16077051e272c78b93504d20c52c40c344d701db06005607ebde9a10ef2a73",
+    "blob_key": "att/v1/blobs/de16077051e272c78b93504d20c52c40c344d701db06005607ebde9a10ef2a73.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/de16077051e272c78b93504d20c52c40c344d701db06005607ebde9a10ef2a73.webp",
+    "width": 439,
+    "height": 440,
+    "bytes": 61170,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_klimt_the_kiss.webp",
+    "sources": [
+      "assets/featured/thumbs/art_klimt_the_kiss.webp"
+    ],
+    "created_at": "2026-11-26T09:18:14.757779"
+  },
+  "893a66c2bd64d1a25db170c4940aac9922ce69fec5e309506d18cf00ef83f15c": {
+    "sha256": "893a66c2bd64d1a25db170c4940aac9922ce69fec5e309506d18cf00ef83f15c",
+    "blob_key": "att/v1/blobs/893a66c2bd64d1a25db170c4940aac9922ce69fec5e309506d18cf00ef83f15c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/893a66c2bd64d1a25db170c4940aac9922ce69fec5e309506d18cf00ef83f15c.webp",
+    "width": 295,
+    "height": 440,
+    "bytes": 18718,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_mona_lisa.webp",
+    "sources": [
+      "assets/featured/thumbs/art_mona_lisa.webp"
+    ],
+    "created_at": "2026-11-26T09:18:15.276470"
+  },
+  "2eb05ee25f6f56d5cc300734428c487d50ecc9a8b032adb58cb4104b0d16228f": {
+    "sha256": "2eb05ee25f6f56d5cc300734428c487d50ecc9a8b032adb58cb4104b0d16228f",
+    "blob_key": "att/v1/blobs/2eb05ee25f6f56d5cc300734428c487d50ecc9a8b032adb58cb4104b0d16228f.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/2eb05ee25f6f56d5cc300734428c487d50ecc9a8b032adb58cb4104b0d16228f.webp",
+    "width": 354,
+    "height": 440,
+    "bytes": 24964,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_munch_scream.webp",
+    "sources": [
+      "assets/featured/thumbs/art_munch_scream.webp"
+    ],
+    "created_at": "2026-11-26T09:18:15.747821"
+  },
+  "4009d0822c79c2baa6a31a17d1d2355f279a1949cf906a6fe36aaee88818dc6e": {
+    "sha256": "4009d0822c79c2baa6a31a17d1d2355f279a1949cf906a6fe36aaee88818dc6e",
+    "blob_key": "att/v1/blobs/4009d0822c79c2baa6a31a17d1d2355f279a1949cf906a6fe36aaee88818dc6e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/4009d0822c79c2baa6a31a17d1d2355f279a1949cf906a6fe36aaee88818dc6e.webp",
+    "width": 425,
+    "height": 440,
+    "bytes": 35370,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_picasso_demoiselles.webp",
+    "sources": [
+      "assets/featured/thumbs/art_picasso_demoiselles.webp"
+    ],
+    "created_at": "2026-11-26T09:18:16.236312"
+  },
+  "bfd64ec0580febb735cd5f2ce472fba1727f898d750f153aa82327e22f8c3433": {
+    "sha256": "bfd64ec0580febb735cd5f2ce472fba1727f898d750f153aa82327e22f8c3433",
+    "blob_key": "att/v1/blobs/bfd64ec0580febb735cd5f2ce472fba1727f898d750f153aa82327e22f8c3433.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/bfd64ec0580febb735cd5f2ce472fba1727f898d750f153aa82327e22f8c3433.webp",
+    "width": 440,
+    "height": 293,
+    "bytes": 40324,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_seurat_grande_jatte.webp",
+    "sources": [
+      "assets/featured/thumbs/art_seurat_grande_jatte.webp"
+    ],
+    "created_at": "2026-11-26T09:18:16.786348"
+  },
+  "affc134076dc05598cf42c83cb7cb5e3b2e193e949e6658ce4af82fb1bd76999": {
+    "sha256": "affc134076dc05598cf42c83cb7cb5e3b2e193e949e6658ce4af82fb1bd76999",
+    "blob_key": "att/v1/blobs/affc134076dc05598cf42c83cb7cb5e3b2e193e949e6658ce4af82fb1bd76999.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/affc134076dc05598cf42c83cb7cb5e3b2e193e949e6658ce4af82fb1bd76999.webp",
+    "width": 440,
+    "height": 349,
+    "bytes": 58672,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/art_starry_night.webp",
+    "sources": [
+      "assets/featured/thumbs/art_starry_night.webp"
+    ],
+    "created_at": "2026-11-26T09:18:17.317192"
+  },
+  "b52cee999429315ea4bf22e50f40ed80724f0e711e54bd1f3156aaaf44aaacdf": {
+    "sha256": "b52cee999429315ea4bf22e50f40ed80724f0e711e54bd1f3156aaaf44aaacdf",
+    "blob_key": "att/v1/blobs/b52cee999429315ea4bf22e50f40ed80724f0e711e54bd1f3156aaaf44aaacdf.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b52cee999429315ea4bf22e50f40ed80724f0e711e54bd1f3156aaaf44aaacdf.webp",
+    "width": 382,
+    "height": 440,
+    "bytes": 18214,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "EAREAE"
+    ],
+    "first_source": "assets/featured/thumbs/art_velazquez_meninas.webp",
+    "sources": [
+      "assets/featured/thumbs/art_velazquez_meninas.webp"
+    ],
+    "created_at": "2026-11-26T09:18:17.843217"
+  },
+  "9285da431352335679c19967be64e7afdf00890d7bc046e5864316c6d16e10b0": {
+    "sha256": "9285da431352335679c19967be64e7afdf00890d7bc046e5864316c6d16e10b0",
+    "blob_key": "att/v1/blobs/9285da431352335679c19967be64e7afdf00890d7bc046e5864316c6d16e10b0.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9285da431352335679c19967be64e7afdf00890d7bc046e5864316c6d16e10b0.webp",
+    "width": 480,
+    "height": 323,
+    "bytes": 42968,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/asian_hokusai_great_wave.webp",
+    "sources": [
+      "assets/featured/thumbs/asian_hokusai_great_wave.webp"
+    ],
+    "created_at": "2026-11-26T09:18:18.436225"
+  },
+  "6ce4cf0ae03356a01600f48d1bbec0f95be7b026f7529d021e27391d0ecf159a": {
+    "sha256": "6ce4cf0ae03356a01600f48d1bbec0f95be7b026f7529d021e27391d0ecf159a",
+    "blob_key": "att/v1/blobs/6ce4cf0ae03356a01600f48d1bbec0f95be7b026f7529d021e27391d0ecf159a.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6ce4cf0ae03356a01600f48d1bbec0f95be7b026f7529d021e27391d0ecf159a.webp",
+    "width": 183,
+    "height": 480,
+    "bytes": 15308,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "...",
+      "...."
+    ],
+    "first_source": "assets/featured/thumbs/asian_shin_yunbok_beauty.webp",
+    "sources": [
+      "assets/featured/thumbs/asian_shin_yunbok_beauty.webp"
+    ],
+    "created_at": "2026-11-26T09:18:19.016452"
+  },
+  "9040fdb85716e76ec7dd6966a9d3e40e5e17fdbc49ebfe5db6057b79be1125b7": {
+    "sha256": "9040fdb85716e76ec7dd6966a9d3e40e5e17fdbc49ebfe5db6057b79be1125b7",
+    "blob_key": "att/v1/blobs/9040fdb85716e76ec7dd6966a9d3e40e5e17fdbc49ebfe5db6057b79be1125b7.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/9040fdb85716e76ec7dd6966a9d3e40e5e17fdbc49ebfe5db6057b79be1125b7.webp",
+    "width": 440,
+    "height": 293,
+    "bytes": 4134,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/asian_white_porcelain_moon_jar.webp",
+    "sources": [
+      "assets/featured/thumbs/asian_white_porcelain_moon_jar.webp"
+    ],
+    "created_at": "2026-11-26T09:18:19.499889"
+  },
+  "ec21ec2bd62b8eb07001be902dc5137ffca99d63f0bbec5ded0940885e5746c1": {
+    "sha256": "ec21ec2bd62b8eb07001be902dc5137ffca99d63f0bbec5ded0940885e5746c1",
+    "blob_key": "att/v1/blobs/ec21ec2bd62b8eb07001be902dc5137ffca99d63f0bbec5ded0940885e5746c1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ec21ec2bd62b8eb07001be902dc5137ffca99d63f0bbec5ded0940885e5746c1.webp",
+    "width": 440,
+    "height": 340,
+    "bytes": 9462,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/cont_art_david_hockney.webp",
+    "sources": [
+      "assets/featured/thumbs/cont_art_david_hockney.webp"
+    ],
+    "created_at": "2026-11-26T09:18:19.936589"
+  },
+  "15ccb1815066e913eba8c9e1d59483542c5f29957b423ff54be6fa73217023c9": {
+    "sha256": "15ccb1815066e913eba8c9e1d59483542c5f29957b423ff54be6fa73217023c9",
+    "blob_key": "att/v1/blobs/15ccb1815066e913eba8c9e1d59483542c5f29957b423ff54be6fa73217023c9.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/15ccb1815066e913eba8c9e1d59483542c5f29957b423ff54be6fa73217023c9.webp",
+    "width": 440,
+    "height": 440,
+    "bytes": 15740,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/cont_art_lee_ufan.webp",
+    "sources": [
+      "assets/featured/thumbs/cont_art_lee_ufan.webp"
+    ],
+    "created_at": "2026-11-26T09:18:20.385748"
+  },
+  "3e3e829d25b09233ea8e6470bdf5c58d2cefb06329a2d8483603f6fd2c3f4916": {
+    "sha256": "3e3e829d25b09233ea8e6470bdf5c58d2cefb06329a2d8483603f6fd2c3f4916",
+    "blob_key": "att/v1/blobs/3e3e829d25b09233ea8e6470bdf5c58d2cefb06329a2d8483603f6fd2c3f4916.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/3e3e829d25b09233ea8e6470bdf5c58d2cefb06329a2d8483603f6fd2c3f4916.webp",
+    "width": 440,
+    "height": 350,
+    "bytes": 62018,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/cont_art_yayoi_kusama.webp",
+    "sources": [
+      "assets/featured/thumbs/cont_art_yayoi_kusama.webp"
+    ],
+    "created_at": "2026-11-26T09:18:20.846383"
+  },
+  "6b26b6abf26d7628eeca6129911ec07a330996f4d5a28ad46f30adb96e32ff12": {
+    "sha256": "6b26b6abf26d7628eeca6129911ec07a330996f4d5a28ad46f30adb96e32ff12",
+    "blob_key": "att/v1/blobs/6b26b6abf26d7628eeca6129911ec07a330996f4d5a28ad46f30adb96e32ff12.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6b26b6abf26d7628eeca6129911ec07a330996f4d5a28ad46f30adb96e32ff12.webp",
+    "width": 293,
+    "height": 440,
+    "bytes": 6462,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/craft_celadon_melon_bottle.webp",
+    "sources": [
+      "assets/featured/thumbs/craft_celadon_melon_bottle.webp"
+    ],
+    "created_at": "2026-11-26T09:18:21.311450"
+  },
+  "83a9b4be21d282a67f7e9697fb7bb155cad6548a9e54c104a4705c557336948d": {
+    "sha256": "83a9b4be21d282a67f7e9697fb7bb155cad6548a9e54c104a4705c557336948d",
+    "blob_key": "att/v1/blobs/83a9b4be21d282a67f7e9697fb7bb155cad6548a9e54c104a4705c557336948d.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/83a9b4be21d282a67f7e9697fb7bb155cad6548a9e54c104a4705c557336948d.webp",
+    "width": 248,
+    "height": 440,
+    "bytes": 8966,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/craft_lalique_dragonfly_brooch.webp",
+    "sources": [
+      "assets/featured/thumbs/craft_lalique_dragonfly_brooch.webp"
+    ],
+    "created_at": "2026-11-26T09:18:21.783706"
+  },
+  "02a7e5c1d7f286d5fb65fdb8c68816f17faec6d6a5c9b7f0065f961177637337": {
+    "sha256": "02a7e5c1d7f286d5fb65fdb8c68816f17faec6d6a5c9b7f0065f961177637337",
+    "blob_key": "att/v1/blobs/02a7e5c1d7f286d5fb65fdb8c68816f17faec6d6a5c9b7f0065f961177637337.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/02a7e5c1d7f286d5fb65fdb8c68816f17faec6d6a5c9b7f0065f961177637337.webp",
+    "width": 455,
+    "height": 480,
+    "bytes": 33474,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "®",
+      "BAUTY",
+      "1977"
+    ],
+    "first_source": "assets/featured/thumbs/media_duchamp_fountain.webp",
+    "sources": [
+      "assets/featured/thumbs/media_duchamp_fountain.webp"
+    ],
+    "created_at": "2026-11-26T09:18:22.393055"
+  },
+  "897b2e4aeec72f34155572d793305ab870509d21be81d8f79989bda6d4ba8217": {
+    "sha256": "897b2e4aeec72f34155572d793305ab870509d21be81d8f79989bda6d4ba8217",
+    "blob_key": "att/v1/blobs/897b2e4aeec72f34155572d793305ab870509d21be81d8f79989bda6d4ba8217.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/897b2e4aeec72f34155572d793305ab870509d21be81d8f79989bda6d4ba8217.webp",
+    "width": 440,
+    "height": 293,
+    "bytes": 24062,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/media_namjune_the_more_the_better.webp",
+    "sources": [
+      "assets/featured/thumbs/media_namjune_the_more_the_better.webp"
+    ],
+    "created_at": "2026-11-26T09:18:22.902248"
+  },
+  "fd1dce0aa55c93903db46ddb2445fe9c77c6e735e506228156ca3511b24c445e": {
+    "sha256": "fd1dce0aa55c93903db46ddb2445fe9c77c6e735e506228156ca3511b24c445e",
+    "blob_key": "att/v1/blobs/fd1dce0aa55c93903db46ddb2445fe9c77c6e735e506228156ca3511b24c445e.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/fd1dce0aa55c93903db46ddb2445fe9c77c6e735e506228156ca3511b24c445e.webp",
+    "width": 319,
+    "height": 226,
+    "bytes": 5136,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "H.V.ANT"
+    ],
+    "first_source": "assets/featured/thumbs/paint_anthonissen_whale.webp",
+    "sources": [
+      "assets/featured/thumbs/paint_anthonissen_whale.webp"
+    ],
+    "created_at": "2026-11-26T09:18:23.529303"
+  },
+  "f0e3f4214195f2ac6381f61e490772b1107eb92f59efc0842a1497fa018718d1": {
+    "sha256": "f0e3f4214195f2ac6381f61e490772b1107eb92f59efc0842a1497fa018718d1",
+    "blob_key": "att/v1/blobs/f0e3f4214195f2ac6381f61e490772b1107eb92f59efc0842a1497fa018718d1.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f0e3f4214195f2ac6381f61e490772b1107eb92f59efc0842a1497fa018718d1.webp",
+    "width": 295,
+    "height": 440,
+    "bytes": 7312,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/paint_picasso_guitarist.webp",
+    "sources": [
+      "assets/featured/thumbs/paint_picasso_guitarist.webp"
+    ],
+    "created_at": "2026-11-26T09:18:23.947790"
+  },
+  "803d878a711b55347c5283461c2073adb11c5130676e97fe665d50a8773f8b04": {
+    "sha256": "803d878a711b55347c5283461c2073adb11c5130676e97fe665d50a8773f8b04",
+    "blob_key": "att/v1/blobs/803d878a711b55347c5283461c2073adb11c5130676e97fe665d50a8773f8b04.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/803d878a711b55347c5283461c2073adb11c5130676e97fe665d50a8773f8b04.webp",
+    "width": 227,
+    "height": 440,
+    "bytes": 5814,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/paint_sargent_001.webp",
+    "sources": [
+      "assets/featured/thumbs/paint_sargent_001.webp"
+    ],
+    "created_at": "2026-11-26T09:18:24.468198"
+  },
+  "b3d6fcac7b756b2c150072c4c910d749bb38d4f69b17b61fb7391f38065683fc": {
+    "sha256": "b3d6fcac7b756b2c150072c4c910d749bb38d4f69b17b61fb7391f38065683fc",
+    "blob_key": "att/v1/blobs/b3d6fcac7b756b2c150072c4c910d749bb38d4f69b17b61fb7391f38065683fc.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/b3d6fcac7b756b2c150072c4c910d749bb38d4f69b17b61fb7391f38065683fc.webp",
+    "width": 480,
+    "height": 384,
+    "bytes": 28302,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/photo_ansel_adams_tetons.webp",
+    "sources": [
+      "assets/featured/thumbs/photo_ansel_adams_tetons.webp"
+    ],
+    "created_at": "2026-11-26T09:18:24.931507"
+  },
+  "653a9cdc423e86088e42541a03d03fcdba0e4a150f6d4e0b3ad2cff9a981d309": {
+    "sha256": "653a9cdc423e86088e42541a03d03fcdba0e4a150f6d4e0b3ad2cff9a981d309",
+    "blob_key": "att/v1/blobs/653a9cdc423e86088e42541a03d03fcdba0e4a150f6d4e0b3ad2cff9a981d309.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/653a9cdc423e86088e42541a03d03fcdba0e4a150f6d4e0b3ad2cff9a981d309.webp",
+    "width": 308,
+    "height": 440,
+    "bytes": 21292,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/photo_bresson_gare_saint_lazare.webp",
+    "sources": [
+      "assets/featured/thumbs/photo_bresson_gare_saint_lazare.webp"
+    ],
+    "created_at": "2026-11-26T09:18:25.413555"
+  },
+  "fe2d2e635ddd0b8eea3535c8df17e7957737fa7631b29d92db7dae623ce9bdc8": {
+    "sha256": "fe2d2e635ddd0b8eea3535c8df17e7957737fa7631b29d92db7dae623ce9bdc8",
+    "blob_key": "att/v1/blobs/fe2d2e635ddd0b8eea3535c8df17e7957737fa7631b29d92db7dae623ce9bdc8.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/fe2d2e635ddd0b8eea3535c8df17e7957737fa7631b29d92db7dae623ce9bdc8.webp",
+    "width": 378,
+    "height": 480,
+    "bytes": 62840,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [
+      "WEECONNY"
+    ],
+    "first_source": "assets/featured/thumbs/print_durer_melencolia.webp",
+    "sources": [
+      "assets/featured/thumbs/print_durer_melencolia.webp"
+    ],
+    "created_at": "2026-11-26T09:18:26.014843"
+  },
+  "afddadc70a402ff3883ca8640b1e49178bcc0d334b94d48b5c255e9886815e0c": {
+    "sha256": "afddadc70a402ff3883ca8640b1e49178bcc0d334b94d48b5c255e9886815e0c",
+    "blob_key": "att/v1/blobs/afddadc70a402ff3883ca8640b1e49178bcc0d334b94d48b5c255e9886815e0c.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/afddadc70a402ff3883ca8640b1e49178bcc0d334b94d48b5c255e9886815e0c.webp",
+    "width": 324,
+    "height": 308,
+    "bytes": 44162,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/print_escher_relativity.webp",
+    "sources": [
+      "assets/featured/thumbs/print_escher_relativity.webp"
+    ],
+    "created_at": "2026-11-26T09:18:26.499361"
+  },
+  "11a4bd7b8e8150aa49e6f894baf8836f4acc6b6db3f100b703266ca496e2c869": {
+    "sha256": "11a4bd7b8e8150aa49e6f894baf8836f4acc6b6db3f100b703266ca496e2c869",
+    "blob_key": "att/v1/blobs/11a4bd7b8e8150aa49e6f894baf8836f4acc6b6db3f100b703266ca496e2c869.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/11a4bd7b8e8150aa49e6f894baf8836f4acc6b6db3f100b703266ca496e2c869.webp",
+    "width": 440,
+    "height": 291,
+    "bytes": 20460,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/sculpt_giacometti_walking_man.webp",
+    "sources": [
+      "assets/featured/thumbs/sculpt_giacometti_walking_man.webp"
+    ],
+    "created_at": "2026-11-26T09:18:27.015593"
+  },
+  "0150cc64874caaf3d5522d13fe70ee45a6df9bbc09274d1d406ad407a1f1e399": {
+    "sha256": "0150cc64874caaf3d5522d13fe70ee45a6df9bbc09274d1d406ad407a1f1e399",
+    "blob_key": "att/v1/blobs/0150cc64874caaf3d5522d13fe70ee45a6df9bbc09274d1d406ad407a1f1e399.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0150cc64874caaf3d5522d13fe70ee45a6df9bbc09274d1d406ad407a1f1e399.webp",
+    "width": 401,
+    "height": 440,
+    "bytes": 15850,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/sculpt_nike_samothrace.webp",
+    "sources": [
+      "assets/featured/thumbs/sculpt_nike_samothrace.webp"
+    ],
+    "created_at": "2026-11-26T09:18:27.596518"
+  },
+  "1ce9c2c3628b5f9828bacf9a38ddd59248428add62ac6c1afb73ec0a6a32e614": {
+    "sha256": "1ce9c2c3628b5f9828bacf9a38ddd59248428add62ac6c1afb73ec0a6a32e614",
+    "blob_key": "att/v1/blobs/1ce9c2c3628b5f9828bacf9a38ddd59248428add62ac6c1afb73ec0a6a32e614.webp",
+    "cdn_url": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/1ce9c2c3628b5f9828bacf9a38ddd59248428add62ac6c1afb73ec0a6a32e614.webp",
+    "width": 360,
+    "height": 480,
+    "bytes": 24972,
+    "format": "webp",
+    "quality": 86,
+    "ocr_text": [],
+    "first_source": "assets/featured/thumbs/sculpt_rodin_thinker.webp",
+    "sources": [
+      "assets/featured/thumbs/sculpt_rodin_thinker.webp"
+    ],
+    "created_at": "2026-11-26T09:18:28.048104"
+  }
+}

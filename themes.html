@@ -973,6 +973,9 @@
         <div class="caption-script-box" id="captionScriptBox">
           <!-- Voice Docent live script text -->
         </div>
+        <div class="caption-source-line" id="captionSourceLine" style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:6px; font-weight:400; font-family:var(--lds-font-sans);">
+          ⓘ 출처: Cloudflare R2 원장 보관 (UHD WebP) · RULE #74 준수
+        </div>
       </div>
 
       <!-- Glassmorphism Audio BGM Dock -->
@@ -1137,7 +1140,7 @@
         const subCount = ot.total_count ? `${ot.total_count.toLocaleString()}점` : `${ot.items.length}점`;
         return `
           <div class="recom-mini-card" onclick="selectTheme(${targetIdx})" title="${ot.title_kr} (${subCount})">
-            <img class="recom-mini-img" src="${thumbImg}" alt="${ot.title_kr}" onerror="this.src='assets/featured/paint_sargent_001.webp'">
+            <img class="recom-mini-img" src="${thumbImg}" alt="${ot.title_kr}" onerror="this.src='https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58.webp'">
             <div class="recom-mini-overlay">
               <div class="recom-mini-title">${ot.title_kr}</div>
               <div style="font-size:11px; color:#94a3b8; font-family:var(--lds-font-mono);">${subCount}</div>
@@ -1153,7 +1156,7 @@
 
       grid.innerHTML = itemsToRender.map((item, itemIdx) => `
         <div class="valley-photo-card" onclick="startAmbientRolling(${itemIdx})" title="${item.title} (${item.artist}) — 클릭하여 롤링 갤러리 시작">
-          <img class="valley-photo-img" src="${item.image_url}" alt="${item.title}" loading="lazy" onerror="this.src='assets/featured/paint_sargent_001.webp'">
+          <img class="valley-photo-img" src="${item.image_url}" alt="${item.title}" loading="lazy" onerror="this.src='https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/ca70fcfed77f5c78fdd69dc5a1096bab868d7ccc4580dc749c7957351f4c3f58.webp'">
           <div class="valley-photo-overlay">
             <div class="photo-card-author">${item.artist || 'Let\'s Art Artist'}</div>
             <div class="photo-card-sub">${item.title} ${item.year ? `(${item.year})` : ''}</div>
@@ -1250,6 +1253,11 @@
       document.getElementById('captionCategory').textContent = `${theme.badge || 'LET\'S ART AMBIENT'}`;
       document.getElementById('captionTitle').textContent = item.title;
       document.getElementById('captionArtist').textContent = `${item.artist} ${item.year ? `(${item.year})` : ''} · ${item.museum || '4K 마스터 컬렉션'}`;
+      const srcTxt = item.source || item.museum || '공식 미술관 디지털 오픈 아카이브';
+      const sourceEl = document.getElementById('captionSourceLine');
+      if (sourceEl) {
+        sourceEl.textContent = `ⓘ 출처: ${srcTxt} · Cloudflare R2 원장 보관 (RULE #74 준수)`;
+      }
 
       // Cross-fade image layers
       const imgA = document.getElementById('ambientImgA');

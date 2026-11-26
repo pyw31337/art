@@ -1,6 +1,35 @@
 [
   {
-    "timestamp": "2026-11-26T03:25:36.218155",
+    "timestamp": "2026-11-26T16:02:53.663435",
+    "status": "SUCCESS",
+    "total_paintings_indexed": 7978,
+    "seasons_classified": {
+      "spring": 520,
+      "summer": 679,
+      "autumn": 257,
+      "winter": 412
+    },
+    "themes_classified": {
+      "love": 418,
+      "night": 1060,
+      "mystery": 876,
+      "revolution": 575,
+      "solitude": 1587,
+      "nature": 224,
+      "korean": 811
+    },
+    "movements_classified": {
+      "renaissance": 269,
+      "baroque": 752,
+      "romanticism": 1029,
+      "impressionism": 1437,
+      "post_impressionism": 867,
+      "expressionism": 733,
+      "modern": 109
+    }
+  },
+  {
+    "timestamp": "2026-11-26T09:20:31.066550",
     "status": "SUCCESS",
     "total_paintings_indexed": 7978,
     "seasons_classified": {

@@ -9,3 +9,4 @@ assets/*
 !assets/themes/
 !assets/audio/
 data/r2_upload_checkpoint.json
+scripts/bin/

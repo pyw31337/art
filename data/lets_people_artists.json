@@ -51,7 +51,7 @@
       "nationality": "네덜란드",
       "movement": "후기 인상주의 (Post-Impressionism)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/van_gogh.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6a02e5541da954cdf90c774ef337f199be19a663f5eae97318de544189e1bb8e.webp",
       "summary": "강렬한 색채와 율동적인 붓터치로 인간 내면의 고뇌와 영혼의 빛을 화폭에 담아낸 서양 미술사상 가장 위대한 천재 화가.",
       "major_works": [
         {
@@ -115,7 +115,7 @@
       "nationality": "이탈리아 (피렌체 공화국)",
       "movement": "르네상스 전성기 (High Renaissance)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/da_vinci.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/032f239c0f34bc22d7f52cf91ddde3bcd3a719237abcc4aa0f48509cca04382c.webp",
       "summary": "회화, 조각, 해부학, 광학, 공학, 비행체 설계 등 전 인류 지성사에서 가장 찬란한 천재성을 발휘한 르네상스 만능인(Homo Universalis).",
       "major_works": [
         {
@@ -165,7 +165,7 @@
       "nationality": "프랑스",
       "movement": "인상주의 (Impressionism 창시자)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/monet.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/6d7800f8c7745d8a199c171535a072291a6955585b3ee8e01106529da9de5cd8.webp",
       "summary": "빛의 마술사이자 인상파의 창시자. 시시각각 변화하는 빛과 대기의 찰나를 야외(En plein air)에서 캔버스에 영원히 포착한 화가.",
       "major_works": [
         {
@@ -214,7 +214,7 @@
       "nationality": "스페인 / 프랑스 활동",
       "movement": "입체주의 (Cubism 창시자)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/picasso.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae.webp",
       "summary": "20세기 현대 미술을 근본적으로 혁명한 거인. 단일 시점의 르네상스 원근법을 해체하고 다중 시점을 결합한 입체파의 창시자.",
       "major_works": [
         {
@@ -258,7 +258,7 @@
       "nationality": "영국 (잉글랜드)",
       "movement": "엘리자베스조 르네상스 문학 (English Renaissance)",
       "category": "literature_masters",
-      "profile_image": "assets/artists/shakespeare.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7d00da5f2fc94488ea3cbf6db89e0ab22189eaaacf1a0b197068f325dad2b48.webp",
       "summary": "영문학뿐만 아니라 인류 언어문화사의 최고봉. 인간 영혼의 가장 깊은 욕망, 질투, 비극, 사랑을 운율과 시적 언어로 완벽히 구현한 대극작가.",
       "major_works": [
         {
@@ -316,7 +316,7 @@
       "nationality": "독일 (바이마르 공국)",
       "movement": "질풍노도(Sturm und Drang) 및 바이마르 고전주의",
       "category": "literature_masters",
-      "profile_image": "assets/artists/goethe.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0fe52dd2634a417e8fd8534454c337e8af147b62a91c6662d9cb679ecc87f734.webp",
       "summary": "독일 문학의 정점이자 세계 문학(Weltliteratur) 개념을 제창한 철인. 60년에 걸쳐 완성한 희곡 <파우스트>로 인간 구원의 지평을 연 거장.",
       "major_works": [
         {
@@ -358,7 +358,7 @@
       "nationality": "프랑스 (파리)",
       "movement": "근대 조각 (Modern Sculpture)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/rodin.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/e024beddb2acac762821af1174eeb03d15d33526b2984d2af917142f8f37b88d.webp",
       "summary": "전통적인 아카데미즘과 이상주의적 미학을 탈피하여, 거친 표면과 근육의 팽팽한 긴장감 속에 인간의 실존적 고뇌와 생명력을 빚어낸 '근대 조각의 아버지'.",
       "artistic_lineage": {
         "influenced_by": [
@@ -388,7 +388,7 @@
       "nationality": "미국 / 프랑스 / 영국",
       "movement": "사실주의 및 인상주의 초상화",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/sargent.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/0d412b14de72c8a06651fd7a72533f7c5aca00ef559630eb6e1693d88b3d0440.webp",
       "summary": "벨 에포크 시대 상류사회의 심리적 기류와 우아함을 번개 같은 붓질로 포착한 세기의 초상화 거장. 살롱전을 뒤흔든 <마담 X>로 미술사의 전환점을 만듦.",
       "artistic_lineage": {
         "mentor": "카롤뤼스 뒤랑 (Carolus-Duran)",
@@ -437,7 +437,7 @@
       "nationality": "스위스 / 프랑스",
       "movement": "실존주의 조각 (Existentialist Art)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/giacometti.jpg",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/db3a3b55c495b1e6f1b3c7f9cc0f35b0a494f0626e003b38139032ff527be7f8.webp",
       "summary": "2차 세계대전의 참상 이후 군더더기 살점을 모두 깎아내고 뼈대만 앙상하게 남은 가느다란 청동 조각으로 인간의 근원적 고독과 존엄성을 조각한 실존주의 예술의 거장.",
       "artistic_lineage": {
         "allies": [
@@ -461,7 +461,7 @@
       "nationality": "조선 (Joseon Korea)",
       "movement": "진경산수화 (眞景山水畫)",
       "category": "fine_art_masters",
-      "profile_image": "assets/artists/jeongseon.webp",
+      "profile_image": "https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/feb4d0f2f999a68704c634b12721d83d0e2d4a010f6ad8799b76c972710702e2.webp",
       "summary": "중국 산수를 모방하던 관념적 화풍을 과감히 혁파하고, 조선의 산천을 직접 발로 디디며 장쾌한 필치와 독창적인 부벽준법으로 조선 회화의 르네상스를 연 대화성.",
       "artistic_lineage": {
         "allies": [

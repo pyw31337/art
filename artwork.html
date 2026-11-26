@@ -2752,7 +2752,7 @@
         secretCard.style.display = 'block';
         setTxt('behindSecretContent', stripEmoji(item.behind_story));
         if (item.behind_story_source) {
-          setTxt('behindSecretSource', `조사 출처: ${item.behind_story_source}`);
+          setTxt('behindSecretSource', `ⓘ 출처: ${item.behind_story_source}`);
         }
       } else if (secretCard) {
         secretCard.style.display = 'none';
@@ -3050,7 +3050,7 @@
             <span class="people-urn-badge">${master.urn}</span>
           </div>
           <div class="people-profile-body">
-            <img class="people-avatar-img" src="${master.profile_image || 'assets/artists/picasso.jpg'}" alt="${master.name_kr}" onerror="this.src='assets/icons/favicon-32.png';">
+            <img class="people-avatar-img" src="${master.profile_image || 'https://pub-685f237e5a544431bee558c5b29f3291.r2.dev/att/v1/blobs/f7c0187c79a4fb2a820ea8c3601a5bc88ee2eed4c46086c408c4eb48dc858dae.webp'}" alt="${master.name_kr}" onerror="this.src='assets/icons/favicon-32.png';">
             <div class="people-bio-wrap">
               <div class="people-name-row">
                 <span class="people-name-kr">${master.name_kr}</span>
