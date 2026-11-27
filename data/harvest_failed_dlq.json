@@ -1,177 +1,401 @@
 [
   {
-    "id": "met_436946",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436946",
+    "id": "met_437095",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437095",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.453485",
+    "failed_at": "2026-11-27T08:58:36.693373",
     "raw_info": null
   },
   {
-    "id": "met_436947",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436947",
+    "id": "met_437093",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437093",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.457295",
+    "failed_at": "2026-11-27T08:58:36.737940",
     "raw_info": null
   },
   {
-    "id": "met_436949",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436949",
+    "id": "met_437097",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437097",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.459026",
+    "failed_at": "2026-11-27T08:58:36.751013",
     "raw_info": null
   },
   {
-    "id": "met_436948",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436948",
+    "id": "met_437096",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437096",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.460322",
+    "failed_at": "2026-11-27T08:58:36.755078",
     "raw_info": null
   },
   {
-    "id": "met_436952",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436952",
+    "id": "met_437098",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437098",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.471096",
+    "failed_at": "2026-11-27T08:58:36.761170",
     "raw_info": null
   },
   {
-    "id": "met_436954",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436954",
+    "id": "met_437099",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437099",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.472201",
+    "failed_at": "2026-11-27T08:58:36.780962",
     "raw_info": null
   },
   {
-    "id": "met_436955",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436955",
+    "id": "met_437100",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437100",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.475341",
+    "failed_at": "2026-11-27T08:58:36.807086",
     "raw_info": null
   },
   {
-    "id": "met_436950",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436950",
+    "id": "met_437101",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437101",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.478332",
+    "failed_at": "2026-11-27T08:58:36.818665",
     "raw_info": null
   },
   {
-    "id": "met_436957",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436957",
+    "id": "met_437103",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437103",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.484852",
+    "failed_at": "2026-11-27T08:58:36.831336",
     "raw_info": null
   },
   {
-    "id": "met_436956",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436956",
+    "id": "met_437102",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437102",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.485242",
+    "failed_at": "2026-11-27T08:58:36.853769",
     "raw_info": null
   },
   {
-    "id": "met_436959",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436959",
+    "id": "met_437105",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437105",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.486973",
+    "failed_at": "2026-11-27T08:58:36.857381",
     "raw_info": null
   },
   {
-    "id": "met_436961",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436961",
+    "id": "met_437104",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437104",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.490934",
+    "failed_at": "2026-11-27T08:58:36.858413",
     "raw_info": null
   },
   {
-    "id": "met_436958",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436958",
+    "id": "met_437106",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437106",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.492879",
+    "failed_at": "2026-11-27T08:58:36.888521",
     "raw_info": null
   },
   {
-    "id": "met_436960",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436960",
+    "id": "met_437107",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437107",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.493257",
+    "failed_at": "2026-11-27T08:58:36.892679",
     "raw_info": null
   },
   {
-    "id": "met_436962",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436962",
+    "id": "met_437108",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437108",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.499214",
+    "failed_at": "2026-11-27T08:58:36.899465",
     "raw_info": null
   },
   {
-    "id": "met_436965",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436965",
+    "id": "met_437111",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437111",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.502515",
+    "failed_at": "2026-11-27T08:58:36.922226",
     "raw_info": null
   },
   {
-    "id": "met_436964",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436964",
+    "id": "met_437109",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437109",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.503436",
+    "failed_at": "2026-11-27T08:58:36.940804",
     "raw_info": null
   },
   {
-    "id": "met_436966",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436966",
+    "id": "met_437110",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437110",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.506853",
+    "failed_at": "2026-11-27T08:58:36.946887",
     "raw_info": null
   },
   {
-    "id": "met_436963",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436963",
+    "id": "met_437112",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437112",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.512689",
+    "failed_at": "2026-11-27T08:58:36.956266",
     "raw_info": null
   },
   {
-    "id": "met_436970",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436970",
+    "id": "met_437113",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437113",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.517758",
+    "failed_at": "2026-11-27T08:58:36.980916",
     "raw_info": null
   },
   {
-    "id": "met_436969",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436969",
+    "id": "met_437115",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437115",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.518423",
+    "failed_at": "2026-11-27T08:58:36.987820",
     "raw_info": null
   },
   {
-    "id": "met_436968",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436968",
+    "id": "met_437117",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437117",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.520730",
+    "failed_at": "2026-11-27T08:58:37.010292",
     "raw_info": null
   },
   {
-    "id": "met_436971",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436971",
+    "id": "met_437119",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437119",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.523861",
+    "failed_at": "2026-11-27T08:58:37.013996",
     "raw_info": null
   },
   {
-    "id": "met_436973",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436973",
+    "id": "met_437118",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437118",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.526342",
+    "failed_at": "2026-11-27T08:58:37.030252",
     "raw_info": null
   },
   {
-    "id": "met_436967",
-    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436967",
+    "id": "met_437120",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437120",
     "error": "HTTP Error 403: Forbidden",
-    "failed_at": "2026-11-27T08:27:33.533203",
+    "failed_at": "2026-11-27T08:58:37.056757",
+    "raw_info": null
+  },
+  {
+    "id": "met_437123",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437123",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.083296",
+    "raw_info": null
+  },
+  {
+    "id": "met_437122",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437122",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.097791",
+    "raw_info": null
+  },
+  {
+    "id": "met_437121",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437121",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.111428",
+    "raw_info": null
+  },
+  {
+    "id": "met_437124",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437124",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.146235",
+    "raw_info": null
+  },
+  {
+    "id": "met_437126",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437126",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.154233",
+    "raw_info": null
+  },
+  {
+    "id": "met_437129",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437129",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.219816",
+    "raw_info": null
+  },
+  {
+    "id": "met_437127",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437127",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.259699",
+    "raw_info": null
+  },
+  {
+    "id": "met_437128",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437128",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.262607",
+    "raw_info": null
+  },
+  {
+    "id": "met_437130",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437130",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.277521",
+    "raw_info": null
+  },
+  {
+    "id": "met_437131",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437131",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.291160",
+    "raw_info": null
+  },
+  {
+    "id": "met_437135",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437135",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.291922",
+    "raw_info": null
+  },
+  {
+    "id": "met_437133",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437133",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.293980",
+    "raw_info": null
+  },
+  {
+    "id": "met_437137",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437137",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.313511",
+    "raw_info": null
+  },
+  {
+    "id": "met_437136",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437136",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.315756",
+    "raw_info": null
+  },
+  {
+    "id": "met_437140",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437140",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.328728",
+    "raw_info": null
+  },
+  {
+    "id": "met_437139",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437139",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.329404",
+    "raw_info": null
+  },
+  {
+    "id": "met_437141",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437141",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.329972",
+    "raw_info": null
+  },
+  {
+    "id": "met_437143",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437143",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.348578",
+    "raw_info": null
+  },
+  {
+    "id": "met_437144",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437144",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.350121",
+    "raw_info": null
+  },
+  {
+    "id": "met_437146",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437146",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.437242",
+    "raw_info": null
+  },
+  {
+    "id": "met_437145",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437145",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.440356",
+    "raw_info": null
+  },
+  {
+    "id": "met_437147",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437147",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.447815",
+    "raw_info": null
+  },
+  {
+    "id": "met_437148",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437148",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.467432",
+    "raw_info": null
+  },
+  {
+    "id": "met_437149",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437149",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.472571",
+    "raw_info": null
+  },
+  {
+    "id": "met_437150",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437150",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.489846",
+    "raw_info": null
+  },
+  {
+    "id": "met_437151",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437151",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.497429",
+    "raw_info": null
+  },
+  {
+    "id": "met_437153",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437153",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.514666",
+    "raw_info": null
+  },
+  {
+    "id": "met_437152",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437152",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.524223",
+    "raw_info": null
+  },
+  {
+    "id": "met_437154",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437154",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.534330",
+    "raw_info": null
+  },
+  {
+    "id": "met_437156",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437156",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.540110",
+    "raw_info": null
+  },
+  {
+    "id": "met_437157",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437157",
+    "error": "HTTP Error 403: Forbidden",
+    "failed_at": "2026-11-27T08:58:37.560137",
+    "raw_info": null
+  },
+  {
+    "id": "met_437796",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437796",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:00:52.385774",
     "raw_info": null
   }
 ]

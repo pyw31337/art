@@ -46,11 +46,15 @@ def find_vault():
                 return str(candidate)
     return "/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/art"
 
-def check_process_running(script_name="vault_master_harvester.py"):
+def check_process_running(script_names=("vault_master_harvester.py", "mass_vault_harvester.py")):
     try:
-        proc = subprocess.run(["pgrep", "-f", script_name], stdout=subprocess.PIPE, text=True)
-        pids = [p.strip() for p in proc.stdout.strip().split("\n") if p.strip()]
-        return len(pids) > 0, pids
+        all_pids = []
+        for sname in script_names:
+            proc = subprocess.run(["pgrep", "-f", sname], stdout=subprocess.PIPE, text=True)
+            pids = [p.strip() for p in proc.stdout.strip().split("\n") if p.strip()]
+            all_pids.extend(pids)
+        all_pids = sorted(list(set(all_pids)))
+        return len(all_pids) > 0, all_pids
     except Exception:
         return False, []
 

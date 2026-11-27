@@ -1,6 +1,6 @@
 {
   "version": "3.1.0",
-  "last_monitored_at": "2026-11-27T08:28:12.794438",
+  "last_monitored_at": "2026-11-27T09:01:27.183185",
   "pipeline_health_score": 100.0,
   "status": "MULTI_MUSEUM_GENUINE",
   "is_genuine_data": true,
@@ -17,17 +17,17 @@
   ],
   "vault_storage": {
     "is_mounted": true,
-    "vault_path": "/Volumes/My Passport for Mac/LETSART_MASTER_VAULT",
-    "free_space_gb": 3919.06,
-    "total_blobs_collected": 281,
-    "total_metadata_records": 249
+    "vault_path": "/Volumes/My Passport for Mac/LETS_DATA_VAULT/services/art",
+    "free_space_gb": 3918.46,
+    "total_blobs_collected": 2362,
+    "total_metadata_records": 2335
   },
   "harvester_watchdog": {
     "status": "IDLE",
     "is_process_active": false,
     "last_heartbeat_status": "COMPLETED",
-    "last_ping_seconds_ago": 10.8,
-    "quarantined_dlq_errors": 25,
+    "last_ping_seconds_ago": 29.0,
+    "quarantined_dlq_errors": 57,
     "issue_detected": false,
     "issue_description": ""
   }
