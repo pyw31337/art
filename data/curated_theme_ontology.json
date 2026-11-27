@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2026-11-26T16:02:52.771304",
+  "last_updated": "2026-11-27T03:33:01.023681",
   "channels": {
     "nulart": {
       "name": "널 위한 문화예술",
@@ -79,7 +79,7 @@
     },
     "korean": {
       "label": "🇰🇷 한국의 멋과 해학 (Korean Wit & Soul)",
-      "count": 811
+      "count": 840
     }
   },
   "movement_definitions": {
