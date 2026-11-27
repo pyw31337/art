@@ -48,10 +48,11 @@
        STICKY MUSEUM HERO ZONE (100vh) — PURE GALLERY NOIR
        ======================================================== */
     .hero-container {
-      position: sticky;
-      top: 0;
+      position: relative;
       width: 100%;
-      height: 100vh;
+      height: 82vh;
+      min-height: 560px;
+      max-height: 920px;
       height: 100dvh;
       min-height: 520px;
       overflow: hidden;
@@ -626,7 +627,9 @@
     .content-sheet-container {
       position: relative;
       z-index: 20;
-      margin-top: 0;
+      margin-top: -64px;
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 -20px 48px rgba(0, 0, 0, 0.45);
       background: #ffffff;
       color: var(--lds-text-body);
       border: none;
@@ -2084,7 +2087,427 @@
       text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
     }
 
-</style>
+
+    /* ========================================================
+       TOP GLOBAL HEADER (NORMAL DETAIL PAGE STANDARD)
+       ======================================================== */
+    .top-global-header {
+      background: rgba(9, 13, 22, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-badge {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+    }
+    .header-title-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .lds-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.15s ease;
+    }
+    .lds-btn-nav:hover { background: rgba(255, 255, 255, 0.16); color: #ffffff; }
+    .lds-btn-nav.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+    .btn-gallery-launch {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-gallery-launch:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(37, 99, 235, 0.6);
+    }
+
+    /* Stage Gallery CTA Button */
+    .stage-gallery-cta {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 25;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0.75;
+    }
+    .stage-gallery-cta:hover {
+      opacity: 1;
+      background: rgba(37, 99, 235, 0.85);
+      border-color: rgba(255, 255, 255, 0.45);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Content Sheet Peek Tab & Parallax Rounding */
+    .sheet-peek-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 0 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .sheet-peek-pill {
+      width: 44px;
+      height: 4px;
+      border-radius: 2px;
+      background: #cbd5e1;
+      transition: all 0.2s ease;
+    }
+    .sheet-peek-tab:hover .sheet-peek-pill {
+      background: #2563eb;
+      width: 56px;
+    }
+    .sheet-peek-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: -0.2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+    .sheet-peek-tab:hover .sheet-peek-label {
+      color: #0f172a;
+    }
+
+    /* Universal Drag Handles & Affordance (Subtle by default, vivid on hover) */
+    .dock-drag-bar, .caption-drag-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 14px;
+      width: 100%;
+      cursor: grab;
+      opacity: 0.35;
+      transition: opacity 0.2s ease;
+      touch-action: none;
+      padding: 2px 0;
+      margin-bottom: 2px;
+    }
+    .dock-drag-bar:active, .caption-drag-bar:active {
+      cursor: grabbing;
+    }
+    .dock-drag-bar:hover, .caption-drag-bar:hover,
+    .voice-dock-panel:hover .dock-drag-bar,
+    .lower-third-panel:hover .caption-drag-bar,
+    .pres-caption-box:hover .caption-drag-bar {
+      opacity: 1;
+    }
+    .drag-handle-pill {
+      width: 36px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Resizable Gripper & Font Scaler */
+    .dock-resize-gripper {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 16px;
+      height: 16px;
+      cursor: se-resize;
+      opacity: 0.35;
+      transition: opacity 0.2s ease;
+      touch-action: none;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 2px;
+    }
+    .dock-resize-gripper:hover,
+    .voice-dock-panel:hover .dock-resize-gripper {
+      opacity: 1;
+    }
+    .dock-font-scaler {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 1px 4px;
+      margin-left: 6px;
+    }
+    .dock-font-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 10.5px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 1px 3px;
+      border-radius: 2px;
+      transition: all 0.15s ease;
+    }
+    .dock-font-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Unified Zoom Controls Capsule Pill */
+    .pres-zoom-capsule {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 2px 4px;
+      gap: 2px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+    .pres-zoom-capsule:hover {
+      opacity: 1;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .pres-zoom-capsule .pres-hud-btn {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    .pres-zoom-capsule .pres-hud-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: none;
+    }
+    .pres-zoom-capsule #btnZoomPercent {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      width: auto;
+      height: 32px;
+      padding: 0 8px;
+      font-size: 11px;
+      border-radius: 12px;
+    }
+    .pres-zoom-capsule #btnZoomPercent:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* Ambient BGM Dock (#presBgmDock) */
+    .bgm-dock-panel {
+      position: absolute;
+      top: 76px;
+      right: 28px;
+      width: 330px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      z-index: 120;
+      color: #ffffff;
+      pointer-events: auto;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .bgm-dock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .bgm-dock-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .bgm-dock-close {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 1;
+    }
+    .bgm-dock-close:hover { color: #ffffff; background: rgba(255, 255, 255, 0.1); }
+    .bgm-track-title {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bgm-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .bgm-play-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .bgm-play-btn:hover { background: #3b82f6; transform: scale(1.06); }
+    .bgm-progress-bar-wrap {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+    }
+    .bgm-progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #38bdf8;
+      border-radius: 2px;
+    }
+    .bgm-timer {
+      font-size: 10.5px;
+      font-family: var(--lds-font-mono, monospace);
+      color: #94a3b8;
+      white-space: nowrap;
+    }
+    .bgm-playlist {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 140px;
+      overflow-y: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 8px;
+    }
+    .bgm-playlist-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+    .bgm-playlist-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+    .bgm-playlist-item.active {
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    /* Cinema Paradiso Vintage Projector Effect */
+    .cinema-projector-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 15;
+      display: none;
+      background: radial-gradient(circle at center, transparent 40%, rgba(10, 8, 5, 0.45) 85%, rgba(0, 0, 0, 0.7) 100%);
+      mix-blend-mode: multiply;
+      animation: projectorFlicker 0.12s infinite steps(2);
+    }
+    .cinema-projector-overlay.active {
+      display: block;
+    }
+    .cinema-projector-overlay::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: repeating-radial-gradient(circle, rgba(255, 248, 220, 0.03) 0, rgba(0, 0, 0, 0.05) 2px, transparent 4px);
+      background-size: 100% 100%;
+      opacity: 0.6;
+      animation: filmNoise 0.2s steps(4) infinite;
+    }
+    @keyframes projectorFlicker {
+      0% { opacity: 0.88; }
+      50% { opacity: 0.98; }
+      100% { opacity: 0.92; }
+    }
+    @keyframes filmNoise {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-1px, 1px); }
+      50% { transform: translate(1px, -1px); }
+      75% { transform: translate(-1px, -1px); }
+      100% { transform: translate(1px, 1px); }
+    }
+
+  </style>
 </head>
 <body>
 
@@ -2420,6 +2843,15 @@
       <circle cx="12" cy="12" r="10" fill="#D97706"/>
       <path fill="#FFFFFF" d="M8 7h8v2H8zm0 4h8v2H8zm0 4h5v2H8z"/>
     </symbol>
+      <!-- Device Projector Icon (Cinema Paradiso) -->
+    <symbol id="i-projector" viewBox="0 0 24 24">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M8 9a5 5 0 1 0 10 0a5 5 0 0 0 -10 0" />
+      <path d="M9 6h-4a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2v-8a2 2 0 0 0 -2 -2h-2" />
+      <path d="M6 15h1" />
+      <path d="M7 18l-1 2" />
+      <path d="M18 18l1 2" />
+    </symbol>
   </defs>
 </svg>
 
@@ -2427,50 +2859,71 @@
   <!-- ========================================================
        STICKY MUSEUM HERO ZONE (100vh) — GALLERY NOIR
        ======================================================== -->
+    <!-- ========================================================
+       TOP GLOBAL HEADER (NORMAL DETAIL PAGE STANDARD)
+       ======================================================== -->
+  <header class="top-global-header">
+    <a href="index.html" class="logo-area">
+      <div class="logo-badge">
+        <svg class="icon" style="width:18px; height:18px;"><use href="#i-frame"/></svg>
+      </div>
+      <div class="header-title-text">LET'S ART</div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span>아카이브</span>
+      </a>
+      <a href="timeline.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-clock"/></svg>
+        <span>시대별 타임라인</span>
+      </a>
+      <a href="medium.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-brush"/></svg>
+        <span>기법 & 재료</span>
+      </a>
+      <a href="dimensions.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-maximize"/></svg>
+        <span>규격 & 호수</span>
+      </a>
+      <a href="museum.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-museum"/></svg>
+        <span>글로벌 미술관</span>
+      </a>
+      <a href="artist.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-user"/></svg>
+        <span>거장 사전</span>
+      </a>
+      <button class="btn-gallery-launch" onclick="enterPresentationMode()" title="전체화면 갤러리 액자로 감상하기">
+        <svg class="icon" style="width:16px; height:16px;"><use href="#i-frame"/></svg>
+        <span>갤러리 모드로 감상</span>
+      </button>
+    </nav>
+  </header>
+
   <div class="hero-container" id="heroZone">
     <div class="hero-ambient-bg" id="heroAmbientBg"></div>
     <div class="hero-vignette"></div>
 
     <!-- Top Floating HUD -->
-    <div class="hero-top-nav">
-      <div class="nav-brand-group">
-        <a href="index.html" class="nav-back-link" data-tooltip="렛츠아트 홈 (아카이브)" aria-label="렛츠아트 홈 (아카이브)">
-          <svg class="icon"><use href="#i-arrow-left"></use></svg>
-          <span>렛츠아트 홈 (아카이브)</span>
-        </a>
-      </div>
-      <div class="nav-actions">
-        <a href="museum.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="미술관 (글로벌 10대 컬렉션)" aria-label="미술관">
-          <svg class="icon"><use href="#i-museum"></use></svg>
-          <span>미술관</span>
-        </a>
-        <a href="artist.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="거장 (시대의 거장 아카이브)" aria-label="거장">
-          <svg class="icon"><use href="#i-user"></use></svg>
-          <span>거장</span>
-        </a>
-        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" data-tooltip="음성 도슨트 (AI 한국어 해설)" aria-label="음성 도슨트">
-          <svg class="icon"><use href="#i-mic"></use></svg>
-          <span id="voiceNavText">음성 도슨트</span>
-        </button>
-        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" data-tooltip="갤러리모드 (전체화면 감상)" aria-label="갤러리모드">
-          <svg class="icon"><use href="#i-frame"></use></svg>
-          <span>갤러리모드</span>
-        </button>
-        <button class="lds-nav-btn" onclick="scrollToDocent()" data-tooltip="영상 도슨트 (영상 해설 허브)" aria-label="영상 도슨트">
-          <svg class="icon"><use href="#i-video"></use></svg>
-          <span>영상 도슨트</span>
-        </button>
-      </div>
-    </div>
-
     <!-- Centered Artwork Stage with Ken Burns Micro-Animation -->
     <div class="artwork-stage" id="artworkStage" onclick="enterPresentationMode()" title="클릭하여 갤러리모드 전체화면 모드로 감상">
       <img id="heroArtworkImg" class="artwork-animated-img" src="" alt="Masterpiece Artwork">
+      <!-- Stage Gallery Glass Badge CTA -->
+      <button class="stage-gallery-cta" onclick="enterPresentationMode()" title="전체화면 갤러리 액자로 감상하기">
+        <svg class="icon" style="width:16px; height:16px;"><use href="#i-frame"></use></svg>
+        <span>전체화면 갤러리 액자로 감상하기</span>
+      </button>
+
     </div>
 
     <!-- 써드플로어 (LOWER-THIRD CAPTION) -->
     <div class="hero-lower-third-wrap" id="heroLowerThird">
-      <div class="lower-third-panel">
+            <div class="lower-third-panel" id="heroLowerThirdPanel">
+        <div class="caption-drag-bar" onmousedown="initDragDock(event, 'heroLowerThird')" ontouchstart="initDragDock(event, 'heroLowerThird')" title="드래그하여 위치 이동">
+          <div class="drag-handle-pill"></div>
+        </div>
+
         <div class="lt-meta-header">
           <span class="lt-dot"></span>
           <span id="ltMuseumBadge">소장처 정보</span>
@@ -2492,12 +2945,22 @@
     </div>
 
     <!-- AI 음성 도슨트 실시간 플레이바 & 2~3줄 롤링 텔레프롬프터 독 (우측 하단) -->
-    <div class="voice-dock-panel" id="heroVoiceDock" style="display:none;">
+        <div class="voice-dock-panel" id="heroVoiceDock" style="display:none;">
+      <div class="dock-drag-bar" onmousedown="initDragDock(event, 'heroVoiceDock')" ontouchstart="initDragDock(event, 'heroVoiceDock')" title="드래그하여 위치 이동">
+        <div class="drag-handle-pill"></div>
+      </div>
       <div class="voice-dock-header">
         <div class="voice-dock-title-row">
-          <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+            <div class="dock-font-scaler" title="해설 자막 크기 조절">
+              <button class="dock-font-btn" onclick="adjustDocentFontSize(-1)" title="글자 축소">A-</button>
+              <button class="dock-font-btn" onclick="adjustDocentFontSize(1)" title="글자 확대">A+</button>
+            </div>
+          </div>
           <span class="voice-dock-timer" id="heroVoiceTimer">00:00 / 00:00</span>
         </div>
+
         <div class="voice-dock-controls">
           <button class="voice-dock-mini-btn" id="heroVoicePlayBtn" onclick="toggleVoiceDocent()" title="재생/일시정지">
             <svg class="icon"><use href="#i-pause"></use></svg>
@@ -2511,15 +2974,12 @@
       <div class="voice-dock-teleprompter" id="heroVoiceTeleprompter">
         <div class="voice-dock-script-stream" id="heroVoiceScriptStream"></div>
       </div>
+      <div class="dock-resize-gripper" onmousedown="initResizeDock(event, 'heroVoiceDock', 'heroVoiceTeleprompter')" ontouchstart="initResizeDock(event, 'heroVoiceDock', 'heroVoiceTeleprompter')" title="드래그하여 크기 조절">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M9 1L1 9M9 5L5 9M9 9L9 9" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
     </div>
 
-    <!-- Left & Right Artwork Navigation Arrows (Touch & Hover) -->
-    <button class="nav-artwork-arrow left" id="heroNavPrev" onclick="navigateArtwork(-1)" title="이전 작품 (←)">
-      <svg class="icon" style="width:22px; height:22px;"><use href="#i-chevron-left"></use></svg>
-    </button>
-    <button class="nav-artwork-arrow right" id="heroNavNext" onclick="navigateArtwork(1)" title="다음 작품 (→)">
-      <svg class="icon" style="width:22px; height:22px;"><use href="#i-chevron-right"></use></svg>
-    </button>
+    <!-- Left/Right navigation removed from Detail Hero Zone per User Request (Focus 100% on current artwork) -->
 
     <!-- Lower-Third Subtitle Toggle Button (Icon-Only Clean Design) -->
     <button class="toggle-subtitle-btn" id="btnToggleSubtitle" onclick="toggleLowerThird()" title="자막 켜기/끄기">
@@ -2537,7 +2997,16 @@
        PARALLAX BOTTOM CONTENT SHEET — LDS ANTI-BOX CANVAS
        ======================================================== */
   -->
-  <div class="content-sheet-container" id="contentSheet">
+    <div class="content-sheet-container" id="contentSheet">
+    <!-- Sheet Peek Tab with Rounded Backdrop Affordance -->
+    <div class="sheet-peek-tab" onclick="scrollToSheet()" title="클릭하여 큐레이터 해설 읽기">
+      <div class="sheet-peek-pill"></div>
+      <div class="sheet-peek-label">
+        <span>스크롤하여 큐레이터 심층 해설 및 비하인드 탐독하기</span>
+        <svg class="icon" style="width:14px; height:14px;"><use href="#i-chevron-down"></use></svg>
+      </div>
+    </div>
+
     <div class="content-sheet-inner">
 
       <!-- ========================================================
@@ -2781,6 +3250,8 @@
        PRESENTATION GALLERY — FULLSCREEN IMMERSIVE CINEMA
        ======================================================== -->
   <div class="presentation-overlay" id="presOverlay">
+        <!-- Cinema Paradiso Projector Vintage Effect Overlay -->
+    <div class="cinema-projector-overlay active" id="cinemaProjectorOverlay"></div>
     <div class="pres-canvas-wrap" id="presCanvasWrap">
       <img id="presImg" class="pres-artwork-img auto-tour" src="" alt="Presentation Masterpiece">
     </div>
@@ -2821,25 +3292,77 @@
         <button class="pres-hud-btn" id="btnVoiceDocentPres" onclick="toggleVoiceDocent()" data-tooltip="AI 음성 도슨트 토글">
           <svg class="icon"><use href="#i-mic"></use></svg>
         </button>
-        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()" data-tooltip="시네마틱 모션 투어 토글">
-          <svg class="icon"><use href="#i-camera"></use></svg>
+        <button class="pres-hud-btn active" id="btnTourToggle" onclick="toggleAutoTour()" data-tooltip="시네마틱 프로젝터 모션 투어 토글">
+          <svg class="icon"><use href="#i-projector"></use></svg>
         </button>
-        <!-- Precision Zoom Controls: [+] [100%] [-] -->
-        <button class="pres-hud-btn" onclick="zoomIn()" data-tooltip="확대 (+)">
-          <svg class="icon"><use href="#i-zoom-in"></use></svg>
+        <!-- Unified Precision Zoom Capsule Pill -->
+        <div class="pres-zoom-capsule" title="작품 정밀 확대/축소">
+          <button class="pres-hud-btn" onclick="zoomOut()" data-tooltip="축소 (-)">
+            <svg class="icon"><use href="#i-zoom-out"></use></svg>
+          </button>
+          <button class="pres-hud-btn pill" id="btnZoomPercent" onclick="resetZoomPan()" data-tooltip="클릭 시 100% 원본 크기 복원">
+            <span id="zoomPercentText">100%</span>
+          </button>
+          <button class="pres-hud-btn" onclick="zoomIn()" data-tooltip="확대 (+)">
+            <svg class="icon"><use href="#i-zoom-in"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+        <!-- Ambience BGM Floating Dock Popup -->
+    <div class="bgm-dock-panel" id="presBgmDock" style="display:none;">
+      <div class="dock-drag-bar" onmousedown="initDragDock(event, 'presBgmDock')" ontouchstart="initDragDock(event, 'presBgmDock')" title="드래그하여 위치 이동">
+        <div class="drag-handle-pill"></div>
+      </div>
+      <div class="bgm-dock-header">
+        <div class="bgm-dock-title">
+          <svg class="icon" style="width:14px; height:14px;"><use href="#i-music"></use></svg>
+          <span>갤러리 앰비언스 BGM</span>
+        </div>
+        <button class="bgm-dock-close" onclick="closeBgmDock()" title="닫기">✕</button>
+      </div>
+      <div class="bgm-track-title" id="bgmTrackTitle">1. 에릭 사티 — 짐노페디 1번</div>
+      <div class="bgm-controls-row">
+        <button class="bgm-play-btn" id="bgmDockPlayBtn" onclick="toggleBgmPres()" title="재생/일시정지">
+          <svg class="icon"><use href="#i-play"></use></svg>
         </button>
-        <button class="pres-hud-btn pill" id="btnZoomPercent" onclick="resetZoomPan()" data-tooltip="클릭 시 100% 원본 크기 복원">
-          <span id="zoomPercentText">100%</span>
-        </button>
-        <button class="pres-hud-btn" onclick="zoomOut()" data-tooltip="축소 (-)">
-          <svg class="icon"><use href="#i-zoom-out"></use></svg>
-        </button>
+        <div class="bgm-progress-bar-wrap" onclick="seekBgmProgress(event, this)" title="클릭하여 탐색">
+          <div class="bgm-progress-bar-fill" id="bgmProgressBarFill"></div>
+        </div>
+        <div class="bgm-timer" id="bgmDockTimer">00:00</div>
+      </div>
+      <div style="font-size:11px; font-weight:700; color:#64748b; margin-bottom:4px; text-transform:uppercase; letter-spacing:0.04em;">사운드트랙 플레이리스트</div>
+      <div class="bgm-playlist" id="bgmPlaylist">
+        <div class="bgm-playlist-item active" onclick="selectBgmTrack(0)">
+          <span>1. 에릭 사티 — 짐노페디 1번</span>
+          <span style="font-size:10px; color:#64748b;">03:15</span>
+        </div>
+        <div class="bgm-playlist-item" onclick="selectBgmTrack(1)">
+          <span>2. 클로드 드뷔시 — 달빛</span>
+          <span style="font-size:10px; color:#64748b;">04:50</span>
+        </div>
+        <div class="bgm-playlist-item" onclick="selectBgmTrack(2)">
+          <span>3. J.S. 바흐 — G선상의 아리아</span>
+          <span style="font-size:10px; color:#64748b;">04:12</span>
+        </div>
+        <div class="bgm-playlist-item" onclick="selectBgmTrack(3)">
+          <span>4. 쇼팽 — 녹턴 Op.9 No.2</span>
+          <span style="font-size:10px; color:#64748b;">04:30</span>
+        </div>
+        <div class="bgm-playlist-item" onclick="selectBgmTrack(4)">
+          <span>5. 보사 안티구아 (Bossa Antigua)</span>
+          <span style="font-size:10px; color:#64748b;">03:45</span>
+        </div>
       </div>
     </div>
 
     <!-- HUD Bottom -->
     <div class="pres-hud-bottom">
       <div class="pres-caption-box" id="presLowerThird" style="border:none !important;">
+        <div class="caption-drag-bar" onmousedown="initDragDock(event, 'presLowerThird')" ontouchstart="initDragDock(event, 'presLowerThird')" title="드래그하여 위치 이동">
+          <div class="drag-handle-pill"></div>
+        </div>
         <div class="lt-meta-header" style="margin-bottom:4px;">
           <span class="lt-dot"></span>
           <span id="presMuseumBadge">소장처</span>
@@ -2856,12 +3379,22 @@
       </div>
 
       <!-- Presentation AI Voice Docent Dock (우측 하단) -->
-      <div class="voice-dock-panel pres-voice-dock" id="presVoiceDock" style="display:none;">
+            <div class="voice-dock-panel pres-voice-dock" id="presVoiceDock" style="display:none;">
+        <div class="dock-drag-bar" onmousedown="initDragDock(event, 'presVoiceDock')" ontouchstart="initDragDock(event, 'presVoiceDock')" title="드래그하여 위치 이동">
+          <div class="drag-handle-pill"></div>
+        </div>
         <div class="voice-dock-header">
           <div class="voice-dock-title-row">
-            <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+              <div class="dock-font-scaler" title="해설 자막 크기 조절">
+                <button class="dock-font-btn" onclick="adjustDocentFontSize(-1)" title="글자 축소">A-</button>
+                <button class="dock-font-btn" onclick="adjustDocentFontSize(1)" title="글자 확대">A+</button>
+              </div>
+            </div>
             <span class="voice-dock-timer" id="presVoiceTimer">00:00 / 00:00</span>
           </div>
+
           <div class="voice-dock-controls">
             <button class="voice-dock-mini-btn" id="presVoicePlayBtn" onclick="toggleVoiceDocent()" title="재생/일시정지">
               <svg class="icon"><use href="#i-pause"></use></svg>
@@ -2874,6 +3407,9 @@
         <!-- Rolling Teleprompter -->
         <div class="voice-dock-teleprompter" id="presVoiceTeleprompter">
           <div class="voice-dock-script-stream" id="presVoiceScriptStream"></div>
+        </div>
+        <div class="dock-resize-gripper" onmousedown="initResizeDock(event, 'presVoiceDock', 'presVoiceTeleprompter')" ontouchstart="initResizeDock(event, 'presVoiceDock', 'presVoiceTeleprompter')" title="드래그하여 크기 조절">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M9 1L1 9M9 5L5 9M9 9L9 9" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
       </div>
 
@@ -4204,24 +4740,29 @@
     }
 
     let isPresBgmPlaying = false;
-    function toggleBgmPres() {
+        function toggleBgmPres() {
       const audio = document.getElementById('presBgmAudio');
       const btn = document.getElementById('btnBgmMutePres');
+      const dockBtn = document.getElementById('bgmDockPlayBtn');
       if (!audio) return;
+
       if (isPresBgmPlaying) {
         audio.pause();
         isPresBgmPlaying = false;
         if (btn) btn.classList.remove('active');
+        if (dockBtn) dockBtn.innerHTML = '<svg class="icon"><use href="#i-play"></use></svg>';
       } else {
-        audio.volume = 0.85;
+        openBgmDock();
+        audio.volume = isVoicePlaying ? 0.20 : 0.85;
         audio.play().then(() => {
           isPresBgmPlaying = true;
           if (btn) btn.classList.add('active');
+          if (dockBtn) dockBtn.innerHTML = '<svg class="icon"><use href="#i-pause"></use></svg>';
         }).catch(() => {});
       }
     }
 
-    async function requestScreenWakeLock() {
+async function requestScreenWakeLock() {
       const dot = document.getElementById('wakeLockDot');
       if ('wakeLock' in navigator) {
         try {
@@ -4256,21 +4797,25 @@
       setAutoTour(!isAutoTour);
     }
 
-    function setAutoTour(active) {
+        function setAutoTour(active) {
       isAutoTour = active;
       const img = document.getElementById('presImg');
       const btn = document.getElementById('btnTourToggle');
+      const projectorOverlay = document.getElementById('cinemaProjectorOverlay');
+
       if (isAutoTour) {
         if (img) img.classList.add('auto-tour');
         if (btn) btn.classList.add('active');
+        if (projectorOverlay) projectorOverlay.classList.add('active');
         resetZoomPan();
       } else {
         if (img) img.classList.remove('auto-tour');
         if (btn) btn.classList.remove('active');
+        if (projectorOverlay) projectorOverlay.classList.remove('active');
       }
     }
 
-    function togglePresSubtitle() {
+function togglePresSubtitle() {
       presLowerThirdVisible = !presLowerThirdVisible;
       const lt = document.getElementById('presLowerThird');
       if (presLowerThirdVisible) {
@@ -4469,6 +5014,211 @@
         navigator.serviceWorker.register('sw.js').catch(err => console.log('SW reg fail:', err));
       });
     }
+  
+    /* ========================================================
+       DRAGGABLE & RESIZABLE DOCKS ENGINE (POINTER / TOUCH)
+       ======================================================== */
+    let currentDragTarget = null;
+    let dragStartX = 0, dragStartY = 0;
+    let elemStartX = 0, elemStartY = 0;
+
+    function initDragDock(e, elemId) {
+      // Prevent drag if clicking button inside drag bar
+      if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
+      e.preventDefault();
+      const el = document.getElementById(elemId);
+      if (!el) return;
+
+      currentDragTarget = el;
+      const rect = el.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+      dragStartX = clientX;
+      dragStartY = clientY;
+      elemStartX = rect.left;
+      elemStartY = rect.top;
+
+      // Unset bottom/right pinned positions and switch to absolute left/top
+      el.style.left = elemStartX + 'px';
+      el.style.top = elemStartY + 'px';
+      el.style.right = 'auto';
+      el.style.bottom = 'auto';
+      el.style.position = 'fixed';
+      el.style.zIndex = '150';
+
+      function onMouseMove(moveEvent) {
+        if (!currentDragTarget) return;
+        const curX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+        const curY = moveEvent.touches ? moveEvent.touches[0].clientY : moveEvent.clientY;
+        const dx = curX - dragStartX;
+        const dy = curY - dragStartY;
+
+        // Viewport boundaries
+        const newX = Math.max(10, Math.min(window.innerWidth - currentDragTarget.offsetWidth - 10, elemStartX + dx));
+        const newY = Math.max(10, Math.min(window.innerHeight - currentDragTarget.offsetHeight - 10, elemStartY + dy));
+
+        currentDragTarget.style.left = newX + 'px';
+        currentDragTarget.style.top = newY + 'px';
+      }
+
+      function onMouseUp() {
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
+        window.removeEventListener('touchmove', onMouseMove);
+        window.removeEventListener('touchend', onMouseUp);
+        currentDragTarget = null;
+      }
+
+      window.addEventListener('mousemove', onMouseMove, { passive: false });
+      window.addEventListener('mouseup', onMouseUp);
+      window.addEventListener('touchmove', onMouseMove, { passive: false });
+      window.addEventListener('touchend', onMouseUp);
+    }
+
+    /* Resize Dock Teleprompter */
+    let currentResizeTarget = null;
+    let resizeStartW = 0, resizeStartH = 0;
+    let resizeStartX = 0, resizeStartY = 0;
+    let currentTeleprompter = null;
+    let teleStartH = 0;
+
+    function initResizeDock(e, dockId, teleId) {
+      e.stopPropagation();
+      e.preventDefault();
+      const dock = document.getElementById(dockId);
+      const tele = document.getElementById(teleId);
+      if (!dock || !tele) return;
+
+      currentResizeTarget = dock;
+      currentTeleprompter = tele;
+      const rect = dock.getBoundingClientRect();
+      const teleRect = tele.getBoundingClientRect();
+
+      resizeStartW = rect.width;
+      resizeStartH = rect.height;
+      teleStartH = teleRect.height;
+
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      resizeStartX = clientX;
+      resizeStartY = clientY;
+
+      function onResizeMove(moveEvent) {
+        if (!currentResizeTarget) return;
+        const curX = moveEvent.touches ? moveEvent.touches[0].clientX : moveEvent.clientX;
+        const curY = moveEvent.touches ? moveEvent.touches[0].clientY : moveEvent.clientY;
+        const dw = curX - resizeStartX;
+        const dh = curY - resizeStartY;
+
+        const newW = Math.max(280, Math.min(760, resizeStartW + dw));
+        const newTeleH = Math.max(48, Math.min(420, teleStartH + dh));
+
+        currentResizeTarget.style.width = newW + 'px';
+        if (currentTeleprompter) {
+          currentTeleprompter.style.height = newTeleH + 'px';
+          currentTeleprompter.style.maxHeight = newTeleH + 'px';
+        }
+      }
+
+      function onResizeUp() {
+        window.removeEventListener('mousemove', onResizeMove);
+        window.removeEventListener('mouseup', onResizeUp);
+        window.removeEventListener('touchmove', onResizeMove);
+        window.removeEventListener('touchend', onResizeUp);
+        currentResizeTarget = null;
+        currentTeleprompter = null;
+      }
+
+      window.addEventListener('mousemove', onResizeMove, { passive: false });
+      window.addEventListener('mouseup', onResizeUp);
+      window.addEventListener('touchmove', onResizeMove, { passive: false });
+      window.addEventListener('touchend', onResizeUp);
+    }
+
+    /* Docent Teleprompter Font Scaling (A- / A+) */
+    let docentFontSize = 12;
+    function adjustDocentFontSize(delta) {
+      docentFontSize = Math.max(10, Math.min(20, docentFontSize + delta));
+      document.querySelectorAll('.v-line').forEach(el => {
+        el.style.fontSize = docentFontSize + 'px';
+        el.style.lineHeight = (docentFontSize * 1.48) + 'px';
+      });
+    }
+
+    /* ========================================================
+       AMBIENCE BGM DOCK & SOUNDTRACK MANAGER
+       ======================================================== */
+    const bgmPlaylistTracks = [
+      { title: "1. 에릭 사티 — 짐노페디 1번", file: "assets/audio/bgm_gymnopedie.mp3" },
+      { title: "2. 클로드 드뷔시 — 달빛", file: "assets/audio/bgm_clair_de_lune.mp3" },
+      { title: "3. J.S. 바흐 — G선상의 아리아", file: "assets/audio/bgm_bach_air.mp3" },
+      { title: "4. 쇼팽 — 녹턴 Op.9 No.2", file: "assets/audio/bgm_chopin_nocturne.mp3" },
+      { title: "5. 보사 안티구아 (Bossa Antigua)", file: "assets/audio/bgm_bossa_antigua.mp3" }
+    ];
+    let currentBgmIndex = 0;
+    let isBgmDockOpen = false;
+
+    function selectBgmTrack(index) {
+      currentBgmIndex = index;
+      const track = bgmPlaylistTracks[index];
+      const audio = document.getElementById('presBgmAudio');
+      const titleEl = document.getElementById('bgmTrackTitle');
+      if (titleEl) titleEl.textContent = track.title;
+
+      // Update active class in playlist
+      document.querySelectorAll('.bgm-playlist-item').forEach((item, idx) => {
+        item.classList.toggle('active', idx === index);
+      });
+
+      if (audio) {
+        audio.src = track.file;
+        if (isPresBgmPlaying) {
+          audio.play().catch(() => {});
+        }
+      }
+    }
+
+    function openBgmDock() {
+      const dock = document.getElementById('presBgmDock');
+      if (dock) {
+        dock.style.display = 'block';
+        isBgmDockOpen = true;
+      }
+    }
+
+    function closeBgmDock() {
+      const dock = document.getElementById('presBgmDock');
+      if (dock) {
+        dock.style.display = 'none';
+        isBgmDockOpen = false;
+      }
+    }
+
+    function seekBgmProgress(event, wrapEl) {
+      const audio = document.getElementById('presBgmAudio');
+      if (!audio || !audio.duration) return;
+      const rect = wrapEl.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+      audio.currentTime = ratio * audio.duration;
+    }
+
+    // BGM playback ticker & progress bar sync
+    const presBgmEl = document.getElementById('presBgmAudio');
+    if (presBgmEl) {
+      presBgmEl.addEventListener('timeupdate', () => {
+        if (!presBgmEl.duration) return;
+        const cur = presBgmEl.currentTime;
+        const dur = presBgmEl.duration;
+        const pct = (cur / dur) * 100;
+        const fill = document.getElementById('bgmProgressBarFill');
+        const timer = document.getElementById('bgmDockTimer');
+        if (fill) fill.style.width = pct + '%';
+        if (timer) timer.textContent = `${formatTime(cur)} / ${formatTime(dur)}`;
+      });
+    }
+
   </script>
   <!-- Presentation Mode Gallery Ambient Audio Element -->
   <audio id="presBgmAudio" loop preload="auto" src="assets/audio/bgm_gymnopedie.mp3"></audio>
