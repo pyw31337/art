@@ -404,5 +404,187 @@
     "error": "Request failed after 3 attempts",
     "failed_at": "2026-11-27T09:01:58.900987",
     "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:22:51.741759",
+    "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:23:55.041866",
+    "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:25:11.321805",
+    "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:26:22.283780",
+    "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:27:44.347822",
+    "raw_info": null
+  },
+  {
+    "id": "met_436032",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436032",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:28:57.352445",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:43:09.574182",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:44:50.995932",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:46:35.324432",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:48:39.144839",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:50:36.044395",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:52:19.042696",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:54:26.912940",
+    "raw_info": null
+  },
+  {
+    "id": "met_436429",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436429",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:56:25.903521",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:22:07.873913",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:25:25.813043",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:26:38.474942",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:27:51.769098",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:30:54.010583",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:35:03.592622",
+    "raw_info": null
+  },
+  {
+    "id": "met_437291",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437291",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:39:32.290373",
+    "raw_info": null
+  },
+  {
+    "id": "met_437606",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437606",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:49:54.995121",
+    "raw_info": null
+  },
+  {
+    "id": "met_437606",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437606",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:51:18.236935",
+    "raw_info": null
+  },
+  {
+    "id": "met_437606",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437606",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:53:11.863077",
+    "raw_info": null
+  },
+  {
+    "id": "met_437606",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437606",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:54:36.693481",
+    "raw_info": null
+  },
+  {
+    "id": "met_437606",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437606",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T10:56:01.636140",
+    "raw_info": null
   }
 ]

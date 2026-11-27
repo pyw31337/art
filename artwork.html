@@ -65,14 +65,16 @@
     /* Ambient atmospheric glow — matching artwork backdrop expansion */
     .hero-ambient-bg {
       position: absolute;
-      inset: -30px;
+      inset: -20px;
       background-size: cover;
       background-position: center;
-      filter: blur(40px) brightness(0.65) saturate(1.3);
-      transform: scale(1.12);
+      filter: blur(28px) brightness(0.65) saturate(1.25);
+      transform: scale(1.08) translateZ(0);
+      will-change: transform;
+      contain: strict;
       z-index: 1;
       opacity: 0.9;
-      transition: background-image 0.6s ease;
+      transition: background-image 0.5s ease;
       pointer-events: none;
     }
 
@@ -107,12 +109,17 @@
       max-height: 100%;
       object-fit: contain;
       transform-origin: center center;
-      will-change: transform;
+      will-change: transform, opacity;
       animation: heroCameraTimeline 15s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
       cursor: pointer;
       position: relative;
       z-index: 4;
-      filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.6));
+      transform: translateZ(0);
+      transition: opacity 0.28s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .artwork-animated-img.fading-out,
+    .pres-artwork-img.fading-out {
+      opacity: 0 !important;
     }
 
     /* 15s Micro-Animation Timeline:
@@ -257,12 +264,12 @@
       pointer-events: none;
     }
 
-    /* True Airy Glassmorphism: Background artwork shines through cleanly */
+    /* True Airy Glassmorphism: Optimized 16px blur with hardware caching */
     .lower-third-panel {
       pointer-events: auto;
-      background: rgba(15, 23, 42, 0.38);
-      backdrop-filter: blur(32px) saturate(200%);
-      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      background: rgba(15, 23, 42, 0.62);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: none !important;
       border-radius: 14px;
       padding: 20px 26px;
@@ -270,6 +277,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      transform: translateZ(0);
     }
 
     .lt-meta-header {
@@ -303,6 +311,12 @@
       color: #cbd5e1;
       font-weight: 500;
     }
+
+    .lt-desc-wrap {
+      position: relative;
+      margin-top: 4px;
+    }
+
     .lower-third-desc {
       font-size: 12.5px;
       color: #94a3b8;
@@ -311,6 +325,52 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .lower-third-desc.expanded {
+      display: block;
+      max-height: 240px;
+      overflow-y: auto;
+      padding-right: 6px;
+      -webkit-line-clamp: unset;
+      color: #cbd5e1;
+    }
+
+    .lower-third-desc.expanded::-webkit-scrollbar {
+      width: 4px;
+    }
+    .lower-third-desc.expanded::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .lt-expand-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      padding: 3px 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1;
+    }
+    .lt-expand-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .lt-expand-btn svg.icon {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.2;
     }
 
     /* Subtitle Toggle Button */
@@ -393,6 +453,148 @@
       width: 0%;
       z-index: 101;
       transition: width 0.1s linear;
+    }
+
+    /* AI Voice Docent Live Dock (Lower Right Hero & Presentation) */
+    .voice-dock-panel {
+      position: absolute;
+      bottom: 24px;
+      right: 76px;
+      width: 380px;
+      max-width: calc(100vw - 120px);
+      background: rgba(15, 23, 42, 0.68);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 14px 18px;
+      color: #ffffff;
+      z-index: 35;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      pointer-events: auto;
+      transform: translateZ(0);
+      transition: all 0.25s ease;
+    }
+    .voice-dock-panel.pres-voice-dock {
+      position: static;
+      margin-left: auto;
+      margin-right: 12px;
+      width: 380px;
+      max-width: calc(100vw - 140px);
+    }
+    .voice-dock-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .voice-dock-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .voice-dock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.04em;
+    }
+    .voice-pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      animation: docentPulse 1.4s infinite;
+    }
+    @keyframes docentPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+    .voice-dock-timer {
+      font-size: 11px;
+      color: #94a3b8;
+      font-family: var(--lds-font-mono, monospace);
+    }
+    .voice-dock-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .voice-dock-mini-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+    .voice-dock-mini-btn:hover {
+      background: #3b82f6;
+      transform: scale(1.08);
+    }
+    .voice-dock-mini-btn svg.icon {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.2;
+    }
+    .voice-dock-bar-wrap {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 2px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .voice-dock-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #38bdf8, #2563eb);
+      transition: width 0.12s linear;
+    }
+    .voice-dock-teleprompter {
+      height: 52px;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+    .voice-dock-script-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .v-line {
+      font-size: 12px;
+      line-height: 1.45;
+      color: #64748b;
+      margin: 0;
+      transition: all 0.2s ease;
+    }
+    .v-line.past {
+      color: #475569;
+    }
+    .v-line.active {
+      color: #f8fafc;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+    @media (max-width: 900px) {
+      .voice-dock-panel {
+        right: 16px;
+        left: auto;
+        bottom: 76px;
+        width: 320px;
+        max-width: calc(100vw - 32px);
+      }
     }
 
     /* Scroll Prompt */
@@ -527,6 +729,41 @@
       background: transparent;
       border: none;
       padding: 0;
+    }
+    .spec-pill.interactive-pill {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .spec-pill.interactive-pill:hover {
+      background: #ffffff;
+      border-color: #3b82f6;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+      transform: translateY(-2px);
+    }
+    .spec-pill.interactive-pill .spec-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #64748b;
+    }
+    .spec-pill.interactive-pill:hover .spec-label {
+      color: #2563eb;
+    }
+    .spec-pill.interactive-pill .pill-go-icon {
+      width: 14px;
+      height: 14px;
+      opacity: 0.55;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .spec-pill.interactive-pill:hover .pill-go-icon {
+      opacity: 1;
+      transform: translateX(3px);
+      stroke: #2563eb;
     }
     .spec-label {
       font-size: 11px;
@@ -995,27 +1232,35 @@
       max-height: 100%;
       object-fit: contain;
       transform-origin: center center;
-      will-change: transform;
+      will-change: transform, opacity;
       user-select: none;
       -webkit-user-drag: none;
       pointer-events: none;
+      transition: opacity 0.28s cubic-bezier(0.2, 0, 0, 1);
     }
     .pres-artwork-img.auto-tour {
       animation: presentationCameraTour 18s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
     }
-    /* Mode: Letterbox OFF (Screen Cover with Smooth Ambient Panning) */
+    /* Mode: Letterbox OFF (Screen Cover with Smooth Ambient Panning & Smart Focal Point) */
     .pres-canvas-wrap.letterbox-off .pres-artwork-img {
       width: 100vw !important;
       height: 100vh !important;
       max-width: none !important;
       max-height: none !important;
       object-fit: cover !important;
+      object-position: var(--focal-position, 50% 22%) !important;
       animation: presentationSlowPan 25s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate !important;
     }
+    .hero-container.letterbox-off .artwork-animated-img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: var(--focal-position, 50% 22%) !important;
+    }
     @keyframes presentationSlowPan {
-      0% { transform: scale(1.04) translate(0%, 0%); }
-      50% { transform: scale(1.15) translate(-2.5%, -1.5%); }
-      100% { transform: scale(1.10) translate(2.5%, 1.5%); }
+      0% { transform: scale(1.03) translate(0%, 0%); }
+      50% { transform: scale(1.08) translate(-1.5%, 1%); }
+      100% { transform: scale(1.05) translate(1.5%, -1%); }
     }
     @keyframes presentationCameraTour {
       0% {
@@ -2158,6 +2403,12 @@
     <symbol id="i-chevron-right" viewBox="0 0 24 24">
       <polyline points="9 18 15 12 9 6"></polyline>
     </symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </symbol>
+    <symbol id="i-chevron-up" viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </symbol>
     <symbol id="i-clock" viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10"></circle>
       <polyline points="12 6 12 12 16 14"></polyline>
@@ -2230,7 +2481,35 @@
         </div>
         <div class="lower-third-title" id="ltTitle">작품명 로딩 중...</div>
         <div class="lower-third-artist" id="ltArtist">작가명</div>
-        <div class="lower-third-desc" id="ltDesc">명화의 역사와 도상학적 세계를 감상해보세요.</div>
+        <div class="lt-desc-wrap">
+          <div class="lower-third-desc" id="ltDesc">명화의 역사와 도상학적 세계를 감상해보세요.</div>
+          <button class="lt-expand-btn" id="btnExpandLtDesc" onclick="toggleLtDescExpand()" aria-label="상세설명 더보기" style="display:none;">
+            <span id="ltExpandText">더보기</span>
+            <svg class="icon" id="ltExpandIcon"><use href="#i-chevron-down"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI 음성 도슨트 실시간 플레이바 & 2~3줄 롤링 텔레프롬프터 독 (우측 하단) -->
+    <div class="voice-dock-panel" id="heroVoiceDock" style="display:none;">
+      <div class="voice-dock-header">
+        <div class="voice-dock-title-row">
+          <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+          <span class="voice-dock-timer" id="heroVoiceTimer">00:00 / 00:00</span>
+        </div>
+        <div class="voice-dock-controls">
+          <button class="voice-dock-mini-btn" id="heroVoicePlayBtn" onclick="toggleVoiceDocent()" title="재생/일시정지">
+            <svg class="icon"><use href="#i-pause"></use></svg>
+          </button>
+          <div class="voice-dock-bar-wrap" onclick="seekDocentFromDockBar(event, this)" title="클릭하여 오디오 탐색">
+            <div class="voice-dock-bar-fill" id="heroVoiceBarFill"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Rolling Teleprompter (2~3줄 롤링 스크립트) -->
+      <div class="voice-dock-teleprompter" id="heroVoiceTeleprompter">
+        <div class="voice-dock-script-stream" id="heroVoiceScriptStream"></div>
       </div>
     </div>
 
@@ -2278,22 +2557,34 @@
           </div>
         </div>
 
-        <!-- 4-Pill Modern Specification Grid -->
+        <!-- 4-Pill Modern Specification Grid (Clickable Exploration Pills) -->
         <div class="artwork-spec-grid">
-          <div class="spec-pill">
-            <span class="spec-label">제작 연도</span>
+          <div class="spec-pill interactive-pill" id="pillYear" onclick="goToTimeline()" title="제작 연도별 타임라인 탐색하기">
+            <div class="spec-label">
+              <span>제작 연도</span>
+              <svg class="icon pill-go-icon"><use href="#i-arrow-right"></use></svg>
+            </div>
             <span class="spec-val" id="specYear">연도 정보</span>
           </div>
-          <div class="spec-pill">
-            <span class="spec-label">기법 & 재료</span>
+          <div class="spec-pill interactive-pill" id="pillMedium" onclick="goToMedium()" title="기법 & 재료 도슨트 백과 탐색하기">
+            <div class="spec-label">
+              <span>기법 & 재료</span>
+              <svg class="icon pill-go-icon"><use href="#i-arrow-right"></use></svg>
+            </div>
             <span class="spec-val" id="specMedium">재질 정보</span>
           </div>
-          <div class="spec-pill">
-            <span class="spec-label">작품 규격</span>
+          <div class="spec-pill interactive-pill" id="pillDimensions" onclick="goToDimensions()" title="작품 규격 및 캔버스 호수 상식 탐색하기">
+            <div class="spec-label">
+              <span>작품 규격</span>
+              <svg class="icon pill-go-icon"><use href="#i-arrow-right"></use></svg>
+            </div>
             <span class="spec-val" id="specDimensions">규격 정보</span>
           </div>
-          <div class="spec-pill">
-            <span class="spec-label">소장처 및 소장관</span>
+          <div class="spec-pill interactive-pill" id="pillMuseum" onclick="goToMuseum()" title="소장처 컬렉션 및 글로벌 미술관 탐색하기">
+            <div class="spec-label">
+              <span>소장처 및 소장관</span>
+              <svg class="icon pill-go-icon"><use href="#i-arrow-right"></use></svg>
+            </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <span class="spec-val" id="specMuseum">소장처 정보</span>
             </div>
@@ -2564,7 +2855,29 @@
         </button>
       </div>
 
-      <div style="pointer-events:auto;">
+      <!-- Presentation AI Voice Docent Dock (우측 하단) -->
+      <div class="voice-dock-panel pres-voice-dock" id="presVoiceDock" style="display:none;">
+        <div class="voice-dock-header">
+          <div class="voice-dock-title-row">
+            <span class="voice-dock-badge"><span class="voice-pulse-dot"></span>AI 음성 도슨트</span>
+            <span class="voice-dock-timer" id="presVoiceTimer">00:00 / 00:00</span>
+          </div>
+          <div class="voice-dock-controls">
+            <button class="voice-dock-mini-btn" id="presVoicePlayBtn" onclick="toggleVoiceDocent()" title="재생/일시정지">
+              <svg class="icon"><use href="#i-pause"></use></svg>
+            </button>
+            <div class="voice-dock-bar-wrap" onclick="seekDocentFromDockBar(event, this)" title="클릭하여 오디오 탐색">
+              <div class="voice-dock-bar-fill" id="presVoiceBarFill"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Rolling Teleprompter -->
+        <div class="voice-dock-teleprompter" id="presVoiceTeleprompter">
+          <div class="voice-dock-script-stream" id="presVoiceScriptStream"></div>
+        </div>
+      </div>
+
+      <div style="pointer-events:auto; display:flex; align-items:center; gap:8px;">
         <button class="pres-hud-btn" onclick="togglePresSubtitle()" data-tooltip="자막 표시 토글">
           <svg class="icon"><use href="#i-message"></use></svg>
         </button>
@@ -2614,9 +2927,56 @@
       }, 3500);
     }
 
+    let lastNavTrigger = 0;
+    function triggerNavActivityThrottled() {
+      const now = Date.now();
+      if (now - lastNavTrigger < 120) return;
+      lastNavTrigger = now;
+      triggerNavActivity();
+    }
+
     ['mousemove', 'touchstart', 'click', 'pointerdown'].forEach(evt => {
-      window.addEventListener(evt, triggerNavActivity, { passive: true });
+      window.addEventListener(evt, triggerNavActivityThrottled, { passive: true });
     });
+
+    // Lower-Third Description Expand / Collapse Toggle
+    let isLtDescExpanded = false;
+    function toggleLtDescExpand() {
+      const descEl = document.getElementById('ltDesc');
+      const textEl = document.getElementById('ltExpandText');
+      const iconEl = document.getElementById('ltExpandIcon');
+      if (!descEl) return;
+      isLtDescExpanded = !isLtDescExpanded;
+      if (isLtDescExpanded) {
+        descEl.classList.add('expanded');
+        if (textEl) textEl.textContent = '접기';
+        if (iconEl) {
+          const useEl = iconEl.querySelector('use');
+          if (useEl) useEl.setAttribute('href', '#i-chevron-up');
+        }
+      } else {
+        descEl.classList.remove('expanded');
+        if (textEl) textEl.textContent = '더보기';
+        if (iconEl) {
+          const useEl = iconEl.querySelector('use');
+          if (useEl) useEl.setAttribute('href', '#i-chevron-down');
+        }
+      }
+    }
+
+    // Performance: Pause Ken Burns animation when hero is off-screen to save 100% GPU
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const img = document.getElementById('heroArtworkImg');
+          if (img) {
+            img.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+          }
+        });
+      }, { threshold: 0.05 });
+      const heroZone = document.getElementById('heroZone');
+      if (heroZone) heroObserver.observe(heroZone);
+    }
 
     // Mobile Touch & Hold (Long-press) tooltip support for top HUD buttons
     function initNavTooltips() {
@@ -2737,28 +3097,114 @@
       }
     }
 
+    // Smart Compositional Focal Point Calculation (Prevents Portrait Head Decapitation)
+    function getArtworkFocalPosition(item, imgElement) {
+      if (!item) return '50% 45%';
+      const text = [
+        item.title_kr, item.title_en, item.title,
+        item.category_kr, item.theme_id, item.curator_notes, item.description,
+        Array.isArray(item.keywords) ? item.keywords.join(' ') : (item.keywords || '')
+      ].filter(Boolean).join(' ').toLowerCase();
+
+      const portraitKeywords = [
+        '초상화', '자화상', '인물화', 'portrait', 'self-portrait', 'figure',
+        '여인', '소녀', '소년', '모나리자', '신사', '귀부인', '자화', '인물', '얼굴', '헤드', 'peasant',
+        'woman', 'girl', 'boy', 'lady', 'man', 'head'
+      ];
+
+      const isPortrait = portraitKeywords.some(kw => text.includes(kw));
+
+      let isVertical = false;
+      if (imgElement && imgElement.naturalHeight && imgElement.naturalWidth) {
+        if (imgElement.naturalHeight > imgElement.naturalWidth * 1.08) {
+          isVertical = true;
+        }
+      }
+
+      if (isPortrait) {
+        // High focus on face/head (20% from top)
+        return '50% 20%';
+      } else if (isVertical) {
+        return '50% 30%';
+      } else {
+        return '50% 48%';
+      }
+    }
+
+    function applySmartFocalPosition(item) {
+      const heroImg = document.getElementById('heroArtworkImg');
+      const presImg = document.getElementById('presImg');
+      const heroContainer = document.getElementById('heroZone');
+      const presWrap = document.getElementById('presCanvasWrap');
+
+      const updateFocal = () => {
+        const focal = getArtworkFocalPosition(item, heroImg);
+        if (heroContainer) heroContainer.style.setProperty('--focal-position', focal);
+        if (presWrap) presWrap.style.setProperty('--focal-position', focal);
+      };
+
+      updateFocal();
+      if (heroImg) {
+        heroImg.addEventListener('load', updateFocal, { once: true });
+      }
+      if (presImg) {
+        presImg.addEventListener('load', updateFocal, { once: true });
+      }
+    }
+
     function switchArtwork(item, updateHistory = true) {
-      currentArtwork = item;
-      targetId = item.id || item.work_id;
+      const heroImg = document.getElementById('heroArtworkImg');
+      const presImg = document.getElementById('presImg');
 
-      // Attach 1:1 verified docent
-      const regDocent = videoDocentRegistry[item.id] || videoDocentRegistry[item.work_id];
-      if (regDocent) {
-        item.verified_docent = regDocent;
-      }
+      // Cinematic smooth cross-fade transition
+      if (heroImg) heroImg.classList.add('fading-out');
+      if (presImg) presImg.classList.add('fading-out');
 
-      renderArtworkDetails(item); initDocentScriptAndTimeline(); renderKaraokeScript(item.verified_docent && item.verified_docent.timed_script); renderLetsPeopleDossier(item);
+      setTimeout(() => {
+        currentArtwork = item;
+        targetId = item.id || item.work_id;
 
-      if (updateHistory) {
-        const url = new URL(window.location);
-        url.searchParams.set('id', targetId);
-        window.history.pushState({ id: targetId }, '', url);
-      }
+        // Attach 1:1 verified docent
+        const regDocent = videoDocentRegistry[item.id] || videoDocentRegistry[item.work_id];
+        if (regDocent) {
+          item.verified_docent = regDocent;
+        }
 
-      // Reset slideshow timer if active
-      if (slideshowIntervalSeconds > 0) {
-        restartSlideshowTimer();
-      }
+        renderArtworkDetails(item);
+        initDocentScriptAndTimeline();
+        renderKaraokeScript(item.verified_docent && item.verified_docent.timed_script);
+        renderLetsPeopleDossier(item);
+
+        if (updateHistory) {
+          const url = new URL(window.location);
+          url.searchParams.set('id', targetId);
+          window.history.pushState({ id: targetId }, '', url);
+        }
+
+        // If voice docent was actively playing, smoothly begin speaking new artwork commentary
+        if (isVoicePlaying) {
+          setTimeout(() => {
+            if (isVoicePlaying) seekToCurrentDocentOffset();
+          }, 150);
+        }
+
+        // Reset slideshow timer if active
+        if (slideshowIntervalSeconds > 0) {
+          restartSlideshowTimer();
+        }
+
+        // Fade in new image smoothly
+        const revealImages = () => {
+          if (heroImg) heroImg.classList.remove('fading-out');
+          if (presImg) presImg.classList.remove('fading-out');
+        };
+        if (heroImg && heroImg.complete && heroImg.naturalHeight > 0) {
+          revealImages();
+        } else if (heroImg) {
+          heroImg.addEventListener('load', revealImages, { once: true });
+          setTimeout(revealImages, 350);
+        }
+      }, 200);
     }
 
     function navigateArtwork(delta) {
@@ -2779,10 +3225,11 @@
       const imgUrl = (item.image_url || item.thumbnail_url || '').replace(/ /g, '%20');
       const fallbackSvg = "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23080a0f%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2394a3b8%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3E%EC%9E%91%ED%92%88%20%EC%A0%84%EC%8B%9C%20%EC%A4%80%EB%B9%84%20%EC%A4%91%3C%2Ftext%3E%3C%2Fsvg%3E";
 
-      // 1. Hero Zone with multi-stage fallback
+      // 1. Hero Zone with multi-stage fallback & optimized ambient thumbnail
       const heroImg = document.getElementById('heroArtworkImg');
       const heroBg = document.getElementById('heroAmbientBg');
-      if (heroBg) heroBg.style.backgroundImage = `url('${imgUrl}')`;
+      const ambientImgUrl = (item.thumbnail_url || item.image_url || '').replace(/ /g, '%20');
+      if (heroBg) heroBg.style.backgroundImage = `url('${ambientImgUrl}')`;
       heroImg.src = imgUrl;
       heroImg.onerror = () => {
         const localFallback = `assets/featured/${item.id}.webp`;
@@ -2794,6 +3241,9 @@
           heroImg.src = fallbackSvg;
         }
       };
+
+      // Smart focal point for portraits / vertical artworks
+      applySmartFocalPosition(item);
 
       // De-duplicate Korean and English titles/artists (strips already included parenthetical English)
       let titleKr = (item.title_kr || '').trim();
@@ -2816,7 +3266,22 @@
       setTxt('ltStoryBadge', stripEmoji(item.story_label) || storyMeta.label);
       setTxt('ltTitle', `${titleKr} ${cleanTitleEn ? `(${cleanTitleEn})` : ''}`.trim());
       setTxt('ltArtist', `${artistKr} ${cleanArtistEn ? `(${cleanArtistEn})` : ''}`.trim());
-      setTxt('ltDesc', item.description || item.curator_notes || '인류의 위대한 문화유산을 감상해보세요.');
+      const rawDesc = item.description || item.curator_notes || '인류의 위대한 문화유산을 감상해보세요.';
+      setTxt('ltDesc', rawDesc);
+      isLtDescExpanded = false;
+      const descEl = document.getElementById('ltDesc');
+      const btnExpand = document.getElementById('btnExpandLtDesc');
+      const textEl = document.getElementById('ltExpandText');
+      const iconEl = document.getElementById('ltExpandIcon');
+      if (descEl) descEl.classList.remove('expanded');
+      if (textEl) textEl.textContent = '더보기';
+      if (iconEl) {
+        const useEl = iconEl.querySelector('use');
+        if (useEl) useEl.setAttribute('href', '#i-chevron-down');
+      }
+      if (btnExpand) {
+        btnExpand.style.display = (rawDesc && rawDesc.length > 70) ? 'inline-flex' : 'none';
+      }
 
       // 2. Parallax Sheet Content
       setTxt('sheetBreadcrumb', `인류 문화유산 아카이브 / ${item.category_kr || '회화'} / ${item.movement || '명화'}`);
@@ -3027,13 +3492,32 @@
     }
 
     // ========================================================
-    // SLIDESHOW INTERVAL TIMER (OFF / 10s / 15s / 20s)
+    // SLIDESHOW INTERVAL TIMER (OFF / 5s / 10s / 15s / 20s / 30s / CUSTOM)
     // ========================================================
     function cycleSlideshowInterval() {
-      const intervals = [0, 10, 15, 20];
-      const curIdx = intervals.indexOf(slideshowIntervalSeconds);
-      const nextIdx = (curIdx + 1) % intervals.length;
-      slideshowIntervalSeconds = intervals[nextIdx];
+      const presets = [0, 5, 10, 15, 20, 30, 'custom'];
+      let curIdx = presets.indexOf(slideshowIntervalSeconds);
+      if (curIdx === -1) {
+        curIdx = 6;
+      }
+      const nextIdx = (curIdx + 1) % presets.length;
+      const choice = presets[nextIdx];
+
+      if (choice === 'custom') {
+        const inputSec = prompt('슬라이드 전환 시간(초)을 입력해주세요 (3초~300초):', slideshowIntervalSeconds > 0 ? slideshowIntervalSeconds : '12');
+        if (inputSec !== null) {
+          const parsed = parseInt(inputSec, 10);
+          if (!isNaN(parsed) && parsed >= 3 && parsed <= 300) {
+            slideshowIntervalSeconds = parsed;
+          } else {
+            slideshowIntervalSeconds = 15;
+          }
+        } else {
+          slideshowIntervalSeconds = 0;
+        }
+      } else {
+        slideshowIntervalSeconds = choice;
+      }
 
       const badge = document.getElementById('intervalBadge');
       if (slideshowIntervalSeconds === 0) {
@@ -3063,6 +3547,23 @@
       const bar = document.getElementById('slideshowProgressBar');
 
       function updateProgress() {
+        // If Voice Docent is actively playing: synchronize slide advance with docent completion!
+        if (isVoicePlaying && docentEstimatedDurationSec > 0) {
+          const voiceProgress = Math.min(100, (docentCurrentSec / docentEstimatedDurationSec) * 100);
+          if (bar) bar.style.width = `${voiceProgress}%`;
+
+          // Wait until docent speech completes before auto-advancing
+          if (docentCurrentSec >= docentEstimatedDurationSec && !isVoicePlaying) {
+            if (bar) bar.style.width = '100%';
+            setTimeout(() => {
+              navigateArtwork(1);
+            }, 800);
+            return;
+          }
+          progressAnimFrame = requestAnimationFrame(updateProgress);
+          return;
+        }
+
         const elapsed = performance.now() - slideshowStartTime;
         const progress = Math.min(100, (elapsed / durationMs) * 100);
         if (bar) bar.style.width = `${progress}%`;
@@ -3070,8 +3571,13 @@
         if (elapsed < durationMs) {
           progressAnimFrame = requestAnimationFrame(updateProgress);
         } else {
-          if (bar) bar.style.width = '100%';
-          navigateArtwork(1);
+          // If docent is still speaking when interval finishes, hold until docent finishes!
+          if (isVoicePlaying) {
+            progressAnimFrame = requestAnimationFrame(updateProgress);
+          } else {
+            if (bar) bar.style.width = '100%';
+            navigateArtwork(1);
+          }
         }
       }
       progressAnimFrame = requestAnimationFrame(updateProgress);
@@ -3281,6 +3787,9 @@
       if (curEl) curEl.textContent = formatTime(0);
       if (slider) slider.value = 0;
       if (fill) fill.style.width = '0%';
+
+      // Prime teleprompter sentences in voice dock
+      renderVoiceDockSentences();
     }
 
     function startScrubberTicker() {
@@ -3292,12 +3801,23 @@
         const elapsedSec = (performance.now() - docentStartTimeStamp) / 1000;
         docentCurrentSec = Math.min(elapsedSec, docentEstimatedDurationSec);
 
-        updateScrubberUI(); syncKaraokeScriptHighlight(docentCurrentSec);
+        updateScrubberUI();
+        syncKaraokeScriptHighlight(docentCurrentSec);
+        syncVoiceDock(docentCurrentSec);
 
         if (docentCurrentSec >= docentEstimatedDurationSec) {
           stopScrubberTicker();
+          isVoicePlaying = false;
+          window.isVoicePlaying = false;
+          updateVoiceUI(false);
+          // Audio-sync auto-advance: if slideshow auto-play is on, proceed to next artwork!
+          if (slideshowIntervalSeconds > 0) {
+            setTimeout(() => {
+              navigateArtwork(1);
+            }, 800);
+          }
         }
-      }, 200);
+      }, 150);
     }
 
     function stopScrubberTicker() {
@@ -3314,6 +3834,8 @@
       const progressPercent = Math.min(100, (docentCurrentSec / docentEstimatedDurationSec) * 100);
       if (slider && !isScrubbing) slider.value = progressPercent;
       if (fill) fill.style.width = `${progressPercent}%`;
+
+      syncVoiceDock(docentCurrentSec);
     }
 
     function onScrubInput(val) {
@@ -3464,7 +3986,10 @@
       const soundwave = document.getElementById('voiceSoundwave');
       const statusLabel = document.getElementById('voiceStatusLabel');
       const playIcon = document.getElementById('voicePlayIcon');
-      const scrubberPlayIcon = document.getElementById('scrubberPlayIcon');
+      const heroDock = document.getElementById('heroVoiceDock');
+      const presDock = document.getElementById('presVoiceDock');
+      const heroPlayBtn = document.getElementById('heroVoicePlayBtn');
+      const presPlayBtn = document.getElementById('presVoicePlayBtn');
 
       if (playing) {
         if (navBtn) {
@@ -3482,6 +4007,13 @@
           if (useEl) useEl.setAttribute('href', '#i-pause');
         }
         if (statusLabel) statusLabel.textContent = "AI 음성 도슨트가 명화의 역사와 도상학적 비하인드 스토리를 해설 중입니다";
+
+        // Show Voice Docks
+        if (heroDock) heroDock.style.display = 'block';
+        if (presDock) presDock.style.display = 'block';
+        if (heroPlayBtn) heroPlayBtn.innerHTML = '<svg class="icon"><use href="#i-pause"></use></svg>';
+        if (presPlayBtn) presPlayBtn.innerHTML = '<svg class="icon"><use href="#i-pause"></use></svg>';
+        syncVoiceDock(docentCurrentSec);
       } else {
         if (navBtn) {
           navBtn.classList.remove('active');
@@ -3498,7 +4030,120 @@
           if (useEl) useEl.setAttribute('href', '#i-play');
         }
         if (statusLabel) statusLabel.textContent = "명화의 역사와 도상학적 비하인드 스토리를 음성으로 안내합니다";
+
+        // Hide Voice Docks
+        if (heroDock) heroDock.style.display = 'none';
+        if (presDock) presDock.style.display = 'none';
+        if (heroPlayBtn) heroPlayBtn.innerHTML = '<svg class="icon"><use href="#i-play"></use></svg>';
+        if (presPlayBtn) presPlayBtn.innerHTML = '<svg class="icon"><use href="#i-play"></use></svg>';
       }
+    }
+
+    // Rolling Teleprompter & Dock Sync
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function renderVoiceDockSentences() {
+      const heroStream = document.getElementById('heroVoiceScriptStream');
+      const presStream = document.getElementById('presVoiceScriptStream');
+      const html = docentSentences.map((s, idx) => `<p class="v-line" id="v-line-${idx}">${escapeHtml(s)}</p>`).join('');
+      if (heroStream) heroStream.innerHTML = html;
+      if (presStream) presStream.innerHTML = html;
+    }
+
+    function syncVoiceDock(sec) {
+      if (!isVoicePlaying) return;
+      const heroDock = document.getElementById('heroVoiceDock');
+      const presDock = document.getElementById('presVoiceDock');
+      if (heroDock) heroDock.style.display = 'block';
+      if (presDock) presDock.style.display = 'block';
+
+      const timeStr = `${formatTime(sec)} / ${formatTime(docentEstimatedDurationSec)}`;
+      const tHero = document.getElementById('heroVoiceTimer');
+      const tPres = document.getElementById('presVoiceTimer');
+      if (tHero) tHero.textContent = timeStr;
+      if (tPres) tPres.textContent = timeStr;
+
+      const pct = Math.min(100, (sec / (docentEstimatedDurationSec || 1)) * 100);
+      const fHero = document.getElementById('heroVoiceBarFill');
+      const fPres = document.getElementById('presVoiceBarFill');
+      if (fHero) fHero.style.width = `${pct}%`;
+      if (fPres) fPres.style.width = `${pct}%`;
+
+      const ratio = Math.max(0, Math.min(1, sec / (docentEstimatedDurationSec || 1)));
+      const activeIdx = Math.min(docentSentences.length - 1, Math.floor(ratio * (docentSentences.length || 1)));
+
+      ['heroVoiceScriptStream', 'presVoiceScriptStream'].forEach(streamId => {
+        const stream = document.getElementById(streamId);
+        if (!stream) return;
+        const lines = stream.querySelectorAll('.v-line');
+        lines.forEach((l, idx) => {
+          l.classList.toggle('active', idx === activeIdx);
+          l.classList.toggle('past', idx < activeIdx);
+        });
+
+        const activeEl = stream.querySelector(`.v-line:nth-child(${activeIdx + 1})`);
+        if (activeEl) {
+          const container = stream.parentElement;
+          if (container) {
+            const targetScroll = activeEl.offsetTop - 12;
+            container.scrollTo({ top: Math.max(0, targetScroll), behavior: 'smooth' });
+          }
+        }
+      });
+    }
+
+    function seekDocentFromDockBar(event, barWrapEl) {
+      event.stopPropagation();
+      const rect = barWrapEl.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+      docentCurrentSec = ratio * docentEstimatedDurationSec;
+      seekToCurrentDocentOffset();
+    }
+
+    // 4-Pill Interactive Navigation Handlers
+    function getMuseumId(item) {
+      if (!item) return 'eco_gallery';
+      const text = ((item.museum || '') + ' ' + (item.location || '') + ' ' + (item.id || '')).toLowerCase();
+      if (text.includes('metropolitan') || text.includes('메트로폴리탄') || text.includes('met')) return 'met';
+      if (text.includes('louvre') || text.includes('루브르')) return 'louvre';
+      if (text.includes('orsay') || text.includes('오르세')) return 'orsay';
+      if (text.includes('moma') || text.includes('뉴욕 현대') || text.includes('현대미술관')) return 'moma';
+      if (text.includes('prado') || text.includes('프라도')) return 'prado';
+      if (text.includes('national gallery') || text.includes('내셔널 갤러리') || text.includes('내셔널갤러리')) return 'national_gallery';
+      if (text.includes('중앙박물관') || text.includes('간송') || text.includes('korea')) return 'nmk';
+      if (text.includes('rijksmuseum') || text.includes('암스테르담')) return 'rijksmuseum';
+      if (text.includes('tate') || text.includes('테이트')) return 'tate';
+      if (text.includes('chicago') || text.includes('시카고') || text.includes('aic')) return 'aic';
+      if (text.includes('cleveland') || text.includes('클리블랜드') || text.includes('cma')) return 'cma';
+      return 'eco_gallery';
+    }
+
+    function goToTimeline() {
+      if (!currentArtwork) return;
+      const year = currentArtwork.year || '';
+      window.location.href = `timeline.html?year=${encodeURIComponent(year)}&work=${encodeURIComponent(currentArtwork.id || currentArtwork.work_id || '')}`;
+    }
+
+    function goToMedium() {
+      if (!currentArtwork) return;
+      const med = currentArtwork.medium || '';
+      window.location.href = `medium.html?medium=${encodeURIComponent(med)}&work=${encodeURIComponent(currentArtwork.id || currentArtwork.work_id || '')}`;
+    }
+
+    function goToDimensions() {
+      if (!currentArtwork) return;
+      const dim = currentArtwork.dimensions || '';
+      window.location.href = `dimensions.html?dim=${encodeURIComponent(dim)}&work=${encodeURIComponent(currentArtwork.id || currentArtwork.work_id || '')}`;
+    }
+
+    function goToMuseum() {
+      if (!currentArtwork) return;
+      const mId = getMuseumId(currentArtwork);
+      window.location.href = `museum.html?id=${encodeURIComponent(mId)}&work=${encodeURIComponent(currentArtwork.id || currentArtwork.work_id || '')}`;
     }
 
     // ========================================================

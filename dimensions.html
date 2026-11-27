@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#090d16">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
+  <title>명화 규격 & 캔버스 호수 미술 상식 도슨트 — 렛츠아트 (Let's Art)</title>
+  <style>
+    :root {
+      --lds-brand-600: #2563eb;
+      --lds-brand-700: #1d4ed8;
+      --lds-canvas-bg: #ffffff;
+      --lds-surface-subtle: #f8fafc;
+      --lds-divider-faint: #f1f5f9;
+      --lds-divider-line: #e2e8f0;
+      --lds-text-strong: #0f172a;
+      --lds-text-body: #334155;
+      --lds-text-muted: #64748b;
+      --lds-text-faint: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+    body {
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-family: var(--lds-font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Top Global Header */
+    .top-global-header {
+      background: #090d16;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-badge {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+    }
+    .header-title-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .lds-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.15s ease;
+    }
+    .lds-btn-nav:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+    .lds-btn-nav.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+
+    /* Dimensions Hero Pavilion */
+    .dimensions-hero {
+      background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 48px 28px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow-circle {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .dimensions-hero-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .dimensions-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fcd34d;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .dimensions-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .dimensions-hero-desc {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 860px;
+      margin-bottom: 24px;
+    }
+
+    /* Scale Filter Strip */
+    .scale-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+      flex-wrap: nowrap;
+    }
+    .scale-strip::-webkit-scrollbar { display: none; }
+    .scale-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .scale-pill:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+    .scale-pill.active {
+      background: #f59e0b;
+      color: #0f172a;
+      border-color: #fbbf24;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Curatorial Trivia & Canvas System Grid */
+    .trivia-dock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .trivia-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .trivia-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #fcd34d;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trivia-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .trivia-card-text {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+
+    /* Visual Scale Comparison Bar */
+    .scale-visual-container {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+      color: #ffffff;
+    }
+    .scale-visual-header {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fcd34d;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scale-visual-diagram {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      height: 160px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #334155;
+      overflow-x: auto;
+    }
+    .diagram-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .diagram-box {
+      border: 2px dashed rgba(255, 255, 255, 0.35);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-family: monospace;
+      color: #cbd5e1;
+      white-space: nowrap;
+      padding: 0 4px;
+      transition: all 0.2s ease;
+    }
+    .diagram-box.human {
+      width: 32px;
+      height: 120px;
+      background: rgba(59, 130, 246, 0.25);
+      border-color: #3b82f6;
+      color: #93c5fd;
+      font-weight: 700;
+    }
+    .diagram-box.cabinet {
+      width: 24px;
+      height: 28px;
+      background: rgba(148, 163, 184, 0.2);
+    }
+    .diagram-box.standard {
+      width: 50px;
+      height: 60px;
+      background: rgba(16, 185, 129, 0.2);
+      border-color: #10b981;
+    }
+    .diagram-box.salon {
+      width: 80px;
+      height: 100px;
+      background: rgba(168, 85, 247, 0.2);
+      border-color: #a855f7;
+    }
+    .diagram-box.monumental {
+      width: 140px;
+      height: 135px;
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #f59e0b;
+      color: #fcd34d;
+      font-weight: 700;
+    }
+    .diagram-label {
+      font-size: 11px;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    /* Main Showcase Section */
+    .dimensions-main-container {
+      max-width: 1280px;
+      margin: 36px auto 60px;
+      padding: 0 28px;
+    }
+    .gallery-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--lds-divider-line);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .status-count {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+    }
+
+    /* Artwork Cards Grid */
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .art-card {
+      background: #ffffff;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .art-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      border-color: #f59e0b;
+    }
+    .art-card.target-work {
+      border: 2px solid #f59e0b;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+    }
+    .art-card-thumb-wrap {
+      width: 100%;
+      height: 220px;
+      background: #090d16;
+      overflow: hidden;
+      position: relative;
+    }
+    .art-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .art-card:hover .art-card-img {
+      transform: scale(1.05);
+    }
+    .card-dim-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fcd34d;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: monospace;
+      z-index: 2;
+    }
+    .card-scale-name {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(8px);
+      color: #cbd5e1;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 10.5px;
+      z-index: 2;
+    }
+    .art-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .card-artist {
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .card-meta-row {
+      font-size: 11px;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .view-art-link {
+      color: #d97706;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .trivia-dock-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-global-header { padding: 12px 16px; }
+      .dimensions-hero { padding: 32px 16px 28px; }
+      .dimensions-hero-title { font-size: 24px; }
+      .dimensions-main-container { padding: 0 16px; }
+      .dimensions-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Sprite Definitions -->
+  <svg style="display:none;">
+    <symbol id="i-frame" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="9" y1="3" x2="9" y2="21"></line>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24">
+      <path d="M18 13.5c0 2.2-1.8 4-4 4s-4-1.8-4-4c0-2.5 4-7.5 4-7.5s4 5 4 7.5z"></path>
+      <path d="M14 17.5v4"></path>
+    </symbol>
+    <symbol id="i-maximize" viewBox="0 0 24 24">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+    </symbol>
+    <symbol id="i-museum" viewBox="0 0 24 24">
+      <path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7M10 10V7h4v3"></path>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24">
+      <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"></path>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </symbol>
+  </svg>
+
+  <!-- Top Global Header Navigation -->
+  <header class="top-global-header">
+    <a href="index.html" class="logo-area">
+      <div class="logo-badge">
+        <svg class="icon" style="width:18px; height:18px;"><use href="#i-frame"/></svg>
+      </div>
+      <div class="header-title-text">LET'S ART</div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span>아카이브</span>
+      </a>
+      <a href="timeline.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-clock"/></svg>
+        <span>시대별 타임라인</span>
+      </a>
+      <a href="medium.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-brush"/></svg>
+        <span>기법 & 재료</span>
+      </a>
+      <a href="dimensions.html" class="lds-btn-nav active">
+        <svg class="icon"><use href="#i-maximize"/></svg>
+        <span>규격 & 호수</span>
+      </a>
+      <a href="museum.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-museum"/></svg>
+        <span>글로벌 미술관</span>
+      </a>
+      <a href="artist.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-user"/></svg>
+        <span>거장 사전</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Dimensions Hero Pavilion -->
+  <section class="dimensions-hero">
+    <div class="hero-glow-circle"></div>
+    <div class="dimensions-hero-content">
+      <div class="dimensions-tag-badge">
+        <svg class="icon"><use href="#i-sparkles"/></svg>
+        <span id="heroDimBadge">초대형 기념비적 스케일 (Monumental Scale, 300cm 이상)</span>
+      </div>
+      <h1 class="dimensions-hero-title" id="heroDimTitle">초대형 기념비적 스케일 — 관람객을 압도하는 숭고미</h1>
+      <p class="dimensions-hero-desc" id="heroDimDesc">
+        폭 5m 이상의 성당 제단화, 궁전 벽화, 역사화 등 인간의 시야를 가득 채우는 거대한 화폭. 라파엘로의 &lt;아테네 학당&gt;(500×770cm), 미켈란젤로의 &lt;천지창조&gt;, 렘브란트의 &lt;야경&gt;, 피카소의 &lt;게르니카&gt;가 보여주듯 화폭의 물리적 크기는 화가의 시대적 야망과 직결됩니다.
+      </p>
+
+      <!-- Scale Filter Pills -->
+      <div class="scale-strip">
+        <button class="scale-pill active" onclick="selectScale('monumental')">초대형 벽화 & 제단화 (>300cm)</button>
+        <button class="scale-pill" onclick="selectScale('salon')">대형 살롱 회화 (150~300cm)</button>
+        <button class="scale-pill" onclick="selectScale('standard')">중형 갤러리 표준 (60~150cm)</button>
+        <button class="scale-pill" onclick="selectScale('cabinet')">소형 캐비닛 회화 (<60cm)</button>
+        <button class="scale-pill" onclick="selectScale('all')">전체 규격 모아보기 (All Scales)</button>
+      </div>
+
+      <!-- Curatorial Trivia Cards: Canvas Numbering (호수) -->
+      <div class="trivia-dock-grid">
+        <div class="trivia-card">
+          <div class="trivia-card-label">01 · 캔버스 규격 '호수(号数)'의 기원</div>
+          <div class="trivia-card-title">19세기 프랑스 표준화와 규격 시스템</div>
+          <div class="trivia-card-text">
+            인상파 화가들이 야외 사생(En plein air)을 떠나며 휴대 가능한 규격 캔버스가 대량 생산되었습니다. 1호(우편엽서 크기, 약 22×16cm)를 기준으로 10호(53×45cm), 30호(91×73cm, 반 고흐 <별이 빛나는 밤>), 100호(162×130cm, 성인 키 스케일)까지 체계화되었습니다.
+          </div>
+        </div>
+
+        <div class="trivia-card">
+          <div class="trivia-card-label">02 · F · P · M 비율의 황금 법칙</div>
+          <div class="trivia-card-title">인물형(F), 풍경형(P), 해경형(M)의 구도학</div>
+          <div class="trivia-card-text">
+            같은 호수라도 화폭의 가로세로 비율이 다릅니다. <strong>F(Figure, 1:1.2)</strong>는 인체의 균형감, <strong>P(Paysage, 1:1.4)</strong>는 지평선과 자연의 공간감, <strong>M(Marine, 1:1.7)</strong>은 바다의 수평선 파노라마를 시네마틱하게 담기 위해 계산된 비율입니다.
+          </div>
+        </div>
+
+        <div class="trivia-card">
+          <div class="trivia-card-label">03 · 화가가 크기를 선택하는 이유</div>
+          <div class="trivia-card-title">관람 거리와 전시 공간의 건축적 대화</div>
+          <div class="trivia-card-text">
+            초대형 회화는 최소 5m 이상 물러서서 전체적인 건축 공간 속 조화를 감상하도록 의도된 반면, <모나리자>(77×53cm, 약 20호)나 <진주 귀걸이를 한 소녀>(44.5×39cm, 약 8호) 같은 중소형 명화는 관람객이 1m 앞으로 다가와 친밀한 눈맞춤을 나누도록 설계되었습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Scale Comparison Diagram -->
+      <div class="scale-visual-container">
+        <div class="scale-visual-header">
+          <svg class="icon"><use href="#i-maximize"/></svg>
+          <span>인간 신장(175cm) 대비 체감 스케일 비교 비례도</span>
+        </div>
+        <div class="scale-visual-diagram">
+          <div class="diagram-item">
+            <div class="diagram-box human">175cm</div>
+            <div class="diagram-label">성인 신장</div>
+          </div>
+          <div class="diagram-item">
+            <div class="diagram-box cabinet">30cm</div>
+            <div class="diagram-label">캐비닛 소품<br>(&lt;60cm)</div>
+          </div>
+          <div class="diagram-item">
+            <div class="diagram-box standard">80cm</div>
+            <div class="diagram-label">중형 갤러리<br>(60~150cm)</div>
+          </div>
+          <div class="diagram-item">
+            <div class="diagram-box salon">220cm</div>
+            <div class="diagram-label">대형 살롱전<br>(150~300cm)</div>
+          </div>
+          <div class="diagram-item">
+            <div class="diagram-box monumental">500×770cm</div>
+            <div class="diagram-label">초대형 제단화·벽화<br>(&gt;300cm, 아테네 학당)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Showcase Section -->
+  <main class="dimensions-main-container">
+    <div class="gallery-status-bar">
+      <div class="status-count" id="scaleCountText">스케일별 소장 명화: 0점</div>
+      <div style="font-size:12px; color:#64748b;" id="scaleFilterHint">작품의 크기별로 분류된 명화 컬렉션입니다.</div>
+    </div>
+
+    <!-- Artworks Grid -->
+    <div class="dimensions-grid" id="dimensionsGrid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </main>
+
+  <script>
+    const SCALE_CATEGORIES = {
+      monumental: {
+        badge: '초대형 기념비적 스케일 (Monumental Scale, 300cm 이상)',
+        title: '초대형 기념비적 스케일 — 관람객을 압도하는 숭고미',
+        desc: '폭 5m 이상의 성당 제단화, 궁전 벽화, 역사화 등 인간의 시야를 가득 채우는 거대한 화폭. 라파엘로의 <아테네 학당>(500×770cm), 미켈란젤로의 <천지창조>, 렘브란트의 <야경>, 피카소의 <게르니카>가 보여주듯 화폭의 물리적 크기는 화가의 시대적 야망과 직결됩니다.',
+        minDim: 300,
+        maxDim: 9999
+      },
+      salon: {
+        badge: '대형 살롱 회화 (Large Salon Scale, 150~300cm)',
+        title: '대형 살롱 회화 — 파리 살롱전을 뒤흔든 대가의 야심작',
+        desc: '공식 아카데미 살롱전 출품작과 왕실 궁정 대형 초상화. 외젠 들라크루아의 <민중을 이끄는 자유의 여신>(260×325cm), 벨라스케스의 <시녀들>(318×276cm)처럼 화가의 기량을 총집결하여 관람객을 매료시킨 스케일입니다.',
+        minDim: 150,
+        maxDim: 300
+      },
+      standard: {
+        badge: '중형 갤러리 표준 (Standard Gallery Scale, 60~150cm)',
+        title: '중형 갤러리 표준 — 인류에게 가장 친숙한 캔버스 규격',
+        desc: '미술관과 개인 컬렉션에 가장 널리 전시되는 10호~50호 안팎의 표준 화폭. 빈센트 반 고흐의 <별이 빛나는 밤>(73.7×92.1cm, 30호), 레오나르도 다 빈치의 <모나리자>(77×53cm, 약 20호), 클로드 모네의 <인상, 해돋이> 등 시대를 뛰어넘는 명작의 황금 규격입니다.',
+        minDim: 60,
+        maxDim: 150
+      },
+      cabinet: {
+        badge: '소형 캐비닛 회화 (Cabinet & Miniature, 60cm 미만)',
+        title: '소형 캐비닛 회화 — 개인 서재와 기도실의 내밀한 정밀화',
+        desc: '가까이 다가가 돋보기로 들여다보듯 감상하는 섬세한 소품. 요하네스 베르메르의 <진주 귀걸이를 한 소녀>(44.5×39cm), 얀 반 에이크의 정밀 목판화, 귀족의 개인 서재(Cabinet)에 소장되던 친밀하고 은밀한 예술품입니다.',
+        minDim: 0,
+        maxDim: 60
+      }
+    };
+
+    let allWorks = [];
+    let currentScaleKey = 'monumental';
+    let targetWorkId = null;
+
+    // Parse URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramDim = (urlParams.get('dim') || '').toLowerCase();
+    const paramWork = urlParams.get('work');
+    if (paramWork) targetWorkId = paramWork;
+
+    if (paramDim) {
+      if (paramDim.includes('monumental') || paramDim.includes('초대형') || paramDim.includes('770') || paramDim.includes('500') || paramDim.includes('300')) currentScaleKey = 'monumental';
+      else if (paramDim.includes('salon') || paramDim.includes('대형') || paramDim.includes('200') || paramDim.includes('260')) currentScaleKey = 'salon';
+      else if (paramDim.includes('cabinet') || paramDim.includes('소형') || paramDim.includes('40') || paramDim.includes('30')) currentScaleKey = 'cabinet';
+      else if (paramDim.includes('standard') || paramDim.includes('중형') || paramDim.includes('73') || paramDim.includes('92') || paramDim.includes('77')) currentScaleKey = 'standard';
+      else currentScaleKey = 'monumental';
+    }
+
+    function parseMaxDimensionCm(dimStr) {
+      if (!dimStr) return 80;
+      const matches = dimStr.match(/(\d+(?:\.\d+)?)\s*(?:cm|m)/gi);
+      if (!matches) {
+        const num = parseFloat(dimStr);
+        return isNaN(num) ? 80 : num;
+      }
+      let maxCm = 0;
+      matches.forEach(m => {
+        let val = parseFloat(m);
+        if (m.toLowerCase().includes('m') && !m.toLowerCase().includes('cm')) {
+          val = val * 100; // convert meters to cm
+        }
+        if (val > maxCm) maxCm = val;
+      });
+      return maxCm > 0 ? maxCm : 80;
+    }
+
+    async function initDimensionsExplorer() {
+      try {
+        const [resFeatured, resGallery] = await Promise.all([
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ artworks: [] }))
+        ]);
+
+        const list1 = resFeatured.featured_masterpieces || [];
+        const list2 = (resGallery.artworks || []).slice(0, 600);
+
+        const map = new Map();
+        list1.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid) map.set(cid, it);
+        });
+        list2.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid && !map.has(cid)) map.set(cid, it);
+        });
+
+        allWorks = Array.from(map.values()).map(it => {
+          return {
+            ...it,
+            _maxDimCm: parseMaxDimensionCm(it.dimensions)
+          };
+        });
+
+        selectScale(currentScaleKey);
+      } catch (err) {
+        console.error("Dimensions explorer load failed:", err);
+      }
+    }
+
+    function selectScale(key) {
+      currentScaleKey = key;
+      document.querySelectorAll('.scale-pill').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${key}'`)) {
+          btn.classList.add('active');
+        }
+      });
+
+      const badge = document.getElementById('heroDimBadge');
+      const title = document.getElementById('heroDimTitle');
+      const desc = document.getElementById('heroDimDesc');
+
+      if (key === 'all') {
+        if (badge) badge.textContent = '인류 회화의 전 규격 컬렉션 (All Scales)';
+        if (title) title.textContent = '모든 규격 & 호수 명화 모아보기';
+        if (desc) desc.textContent = '초대형 벽화부터 개인 서재의 정밀 소품까지 크기별로 정선된 전 세계 미술관 명화 컬렉션을 한눈에 비교 감상해보세요.';
+        renderDimensionCards(allWorks, '전체 규격');
+        return;
+      }
+
+      const cat = SCALE_CATEGORIES[key];
+      if (!cat) return;
+
+      if (badge) badge.textContent = cat.badge;
+      if (title) title.textContent = cat.title;
+      if (desc) desc.textContent = cat.desc;
+
+      const filtered = allWorks.filter(it => it._maxDimCm >= cat.minDim && it._maxDimCm <= cat.maxDim);
+      renderDimensionCards(filtered.length > 0 ? filtered : allWorks.slice(0, 16), cat.badge.split('(')[0].trim());
+    }
+
+    function renderDimensionCards(list, scaleLabel) {
+      const grid = document.getElementById('dimensionsGrid');
+      const countEl = document.getElementById('scaleCountText');
+      if (!grid) return;
+
+      if (countEl) countEl.textContent = `[${scaleLabel}] 소장 명화: ${list.length.toLocaleString()}점`;
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #94a3b8;">
+            <svg class="icon" style="width:36px; height:36px; margin-bottom:12px; stroke:#f59e0b;"><use href="#i-maximize"/></svg>
+            <p style="font-size:15px; font-weight:600;">선택하신 규격의 명화를 불러오는 중입니다.</p>
+            <p style="font-size:12.5px; margin-top:4px;">상단 탭을 눌러 다른 스케일의 작품을 탐색해보세요.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map(item => {
+        const id = item.id || item.work_id;
+        const isTarget = (id === targetWorkId);
+        const imgUrl = (item.thumbnail_url || item.image_url || '').replace(/ /g, '%20');
+        const title = item.title_kr || item.title || '명화';
+        const artist = item.artist_name_kr || item.artist || '작가 미상';
+        const dimStr = item.dimensions || `${Math.round(item._maxDimCm)} cm 규격`;
+
+        return `
+          <a href="artwork.html?id=${encodeURIComponent(id)}" class="art-card ${isTarget ? 'target-work' : ''}" id="card-${id}">
+            <div class="art-card-thumb-wrap">
+              <span class="card-dim-badge">${dimStr}</span>
+              <span class="card-scale-name">${item.museum || '글로벌 미술관'}</span>
+              <img class="art-card-img" src="${imgUrl}" alt="${title}" loading="lazy" onerror="this.src='assets/icons/icon-512.png'">
+            </div>
+            <div class="art-card-body">
+              <div>
+                <div class="card-title">${title}</div>
+                <div class="card-artist">${artist}</div>
+              </div>
+              <div class="card-meta-row">
+                <span>${item.movement || '고전 명화'}</span>
+                <span class="view-art-link">작품 감상 <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></span>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('');
+
+      if (targetWorkId) {
+        setTimeout(() => {
+          const el = document.getElementById(`card-${targetWorkId}`);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initDimensionsExplorer);
+  </script>
+</body>
+</html>

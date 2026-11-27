@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#090d16">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://pyw31337.github.io/lets/css/lets-design-system.css?v=1.1.0">
+  <title>명화의 기법 & 재료 도슨트 백과 — 렛츠아트 (Let's Art)</title>
+  <style>
+    :root {
+      --lds-brand-600: #2563eb;
+      --lds-brand-700: #1d4ed8;
+      --lds-canvas-bg: #ffffff;
+      --lds-surface-subtle: #f8fafc;
+      --lds-divider-faint: #f1f5f9;
+      --lds-divider-line: #e2e8f0;
+      --lds-text-strong: #0f172a;
+      --lds-text-body: #334155;
+      --lds-text-muted: #64748b;
+      --lds-text-faint: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+    body {
+      background: var(--lds-canvas-bg);
+      color: var(--lds-text-body);
+      font-family: var(--lds-font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 1.8 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Top Global Header */
+    .top-global-header {
+      background: #090d16;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-badge {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      background: #2563eb;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+    }
+    .header-title-text {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .nav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .lds-btn-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      transition: all 0.15s ease;
+    }
+    .lds-btn-nav:hover { background: rgba(255, 255, 255, 0.15); color: #ffffff; }
+    .lds-btn-nav.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+
+    /* Technique Hero Section */
+    .medium-hero {
+      background: linear-gradient(180deg, #090d16 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 48px 28px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow-circle {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .medium-hero-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .medium-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #6ee7b7;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .medium-hero-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .medium-hero-desc {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 860px;
+      margin-bottom: 24px;
+    }
+
+    /* Technique Selector Strip */
+    .tech-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      scrollbar-width: none;
+      flex-wrap: nowrap;
+    }
+    .tech-strip::-webkit-scrollbar { display: none; }
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .tech-pill:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+    .tech-pill.active {
+      background: #10b981;
+      color: #ffffff;
+      border-color: #34d399;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Curatorial Tech Dossier Box */
+    .tech-dossier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .tech-dossier-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .dossier-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6ee7b7;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dossier-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .dossier-card-text {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #94a3b8;
+    }
+
+    /* Main Showcase Section */
+    .medium-main-container {
+      max-width: 1280px;
+      margin: 36px auto 60px;
+      padding: 0 28px;
+    }
+    .gallery-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--lds-divider-line);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .status-count {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--lds-text-strong);
+    }
+
+    /* Artwork Cards Grid */
+    .medium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .art-card {
+      background: #ffffff;
+      border: 1px solid var(--lds-divider-line);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+    .art-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+      border-color: #10b981;
+    }
+    .art-card.target-work {
+      border: 2px solid #10b981;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+    }
+    .art-card-thumb-wrap {
+      width: 100%;
+      height: 220px;
+      background: #090d16;
+      overflow: hidden;
+      position: relative;
+    }
+    .art-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .art-card:hover .art-card-img {
+      transform: scale(1.05);
+    }
+    .card-medium-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      color: #6ee7b7;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .card-year-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(8px);
+      color: #cbd5e1;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 10.5px;
+      font-family: monospace;
+      z-index: 2;
+    }
+    .art-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .card-artist {
+      font-size: 12.5px;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .card-meta-row {
+      font-size: 11px;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .view-art-link {
+      color: #059669;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .tech-dossier-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-global-header { padding: 12px 16px; }
+      .medium-hero { padding: 32px 16px 28px; }
+      .medium-hero-title { font-size: 24px; }
+      .medium-main-container { padding: 0 16px; }
+      .medium-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Sprite Definitions -->
+  <svg style="display:none;">
+    <symbol id="i-frame" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="9" y1="3" x2="9" y2="21"></line>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24">
+      <path d="M18 13.5c0 2.2-1.8 4-4 4s-4-1.8-4-4c0-2.5 4-7.5 4-7.5s4 5 4 7.5z"></path>
+      <path d="M14 17.5v4"></path>
+    </symbol>
+    <symbol id="i-maximize" viewBox="0 0 24 24">
+      <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+    </symbol>
+    <symbol id="i-museum" viewBox="0 0 24 24">
+      <path d="M3 21h18M5 21V10M19 21V10M9 21V10M15 21V10M2 10l10-7 10 7M10 10V7h4v3"></path>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24">
+      <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"></path>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </symbol>
+  </svg>
+
+  <!-- Top Global Header Navigation -->
+  <header class="top-global-header">
+    <a href="index.html" class="logo-area">
+      <div class="logo-badge">
+        <svg class="icon" style="width:18px; height:18px;"><use href="#i-frame"/></svg>
+      </div>
+      <div class="header-title-text">LET'S ART</div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-frame"/></svg>
+        <span>아카이브</span>
+      </a>
+      <a href="timeline.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-clock"/></svg>
+        <span>시대별 타임라인</span>
+      </a>
+      <a href="medium.html" class="lds-btn-nav active">
+        <svg class="icon"><use href="#i-brush"/></svg>
+        <span>기법 & 재료</span>
+      </a>
+      <a href="dimensions.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-maximize"/></svg>
+        <span>규격 & 호수</span>
+      </a>
+      <a href="museum.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-museum"/></svg>
+        <span>글로벌 미술관</span>
+      </a>
+      <a href="artist.html" class="lds-btn-nav">
+        <svg class="icon"><use href="#i-user"/></svg>
+        <span>거장 사전</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Technique Hero Pavilion -->
+  <section class="medium-hero">
+    <div class="hero-glow-circle"></div>
+    <div class="medium-hero-content">
+      <div class="medium-tag-badge">
+        <svg class="icon"><use href="#i-sparkles"/></svg>
+        <span id="heroMediumBadge">프레스코 벽화 기법 (Fresco)</span>
+      </div>
+      <h1 class="medium-hero-title" id="heroMediumTitle">프레스코 (Fresco) — 젖은 회벽에 스며든 영원의 빛</h1>
+      <p class="medium-hero-desc" id="heroMediumDesc">
+        석회벽이 마르기 전 물에 갠 안료로 그리는 회화 기법. 라파엘로의 바티칸 궁전 벽화 &lt;아테네 학당&gt;과 미켈란젤로의 시스티나 성당 천장화 &lt;천지창조&gt;가 대표적입니다. 수정이 불가능하여 하루 작업량(조르나타)을 엄격히 계획해야 하는 최고 난도의 고전 기법입니다.
+      </p>
+
+      <!-- Technique Filter Pills -->
+      <div class="tech-strip">
+        <button class="tech-pill active" onclick="selectMedium('fresco')">프레스코 (Fresco)</button>
+        <button class="tech-pill" onclick="selectMedium('wood')">목재 패널 & 유채 (Wood Panel)</button>
+        <button class="tech-pill" onclick="selectMedium('oil')">캔버스에 유채 (Oil on Canvas)</button>
+        <button class="tech-pill" onclick="selectMedium('tempera')">템페라 (Tempera)</button>
+        <button class="tech-pill" onclick="selectMedium('ink')">수묵 & 비단 채색화 (Ink & Color)</button>
+        <button class="tech-pill" onclick="selectMedium('print')">판화 & 소묘 (Print & Drawing)</button>
+        <button class="tech-pill" onclick="selectMedium('all')">전체 기법 모아보기 (All Media)</button>
+      </div>
+
+      <!-- Curatorial Tech Dossier Cards -->
+      <div class="tech-dossier-grid">
+        <div class="tech-dossier-card">
+          <div class="dossier-card-label">01 · 화학적 원리와 지지체</div>
+          <div class="dossier-card-title" id="dossierCard1Title">석회와 안료의 탄산칼슘 결정화</div>
+          <div class="dossier-card-text" id="dossierCard1Text">
+            미장된 석회반죽(소석회)이 공기 중의 이산화탄소를 흡수하여 탄산칼슘(방해석)으로 변하면서 안료가 벽체 자체와 영구 결합합니다. 표면에 칠해지는 것이 아니라 벽의 일부가 되므로 수백 년이 흘러도 변색되지 않습니다.
+          </div>
+        </div>
+
+        <div class="tech-dossier-card">
+          <div class="dossier-card-label">02 · 거장의 작업 방식과 비하인드</div>
+          <div class="dossier-card-title" id="dossierCard2Title">수정 불가능의 '조르나타(Giornata)'</div>
+          <div class="dossier-card-text" id="dossierCard2Text">
+            회벽이 마르기 전 약 8~12시간 이내에 채색을 완료해야 하므로 '하루 작업량'인 조르나타 단위로 벽을 나누어 작업했습니다. 붓질의 실수가 용납되지 않아 밑그림(카르토네) 구멍을 뚫고 숯가루를 털어 윤곽선을 찍어내는 치밀한 계산이 필수였습니다.
+          </div>
+        </div>
+
+        <div class="tech-dossier-card">
+          <div class="dossier-card-label">03 · 시각적 특징과 감상 포인트</div>
+          <div class="dossier-card-title" id="dossierCard3Title">매트한 무광의 숭고미와 건축적 스케일</div>
+          <div class="dossier-card-text" id="dossierCard3Text">
+            기름의 광택이 없는 담백하고 은은한 석회 특유의 무광택 질감이 관람자에게 차분하고 웅장한 종교적 감동을 선사합니다. 조명에 반사되지 않아 어느 각도에서나 거대한 건축 공간과 완벽한 일체감을 이룹니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Showcase Section -->
+  <main class="medium-main-container">
+    <div class="gallery-status-bar">
+      <div class="status-count" id="mediumCountText">기법별 소장 명화: 0점</div>
+      <div style="font-size:12px; color:#64748b;" id="mediumFilterHint">상단 탭을 눌러 목재 패널, 유화, 템페라, 수묵화의 기법을 비교 탐색해보세요.</div>
+    </div>
+
+    <!-- Artworks Grid -->
+    <div class="medium-grid" id="mediumGrid">
+      <!-- Injected by JavaScript -->
+    </div>
+  </main>
+
+  <script>
+    const MEDIUM_ENCYCLOPEDIA = {
+      fresco: {
+        badge: '프레스코 벽화 기법 (Fresco)',
+        title: '프레스코 (Fresco) — 젖은 회벽에 스며든 영원의 빛',
+        desc: '석회벽이 마르기 전 물에 갠 안료로 그리는 회화 기법. 라파엘로의 바티칸 궁전 벽화 <아테네 학당>과 미켈란젤로의 시스티나 성당 <천지창조>가 대표적입니다. 수정이 불가능하여 하루 작업량(조르나타)을 엄격히 계산해야 하는 최고 난도의 고전 기법입니다.',
+        keywords: ['프레스코', 'fresco', '벽화', 'plaster', '회벽'],
+        dossier: [
+          {
+            label: '01 · 화학적 원리와 지지체',
+            title: '석회와 안료의 탄산칼슘 결정화',
+            text: '미장된 석회반죽(소석회)이 공기 중의 이산화탄소를 흡수하여 탄산칼슘(방해석)으로 변하면서 안료가 벽체 자체와 영구 결합합니다. 표면에 칠해지는 것이 아니라 벽의 일부가 되므로 수백 년이 흘러도 변색되지 않습니다.'
+          },
+          {
+            label: '02 · 거장의 작업 방식과 비하인드',
+            title: '수정 불가능의 조르나타(Giornata)',
+            text: '회벽이 마르기 전 약 8~12시간 이내에 채색을 완료해야 하므로 하루 작업량 단위로 벽을 나누어 시공했습니다. 붓질 실수가 허용되지 않아 밑그림(카르토네) 구멍에 숯가루를 털어 윤곽을 전사하는 치밀한 공정이 동원되었습니다.'
+          },
+          {
+            label: '03 · 시각적 특징과 감상 포인트',
+            title: '매트한 무광의 숭고미와 건축적 스케일',
+            text: '기름의 반사광이 없는 담백하고 은은한 석회 특유의 무광택 질감이 관람자에게 차분하고 웅장한 감동을 선사합니다. 빛에 반사되지 않아 거대한 성당과 궁전 실내 공간과 완벽한 일체감을 이룹니다.'
+          }
+        ]
+      },
+      wood: {
+        badge: '목재 패널 & 유채 (Oil on Wood Panel)',
+        title: '목재 패널 (Wood Panel) — 캔버스 이전, 보석처럼 빛나는 목판화',
+        desc: '캔버스가 널리 쓰이기 전인 14~16세기 르네상스 화가들이 애용한 포플러, 참나무 판 지지체. 레오나르도 다 빈치의 <모나리자>와 얀 반 에이크의 <아르놀피니 부부의 초상>이 대표적인 목재 패널 명작입니다.',
+        keywords: ['목재', 'wood', '패널', 'panel', '목판', 'poplar', 'oak'],
+        dossier: [
+          {
+            label: '01 · 지지체의 제작과 밑바탕 칠',
+            title: '수년간 건조한 견고한 목판과 제소(Gesso)',
+            text: '나무가 뒤틀리거나 갈라지는 것을 막기 위해 수년간 그늘에서 자연 건조된 최상급 포플러나 참나무를 깎아 맞췄습니다. 그 위에 토끼가죽 아교와 백악(석고)을 섞은 제소를 10~15회 겹겹이 칠하고 사포질하여 거울처럼 매끄러운 표면을 만들었습니다.'
+          },
+          {
+            label: '02 · 얀 반 에이크의 유화 혁명',
+            title: '글레이징(Glazing) 기법과 보석 같은 광택',
+            text: '목재 패널의 매끄러운 바탕 위에 린시드 오일로 갠 반투명 안료를 수십 겹 얇게 올리는 글레이징을 적용하여, 빛이 물감층 안으로 통과해 반사되어 나오는 극적인 광택과 보석 같은 투명도를 완성했습니다.'
+          },
+          {
+            label: '03 · 캔버스와의 차이점',
+            title: '직조 결이 없는 극사실적 미세 붓질',
+            text: '캔버스는 천의 울퉁불퉁한 올이 드러나지만, 잘 연마된 목판 패널은 표면이 도자기처럼 매끄러워 털 한 올, 눈동자의 반사광, 보석의 굴절까지 현미경적 디테일로 묘사할 수 있었습니다.'
+          }
+        ]
+      },
+      oil: {
+        badge: '캔버스에 유채 (Oil on Canvas)',
+        title: '캔버스 유화 (Oil on Canvas) — 서양 미술사를 지배한 불멸의 정석',
+        desc: '아마포(Linen) 천 지지체 위에 식물성 기름(아마인유, 호두유)으로 갠 유화 물감을 채색하는 기법. 빈센트 반 고흐의 <별이 빛나는 밤>, 요하네스 베르메르의 <진주 귀걸이를 한 소녀>, 렘브란트의 <야경> 등 인류가 사랑하는 걸작들의 표준입니다.',
+        keywords: ['캔버스', '유채', '유화', 'oil on canvas', 'oil', '린넨'],
+        dossier: [
+          {
+            label: '01 · 캔버스 지지체의 혁신',
+            title: '가볍고 유연하며 거대한 스케일의 확장',
+            text: '16세기 베네치아에서 습한 기후로 인해 목판이 썩는 문제를 해결하고자 돛 천(Linen)을 화폭으로 도입했습니다. 가볍고 둥글게 말아 운반할 수 있어 미술 시장의 글로벌 유통과 대형 회화의 비약적 발전을 가능케 했습니다.'
+          },
+          {
+            label: '02 · 건조의 지연과 혼색의 자유',
+            title: '부드러운 블렌딩과 스푸마토 기법',
+            text: '물이 증발해 마르는 수채화나 템페라와 달리, 기름이 공기와 산화 중합 반응을 일으키며 천천히 굳기 때문에 며칠에 걸쳐 색을 자유롭게 섞고 수정하며 부드러운 그러데이션을 연출할 수 있습니다.'
+          },
+          {
+            label: '03 · 두터운 임파스토(Impasto)의 질감',
+            title: '화가의 감정이 응축된 물질성의 부각',
+            text: '반 고흐나 렘브란트처럼 물감을 두텁게 쌓아 올려 붓터치와 나이프 자국을 조각처럼 입체적으로 남기는 임파스토 기법을 통해 회화에 물리적 생동감과 화가의 영혼을 불어넣었습니다.'
+          }
+        ]
+      },
+      tempera: {
+        badge: '템페라 기법 (Tempera on Panel)',
+        title: '템페라 (Tempera) — 달걀노른자가 빚어낸 순수한 색채의 서정',
+        desc: '유화 물감이 발명되기 전, 달걀노른자나 아교를 고착제로 사용하여 광물 안료를 개어 그린 중세와 르네상스 초기의 대표 기법. 산드로 보티첼리의 <비너스의 탄생>과 <봄>이 템페라의 우아함을 대변합니다.',
+        keywords: ['템페라', 'tempera', '달걀', 'egg tempera'],
+        dossier: [
+          {
+            label: '01 · 천연 유화제 달걀노른자',
+            title: '물과 기름을 잇는 단백질 결합체',
+            text: '달걀노른자 속의 레시틴 성분이 수분과 유분을 동시에 잡아주는 완벽한 천연 유화제 역할을 합니다. 건조 후에는 불용성 피막을 형성하여 500년이 지난 오늘날에도 변색 없이 처음의 찬란한 원색을 보존합니다.'
+          },
+          {
+            label: '02 · 빠른 건조와 해칭(Hatching) 기법',
+            title: '선으로 면을 구축하는 장인적 필선',
+            text: '붓을 대는 순간 빠르게 건조되므로 유화처럼 문질러 색을 섞을 수 없습니다. 가는 붓으로 수천, 수만 번 빗금을 교차시키는 해칭(Hatching) 기법으로 명암과 입체감을 완성했습니다.'
+          },
+          {
+            label: '03 · 시각적 투명감과 광채',
+            title: '기름때가 타지 않는 맑고 매트한 에나멜 광택',
+            text: '기름이 산화되며 노랗게 변색(황변 현상)되는 유화와 달리, 템페라는 백년이 지나도 산뜻하고 맑은 색채를 유지하여 르네상스 특유의 몽환적이고 시적인 분위기를 자아냅니다.'
+          }
+        ]
+      },
+      ink: {
+        badge: '동양화 수묵 & 채색화 (Ink & Color)',
+        title: '수묵 & 채색화 — 비단과 한지에 스며든 여백과 기운생동',
+        desc: '비단이나 한지 지지체 위에 솔 그을음으로 빚은 먹과 천연 석채(광물 안료)의 번짐을 활용한 동양 고전 회화. 겸재 정선의 <인왕제색도>, 혜원 신윤복의 <미인도> 등 국보급 서화의 정수입니다.',
+        keywords: ['수묵', '비단', '한지', '채색', '견본채색', '지본수묵', 'ink', 'silk', 'paper'],
+        dossier: [
+          {
+            label: '01 · 지지체와 삼원색의 흡수',
+            title: '지천년 견오백(紙千年 絹五百)의 질긴 생명력',
+            text: '닥나무 껍질로 만든 한지는 천 년을 가고, 비단은 오백 년을 간다는 말처럼, 종이와 비단의 미세한 섬유 사이로 먹물과 석채가 스며들어 지지체와 혼연일체가 되는 삼투의 미학입니다.'
+          },
+          {
+            label: '02 · 농담(濃淡)과 여백의 미학',
+            title: '먹의 오채(墨의 五彩)와 비움의 철학',
+            text: '먹물 하나만으로 초묵, 농묵, 중묵, 담묵, 청묵의 5가지 깊은 색감을 표현합니다. 그리지 않은 빈 공간(여백)을 무한한 공간감과 시적 상상력으로 채우는 동양적 사유가 깃들어 있습니다.'
+          },
+          {
+            label: '03 · 일필휘지의 단숨한 기운',
+            title: '수정이 불가능한 호흡과 필력의 찰나성',
+            text: '먹이 한 번 닿으면 지울 수 없으므로, 화가는 붓을 들기 전 가슴속에 완전한 그림을 완성(흉중성죽)한 뒤 한 호흡에 거침없이 붓을 내달리는 기운생동(氣韻生動)을 추구했습니다.'
+          }
+        ]
+      },
+      print: {
+        badge: '판화 & 소묘 (Printmaking & Drawing)',
+        title: '판화 & 소묘 — 정교한 선과 판화 예술의 대중적 전파',
+        desc: '동판에 산(Acid)으로 홈을 파는 에칭, 목판화, 목탄과 연필 드로잉. 알브레히트 뒤러의 동판화와 렘브란트의 에칭 소묘처럼 거장의 직접적인 손길과 필선을 가장 친밀하게 만나는 영역입니다.',
+        keywords: ['판화', '소묘', '에칭', '드로잉', 'etching', 'engraving', 'woodcut', 'drawing', 'print'],
+        dossier: [
+          {
+            label: '01 · 제판과 압착의 메커니즘',
+            title: '동판의 미세한 홈에 잉크를 채우는 인타글리오',
+            text: '금속판이나 목판에 조각도와 부식액으로 0.1mm 이하의 섬세한 홈을 파고, 강한 압력 프레스기로 잉크를 종이에 전사하는 과학과 예술의 결합체입니다.'
+          },
+          {
+            label: '02 · 예술의 대중화와 복수성',
+            title: '유일무이한 원화를 넘어선 에디션(Edition)의 혁신',
+            text: '궁전과 성당에만 갇혀 있던 미술을 소장가와 대중의 손으로 널리 보급한 르네상스 인쇄술 혁명의 쌍둥이였습니다. 거장들은 판화에 고유 넘버와 서명을 남겨 예술적 가치를 보증했습니다.'
+          },
+          {
+            label: '03 · 선(Line)의 순수한 조형미',
+            title: '색채를 덜어내고 형태와 명암의 본질을 응시',
+            text: '화려한 색채의 현혹을 배제하고 오직 흑백의 선과 질감만으로 사물의 영혼과 빛의 방향을 날카롭게 포착한 거장의 원초적 스케치 감각을 증언합니다.'
+          }
+        ]
+      }
+    };
+
+    let allWorks = [];
+    let currentMediumKey = 'fresco';
+    let targetWorkId = null;
+
+    // Parse URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramMedium = (urlParams.get('medium') || '').toLowerCase();
+    const paramWork = urlParams.get('work');
+    if (paramWork) targetWorkId = paramWork;
+
+    // Map query string to medium key
+    if (paramMedium) {
+      if (paramMedium.includes('fresco') || paramMedium.includes('프레스코')) currentMediumKey = 'fresco';
+      else if (paramMedium.includes('wood') || paramMedium.includes('목재') || paramMedium.includes('패널') || paramMedium.includes('panel')) currentMediumKey = 'wood';
+      else if (paramMedium.includes('tempera') || paramMedium.includes('템페라')) currentMediumKey = 'tempera';
+      else if (paramMedium.includes('ink') || paramMedium.includes('수묵') || paramMedium.includes('비단') || paramMedium.includes('견본')) currentMediumKey = 'ink';
+      else if (paramMedium.includes('print') || paramMedium.includes('판화') || paramMedium.includes('소묘') || paramMedium.includes('drawing')) currentMediumKey = 'print';
+      else if (paramMedium.includes('oil') || paramMedium.includes('유화') || paramMedium.includes('캔버스') || paramMedium.includes('유채')) currentMediumKey = 'oil';
+      else currentMediumKey = 'fresco';
+    }
+
+    async function initMediumExplorer() {
+      try {
+        const [resFeatured, resGallery] = await Promise.all([
+          fetch('data/art_paintings_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ featured_masterpieces: [] })),
+          fetch('data/digital_gallery_master_db.json?v=' + Date.now()).then(r => r.json()).catch(() => ({ artworks: [] }))
+        ]);
+
+        const list1 = resFeatured.featured_masterpieces || [];
+        const list2 = (resGallery.artworks || []).slice(0, 600);
+
+        const map = new Map();
+        list1.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid) map.set(cid, it);
+        });
+        list2.forEach(it => {
+          const cid = it.id || it.work_id;
+          if (cid && !map.has(cid)) map.set(cid, it);
+        });
+
+        allWorks = Array.from(map.values());
+        selectMedium(currentMediumKey);
+      } catch (err) {
+        console.error("Failed to load artworks for medium explorer:", err);
+      }
+    }
+
+    function selectMedium(key) {
+      currentMediumKey = key;
+
+      document.querySelectorAll('.tech-pill').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`'${key}'`)) {
+          btn.classList.add('active');
+        }
+      });
+
+      const badge = document.getElementById('heroMediumBadge');
+      const title = document.getElementById('heroMediumTitle');
+      const desc = document.getElementById('heroMediumDesc');
+      const dossierGrid = document.querySelector('.tech-dossier-grid');
+
+      if (key === 'all') {
+        if (badge) badge.textContent = '인류 회화의 전 기법 컬렉션 (All Media)';
+        if (title) title.textContent = '모든 기법 & 재료 모아보기';
+        if (desc) desc.textContent = '프레스코, 목재 패널 유화, 캔버스 유채, 템페라, 동양 수묵화 등 인류 미술사를 수놓은 모든 재료와 기법의 걸작들을 한자리에서 감상해보세요.';
+        if (dossierGrid) dossierGrid.style.display = 'none';
+        renderMediumCards(allWorks, '전체 기법');
+        return;
+      }
+
+      if (dossierGrid) dossierGrid.style.display = 'grid';
+
+      const entry = MEDIUM_ENCYCLOPEDIA[key];
+      if (!entry) return;
+
+      if (badge) badge.textContent = entry.badge;
+      if (title) title.textContent = entry.title;
+      if (desc) desc.textContent = entry.desc;
+
+      // Update Dossier Cards
+      entry.dossier.forEach((d, idx) => {
+        const cardTitle = document.getElementById(`dossierCard${idx + 1}Title`);
+        const cardText = document.getElementById(`dossierCard${idx + 1}Text`);
+        if (cardTitle) cardTitle.textContent = d.title;
+        if (cardText) cardText.textContent = d.text;
+      });
+
+      // Filter works
+      const filtered = allWorks.filter(it => {
+        const text = [it.medium, it.category_kr, it.description, it.curator_notes].filter(Boolean).join(' ').toLowerCase();
+        return entry.keywords.some(kw => text.includes(kw.toLowerCase()));
+      });
+
+      renderMediumCards(filtered.length > 0 ? filtered : allWorks.slice(0, 16), entry.badge.split('(')[0].trim());
+    }
+
+    function renderMediumCards(list, techLabel) {
+      const grid = document.getElementById('mediumGrid');
+      const countEl = document.getElementById('mediumCountText');
+      if (!grid) return;
+
+      if (countEl) countEl.textContent = `[${techLabel}] 소장 명화: ${list.length.toLocaleString()}점`;
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #94a3b8;">
+            <svg class="icon" style="width:36px; height:36px; margin-bottom:12px; stroke:#10b981;"><use href="#i-brush"/></svg>
+            <p style="font-size:15px; font-weight:600;">선택하신 기법의 등록 작품을 불러오는 중입니다.</p>
+            <p style="font-size:12.5px; margin-top:4px;">상단 기법 버튼을 눌러 다른 재료를 감상해보세요.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map(item => {
+        const id = item.id || item.work_id;
+        const isTarget = (id === targetWorkId);
+        const imgUrl = (item.thumbnail_url || item.image_url || '').replace(/ /g, '%20');
+        const title = item.title_kr || item.title || '명화';
+        const artist = item.artist_name_kr || item.artist || '작가 미상';
+        const mediumStr = item.medium || techLabel;
+        const year = item.year ? `${item.year}년` : '';
+
+        return `
+          <a href="artwork.html?id=${encodeURIComponent(id)}" class="art-card ${isTarget ? 'target-work' : ''}" id="card-${id}">
+            <div class="art-card-thumb-wrap">
+              <span class="card-medium-badge">${mediumStr}</span>
+              ${year ? `<span class="card-year-badge">${year}</span>` : ''}
+              <img class="art-card-img" src="${imgUrl}" alt="${title}" loading="lazy" onerror="this.src='assets/icons/icon-512.png'">
+            </div>
+            <div class="art-card-body">
+              <div>
+                <div class="card-title">${title}</div>
+                <div class="card-artist">${artist}</div>
+              </div>
+              <div class="card-meta-row">
+                <span>${item.museum || item.location || '미술관 소장'}</span>
+                <span class="view-art-link">작품 감상 <svg class="icon" style="width:12px; height:12px;"><use href="#i-arrow-right"/></svg></span>
+              </div>
+            </div>
+          </a>
+        `;
+      }).join('');
+
+      if (targetWorkId) {
+        setTimeout(() => {
+          const el = document.getElementById(`card-${targetWorkId}`);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initMediumExplorer);
+  </script>
+</body>
+</html>
