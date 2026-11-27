@@ -605,6 +605,122 @@
       fill: currentColor;
     }
 
+    /* Admin Authentication & Password Change Glassmorphic Modal */
+    .admin-auth-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 10, 16, 0.94);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99990;
+      padding: 20px;
+    }
+    .admin-auth-card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(18, 24, 38, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 36px 32px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      animation: authCardIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes authCardIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .auth-icon-wrap {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 18px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3b82f6;
+    }
+    .auth-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      margin: 0 0 6px;
+    }
+    .auth-subtitle {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin: 0 0 24px;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .auth-input-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .auth-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(12, 16, 26, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.15s ease;
+      box-sizing: border-box;
+    }
+    .auth-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    }
+    .auth-submit-btn {
+      width: 100%;
+      padding: 13px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .auth-submit-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+    .auth-error-msg {
+      font-size: 12px;
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: left;
+    }
+    .auth-footer-note {
+      margin-top: 20px;
+      font-size: 12px;
+    }
+    .auth-back-link {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .auth-back-link:hover {
+      color: #94a3b8;
+    }
+
   </style>
 </head>
 <body>
@@ -851,7 +967,61 @@
 </svg>
 
 
-  <div class="layout">
+  <!-- ========================================================
+       ADMIN AUTHENTICATION GATEWAY MODAL
+       ======================================================== -->
+  <div id="adminAuthModal" class="admin-auth-overlay">
+    <div class="admin-auth-card">
+      <div class="auth-icon-wrap">
+        <svg class="icon" style="width:36px; height:36px;"><use href="#i-shield"></use></svg>
+      </div>
+      <h2 class="auth-title">LET'S ART OPERATIONAL COCKPIT</h2>
+      <p class="auth-subtitle">시스템 관제 및 데이터 파이프라인 통제 센터</p>
+      
+      <form id="adminLoginForm" onsubmit="event.preventDefault(); submitAdminLogin();" class="auth-form">
+        <div class="auth-input-group">
+          <input type="password" id="adminPwInput" class="auth-input" placeholder="관제 비밀번호 입력 (초기: 0602)" autocomplete="current-password" required>
+        </div>
+        <div id="adminLoginErr" class="auth-error-msg" style="display:none;">비밀번호가 올바르지 않습니다.</div>
+        <button type="submit" class="auth-submit-btn">관제 센터 접속</button>
+      </form>
+      <div class="auth-footer-note">
+        <a href="index.html" class="auth-back-link">← 메인 갤러리로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PASSWORD CHANGE MODAL
+       ======================================================== -->
+  <div id="changePwModal" class="admin-auth-overlay" style="display:none; z-index:99999;">
+    <div class="admin-auth-card" style="max-width:440px;">
+      <h3 class="auth-title" style="font-size:18px;">관제 비밀번호 변경</h3>
+      <p class="auth-subtitle" style="font-size:12px; margin-bottom:18px;">새로운 관리자 비밀번호를 설정합니다.</p>
+      
+      <form id="changePwForm" onsubmit="event.preventDefault(); submitChangePw();" class="auth-form">
+        <div class="auth-input-group">
+          <label style="font-size:11px; color:#94a3b8; display:block; margin-bottom:4px; text-align:left;">현재 비밀번호</label>
+          <input type="password" id="curPwInput" class="auth-input" placeholder="현재 비밀번호 (기본: 0602)" required>
+        </div>
+        <div class="auth-input-group">
+          <label style="font-size:11px; color:#94a3b8; display:block; margin-bottom:4px; text-align:left;">새 비밀번호</label>
+          <input type="password" id="newPwInput" class="auth-input" placeholder="새 비밀번호 입력 (4자 이상)" required>
+        </div>
+        <div class="auth-input-group">
+          <label style="font-size:11px; color:#94a3b8; display:block; margin-bottom:4px; text-align:left;">새 비밀번호 확인</label>
+          <input type="password" id="confirmPwInput" class="auth-input" placeholder="새 비밀번호 재입력" required>
+        </div>
+        <div id="changePwErr" class="auth-error-msg" style="display:none;"></div>
+        <div style="display:flex; gap:10px; margin-top:8px;">
+          <button type="button" class="btn" style="flex:1;" onclick="closeChangePwModal()">취소</button>
+          <button type="submit" class="btn primary" style="flex:1;">변경 저장</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="layout" id="adminLayout" style="display:none;">
     <!-- Header -->
     <header class="admin-head">
       <div class="admin-title-area">
@@ -880,7 +1050,13 @@
         <button class="btn primary" onclick="runDailyPipeline()">
           <svg class="icon"><use href="#i-zap"></use></svg> <span>데일리 파이프라인 즉시 구동</span>
         </button>
-        <a href="../index.html" class="btn" id="linkToGallery" style="text-decoration:none;">
+        <button class="btn" onclick="openChangePwModal()" title="비밀번호 변경">
+          <svg class="icon"><use href="#i-settings"></use></svg> <span>비밀번호 변경</span>
+        </button>
+        <button class="btn" onclick="adminLogout()" title="로그아웃">
+          <span>로그아웃</span>
+        </button>
+        <a href="index.html" class="btn" id="linkToGallery" style="text-decoration:none;">
           <span>← 서비스 갤러리</span>
         </a>
       </div>
@@ -1414,6 +1590,85 @@
   <div class="toast" id="adminToast">토스트 메시지</div>
 
   <script>
+    const DEFAULT_ADMIN_PW = "0602";
+    function getAdminPw() {
+      return localStorage.getItem("letsart_admin_pw") || DEFAULT_ADMIN_PW;
+    }
+    function checkAdminAuth() {
+      const isAuth = sessionStorage.getItem("letsart_admin_auth") === "1";
+      const overlay = document.getElementById("adminAuthModal");
+      const layout = document.getElementById("adminLayout");
+      if (isAuth) {
+        if (overlay) overlay.style.display = "none";
+        if (layout) layout.style.display = "block";
+      } else {
+        if (overlay) overlay.style.display = "flex";
+        if (layout) layout.style.display = "none";
+        setTimeout(() => {
+          const inp = document.getElementById("adminPwInput");
+          if (inp) inp.focus();
+        }, 100);
+      }
+    }
+    function submitAdminLogin() {
+      const inp = document.getElementById("adminPwInput");
+      const err = document.getElementById("adminLoginErr");
+      if (!inp) return;
+      if (inp.value === getAdminPw()) {
+        sessionStorage.setItem("letsart_admin_auth", "1");
+        inp.value = "";
+        if (err) err.style.display = "none";
+        checkAdminAuth();
+      } else {
+        if (err) {
+          err.textContent = "비밀번호가 올바르지 않습니다.";
+          err.style.display = "block";
+        }
+        inp.select();
+      }
+    }
+    function adminLogout() {
+      sessionStorage.removeItem("letsart_admin_auth");
+      checkAdminAuth();
+    }
+    function openChangePwModal() {
+      document.getElementById("changePwModal").style.display = "flex";
+      document.getElementById("curPwInput").value = "";
+      document.getElementById("newPwInput").value = "";
+      document.getElementById("confirmPwInput").value = "";
+      document.getElementById("changePwErr").style.display = "none";
+      setTimeout(() => document.getElementById("curPwInput").focus(), 100);
+    }
+    function closeChangePwModal() {
+      document.getElementById("changePwModal").style.display = "none";
+    }
+    function submitChangePw() {
+      const cur = document.getElementById("curPwInput").value;
+      const newPw = document.getElementById("newPwInput").value;
+      const confirmPw = document.getElementById("confirmPwInput").value;
+      const err = document.getElementById("changePwErr");
+      if (cur !== getAdminPw()) {
+        err.textContent = "현재 비밀번호가 일치하지 않습니다.";
+        err.style.display = "block";
+        return;
+      }
+      if (!newPw || newPw.length < 4) {
+        err.textContent = "새 비밀번호는 최소 4자리 이상이어야 합니다.";
+        err.style.display = "block";
+        return;
+      }
+      if (newPw !== confirmPw) {
+        err.textContent = "새 비밀번호 확인이 일치하지 않습니다.";
+        err.style.display = "block";
+        return;
+      }
+      localStorage.setItem("letsart_admin_pw", newPw);
+      alert("비밀번호가 성공적으로 변경되었습니다.");
+      closeChangePwModal();
+    }
+
+    checkAdminAuth();
+
     const isSubdir = window.location.pathname.endsWith('/admin/') || window.location.pathname.includes('/admin/');
     const basePath = isSubdir ? '../' : './';
     if (document.getElementById('linkToGallery')) {

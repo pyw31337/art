@@ -397,5 +397,12 @@
     "error": "Request failed after 3 attempts",
     "failed_at": "2026-11-27T09:00:52.385774",
     "raw_info": null
+  },
+  {
+    "id": "met_437796",
+    "source_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437796",
+    "error": "Request failed after 3 attempts",
+    "failed_at": "2026-11-27T09:01:58.900987",
+    "raw_info": null
   }
 ]

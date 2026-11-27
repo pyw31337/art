@@ -51,7 +51,8 @@
       position: sticky;
       top: 0;
       width: 100%;
-      height: 78vh;
+      height: 100vh;
+      height: 100dvh;
       min-height: 520px;
       overflow: hidden;
       background: var(--gallery-noir);
@@ -61,16 +62,16 @@
       z-index: 10;
     }
 
-    /* Ambient atmospheric glow — restrained, authentic to artwork */
+    /* Ambient atmospheric glow — matching artwork backdrop expansion */
     .hero-ambient-bg {
       position: absolute;
-      inset: -40px;
+      inset: -30px;
       background-size: cover;
       background-position: center;
-      filter: blur(90px) brightness(0.2) saturate(1.2);
-      transform: scale(1.15);
+      filter: blur(40px) brightness(0.65) saturate(1.3);
+      transform: scale(1.12);
       z-index: 1;
-      opacity: 0.6;
+      opacity: 0.9;
       transition: background-image 0.6s ease;
       pointer-events: none;
     }
@@ -78,27 +79,30 @@
     .hero-vignette {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(7, 9, 14, 0.2) 0%, rgba(7, 9, 14, 0.85) 85%, #07090e 100%);
+      background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.05) 30%, rgba(7, 9, 14, 0.4) 75%, rgba(7, 9, 14, 0.85) 100%);
       z-index: 2;
       pointer-events: none;
     }
 
-    /* Centered Artwork Stage */
+    /* Centered Artwork Stage — No Black Box, Borderless Gallery Aura */
     .artwork-stage {
       position: relative;
       z-index: 3;
-      width: 90vw;
-      height: 82vh;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border-radius: 4px;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--hairline-dark);
-      background: #000000;
+      border-radius: 0;
+      box-shadow: none;
+      background: transparent;
+      padding: 0;
     }
 
     .artwork-animated-img {
+      width: 100%;
+      height: 100%;
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
@@ -106,6 +110,9 @@
       will-change: transform;
       animation: heroCameraTimeline 15s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
       cursor: pointer;
+      position: relative;
+      z-index: 4;
+      filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.6));
     }
 
     /* 15s Micro-Animation Timeline:
@@ -152,57 +159,82 @@
     .nav-back-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      background: rgba(12, 16, 23, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--hairline-dark);
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: none;
       color: #ffffff;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
+      border-radius: 50%;
       text-decoration: none;
-      transition: all 0.15s ease;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      position: relative;
     }
     .nav-back-link:hover {
-      background: rgba(22, 28, 40, 0.9);
-      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.28);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      border: none;
     }
 
     .nav-actions {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       align-items: center;
     }
 
     .lds-nav-btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      background: rgba(12, 16, 23, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--hairline-dark);
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: none;
       color: #ffffff;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: 600;
+      border-radius: 50%;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      position: relative;
     }
     .lds-nav-btn:hover {
-      background: rgba(22, 28, 40, 0.9);
-      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.28);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      border: none;
     }
     .lds-nav-btn.primary {
-      background: var(--lds-brand-600);
-      border-color: var(--lds-brand-600);
+      background: rgba(37, 99, 235, 0.85);
+      border: none;
       color: #ffffff;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
     }
     .lds-nav-btn.primary:hover {
-      background: var(--lds-brand-700);
+      background: rgba(29, 78, 216, 0.95);
+      transform: translateY(-2px);
+      border: none;
+    }
+    .lds-nav-btn.active {
+      background: rgba(239, 68, 68, 0.85);
+      border: none;
+      box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+    }
+    .hero-top-nav .nav-back-link span,
+    .hero-top-nav .lds-nav-btn span {
+      display: none;
+    }
+    .hero-top-nav .nav-back-link svg.icon,
+    .hero-top-nav .lds-nav-btn svg.icon {
+      width: 20px;
+      height: 20px;
     }
 
     /* ========================================================
@@ -392,7 +424,7 @@
     .content-sheet-container {
       position: relative;
       z-index: 20;
-      margin-top: 78vh;
+      margin-top: 0;
       background: #ffffff;
       color: var(--lds-text-body);
       border: none;
@@ -1339,18 +1371,40 @@
       transition: opacity 0.15s ease, transform 0.15s ease;
       z-index: 1000;
     }
-    [data-tooltip]:hover::after, [data-tooltip]:focus-visible::after {
+    [data-tooltip]:hover::after, [data-tooltip]:focus-visible::after, [data-tooltip].touch-active::after {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
     /* Downward tooltip for top HUD buttons */
     .pres-hud-top [data-tooltip]::after, .hero-top-nav [data-tooltip]::after {
       bottom: auto;
-      top: calc(100% + 8px);
-      transform: translateX(-50%) translateY(-4px);
+      top: calc(100% + 10px);
+      transform: translateX(-50%) translateY(-6px);
     }
-    .pres-hud-top [data-tooltip]:hover::after, .hero-top-nav [data-tooltip]:hover::after {
+    .pres-hud-top [data-tooltip]:hover::after, .pres-hud-top [data-tooltip]:focus-visible::after, .pres-hud-top [data-tooltip].touch-active::after,
+    .hero-top-nav [data-tooltip]:hover::after, .hero-top-nav [data-tooltip]:focus-visible::after, .hero-top-nav [data-tooltip].touch-active::after {
       transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    /* Edge clipping prevention for leftmost and rightmost HUD buttons */
+    .hero-top-nav .nav-brand-group [data-tooltip]::after {
+      left: 0;
+      transform: translateX(0) translateY(-6px);
+    }
+    .hero-top-nav .nav-brand-group [data-tooltip]:hover::after,
+    .hero-top-nav .nav-brand-group [data-tooltip]:focus-visible::after,
+    .hero-top-nav .nav-brand-group [data-tooltip].touch-active::after {
+      transform: translateX(0) translateY(0);
+    }
+    .hero-top-nav .nav-actions [data-tooltip]:last-child::after {
+      left: auto;
+      right: 0;
+      transform: translateX(0) translateY(-6px);
+    }
+    .hero-top-nav .nav-actions [data-tooltip]:last-child:hover::after,
+    .hero-top-nav .nav-actions [data-tooltip]:last-child:focus-visible::after,
+    .hero-top-nav .nav-actions [data-tooltip]:last-child.touch-active::after {
+      transform: translateX(0) translateY(0);
     }
 
     /* Presentation Mode Caption Box detail transition button */
@@ -2129,33 +2183,29 @@
     <!-- Top Floating HUD -->
     <div class="hero-top-nav">
       <div class="nav-brand-group">
-        <a href="index.html" class="nav-back-link">
+        <a href="index.html" class="nav-back-link" data-tooltip="렛츠아트 홈 (아카이브)" aria-label="렛츠아트 홈 (아카이브)">
           <svg class="icon"><use href="#i-arrow-left"></use></svg>
           <span>렛츠아트 홈 (아카이브)</span>
         </a>
       </div>
       <div class="nav-actions">
-        <a href="museum.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="글로벌 10대 미술관 컬렉션 탐색">
+        <a href="museum.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="미술관 (글로벌 10대 컬렉션)" aria-label="미술관">
           <svg class="icon"><use href="#i-museum"></use></svg>
           <span>미술관</span>
         </a>
-        <a href="artist.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="시대의 거장 아카이브 (렛츠피플 연동)">
+        <a href="artist.html" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="거장 (시대의 거장 아카이브)" aria-label="거장">
           <svg class="icon"><use href="#i-user"></use></svg>
           <span>거장</span>
         </a>
-        <a href="admin" class="lds-nav-btn" style="text-decoration:none;" data-tooltip="수집 & 분석 관제 어드민">
-          <svg class="icon"><use href="#i-settings"></use></svg>
-          <span>관제</span>
-        </a>
-        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" data-tooltip="AI 한국어 음성 도슨트 해설 (스마트 재생바)">
+        <button class="lds-nav-btn" id="btnVoiceDocentNav" onclick="toggleVoiceDocent()" data-tooltip="음성 도슨트 (AI 한국어 해설)" aria-label="음성 도슨트">
           <svg class="icon"><use href="#i-mic"></use></svg>
           <span id="voiceNavText">음성 도슨트</span>
         </button>
-        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" data-tooltip="갤러리모드 전체화면 감상 (화면 꺼짐 방지)">
+        <button class="lds-nav-btn primary" id="btnLaunchPresentation" onclick="enterPresentationMode()" data-tooltip="갤러리모드 (전체화면 감상)" aria-label="갤러리모드">
           <svg class="icon"><use href="#i-frame"></use></svg>
           <span>갤러리모드</span>
         </button>
-        <button class="lds-nav-btn" onclick="scrollToDocent()" data-tooltip="영상 해설 허브로 바로 이동">
+        <button class="lds-nav-btn" onclick="scrollToDocent()" data-tooltip="영상 도슨트 (영상 해설 허브)" aria-label="영상 도슨트">
           <svg class="icon"><use href="#i-video"></use></svg>
           <span>영상 도슨트</span>
         </button>
@@ -2568,6 +2618,41 @@
       window.addEventListener(evt, triggerNavActivity, { passive: true });
     });
 
+    // Mobile Touch & Hold (Long-press) tooltip support for top HUD buttons
+    function initNavTooltips() {
+      document.querySelectorAll('.hero-top-nav [data-tooltip]').forEach(btn => {
+        let touchTimer = null;
+        let isLongPress = false;
+        btn.addEventListener('touchstart', (e) => {
+          isLongPress = false;
+          touchTimer = setTimeout(() => {
+            isLongPress = true;
+            document.querySelectorAll('.hero-top-nav [data-tooltip]').forEach(b => b.classList.remove('touch-active'));
+            btn.classList.add('touch-active');
+            if (navigator.vibrate) navigator.vibrate(25);
+          }, 300);
+        }, { passive: true });
+
+        btn.addEventListener('touchend', (e) => {
+          if (touchTimer) clearTimeout(touchTimer);
+          if (isLongPress) {
+            e.preventDefault();
+            setTimeout(() => btn.classList.remove('touch-active'), 1800);
+          }
+        });
+
+        btn.addEventListener('touchcancel', () => {
+          if (touchTimer) clearTimeout(touchTimer);
+          btn.classList.remove('touch-active');
+        });
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavTooltips);
+    } else {
+      initNavTooltips();
+    }
+
     // Extract artwork ID from URL (?id=...)
     const urlParams = new URLSearchParams(window.location.search);
     let targetId = urlParams.get('id') || 'sculpt_rodin_thinker';
@@ -2696,19 +2781,19 @@
 
       // 1. Hero Zone with multi-stage fallback
       const heroImg = document.getElementById('heroArtworkImg');
+      const heroBg = document.getElementById('heroAmbientBg');
+      if (heroBg) heroBg.style.backgroundImage = `url('${imgUrl}')`;
       heroImg.src = imgUrl;
       heroImg.onerror = () => {
         const localFallback = `assets/featured/${item.id}.webp`;
         if (heroImg.src !== localFallback && !heroImg.dataset.failedLocal) {
           heroImg.dataset.failedLocal = "true";
           heroImg.src = localFallback;
+          if (heroBg) heroBg.style.backgroundImage = `url('${localFallback}')`;
         } else {
           heroImg.src = fallbackSvg;
         }
       };
-
-      const heroBg = document.getElementById('heroAmbientBg');
-      if (heroBg) heroBg.style.backgroundImage = `url('${imgUrl}')`;
 
       // De-duplicate Korean and English titles/artists (strips already included parenthetical English)
       let titleKr = (item.title_kr || '').trim();
@@ -3382,7 +3467,10 @@
       const scrubberPlayIcon = document.getElementById('scrubberPlayIcon');
 
       if (playing) {
-        if (navBtn) navBtn.classList.add('active');
+        if (navBtn) {
+          navBtn.classList.add('active');
+          navBtn.setAttribute('data-tooltip', 'AI 해설 일시정지');
+        }
         if (presBtn) presBtn.classList.add('active');
         if (navText) navText.textContent = "해설 멈춤";
         if (sheetBtnText) sheetBtnText.textContent = "AI 해설 멈춤";
@@ -3395,7 +3483,10 @@
         }
         if (statusLabel) statusLabel.textContent = "AI 음성 도슨트가 명화의 역사와 도상학적 비하인드 스토리를 해설 중입니다";
       } else {
-        if (navBtn) navBtn.classList.remove('active');
+        if (navBtn) {
+          navBtn.classList.remove('active');
+          navBtn.setAttribute('data-tooltip', '음성 도슨트 (AI 한국어 해설)');
+        }
         if (presBtn) presBtn.classList.remove('active');
         if (navText) navText.textContent = "음성 도슨트";
         if (sheetBtnText) sheetBtnText.textContent = "음성 도슨트 해설 듣기";
